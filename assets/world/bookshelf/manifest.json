@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "asset": "bookshelf",
+  "version": "v1",
+  "source": "art/source/world/bookshelf/v1/model.blend",
+  "source_sha256": "1c245b8cd0823bc34d4a07b6b51d2e945b7d73df4f90894116cfe0cfb61b9521",
+  "runtime": "assets/world/bookshelf/model.glb",
+  "runtime_sha256": "62e14c35db80dd309de9dddef2efe88995ae7258ed9041d4ce7c5bf7f00891c8",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.25,
+      0.0,
+      -0.150000005960464,
+      0.25,
+      1.0,
+      0.150000005960464
+    ],
+    "geometry_sha256": "b068a2730b3f6bb02aa06b4e06cf2857aeb5e24065f2a74a620324067e686a27",
+    "material_records": {
+      "cream": {
+        "albedo": [
+          10000,
+          9412,
+          7961,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          6902,
+          4784,
+          2706,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak_light": {
+        "albedo": [
+          7725,
+          5804,
+          3451,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "plaster": {
+        "albedo": [
+          9098,
+          8667,
+          7412,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "roof": {
+        "albedo": [
+          4000,
+          3137,
+          6039,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "roof_light": {
+        "albedo": [
+          5098,
+          4431,
+          6941,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "teal": {
+        "albedo": [
+          2039,
+          4824,
+          5216,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "teal_light": {
+        "albedo": [
+          2980,
+          5765,
+          6078,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood": {
+        "albedo": [
+          4627,
+          3137,
+          2235,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood_dark": {
+        "albedo": [
+          2863,
+          2196,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "cream",
+      "oak",
+      "oak_light",
+      "plaster",
+      "roof",
+      "roof_light",
+      "teal",
+      "teal_light",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 10,
+    "triangles": 1944
+  }
+}

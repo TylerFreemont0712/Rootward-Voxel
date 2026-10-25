@@ -1,0 +1,182 @@
+{
+  "bounds": [
+    -2.67856597900391,
+    0.0,
+    -2.55999994277954,
+    2.67856597900391,
+    5.94000005722046,
+    2.71000003814697
+  ],
+  "geometry_sha256": "d5b76f6471f71d62c3476fd2ea7be302aabbf772e2f7665010927f540c4c5772",
+  "material_records": {
+    "gold": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+    },
+    "iron": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "5aa901d0159be0f4db2bbfe0c3cee98970ef021a1f5b88ca2db951035e1bc042"
+    },
+    "oak": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "f556d148ef2bc03c2e5f9b03b3794387093d909a3a5c75c69864a1d38969c3e9"
+    },
+    "oak_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "f556d148ef2bc03c2e5f9b03b3794387093d909a3a5c75c69864a1d38969c3e9"
+    },
+    "stone_dark": {
+      "albedo": [
+        7000,
+        7000,
+        7000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+    },
+    "stone_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+    },
+    "stone_warm": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "a4c740ef95322fab6b4ac67a310027e5410621625d11d1583972f3f3de6a7c18"
+    },
+    "teal": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "fd332dea0e69d4f580561c989fd5c37c3c758d148292d65c822dfd3f4ab2d632"
+    },
+    "teal_dark": {
+      "albedo": [
+        7200,
+        7200,
+        7200,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "fd332dea0e69d4f580561c989fd5c37c3c758d148292d65c822dfd3f4ab2d632"
+    },
+    "teal_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "fd332dea0e69d4f580561c989fd5c37c3c758d148292d65c822dfd3f4ab2d632"
+    },
+    "window": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "f5583e60057101371eed30872f6943d644cf3aee4478c85b56b991c4e90a84a2"
+    },
+    "window_glow": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "d58bbcde21fb59bb393bf5dc52af09c38158fc1a3a6db86e38086af5f9a17de4"
+    },
+    "wood": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "40e0dbb61ca7b2b1b22bbea7b9482dc707d8f13fa787410324e7c100f32700f7"
+    },
+    "wood_dark": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+    },
+    "wood_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+    }
+  },
+  "materials": [
+    "gold",
+    "iron",
+    "oak",
+    "oak_light",
+    "stone_dark",
+    "stone_light",
+    "stone_warm",
+    "teal",
+    "teal_dark",
+    "teal_light",
+    "window",
+    "window_glow",
+    "wood",
+    "wood_dark",
+    "wood_light"
+  ],
+  "meshes": 15,
+  "triangles": 18264
+}

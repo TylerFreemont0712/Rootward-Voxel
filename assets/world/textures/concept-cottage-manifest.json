@@ -1,0 +1,51 @@
+{
+  "materials": {
+    "cottage_honey_oak": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/cottage_honey_oak.png",
+          "sha256": "54fe6514419f413920edef89f1908aa6c4f526f10f4d24c57f3017e567f82d1b",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/cottage_honey_oak.png",
+          "sha256": "fa3f1973a5a4d2e73609d1a634195758fd3a3383831f61934966b9525efb5588",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/concept-cottage/v1/textures/honey_oak.png",
+      "source_sha256": "e6f86b327708c0ba1108025bba3aafa3f8a2908c5e83f7151a3f1dc2bbf52e91"
+    },
+    "cottage_violet_glaze": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/cottage_violet_glaze.png",
+          "sha256": "0247a2b4a56e693890a711fd00ef88ebb515ed023c76f03b698f6b6bb91288fd",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/cottage_violet_glaze.png",
+          "sha256": "63365a1d46f2002425376a3a769cfd51902e66dc7806e946ddffbf472e5862b6",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/concept-cottage/v1/textures/violet_glaze.png",
+      "source_sha256": "33f29d6f0bd7ec925ff0e1ce329c30c9382381fc3719a673e0cc0b712c6d384b"
+    }
+  },
+  "normalization": "Lush: Lanczos to 128; solid: Lanczos to 64 then nearest to 128. Opposite edge pixels paired to make a periodic boundary. Native paintings preserved.",
+  "schema": 1,
+  "version": "v1-concept-cottage"
+}

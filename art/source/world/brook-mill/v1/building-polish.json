@@ -1,0 +1,9 @@
+{
+  "revision": "2026-10-24-buildings-v1",
+  "asset": "brook-mill",
+  "before_sha256": "5228ec5592c969cae1bce4559401248b1abe6b558eebd93080251e9e568b4cc8",
+  "source_sha256": "83001ee4931a221cc9b460779f439cc54e2114fcf1d7b5899abd7109b2b3dd5f",
+  "backup": "model.pre-building-polish.blend",
+  "script": "art/source/world/building-polish/v1/edit_sources.py",
+  "note": "Deliberate edit of existing source; original geometry retained except selected entrance components. Common painted roof scale, readable door hardware/thresholds; lamp glass preserved."
+}

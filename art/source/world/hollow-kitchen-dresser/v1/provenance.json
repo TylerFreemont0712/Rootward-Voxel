@@ -1,0 +1,37 @@
+{
+  "asset": "hollow-kitchen-dresser",
+  "version": "v1",
+  "authoring_tool": "Blender 5.2.2 LTS; deliberate scripted geometry",
+  "source_authority": "model.blend; this script is a protected one-time authoring record",
+  "recipe": "kitchen_dresser",
+  "sources": {
+    "art/source/world/village-library/v1/author.py": "4e0a2f4d10c33120f752e70d27f0d599d3bf11024c53d9260d916b7987d7e786",
+    "art/source/world/village-library/v1/modeling.py": "2e204b88cab0604d1435eef74e19dae12152339868f7cb2326602c1dd2740f1f",
+    "art/source/world/village-library/v1/furniture.py": "19f795388fbbac6869595ccde904d90225ababc5e63bd705ddb871161147ceec",
+    "art/source/world/village-library/v1/library.json": "cf9740d227bf11cc8aca9cd34e5ad28be137dd8fc699dd7656913ef062a38c16"
+  },
+  "materials": "Shared village palette; existing lush texture PNGs packed losslessly; no generated-image dependency.",
+  "blender_bounds": [
+    [
+      -0.7749999761581421,
+      -0.41750001907348633,
+      0.0
+    ],
+    [
+      0.7749999761581421,
+      0.3499999940395355,
+      1.837499976158142
+    ]
+  ],
+  "spec": {
+    "number": 6,
+    "id": "hollow-kitchen-dresser",
+    "recipe": "kitchen_dresser",
+    "category": "furniture",
+    "title": "Kitchen Dresser",
+    "width": 1.55,
+    "depth": 0.65,
+    "blurb": "A cottage sideboard with open plate shelves, cups and a linen runner.",
+    "interaction": {}
+  }
+}

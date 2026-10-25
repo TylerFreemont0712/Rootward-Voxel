@@ -1,0 +1,10 @@
+{
+  "asset": "cottage",
+  "version": "v1",
+  "created": "2026-10-22T08:55:07.866978+00:00",
+  "seed_sha256": "2b387704b80d9a4aebc9dd9e4d25d4c44de85c802a92e40696ad379d7e661fe7",
+  "recipe": "pipeline/world_seed.gd",
+  "recipe_sha256": "501c1350f960f3ace9610a3163566eab32bdb425a369ddb513caa63c06d64765",
+  "geometry_recipe_sha256": "a8704a28e125dc4eea98a4142f2c2902a81a6b6effe29a49e08b84986e9a40bd",
+  "note": "One-way procedural bootstrap. model.blend becomes the editable source after init."
+}

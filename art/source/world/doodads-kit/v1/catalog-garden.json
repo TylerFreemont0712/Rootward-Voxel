@@ -1,0 +1,50 @@
+{
+  "window-planter": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Window Planter",
+    "source": "art/source/world/window-planter/v1/model.blend",
+    "runtime": "assets/world/window-planter/model.glb",
+    "pivot": "ground centre of the box",
+    "logical_footprint": [-0.4, -0.15, 0.8, 0.25],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "A timber flower box 0.8 m by 0.25 m, with a row of violet, cream and mauve blossoms. The footprint is the box body; the blossoms overhang it."
+  },
+  "mossy-boulder": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Mossy Boulder",
+    "source": "art/source/world/mossy-boulder/v1/model.blend",
+    "runtime": "assets/world/mossy-boulder/model.glb",
+    "pivot": "ground centre of the base",
+    "logical_footprint": [-0.35, -0.35, 0.7, 0.7],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "A rounded grey stone 0.8 m across with a moss cap on top. The widest belly overhangs the proposed footprint by about 0.05 m."
+  },
+  "tree-stump": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Tree Stump",
+    "source": "art/source/world/tree-stump/v1/model.blend",
+    "runtime": "assets/world/tree-stump/model.glb",
+    "pivot": "ground centre of the stump",
+    "logical_footprint": [-0.25, -0.25, 0.5, 0.5],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "A cut stump 0.5 m across with bark sides, a pale ringed cut top and a small moss cap on one edge. The root flare overhangs the footprint by about 0.05 m."
+  },
+  "stream-reeds": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Stream Reeds",
+    "source": "art/source/world/stream-reeds/v1/model.blend",
+    "runtime": "assets/world/stream-reeds/model.glb",
+    "pivot": "ground centre of the mud bed",
+    "logical_footprint": null,
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "A clump of six one-voxel reeds, 0.6 m to 1.0 m tall, with brown seed heads and teal-green blades. No footprint: reeds stand at the water's edge."
+  }
+}

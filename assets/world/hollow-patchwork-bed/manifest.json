@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "hollow-patchwork-bed",
+  "version": "v1",
+  "source": "art/source/world/hollow-patchwork-bed/v1/model.blend",
+  "source_sha256": "3a057f7ffebc2ff445518e38c3d65b69651f459dc5425c5a6c04ecb7d7e6e746",
+  "runtime": "assets/world/hollow-patchwork-bed/model.glb",
+  "runtime_sha256": "d3b10b2eb690cbf72af2e493619540ffe72eca459c5dd5659c1c01c3b9c12be8",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.579999983310699,
+      0.0,
+      -1.0,
+      0.579999983310699,
+      1.0900000333786,
+      1.0
+    ],
+    "geometry_sha256": "8bab9b83dd5e1f2b71351384ac2622670031f6fd7c40b480aaf3aa5887ffde63",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+      },
+      "cloth_lilac": {
+        "albedo": [
+          5961,
+          5098,
+          7176,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "cloth_plum": {
+        "albedo": [
+          4000,
+          3137,
+          6039,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "cream": {
+        "albedo": [
+          9333,
+          8824,
+          7294,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "linen": {
+        "albedo": [
+          8392,
+          7961,
+          6627,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "brass",
+      "cloth_lilac",
+      "cloth_plum",
+      "cream",
+      "linen",
+      "oak",
+      "wood_dark"
+    ],
+    "meshes": 7,
+    "triangles": 672
+  }
+}

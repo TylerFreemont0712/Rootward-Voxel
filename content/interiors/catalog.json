@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "templates": {
+    "village-cottage": "village-cottage",
+    "village-workshop": "village-workshop",
+    "village-loft": "village-loft",
+    "village-mill": "village-mill"
+  },
+  "assets": {
+    "log-cabin-large": "village-cottage",
+    "log-cabin-large-teal": "village-cottage",
+    "log-cabin": "village-workshop",
+    "cottage": "village-cottage",
+    "mill-house": "village-mill",
+    "hearth-house": "village-cottage",
+    "lantern-loft": "village-loft",
+    "brook-mill": "village-mill",
+    "hollow-bakery": "village-cottage",
+    "hollow-smithy": "village-workshop",
+    "concept-cottage": "village-cottage"
+  }
+}

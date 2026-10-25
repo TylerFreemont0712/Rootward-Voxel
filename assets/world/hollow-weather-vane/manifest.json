@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "hollow-weather-vane",
+  "version": "v1",
+  "source": "art/source/world/hollow-weather-vane/v1/model.blend",
+  "source_sha256": "3f2cfee2a1b0a5f4b6570c92c4624b27b0ff025dc5bb993f1969dd87012e690d",
+  "runtime": "assets/world/hollow-weather-vane/model.glb",
+  "runtime_sha256": "d10913549a75252d4a81c6b67382e300d9e170beaae502f19c127cbba16f54db",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.370000004768372,
+      0.0,
+      -0.36656853556633,
+      0.441923856735229,
+      2.20000004768372,
+      0.36656853556633
+    ],
+    "geometry_sha256": "27ccbc457616734234d70465488515246fcebf22c8264f776e63c26a7b0ee6eb",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+      },
+      "copper": {
+        "albedo": [
+          7216,
+          4745,
+          2863,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": ""
+      },
+      "iron": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "5aa901d0159be0f4db2bbfe0c3cee98970ef021a1f5b88ca2db951035e1bc042"
+      },
+      "rust": {
+        "albedo": [
+          6118,
+          3412,
+          2392,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "stone_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      }
+    },
+    "materials": [
+      "brass",
+      "copper",
+      "iron",
+      "rust",
+      "stone",
+      "stone_dark"
+    ],
+    "meshes": 6,
+    "triangles": 280
+  }
+}

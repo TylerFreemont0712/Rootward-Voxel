@@ -1,0 +1,54 @@
+extends SceneTree
+
+const DIR := "res://art/source/adventurer/v9-directional-walk/"
+
+func _initialize() -> void:
+	var se := Image.load_from_file(ProjectSettings.globalize_path(DIR + "SE.png"))
+	var sw := Image.create(1254, 1254, false, Image.FORMAT_RGBA8)
+	for index in range(9):
+		var region := Rect2i((index % 3) * 418, (index / 3) * 418, 418, 418)
+		var pose := se.get_region(region)
+		pose.flip_x()
+		sw.blit_rect(pose, Rect2i(0, 0, 418, 418), region.position)
+	sw.save_png(ProjectSettings.globalize_path(DIR + "SW.png"))
+	sw.save_png(ProjectSettings.globalize_path("res://assets/characters/DriectionCheck/SW.png"))
+	var blink := Image.load_from_file(ProjectSettings.globalize_path(DIR + "idle-se.png"))
+	var generated := Image.load_from_file(ProjectSettings.globalize_path("res://.cache/directional-walk/blink-generated-250.png"))
+	var eyes: Array[PackedVector2Array] = [
+		PackedVector2Array([Vector2(99, 127), Vector2(104, 120), Vector2(112, 117), Vector2(120, 117), Vector2(127, 122), Vector2(132, 130), Vector2(131, 140), Vector2(127, 148), Vector2(117, 152), Vector2(105, 149), Vector2(99, 141)]),
+		PackedVector2Array([Vector2(151, 124), Vector2(154, 115), Vector2(163, 111), Vector2(169, 113), Vector2(175, 118), Vector2(176, 127), Vector2(174, 136), Vector2(166, 143), Vector2(157, 143), Vector2(151, 137)])
+	]
+	for y in range(105, 156):
+		for x in range(94, 180):
+			for eye: PackedVector2Array in eyes:
+				var point := Vector2(x, y)
+				if not Geometry2D.is_point_in_polygon(point, eye):
+					continue
+				var edge_distance := 100.0
+				for i in range(eye.size()):
+					edge_distance = minf(edge_distance, point.distance_to(Geometry2D.get_closest_point_to_segment(point, eye[i], eye[(i + 1) % eye.size()])))
+				var weight := smoothstep(0.0, 2.0, edge_distance)
+				var original := blink.get_pixel(100 + x, y)
+				blink.set_pixel(100 + x, y, original.lerp(generated.get_pixel(x, y), weight))
+	blink.save_png(ProjectSettings.globalize_path(DIR + "blink-se.png"))
+	blink.flip_x()
+	blink.save_png(ProjectSettings.globalize_path(DIR + "blink-sw.png"))
+	for direction: String in ["SE", "SW", "NE", "NW"]:
+		var sheet := Image.load_from_file(ProjectSettings.globalize_path(DIR + direction + ".png"))
+		for i in range(9):
+			var pose := sheet.get_region(Rect2i((i % 3) * 418, (i / 3) * 418, 418, 418))
+			var bounds := opaque_bounds(pose)
+			var head := pose.get_region(Rect2i(0, bounds.position.y, 418, roundi(bounds.size.y * 0.4)))
+			var head_box := opaque_bounds(head)
+			print(direction, " ", i + 1, " bounds=", bounds, " head_x=", head_box.get_center().x)
+	quit()
+
+func opaque_bounds(img: Image) -> Rect2i:
+	var first := img.get_size()
+	var last := Vector2i(-1, -1)
+	for y in range(img.get_height()):
+		for x in range(img.get_width()):
+			if img.get_pixel(x, y).a > 0.25:
+				first = first.min(Vector2i(x, y))
+				last = last.max(Vector2i(x, y))
+	return Rect2i(first, last - first + Vector2i.ONE)

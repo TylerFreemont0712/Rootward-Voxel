@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "status": "standalone candidates; no area integration",
+  "preview": "evidence/scenery-candidates.png",
+  "assets": [
+    {
+      "id": "hearth-oak",
+      "label": "Hearth oak",
+      "dimensions_xyz": [
+        5.28,
+        6.049,
+        4.62
+      ],
+      "source": "art/source/world/hearth-oak/v1/model.blend",
+      "glb": "assets/world/hearth-oak/model.glb",
+      "source_sha256": "119c7ac8927f454317c87b2dd25a527009430504e1379783dc22660d6b9b1225",
+      "glb_sha256": "5d8fdf2aa9a8b47ed6e86e5656b0664a9dff9a37812261429233c0d23da919d5",
+      "triangles": 4582,
+      "status": "candidate_unplaced"
+    },
+    {
+      "id": "ridge-cedar",
+      "label": "Ridge cedar",
+      "dimensions_xyz": [
+        4.86,
+        6.683,
+        4.68
+      ],
+      "source": "art/source/world/ridge-cedar/v1/model.blend",
+      "glb": "assets/world/ridge-cedar/model.glb",
+      "source_sha256": "4fc49b818a7c931f0a98e570713d1093baf4259721abbe0dcaf870c22adef695",
+      "glb_sha256": "a2db15c66d458162014826b3a6db82185c8e497911260af582bbf345aec110fd",
+      "triangles": 10220,
+      "status": "candidate_unplaced"
+    },
+    {
+      "id": "river-willow",
+      "label": "River willow",
+      "dimensions_xyz": [
+        4.68,
+        5.086,
+        4.32
+      ],
+      "source": "art/source/world/river-willow/v1/model.blend",
+      "glb": "assets/world/river-willow/model.glb",
+      "source_sha256": "0ad92bcfbd8b575b962fda58be882d4770a6b36c8fa9e30985c5ab93f25147bd",
+      "glb_sha256": "8fb4b4696b7cca85e2e8eae599629cd25bd879021793a6cd1e94259ee3d74679",
+      "triangles": 11018,
+      "status": "candidate_unplaced"
+    },
+    {
+      "id": "hearth-house",
+      "label": "Hearth house  /  5 \u00d7 5 tiles",
+      "dimensions_xyz": [
+        5.82,
+        5.862,
+        6.54
+      ],
+      "source": "art/source/world/hearth-house/v1/model.blend",
+      "glb": "assets/world/hearth-house/model.glb",
+      "source_sha256": "9d2efb414d6ceeac095deb68906fae04a157e33e32bfce3aed81bf3e2d42e46e",
+      "glb_sha256": "af49235bcd035db044b2852b83252a12d4556bcb18a435132ad1ef94fa5e4306",
+      "triangles": 30392,
+      "status": "candidate_unplaced"
+    },
+    {
+      "id": "lantern-loft",
+      "label": "Lantern loft  /  7 \u00d7 7 tiles",
+      "dimensions_xyz": [
+        7.82,
+        8.162,
+        8.485
+      ],
+      "source": "art/source/world/lantern-loft/v1/model.blend",
+      "glb": "assets/world/lantern-loft/model.glb",
+      "source_sha256": "d6b217bc51b5472b0fe69fa1f06eb1c6b7550ae2a6b46760d6c831f17c114800",
+      "glb_sha256": "c273e2e0084013ae9a7658707292edb051d0eed1a30ffadd68280b49b00fda0e",
+      "triangles": 40314,
+      "status": "candidate_unplaced"
+    },
+    {
+      "id": "brook-mill",
+      "label": "Brook mill  /  6 \u00d7 5 tile shell",
+      "dimensions_xyz": [
+        7.905,
+        8.639,
+        7.01
+      ],
+      "source": "art/source/world/brook-mill/v1/model.blend",
+      "glb": "assets/world/brook-mill/model.glb",
+      "source_sha256": "5228ec5592c969cae1bce4559401248b1abe6b558eebd93080251e9e568b4cc8",
+      "glb_sha256": "7a0b172ab16cb8c9238b808d3fc2339bffadc9805d275b86424e9652bfeeea71",
+      "triangles": 36534,
+      "status": "candidate_unplaced"
+    }
+  ]
+}

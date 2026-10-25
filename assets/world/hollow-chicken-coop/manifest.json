@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "hollow-chicken-coop",
+  "version": "v1",
+  "source": "art/source/world/hollow-chicken-coop/v1/model.blend",
+  "source_sha256": "17ebd9f06bd2a36e78f807dd55f77437e2787233651339df85977d446f7505f4",
+  "runtime": "assets/world/hollow-chicken-coop/model.glb",
+  "runtime_sha256": "5af1fdc5d0b6ab1e3d2ed4c1dde96ae822088bb0e61a420c943105718edf7c35",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.814999997615814,
+      0.0,
+      -0.660000026226044,
+      0.814999997615814,
+      1.73999989032745,
+      0.930131316184998
+    ],
+    "geometry_sha256": "a31813668dc33e1fee900ecd9e26fee76e180d7b1728b65a1b9dbc0da60dc616",
+    "material_records": {
+      "cloth_teal": {
+        "albedo": [
+          2039,
+          4824,
+          5216,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "glass_blue": {
+        "albedo": [
+          4667,
+          6078,
+          7176,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "roof": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "cf9ab57a6fd0ed6ae43f492bba41ea37d6e9299d490ec2a05d8629d11dcedeaa"
+      },
+      "roof_teal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "fd332dea0e69d4f580561c989fd5c37c3c758d148292d65c822dfd3f4ab2d632"
+      },
+      "wood": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "f556d148ef2bc03c2e5f9b03b3794387093d909a3a5c75c69864a1d38969c3e9"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "cloth_teal",
+      "glass_blue",
+      "oak",
+      "roof",
+      "roof_teal",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 7,
+    "triangles": 288
+  }
+}

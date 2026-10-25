@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-23",
+  "request": "Switch the leg forward in SE pose 8 only; leave the future horizontal mirror/SW replacement for the next task.",
+  "tool": "built-in image_gen",
+  "before_sha256": "3e720dca66ea681f26868c4a9fad657713ad37a4799f83dc75cd3719c15ce214",
+  "output_sha256": "c7f973af36e27d30044318b06bd1c46df80c1ac01005d60d84df3202e487f507",
+  "previous_source": "art/source/adventurer/v5-template/se.png",
+  "selected_generated_pass": 4,
+  "generated_sha256": "7f6b0b78f2f34dc5a169626adfb16729d7fbf726fac004a8a2fdad0f6696079a",
+  "prompts": "prompt.json",
+  "assembly": "assembly.gd.txt",
+  "preprocessing": "ffmpeg lossless RGBA crops of pose 8 and pose 7; selected generated output resized to 418x418 with Lanczos before source compositing.",
+  "method": "Use only the generated trousers/boots below the hem. Translate +4 pixels in X, resize the lower-body band from 178 to 206 pixels in Y and register it beneath the exact original upper body to retain the original hem-to-ground distance. Extend top trouser colors behind the preserved hem at the small join. Preserve original upper RGBA pixels and copy untouched cells exactly.",
+  "validation": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "changed_poses": [
+      8
+    ],
+    "format": "RGBA8",
+    "pose_8_original_upper_pixels_verified": 101754,
+    "transparency_preserved": true,
+    "unchanged_poses_pixel_identical": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9
+    ]
+  },
+  "other_direction_sha256": {
+    "SW.png": "aef3eccf96153aa84cb094a85481e62bced21c32acc73e82c26b1249c5392575",
+    "NE.png": "0cd31a9cf3e94ad1ecec7937f51512e4a7c7c654c601df71b1ef2fa9a5492187",
+    "NW.png": "d9b9cd631f81dffaeb91b5a11dd184a1cd4eccdd2de4a3d391b81f624e0d2207"
+  },
+  "runtime_selected": false,
+  "project_checks": {
+    "command": "scripts/test.sh",
+    "result": "passed",
+    "total_checks": 175,
+    "groups": {
+      "world_and_wasi": 53,
+      "app": 24,
+      "movement": 25,
+      "painted_art": 43,
+      "world_art": 26,
+      "authoring_guards": 4
+    }
+  },
+  "visual_review": "Corrected source sheet inspected at full size. Candidate remains outside the selected runtime animation; no gameplay integration or animation playback review in this task."
+}

@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "cart-wheel",
+  "version": "v1",
+  "source": "art/source/world/cart-wheel/v1/model.blend",
+  "source_sha256": "ad3a2feb50aa677444dcaadbe081e339e37632d582ce7cd39e65674880ae5c96",
+  "runtime": "assets/world/cart-wheel/model.glb",
+  "runtime_sha256": "822da14248d1391e39fb93798ba1ef4f72a2365edf4cd1f583fcd3c64e9df7e7",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.5,
+      0.0,
+      -0.100000001490116,
+      0.5,
+      1.0,
+      0.100000001490116
+    ],
+    "geometry_sha256": "34021c4214d702743c26fde3f1cfc7078aac0ac9d2aed614c4c9c9de291a8d66",
+    "material_records": {
+      "iron": {
+        "albedo": [
+          2235,
+          2667,
+          2745,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_dark": {
+        "albedo": [
+          1490,
+          1765,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_light": {
+        "albedo": [
+          3529,
+          4000,
+          4039,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          6902,
+          4784,
+          2706,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood": {
+        "albedo": [
+          4627,
+          3137,
+          2235,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "iron",
+      "iron_dark",
+      "iron_light",
+      "oak",
+      "wood"
+    ],
+    "meshes": 5,
+    "triangles": 1696
+  }
+}

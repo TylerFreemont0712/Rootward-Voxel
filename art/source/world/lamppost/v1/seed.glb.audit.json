@@ -1,0 +1,105 @@
+{
+  "bounds": [
+    -0.529999971389771,
+    0.0,
+    -0.330000013113022,
+    0.550000011920929,
+    2.41500020027161,
+    0.879999995231628
+  ],
+  "geometry_sha256": "338cc914b5829371e4366e41656ecc918116bc2902ebcf047e0ac2779f0f787e",
+  "material_records": {
+    "iron": {
+      "albedo": [
+        2235,
+        2667,
+        2745,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": ""
+    },
+    "lamp_glass": {
+      "albedo": [
+        4784,
+        4000,
+        2824,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": ""
+    },
+    "stone_dark": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "227a055ccafa7e3466a881726107eb56594b4fa0a3e93702f34ed6c2615bb02b"
+    },
+    "stone_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "280058a6c5363ee09fcc26468d06642f3058a583bbef36888eff6c85683b7f4a"
+    },
+    "stone_warm": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "2e6ce03f0b680433e86b7489f6db14ac9b23b794896f7292eb3384cc863b76a5"
+    },
+    "wood": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "5119b2ee1d219e5a1e6489d5d1afea954570d859f1009488c4ae9c3fa5b22e96"
+    },
+    "wood_dark": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "2bc6ae3f9a6f537b18778aea8bb446cb75fbfb3094fb3a965884f257e99e25b2"
+    },
+    "wood_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "2e32b08cba23a83905d6cc12ed8fd78df2d00d5778e62afce665e5e8af2d5df0"
+    }
+  },
+  "materials": [
+    "iron",
+    "lamp_glass",
+    "stone_dark",
+    "stone_light",
+    "stone_warm",
+    "wood",
+    "wood_dark",
+    "wood_light"
+  ],
+  "meshes": 8,
+  "triangles": 432
+}

@@ -1,0 +1,41 @@
+{
+  "asset": "hollow-candle-stand",
+  "version": "v1",
+  "authoring_tool": "Blender 5.2.2 LTS; deliberate scripted geometry",
+  "source_authority": "model.blend; this script is a protected one-time authoring record",
+  "recipe": "candle_stand",
+  "sources": {
+    "art/source/world/village-library/v1/author.py": "4e0a2f4d10c33120f752e70d27f0d599d3bf11024c53d9260d916b7987d7e786",
+    "art/source/world/village-library/v1/modeling.py": "2e204b88cab0604d1435eef74e19dae12152339868f7cb2326602c1dd2740f1f",
+    "art/source/world/village-library/v1/market.py": "b3037de31edb99ddf33cde7fc5e87a5a14107d315663ee8dfb8359849d801fcb",
+    "art/source/world/village-library/v1/library.json": "cf9740d227bf11cc8aca9cd34e5ad28be137dd8fc699dd7656913ef062a38c16"
+  },
+  "materials": "Shared village palette; existing lush texture PNGs packed losslessly; no generated-image dependency.",
+  "blender_bounds": [
+    [
+      -0.33000001311302185,
+      -0.2567852735519409,
+      0.0
+    ],
+    [
+      0.33000001311302185,
+      0.2567852735519409,
+      1.5762499570846558
+    ]
+  ],
+  "spec": {
+    "number": 29,
+    "id": "hollow-candle-stand",
+    "recipe": "candle_stand",
+    "category": "market",
+    "title": "Candle Stand",
+    "width": 0.65,
+    "depth": 0.65,
+    "blurb": "A brass three-branch candle stand with wax drips and warm flames.",
+    "interaction": {
+      "kind": "light",
+      "on": "Light",
+      "off": "Extinguish"
+    }
+  }
+}

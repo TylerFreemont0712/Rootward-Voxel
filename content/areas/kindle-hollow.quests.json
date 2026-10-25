@@ -1,0 +1,282 @@
+{
+  "schema": 1,
+  "area": "kindle-hollow",
+  "quests": [
+    {
+      "id": "first-light",
+      "title": "A spark at the landing",
+      "concept": "Calling a method",
+      "summary": "Light the lamp beside the trail.",
+      "requires": [],
+      "goal": {
+        "type": "lamps_lit",
+        "ids": ["landing-lamp"]
+      },
+      "focus": {
+        "at": [30, 8]
+      },
+      "lesson": [
+        "Your notebook runs a function called `program`. Inside it, `world` is the whole village as Python sees it.",
+        "",
+        "A lamp is an **object**. Ask the world for one by its name, then tell it what to do:",
+        "",
+        "```",
+        "lamp = world.lamp(\"landing-lamp\")",
+        "lamp.set_lit(True)",
+        "```",
+        "",
+        "`set_lit` is a **method**: a command that belongs to the lamp. `True` is a **boolean**, which means yes. `False` means no.",
+        "",
+        "Press **Run** to see a preview of what your code would do. Nothing is real until you press **Apply**."
+      ],
+      "starter": [
+        "def program(world):",
+        "    lamp = world.lamp(\"landing-lamp\")",
+        "    lamp.set_lit(False)   # try changing False to True"
+      ],
+      "hints": [
+        "The lamp's name goes in quotes: world.lamp(\"landing-lamp\"). The World tab lists every lamp you can reach.",
+        "True needs a capital T, and the call ends with brackets: lamp.set_lit(True)",
+        "Plan: get the lamp, then call set_lit on it with True."
+      ],
+      "done": "The first lantern glows. One method call changed the world."
+    },
+    {
+      "id": "light-the-green",
+      "title": "Light the green",
+      "concept": "Lists and for-loops",
+      "summary": "Light all four lamps on the village green.",
+      "requires": ["first-light"],
+      "goal": {
+        "type": "lamps_lit",
+        "zone": "green"
+      },
+      "focus": {
+        "at": [29, 19]
+      },
+      "lesson": [
+        "The Green has four lamps. You could write four lines, but code can repeat itself.",
+        "",
+        "A **zone** is a place with things in it. Walk to The Green first: your notebook only knows the places you have visited.",
+        "",
+        "```",
+        "green = world.zone(\"green\")",
+        "for lamp in green.lamps:",
+        "    lamp.set_lit(True)",
+        "```",
+        "",
+        "`green.lamps` is a **list**. A `for` loop runs its indented lines once for each item in the list, and `lamp` is the name for the current item.",
+        "",
+        "Indentation matters: the lines inside the loop are pushed in by four spaces."
+      ],
+      "starter": [
+        "def program(world):",
+        "    green = world.zone(\"green\")",
+        "    # loop over green.lamps and light each one"
+      ],
+      "hints": [
+        "A zone keeps its lamps in a list: green.lamps.",
+        "Start the loop with: for lamp in green.lamps:  (the line ends with a colon).",
+        "Indent the next line by four spaces and call lamp.set_lit(True) on it."
+      ],
+      "done": "Four lanterns, one loop. The more things there are, the more a loop saves you."
+    },
+    {
+      "id": "mill-bridge",
+      "title": "A way across",
+      "concept": "Variables and numbers",
+      "summary": "Rebuild the mill bridge, then cross to the Mill Yard.",
+      "requires": ["light-the-green"],
+      "goal": {
+        "type": "all",
+        "goals": [
+          {"type": "bridge_built", "bridge": "mill-bridge"},
+          {"type": "reach_zone", "zone": "mill-yard"}
+        ]
+      },
+      "focus": {
+        "at": [44, 19]
+      },
+      "lesson": [
+        "The mill bridge has washed away. Its four timber decks go down one after another, starting from the west bank.",
+        "",
+        "`bridge.cells` lists the four sockets in building order, and `bridge.place_deck(cell)` puts a deck in one of them.",
+        "",
+        "A **variable** is a name for a value. Use one to decide how many decks to build:",
+        "",
+        "```",
+        "deck_count = 2",
+        "for cell in bridge.cells[:deck_count]:",
+        "    bridge.place_deck(cell)",
+        "```",
+        "",
+        "`[:deck_count]` means \"the first deck_count items\". Change the number, Run again, and the preview shows a longer bridge.",
+        "",
+        "When the bridge is complete, Apply it and walk across. Click the far bank to travel there."
+      ],
+      "starter": [
+        "def program(world):",
+        "    bridge = world.bridge(\"mill-bridge\")",
+        "    deck_count = 2   # how many decks to build",
+        "    for cell in bridge.cells[:deck_count]:",
+        "        bridge.place_deck(cell)"
+      ],
+      "hints": [
+        "The river is four cells wide, so the bridge needs four decks.",
+        "Change deck_count to 4, press Run, check the preview, then Apply.",
+        "Once it is built, click the east bank or hold D to walk across to the Mill Yard."
+      ],
+      "done": "The mill is within reach. A variable let you change the whole bridge by editing one number."
+    },
+    {
+      "id": "night-gate",
+      "title": "The night gate",
+      "concept": "Conditions (if / else)",
+      "summary": "Open the gate only when both lamps beside it are lit.",
+      "requires": ["mill-bridge"],
+      "goal": {
+        "type": "all",
+        "goals": [
+          {"type": "lamps_lit", "ids": ["gate-west", "gate-east"]},
+          {"type": "gate_open", "gate": "night-gate"}
+        ]
+      },
+      "focus": {
+        "at": [29, 34]
+      },
+      "lesson": [
+        "A good gate does not just open. It decides. An **if** statement runs its indented lines only when its condition is `True`; `else` runs when it is not:",
+        "",
+        "```",
+        "if west.lit and east.lit:",
+        "    gate.set_open(True)",
+        "else:",
+        "    gate.set_open(False)",
+        "```",
+        "",
+        "`lit` is a boolean each lamp remembers, and `and` is only `True` when both sides are.",
+        "",
+        "Walk north from The Green to The Night Gate so your notebook can see it. Try the program with one lamp dark: the gate stays shut. Light both and run again."
+      ],
+      "starter": [
+        "def program(world):",
+        "    gate = world.gate(\"night-gate\")",
+        "    west = world.lamp(\"gate-west\")",
+        "    east = world.lamp(\"gate-east\")",
+        "    # light both lamps, then use if / else to decide the gate"
+      ],
+      "hints": [
+        "Light both lamps first, each with set_lit(True), so the condition has something to check.",
+        "Write: if west.lit and east.lit:  then indent gate.set_open(True) beneath it.",
+        "Add an else: branch with gate.set_open(False) so the gate closes whenever a lamp goes dark."
+      ],
+      "done": "The gate swings wide. Your code made a decision instead of just following orders."
+    },
+    {
+      "id": "kindle-the-hollow",
+      "title": "Kindle the hollow",
+      "concept": "Functions",
+      "summary": "Light every lamp in Kindle Hollow, even the beacon at the Old Watch.",
+      "requires": ["night-gate"],
+      "goal": {
+        "type": "lamps_lit",
+        "all": true
+      },
+      "focus": {
+        "at": [30, 45]
+      },
+      "lesson": [
+        "You have written the same two lines many times. A **function** gives them a name so you can reuse them:",
+        "",
+        "```",
+        "def light_all(lamps):",
+        "    for lamp in lamps:",
+        "        lamp.set_lit(True)",
+        "```",
+        "",
+        "`def` defines the function and `lamps` is a **parameter**: a name for whatever you hand in.",
+        "",
+        "`world.zones` lists every place you have visited. Loop over them and reuse your function:",
+        "",
+        "```",
+        "for zone in world.zones:",
+        "    light_all(zone.lamps)",
+        "```",
+        "",
+        "Places you have not visited are invisible to the notebook. Explore Cottage Row, the Mill Yard and up the Lamp Road to the Old Watch, then Run again."
+      ],
+      "starter": [
+        "def light_all(lamps):",
+        "    # turn every lamp in the list on",
+        "    pass",
+        "",
+        "def program(world):",
+        "    for zone in world.zones:",
+        "        light_all(zone.lamps)"
+      ],
+      "hints": [
+        "Inside light_all, loop over lamps and call set_lit(True) on each one.",
+        "Replace the word pass with: for lamp in lamps:  and an indented lamp.set_lit(True).",
+        "Walk to every district so that world.zones includes all of them, then Run and Apply again."
+      ],
+      "done": "Every lantern in the hollow is burning. You wrote calls, loops, variables, conditions and a function of your own."
+    },
+    {
+      "id": "face-the-lane",
+      "chapter": "Chapter two · Shaping the hollow",
+      "optional": true,
+      "title": "Face the lane",
+      "concept": "Attributes and list items",
+      "summary": "Turn the two southern cottages to face the lane.",
+      "requires": ["kindle-the-hollow"],
+      "unlocks": ["read", "turn"],
+      "goal": {
+        "type": "houses_facing",
+        "ids": ["row-south-a", "row-workshop"],
+        "facing": "N",
+        "noun": "houses facing the lane"
+      },
+      "focus": {
+        "at": [12, 18]
+      },
+      "lesson": [
+        "The hollow is lit, and now your code can do more than light it: it can see the buildings, and turn them.",
+        "",
+        "A house is an **object**, like a lamp. Ask a place for its houses and print what each one knows about itself:",
+        "",
+        "```",
+        "row = world.zone(\"cottage-row\")",
+        "for house in row.houses:",
+        "    print(house.id, house.facing, house.cell)",
+        "```",
+        "",
+        "`house.facing` is a **string**: \"north\", \"east\", \"south\" or \"west\". `house.cell` is a list, `[x, y, 0]`, and `house.cell[1]` picks out its second **item**, the y. East is bigger x and north is bigger y.",
+        "",
+        "Two rows of cottages face each other across a lane near y = 18. The northern row already looks at it, but the two southern cottages turn their sides to it. Use an `if` inside the loop to find the houses below the lane, then turn them:",
+        "",
+        "```",
+        "for house in row.houses:",
+        "    if house.cell[1] < 18:",
+        "        house.face(\"north\")",
+        "```",
+        "",
+        "`face` is a method, like `set_lit`. Run shows a ghost of each house that would turn, and nothing is real until you press **Apply**. A house cannot turn where its door would meet water, rock or a wall; the notebook tells you which command was refused and why.",
+        "",
+        "Your code sees houses in places you have visited, or within twelve cells of where you stand. You have walked Cottage Row already, so all of it is there."
+      ],
+      "starter": [
+        "def program(world):",
+        "    row = world.zone(\"cottage-row\")",
+        "    for house in row.houses:",
+        "        print(house.id, house.facing, house.cell)",
+        "        # which houses stand south of the lane? turn them with house.face(\"north\")"
+      ],
+      "hints": [
+        "row.houses is a list. Loop over it with: for house in row.houses:  and read house.cell[1] to see how far north each house stands.",
+        "Write: if house.cell[1] < 18:  inside the loop, then indent house.face(\"north\") beneath it. A smaller y means further south.",
+        "Only the two houses on the south side of the lane should turn. Run to see their ghosts, then Apply."
+      ],
+      "done": "Cottage Row looks at its lane. Your notebook can now read and turn the houses of the hollow."
+    }
+  ]
+}

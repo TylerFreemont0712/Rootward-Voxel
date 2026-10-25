@@ -1,0 +1,9 @@
+{
+  "revision": "2026-10-24-buildings-v1",
+  "asset": "log-cabin",
+  "before_sha256": "2ebf4c763e59ca81c35380e766ed305727d7db765040c127f4737a6f351a4778",
+  "source_sha256": "c22d7bbe3ad6bc0b0001299acf8e08ef66961925c3fb624af34ce0ba286e4d64",
+  "backup": "model.pre-building-polish.blend",
+  "script": "art/source/world/building-polish/v1/edit_sources.py",
+  "note": "Deliberate edit of existing source; original geometry retained except selected entrance components. Common painted roof scale, readable door hardware/thresholds; lamp glass preserved."
+}

@@ -1,0 +1,171 @@
+{
+  "bounds": [
+    -1.70982885360718,
+    0.0,
+    -1.65499997138977,
+    1.70982885360718,
+    3.95799994468689,
+    2.0550000667572
+  ],
+  "geometry_sha256": "47abe414e7a8ea19d564569ab54bb7afa2da3a14e06427c9aa25fbed6e4fc2e1",
+  "material_records": {
+    "gold": {
+      "albedo": [
+        8902,
+        6941,
+        4157,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": ""
+    },
+    "iron": {
+      "albedo": [
+        2235,
+        2667,
+        2745,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": ""
+    },
+    "oak": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "ccfa65227118fb554a23af05bb512c2072592fe9f2e38490e6642ed9fc895e4a"
+    },
+    "oak_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "1f16fd8c242419a9138dfd95dfbcafe4a5dc502518d9ff2b58bd862278223139"
+    },
+    "plaster": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "84c88433b25d3f7c97343d5b04677088d20984bfae51bb16f18f655091c10453"
+    },
+    "roof": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "754e30c92eaca333e4e6fb774af492a0113e33aea6593508674ed37cb7ff9333"
+    },
+    "roof_dark": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "5cd34fe5cb6499a81bbbdf52ca977d8bf15d799aeccb96e4a2a8376951d62447"
+    },
+    "roof_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "9f4b6b48e444834aada72e90008785e3e6a8da6d326d86dbd6aed44afe0531a1"
+    },
+    "stone": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "f87324007fa2b2593b31228f9c5b934d43d5d13396190f5b9073ffac26a0fb59"
+    },
+    "stone_dark": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "227a055ccafa7e3466a881726107eb56594b4fa0a3e93702f34ed6c2615bb02b"
+    },
+    "stone_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "280058a6c5363ee09fcc26468d06642f3058a583bbef36888eff6c85683b7f4a"
+    },
+    "window_warm": {
+      "albedo": [
+        8784,
+        6784,
+        3843,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": ""
+    },
+    "wood": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "5119b2ee1d219e5a1e6489d5d1afea954570d859f1009488c4ae9c3fa5b22e96"
+    },
+    "wood_dark": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "2bc6ae3f9a6f537b18778aea8bb446cb75fbfb3094fb3a965884f257e99e25b2"
+    }
+  },
+  "materials": [
+    "gold",
+    "iron",
+    "oak",
+    "oak_light",
+    "plaster",
+    "roof",
+    "roof_dark",
+    "roof_light",
+    "stone",
+    "stone_dark",
+    "stone_light",
+    "window_warm",
+    "wood",
+    "wood_dark"
+  ],
+  "meshes": 14,
+  "triangles": 3420
+}

@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "asset": "signpost",
+  "version": "v1",
+  "source": "art/source/world/signpost/v1/model.blend",
+  "source_sha256": "731f2f69d7502f992b45600bf3575be3e11a25721ac2551236ad8721af6018e9",
+  "runtime": "assets/world/signpost/model.glb",
+  "runtime_sha256": "2616ff8f7f0763874839bc37c97af37c1c5acb557312d3a485dfa007e2d70de6",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.5,
+      0.0,
+      -0.100000001490116,
+      0.550000011920929,
+      1.29999995231628,
+      0.150000005960464
+    ],
+    "geometry_sha256": "645b74c7247c5f66c132fe0548a462c76354931e18dbba94d9fc23dd90f65583",
+    "material_records": {
+      "cream": {
+        "albedo": [
+          10000,
+          9412,
+          7961,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron": {
+        "albedo": [
+          2235,
+          2667,
+          2745,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_dark": {
+        "albedo": [
+          1490,
+          1765,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_light": {
+        "albedo": [
+          3529,
+          4000,
+          4039,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "plaster_shade": {
+        "albedo": [
+          8275,
+          7765,
+          6431,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "roof": {
+        "albedo": [
+          4000,
+          3137,
+          6039,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "roof_dark": {
+        "albedo": [
+          2863,
+          2353,
+          4431,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood": {
+        "albedo": [
+          4627,
+          3137,
+          2235,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood_light": {
+        "albedo": [
+          6431,
+          4824,
+          3176,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "cream",
+      "iron",
+      "iron_dark",
+      "iron_light",
+      "plaster_shade",
+      "roof",
+      "roof_dark",
+      "wood",
+      "wood_light"
+    ],
+    "meshes": 9,
+    "triangles": 1328
+  }
+}

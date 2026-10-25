@@ -1,0 +1,16 @@
+{
+  "asset": "brook-mill",
+  "version": "v1",
+  "status": "unplaced candidate",
+  "tool": "Blender 5.2.2 LTS",
+  "initial_authoring_record": "art/source/world/expansion-kit/v1/author.py",
+  "record_sha256": "9be0b46469dc91f0fe750ea460ace58291eb6147a8e42200c073472ccf319cf1",
+  "seed": 231023,
+  "seed_scope": "deterministic geometry/tile variation only; no AI generation",
+  "texture_source": "art/source/world/textures/v1/manifest.json",
+  "authority": "saved model.blend; normal rebuild uses scripts/world-art.sh build brook-mill",
+  "review_edits": [
+    "art/source/world/expansion-kit/v1/refine.py"
+  ],
+  "source_sha256": "5228ec5592c969cae1bce4559401248b1abe6b558eebd93080251e9e568b4cc8"
+}

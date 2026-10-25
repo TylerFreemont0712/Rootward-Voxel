@@ -1,0 +1,9 @@
+{
+  "asset": "stone-well",
+  "version": "v1",
+  "created": "2026-10-23T08:44:02.017336+00:00",
+  "author": "art/source/world/doodads-kit/v1/street.py",
+  "author_sha256": "2ba32c9fe7e73ff04175146d5935e4355b20b62ffa80a887be2d60cabfe9aa2e",
+  "voxel_metres": 0.05,
+  "note": "One-time procedural voxel authoring. model.blend becomes the editable source after this run."
+}

@@ -1,0 +1,9 @@
+{
+  "asset": "grain-sacks",
+  "version": "v1",
+  "created": "2026-10-23T08:56:15.589808+00:00",
+  "author": "art/source/world/doodads-kit/v1/farmyard.py",
+  "author_sha256": "473ae1640a637463039e5f7588946dcd6b0e9f1c813e35be1afdd1702413b62e",
+  "voxel_metres": 0.05,
+  "note": "One-time procedural voxel authoring. model.blend becomes the editable source after this run."
+}

@@ -1,0 +1,74 @@
+{
+  "watering-can": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Watering Can",
+    "source": "art/source/world/watering-can/v1/model.blend",
+    "runtime": "assets/world/watering-can/model.glb",
+    "pivot": "ground origin at the bounding-box centre; body axis 0.125 m behind it",
+    "logical_footprint": null,
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Galvanised can with a dark foot ring, a spout rising to a holed rose, and an iron carrying handle. 0.25 m across the body, 0.35 m tall. No blocking footprint is proposed; the spout and rose overhang the body."
+  },
+  "wooden-bucket": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Wooden Bucket",
+    "source": "art/source/world/wooden-bucket/v1/model.blend",
+    "runtime": "assets/world/wooden-bucket/model.glb",
+    "pivot": "ground origin at the bucket's centre, on the body axis",
+    "logical_footprint": null,
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Eight oak staves in a one-voxel shell, a dark floor, two iron hoops, a little water in the top and a twine bail. 0.3 m across, 0.35 m tall to the rim, about 0.45 m with the bail. No blocking footprint is proposed."
+  },
+  "wheelbarrow": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Wheelbarrow",
+    "source": "art/source/world/wheelbarrow/v1/model.blend",
+    "runtime": "assets/world/wheelbarrow/model.glb",
+    "pivot": "ground origin at the bounding-box centre; tray centre 0.125 m toward the handles",
+    "logical_footprint": [-0.225, -0.45, 0.45, 0.9],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Timber tray with an iron rim and a hay load, one wheel at -Y on an iron axle, and two handles at +Y. 0.45 m wide, 0.9 m long, 0.5 m tall. The footprint covers the whole barrow because the wheel and handle grips would block a walker."
+  },
+  "clay-jug": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Clay Jug",
+    "source": "art/source/world/clay-jug/v1/model.blend",
+    "runtime": "assets/world/clay-jug/model.glb",
+    "pivot": "ground origin at the bounding-box centre; body axis 0.05 m toward -X",
+    "logical_footprint": null,
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Terracotta jug with a wide belly, a cream glazed shoulder, neck and lip, a dark throat and one loop handle on the +X side. 0.45 m across the belly, 0.5 m tall. No blocking footprint is proposed; the handle overhangs the belly."
+  },
+  "notice-board": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Notice Board",
+    "source": "art/source/world/notice-board/v1/model.blend",
+    "runtime": "assets/world/notice-board/model.glb",
+    "pivot": "ground origin at the bounding-box centre; posts 0 to 0.1 m behind it",
+    "logical_footprint": [-0.4, -0.1, 0.8, 0.2],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Framed timber board on two posts with a cream notice, teal pins and a violet tiled cap. 0.8 m wide board, 1.2 m tall with the cap. The footprint covers the posts and the board line; the cap overhangs it by about 0.05 m."
+  },
+  "milk-churn": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Milk Churn",
+    "source": "art/source/world/milk-churn/v1/model.blend",
+    "runtime": "assets/world/milk-churn/model.glb",
+    "pivot": "ground origin on the body axis",
+    "logical_footprint": [-0.2, -0.2, 0.4, 0.4],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Tall galvanised churn on a dark iron foot, with two iron bands, a flared lid and a small arched iron handle on the lid. 0.4 m across the body, 0.8 m tall. The footprint is the body; the bands and lid rim overhang it by 0.03 to 0.05 m."
+  }
+}

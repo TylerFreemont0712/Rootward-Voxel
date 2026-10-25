@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "date": "2026-10-24",
+  "engine": "Godot 4.7.2",
+  "command": "scripts/test.sh",
+  "exit_code": 0,
+  "suite_count": 19,
+  "total_checks": 3271,
+  "suites": [
+    {
+      "suite": "Voxel lab",
+      "checks": 73
+    },
+    {
+      "suite": "Area documents and the level's teaching arc",
+      "checks": 109
+    },
+    {
+      "suite": "Places and village",
+      "checks": 93
+    },
+    {
+      "suite": "House travel and saves",
+      "checks": 22
+    },
+    {
+      "suite": "Build rules",
+      "checks": 386
+    },
+    {
+      "suite": "Builder scenery",
+      "checks": 62
+    },
+    {
+      "suite": "Builder library",
+      "checks": 570
+    },
+    {
+      "suite": "Working prop flow",
+      "checks": 16
+    },
+    {
+      "suite": "Ground",
+      "checks": 121
+    },
+    {
+      "suite": "Build mode",
+      "checks": 139
+    },
+    {
+      "suite": "Learning interface helpers",
+      "checks": 32
+    },
+    {
+      "suite": "Voxel app",
+      "checks": 95
+    },
+    {
+      "suite": "Grid movement and routing",
+      "checks": 30
+    },
+    {
+      "suite": "Painted art and idle contract",
+      "checks": 100
+    },
+    {
+      "suite": "Shared frame skins",
+      "checks": 66
+    },
+    {
+      "suite": "World art, area views and projected facing",
+      "checks": 471
+    },
+    {
+      "suite": "Authoring source protection",
+      "checks": 7
+    },
+    {
+      "suite": "Active pipelines and handoff links",
+      "checks": 758
+    },
+    {
+      "suite": "Ground art handoff",
+      "checks": 121
+    }
+  ],
+  "windowed_reviews": [
+    {
+      "tool": "tools/builder_library_review.gd",
+      "resolution": [
+        1600,
+        1000
+      ],
+      "objects": 50,
+      "individual_views": [
+        "zoom 13 gameplay",
+        "zoom 5 detail"
+      ],
+      "category_scenes": 5
+    },
+    {
+      "tool": "tools/builder_library_tour.gd",
+      "resolution": [
+        1600,
+        1000
+      ],
+      "interactive_objects": 16,
+      "python_preview_apply_undo": true,
+      "saved_continue": true
+    },
+    {
+      "tool": "tools/builder_library_tour.gd",
+      "resolution": [
+        1280,
+        720
+      ],
+      "interactive_objects": 16,
+      "python_preview_apply_undo": true,
+      "saved_continue": true
+    }
+  ],
+  "final_documentation_check": {
+    "command": "python3 test/test_pipeline_handoff.py",
+    "checks": 762,
+    "exit_code": 0
+  }
+}

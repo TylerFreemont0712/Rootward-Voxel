@@ -1,0 +1,11 @@
+{
+  "reason": "Gameplay review: a solid upper cabinet box hid the authored bottles. Opened its shelves, kept lower drawers, side walls and back.",
+  "method": "Deliberate BMesh source edit; no regeneration.",
+  "before_sha256": "f99c59f6dab3f15df54867892040a3366bfeae5939505e1b6eddfeadb13d9b6b",
+  "after_sha256": "7c27fc837f7d4e7b4ab28a43903eb35818ecf2a0c3eabb7d221515b72758da42",
+  "backup": "model.before-open-shelves.blend",
+  "script_sha256": "e8b0c73cf4d3fd2fb72e7e436a09dd03a7ccd9cd588db8285e6f0ad6f37eaa59",
+  "guarded_record": "refine_shelves.py",
+  "guarded_record_sha256": "6c7a4891e50c0e44bd2f5643e14de9228bdaa06d38ec95e8a3cad5af193abb82",
+  "record_note": "Execution hash records the original edit. The saved record adds only a repeat-run guard after execution."
+}

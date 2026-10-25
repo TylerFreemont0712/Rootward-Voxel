@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-24",
+  "engine": "Godot 4.7.2",
+  "existing_buildings_updated": 8,
+  "lamppost_updated": true,
+  "new_buildings": [
+    "hollow-bakery",
+    "hollow-smithy"
+  ],
+  "placed_buildings": 23,
+  "builder_entries": 97,
+  "building_flow_checks": 48,
+  "window_sizes": [
+    "1600x1000",
+    "1280x720"
+  ],
+  "playthrough": {
+    "quests_complete": 6,
+    "lamps_lit": 19,
+    "failed": false
+  },
+  "pre_existing_art_checked": 924,
+  "deliberate_existing_art_changes": [
+    "art/source/world/lantern-loft/v1/model.blend",
+    "art/source/world/mill-house/v1/model.blend",
+    "art/source/world/cottage/v1/model.blend",
+    "art/source/world/brook-mill/v1/model.blend",
+    "art/source/world/hearth-house/v1/model.blend",
+    "art/source/world/log-cabin/v1/model.blend",
+    "art/source/world/log-cabin-large/v1/model.blend",
+    "art/source/world/log-cabin-large-teal/v1/model.blend",
+    "art/source/world/lamppost/v1/model.blend",
+    "assets/world/lamppost/model.glb",
+    "assets/world/log-cabin-large-teal/model_roof_tile_teal.png",
+    "assets/world/log-cabin-large-teal/model.glb",
+    "assets/world/log-cabin-large/model_roof_tile_violet.png",
+    "assets/world/log-cabin-large/model.glb",
+    "assets/world/log-cabin/model_roof_tile_violet.png",
+    "assets/world/log-cabin/model.glb",
+    "assets/world/hearth-house/model.glb",
+    "assets/world/brook-mill/model.glb",
+    "assets/world/cottage/model_roof_tile_violet.png",
+    "assets/world/cottage/model_roof_tile_violet_6.png",
+    "assets/world/cottage/model.glb",
+    "assets/world/mill-house/model_roof_tile_teal.png",
+    "assets/world/mill-house/model.glb",
+    "assets/world/lantern-loft/model.glb"
+  ],
+  "unexpected_art_changes": [],
+  "full_suite": {
+    "status": "passed_with_clean_followup",
+    "suites": 24,
+    "checks": 4757,
+    "note": "All 24 test suites passed. Transient messages from the concurrently edited ground shader were resolved; affected tests and a real windowed game run passed cleanly afterward."
+  },
+  "evidence": {
+    "hollow-bakery-builder-1280.png": "78c94a76ab09993ce8be556459e78146d103017d7ce8450393dfa78e37789566",
+    "hollow-bakery.png": "5548308007bce03afedbaa7884bdd837f185847d1b91c7ef11dc0da0300a5d1a",
+    "mill-after.png": "e02fa2a67a44970a998e0fb1412ea82d59834c5487a5a29f2afd4481c95203e1",
+    "lantern-loft.png": "3c4dea66a942d3282b09fa1ddafbb9337fe4fb63e1dcc72518b4e2c33046f404",
+    "hollow-smithy-builder-1280.png": "d6b5c5365ba8f083041ff7a7724efedd1f7797c12bf8c9e3c6dcbf36ba3e489e",
+    "mill-and-lamps-1280.png": "ba6b637d337025a9cec13a6393bae09c0c4da26d67b36dc16c0f3d62e3497079",
+    "mill-house.png": "7deb1d5105c995ccf552d4766d9ac954eadc7448c4e6bb570f4570fef34d3267",
+    "log-cabin.png": "d61ca8c89be42af91d4bbbec82a15bdafdcf4249b2f2e67f99970ddf0cab74a2",
+    "hollow-smithy.png": "a92660b0034c232e0eaa24bd73cd7fa54f8771eb8ab6bb749c4e5489ba37793d",
+    "log-cabin-large.png": "be3c64d7dcddf20231ca545c18e986434520f1df5a317e7c58e63b7a3be15964",
+    "brook-mill.png": "b231e7ca7aa709af5ab71b5defb41aa36178b3363975d63fea7d4be1bf0f9c6e",
+    "lamppost.png": "3e5dbf436ffa6aea2c199defda663778246f14b7199fb634414bc1054d8fb7cd",
+    "mill-before.png": "730bebdcde875bf887ee56e3089e04eefcc2b27943d62ae3e938984c0b9febc5",
+    "cottage.png": "8a3f7451f9a4e906a620d2a7a0fcef7d6aa58f58a4047933d51a4a2fb4cedb57",
+    "lamp-lit.png": "2dc892d34c241dc9fa1e4d851486556f548d4d84169883e7746ceacabeae9c65",
+    "hearth-house.png": "683c871f027005081133ba1d4710c38728329f5e0890c0ccacc32cf8a8727289",
+    "log-cabin-large-teal.png": "c019d2adfb835ca0629f80b1322396521189d4f1481ca3bc74d79d5638385986"
+  },
+  "follow_up": {
+    "code-build-clean.log": {
+      "checks": 86,
+      "status": "passed",
+      "log_sha256": "bd473f8b204abdf8fafc46cf3357193efb649f25d816dab00d87d1399c2cb297"
+    },
+    "app-clean.log": {
+      "checks": 95,
+      "status": "passed",
+      "log_sha256": "ac0140fa23d915be72a128686ba07449b89d4e7f0720b63a70a614a1b755512c"
+    },
+    "current-tour.log": {
+      "checks": 48,
+      "status": "passed",
+      "log_sha256": "4931683d29fe2108652c445d6181dfdebe8d139069ff441a27a46a8392242c63"
+    }
+  }
+}

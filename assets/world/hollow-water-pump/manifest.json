@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "hollow-water-pump",
+  "version": "v1",
+  "source": "art/source/world/hollow-water-pump/v1/model.blend",
+  "source_sha256": "25188645009f55a596bb9ac75ac17627eef89d1ac1f960451fc49f15a6eea063",
+  "runtime": "assets/world/hollow-water-pump/model.glb",
+  "runtime_sha256": "05d55adf295e1a3c85dd86a5e3ef1e84aeb2f33cd9bf0e9ff69099e75be2783e",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.379999995231628,
+      0.0,
+      -0.535000026226044,
+      0.379999995231628,
+      1.26499998569489,
+      0.430000007152557
+    ],
+    "geometry_sha256": "4a2f28a54a2f071da1328276443a7d65e0e07e1512b4403ae0e2623d16daf173",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+      },
+      "cloth_teal": {
+        "albedo": [
+          2039,
+          4824,
+          5216,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "iron": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "5aa901d0159be0f4db2bbfe0c3cee98970ef021a1f5b88ca2db951035e1bc042"
+      },
+      "oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "state_glow": {
+        "albedo": [
+          5255,
+          8941,
+          8196,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "stone_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "water": {
+        "albedo": [
+          4078,
+          6980,
+          6902,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "brass",
+      "cloth_teal",
+      "iron",
+      "oak",
+      "state_glow",
+      "stone",
+      "stone_dark",
+      "water"
+    ],
+    "meshes": 9,
+    "triangles": 212
+  }
+}

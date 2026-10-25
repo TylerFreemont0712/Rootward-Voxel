@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "mossy-boulder",
+  "version": "v1",
+  "source": "art/source/world/mossy-boulder/v1/model.blend",
+  "source_sha256": "09700b798674dae2e7d7c1d46787a826343ea57ca56fbf5ddcd60cbfaf5bb08a",
+  "runtime": "assets/world/mossy-boulder/model.glb",
+  "runtime_sha256": "f01c71715276f1551532bda8a66f3dfa460c661ca309321ad2c042f8b368b242",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.400000005960464,
+      0.0,
+      -0.400000005960464,
+      0.400000005960464,
+      0.649999976158142,
+      0.400000005960464
+    ],
+    "geometry_sha256": "e6fb4f88868c2d80744b38dae882955bedd7c3179073beb114111d342042e02d",
+    "material_records": {
+      "moss": {
+        "albedo": [
+          3882,
+          5451,
+          2549,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "moss_dark": {
+        "albedo": [
+          3059,
+          4627,
+          2314,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "moss_light": {
+        "albedo": [
+          5137,
+          6588,
+          3216,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "stone": {
+        "albedo": [
+          5725,
+          6039,
+          6039,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "stone_dark": {
+        "albedo": [
+          3843,
+          4353,
+          4510,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "stone_light": {
+        "albedo": [
+          7373,
+          7608,
+          6824,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "moss",
+      "moss_dark",
+      "moss_light",
+      "stone",
+      "stone_dark",
+      "stone_light"
+    ],
+    "meshes": 6,
+    "triangles": 2272
+  }
+}

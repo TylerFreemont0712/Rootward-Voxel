@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "lamppost",
+  "version": "v1",
+  "source": "art/source/world/lamppost/v1/model.blend",
+  "source_sha256": "3386d38e03318d696ddadbfd48e8ba0e375a635ec8886df072bd6006d915afa0",
+  "runtime": "assets/world/lamppost/model.glb",
+  "runtime_sha256": "53c649a50e84701b82c03b8a82990c919a5e2bf3d66b4aabb9ad6e2437711b95",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.351406574249268,
+      0.00999999791383743,
+      -0.330000013113022,
+      0.308593451976776,
+      2.86313581466675,
+      0.879999995231628
+    ],
+    "geometry_sha256": "8526f3600dc29e768294620f33fd9a6ca35ceb3cab5828b65e4fcd0c27938a66",
+    "material_records": {
+      "gold": {
+        "albedo": [
+          8323,
+          6800,
+          4100,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "5aa901d0159be0f4db2bbfe0c3cee98970ef021a1f5b88ca2db951035e1bc042"
+      },
+      "lamp_glass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "eaffd6138bfdf06d9e886720c7ca037ef625d0e0d96b11dad3856184234565ed"
+      },
+      "stone_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "c653dcdd9a95ae2b7f30d9f14c2eb82d9ad1aa744a2a4540f66fe61db66fef72"
+      },
+      "stone_warm": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "a4c740ef95322fab6b4ac67a310027e5410621625d11d1583972f3f3de6a7c18"
+      },
+      "wood": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "40e0dbb61ca7b2b1b22bbea7b9482dc707d8f13fa787410324e7c100f32700f7"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      },
+      "wood_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      }
+    },
+    "materials": [
+      "gold",
+      "iron",
+      "lamp_glass",
+      "stone_light",
+      "stone_warm",
+      "wood",
+      "wood_dark",
+      "wood_light"
+    ],
+    "meshes": 25,
+    "triangles": 888
+  }
+}

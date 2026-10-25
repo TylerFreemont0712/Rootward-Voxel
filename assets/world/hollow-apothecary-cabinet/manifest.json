@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "asset": "hollow-apothecary-cabinet",
+  "version": "v1",
+  "source": "art/source/world/hollow-apothecary-cabinet/v1/model.blend",
+  "source_sha256": "32347664b1cd4a2eecc654e15ad9f5afa6b113ae731451dfb6e6351ecda5b48b",
+  "runtime": "assets/world/hollow-apothecary-cabinet/model.glb",
+  "runtime_sha256": "f43062815457deccaab3270afcaca37cf589870f8aa8ceac21f1f0bc394f861a",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.680000007152557,
+      0.0,
+      -0.330000013113022,
+      0.680000007152557,
+      1.69485282897949,
+      0.392500013113022
+    ],
+    "geometry_sha256": "bc7ea8962234587abe376d65a4853202f80ab869069c7b75f4a85be8db7a807a",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+      },
+      "clay": {
+        "albedo": [
+          7216,
+          4196,
+          2706,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "cream": {
+        "albedo": [
+          9333,
+          8824,
+          7294,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "glass_blue": {
+        "albedo": [
+          4667,
+          6078,
+          7176,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "glass_teal": {
+        "albedo": [
+          4118,
+          6745,
+          6745,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "glass_violet": {
+        "albedo": [
+          6039,
+          4980,
+          6824,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "oak_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "plaster": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "7e39c012eba9e2b2c9fe8e7603742c8adb106a7440620c83278976f44b7a0a6b"
+      },
+      "wood": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "f556d148ef2bc03c2e5f9b03b3794387093d909a3a5c75c69864a1d38969c3e9"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "brass",
+      "clay",
+      "cream",
+      "glass_blue",
+      "glass_teal",
+      "glass_violet",
+      "oak",
+      "oak_light",
+      "plaster",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 11,
+    "triangles": 1728
+  }
+}

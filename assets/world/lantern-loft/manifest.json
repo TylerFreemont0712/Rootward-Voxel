@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "asset": "lantern-loft",
+  "version": "v1",
+  "source": "art/source/world/lantern-loft/v1/model.blend",
+  "source_sha256": "71cff3cd247155403d21e6b28074a134d3bb7b51ea87845cec5c39de3243bdee",
+  "runtime": "assets/world/lantern-loft/model.glb",
+  "runtime_sha256": "39f0dcdcec5f62604a2c04c5b22222a17b3aba6e1b3ba5d6ac30b72d9238cb46",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -3.91003465652466,
+      0.0,
+      -3.9850001335144,
+      4.32999992370605,
+      8.16249942779541,
+      4.53999996185303
+    ],
+    "geometry_sha256": "1e2865c1bb04d4a2169af5d620b9d3f820346bba4ac1f8c88510264f4539551d",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          8902,
+          6941,
+          4157,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "cream": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "5f89accf830012c0d8747dfc123a035d612c2055cce0e90fb353cae31eca34b3"
+      },
+      "dark": {
+        "albedo": [
+          1490,
+          2118,
+          1961,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "entrance_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "ecae5199b69038bd8ac0746401ca259de6ac72fee70b081592583da819d8180f"
+      },
+      "glass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "c7e3ebd56d5c34435f9bd64042ed53db44c1c20713fe0136564db92c2862f2d1"
+      },
+      "glow": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "34888c2e2c9717174a8dc7b83a3a1927ba72ecd609db6f467d1fa5338cf4d537"
+      },
+      "iron": {
+        "albedo": [
+          2235,
+          2667,
+          2745,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "mortar": {
+        "albedo": [
+          4196,
+          3843,
+          3176,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "oak_edge": {
+        "albedo": [
+          7725,
+          5804,
+          3451,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "plaster_warm": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "7e39c012eba9e2b2c9fe8e7603742c8adb106a7440620c83278976f44b7a0a6b"
+      },
+      "roof_teal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "a1e69cede1f421957ff68019617ffff6b32f6262d8278ce57bdc5952a0820724"
+      },
+      "roof_teal_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "0fe68beee8a7ec889de5a27822411431eef9eacb003d6d8c8085cfbe7c012504"
+      },
+      "roof_teal_hi": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "1cecbae812c594287aee05d666d85b59651a3fe8840ef88451c4bd3f9230b792"
+      },
+      "stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "a4c740ef95322fab6b4ac67a310027e5410621625d11d1583972f3f3de6a7c18"
+      },
+      "stone_edge": {
+        "albedo": [
+          8314,
+          7882,
+          6784,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "a92e557878dd41684ea487c0c747626b85ce49eb9145e8d2de4a491cea6f8b77"
+      }
+    },
+    "materials": [
+      "brass",
+      "cream",
+      "dark",
+      "entrance_stone",
+      "glass",
+      "glow",
+      "iron",
+      "mortar",
+      "oak",
+      "oak_edge",
+      "plaster_warm",
+      "roof_teal",
+      "roof_teal_dark",
+      "roof_teal_hi",
+      "stone",
+      "stone_edge",
+      "timber"
+    ],
+    "meshes": 80,
+    "triangles": 41830
+  }
+}

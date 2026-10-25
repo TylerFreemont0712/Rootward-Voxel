@@ -1,0 +1,248 @@
+{
+  "schema": 1,
+  "asset": "concept-cottage",
+  "version": "v1",
+  "source": "art/source/world/concept-cottage/v1/model.blend",
+  "source_sha256": "2d7fe1531beac5925286c24468edd3a108210f60e8084e6d12e2c761ea7a502b",
+  "runtime": "assets/world/concept-cottage/model.glb",
+  "runtime_sha256": "74b910bad0d94ff41f818b057e03d4121d93c09d8235833a34e20cabe2097aa2",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -2.26999998092651,
+      0.0,
+      -2.15000009536743,
+      2.26999998092651,
+      5.16499996185303,
+      2.54999995231628
+    ],
+    "geometry_sha256": "6bfe5369bc826ff81fcebc05c2681224f4ce962caee1fce8b7b873ac7f7f837c",
+    "material_records": {
+      "cottage_brass": {
+        "albedo": [
+          7725,
+          5686,
+          2392,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_endgrain": {
+        "albedo": [
+          6471,
+          4196,
+          1961,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_flower": {
+        "albedo": [
+          10000,
+          9412,
+          7961,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_glass": {
+        "albedo": [
+          3255,
+          3843,
+          4471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_iron": {
+        "albedo": [
+          2039,
+          2627,
+          2549,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_leaf": {
+        "albedo": [
+          2588,
+          4118,
+          2235,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_leaf_light": {
+        "albedo": [
+          4196,
+          5882,
+          2471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_mortar": {
+        "albedo": [
+          4392,
+          4275,
+          3686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "ddf97c5453c3484d28a38468d27c4f5c16f83f1ed7c5ccbc458882a269cb2dfc"
+      },
+      "cottage_oak_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "ddf97c5453c3484d28a38468d27c4f5c16f83f1ed7c5ccbc458882a269cb2dfc"
+      },
+      "cottage_pollen": {
+        "albedo": [
+          9294,
+          7412,
+          3059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_recess": {
+        "albedo": [
+          1294,
+          1098,
+          863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_roof": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "b8244aff5fc77993f986845e0ad6fe086fdbf0374a7a963a59676f47d7aec82d"
+      },
+      "cottage_roof_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "b8244aff5fc77993f986845e0ad6fe086fdbf0374a7a963a59676f47d7aec82d"
+      },
+      "cottage_roof_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "b8244aff5fc77993f986845e0ad6fe086fdbf0374a7a963a59676f47d7aec82d"
+      },
+      "cottage_stone": {
+        "albedo": [
+          7765,
+          7294,
+          6275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_stone_light": {
+        "albedo": [
+          8784,
+          8275,
+          7098,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_stone_warm": {
+        "albedo": [
+          7255,
+          6745,
+          5686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "cottage_timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "ddf97c5453c3484d28a38468d27c4f5c16f83f1ed7c5ccbc458882a269cb2dfc"
+      },
+      "cottage_window": {
+        "albedo": [
+          10000,
+          7882,
+          4118,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "cottage_brass",
+      "cottage_endgrain",
+      "cottage_flower",
+      "cottage_glass",
+      "cottage_iron",
+      "cottage_leaf",
+      "cottage_leaf_light",
+      "cottage_mortar",
+      "cottage_oak",
+      "cottage_oak_light",
+      "cottage_pollen",
+      "cottage_recess",
+      "cottage_roof",
+      "cottage_roof_dark",
+      "cottage_roof_light",
+      "cottage_stone",
+      "cottage_stone_light",
+      "cottage_stone_warm",
+      "cottage_timber",
+      "cottage_window"
+    ],
+    "meshes": 85,
+    "triangles": 21504
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "asset": "log-cabin-large-teal",
+  "version": "v1",
+  "created": "2026-10-23T02:15:08.033313+00:00",
+  "seed_sha256": "b6bbaa36ceee9010deeb0028deb39f66df495626d985b856dab1ef58b6c4af05",
+  "recipe": "pipeline/world_seed.gd",
+  "recipe_sha256": "750e440695b1662d8e5932d54510219d8b5381dd2f8c0a9bc0663f6dc1dde2c4",
+  "geometry_recipe_sha256": "3b220bd1a13ea1182797f7aecefbc64966e34eda4444bc48ad9c83d0a5037b3c",
+  "note": "One-way procedural bootstrap. model.blend becomes the editable source after init."
+}

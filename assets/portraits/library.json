@@ -1,0 +1,51 @@
+{
+  "portraits": {
+    "bram": {
+      "runtime": "res://assets/portraits/bram.png",
+      "sha256": "751a32148299acceb66afb25d84a819b88e9470f434518d75677dafc55723baf",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "res://art/source/portraits/v1/bram.png"
+    },
+    "mira": {
+      "runtime": "res://assets/portraits/mira.png",
+      "sha256": "3361513f4644ed933ed49cdc04fd3adbd385aa21577a041f525d05519f71f512",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "res://art/source/portraits/v1/mira.png"
+    },
+    "nell": {
+      "runtime": "res://assets/portraits/nell.png",
+      "sha256": "e0effea7c32cc87d383723fe72434baf6b805b122938d51cfbddd4c22ebc411b",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "res://art/source/portraits/v1/nell.png"
+    },
+    "rowan": {
+      "runtime": "res://assets/portraits/rowan.png",
+      "sha256": "f7d1c7b52a992c2901c0591b6e669f5965e099a5fdf7769b32b4a3b21e382ee5",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "res://art/source/portraits/v1/rowan.png"
+    },
+    "tessa": {
+      "runtime": "res://assets/portraits/tessa.png",
+      "sha256": "73dfce8d4a257e3b8d4ab7ad8c8a6794537448af3bdb48d19fecb9796dcbf8b1",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "res://art/source/portraits/v1/tessa.png"
+    }
+  },
+  "schema": 1,
+  "version": "v1"
+}

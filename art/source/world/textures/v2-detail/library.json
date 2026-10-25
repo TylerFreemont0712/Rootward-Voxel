@@ -1,0 +1,178 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed",
+  "seed": "Not exposed",
+  "references": [
+    "art/source/world/textures/v1/contact-sheet.png",
+    "assets/world/textures/lush/plank_wood.png",
+    "reference/voxel-isometric.png"
+  ],
+  "materials": [
+    {
+      "id": "herringbone_oak",
+      "title": "Herringbone Oak",
+      "tile": 1.5,
+      "slots": [
+        "timber",
+        "floor"
+      ],
+      "ground": true,
+      "description": "Honey-brown oak parquet in a clear small herringbone zigzag. Precisely staggered interlocking narrow wooden fingers, subtle knots and warm grain, fine dark joints. Restrained cottage craftsmanship.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Honey-brown oak parquet in a clear small herringbone zigzag. Precisely staggered interlocking narrow wooden fingers, subtle knots and warm grain, fine dark joints. Restrained cottage craftsmanship."
+    },
+    {
+      "id": "terracotta_tile",
+      "title": "Terracotta Quarry Tile",
+      "tile": 1.5,
+      "slots": [
+        "masonry",
+        "floor"
+      ],
+      "ground": true,
+      "description": "Rust and burnt-orange square hand-fired terracotta quarry floor tiles, thin warm grey grout, gently varied tile colors, subtly chipped corners and worn matte clay. A straight regular grid.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Rust and burnt-orange square hand-fired terracotta quarry floor tiles, thin warm grey grout, gently varied tile colors, subtly chipped corners and worn matte clay. A straight regular grid."
+    },
+    {
+      "id": "encaustic_tile",
+      "title": "Teal Encaustic Tile",
+      "tile": 1.5,
+      "slots": [
+        "masonry",
+        "floor"
+      ],
+      "ground": true,
+      "description": "Cream and desaturated teal encaustic floor tiles with a restrained small repeating diamond-and-four-leaf motif. Cozy old cottage hallway, crisp grout grid, simple geometric ornament, light wear. No intricate busy modern patterns.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Cream and desaturated teal encaustic floor tiles with a restrained small repeating diamond-and-four-leaf motif. Cozy old cottage hallway, crisp grout grid, simple geometric ornament, light wear. No intricate busy modern patterns."
+    },
+    {
+      "id": "limestone_flags",
+      "title": "Limestone Flags",
+      "tile": 1.5,
+      "slots": [
+        "walls",
+        "masonry",
+        "floor"
+      ],
+      "ground": true,
+      "description": "Pale warm-cream limestone flagstones in a repeating mixed rectangular coursed paving layout, fine grey-beige joints, soft worn edges and sparse small grain. Warm old village courtyard and hearth slabs.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Pale warm-cream limestone flagstones in a repeating mixed rectangular coursed paving layout, fine grey-beige joints, soft worn edges and sparse small grain. Warm old village courtyard and hearth slabs."
+    },
+    {
+      "id": "limewash",
+      "title": "Warm Limewash",
+      "tile": 1.5,
+      "slots": [
+        "walls"
+      ],
+      "description": "Warm ivory limewashed plaster with subtle hand-trowelled cloudy strokes and fine chalk grain, calm low contrast, a few faint hairline variations. Continuous surface, no bricks, no repeating obvious blobs, no stain borders.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Warm ivory limewashed plaster with subtle hand-trowelled cloudy strokes and fine chalk grain, calm low contrast, a few faint hairline variations. Continuous surface, no bricks, no repeating obvious blobs, no stain borders."
+    },
+    {
+      "id": "sage_wallpaper",
+      "title": "Sage Vine Wallpaper",
+      "tile": 1.5,
+      "slots": [
+        "walls"
+      ],
+      "description": "Quiet cream cottage wallpaper with small repeating sage-green leafy vine sprigs and tiny muted ochre dots. Delicate regular botanical repeat, widely spaced, warm parchment texture, modest old village taste rather than elaborate floral luxury.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Quiet cream cottage wallpaper with small repeating sage-green leafy vine sprigs and tiny muted ochre dots. Delicate regular botanical repeat, widely spaced, warm parchment texture, modest old village taste rather than elaborate floral luxury."
+    },
+    {
+      "id": "timber_panels",
+      "title": "Oak Wainscot Panels",
+      "tile": 1.5,
+      "slots": [
+        "walls",
+        "timber"
+      ],
+      "description": "Warm medium oak vertical wainscot wall panels, shallow beveled edges, slim raised rails dividing broad rectangular panels, subdued straight grain and age. The panel arrangement repeats across all borders, no border or frame around the whole image.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Warm medium oak vertical wainscot wall panels, shallow beveled edges, slim raised rails dividing broad rectangular panels, subdued straight grain and age. The panel arrangement repeats across all borders, no border or frame around the whole image."
+    },
+    {
+      "id": "red_brick",
+      "title": "Handmade Red Brick",
+      "tile": 1,
+      "slots": [
+        "walls",
+        "masonry"
+      ],
+      "description": "Small hand-moulded warm russet red and muted burnt-orange bricks laid in staggered running bond, pale buff lime mortar, slight handpainted corner wear and individual brick color variation. Cozy village bakehouse masonry, no graffiti.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Small hand-moulded warm russet red and muted burnt-orange bricks laid in staggered running bond, pale buff lime mortar, slight handpainted corner wear and individual brick color variation. Cozy village bakehouse masonry, no graffiti."
+    },
+    {
+      "id": "riverstone",
+      "title": "Riverstone Masonry",
+      "tile": 1,
+      "slots": [
+        "walls",
+        "masonry"
+      ],
+      "description": "Rounded grey-teal and warm light-grey river stones set tightly into warm pale mortar, irregular sizes, shallow coursed wall masonry. Lightly worn smooth pebble faces with restrained highlights, no large black cavities, no green moss dominating.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Rounded grey-teal and warm light-grey river stones set tightly into warm pale mortar, irregular sizes, shallow coursed wall masonry. Lightly worn smooth pebble faces with restrained highlights, no large black cavities, no green moss dominating."
+    },
+    {
+      "id": "slate_shingles",
+      "title": "Blue Slate Shingles",
+      "tile": 1.2,
+      "slots": [
+        "roof"
+      ],
+      "description": "Overlapping small blue-grey slate roof shingles with quiet violet undertones, staggered rows, gently chipped lower edges and soft painted surface grain. Repeating flat sheet of many shingles, no perspective or visible roof silhouette.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Overlapping small blue-grey slate roof shingles with quiet violet undertones, staggered rows, gently chipped lower edges and soft painted surface grain. Repeating flat sheet of many shingles, no perspective or visible roof silhouette."
+    },
+    {
+      "id": "cedar_shingles",
+      "title": "Cedar Shingles",
+      "tile": 1.2,
+      "slots": [
+        "roof"
+      ],
+      "description": "Weathered warm muted cedar roof shingles with staggered rows, individual tapered lower ends, subtle split wood grain and mellow tan-brown variations. Repeating flat sheet of many shingles, no perspective or visible roof silhouette.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Weathered warm muted cedar roof shingles with staggered rows, individual tapered lower ends, subtle split wood grain and mellow tan-brown variations. Repeating flat sheet of many shingles, no perspective or visible roof silhouette."
+    },
+    {
+      "id": "copper_patina",
+      "title": "Patinated Copper",
+      "tile": 1,
+      "slots": [
+        "metal",
+        "roof"
+      ],
+      "roughness": 0.68,
+      "metallic": 0.5,
+      "description": "Aged copper sheet with restrained mottled turquoise verdigris, subdued brown-copper showing through and very fine hammered grain. Continuous seamless metal, no bolts, no lettering, no raised frame, no object reflection or specular hotspot.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Aged copper sheet with restrained mottled turquoise verdigris, subdued brown-copper showing through and very fine hammered grain. Continuous seamless metal, no bolts, no lettering, no raised frame, no object reflection or specular hotspot."
+    },
+    {
+      "id": "woven_linen",
+      "title": "Woven Linen",
+      "tile": 0.75,
+      "slots": [
+        "fabric"
+      ],
+      "description": "Warm natural cream flax linen, visible small crossing warp and weft threads, subtle irregular fibers, calm tactile weave, even neutral color. Flat upholstery/fabric texture, no folds or clothing silhouette.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Warm natural cream flax linen, visible small crossing warp and weft threads, subtle irregular fibers, calm tactile weave, even neutral color. Flat upholstery/fabric texture, no folds or clothing silhouette."
+    },
+    {
+      "id": "violet_quilt",
+      "title": "Violet Patchwork",
+      "tile": 1,
+      "slots": [
+        "fabric"
+      ],
+      "description": "Village patchwork quilt of small cream, muted plum and lavender squares with simple tiny stitched seams. Subtly varied fabric weave, neat straight checkerboard repeat with a few alternating small diagonal stitch motifs. Flat textile, no folds or object silhouette.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Village patchwork quilt of small cream, muted plum and lavender squares with simple tiny stitched seams. Subtly varied fabric weave, neat straight checkerboard repeat with a few alternating small diagonal stitch motifs. Flat textile, no folds or object silhouette."
+    },
+    {
+      "id": "tooled_leather",
+      "title": "Tooled Chestnut Leather",
+      "tile": 0.75,
+      "slots": [
+        "fabric"
+      ],
+      "description": "Chestnut-brown leather with a quiet repeating shallow pressed diamond and small leaf pattern, fine natural grain, warm worn high points. Continuous upholstered leather surface, no belts, no seams at the image perimeter, no lettering.",
+      "prompt": "Use case: stylized-concept. Asset type: a production seamless square albedo texture for Kindle Hollow, a cozy voxel-inspired fantasy village.\nReferences: image 1 is the current village texture collection for palette and painted surface detail; image 2 is its actual wood texture for finish; image 3 is the approved village art reference. These are style references only; create the specified new material, not a swatch sheet.\nRender ONE flat orthographic straight-on 1024x1024 material tile, filling the entire square, no perspective, scene, objects, labels, grid of samples, outer border, watermark or text. Opaque RGB. Uniform diffuse lighting, no directional lighting, vignette, cast shadows, dramatic highlights, photographic reflectivity or 3D relief render. Painted small-scale material grain, clearly readable chunky forms, restrained mid-value contrast, warm handmade game illustration, consistent with existing painted textures and cream/timber/violet/teal/brass palette. It must remain readable after reducing to 128 pixels and at an isometric gameplay camera. Do not simulate a pixel-art screen.\nCRITICAL: truly seamless repeating texture in both axes. Left/right and top/bottom structures align, edges continue naturally with no frame, edge darkening, bright centre, or distinct isolated stain. Show the material, not a sphere or preview scene.\nMaterial: Chestnut-brown leather with a quiet repeating shallow pressed diamond and small leaf pattern, fine natural grain, warm worn high points. Continuous upholstered leather surface, no belts, no seams at the image perimeter, no lettering."
+    }
+  ]
+}

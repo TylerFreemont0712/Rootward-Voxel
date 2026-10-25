@@ -1,0 +1,452 @@
+{
+  "version": 1,
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "seed": "not exposed",
+  "records": [
+    {
+      "kind": "height",
+      "name": "grass",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32\u00d732 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024\u00d71024 image. Input is the grass albedo; preserve every clump's position exactly.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/height-grass.png",
+        "sha256": "945e8db87eb6af811dac4988f35581fd711d20b37958fb70bb267e4071367175",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/height-grass-1024.png",
+        "sha256": "f8e1851aeb3efc8d5c34e0c9e81d7c4cadbdb5698ed02a8f3ba557a934756db6",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "albedo": {
+        "path": "assets/world/textures/lush/grass.png",
+        "sha256": "2104ee35892b34656d8f9d6ac7a8d8a29d1b0d135a9cf35abe56378035036d17"
+      },
+      "correlation": 0.8506335956155282,
+      "edges_match": true,
+      "accepted": true,
+      "fallback": false,
+      "candidate": {
+        "path": "art/source/world/ground/v1/height-candidates/grass.png",
+        "sha256": "7ac59f37c2a55acff4196cec49f87c82a108e9f0b82e514d86699ec1ae1451aa",
+        "size": [
+          128,
+          128
+        ]
+      },
+      "runtime": {
+        "path": "assets/world/ground/height/grass.png",
+        "sha256": "7ac59f37c2a55acff4196cec49f87c82a108e9f0b82e514d86699ec1ae1451aa",
+        "size": [
+          128,
+          128
+        ]
+      }
+    },
+    {
+      "kind": "height",
+      "name": "dirt_path",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32\u00d732 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024\u00d71024 image. Input is the dirt_path albedo; preserve every shape's position exactly.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/height-dirt_path.png",
+        "sha256": "5b7bf34abaf4f096927f21148aaff78f39933e524f7eac0b3c847f216197a1ca",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/height-dirt_path-1024.png",
+        "sha256": "c09269da334ed32cbc1e08642f11ecd23e60c881b93ba26539268b9a7d214ba3",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "albedo": {
+        "path": "assets/world/textures/lush/dirt_path.png",
+        "sha256": "defadf9d4a7132f3ce52d92c239055bc1578a5fc33b31cbfc64890a3d902a73e"
+      },
+      "correlation": 0.8234344101827362,
+      "edges_match": true,
+      "accepted": true,
+      "fallback": false,
+      "candidate": {
+        "path": "art/source/world/ground/v1/height-candidates/dirt_path.png",
+        "sha256": "87a47bd4920b55f10b1962d7e7744b1b5601e22042f1ee86350d2e3adf3ddf94",
+        "size": [
+          128,
+          128
+        ]
+      },
+      "runtime": {
+        "path": "assets/world/ground/height/dirt_path.png",
+        "sha256": "87a47bd4920b55f10b1962d7e7744b1b5601e22042f1ee86350d2e3adf3ddf94",
+        "size": [
+          128,
+          128
+        ]
+      }
+    },
+    {
+      "kind": "height",
+      "name": "cobble",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32\u00d732 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024\u00d71024 image. Input is the cobble albedo; preserve every shape's position exactly.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/height-cobble.png",
+        "sha256": "a7e4305a8a67697160c89e9126c0849c010a9fd93f2366aa3d004bc52f0be645",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/height-cobble-1024.png",
+        "sha256": "ede2fc09f5143c4188150e4d38c2778d978e1c785e3268a7db849180da2136b3",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "albedo": {
+        "path": "assets/world/textures/lush/cobble.png",
+        "sha256": "a4b1603324cb79d70aa8d9838279a283518302bd081c84f2c10382651fce64e8"
+      },
+      "correlation": 0.8875920742859472,
+      "edges_match": true,
+      "accepted": true,
+      "fallback": false,
+      "candidate": {
+        "path": "art/source/world/ground/v1/height-candidates/cobble.png",
+        "sha256": "9b585baf777896d794cff23e96e3eb55169f13a17c2dfa6c8c9083ee732e4a95",
+        "size": [
+          128,
+          128
+        ]
+      },
+      "runtime": {
+        "path": "assets/world/ground/height/cobble.png",
+        "sha256": "9b585baf777896d794cff23e96e3eb55169f13a17c2dfa6c8c9083ee732e4a95",
+        "size": [
+          128,
+          128
+        ]
+      }
+    },
+    {
+      "kind": "height",
+      "name": "soil",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32\u00d732 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024\u00d71024 image. Input is the soil albedo; preserve every shape's position exactly.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/height-soil.png",
+        "sha256": "815ae9f2c74c66ce671b085e47fadcdac1d65e1ff59d15ee36fdcbd522f5744d",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/height-soil-1024.png",
+        "sha256": "a3faa2786a80f828d43416fad17e1fbe7e2a8bb1c4d49492f17a6322ef903560",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "albedo": {
+        "path": "assets/world/textures/lush/soil.png",
+        "sha256": "fd7cda737b6a2cb470156fc70d36297972fa4edc8600f5ddde8bd41ccbb7f243"
+      },
+      "correlation": 0.8702653112977051,
+      "edges_match": true,
+      "accepted": true,
+      "fallback": false,
+      "candidate": {
+        "path": "art/source/world/ground/v1/height-candidates/soil.png",
+        "sha256": "1c946d1c593ea714ebef7155c529287b47ca1b2883ac4f48bfd092d1915a1eb4",
+        "size": [
+          128,
+          128
+        ]
+      },
+      "runtime": {
+        "path": "assets/world/ground/height/soil.png",
+        "sha256": "1c946d1c593ea714ebef7155c529287b47ca1b2883ac4f48bfd092d1915a1eb4",
+        "size": [
+          128,
+          128
+        ]
+      }
+    },
+    {
+      "kind": "height",
+      "name": "pebbles",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32\u00d732 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024\u00d71024 image. Input is the pebbles albedo; preserve every shape's position exactly.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/height-pebbles.png",
+        "sha256": "f43969bce49f2af0d2b297d83cd5886b07dc72dcb749848ee2d9e8f6cb6daeef",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/height-pebbles-1024.png",
+        "sha256": "17e4ee2ee736a216b4c5884caeaef9255f4d7024ecdb2e10acebec2a9ec25786",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "albedo": {
+        "path": "assets/world/textures/lush/pebbles.png",
+        "sha256": "c4720b0f536df5e794a0fcaeab93e651f075cfe4e40d77f1992e4e515c74e89c"
+      },
+      "correlation": 0.8686780016559537,
+      "edges_match": true,
+      "accepted": true,
+      "fallback": false,
+      "candidate": {
+        "path": "art/source/world/ground/v1/height-candidates/pebbles.png",
+        "sha256": "a269e9ee833b8d9a38216c8f469b92832ff515f0205e7ddb40c7f94f95341a42",
+        "size": [
+          128,
+          128
+        ]
+      },
+      "runtime": {
+        "path": "assets/world/ground/height/pebbles.png",
+        "sha256": "a269e9ee833b8d9a38216c8f469b92832ff515f0205e7ddb40c7f94f95341a42",
+        "size": [
+          128,
+          128
+        ]
+      }
+    },
+    {
+      "kind": "height",
+      "name": "rock",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32\u00d732 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024\u00d71024 image. Input is the rock albedo; preserve every shape's position exactly.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/height-rock.png",
+        "sha256": "1002b1ae461763566819bbc2a8bedd8d4e5d48285369965914389959dcabe799",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/height-rock-1024.png",
+        "sha256": "9e602801ee3272bf33f422d43f82e8eb8f87315e42e699b687fe2a62ce274150",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "albedo": {
+        "path": "assets/world/textures/lush/rock.png",
+        "sha256": "d28b0d134a715c3ba6c2726e30dd8e65371740ab211a283a39596d1caf3fb241"
+      },
+      "correlation": 0.8777946484565318,
+      "edges_match": true,
+      "accepted": true,
+      "fallback": false,
+      "candidate": {
+        "path": "art/source/world/ground/v1/height-candidates/rock.png",
+        "sha256": "f6c93e46c2d499861397c006cc5be6fed3ac1455df7315d224f380d5ca1113f6",
+        "size": [
+          128,
+          128
+        ]
+      },
+      "runtime": {
+        "path": "assets/world/ground/height/rock.png",
+        "sha256": "f6c93e46c2d499861397c006cc5be6fed3ac1455df7315d224f380d5ca1113f6",
+        "size": [
+          128,
+          128
+        ]
+      }
+    },
+    {
+      "kind": "ref",
+      "name": "grass-dirt_path",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where grass meets dirt_path along a wandering, ragged, natural border: grass on one side, dirt_path on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32\u00d732 grid per tile, same warm saturated palette as the attached textures. Input image 1 is grass; input image 2 is dirt_path, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512\u00d7512 image.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/ref-grass-dirt_path.png",
+        "sha256": "ce633be61fe2f0511703f9d64c4a1957f9a2dc9538ee930999cf6e92da3835a0",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/ref-grass-dirt_path-1024.png",
+        "sha256": "0a3c131eea61f550f42d617da12235518cd5e6897a93adc8858daa8ade57e6b4",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "reference": {
+        "path": "art/source/world/ground/v1/reference/grass-dirt_path.png",
+        "sha256": "4ace4196a98d17310cffee9af4f58f85da55f38c03b6153d64074963001669e1",
+        "size": [
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "kind": "ref",
+      "name": "grass-cobble",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where grass meets cobble along a wandering, ragged, natural border: grass on one side, cobble on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32\u00d732 grid per tile, same warm saturated palette as the attached textures. Input image 1 is grass; input image 2 is cobble, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512\u00d7512 image.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/ref-grass-cobble.png",
+        "sha256": "1d5b49b0bccf67e9e43deffe0eaa5315e06bcf63fb49ca17f2095669743dcda2",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/ref-grass-cobble-1024.png",
+        "sha256": "fbbe65918ecce24c2bda42fc3899f6a6a16ab5045e1f9fe0da3ae6b31af0ce14",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "reference": {
+        "path": "art/source/world/ground/v1/reference/grass-cobble.png",
+        "sha256": "6b218c5bf464267b02c5451d7bd46181fc40108726abc9d1f26f6a1084a2eeb7",
+        "size": [
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "kind": "ref",
+      "name": "dirt_path-cobble",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where dirt_path meets cobble along a wandering, ragged, natural border: dirt_path on one side, cobble on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32\u00d732 grid per tile, same warm saturated palette as the attached textures. Input image 1 is dirt_path; input image 2 is cobble, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512\u00d7512 image.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/ref-dirt_path-cobble.png",
+        "sha256": "8845756bbf4526d7ed91fe0f61851d2492149e0e1d3c309553fc704ffdec36af",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/ref-dirt_path-cobble-1024.png",
+        "sha256": "7266ae3eb986b147994a897ff6465aa57a3750553f5d04d487bae276b906bf23",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "reference": {
+        "path": "art/source/world/ground/v1/reference/dirt_path-cobble.png",
+        "sha256": "20a32f532dcf70ffdba1dc92b4597b5e6bd582867f3568163102e843c46bfc36",
+        "size": [
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "kind": "ref",
+      "name": "grass-soil",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where grass meets soil along a wandering, ragged, natural border: grass on one side, soil on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32\u00d732 grid per tile, same warm saturated palette as the attached textures. Input image 1 is grass; input image 2 is soil, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512\u00d7512 image.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/ref-grass-soil.png",
+        "sha256": "aa103881144937ffc7b0874e9994f156edede7a438ecd1c16b0da73575688483",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/ref-grass-soil-1024.png",
+        "sha256": "8bbf64c1434f73c18724b5eec7a93cd610e85a1246eea675208ee56d73f4a84b",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "reference": {
+        "path": "art/source/world/ground/v1/reference/grass-soil.png",
+        "sha256": "304f0d3be1dd00cd891bda8fc69986fefa4363564c3927d84f21fa8d51ca930b",
+        "size": [
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "kind": "ref",
+      "name": "dirt_path-pebbles",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where dirt_path meets pebbles along a wandering, ragged, natural border: dirt_path on one side, pebbles on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32\u00d732 grid per tile, same warm saturated palette as the attached textures. Input image 1 is dirt_path; input image 2 is pebbles, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512\u00d7512 image.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/ref-dirt_path-pebbles.png",
+        "sha256": "9b208b4aaa20a22670d0f9906596cec21fcf4a322e2e3861ba5af8182dcf1790",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/ref-dirt_path-pebbles-1024.png",
+        "sha256": "35e1a356acf3acc3a7831ceaebe44e4596ecedda8113dabd99e22ed9b7b1e068",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "reference": {
+        "path": "art/source/world/ground/v1/reference/dirt_path-pebbles.png",
+        "sha256": "5d610cf8da3fcef7115ea42727cc78444dedf5c3cb8908588e104b69161a534c",
+        "size": [
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "kind": "ref",
+      "name": "cobble-pebbles",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where cobble meets pebbles along a wandering, ragged, natural border: cobble on one side, pebbles on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32\u00d732 grid per tile, same warm saturated palette as the attached textures. Input image 1 is cobble; input image 2 is pebbles, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512\u00d7512 image.",
+      "native": {
+        "path": "art/source/world/ground/v1/native/ref-cobble-pebbles.png",
+        "sha256": "678f13d869501ecac32a7fa6dbbd1bf31b699980a7c7fdc4551b557b75c0722e",
+        "size": [
+          1254,
+          1254
+        ]
+      },
+      "master": {
+        "path": "art/source/world/ground/v1/raw/ref-cobble-pebbles-1024.png",
+        "sha256": "8d9bb5aa290da53b273e41ae54fe70485c78601c821f905e7b1a2cf8fd0ecebe",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      "reference": {
+        "path": "art/source/world/ground/v1/reference/cobble-pebbles.png",
+        "sha256": "e9c9d856215020c745cbba0bf04e0a4fa706ce56fc4e814c1e613171a5895c8b",
+        "size": [
+          512,
+          512
+        ]
+      }
+    }
+  ]
+}

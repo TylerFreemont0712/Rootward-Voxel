@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "asset": "wooden-bucket",
+  "version": "v1",
+  "source": "art/source/world/wooden-bucket/v1/model.blend",
+  "source_sha256": "dee2e7dc78190d95672f7a5bbc9485b6e61216eba64716208dbb057c2025bb39",
+  "runtime": "assets/world/wooden-bucket/model.glb",
+  "runtime_sha256": "ca65eed2e73c00fb24b4aed61e0763c24dd75a3406f6f916e2e39478bb4d7540",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.150000005960464,
+      0.0,
+      -0.150000005960464,
+      0.150000005960464,
+      0.449999988079071,
+      0.150000005960464
+    ],
+    "geometry_sha256": "0881c9e92ef24ea50e381073921d0a06847edaccc05d59a90738636b2eb8dd72",
+    "material_records": {
+      "iron": {
+        "albedo": [
+          2235,
+          2667,
+          2745,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_dark": {
+        "albedo": [
+          1686,
+          2000,
+          2078,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_light": {
+        "albedo": [
+          3725,
+          4235,
+          4314,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          6902,
+          4784,
+          2706,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak_light": {
+        "albedo": [
+          7725,
+          5804,
+          3451,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "twine": {
+        "albedo": [
+          4275,
+          3451,
+          2157,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "twine_dark": {
+        "albedo": [
+          2902,
+          2392,
+          1490,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "twine_light": {
+        "albedo": [
+          5490,
+          4549,
+          2784,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "water_light": {
+        "albedo": [
+          6078,
+          8196,
+          7608,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood": {
+        "albedo": [
+          4627,
+          3137,
+          2235,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood_dark": {
+        "albedo": [
+          2863,
+          2196,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "iron",
+      "iron_dark",
+      "iron_light",
+      "oak",
+      "oak_light",
+      "twine",
+      "twine_dark",
+      "twine_light",
+      "water_light",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 11,
+    "triangles": 752
+  }
+}

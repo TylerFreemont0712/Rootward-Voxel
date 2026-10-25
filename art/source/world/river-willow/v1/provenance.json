@@ -1,0 +1,16 @@
+{
+  "asset": "river-willow",
+  "version": "v1",
+  "status": "unplaced candidate",
+  "tool": "Blender 5.2.2 LTS",
+  "initial_authoring_record": "art/source/world/expansion-kit/v1/author.py",
+  "record_sha256": "9be0b46469dc91f0fe750ea460ace58291eb6147a8e42200c073472ccf319cf1",
+  "seed": 231023,
+  "seed_scope": "deterministic geometry/tile variation only; no AI generation",
+  "texture_source": "art/source/world/textures/v1/manifest.json",
+  "authority": "saved model.blend; normal rebuild uses scripts/world-art.sh build river-willow",
+  "review_edits": [
+    "art/source/world/expansion-kit/v1/refine.py"
+  ],
+  "source_sha256": "0ad92bcfbd8b575b962fda58be882d4770a6b36c8fa9e30985c5ab93f25147bd"
+}

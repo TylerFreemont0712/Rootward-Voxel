@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "asset": "hollow-kitchen-dresser",
+  "version": "v1",
+  "source": "art/source/world/hollow-kitchen-dresser/v1/model.blend",
+  "source_sha256": "45e2f4a8c8286561e6f970c8c75ee843131fbc1e9734a50bd33bc3597f4b91f1",
+  "runtime": "assets/world/hollow-kitchen-dresser/model.glb",
+  "runtime_sha256": "c0e26ce89e18ccb42f24ac2e486c3d58aee94a304db70e6d6a4e6d7c21b534c3",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.774999976158142,
+      0.0,
+      -0.349999994039536,
+      0.774999976158142,
+      1.83749997615814,
+      0.417500019073486
+    ],
+    "geometry_sha256": "16414c3731a4a391bd2d21c701582222c447aae8aa48827bb29cb4db58be3e2a",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+      },
+      "clay": {
+        "albedo": [
+          7216,
+          4196,
+          2706,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "cloth_plum": {
+        "albedo": [
+          4000,
+          3137,
+          6039,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "cloth_teal": {
+        "albedo": [
+          2039,
+          4824,
+          5216,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "cream": {
+        "albedo": [
+          9333,
+          8824,
+          7294,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "linen": {
+        "albedo": [
+          8392,
+          7961,
+          6627,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "oak_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "wood": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "f556d148ef2bc03c2e5f9b03b3794387093d909a3a5c75c69864a1d38969c3e9"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "brass",
+      "clay",
+      "cloth_plum",
+      "cloth_teal",
+      "cream",
+      "linen",
+      "oak",
+      "oak_light",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 10,
+    "triangles": 1904
+  }
+}

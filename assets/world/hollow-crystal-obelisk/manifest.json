@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "hollow-crystal-obelisk",
+  "version": "v1",
+  "source": "art/source/world/hollow-crystal-obelisk/v1/model.blend",
+  "source_sha256": "1e31f8eb6ce29316fe73a1b01e3605797ca740b1efdfc8b6c9cb0ddc2826971a",
+  "runtime": "assets/world/hollow-crystal-obelisk/model.glb",
+  "runtime_sha256": "72b2462f04ce18ec66be3d19b71ba610992dfd17b2ea48727c10d99024646101",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.469999998807907,
+      0.0,
+      -0.46000000834465,
+      0.482400000095367,
+      1.59200000762939,
+      0.46000000834465
+    ],
+    "geometry_sha256": "ca384f9c53ca455736f7b9aec12fb6dc816e53674b12694aae9d2dd6e2e04c7d",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+      },
+      "glass_blue": {
+        "albedo": [
+          4667,
+          6078,
+          7176,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "glass_teal": {
+        "albedo": [
+          4118,
+          6745,
+          6745,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "state_glow": {
+        "albedo": [
+          5255,
+          8941,
+          8196,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "stone_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "stone_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "a4c740ef95322fab6b4ac67a310027e5410621625d11d1583972f3f3de6a7c18"
+      }
+    },
+    "materials": [
+      "brass",
+      "glass_blue",
+      "glass_teal",
+      "state_glow",
+      "stone",
+      "stone_dark",
+      "stone_light"
+    ],
+    "meshes": 7,
+    "triangles": 186
+  }
+}

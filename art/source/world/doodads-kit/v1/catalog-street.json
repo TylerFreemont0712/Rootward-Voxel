@@ -1,0 +1,50 @@
+{
+  "park-bench": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Park Bench",
+    "source": "art/source/world/park-bench/v1/model.blend",
+    "runtime": "assets/world/park-bench/model.glb",
+    "pivot": "ground origin at the seat centre",
+    "logical_footprint": [-0.45, -0.2, 0.9, 0.4],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Timber slatted bench with dark iron ends, 0.9 m long. The footprint covers the seat; the feet overhang it by 0.05 m at ground level."
+  },
+  "signpost": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Signpost",
+    "source": "art/source/world/signpost/v1/model.blend",
+    "runtime": "assets/world/signpost/model.glb",
+    "pivot": "ground origin at the post's iron shoe",
+    "logical_footprint": [-0.1, -0.1, 0.2, 0.2],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "A 1.3 m timber post with a cream board pointing right and a violet board pointing left. The footprint is the iron shoe; the boards overhang it at height."
+  },
+  "stone-well": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Stone Well",
+    "source": "art/source/world/stone-well/v1/model.blend",
+    "runtime": "assets/world/stone-well/model.glb",
+    "pivot": "ground origin at the ring centre",
+    "logical_footprint": [-0.45, -0.45, 0.9, 0.9],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "A limestone ring 0.9 m across with a timber frame, violet hood and bucket, 1.45 m tall. The footprint is the ring; the hood eave stays within it."
+  },
+  "cart-wheel": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Cart Wheel",
+    "source": "art/source/world/cart-wheel/v1/model.blend",
+    "runtime": "assets/world/cart-wheel/model.glb",
+    "pivot": "ground contact at the bottom of the rim",
+    "logical_footprint": [-0.5, -0.05, 1.0, 0.1],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "An upright iron-rimmed wagon wheel, 1.0 m across and 0.1 m thick, with six timber spokes. The footprint is a strip the wheel's width; the hub caps overhang it by 0.05 m."
+  }
+}

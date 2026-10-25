@@ -1,0 +1,139 @@
+extends SceneTree
+## The only character-atlas build entry point. Source PNGs stay unchanged.
+
+const CATALOG: String = "res://pipeline/art-catalog.json"
+
+
+func _initialize() -> void:
+	_run.call_deferred()
+
+
+func _run() -> void:
+	var catalog: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(CATALOG))
+	var spec: Dictionary = catalog.character
+	if catalog.schema != 2 or spec.facing_space != "screen_diagonals" or spec.directions.keys() != ["se", "sw", "ne", "nw"] or spec.walk_columns.size() != 4:
+		printerr("Character catalog must declare four authored screen-diagonal rows: se, sw, ne, nw.")
+		quit(1)
+		return
+	var source_path: String = spec.source
+	var destination: String = spec.runtime_sheet
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(destination.get_base_dir()))
+	if "--prepare" in OS.get_cmdline_user_args():
+		var error: Error = DirAccess.copy_absolute(ProjectSettings.globalize_path(source_path), ProjectSettings.globalize_path(destination))
+		if error != OK:
+			printerr("Could not copy the selected source atlas: ", error_string(error))
+			quit(1)
+			return
+		print("Prepared selected atlas: ", destination)
+		quit(0)
+		return
+	if "--configure-import" in OS.get_cmdline_user_args():
+		var settings := ConfigFile.new()
+		if settings.load(destination + ".import") != OK:
+			printerr("Import the selected atlas before configuring it.")
+			quit(1)
+			return
+		settings.set_value("params", "mipmaps/generate", true)
+		settings.set_value("params", "compress/mode", 0)
+		settings.set_value("params", "process/fix_alpha_border", true)
+		settings.set_value("params", "detect_3d/compress_to", 0)
+		settings.save(destination + ".import")
+		print("Pinned character import: lossless RGBA, mipmaps, transparent edge repair.")
+		quit(0)
+		return
+	var image := Image.load_from_file(ProjectSettings.globalize_path(destination))
+	if image == null or image.is_empty() or not image.detect_alpha():
+		printerr("Character atlas must exist and have transparency. Run scripts/art.sh.")
+		quit(1)
+		return
+	if spec.row_edges.size() != int(spec.grid[1]) + 1 or int(spec.row_edges[0]) != 0 or int(spec.row_edges[-1]) != image.get_height():
+		printerr("Explicit atlas row edges must cover the source image.")
+		quit(1)
+		return
+	for row: int in range(int(spec.grid[1])):
+		if int(spec.row_edges[row + 1]) <= int(spec.row_edges[row]):
+			printerr("Atlas row edges must increase.")
+			quit(1)
+			return
+	var atlas: Texture2D = load(destination) as Texture2D
+	if atlas == null:
+		printerr("Import the runtime PNG before building its SpriteFrames.")
+		quit(1)
+		return
+	var frames := SpriteFrames.new()
+	frames.remove_animation("default")
+	var metadata: Dictionary = {
+		"schema": 2, "id": spec.id, "version": spec.version,
+		"source": source_path, "source_sha256": FileAccess.get_sha256(source_path),
+		"runtime_sheet": destination, "sheet_size": [image.get_width(), image.get_height()],
+		"world_height": spec.world_height, "facing_space": spec.facing_space,
+		"alpha_threshold": spec.alpha_threshold, "animations": {},
+	}
+	var heights: Array[float] = []
+	for direction: String in spec.directions:
+		var row: int = int(spec.directions[direction])
+		var selected: Array[Dictionary] = []
+		for column: Variant in spec.walk_columns:
+			var region := Rect2i(
+				roundi(float(column) * image.get_width() / float(spec.grid[0])),
+				int(spec.row_edges[row]), 0, 0)
+			region.size = Vector2i(
+				roundi(float(int(column) + 1) * image.get_width() / float(spec.grid[0])) - region.position.x,
+				int(spec.row_edges[row + 1]) - region.position.y)
+			var bounds: Rect2i = _opaque_bounds(image, region, float(spec.alpha_threshold))
+			if bounds.size.x < 24 or bounds.size.y < 24 or bounds.position.x <= 2 or bounds.position.y <= 2 or bounds.end.x >= region.size.x - 2 or bounds.end.y >= region.size.y - 2:
+				printerr("Empty or clipped character in row ", row, " column ", column)
+				quit(1)
+				return
+			heights.append(float(bounds.size.y))
+			var anchor: Array = [float(bounds.position.x) + float(bounds.size.x) * 0.5, float(bounds.end.y)]
+			selected.append({"region": [region.position.x, region.position.y, region.size.x, region.size.y], "anchor": anchor, "opaque_height": bounds.size.y})
+		var walk: String = "walk_" + direction
+		var idle: String = "idle_" + direction
+		frames.add_animation(walk)
+		frames.set_animation_speed(walk, float(spec.fps))
+		frames.set_animation_loop(walk, true)
+		for frame: Dictionary in selected:
+			frames.add_frame(walk, _atlas_frame(atlas, frame))
+		frames.add_animation(idle)
+		frames.set_animation_speed(idle, 1.0)
+		frames.set_animation_loop(idle, true)
+		frames.add_frame(idle, _atlas_frame(atlas, selected[int(spec.idle_column)]))
+		metadata.animations[walk] = selected
+		metadata.animations[idle] = [selected[int(spec.idle_column)]]
+	heights.sort()
+	var typical_height: float = heights[heights.size() / 2]
+	if heights[-1] / heights[0] > 1.12:
+		printerr("Character height differs too much between frames; revise the source atlas.")
+		quit(1)
+		return
+	metadata.pixel_size = float(spec.world_height) / typical_height
+	var saved: Error = ResourceSaver.save(frames, spec.frames)
+	if saved != OK:
+		printerr("Could not save SpriteFrames: ", error_string(saved))
+		quit(1)
+		return
+	var file := FileAccess.open(spec.manifest, FileAccess.WRITE)
+	file.store_string(JSON.stringify(metadata, "  ") + "\n")
+	print("Built ", spec.id, ": 4 authored diagonal directions, 4 walk poses each; anchored feet; source SHA-256 ", metadata.source_sha256)
+	quit(0)
+
+
+func _opaque_bounds(image: Image, region: Rect2i, threshold: float) -> Rect2i:
+	var first := Vector2i(region.size.x, region.size.y)
+	var last := Vector2i(-1, -1)
+	for y: int in range(region.size.y):
+		for x: int in range(region.size.x):
+			if image.get_pixel(region.position.x + x, region.position.y + y).a > threshold:
+				first = first.min(Vector2i(x, y))
+				last = last.max(Vector2i(x, y))
+	return Rect2i(first, last - first + Vector2i.ONE)
+
+
+func _atlas_frame(atlas: Texture2D, frame: Dictionary) -> AtlasTexture:
+	var texture := AtlasTexture.new()
+	texture.atlas = atlas
+	var box: Array = frame.region
+	texture.region = Rect2(float(box[0]), float(box[1]), float(box[2]), float(box[3]))
+	texture.filter_clip = true
+	return texture

@@ -1,0 +1,58 @@
+{
+  "schema": 2,
+  "character": {
+    "id": "adventurer",
+    "version": "v2-isometric",
+    "source": "res://art/source/adventurer/v2-isometric/sheet.png",
+    "runtime_sheet": "res://assets/characters/adventurer/sheet.png",
+    "prompt": "res://art/source/adventurer/v2-isometric/prompt.json",
+    "grid": [
+      4,
+      4
+    ],
+    "directions": {
+      "se": 0,
+      "sw": 1,
+      "ne": 2,
+      "nw": 3
+    },
+    "walk_columns": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "idle_column": 1,
+    "fps": 8,
+    "world_height": 1.45,
+    "alpha_threshold": 0.25,
+    "frames": "res://assets/characters/adventurer/frames.tres",
+    "manifest": "res://assets/characters/adventurer/manifest.json",
+    "facing_space": "screen_diagonals",
+    "projection": "fixed orthographic camera; near/far three-quarter views",
+    "row_edges": [
+      0,
+      329,
+      635,
+      937,
+      1254
+    ]
+  },
+  "world": {
+    "reference": "res://reference/voxel-isometric.png",
+    "palette": "res://art/world_palette.gd",
+    "materials": "res://art/surface_materials.gd",
+    "geometry": "res://scenes/clearing_view.gd",
+    "layout_and_collision": "res://core/clearing_layout.gd",
+    "camera_elevation_degrees": 31,
+    "world_units_per_cell": 1.0,
+    "exclude": [
+      "other villagers",
+      "flowers",
+      "flower boxes",
+      "crates",
+      "sacks",
+      "scattered small props"
+    ]
+  }
+}

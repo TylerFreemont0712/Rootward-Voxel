@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "wooden-chair",
+  "version": "v1",
+  "source": "art/source/world/wooden-chair/v1/model.blend",
+  "source_sha256": "e9f63b2152fc631096068142b874a63b6d67ab37fe7ce37b0c98dbe3482cdd4e",
+  "runtime": "assets/world/wooden-chair/model.glb",
+  "runtime_sha256": "7f36adfbaf9f16e110067448085c5f4043776c457d7c67c39076b348f6b540f8",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.224999994039536,
+      0.0,
+      -0.224999994039536,
+      0.224999994039536,
+      0.899999976158142,
+      0.224999994039536
+    ],
+    "geometry_sha256": "5d950ab10b07e648fd53ee7c87dd3645635ec508d45613cd7850f31ec31f75b3",
+    "material_records": {
+      "oak": {
+        "albedo": [
+          6902,
+          4784,
+          2706,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak_light": {
+        "albedo": [
+          7725,
+          5804,
+          3451,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood": {
+        "albedo": [
+          4627,
+          3137,
+          2235,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood_dark": {
+        "albedo": [
+          2863,
+          2196,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "oak",
+      "oak_light",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 4,
+    "triangles": 1396
+  }
+}

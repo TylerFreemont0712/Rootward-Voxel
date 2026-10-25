@@ -1,0 +1,42 @@
+extends RefCounted
+## The one shared material palette. Change colors here, never in individual assets.
+
+const COLORS := {
+	"herringbone_oak": Color.WHITE,
+	"terracotta_tile": Color.WHITE,
+	"encaustic_tile": Color.WHITE,
+	"limestone_flags": Color.WHITE,
+	"limewash": Color.WHITE,
+	"sage_wallpaper": Color.WHITE,
+	"timber_panels": Color.WHITE,
+	"red_brick": Color.WHITE,
+	"riverstone": Color.WHITE,
+	"slate_shingles": Color.WHITE,
+	"cedar_shingles": Color.WHITE,
+	"copper_patina": Color.WHITE,
+	"woven_linen": Color.WHITE,
+	"violet_quilt": Color.WHITE,
+	"tooled_leather": Color.WHITE,
+
+	"grass": Color("638b41"), "grass_light": Color("83a852"), "grass_dark": Color("4e763b"),
+	"soil": Color("755846"), "soil_light": Color("96745b"), "soil_dark": Color("584b48"),
+	"pebbles": Color("b2a58b"), "rock_face": Color("92958c"),
+	"stone": Color("929a9a"), "stone_light": Color("bcc2ae"), "stone_dark": Color("626f73"),
+	"path": Color("b6b298"), "path_light": Color("d2c7a4"), "path_dark": Color("827a61"), "water": Color("5baca9"),
+	"water_light": Color("9bd1c2"), "water_dark": Color("3a878c"),
+	"plaster": Color("e8ddbd"), "plaster_shade": Color("d3c6a4"),
+	"wood": Color("765039"), "wood_light": Color("a47b51"), "wood_dark": Color("49382f"),
+	"roof": Color("66509a"), "roof_light": Color("8271b1"), "roof_dark": Color("493c71"),
+	"leaf": Color("4d7e35"), "leaf_light": Color("7ca946"), "leaf_dark": Color("2e5835"),
+	"gold": Color("e3b16a"), "cream": Color("fff0cb"), "window": Color("526f7a"),
+	"cloth": Color("398c7d"), "skin": Color("e7b18a"), "hair": Color("75472e"),
+	"oak": Color("b07a45"), "oak_light": Color("c59458"), "iron": Color("394446"),
+	"teal": Color("347b85"), "teal_light": Color("4c939b"), "teal_dark": Color("255560"),
+	"window_warm": Color("e0ad62"), "cloth_light": Color("a3c6ac"), "cloth_dark": Color("31554f"),
+	"leather": Color("71482f"), "leather_light": Color("a87b48"), "scarf": Color("dfb75e"),
+	"hair_light": Color("985c32"),
+	"flower": Color("c399ad"), "flower_gold": Color("e5ca85"),
+	"dirt": Color("a97b4a"), "dirt_light": Color("c19a62"), "dirt_dark": Color("86603a"),
+	# Added with the concept-matched cabin and lamppost: warm cut limestone and a smoked lantern pane.
+	"stone_warm": Color("c8bb99"), "lamp_glass": Color("7a6648"), "window_glow": Color("f0b45a"),
+}

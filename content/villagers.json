@@ -1,0 +1,185 @@
+{
+  "schema": 1,
+  "residents": {
+    "mira": {
+      "name": "Mira",
+      "role": "Cartographer",
+      "skin": "mira",
+      "greeting": "You must be the new apprentice. I am Mira. I make maps of the Hollow, though the best way to learn a place is to walk it.",
+      "lines": [
+        "The old gate leads to North Common and Cedar Rise. The mill bridge opens the Eastbank neighbourhood.",
+        "My cottage is up in North Common. You are welcome to visit. Each front door leads to its own home."
+      ],
+      "prompt": "What would you like to know?",
+      "topics": [
+        {
+          "id": "explore",
+          "title": "Where should I explore first?",
+          "lines": [
+            "The old gate leads to North Common and Cedar Rise. The mill bridge opens the Eastbank neighbourhood.",
+            "My cottage is up in North Common. You are welcome to visit. Each front door leads to its own home."
+          ]
+        },
+        {
+          "id": "map-notes",
+          "helps": ["mill-bridge"],
+          "title": "Tell me about your maps.",
+          "lines": [
+            "A name is like a mark on a map: it gives you a useful way to refer to something.",
+            "In Python, a variable gives a value a name. I can keep a note in the notebook’s memory and find it again later."
+          ],
+          "lesson": {
+            "title": "A name for a place",
+            "concept": "Variables",
+            "explanation": "The variable place_name holds a string. Saving it in world.memory keeps that small note after you Apply.",
+            "source": "def program(world):\n    place_name = \"Kindle Hollow\"\n    world.memory[\"map_note\"] = place_name\n"
+          }
+        }
+      ]
+    },
+    "rowan": {
+      "name": "Rowan",
+      "role": "Millwright",
+      "skin": "rowan",
+      "greeting": "Rowan, millwright. Good to meet a pair of hands willing to learn.",
+      "lines": [
+        "Watch the race beside the old wheel: the pale foam follows the current.",
+        "There is more village beyond the mill yard now. My teal-roofed home is on the east bank."
+      ],
+      "prompt": "What would you like to know?",
+      "topics": [
+        {
+          "id": "mill",
+          "title": "Tell me about the mill.",
+          "lines": [
+            "Watch the race beside the old wheel: the pale foam follows the current.",
+            "There is more village beyond the mill yard now. My teal-roofed home is on the east bank."
+          ]
+        },
+        {
+          "id": "repeat",
+          "helps": ["light-the-green"],
+          "title": "How do you repeat a task?",
+          "lines": [
+            "A mill turns the same way again and again. I try to make my work just as steady.",
+            "A for loop repeats a small job for every item in a list. This example visits only the lamps your notebook already knows."
+          ],
+          "lesson": {
+            "title": "One task, many lamps",
+            "concept": "For loops",
+            "explanation": "world.lamps contains lamps in places you have visited. The loop proposes lighting each one. Run previews those changes; only Apply makes them real.",
+            "source": "def program(world):\n    for lamp in world.lamps:\n        lamp.set_lit(True)\n"
+          }
+        }
+      ]
+    },
+    "bram": {
+      "name": "Bram",
+      "role": "Carpenter",
+      "skin": "bram",
+      "greeting": "Hello! I am Bram. Timber, doors, stubborn chairs: that is my trade.",
+      "lines": [
+        "A house can change its place without losing what is inside. Try the builder when you want to settle in.",
+        "My workshop is just behind me. Come in from the front doorstep."
+      ],
+      "prompt": "What would you like to know?",
+      "topics": [
+        {
+          "id": "workshop",
+          "title": "Tell me about your workshop.",
+          "lines": [
+            "A house can change its place without losing what is inside. Try the builder when you want to settle in.",
+            "My workshop is just behind me. Come in from the front doorstep."
+          ]
+        },
+        {
+          "id": "patterns",
+          "helps": ["kindle-the-hollow"],
+          "title": "How do you reuse a good pattern?",
+          "lines": [
+            "Once I have a pattern that fits, I give it a name and use it again. A chair is easier when every leg follows the same plan.",
+            "A Python function is a named piece of work. Give it an input, and it can return a useful result."
+          ],
+          "lesson": {
+            "title": "A reusable maker’s mark",
+            "concept": "Functions",
+            "explanation": "label_for takes a name and returns a label. program calls that helper, then stores the result in your notebook’s memory.",
+            "source": "def label_for(name):\n    return \"Made by \" + name\n\ndef program(world):\n    world.memory[\"label\"] = label_for(\"Bram\")\n"
+          }
+        }
+      ]
+    },
+    "tessa": {
+      "name": "Tessa",
+      "role": "Gardener",
+      "skin": "tessa",
+      "greeting": "I am Tessa. I look after the gardens and the little orchard.",
+      "lines": [
+        "The northern paths are quiet. Follow them to the cedars and you will find Nell.",
+        "I keep my home here on North Common. You can always come by for a rest."
+      ],
+      "prompt": "What would you like to know?",
+      "topics": [
+        {
+          "id": "gardens",
+          "title": "Tell me about the gardens.",
+          "lines": [
+            "The northern paths are quiet. Follow them to the cedars and you will find Nell.",
+            "I keep my home here on North Common. You can always come by for a rest."
+          ]
+        },
+        {
+          "id": "seed-list",
+          "helps": ["light-the-green"],
+          "title": "How do you keep track of seeds?",
+          "lines": [
+            "I keep seeds together in little trays. A list does much the same thing: several things, kept in order.",
+            "Square brackets make a Python list. Here I keep three plant names together in the notebook’s memory."
+          ],
+          "lesson": {
+            "title": "A tray of names",
+            "concept": "Lists",
+            "explanation": "The list seeds contains three strings in order. Lists can be saved in world.memory, then read by another program after you Apply.",
+            "source": "def program(world):\n    seeds = [\"sage\", \"mint\", \"thyme\"]\n    world.memory[\"garden\"] = seeds\n"
+          }
+        }
+      ]
+    },
+    "nell": {
+      "name": "Nell",
+      "role": "Herbalist",
+      "skin": "nell",
+      "greeting": "Welcome, dear. Nell is my name. The Hollow is growing again.",
+      "lines": [
+        "Every home has its own little world. Your notebook remembers the room you are in.",
+        "The mist at the old trail keeps folk away from the deep woods. There is plenty to explore on this side."
+      ],
+      "prompt": "What would you like to know?",
+      "topics": [
+        {
+          "id": "hollow",
+          "title": "Tell me about this part of the Hollow.",
+          "lines": [
+            "Every home has its own little world. Your notebook remembers the room you are in.",
+            "The mist at the old trail keeps folk away from the deep woods. There is plenty to explore on this side."
+          ]
+        },
+        {
+          "id": "choosing",
+          "helps": ["night-gate"],
+          "title": "How do you choose what to use?",
+          "lines": [
+            "First I look at what I have. Then I choose. There is no sense reaching for a leaf that is not in the basket.",
+            "An if statement chooses a branch when a condition is true. Else gives us another path when it is false."
+          ],
+          "lesson": {
+            "title": "A choice from the basket",
+            "concept": "If and else",
+            "explanation": "The condition checks whether sage is in the list. Exactly one branch stores a name in world.memory. This is a small example of making a choice in code.",
+            "source": "def program(world):\n    herbs = [\"sage\", \"mint\"]\n    if \"sage\" in herbs:\n        world.memory[\"tea\"] = \"sage\"\n    else:\n        world.memory[\"tea\"] = \"mint\"\n"
+          }
+        }
+      ]
+    }
+  }
+}

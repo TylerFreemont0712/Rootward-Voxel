@@ -1,0 +1,92 @@
+class_name SpriteAdventurer
+extends Node3D
+## The actor only selects pictures. Pure world rules still own collision and position.
+
+const ROOT: String = "res://assets/characters/adventurer/"
+var sprite: AnimatedSprite3D
+var _manifest: Dictionary = {}
+var _direction: String = "se"
+var _moving: bool = false
+
+
+func _ready() -> void:
+	name = "SpriteAdventurer"
+	_manifest = JSON.parse_string(FileAccess.get_file_as_string(ROOT + "manifest.json"))
+	sprite = AnimatedSprite3D.new()
+	sprite.name = "AnimatedSprite3D"
+	sprite.sprite_frames = load(ROOT + "frames.tres") as SpriteFrames
+	sprite.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	sprite.pixel_size = float(_manifest.pixel_size)
+	sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+	sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+	sprite.alpha_scissor_threshold = 0.18
+	sprite.shaded = false
+	sprite.modulate = Color("fff5e8")
+	sprite.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	add_child(sprite)
+	sprite.frame_changed.connect(_anchor_frame)
+	sprite.animation_changed.connect(_anchor_frame)
+	sprite.play("idle_se")
+	_anchor_frame()
+	_make_shadow()
+
+
+func set_screen_motion(screen_motion: Vector2) -> void:
+	if sprite == null:
+		return
+	_moving = screen_motion.length() > 0.001
+	if _moving:
+		_direction = facing_for_screen_motion(screen_motion)
+	sprite.flip_h = false
+	var animation: StringName = StringName(("walk_" if _moving else "idle_") + _direction)
+	if sprite.animation != animation:
+		var keep_phase: bool = str(sprite.animation).begins_with("walk_") and str(animation).begins_with("walk_")
+		var old_frame: int = sprite.frame
+		var old_progress: float = sprite.frame_progress
+		sprite.play(animation)
+		if keep_phase:
+			sprite.set_frame_and_progress(old_frame, old_progress)
+	sprite.speed_scale = 1.0  # A 0.25 s grid step spans two poses of the 8 FPS walk cycle.
+	_anchor_frame()
+
+
+static func facing_for_screen_motion(motion: Vector2) -> String:
+	if motion.y >= 0.0:
+		return "se" if motion.x >= 0.0 else "sw"
+	return "ne" if motion.x >= 0.0 else "nw"
+
+
+func _anchor_frame() -> void:
+	if sprite == null or not _manifest.animations.has(str(sprite.animation)):
+		return
+	var data: Array = _manifest.animations[str(sprite.animation)]
+	var frame: Dictionary = data[mini(sprite.frame, data.size() - 1)]
+	var width: float = float(frame.region[2])
+	var height: float = float(frame.region[3])
+	var anchor: Vector2 = Vector2(float(frame.anchor[0]), float(frame.anchor[1]))
+	if sprite.flip_h:
+		anchor.x = width - anchor.x
+	# Sprite3D positive offset Y moves up: place the opaque foot baseline exactly at the actor origin.
+	sprite.offset = Vector2(width * 0.5 - anchor.x, anchor.y - height * 0.5)
+
+
+func _make_shadow() -> void:
+	var image := Image.create(32, 32, false, Image.FORMAT_RGBA8)
+	for y: int in range(32):
+		for x: int in range(32):
+			var radius: float = Vector2(float(x) - 15.5, float(y) - 15.5).length() / 15.5
+			image.set_pixel(x, y, Color(0.16, 0.19, 0.13, maxf(0.0, 1.0 - radius) * 0.3))
+	var material := StandardMaterial3D.new()
+	material.albedo_texture = ImageTexture.create_from_image(image)
+	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	var mesh := QuadMesh.new()
+	mesh.size = Vector2(0.65, 0.42)
+	var shadow := MeshInstance3D.new()
+	shadow.name = "ContactShadow"
+	shadow.mesh = mesh
+	shadow.material_override = material
+	shadow.rotation.x = -PI / 2.0
+	shadow.position.y = 0.017
+	shadow.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	add_child(shadow)

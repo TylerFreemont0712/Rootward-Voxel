@@ -1,0 +1,9 @@
+{
+  "revision": "2026-10-24-buildings-v1",
+  "asset": "mill-house",
+  "before_sha256": "85437d25df25b7ad9d80ed0ac4bd59043d1724323c29afeee0a3125df7f6fe12",
+  "source_sha256": "6b4ba2f32b20c3dec2ad02ce82e12baa632fe9cad0f4b7071b2f336540a71d79",
+  "backup": "model.pre-building-polish.blend",
+  "script": "art/source/world/building-polish/v1/edit_sources.py",
+  "note": "Deliberate edit of existing source; original geometry retained except selected entrance components. Common painted roof scale, readable door hardware/thresholds; lamp glass preserved."
+}

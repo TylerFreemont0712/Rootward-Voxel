@@ -1,0 +1,401 @@
+{
+  "anchor": [
+    192,
+    420
+  ],
+  "authoring_script_sha256": "da0722e4103a555fd4b6e71e63a3872e09d2ae882ad693e40de48eac38234187",
+  "blink_index": 9,
+  "cell_size": [
+    384,
+    448
+  ],
+  "directions": {
+    "ne": {
+      "key_rgba_sha256": [
+        "3376ba0949579d00173531f2eed559497974612acf23d100be5f04dfc4655955",
+        "23848d63b9783448b281f2980172cb8f12d473d4326a44e5ceb210cf8a8e552f",
+        "c25588d057c1dc947f36f893d839a503a88d610e934fec8058db332383367f6e",
+        "67c006c14a12bddf98033f57ba2deec67bc1ee869b71b0eece895a4e285650d3",
+        "8973a6081744643b70a7a68b0d9e8294b159d48c66bda31b28126fe682ae51ad",
+        "73b293bb7a4a170b556e83d17e1243ec07857bc6144cec9a66568b0d781b4b01",
+        "417c3f25853724c9a0cc4fdfd9b45e4f6af826de0b91c0ac89a5cf31eedcc248",
+        "2e92223a1dee295dfb3be56b69899680cb3617de06c877db93db6f3c39911f06",
+        "e1577ed7bd6fe9d6fd46ad441ba21519d8e77e305cca8448d9ddd46d5004ed8c"
+      ],
+      "row": 6,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/bram/v1/NE.png",
+          "source_pose": 0,
+          "translation": [
+            -23,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NE.png",
+          "source_pose": 1,
+          "translation": [
+            -26,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NE.png",
+          "source_pose": 2,
+          "translation": [
+            -33,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NE.png",
+          "source_pose": 3,
+          "translation": [
+            -28,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NE.png",
+          "source_pose": 4,
+          "translation": [
+            -27,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NE.png",
+          "source_pose": 5,
+          "translation": [
+            -38,
+            22
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NE.png",
+          "source_pose": 6,
+          "translation": [
+            -24,
+            50
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NE.png",
+          "source_pose": 7,
+          "translation": [
+            -27,
+            54
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NE.png",
+          "source_pose": 8,
+          "translation": [
+            -39,
+            45
+          ]
+        }
+      ]
+    },
+    "nw": {
+      "key_rgba_sha256": [
+        "ac5fc60386729a20d10b428f3475e83ab3377fad13580ed3e20035c8422f19a2",
+        "513428e495d873422e51d66c02d0a286e1e11d260b199e00fde2b939abc33efd",
+        "0b41dddf417d99fe276a517755eaef8b430e1e5e78f51fb9cfc282d469520df1",
+        "0d0b046d412a4c546f19d96c23db70c8f506d80375515864d704f4f959c30e54",
+        "68c20a52068516124db33d743cd113d9d4e6a47c58f91ca9aabfe444486930bb",
+        "47d30f00056306d69a58836a3ace3bd3063bb5c6c4ffd160c1dc2cbf15ba6c94",
+        "d73ecd353d1c55a9d7aab9703e2beb0669461bc3d8e1a8edc5de3ad4cf4025c2",
+        "e4ffcbbe602de7338176272615fc65c66c562e7803da42f6d0ed6fd023b6555b",
+        "a0cf60f86470117ea950c4d02dad1cd62dc63d840eadd4f0dc960449eb57f187"
+      ],
+      "row": 9,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/bram/v1/NW.png",
+          "source_pose": 0,
+          "translation": [
+            -11,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NW.png",
+          "source_pose": 1,
+          "translation": [
+            -8,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NW.png",
+          "source_pose": 2,
+          "translation": [
+            -1,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NW.png",
+          "source_pose": 3,
+          "translation": [
+            -5,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NW.png",
+          "source_pose": 4,
+          "translation": [
+            -6,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NW.png",
+          "source_pose": 5,
+          "translation": [
+            5,
+            22
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NW.png",
+          "source_pose": 6,
+          "translation": [
+            -10,
+            50
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NW.png",
+          "source_pose": 7,
+          "translation": [
+            -6,
+            54
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/NW.png",
+          "source_pose": 8,
+          "translation": [
+            6,
+            45
+          ]
+        }
+      ]
+    },
+    "se": {
+      "key_rgba_sha256": [
+        "649b17b728d6db13f6f0b7c2649a0c4b07b49ba4f2e1b8c62c133bba3b477f7a",
+        "39024b8db38fc3f6e31ed2b3624bca03534c44794409525f22bae67ad6612e7a",
+        "d0452f9523053d6de3e85cac1fe4d9cdaf5cf1f36cb2a242737f1bed58c0dca4",
+        "80b919503c7cd2e37a795fbbb857848250fd6ca9e27856d176d0b6cced177285",
+        "71f6f71776d5b0737607e98b0d2cf2f5020a78b3cd3de6ec9acbfd30fa793cf0",
+        "73b1aac01e8affe8f8b698178f44f79f02f0602052b589a6752f1e1bfad3e5d6",
+        "f188c61047292685dbbe9d474df44d72ec9b517ae47916c745a88c497bd1b24b",
+        "8090fcc8958bcd9be7fd8e6ed1e58fda306321abb4524404dc2db46e4edc01bf",
+        "c3c074b703e6afb451d1df16b06d0da00b2c44cc10f61050f8c095dd96def93e",
+        "6154e190ad1472895fca3d1c18dd9fb601813d6ef6f0e9fad2c7870f138a3e0c"
+      ],
+      "row": 0,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/bram/v1/SE.png",
+          "source_pose": 0,
+          "translation": [
+            -27,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SE.png",
+          "source_pose": 1,
+          "translation": [
+            -25,
+            8
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SE.png",
+          "source_pose": 2,
+          "translation": [
+            -32,
+            8
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SE.png",
+          "source_pose": 3,
+          "translation": [
+            -27,
+            19
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SE.png",
+          "source_pose": 4,
+          "translation": [
+            -26,
+            18
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SE.png",
+          "source_pose": 5,
+          "translation": [
+            -31,
+            25
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SE.png",
+          "source_pose": 6,
+          "translation": [
+            -25,
+            41
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SE.png",
+          "source_pose": 7,
+          "translation": [
+            -25,
+            38
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SE.png",
+          "source_pose": 8,
+          "translation": [
+            -30,
+            39
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/blink-se.png",
+          "source_pose": 8,
+          "translation": [
+            -30,
+            39
+          ]
+        }
+      ]
+    },
+    "sw": {
+      "key_rgba_sha256": [
+        "31cddf82306d7e0528fc94f8db3af24c6e81f78c24cfab421abb39fd21c97b01",
+        "4e2c46edb6dd569337c32e2137410c3383922c0904cee1000bd033c63aa0cc90",
+        "5641e73552f3c6239f5a981e4cd490502cac37442c60c7f9abcbf4549c48eb3d",
+        "eb183dacc952bcfd3f289f0fee575db794af93abcc6079c3465b2b019820ecfe",
+        "43dd3be781e6c839000847d5b4d303afbc5b4af938a8cd63fe108a7bfacef0a1",
+        "fedd003f74a13c607eed0aa76640951f7394d3e467b41fe5151322f45ce40c1f",
+        "5f156e6c215e3a821f56d549bd30ac0d8d2f55726bf49dba5ea2677a7bee17d0",
+        "720c907b9dfe6893472fcc802ff3efc6dbd5eb6b5aa6c50d8e9ff2ff5b5aa5ee",
+        "9e3f354e0fe0cd91479b081f888450ae797412fc6d45969bc89527aeb908e220",
+        "866fa9f079c4fd3996210ea1e10e94bbacbd9426fb2952ec26755d5857af0018"
+      ],
+      "row": 3,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/bram/v1/SW.png",
+          "source_pose": 0,
+          "translation": [
+            -7,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SW.png",
+          "source_pose": 1,
+          "translation": [
+            -8,
+            8
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SW.png",
+          "source_pose": 2,
+          "translation": [
+            -1,
+            8
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SW.png",
+          "source_pose": 3,
+          "translation": [
+            -7,
+            19
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SW.png",
+          "source_pose": 4,
+          "translation": [
+            -7,
+            18
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SW.png",
+          "source_pose": 5,
+          "translation": [
+            -2,
+            25
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SW.png",
+          "source_pose": 6,
+          "translation": [
+            -8,
+            41
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SW.png",
+          "source_pose": 7,
+          "translation": [
+            -8,
+            38
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/SW.png",
+          "source_pose": 8,
+          "translation": [
+            -4,
+            39
+          ]
+        },
+        {
+          "source": "res://art/source/characters/bram/v1/blink-sw.png",
+          "source_pose": 8,
+          "translation": [
+            -4,
+            39
+          ]
+        }
+      ]
+    }
+  },
+  "grid": [
+    4,
+    12
+  ],
+  "idle_index": 8,
+  "method": "Approved eight-pose sheets plus neutral idle; integer translation only; eye-only blink patch",
+  "output_sha256": "f2826f0bb64095186d97c9fceb587737566f02837dc6976a76176d27e09a2c55",
+  "schema": 4,
+  "sources": {
+    "res://art/source/characters/bram/v1/NE.png": "b199c40a674dba81d1629e5ff2b112e3a1a4b39e71e1cdaa55be837950959f71",
+    "res://art/source/characters/bram/v1/NW.png": "0ce1f93d5ab95090b12973fc3a0dccaf6ce5b5103ecfcd95a974f66b55cc13d5",
+    "res://art/source/characters/bram/v1/SE.png": "b1ceb587751db4ce187e1a18dddce4e14a785b04c2d560e992c899bb38aa23e4",
+    "res://art/source/characters/bram/v1/SW.png": "e3972e92ff7f4c782a5c0092e1e1520fddbb53411e6fe3eadbf43123fa16b0b3",
+    "res://art/source/characters/bram/v1/blink-se.png": "0f3afcc884e32034355678be2e805deeac6656158973fad15221c441710e5ca7",
+    "res://art/source/characters/bram/v1/blink-sw.png": "5c2b27d6ae0cb3d8c60eba055d1f27d8ea6e81ded38d3f48ef2135c9c7320a83"
+  },
+  "walk_poses": 8
+}

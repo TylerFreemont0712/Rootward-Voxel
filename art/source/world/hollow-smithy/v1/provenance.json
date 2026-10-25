@@ -1,0 +1,10 @@
+{
+  "asset": "hollow-smithy",
+  "authoring": "Bespoke Blender mesh source; shared painted village materials",
+  "script": "art/source/world/building-polish/v1/edit_sources.py",
+  "revision": "2026-10-24-buildings-v1",
+  "source_sha256": "3c64d8054458e0fa84ffc0fcf340a0cdc98a9a2effae7a75c27ce153360c7be1",
+  "note": "One-time original authoring; edit this saved master for later changes.",
+  "review_correction": "Roof slopes aligned with ridge/eaves; open forge firebox; warm display panes.",
+  "detail_edit": "art/source/world/building-polish/v1/shop_details.py"
+}

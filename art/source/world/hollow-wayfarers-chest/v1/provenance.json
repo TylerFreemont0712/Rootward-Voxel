@@ -1,0 +1,41 @@
+{
+  "asset": "hollow-wayfarers-chest",
+  "version": "v1",
+  "authoring_tool": "Blender 5.2.2 LTS; deliberate scripted geometry",
+  "source_authority": "model.blend; this script is a protected one-time authoring record",
+  "recipe": "wayfarers_chest",
+  "sources": {
+    "art/source/world/village-library/v1/author.py": "4e0a2f4d10c33120f752e70d27f0d599d3bf11024c53d9260d916b7987d7e786",
+    "art/source/world/village-library/v1/modeling.py": "2e204b88cab0604d1435eef74e19dae12152339868f7cb2326602c1dd2740f1f",
+    "art/source/world/village-library/v1/village_magic.py": "b00d7c9a89ea1c155e05202be5ff888a0c7c8739539bb8bff31f23f3cceb032d",
+    "art/source/world/village-library/v1/library.json": "cf9740d227bf11cc8aca9cd34e5ad28be137dd8fc699dd7656913ef062a38c16"
+  },
+  "materials": "Shared village palette; existing lush texture PNGs packed losslessly; no generated-image dependency.",
+  "blender_bounds": [
+    [
+      -0.5899999737739563,
+      -0.4035000205039978,
+      0.0
+    ],
+    [
+      0.5899999737739563,
+      0.3885999917984009,
+      0.7774999737739563
+    ]
+  ],
+  "spec": {
+    "number": 48,
+    "id": "hollow-wayfarers-chest",
+    "recipe": "wayfarers_chest",
+    "category": "village-magic",
+    "title": "Wayfarer’s Chest",
+    "width": 1.15,
+    "depth": 0.75,
+    "blurb": "An iron-strapped travel chest with an arched violet lid and brass clasp.",
+    "interaction": {
+      "kind": "hinge",
+      "on": "Open",
+      "off": "Close"
+    }
+  }
+}

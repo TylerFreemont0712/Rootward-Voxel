@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "note": "Build mode's land-shaping tools, shown in Land beside the ground paints. Each `sample` is a small ordinary area document (pipeline/AREAS.md) drawn for the tool's card and details picture; samples are never played. The rules live in core/area_build.gd.",
+  "tools": [
+    {
+      "id": "raise",
+      "family": "Terrain",
+      "title": "Raise land",
+      "icon": "raise",
+      "blurb": "Lift the ground one level, to make a terrace with a cliff round it. Land goes up to level 2.",
+      "spec": "Drag over ground to raise it\nCliffs block walking: add stairs",
+      "sample": {
+        "schema": 1, "id": "sample-raise", "title": "Terraces", "version": 1, "size": [5, 5], "spawn": [4, 0],
+        "terrain": [".....", ".....", ".....", ".....", "....."],
+        "levels": ["22110", "21100", "11000", "10000", "00000"]
+      }
+    },
+    {
+      "id": "lower",
+      "family": "Terrain",
+      "title": "Lower land",
+      "icon": "lower",
+      "blurb": "Bring raised ground down a level. The valley floor is as low as land goes: dig water to go deeper.",
+      "spec": "Drag over raised ground to lower it\nOne drag = one undo",
+      "sample": {
+        "schema": 1, "id": "sample-lower", "title": "A hollow", "version": 1, "size": [5, 5], "spawn": [0, 0],
+        "terrain": [".....", ".....", ".....", ".....", "....."],
+        "levels": ["11111", "10001", "10001", "10001", "11110"]
+      }
+    },
+    {
+      "id": "stairs",
+      "family": "Terrain",
+      "title": "Stone stairs",
+      "icon": "stairs",
+      "blurb": "A flight of steps up a cliff one level high. Set it at the foot of the cliff; it climbs toward it.",
+      "spec": "Click at the foot of a cliff\nR picks the way when two cliffs meet\nDelete tool takes stairs away",
+      "sample": {
+        "schema": 1, "id": "sample-stairs", "title": "Stairs", "version": 1, "size": [5, 4], "spawn": [0, 0],
+        "terrain": [".....", ".....", ".....", "....."],
+        "levels": ["11111", "11111", "00000", "00000"],
+        "stairs": [{"at": [2, 1], "up": "N"}]
+      }
+    },
+    {
+      "id": "water",
+      "family": "Water",
+      "title": "Dig water",
+      "icon": "water",
+      "blurb": "Dig a pond or a stream at the ground's own level. Water that runs on to lower water falls as a waterfall.",
+      "spec": "Drag over ground to flood it\nNobody walks on water",
+      "sample": {
+        "schema": 1, "id": "sample-water", "title": "A waterfall", "version": 1, "size": [5, 5], "spawn": [0, 0],
+        "terrain": ["..~..", "..~..", "..~..", "..~..", "..~.."],
+        "levels": ["11111", "11111", "00000", "00000", "00000"]
+      }
+    },
+    {
+      "id": "land",
+      "family": "Water",
+      "title": "Fill in",
+      "icon": "fill",
+      "blurb": "Fill water in with earth and grass, at the level it lay. A bridge's crossing and the mill race stay wet.",
+      "spec": "Drag over water to fill it\nOne drag = one undo",
+      "sample": {
+        "schema": 1, "id": "sample-fill", "title": "A pond", "version": 1, "size": [5, 4], "spawn": [0, 0],
+        "terrain": [".....", ".~~~.", ".~~..", "....."]
+      }
+    }
+  ]
+}

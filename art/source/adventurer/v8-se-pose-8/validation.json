@@ -1,0 +1,22 @@
+{
+  "canvas": [
+    1254,
+    1254
+  ],
+  "changed_poses": [
+    8
+  ],
+  "format": "RGBA8",
+  "pose_8_original_upper_pixels_verified": 101754,
+  "transparency_preserved": true,
+  "unchanged_poses_pixel_identical": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9
+  ]
+}

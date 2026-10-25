@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "hollow-grinding-wheel",
+  "version": "v1",
+  "source": "art/source/world/hollow-grinding-wheel/v1/model.blend",
+  "source_sha256": "60179774a60bc2aa355b38558315e92bc48773cfb150fd3ef091f985d90f0b15",
+  "runtime": "assets/world/hollow-grinding-wheel/model.glb",
+  "runtime_sha256": "078b30fbe3776fec60aa6ea75010bd6ea68c7c8e7428f2557785062784cddef8",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.490000009536743,
+      0.0,
+      -0.360000014305115,
+      0.490000009536743,
+      1.26999998092651,
+      0.360000014305115
+    ],
+    "geometry_sha256": "24df5dbe6422f752be00179cac8ded4b35e440521f3b9994a0adf956955bdfc6",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+      },
+      "clay": {
+        "albedo": [
+          7216,
+          4196,
+          2706,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "iron": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "5aa901d0159be0f4db2bbfe0c3cee98970ef021a1f5b88ca2db951035e1bc042"
+      },
+      "oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "oak_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "stone_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "a4c740ef95322fab6b4ac67a310027e5410621625d11d1583972f3f3de6a7c18"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "brass",
+      "clay",
+      "iron",
+      "oak",
+      "oak_light",
+      "stone",
+      "stone_light",
+      "wood_dark"
+    ],
+    "meshes": 8,
+    "triangles": 484
+  }
+}

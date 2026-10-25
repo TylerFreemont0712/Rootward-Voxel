@@ -1,0 +1,41 @@
+{
+  "asset": "hollow-crystal-obelisk",
+  "version": "v1",
+  "authoring_tool": "Blender 5.2.2 LTS; deliberate scripted geometry",
+  "source_authority": "model.blend; this script is a protected one-time authoring record",
+  "recipe": "crystal_obelisk",
+  "sources": {
+    "art/source/world/village-library/v1/author.py": "4e0a2f4d10c33120f752e70d27f0d599d3bf11024c53d9260d916b7987d7e786",
+    "art/source/world/village-library/v1/modeling.py": "2e204b88cab0604d1435eef74e19dae12152339868f7cb2326602c1dd2740f1f",
+    "art/source/world/village-library/v1/village_magic.py": "b00d7c9a89ea1c155e05202be5ff888a0c7c8739539bb8bff31f23f3cceb032d",
+    "art/source/world/village-library/v1/library.json": "cf9740d227bf11cc8aca9cd34e5ad28be137dd8fc699dd7656913ef062a38c16"
+  },
+  "materials": "Shared village palette; existing lush texture PNGs packed losslessly; no generated-image dependency.",
+  "blender_bounds": [
+    [
+      -0.4699999988079071,
+      -0.46000000834465027,
+      0.0
+    ],
+    [
+      0.48240000009536743,
+      0.46000000834465027,
+      1.5920000076293945
+    ]
+  ],
+  "spec": {
+    "number": 43,
+    "id": "hollow-crystal-obelisk",
+    "recipe": "crystal_obelisk",
+    "category": "village-magic",
+    "title": "Crystal Obelisk",
+    "width": 1.0,
+    "depth": 1.0,
+    "blurb": "Three faceted turquoise crystals grow from a carved cream stone base.",
+    "interaction": {
+      "kind": "light",
+      "on": "Awaken",
+      "off": "Dim"
+    }
+  }
+}

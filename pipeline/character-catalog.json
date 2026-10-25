@@ -1,0 +1,95 @@
+{
+  "schema": 2,
+  "mode": "shared_frame_skins",
+  "template": "res://pipeline/character-template.json",
+  "active": "adventurer",
+  "runtime_library": "res://assets/characters/library.json",
+  "skins": {
+    "adventurer": {
+      "label": "Original",
+      "atlas": "template",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "mira": {
+      "label": "Mira",
+      "source": "res://art/source/characters/mira/v1/sheet.png",
+      "provenance": "res://art/source/characters/mira/v1/provenance.json",
+      "runtime": "res://assets/characters/skins/mira.png",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "selectable": false
+    },
+    "adventurer_twilight": {
+      "label": "Twilight tint \u2014 shared frame skin example",
+      "selectable": false,
+      "atlas": "template",
+      "tint": [
+        0.86,
+        0.93,
+        1,
+        1
+      ]
+    },
+    "rowan": {
+      "label": "Rowan",
+      "selectable": false,
+      "source": "res://art/source/characters/rowan/v1/sheet.png",
+      "provenance": "res://art/source/characters/rowan/v1/provenance.json",
+      "runtime": "res://assets/characters/skins/rowan.png",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "bram": {
+      "label": "Bram",
+      "selectable": false,
+      "source": "res://art/source/characters/bram/v1/sheet.png",
+      "provenance": "res://art/source/characters/bram/v1/provenance.json",
+      "runtime": "res://assets/characters/skins/bram.png",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "tessa": {
+      "label": "Tessa",
+      "selectable": false,
+      "source": "res://art/source/characters/tessa/v1/sheet.png",
+      "provenance": "res://art/source/characters/tessa/v1/provenance.json",
+      "runtime": "res://assets/characters/skins/tessa.png",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "nell": {
+      "label": "Nell",
+      "selectable": false,
+      "source": "res://art/source/characters/nell/v1/sheet.png",
+      "provenance": "res://art/source/characters/nell/v1/provenance.json",
+      "runtime": "res://assets/characters/skins/nell.png",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}

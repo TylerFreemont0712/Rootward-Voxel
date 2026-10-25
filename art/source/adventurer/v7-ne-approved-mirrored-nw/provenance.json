@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-23",
+  "user_approval": "This image is perfect for both 3 and 8; use this as NE.png and flip X for NW.png.",
+  "approved_preview": "/home/joejin/.codex/generated_images/01a164ae-ca31-7be0-9a73-194855fb00c6/exec-ad1332a1-d040-44b4-aeaf-581c976bda4b.png",
+  "approved_preview_sha256": "0cd31a9cf3e94ad1ecec7937f51512e4a7c7c654c601df71b1ef2fa9a5492187",
+  "ne_method": "Unchanged file copy of the user-approved built-in image_gen preview",
+  "nw_method": "Pillow Image.Transpose.FLIP_LEFT_RIGHT on each of the nine cells independently; frame order preserved",
+  "grid": [
+    3,
+    3
+  ],
+  "cell_size": [
+    418,
+    418
+  ],
+  "previous_sources": {
+    "ne": {
+      "source": "art/source/adventurer/v6-ne-pose-3-8/sheet.png",
+      "sha256": "aaa8cf9b76ed39d3bda11f936938284496a9fea7d044e87a747bd93aa76b0966"
+    },
+    "nw": {
+      "source": "art/source/adventurer/v5-template/nw.png",
+      "sha256": "3d12e62432ee983f3beb1643e744c0594f05fa220d8f9983b11daf8fa69ac6ef"
+    }
+  },
+  "outputs": {
+    "NE.png": "0cd31a9cf3e94ad1ecec7937f51512e4a7c7c654c601df71b1ef2fa9a5492187",
+    "NW.png": "d9b9cd631f81dffaeb91b5a11dd184a1cd4eccdd2de4a3d391b81f624e0d2207"
+  },
+  "validation": [
+    "NE file byte-identical to approved preview",
+    "All nine NW poses exactly mirror their matching NE pose",
+    "3x3 layout and frame order retained",
+    "RGBA transparency retained"
+  ]
+}

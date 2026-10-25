@@ -1,0 +1,7 @@
+{
+  "reason": "Bring bottle bodies, labels and corks toward the shelf front so they read at the approved elevated camera.",
+  "method": "Translate the existing authored bottle components by -0.14 Blender Y; preserve cabinet shape and all other objects. No regeneration.",
+  "before_sha256": "7c27fc837f7d4e7b4ab28a43903eb35818ecf2a0c3eabb7d221515b72758da42",
+  "after_sha256": "32347664b1cd4a2eecc654e15ad9f5afa6b113ae731451dfb6e6351ecda5b48b",
+  "script_sha256": "738a58600435d5f4f8445ee8c810b215454936a017b8e911f73e8c09b4d6ba4d"
+}

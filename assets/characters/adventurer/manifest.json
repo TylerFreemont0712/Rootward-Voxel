@@ -1,0 +1,546 @@
+{
+  "alpha_threshold": 0.25,
+  "animation_method": "approved eight-pose paintings; mirrored SW/NW; neutral breathing idle and eye-only blink",
+  "animations": {
+    "idle_ne": [
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 370,
+        "region": [
+          0,
+          3584,
+          384,
+          448
+        ]
+      }
+    ],
+    "idle_nw": [
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 370,
+        "region": [
+          0,
+          4928,
+          384,
+          448
+        ]
+      }
+    ],
+    "idle_se": [
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 369,
+        "region": [
+          0,
+          896,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 369,
+        "region": [
+          384,
+          896,
+          384,
+          448
+        ]
+      }
+    ],
+    "idle_sw": [
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 369,
+        "region": [
+          0,
+          2240,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 369,
+        "region": [
+          384,
+          2240,
+          384,
+          448
+        ]
+      }
+    ],
+    "walk_ne": [
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 366,
+        "region": [
+          0,
+          2688,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 367,
+        "region": [
+          384,
+          2688,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 365,
+        "region": [
+          768,
+          2688,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 358,
+        "region": [
+          1152,
+          2688,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 359,
+        "region": [
+          0,
+          3136,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 363,
+        "region": [
+          384,
+          3136,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 366,
+        "region": [
+          768,
+          3136,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 360,
+        "region": [
+          1152,
+          3136,
+          384,
+          448
+        ]
+      }
+    ],
+    "walk_nw": [
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 366,
+        "region": [
+          0,
+          4032,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 367,
+        "region": [
+          384,
+          4032,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 365,
+        "region": [
+          768,
+          4032,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 358,
+        "region": [
+          1152,
+          4032,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 359,
+        "region": [
+          0,
+          4480,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 363,
+        "region": [
+          384,
+          4480,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 366,
+        "region": [
+          768,
+          4480,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 360,
+        "region": [
+          1152,
+          4480,
+          384,
+          448
+        ]
+      }
+    ],
+    "walk_se": [
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 369,
+        "region": [
+          0,
+          0,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 374,
+        "region": [
+          384,
+          0,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 372,
+        "region": [
+          768,
+          0,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 374,
+        "region": [
+          1152,
+          0,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 370,
+        "region": [
+          0,
+          448,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 366,
+        "region": [
+          384,
+          448,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 373,
+        "region": [
+          768,
+          448,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 380,
+        "region": [
+          1152,
+          448,
+          384,
+          448
+        ]
+      }
+    ],
+    "walk_sw": [
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 369,
+        "region": [
+          0,
+          1344,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 374,
+        "region": [
+          384,
+          1344,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 372,
+        "region": [
+          768,
+          1344,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 374,
+        "region": [
+          1152,
+          1344,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 370,
+        "region": [
+          0,
+          1792,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 366,
+        "region": [
+          384,
+          1792,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 373,
+        "region": [
+          768,
+          1792,
+          384,
+          448
+        ]
+      },
+      {
+        "anchor": [
+          192.0,
+          420.0
+        ],
+        "opaque_height": 380,
+        "region": [
+          1152,
+          1792,
+          384,
+          448
+        ]
+      }
+    ]
+  },
+  "facing_space": "screen_diagonals",
+  "fps": 16.0,
+  "id": "adventurer",
+  "idle": {
+    "blink_directions": [
+      "se",
+      "sw"
+    ],
+    "blink_duration": 0.12,
+    "blink_interval": [
+      6.0,
+      7.0
+    ],
+    "breath_amplitude": 0.006,
+    "breath_period": 3.6,
+    "rear_breath_amplitude": 0.004
+  },
+  "pixel_size": 0.00392953929539295,
+  "runtime_sheet": "res://assets/characters/adventurer/sheet.png",
+  "schema": 4,
+  "sheet_size": [
+    1536,
+    5376
+  ],
+  "source": "res://art/source/adventurer/v9-directional-walk/sheet.png",
+  "source_sha256": "6e7db11c4c1403efc3af748014cbe06b600779319117bf29ab30f3fe9abd471d",
+  "template_id": "painted_chibi_v1",
+  "template_sha256": "136c5c50b15927bbf6313bef91852eddbfe9dea87b693be99b8eb279115ca152",
+  "version": "v9-directional-walk",
+  "world_height": 1.45
+}

@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "park-bench",
+  "version": "v1",
+  "source": "art/source/world/park-bench/v1/model.blend",
+  "source_sha256": "20596402bd2098c7ee3996808c9955432006e61da80038e02ce68ecfc3b1edab",
+  "runtime": "assets/world/park-bench/model.glb",
+  "runtime_sha256": "67193c885f10cd253075cbf87ccd3e52683d8f9b68463ff53c42e67445fed7a8",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.449999988079071,
+      0.0,
+      -0.25,
+      0.449999988079071,
+      0.899999976158142,
+      0.25
+    ],
+    "geometry_sha256": "26dcaf97ffc6f5f56d0850e7dedd3fdaace8d9218c506c7b8cd82b7ddb9810bb",
+    "material_records": {
+      "iron": {
+        "albedo": [
+          2235,
+          2667,
+          2745,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_dark": {
+        "albedo": [
+          1490,
+          1765,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_light": {
+        "albedo": [
+          3529,
+          4000,
+          4039,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          6902,
+          4784,
+          2706,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak_light": {
+        "albedo": [
+          7725,
+          5804,
+          3451,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "iron",
+      "iron_dark",
+      "iron_light",
+      "oak",
+      "oak_light"
+    ],
+    "meshes": 5,
+    "triangles": 2704
+  }
+}

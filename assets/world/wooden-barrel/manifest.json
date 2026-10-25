@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "wooden-barrel",
+  "version": "v1",
+  "source": "art/source/world/wooden-barrel/v1/model.blend",
+  "source_sha256": "8efd8c3a07d85fca3111c95be321fc15052ee58e7e51f77ae60a42c147a7521c",
+  "runtime": "assets/world/wooden-barrel/model.glb",
+  "runtime_sha256": "270a56f0c5da18897012ba2f6eaf87a47a192fc19b2adb582cc0209c06d7257e",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.224999994039536,
+      0.0,
+      -0.25,
+      0.224999994039536,
+      0.5,
+      0.25
+    ],
+    "geometry_sha256": "e95b8750a0b6acb692969580baab3628b84d8aca49b6bd48237ee1231e53767c",
+    "material_records": {
+      "iron": {
+        "albedo": [
+          2235,
+          2667,
+          2745,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_light": {
+        "albedo": [
+          3725,
+          4235,
+          4314,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          6902,
+          4784,
+          2706,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak_light": {
+        "albedo": [
+          7725,
+          5804,
+          3451,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood": {
+        "albedo": [
+          4627,
+          3137,
+          2235,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood_dark": {
+        "albedo": [
+          2863,
+          2196,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "iron",
+      "iron_light",
+      "oak",
+      "oak_light",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 6,
+    "triangles": 1020
+  }
+}

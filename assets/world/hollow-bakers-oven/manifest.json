@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "hollow-bakers-oven",
+  "version": "v1",
+  "source": "art/source/world/hollow-bakers-oven/v1/model.blend",
+  "source_sha256": "74ce123a7eac5cf48406c92fd95b8d33d8f72107cb27db319c9c4706914f9e50",
+  "runtime": "assets/world/hollow-bakers-oven/model.glb",
+  "runtime_sha256": "6774e40c1f993971f20304c0e2a87777f27ba2ed8376b15bc6f74473cb5f111a",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.800000011920929,
+      0.0,
+      -0.714999973773956,
+      0.800000011920929,
+      2.00999999046326,
+      0.649999976158142
+    ],
+    "geometry_sha256": "f4a86e32f08eb2c5e8fc6f838c16752d7fdf112a4c099a1c15da0d5b1aa85c3c",
+    "material_records": {
+      "plaster": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "7e39c012eba9e2b2c9fe8e7603742c8adb106a7440620c83278976f44b7a0a6b"
+      },
+      "roof": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "cf9ab57a6fd0ed6ae43f492bba41ea37d6e9299d490ec2a05d8629d11dcedeaa"
+      },
+      "state_flame": {
+        "albedo": [
+          9608,
+          7176,
+          3725,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "stone_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "stone_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "a4c740ef95322fab6b4ac67a310027e5410621625d11d1583972f3f3de6a7c18"
+      },
+      "wood": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "f556d148ef2bc03c2e5f9b03b3794387093d909a3a5c75c69864a1d38969c3e9"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "plaster",
+      "roof",
+      "state_flame",
+      "stone",
+      "stone_dark",
+      "stone_light",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 8,
+    "triangles": 480
+  }
+}

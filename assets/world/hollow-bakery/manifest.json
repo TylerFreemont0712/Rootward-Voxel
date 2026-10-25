@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "asset": "hollow-bakery",
+  "version": "v1",
+  "source": "art/source/world/hollow-bakery/v1/model.blend",
+  "source_sha256": "94718636c6516fea5cc9d882b40879a6dc079ce522427e144433bc1da772628e",
+  "runtime": "assets/world/hollow-bakery/model.glb",
+  "runtime_sha256": "5e3b949ebb5763d1135d7c53bbc0df3e8de807191e1923ce570c30f95d2b9735",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -2.90349912643433,
+      0.0,
+      -2.40000009536743,
+      2.90349912643433,
+      5.90249967575073,
+      2.85999989509583
+    ],
+    "geometry_sha256": "f4bb74c69a430b1639f208d424d3e245bb07f1f90f7040699584ae4ef666acb5",
+    "material_records": {
+      "brick": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "4a3ab2ade918ba47e1825d3dfc7ce307d1f941441ec65a8629ea576756311a38"
+      },
+      "entrance_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "entrance_recess": {
+        "albedo": [
+          2601,
+          1997,
+          1601,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "entrance_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "ecae5199b69038bd8ac0746401ca259de6ac72fee70b081592583da819d8180f"
+      },
+      "gold": {
+        "albedo": [
+          8095,
+          6180,
+          3227,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron": {
+        "albedo": [
+          2934,
+          3492,
+          3575,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "plaster": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "d3184cd7df615a3212e044a6d9852e0701c4d8e089df6c514095e429219cfca8"
+      },
+      "recess": {
+        "albedo": [
+          2209,
+          1718,
+          1517,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "roof_violet": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "cf9ab57a6fd0ed6ae43f492bba41ea37d6e9299d490ec2a05d8629d11dcedeaa"
+      },
+      "stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "ecae5199b69038bd8ac0746401ca259de6ac72fee70b081592583da819d8180f"
+      },
+      "window_warm": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "d58bbcde21fb59bb393bf5dc52af09c38158fc1a3a6db86e38086af5f9a17de4"
+      },
+      "wood": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      }
+    },
+    "materials": [
+      "brick",
+      "entrance_oak",
+      "entrance_recess",
+      "entrance_stone",
+      "gold",
+      "iron",
+      "plaster",
+      "recess",
+      "roof_violet",
+      "stone",
+      "window_warm",
+      "wood"
+    ],
+    "meshes": 130,
+    "triangles": 1828
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "active": "adventurer",
+  "schema": 1,
+  "skins": {
+    "adventurer": {
+      "atlas": "res://assets/characters/adventurer/sheet.png",
+      "label": "Original",
+      "selectable": true,
+      "source_sha256": "6e7db11c4c1403efc3af748014cbe06b600779319117bf29ab30f3fe9abd471d",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "adventurer_twilight": {
+      "atlas": "res://assets/characters/adventurer/sheet.png",
+      "label": "Twilight tint — shared frame skin example",
+      "selectable": false,
+      "source_sha256": "6e7db11c4c1403efc3af748014cbe06b600779319117bf29ab30f3fe9abd471d",
+      "tint": [
+        0.86,
+        0.93,
+        1.0,
+        1.0
+      ]
+    },
+    "bram": {
+      "atlas": "res://assets/characters/skins/bram.png",
+      "label": "Bram",
+      "selectable": false,
+      "source_sha256": "f2826f0bb64095186d97c9fceb587737566f02837dc6976a76176d27e09a2c55",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "mira": {
+      "atlas": "res://assets/characters/skins/mira.png",
+      "label": "Mira",
+      "selectable": false,
+      "source_sha256": "4da74efd92985cfc359cd351f15f790cde91753c04437c0614951de8ad419196",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "nell": {
+      "atlas": "res://assets/characters/skins/nell.png",
+      "label": "Nell",
+      "selectable": false,
+      "source_sha256": "d4bf4cc138caedb1d5e9d5f2c80302ef71a06210a9e245c60cdcdb70e3c01dc8",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "rowan": {
+      "atlas": "res://assets/characters/skins/rowan.png",
+      "label": "Rowan",
+      "selectable": false,
+      "source_sha256": "bb2e6b1e05020a216c9351f09454c81ee8ad102f477e100bd2afb12f13f82e3f",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "tessa": {
+      "atlas": "res://assets/characters/skins/tessa.png",
+      "label": "Tessa",
+      "selectable": false,
+      "source_sha256": "60f968f7770cc8a217c717439e3af72c7d36093b229199bc20fe75791397af9f",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "template": {
+    "atlas": "res://assets/characters/adventurer/sheet.png",
+    "frames": "res://assets/characters/adventurer/frames.tres",
+    "id": "painted_chibi_v1",
+    "manifest": "res://assets/characters/adventurer/manifest.json",
+    "sha256": "136c5c50b15927bbf6313bef91852eddbfe9dea87b693be99b8eb279115ca152",
+    "sheet_size": [
+      1536,
+      5376
+    ]
+  }
+}

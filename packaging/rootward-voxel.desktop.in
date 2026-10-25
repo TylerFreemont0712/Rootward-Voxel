@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Rootward Voxel
+GenericName=Programming Adventure
+Comment=Write real Python to light and rebuild Kindle Hollow
+Exec=$EXEC
+TryExec=$GODOT
+Path=$PROJECT
+Icon=$ICON
+Terminal=false
+StartupNotify=true
+StartupWMClass=Rootward Voxel
+Categories=Game;
+Keywords=rootward;voxel;python;programming;fantasy;kindle;hollow;
+X-Rootward-Voxel-Launcher=true

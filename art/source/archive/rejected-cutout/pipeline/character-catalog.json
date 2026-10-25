@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "active": "adventurer",
+  "rig_scene": "res://art/rigs/chibi_v1/rig.tscn",
+  "skins": {
+    "adventurer": {
+      "rig_family": "chibi_v1",
+      "manifest": "res://assets/characters/adventurer-cutout/skin.json",
+      "views": {
+        "se": {
+          "source": "res://art/source/characters/adventurer-cutout/v1/front.png",
+          "runtime": "res://assets/characters/adventurer-cutout/front.png",
+          "mirror": false,
+          "x_edges": [
+            0,
+            375,
+            640,
+            970,
+            1254
+          ],
+          "y_edges": [
+            0,
+            345,
+            630,
+            930,
+            1254
+          ]
+        },
+        "sw": {
+          "source": "res://art/source/characters/adventurer-cutout/v1/front.png",
+          "runtime": "res://assets/characters/adventurer-cutout/front.png",
+          "mirror": true,
+          "x_edges": [
+            0,
+            375,
+            640,
+            970,
+            1254
+          ],
+          "y_edges": [
+            0,
+            345,
+            630,
+            930,
+            1254
+          ]
+        },
+        "ne": {
+          "source": "res://art/source/characters/adventurer-cutout/v1/back.png",
+          "runtime": "res://assets/characters/adventurer-cutout/back.png",
+          "mirror": false,
+          "x_edges": [
+            0,
+            375,
+            640,
+            970,
+            1254
+          ],
+          "y_edges": [
+            0,
+            345,
+            630,
+            930,
+            1254
+          ]
+        },
+        "nw": {
+          "source": "res://art/source/characters/adventurer-cutout/v1/back.png",
+          "runtime": "res://assets/characters/adventurer-cutout/back.png",
+          "mirror": true,
+          "x_edges": [
+            0,
+            375,
+            640,
+            970,
+            1254
+          ],
+          "y_edges": [
+            0,
+            345,
+            630,
+            930,
+            1254
+          ]
+        }
+      }
+    },
+    "dusk_outfit": {
+      "rig_family": "chibi_v1",
+      "manifest": "res://assets/characters/adventurer-cutout/dusk-skin.json",
+      "views": {
+        "se": {
+          "source": "res://art/source/characters/adventurer-cutout/v1/front.png",
+          "runtime": "res://assets/characters/adventurer-cutout/front.png",
+          "mirror": false,
+          "x_edges": [
+            0,
+            375,
+            640,
+            970,
+            1254
+          ],
+          "y_edges": [
+            0,
+            345,
+            630,
+            930,
+            1254
+          ]
+        },
+        "sw": {
+          "source": "res://art/source/characters/adventurer-cutout/v1/front.png",
+          "runtime": "res://assets/characters/adventurer-cutout/front.png",
+          "mirror": true,
+          "x_edges": [
+            0,
+            375,
+            640,
+            970,
+            1254
+          ],
+          "y_edges": [
+            0,
+            345,
+            630,
+            930,
+            1254
+          ]
+        },
+        "ne": {
+          "source": "res://art/source/characters/adventurer-cutout/v1/back.png",
+          "runtime": "res://assets/characters/adventurer-cutout/back.png",
+          "mirror": false,
+          "x_edges": [
+            0,
+            375,
+            640,
+            970,
+            1254
+          ],
+          "y_edges": [
+            0,
+            345,
+            630,
+            930,
+            1254
+          ]
+        },
+        "nw": {
+          "source": "res://art/source/characters/adventurer-cutout/v1/back.png",
+          "runtime": "res://assets/characters/adventurer-cutout/back.png",
+          "mirror": true,
+          "x_edges": [
+            0,
+            375,
+            640,
+            970,
+            1254
+          ],
+          "y_edges": [
+            0,
+            345,
+            630,
+            930,
+            1254
+          ]
+        }
+      },
+      "tints": {
+        "torso": "c0c8ff",
+        "upper_arm_l": "c0c8ff",
+        "upper_arm_r": "c0c8ff",
+        "hair": "d7b6a1"
+      }
+    }
+  },
+  "status": "inactive_visually_rejected",
+  "selection_scope": "Cutout study only. The runtime player is selected by pipeline/art-catalog.json and uses the approved painted whole-body character."
+}

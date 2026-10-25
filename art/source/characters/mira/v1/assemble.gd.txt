@@ -1,0 +1,47 @@
+extends SceneTree
+## One-time source assembly: exact cell mirrors and an eye-only generated blink patch.
+
+const DIRECTORY := "res://art/source/characters/mira/v1/"
+var eyes: Array[PackedVector2Array] = [
+	PackedVector2Array([Vector2(108, 130), Vector2(111, 120), Vector2(122, 114), Vector2(137, 114), Vector2(147, 120), Vector2(153, 130), Vector2(152, 145), Vector2(146, 157), Vector2(133, 160), Vector2(119, 157), Vector2(109, 147)]),
+	PackedVector2Array([Vector2(165, 126), Vector2(168, 115), Vector2(177, 107), Vector2(188, 107), Vector2(197, 116), Vector2(197, 133), Vector2(191, 147), Vector2(179, 152), Vector2(167, 144)])
+]
+
+
+func _initialize() -> void:
+	if FileAccess.file_exists(DIRECTORY + "sheet.png") or FileAccess.file_exists(DIRECTORY + "provenance.json"):
+		printerr("Prepared source already exists; use a NEW version directory.")
+		quit(1)
+		return
+	for pair: Array in [["SE", "SW"], ["NE", "NW"]]:
+		var source := Image.load_from_file(ProjectSettings.globalize_path(DIRECTORY + str(pair[0]) + ".png"))
+		var mirrored := Image.create(1254, 1254, false, Image.FORMAT_RGBA8)
+		for index: int in range(9):
+			var region := Rect2i((index % 3) * 418, (index / 3) * 418, 418, 418)
+			var pose := source.get_region(region)
+			pose.flip_x()
+			mirrored.blit_rect(pose, Rect2i(0, 0, 418, 418), region.position)
+		mirrored.save_png(ProjectSettings.globalize_path(DIRECTORY + str(pair[1]) + ".png"))
+	var blink := Image.load_from_file(ProjectSettings.globalize_path(DIRECTORY + "idle-se.png"))
+	var generated := Image.load_from_file(ProjectSettings.globalize_path(DIRECTORY + "blink-generated.png"))
+	generated.resize(250, 250, Image.INTERPOLATE_LANCZOS)
+	for y: int in range(105, 163):
+		for x: int in range(105, 200):
+			for eye: PackedVector2Array in eyes:
+				var point := Vector2(x, y)
+				if not Geometry2D.is_point_in_polygon(point, eye):
+					continue
+				var distance := 100.0
+				for index: int in range(eye.size()):
+					distance = minf(distance, point.distance_to(Geometry2D.get_closest_point_to_segment(point, eye[index], eye[(index + 1) % eye.size()])))
+				var original := blink.get_pixel(90 + x, y)
+				blink.set_pixel(90 + x, y, original.lerp(generated.get_pixel(x, y), smoothstep(0.0, 2.0, distance)))
+	blink.save_png(ProjectSettings.globalize_path(DIRECTORY + "blink-se.png"))
+	var detail := Image.create(500, 250, false, Image.FORMAT_RGBA8)
+	detail.blit_rect(Image.load_from_file(ProjectSettings.globalize_path(DIRECTORY + "blink-reference.png")), Rect2i(0, 0, 250, 250), Vector2i.ZERO)
+	detail.blit_rect(blink, Rect2i(90, 0, 250, 250), Vector2i(250, 0))
+	detail.resize(1000, 500, Image.INTERPOLATE_NEAREST)
+	detail.save_png(ProjectSettings.globalize_path("res://.cache/mira-blink-detail.png"))
+	blink.flip_x()
+	blink.save_png(ProjectSettings.globalize_path(DIRECTORY + "blink-sw.png"))
+	quit()

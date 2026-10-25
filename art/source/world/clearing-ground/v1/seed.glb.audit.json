@@ -1,0 +1,138 @@
+{
+  "bounds": [
+    -0.5,
+    -0.829999983310699,
+    -11.6400003433228,
+    15.5,
+    0.705000042915344,
+    0.689999997615814
+  ],
+  "geometry_sha256": "57b35922201a8068681edcca37926bf3510d826f1e94b9b65665a888ed15d835",
+  "material_records": {
+    "grass": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "8a20d0ca724dcd218a97937c6bbd33a24ebda6fb751ab01e5ecc62cb08b9c534"
+    },
+    "oak": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "ccfa65227118fb554a23af05bb512c2072592fe9f2e38490e6642ed9fc895e4a"
+    },
+    "path": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "dbeac440627a825236a50e797e2ddb8d22cc399cc9562b27aaa3649d1ce77fa5"
+    },
+    "path_dark": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "e5c1460df9ba1cda1eda78d515301ae52fb28b47a151009b0386972335e1331e"
+    },
+    "path_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "023806d31ce8e0f9030d633ad8bc038ee1672d9dae1a5b49c4a63c0604204b63"
+    },
+    "soil": {
+      "albedo": [
+        4588,
+        3451,
+        2745,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": ""
+    },
+    "soil_dark": {
+      "albedo": [
+        3451,
+        2941,
+        2824,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": ""
+    },
+    "stone": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "f87324007fa2b2593b31228f9c5b934d43d5d13396190f5b9073ffac26a0fb59"
+    },
+    "stone_dark": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "227a055ccafa7e3466a881726107eb56594b4fa0a3e93702f34ed6c2615bb02b"
+    },
+    "stone_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "280058a6c5363ee09fcc26468d06642f3058a583bbef36888eff6c85683b7f4a"
+    },
+    "wood_dark": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "2bc6ae3f9a6f537b18778aea8bb446cb75fbfb3094fb3a965884f257e99e25b2"
+    }
+  },
+  "materials": [
+    "grass",
+    "oak",
+    "path",
+    "path_dark",
+    "path_light",
+    "soil",
+    "soil_dark",
+    "stone",
+    "stone_dark",
+    "stone_light",
+    "wood_dark"
+  ],
+  "meshes": 11,
+  "triangles": 7224
+}

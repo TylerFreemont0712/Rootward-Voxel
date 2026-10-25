@@ -1,0 +1,37 @@
+{
+  "asset": "hollow-field-scarecrow",
+  "version": "v1",
+  "authoring_tool": "Blender 5.2.2 LTS; deliberate scripted geometry",
+  "source_authority": "model.blend; this script is a protected one-time authoring record",
+  "recipe": "field_scarecrow",
+  "sources": {
+    "art/source/world/village-library/v1/author.py": "4e0a2f4d10c33120f752e70d27f0d599d3bf11024c53d9260d916b7987d7e786",
+    "art/source/world/village-library/v1/modeling.py": "2e204b88cab0604d1435eef74e19dae12152339868f7cb2326602c1dd2740f1f",
+    "art/source/world/village-library/v1/garden.py": "22a48033691a81ca8754e17d08c091852ea20b257966166d71a4632a56712ca6",
+    "art/source/world/village-library/v1/library.json": "cf9740d227bf11cc8aca9cd34e5ad28be137dd8fc699dd7656913ef062a38c16"
+  },
+  "materials": "Shared village palette; existing lush texture PNGs packed losslessly; no generated-image dependency.",
+  "blender_bounds": [
+    [
+      -0.506600022315979,
+      -0.24727469682693481,
+      0.0
+    ],
+    [
+      0.506600022315979,
+      0.24727469682693481,
+      1.7200000286102295
+    ]
+  ],
+  "spec": {
+    "number": 37,
+    "id": "hollow-field-scarecrow",
+    "recipe": "field_scarecrow",
+    "category": "garden",
+    "title": "Field Scarecrow",
+    "width": 1.0,
+    "depth": 0.6,
+    "blurb": "A straw hat, russet coat and teal scarf on a forked timber field marker.",
+    "interaction": {}
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "hollow-shard-lantern",
+  "version": "v1",
+  "source": "art/source/world/hollow-shard-lantern/v1/model.blend",
+  "source_sha256": "84bf6311136f56433b2678888adca2a6260c34965cc7364193bc293afabd0320",
+  "runtime": "assets/world/hollow-shard-lantern/model.glb",
+  "runtime_sha256": "89ffd2a24abc82e427ab0e685f5548aca0a0f4c8c0599a5357920266e6bf9bb5",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.384999990463257,
+      0.0,
+      -0.365000009536743,
+      0.384999990463257,
+      1.70461618900299,
+      0.365000009536743
+    ],
+    "geometry_sha256": "64ec684dd7bbc7095ae40b1c0d718c21378f8bf9c803aaa58b1568afa45e0964",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+      },
+      "roof": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "cf9ab57a6fd0ed6ae43f492bba41ea37d6e9299d490ec2a05d8629d11dcedeaa"
+      },
+      "state_glow": {
+        "albedo": [
+          5255,
+          8941,
+          8196,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "stone_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "brass",
+      "roof",
+      "state_glow",
+      "stone_dark",
+      "wood_dark"
+    ],
+    "meshes": 5,
+    "triangles": 254
+  }
+}

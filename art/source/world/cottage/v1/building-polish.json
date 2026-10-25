@@ -1,0 +1,9 @@
+{
+  "revision": "2026-10-24-buildings-v1",
+  "asset": "cottage",
+  "before_sha256": "33d546060c612a86e20c8a2dc925c47abeae54cb80dca479eb03bb3527730c86",
+  "source_sha256": "f2a93b8d5651f6c89b620097e38e3f525907aabcedca26077759abfaf1019f8f",
+  "backup": "model.pre-building-polish.blend",
+  "script": "art/source/world/building-polish/v1/edit_sources.py",
+  "note": "Deliberate edit of existing source; original geometry retained except selected entrance components. Common painted roof scale, readable door hardware/thresholds; lamp glass preserved."
+}

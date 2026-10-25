@@ -1,0 +1,50 @@
+{
+  "wooden-barrel": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Wooden Barrel",
+    "source": "art/source/world/wooden-barrel/v1/model.blend",
+    "runtime": "assets/world/wooden-barrel/model.glb",
+    "pivot": "ground origin at the barrel's centre; base on z = 0",
+    "logical_footprint": [-0.225, -0.25, 0.45, 0.5],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Oak barrel with eight staves, three iron hoops, a dark base, a lid and a front bung. 0.45 m across, 0.5 m tall. The proposed footprint covers the whole barrel, so nothing overhangs it."
+  },
+  "crate-stack": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Crate Stack",
+    "source": "art/source/world/crate-stack/v1/model.blend",
+    "runtime": "assets/world/crate-stack/model.glb",
+    "pivot": "ground origin at the centre of the base crate; base on z = 0",
+    "logical_footprint": [-0.225, -0.225, 0.45, 0.45],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Two closed timber crates with dark corner posts and plank seams. The 0.35 m top crate is offset one voxel to +X, leaving a ledge on the -X side. The footprint is the base crate; nothing overhangs it."
+  },
+  "grain-sacks": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Grain Sacks",
+    "source": "art/source/world/grain-sacks/v1/model.blend",
+    "runtime": "assets/world/grain-sacks/model.glb",
+    "pivot": "ground origin at the centre of the pile; base on z = 0",
+    "logical_footprint": [-0.325, -0.125, 0.65, 0.25],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Three burlap sacks piled two and one, each gathered at the neck with a twine tie and a knot. 0.65 m wide, 0.5 m tall. The footprint covers the whole pile, so nothing overhangs it."
+  },
+  "woodpile": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Woodpile",
+    "source": "art/source/world/woodpile/v1/model.blend",
+    "runtime": "assets/world/woodpile/model.glb",
+    "pivot": "ground origin at the centre of the stack; base on z = 0",
+    "logical_footprint": [-0.45, -0.2, 0.9, 0.4],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Split logs in two layers, eight voxels deep, with pale cut ends to the front and back and bark along the sides. 0.9 m long, 0.4 m deep, 0.5 m tall. The footprint covers the whole stack, so nothing overhangs it."
+  }
+}

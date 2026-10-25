@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "tool": "Built-in image_gen.imagegen",
+  "model": "Not exposed by the tool",
+  "seed": "Not exposed by the tool",
+  "status": "Unselected concepts for user review; not runtime assets.",
+  "references": [
+    "art/source/characters/mira/v1/idle-se.png",
+    "art/source/adventurer/v9-directional-walk/idle-se.png",
+    "evidence/village-expansion/01-start-boundary.png",
+    "reference/voxel-isometric.png"
+  ],
+  "concepts": [
+    {
+      "id": "A",
+      "title": "Classic portrait stage",
+      "prompt": "a-classic-portrait-stage.txt",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-5abee2f4-1818-492a-8d6f-c2ef7da7fafc.png",
+      "image": "a-classic-portrait-stage.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "8e3d79359403870cc436492bf619364364d83d439fb4072e43b5e9be85392969",
+      "prompt_sha256": "a6b4084623bf379a1ef2647117189d94c559c4484a29715f874ac6fd720b2529"
+    },
+    {
+      "id": "B",
+      "title": "Cinematic two-speaker",
+      "prompt": "b-cinematic-two-speaker.txt",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-5380ff01-bbe2-4b96-b89d-4a3f3daf2860.png",
+      "image": "b-cinematic-two-speaker.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "0458e8b1c3c65f63b3f51c9ed95e3881adad0159bc3bec84f0dd48a861739cc5",
+      "prompt_sha256": "1e467f226549b75c84d33342dcb90581897b17a9adf48fc466d25ffb2e3770fe"
+    },
+    {
+      "id": "C",
+      "title": "Storybook side panel",
+      "prompt": "c-storybook-side-panel.txt",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-b694e438-9214-4f44-8148-3186479d9d6f.png",
+      "image": "c-storybook-side-panel.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "aa91401855902f55d8ffa605ecac208f8a90c66a7675ca33ff6df82307d92fa8",
+      "prompt_sha256": "81dba39dddf805dbcbaf3ad86477cfe359348fc2c98c971a542251e985fe2c22"
+    }
+  ],
+  "reference_sha256": {
+    "art/source/characters/mira/v1/idle-se.png": "420541c4b06ee597f99424905d27c1c9c57523df7006f484956baeeb979aaebf",
+    "art/source/adventurer/v9-directional-walk/idle-se.png": "3bf00cafeeccf30c26b3367131d814094539b78ec6313ca4b9cf0d38c4a07919",
+    "evidence/village-expansion/01-start-boundary.png": "1b2f1634243e38e418515cd7948d5f4a56ce9732ea2944555a233ba65fc087af",
+    "reference/voxel-isometric.png": "f4754b8d166594e87eb1ecfc2ac408cbaf560fdf6ad67684ffb3e34168921760"
+  }
+}

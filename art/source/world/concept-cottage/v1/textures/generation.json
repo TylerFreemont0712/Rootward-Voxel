@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "library_sha256": "ebaad6d64af88d348427ddd1e92966d2e2dfcbfcfd29463255ab768b3e81029e",
+  "reference_sha256": {
+    "reference/voxel-isometric.png": "f4754b8d166594e87eb1ecfc2ac408cbaf560fdf6ad67684ffb3e34168921760"
+  },
+  "materials": [
+    {
+      "id": "cottage_violet_glaze",
+      "source": "art/source/world/concept-cottage/v1/textures/violet_glaze.png",
+      "sha256": "33f29d6f0bd7ec925ff0e1ce329c30c9382381fc3719a673e0cc0b712c6d384b",
+      "generated_file": "/home/joejin/.codex/generated_images/01a16e75-5e47-7f61-b28d-ce6dd90a46cc/exec-94c4151f-b57e-4517-9371-b5782fd6df7b.png"
+    },
+    {
+      "id": "cottage_honey_oak",
+      "source": "art/source/world/concept-cottage/v1/textures/honey_oak.png",
+      "sha256": "e6f86b327708c0ba1108025bba3aafa3f8a2908c5e83f7151a3f1dc2bbf52e91",
+      "generated_file": "/home/joejin/.codex/generated_images/01a16e75-5e47-7f61-b28d-ce6dd90a46cc/exec-65e8562b-bfe8-4773-8213-3ef40732d71b.png"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-24",
+  "engine": "Godot 4.7.2",
+  "full_test_suites": 23,
+  "full_test_checks": 4625,
+  "new_materials": 15,
+  "runtime_pictures": 30,
+  "finishable_assets": 88,
+  "existing_art_checked": 879,
+  "existing_art_changed": [],
+  "windowed_reviews": [
+    "1600x1000 ui 1.0",
+    "1280x720 ui 1.0",
+    "1280x720 ui 1.5"
+  ],
+  "evidence": {
+    "library-lush.png": "91d309b3e9ddd3c1dc92aab2998d983237e500d0a71460625f4bbef1c4857cf8",
+    "library-solid.png": "1aabecb7708733be6c9b865a4e5a6b2b2e8b47542b62e3c405b88e045a0a229d",
+    "house-materials.png": "491fffeaa6975f0edd1212e63f72240a25a35f35fc6c8d53221e49e67ef68663",
+    "copper-roof.png": "3b302038b21f2291f1030679f55d2aad7110378045a45c1682023fbf7504cb30",
+    "floor-paints.png": "bb249f6112bcdddf933634d7465f18c6678b17acae15fcaabfec0fbbda1f9222",
+    "cottage-parquet.png": "bcd715285dc9ee0296a8eb5e3b050c3dc6d469591f82a77df2444dd4bfe96cbd",
+    "room-controls-1280.png": "27408934c52bbc4d166fe59c2adb6288b4fdf3c0d747ad1c484c292f83d9df31",
+    "room-controls-large.png": "4e586bc4e1db72736af3194c092ca73716dba3250c5e34ba7ca59ec4f2d834b2",
+    "workshop-limestone.png": "64804c8e2c124d18733c43fff311ed0a230a5d7efce818045e726b94ab7d547d",
+    "loft-tiles.png": "b4b5042e48461534746ba8b92f04b1a2dfcd95e4d82bae74f85cf55e9cf32e01",
+    "mill-terracotta.png": "b586abad3f08d934357fcf9e38e1c75d78310cf0676135c635d298fa05090b17"
+  }
+}

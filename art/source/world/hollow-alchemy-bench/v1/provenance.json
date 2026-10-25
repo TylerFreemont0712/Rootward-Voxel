@@ -1,0 +1,41 @@
+{
+  "asset": "hollow-alchemy-bench",
+  "version": "v1",
+  "authoring_tool": "Blender 5.2.2 LTS; deliberate scripted geometry",
+  "source_authority": "model.blend; this script is a protected one-time authoring record",
+  "recipe": "alchemy_bench",
+  "sources": {
+    "art/source/world/village-library/v1/author.py": "4e0a2f4d10c33120f752e70d27f0d599d3bf11024c53d9260d916b7987d7e786",
+    "art/source/world/village-library/v1/modeling.py": "2e204b88cab0604d1435eef74e19dae12152339868f7cb2326602c1dd2740f1f",
+    "art/source/world/village-library/v1/workshop.py": "53dd613298563d8d5c7988c397486899b8983527f70e5e4cfa5abe5f89b85833",
+    "art/source/world/village-library/v1/library.json": "cf9740d227bf11cc8aca9cd34e5ad28be137dd8fc699dd7656913ef062a38c16"
+  },
+  "materials": "Shared village palette; existing lush texture PNGs packed losslessly; no generated-image dependency.",
+  "blender_bounds": [
+    [
+      -0.7749999761581421,
+      -0.39399999380111694,
+      0.0
+    ],
+    [
+      0.7749999761581421,
+      0.39399999380111694,
+      1.838650107383728
+    ]
+  ],
+  "spec": {
+    "number": 19,
+    "id": "hollow-alchemy-bench",
+    "recipe": "alchemy_bench",
+    "category": "workshop",
+    "title": "Alchemy Bench",
+    "width": 1.55,
+    "depth": 0.8,
+    "blurb": "Copper piping, a flask cradle and three luminous coloured bottles.",
+    "interaction": {
+      "kind": "light",
+      "on": "Awaken",
+      "off": "Dim"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "stepping-stones": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Stepping Stones",
+    "source": "art/source/world/stepping-stones/v1/model.blend",
+    "runtime": "assets/world/stepping-stones/model.glb",
+    "pivot": "ground origin at the middle of the stone row",
+    "logical_footprint": null,
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Three flat grey stones in a gravel bed, with moss on the back rim. The stones are walkable, so no blocking footprint is proposed."
+  },
+  "rowboat-upturned": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Rowboat Upturned",
+    "source": "art/source/world/rowboat-upturned/v1/model.blend",
+    "runtime": "assets/world/rowboat-upturned/model.glb",
+    "pivot": "ground origin at the hull centre",
+    "logical_footprint": [-0.8, -0.3, 1.6, 0.6],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "An upturned hull with a dark keel, plank strakes in two tones, and an oar lying along each flank. The oars and blades overhang the proposed hull footprint."
+  },
+  "fallen-log": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Fallen Log",
+    "source": "art/source/world/fallen-log/v1/model.blend",
+    "runtime": "assets/world/fallen-log/model.glb",
+    "pivot": "ground origin at the centre of the log",
+    "logical_footprint": [-0.6, -0.2, 1.2, 0.4],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "A round trunk with bark, a pale cut end at +X and moss on top. The proposed footprint is the trunk itself, which a walker would plausibly be blocked by."
+  },
+  "mushroom-cluster": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Mushroom Cluster",
+    "source": "art/source/world/mushroom-cluster/v1/model.blend",
+    "runtime": "assets/world/mushroom-cluster/model.glb",
+    "pivot": "ground origin at the centre of the stump",
+    "logical_footprint": null,
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Six cream and violet mushrooms on a short cut stump, 0.3 m tall. The clump is small and walkable around, so no footprint is proposed."
+  },
+  "market-stall": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Market Stall",
+    "source": "art/source/world/market-stall/v1/model.blend",
+    "runtime": "assets/world/market-stall/model.glb",
+    "pivot": "ground origin at the centre of the stall body",
+    "logical_footprint": [-0.75, -0.45, 1.5, 0.9],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "A plank counter with corner posts, a back board and a violet and cream striped canopy, with baskets and apples on the counter. The proposed footprint is the stall body, and the canopy overhangs it."
+  },
+  "hanging-sign": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Hanging Sign",
+    "source": "art/source/world/hanging-sign/v1/model.blend",
+    "runtime": "assets/world/hanging-sign/model.glb",
+    "pivot": "foot of the post",
+    "logical_footprint": [-0.075, -0.075, 0.15, 0.15],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "A timber post with an iron arm and a violet-rimmed board hung in front. The proposed footprint is the post only, since the arm and board overhang it; set it to null if the post should not block."
+  }
+}

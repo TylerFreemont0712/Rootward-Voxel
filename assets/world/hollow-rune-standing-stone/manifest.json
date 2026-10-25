@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "hollow-rune-standing-stone",
+  "version": "v1",
+  "source": "art/source/world/hollow-rune-standing-stone/v1/model.blend",
+  "source_sha256": "212d433e46e24dd4237af74fca985dfb4ab4f4ea21119259ea985f58e30eb69b",
+  "runtime": "assets/world/hollow-rune-standing-stone/model.glb",
+  "runtime_sha256": "2e80ff6c3c44112189df386d962aea2d657d83ffd1b3c5e646bce43f3fa7f9f0",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.455000013113022,
+      0.0,
+      -0.305000007152557,
+      0.455000013113022,
+      1.59500002861023,
+      0.305000007152557
+    ],
+    "geometry_sha256": "6a4cc86310ca15f3e7810eb663700cdcef42bb0118b6e6d4ac0c10f6c2aeca4b",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+      },
+      "moss": {
+        "albedo": [
+          3608,
+          4706,
+          2667,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "state_glow": {
+        "albedo": [
+          5255,
+          8941,
+          8196,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "stone_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "stone_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "a4c740ef95322fab6b4ac67a310027e5410621625d11d1583972f3f3de6a7c18"
+      }
+    },
+    "materials": [
+      "brass",
+      "moss",
+      "state_glow",
+      "stone",
+      "stone_dark",
+      "stone_light"
+    ],
+    "meshes": 6,
+    "triangles": 240
+  }
+}

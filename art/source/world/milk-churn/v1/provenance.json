@@ -1,0 +1,9 @@
+{
+  "asset": "milk-churn",
+  "version": "v1",
+  "created": "2026-10-23T09:05:16.152188+00:00",
+  "author": "art/source/world/doodads-kit/v1/yard.py",
+  "author_sha256": "8d635ecbb866e7f1366b2297ddec20555fe66d4acdc3cd7e81e95ccd803b3d0c",
+  "voxel_metres": 0.05,
+  "note": "One-time procedural voxel authoring. model.blend becomes the editable source after this run."
+}

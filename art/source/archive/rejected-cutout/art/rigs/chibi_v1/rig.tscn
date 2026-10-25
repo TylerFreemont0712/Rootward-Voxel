@@ -1,0 +1,215 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://art/cutout_rig.gd" id="1_cmv47"]
+[ext_resource type="AnimationLibrary" path="res://art/rigs/chibi_v1/motion.tres" id="2_2gqeu"]
+
+[node name="CharacterRig" type="Node2D" unique_id=361423217]
+script = ExtResource("1_cmv47")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=1903501101]
+
+[node name="hips" type="Bone2D" parent="Skeleton2D" unique_id=14163618]
+position = Vector2(192, 251)
+rest = Transform2D(1, 0, 0, 1, 192, 251)
+auto_calculate_length_and_angle = false
+length = 10.0
+bone_angle = 90.0
+
+[node name="spine" type="Bone2D" parent="Skeleton2D/hips" unique_id=630891851]
+position = Vector2(0, -65)
+rest = Transform2D(1, 0, 0, 1, 0, -65)
+auto_calculate_length_and_angle = false
+length = 60.0
+bone_angle = 90.0
+
+[node name="head" type="Bone2D" parent="Skeleton2D/hips/spine" unique_id=399531711]
+position = Vector2(4, -43)
+rest = Transform2D(1, 0, 0, 1, 4, -43)
+auto_calculate_length_and_angle = false
+length = 30.0
+bone_angle = 90.0
+
+[node name="slot_hair" type="Node2D" parent="Skeleton2D/hips/spine/head" unique_id=1599299526]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/spine/head/slot_hair" unique_id=1483758073]
+texture_filter = 2
+centered = false
+
+[node name="slot_head" type="Node2D" parent="Skeleton2D/hips/spine/head" unique_id=1529536368]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/spine/head/slot_head" unique_id=2081256531]
+texture_filter = 2
+centered = false
+
+[node name="upper_arm_l" type="Bone2D" parent="Skeleton2D/hips/spine" unique_id=1207433046]
+position = Vector2(-31, 10)
+rest = Transform2D(1, 0, 0, 1, -31, 10)
+auto_calculate_length_and_angle = false
+length = 28.0
+bone_angle = 90.0
+
+[node name="forearm_l" type="Bone2D" parent="Skeleton2D/hips/spine/upper_arm_l" unique_id=1704377376]
+position = Vector2(0, 28)
+rest = Transform2D(1, 0, 0, 1, 0, 28)
+auto_calculate_length_and_angle = false
+length = 26.0
+bone_angle = 90.0
+
+[node name="hand_l" type="Bone2D" parent="Skeleton2D/hips/spine/upper_arm_l/forearm_l" unique_id=1682956867]
+position = Vector2(0, 26)
+rest = Transform2D(1, 0, 0, 1, 0, 26)
+auto_calculate_length_and_angle = false
+length = 14.0
+bone_angle = 90.0
+
+[node name="slot_hand_l" type="Node2D" parent="Skeleton2D/hips/spine/upper_arm_l/forearm_l/hand_l" unique_id=1761344777]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/spine/upper_arm_l/forearm_l/hand_l/slot_hand_l" unique_id=1006145831]
+texture_filter = 2
+centered = false
+
+[node name="slot_forearm_l" type="Node2D" parent="Skeleton2D/hips/spine/upper_arm_l/forearm_l" unique_id=1084904661]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/spine/upper_arm_l/forearm_l/slot_forearm_l" unique_id=854990435]
+texture_filter = 2
+centered = false
+
+[node name="slot_upper_arm_l" type="Node2D" parent="Skeleton2D/hips/spine/upper_arm_l" unique_id=918789247]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/spine/upper_arm_l/slot_upper_arm_l" unique_id=1875988941]
+texture_filter = 2
+centered = false
+
+[node name="upper_arm_r" type="Bone2D" parent="Skeleton2D/hips/spine" unique_id=982912426]
+position = Vector2(31, 14)
+rest = Transform2D(1, 0, 0, 1, 31, 14)
+auto_calculate_length_and_angle = false
+length = 28.0
+bone_angle = 90.0
+
+[node name="forearm_r" type="Bone2D" parent="Skeleton2D/hips/spine/upper_arm_r" unique_id=1834035734]
+position = Vector2(0, 28)
+rest = Transform2D(1, 0, 0, 1, 0, 28)
+auto_calculate_length_and_angle = false
+length = 26.0
+bone_angle = 90.0
+
+[node name="hand_r" type="Bone2D" parent="Skeleton2D/hips/spine/upper_arm_r/forearm_r" unique_id=500985683]
+position = Vector2(0, 26)
+rest = Transform2D(1, 0, 0, 1, 0, 26)
+auto_calculate_length_and_angle = false
+length = 14.0
+bone_angle = 90.0
+
+[node name="slot_hand_r" type="Node2D" parent="Skeleton2D/hips/spine/upper_arm_r/forearm_r/hand_r" unique_id=1829291392]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/spine/upper_arm_r/forearm_r/hand_r/slot_hand_r" unique_id=2023491560]
+texture_filter = 2
+centered = false
+
+[node name="item_r" type="Marker2D" parent="Skeleton2D/hips/spine/upper_arm_r/forearm_r/hand_r" unique_id=1257139281]
+
+[node name="slot_forearm_r" type="Node2D" parent="Skeleton2D/hips/spine/upper_arm_r/forearm_r" unique_id=1122389112]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/spine/upper_arm_r/forearm_r/slot_forearm_r" unique_id=1422232141]
+texture_filter = 2
+centered = false
+
+[node name="slot_upper_arm_r" type="Node2D" parent="Skeleton2D/hips/spine/upper_arm_r" unique_id=539062304]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/spine/upper_arm_r/slot_upper_arm_r" unique_id=1509278456]
+texture_filter = 2
+centered = false
+
+[node name="slot_torso" type="Node2D" parent="Skeleton2D/hips/spine" unique_id=1280941921]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/spine/slot_torso" unique_id=483219003]
+texture_filter = 2
+centered = false
+
+[node name="thigh_l" type="Bone2D" parent="Skeleton2D/hips" unique_id=1949666917]
+position = Vector2(-12, 8)
+rest = Transform2D(1, 0, 0, 1, -12, 8)
+auto_calculate_length_and_angle = false
+length = 34.0
+bone_angle = 90.0
+
+[node name="shin_l" type="Bone2D" parent="Skeleton2D/hips/thigh_l" unique_id=1159689232]
+position = Vector2(0, 34)
+rest = Transform2D(1, 0, 0, 1, 0, 34)
+auto_calculate_length_and_angle = false
+length = 32.0
+bone_angle = 90.0
+
+[node name="boot_l" type="Bone2D" parent="Skeleton2D/hips/thigh_l/shin_l" unique_id=953339822]
+position = Vector2(0, 32)
+rest = Transform2D(1, 0, 0, 1, 0, 32)
+auto_calculate_length_and_angle = false
+length = 12.0
+bone_angle = 90.0
+
+[node name="slot_boot_l" type="Node2D" parent="Skeleton2D/hips/thigh_l/shin_l/boot_l" unique_id=9877441]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/thigh_l/shin_l/boot_l/slot_boot_l" unique_id=711419518]
+texture_filter = 2
+centered = false
+
+[node name="slot_shin_l" type="Node2D" parent="Skeleton2D/hips/thigh_l/shin_l" unique_id=1918916350]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/thigh_l/shin_l/slot_shin_l" unique_id=1817858066]
+texture_filter = 2
+centered = false
+
+[node name="slot_thigh_l" type="Node2D" parent="Skeleton2D/hips/thigh_l" unique_id=65325181]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/thigh_l/slot_thigh_l" unique_id=2001528515]
+texture_filter = 2
+centered = false
+
+[node name="thigh_r" type="Bone2D" parent="Skeleton2D/hips" unique_id=640734371]
+position = Vector2(12, 8)
+rest = Transform2D(1, 0, 0, 1, 12, 8)
+auto_calculate_length_and_angle = false
+length = 34.0
+bone_angle = 90.0
+
+[node name="shin_r" type="Bone2D" parent="Skeleton2D/hips/thigh_r" unique_id=1705261409]
+position = Vector2(0, 34)
+rest = Transform2D(1, 0, 0, 1, 0, 34)
+auto_calculate_length_and_angle = false
+length = 32.0
+bone_angle = 90.0
+
+[node name="boot_r" type="Bone2D" parent="Skeleton2D/hips/thigh_r/shin_r" unique_id=1939576135]
+position = Vector2(0, 32)
+rest = Transform2D(1, 0, 0, 1, 0, 32)
+auto_calculate_length_and_angle = false
+length = 12.0
+bone_angle = 90.0
+
+[node name="slot_boot_r" type="Node2D" parent="Skeleton2D/hips/thigh_r/shin_r/boot_r" unique_id=23902916]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/thigh_r/shin_r/boot_r/slot_boot_r" unique_id=753920094]
+texture_filter = 2
+centered = false
+
+[node name="slot_shin_r" type="Node2D" parent="Skeleton2D/hips/thigh_r/shin_r" unique_id=255214293]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/thigh_r/shin_r/slot_shin_r" unique_id=1350683659]
+texture_filter = 2
+centered = false
+
+[node name="slot_thigh_r" type="Node2D" parent="Skeleton2D/hips/thigh_r" unique_id=2120152188]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/thigh_r/slot_thigh_r" unique_id=2014209031]
+texture_filter = 2
+centered = false
+
+[node name="slot_pelvis" type="Node2D" parent="Skeleton2D/hips" unique_id=1673655602]
+
+[node name="Art" type="Sprite2D" parent="Skeleton2D/hips/slot_pelvis" unique_id=2139850730]
+texture_filter = 2
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=384410461]
+libraries/ = ExtResource("2_2gqeu")

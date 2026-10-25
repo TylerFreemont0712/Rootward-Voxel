@@ -1,0 +1,11 @@
+{
+  "source_revision": "fb0e66464d49843ea8aedf76559c45642dc27466",
+  "source": "Rootward game/sandbox",
+  "files": {
+    "sandbox.gd": "0f6c49bb61c24a08806c08e09b9dc5e66638d730bc13833dd1d963770f8726aa",
+    "sandbox_job.gd": "cec125368f890e0a11f53c33a4229069642c8e75b84945aab209ef27255d6798",
+    "sandbox_result.gd": "5606a06a82bb25048bd507837603d2f41e7fa0bedc778d29688642545f924a8f",
+    "launch/launch.py": "2b43341052f60c869e82d2bc1d1e8998254aeff1b0904d29a2c2a4f5cab18153",
+    "launch/launch.js": "9d17ae35e8597a77172f4c55b6d78bd4cf6f5781822fe72699730fb267169b8a"
+  }
+}

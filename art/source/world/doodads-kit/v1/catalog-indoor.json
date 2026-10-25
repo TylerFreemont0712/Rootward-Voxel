@@ -1,0 +1,74 @@
+{
+  "wooden-chair": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Wooden Chair",
+    "source": "art/source/world/wooden-chair/v1/model.blend",
+    "runtime": "assets/world/wooden-chair/model.glb",
+    "pivot": "ground origin at the footprint centre; base on z = 0",
+    "logical_footprint": [-0.225, -0.225, 0.45, 0.45],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Plain timber chair, 0.45 m square seat at 0.45 m high and 0.9 m tall, with a slatted back on +Y. The footprint is the seat; nothing overhangs it."
+  },
+  "dining-table": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Dining Table",
+    "source": "art/source/world/dining-table/v1/model.blend",
+    "runtime": "assets/world/dining-table/model.glb",
+    "pivot": "ground origin at the footprint centre; base on z = 0",
+    "logical_footprint": [-0.4, -0.4, 0.8, 0.8],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Square timber table, 0.8 m across and 0.75 m high, with a three-plank top, four legs and a one-voxel apron. The footprint covers the top; the legs sit inside it."
+  },
+  "cottage-bed": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Cottage Bed",
+    "source": "art/source/world/cottage-bed/v1/model.blend",
+    "runtime": "assets/world/cottage-bed/model.glb",
+    "pivot": "ground origin at the footprint centre; base on z = 0",
+    "logical_footprint": [-0.55, -0.35, 1.1, 0.7],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Low timber cot, 1.1 m by 0.7 m, with a 0.5 m headboard at -X, a cream blanket and a folded pillow at the head. The footprint covers the whole cot; nothing overhangs it."
+  },
+  "bookshelf": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Bookshelf",
+    "source": "art/source/world/bookshelf/v1/model.blend",
+    "runtime": "assets/world/bookshelf/model.glb",
+    "pivot": "ground origin at the footprint centre; base on z = 0",
+    "logical_footprint": [-0.25, -0.15, 0.5, 0.3],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Tall open timber bookcase, 0.5 m wide, 0.3 m deep and 1.0 m tall, with four compartments of violet, teal and cream book spines facing -Y. The footprint covers the whole cabinet; nothing overhangs it."
+  },
+  "storage-chest": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Storage Chest",
+    "source": "art/source/world/storage-chest/v1/model.blend",
+    "runtime": "assets/world/storage-chest/model.glb",
+    "pivot": "ground origin at the footprint centre; base on z = 0",
+    "logical_footprint": [-0.3, -0.2, 0.6, 0.4],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Wooden chest, 0.6 m long, 0.4 m deep and 0.4 m high, with iron corner straps, a dark lid band and a flush iron latch on the -Y front. The footprint is the body; nothing overhangs it."
+  },
+  "hearth-stool": {
+    "version": "v1",
+    "authority": "blender",
+    "status": "candidate_unplaced",
+    "label": "Hearth Stool",
+    "source": "art/source/world/hearth-stool/v1/model.blend",
+    "runtime": "assets/world/hearth-stool/model.glb",
+    "pivot": "ground origin at the seat centre; base on z = 0",
+    "logical_footprint": [-0.175, -0.175, 0.35, 0.35],
+    "behavior": "visual_only; unplaced candidate; no gameplay or collision changes",
+    "notes": "Round three-legged stool, 0.35 m across and 0.45 m high, with a timber seat and a pale cushion. The footprint is the seat; the legs sit inside it, so nothing overhangs."
+  }
+}

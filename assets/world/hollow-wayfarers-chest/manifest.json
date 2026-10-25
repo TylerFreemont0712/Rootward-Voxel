@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "hollow-wayfarers-chest",
+  "version": "v1",
+  "source": "art/source/world/hollow-wayfarers-chest/v1/model.blend",
+  "source_sha256": "9d3a4dbe9697e18b425c7ba26337522b02308d3c01d0004525da7e715839392f",
+  "runtime": "assets/world/hollow-wayfarers-chest/model.glb",
+  "runtime_sha256": "0af95811296ed2925a501e603299e54d95852b3ca04bb3759b17860bafb7d920",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.589999973773956,
+      0.0,
+      -0.388599991798401,
+      0.589999973773956,
+      0.777499973773956,
+      0.403500020503998
+    ],
+    "geometry_sha256": "2468d7ad187d860caf007b6222f16f235219642a53579286cfcb55655385d395",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+      },
+      "cloth_plum": {
+        "albedo": [
+          4000,
+          3137,
+          6039,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "iron": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "5aa901d0159be0f4db2bbfe0c3cee98970ef021a1f5b88ca2db951035e1bc042"
+      },
+      "oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "brass",
+      "cloth_plum",
+      "iron",
+      "oak",
+      "wood_dark"
+    ],
+    "meshes": 9,
+    "triangles": 684
+  }
+}

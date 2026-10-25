@@ -1,0 +1,9 @@
+{
+  "asset": "mossy-boulder",
+  "version": "v1",
+  "created": "2026-10-23T08:42:50.702862+00:00",
+  "author": "art/source/world/doodads-kit/v1/garden.py",
+  "author_sha256": "4b4e66a7590e0b61bec04626b03894bbbfe0a1498eaa00f872a2de7939fcca66",
+  "voxel_metres": 0.05,
+  "note": "One-time procedural voxel authoring. model.blend becomes the editable source after this run."
+}

@@ -1,0 +1,953 @@
+{
+  "schema": 1,
+  "note": "Build shelf: buildings, props and authored trees name world-catalog assets; procedural trees carry a size. Doodads are loose props with no door: a prop whose asset has a catalog footprint blocks movement, one without does not. Studio-only scenery candidates can be placed without changing the shipped area. Policies control catalog access and object allowances; appearance paint is unlimited.",
+  "categories": [
+    {
+      "id": "houses",
+      "title": "Houses",
+      "blurb": "Places to live and work"
+    },
+    {
+      "id": "trees",
+      "title": "Trees",
+      "blurb": "Shade, orchards and woods"
+    },
+    {
+      "id": "doodads",
+      "title": "Doodads",
+      "blurb": "Furniture, farm bits, garden things and street dressing"
+    },
+    {
+      "id": "furniture",
+      "title": "Furniture",
+      "blurb": "Carved cottage furniture and useful household pieces"
+    },
+    {
+      "id": "workshop",
+      "title": "Workshop",
+      "blurb": "Tools, craft benches and working machines"
+    },
+    {
+      "id": "market",
+      "title": "Market",
+      "blurb": "Food counters, wagons and household wares"
+    },
+    {
+      "id": "garden",
+      "title": "Garden",
+      "blurb": "Garden, farmyard and animal shelters"
+    },
+    {
+      "id": "village-magic",
+      "title": "Village & Magic",
+      "blurb": "Lanterns, village mechanisms and restrained magic"
+    }
+  ],
+  "policies": {
+    "studio": {
+      "title": "Studio",
+      "audience": [
+        "player",
+        "studio"
+      ],
+      "limits": {}
+    },
+    "player": {
+      "title": "Villager",
+      "audience": [
+        "player"
+      ],
+      "limits": {
+        "building": 8,
+        "tree": 40
+      }
+    }
+  },
+  "items": [
+    {
+      "id": "house-hollow",
+      "category": "houses",
+      "kind": "building",
+      "asset": "log-cabin-large",
+      "title": "Hollow House",
+      "blurb": "A roomy log house with a violet tile roof, five cells square.",
+      "audience": "player"
+    },
+    {
+      "id": "house-millwright",
+      "category": "houses",
+      "kind": "building",
+      "asset": "log-cabin-large-teal",
+      "title": "Millwright's House",
+      "blurb": "The same house under a teal roof, to match the mill.",
+      "audience": "player"
+    },
+    {
+      "id": "cabin-little",
+      "category": "houses",
+      "kind": "building",
+      "asset": "log-cabin",
+      "title": "Little Cabin",
+      "blurb": "A snug three-cell cabin for a workshop or a shed.",
+      "audience": "player"
+    },
+    {
+      "id": "cottage-plaster",
+      "category": "houses",
+      "kind": "building",
+      "asset": "cottage",
+      "title": "Plaster Cottage",
+      "blurb": "The original cream cottage from the first clearing.",
+      "audience": "studio"
+    },
+    {
+      "id": "tree-young",
+      "category": "trees",
+      "kind": "tree",
+      "size": 0.8,
+      "title": "Young Oak",
+      "blurb": "Small and quick to read over.",
+      "audience": "player"
+    },
+    {
+      "id": "tree-oak",
+      "category": "trees",
+      "kind": "tree",
+      "size": 1.0,
+      "title": "Oak",
+      "blurb": "A full, round crown.",
+      "audience": "player"
+    },
+    {
+      "id": "tree-elder",
+      "category": "trees",
+      "kind": "tree",
+      "size": 1.25,
+      "title": "Elder Oak",
+      "blurb": "Broad and tall: it will shade a house.",
+      "audience": "player"
+    },
+    {
+      "id": "hollow-smithy",
+      "category": "houses",
+      "kind": "building",
+      "asset": "hollow-smithy",
+      "title": "Riverside Smithy",
+      "blurb": "A stone smithy with an open forge bay, anvil and teal tiled roof.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-bakery",
+      "category": "houses",
+      "kind": "building",
+      "asset": "hollow-bakery",
+      "title": "Hearth Bakery",
+      "blurb": "A warm village bakery with a brick oven, bread display and violet tiled roof.",
+      "audience": "studio"
+    },
+    {
+      "id": "hearth-house",
+      "category": "houses",
+      "kind": "building",
+      "asset": "hearth-house",
+      "title": "Hearth House",
+      "blurb": "A five-cell plaster home with a violet roof, porch and dormer.",
+      "audience": "studio"
+    },
+    {
+      "id": "lantern-loft",
+      "category": "houses",
+      "kind": "building",
+      "asset": "lantern-loft",
+      "title": "Lantern Loft",
+      "blurb": "A seven-cell, two-storey home with a teal roof and balcony.",
+      "audience": "studio"
+    },
+    {
+      "id": "brook-mill",
+      "category": "houses",
+      "kind": "building",
+      "asset": "brook-mill",
+      "title": "Brook Mill",
+      "blurb": "A large mill with a decorative static wheel; no lesson mechanism.",
+      "audience": "studio"
+    },
+    {
+      "id": "concept-cottage",
+      "category": "houses",
+      "kind": "building",
+      "asset": "concept-cottage",
+      "title": "Concept Cottage",
+      "blurb": "From the village painting: honey oak, individual violet tiles, limestone arch and daisies.",
+      "audience": "studio"
+    },
+    {
+      "id": "hearth-oak",
+      "category": "trees",
+      "kind": "tree",
+      "asset": "hearth-oak",
+      "title": "Hearth Oak",
+      "blurb": "A bent old trunk and broad green crown.",
+      "audience": "studio",
+      "size": 1.0
+    },
+    {
+      "id": "ridge-cedar",
+      "category": "trees",
+      "kind": "tree",
+      "asset": "ridge-cedar",
+      "title": "Ridge Cedar",
+      "blurb": "A tall blue-green cedar with layered boughs.",
+      "audience": "studio",
+      "size": 1.0
+    },
+    {
+      "id": "river-willow",
+      "category": "trees",
+      "kind": "tree",
+      "asset": "river-willow",
+      "title": "River Willow",
+      "blurb": "Arched branches and hanging leaf curtains.",
+      "audience": "studio",
+      "size": 1.0
+    },
+    {
+      "id": "wooden-chair",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "wooden-chair",
+      "title": "Wooden Chair",
+      "blurb": "A plain timber chair with a slatted back.",
+      "audience": "studio"
+    },
+    {
+      "id": "dining-table",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "dining-table",
+      "title": "Dining Table",
+      "blurb": "A square plank table on four legs.",
+      "audience": "studio"
+    },
+    {
+      "id": "cottage-bed",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "cottage-bed",
+      "title": "Cottage Bed",
+      "blurb": "A low cot with a cream blanket and a pillow.",
+      "audience": "studio"
+    },
+    {
+      "id": "bookshelf",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "bookshelf",
+      "title": "Bookshelf",
+      "blurb": "A tall shelf of violet, teal and cream books.",
+      "audience": "studio"
+    },
+    {
+      "id": "storage-chest",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "storage-chest",
+      "title": "Storage Chest",
+      "blurb": "A wooden chest with iron straps and a latch.",
+      "audience": "studio"
+    },
+    {
+      "id": "hearth-stool",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "hearth-stool",
+      "title": "Hearth Stool",
+      "blurb": "A round three-legged stool with a pale cushion.",
+      "audience": "studio"
+    },
+    {
+      "id": "clay-jug",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "clay-jug",
+      "title": "Clay Jug",
+      "blurb": "A glazed clay jug with one handle.",
+      "audience": "studio"
+    },
+    {
+      "id": "wooden-bucket",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "wooden-bucket",
+      "title": "Wooden Bucket",
+      "blurb": "A hooped timber bucket with a rope bail.",
+      "audience": "studio"
+    },
+    {
+      "id": "watering-can",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "watering-can",
+      "title": "Watering Can",
+      "blurb": "A galvanised can with a rose spout.",
+      "audience": "studio"
+    },
+    {
+      "id": "milk-churn",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "milk-churn",
+      "title": "Milk Churn",
+      "blurb": "A tall iron churn with a lid and a handle.",
+      "audience": "studio"
+    },
+    {
+      "id": "flower-pot",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "flower-pot",
+      "title": "Flower Pot",
+      "blurb": "A terracotta pot of violet, cream and mauve blossoms.",
+      "audience": "studio"
+    },
+    {
+      "id": "window-planter",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "window-planter",
+      "title": "Window Planter",
+      "blurb": "A timber box of blossoms for a sill or a fence.",
+      "audience": "studio"
+    },
+    {
+      "id": "hay-bale",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "hay-bale",
+      "title": "Hay Bale",
+      "blurb": "A tied golden bale with a few loose straws.",
+      "audience": "studio"
+    },
+    {
+      "id": "wooden-barrel",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "wooden-barrel",
+      "title": "Wooden Barrel",
+      "blurb": "An oak barrel banded in iron.",
+      "audience": "studio"
+    },
+    {
+      "id": "crate-stack",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "crate-stack",
+      "title": "Crate Stack",
+      "blurb": "Two timber crates, the top one set off-centre.",
+      "audience": "studio"
+    },
+    {
+      "id": "grain-sacks",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "grain-sacks",
+      "title": "Grain Sacks",
+      "blurb": "Burlap sacks of grain piled two and one.",
+      "audience": "studio"
+    },
+    {
+      "id": "woodpile",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "woodpile",
+      "title": "Woodpile",
+      "blurb": "Round split logs stacked ends-out.",
+      "audience": "studio"
+    },
+    {
+      "id": "wheelbarrow",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "wheelbarrow",
+      "title": "Wheelbarrow",
+      "blurb": "A timber barrow with a load of hay.",
+      "audience": "studio"
+    },
+    {
+      "id": "cart-wheel",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "cart-wheel",
+      "title": "Cart Wheel",
+      "blurb": "A wagon wheel standing on its rim.",
+      "audience": "studio"
+    },
+    {
+      "id": "park-bench",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "park-bench",
+      "title": "Park Bench",
+      "blurb": "A slatted timber bench on iron ends.",
+      "audience": "studio"
+    },
+    {
+      "id": "signpost",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "signpost",
+      "title": "Signpost",
+      "blurb": "A timber post with two arrow boards.",
+      "audience": "studio"
+    },
+    {
+      "id": "notice-board",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "notice-board",
+      "title": "Notice Board",
+      "blurb": "A board for notices under a violet cap.",
+      "audience": "studio"
+    },
+    {
+      "id": "hanging-sign",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "hanging-sign",
+      "title": "Hanging Sign",
+      "blurb": "An inn sign hanging from an iron arm.",
+      "audience": "studio"
+    },
+    {
+      "id": "market-stall",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "market-stall",
+      "title": "Market Stall",
+      "blurb": "A striped-canopy stall with a plank counter.",
+      "audience": "studio"
+    },
+    {
+      "id": "stone-well",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "stone-well",
+      "title": "Stone Well",
+      "blurb": "A limestone well under a violet hood.",
+      "audience": "studio"
+    },
+    {
+      "id": "tree-stump",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "tree-stump",
+      "title": "Tree Stump",
+      "blurb": "A cut stump with growth rings.",
+      "audience": "studio"
+    },
+    {
+      "id": "fallen-log",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "fallen-log",
+      "title": "Fallen Log",
+      "blurb": "A mossy trunk lying where it fell.",
+      "audience": "studio"
+    },
+    {
+      "id": "mossy-boulder",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "mossy-boulder",
+      "title": "Mossy Boulder",
+      "blurb": "A rounded grey stone with moss on top.",
+      "audience": "studio"
+    },
+    {
+      "id": "mushroom-cluster",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "mushroom-cluster",
+      "title": "Mushroom Cluster",
+      "blurb": "A clump of spotted mushrooms.",
+      "audience": "studio"
+    },
+    {
+      "id": "stream-reeds",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "stream-reeds",
+      "title": "Stream Reeds",
+      "blurb": "Cattails and reeds for the water's edge.",
+      "audience": "studio"
+    },
+    {
+      "id": "stepping-stones",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "stepping-stones",
+      "title": "Stepping Stones",
+      "blurb": "Flat stones set in gravel to cross muddy ground.",
+      "audience": "studio"
+    },
+    {
+      "id": "rowboat-upturned",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "rowboat-upturned",
+      "title": "Rowboat Upturned",
+      "blurb": "A rowboat turned over on the bank, oars beside it.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-highback-armchair",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "hollow-highback-armchair",
+      "title": "Highback Armchair",
+      "blurb": "A carved oak chair with a plum cushion, scroll arms and brass studs.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-trestle-table",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "hollow-trestle-table",
+      "title": "Trestle Table",
+      "blurb": "A broad plank table with splayed trestles and a pegged centre stretcher.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-writing-desk",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "hollow-writing-desk",
+      "title": "Writing Desk",
+      "blurb": "A sloped writing desk with drawers, an ink pot, quill and folded letters.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-mapmakers-table",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "hollow-mapmakers-table",
+      "title": "Mapmaker\u2019s Table",
+      "blurb": "A brass-edged map table with rolled charts, compass and coloured route markers.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-apothecary-cabinet",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "hollow-apothecary-cabinet",
+      "title": "Apothecary Cabinet",
+      "blurb": "Tiny labelled drawers, teal bottles and a cream carved pediment.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-kitchen-dresser",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "hollow-kitchen-dresser",
+      "title": "Kitchen Dresser",
+      "blurb": "A cottage sideboard with open plate shelves, cups and a linen runner.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-oak-wardrobe",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "hollow-oak-wardrobe",
+      "title": "Oak Wardrobe",
+      "blurb": "A tall panelled wardrobe with carved diamonds, violet inlay and brass pulls.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-washstand",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "hollow-washstand",
+      "title": "Washstand",
+      "blurb": "A wash basin and jug beneath a small framed mirror on an oak stand.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-woven-settee",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "hollow-woven-settee",
+      "title": "Woven Settee",
+      "blurb": "A two-seat timber settle with woven teal upholstery and cream pillows.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-patchwork-bed",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "hollow-patchwork-bed",
+      "title": "Patchwork Bed",
+      "blurb": "A full-length cottage bed with turned posts and a violet-and-cream patchwork quilt.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-carpenters-bench",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "hollow-carpenters-bench",
+      "title": "Carpenter\u2019s Bench",
+      "blurb": "A substantial workbench with a screw vise, hand plane and saw.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-blacksmiths-anvil",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "hollow-blacksmiths-anvil",
+      "title": "Blacksmith\u2019s Anvil",
+      "blurb": "A faceted iron anvil, tapering horn and hammer on a banded oak stump.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-bellows-forge",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "hollow-bellows-forge",
+      "title": "Bellows Forge",
+      "blurb": "A stone fire bed, copper hood, side bellows and glowing coals.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-grinding-wheel",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "hollow-grinding-wheel",
+      "title": "Grinding Wheel",
+      "blurb": "A pale stone wheel on a braced timber stand with treadle and water cup.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-tool-rack",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "hollow-tool-rack",
+      "title": "Tool Rack",
+      "blurb": "A freestanding rack of axes, a spade, rakes and iron hooks.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-potters-wheel",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "hollow-potters-wheel",
+      "title": "Potter\u2019s Wheel",
+      "blurb": "A clay pot on a turntable with a lower flywheel and a little water bowl.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-weavers-loom",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "hollow-weavers-loom",
+      "title": "Weaver\u2019s Loom",
+      "blurb": "A framed hand loom with visible warp threads, violet cloth and a shuttle.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-spinning-wheel",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "hollow-spinning-wheel",
+      "title": "Spinning Wheel",
+      "blurb": "An eight-spoked drive wheel, spindle, treadle and cream wool bundle.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-alchemy-bench",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "hollow-alchemy-bench",
+      "title": "Alchemy Bench",
+      "blurb": "Copper piping, a flask cradle and three luminous coloured bottles.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-bookbinders-press",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "hollow-bookbinders-press",
+      "title": "Bookbinder\u2019s Press",
+      "blurb": "Twin screw uprights squeeze a brass-cornered book between timber platens.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-bakers-oven",
+      "category": "market",
+      "kind": "prop",
+      "asset": "hollow-bakers-oven",
+      "title": "Baker\u2019s Oven",
+      "blurb": "A cream masonry oven with an arched mouth, violet cap and stacked firewood.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-bread-display",
+      "category": "market",
+      "kind": "prop",
+      "asset": "hollow-bread-display",
+      "title": "Bread Display",
+      "blurb": "A market counter piled with rounded loaves, baguettes and a linen basket.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-cheese-stand",
+      "category": "market",
+      "kind": "prop",
+      "asset": "hollow-cheese-stand",
+      "title": "Cheese Stand",
+      "blurb": "A striped canopy shades cheese wheels, a wedge and a small cutting board.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-fishmongers-counter",
+      "category": "market",
+      "kind": "prop",
+      "asset": "hollow-fishmongers-counter",
+      "title": "Fishmonger\u2019s Counter",
+      "blurb": "Three silver fish rest on a teal counter with a bucket beneath.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-spice-cart",
+      "category": "market",
+      "kind": "prop",
+      "asset": "hollow-spice-cart",
+      "title": "Spice Cart",
+      "blurb": "A wheeled cart with a violet awning and open jars of colourful spices.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-covered-handcart",
+      "category": "market",
+      "kind": "prop",
+      "asset": "hollow-covered-handcart",
+      "title": "Covered Handcart",
+      "blurb": "A little timber wagon with curved cream cover, iron-rimmed wheels and a tow bar.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-linen-rack",
+      "category": "market",
+      "kind": "prop",
+      "asset": "hollow-linen-rack",
+      "title": "Linen Rack",
+      "blurb": "Folded towels, hanging cream cloth and a basket on a cross-braced drying rack.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-pottery-shelf",
+      "category": "market",
+      "kind": "prop",
+      "asset": "hollow-pottery-shelf",
+      "title": "Pottery Shelf",
+      "blurb": "Terracotta jars, teal glazed jugs and cream bowls on three open timber shelves.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-candle-stand",
+      "category": "market",
+      "kind": "prop",
+      "asset": "hollow-candle-stand",
+      "title": "Candle Stand",
+      "blurb": "A brass three-branch candle stand with wax drips and warm flames.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-copper-wash-tub",
+      "category": "market",
+      "kind": "prop",
+      "asset": "hollow-copper-wash-tub",
+      "title": "Copper Wash Tub",
+      "blurb": "A hammered copper wash tub with side handles, pale water and a washboard.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-straw-beehive",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "hollow-straw-beehive",
+      "title": "Straw Beehive",
+      "blurb": "A coiled straw skep on a timber stand with a little landing board.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-rabbit-hutch",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "hollow-rabbit-hutch",
+      "title": "Rabbit Hutch",
+      "blurb": "A raised hutch with wire-style slats, sleeping box, hay and a bowl; no live animal.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-chicken-coop",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "hollow-chicken-coop",
+      "title": "Chicken Coop",
+      "blurb": "A violet-roofed coop with a ladder, nesting boxes and small shuttered windows.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-seedling-tray",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "hollow-seedling-tray",
+      "title": "Seedling Tray",
+      "blurb": "An orderly bed of six seedlings, plant labels and a watering jug.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-herb-drying-rack",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "hollow-herb-drying-rack",
+      "title": "Herb Drying Rack",
+      "blurb": "Tied bundles of sage and lavender hang from a braced rack above wicker baskets.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-vine-trellis",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "hollow-vine-trellis",
+      "title": "Vine Trellis",
+      "blurb": "A low stone planter supports a timber lattice and curling grape vines.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-field-scarecrow",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "hollow-field-scarecrow",
+      "title": "Field Scarecrow",
+      "blurb": "A straw hat, russet coat and teal scarf on a forked timber field marker.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-rain-barrel",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "hollow-rain-barrel",
+      "title": "Rain Barrel",
+      "blurb": "A banded barrel with a copper downpipe, lid and brass garden tap.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-butter-churn",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "hollow-butter-churn",
+      "title": "Butter Churn",
+      "blurb": "A tall stave churn with iron bands, a plunger and a small cream cloth.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-hay-handcart",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "hollow-hay-handcart",
+      "title": "Hay Handcart",
+      "blurb": "A two-wheeled farm cart piled with bound golden hay and a wooden pitchfork.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-copper-brazier",
+      "category": "village-magic",
+      "kind": "prop",
+      "asset": "hollow-copper-brazier",
+      "title": "Copper Brazier",
+      "blurb": "An embossed copper bowl on three iron legs with split logs and amber fire.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-shard-lantern",
+      "category": "village-magic",
+      "kind": "prop",
+      "asset": "hollow-shard-lantern",
+      "title": "Shard Lantern",
+      "blurb": "A teal crystal glows inside an open brass lantern under a violet cap.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-crystal-obelisk",
+      "category": "village-magic",
+      "kind": "prop",
+      "asset": "hollow-crystal-obelisk",
+      "title": "Crystal Obelisk",
+      "blurb": "Three faceted turquoise crystals grow from a carved cream stone base.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-rune-standing-stone",
+      "category": "village-magic",
+      "kind": "prop",
+      "asset": "hollow-rune-standing-stone",
+      "title": "Rune Standing Stone",
+      "blurb": "A weathered stone slab with a teal rune, brass inset and moss at its foot.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-village-bell",
+      "category": "village-magic",
+      "kind": "prop",
+      "asset": "hollow-village-bell",
+      "title": "Village Bell",
+      "blurb": "A brass village bell and visible clapper hang in a violet-capped timber frame.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-brass-lever",
+      "category": "village-magic",
+      "kind": "prop",
+      "asset": "hollow-brass-lever",
+      "title": "Brass Lever",
+      "blurb": "A chunky lever with a teal grip and brass dial on a stone plinth.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-water-pump",
+      "category": "village-magic",
+      "kind": "prop",
+      "asset": "hollow-water-pump",
+      "title": "Water Pump",
+      "blurb": "A green iron hand pump pours into a stone trough beneath a brass spout.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-wayfarers-chest",
+      "category": "village-magic",
+      "kind": "prop",
+      "asset": "hollow-wayfarers-chest",
+      "title": "Wayfarer\u2019s Chest",
+      "blurb": "An iron-strapped travel chest with an arched violet lid and brass clasp.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-little-shrine",
+      "category": "village-magic",
+      "kind": "prop",
+      "asset": "hollow-little-shrine",
+      "title": "Little Shrine",
+      "blurb": "A little cream-and-timber shrine shelters a votive crystal beneath a teal roof.",
+      "audience": "studio"
+    },
+    {
+      "id": "hollow-weather-vane",
+      "category": "village-magic",
+      "kind": "prop",
+      "asset": "hollow-weather-vane",
+      "title": "Weather Vane",
+      "blurb": "A brass sun-and-rooster vane above four compass arms on a stone foot.",
+      "audience": "studio"
+    }
+  ]
+}

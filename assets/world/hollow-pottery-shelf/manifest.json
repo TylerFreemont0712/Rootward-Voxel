@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "hollow-pottery-shelf",
+  "version": "v1",
+  "source": "art/source/world/hollow-pottery-shelf/v1/model.blend",
+  "source_sha256": "29ffdd8551d647669de5f677304c3cad01c6fc568fe8d57a81e4ff3103ad1d35",
+  "runtime": "assets/world/hollow-pottery-shelf/model.glb",
+  "runtime_sha256": "2431d951dd433231feedcdec59eed13e33f6c1c2fd47cda6933dcc6012ef075a",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.615000009536743,
+      0.0,
+      -0.239999994635582,
+      0.615000009536743,
+      1.72000002861023,
+      0.239999994635582
+    ],
+    "geometry_sha256": "98e160bc0e581ab6078fe80cefc8bd103fefec05f949ddc48ea99c9619668286",
+    "material_records": {
+      "clay": {
+        "albedo": [
+          7216,
+          4196,
+          2706,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "cream": {
+        "albedo": [
+          9333,
+          8824,
+          7294,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "glass_teal": {
+        "albedo": [
+          4118,
+          6745,
+          6745,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "linen": {
+        "albedo": [
+          8392,
+          7961,
+          6627,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "oak_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "wood": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "f556d148ef2bc03c2e5f9b03b3794387093d909a3a5c75c69864a1d38969c3e9"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "clay",
+      "cream",
+      "glass_teal",
+      "linen",
+      "oak_light",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 7,
+    "triangles": 2676
+  }
+}

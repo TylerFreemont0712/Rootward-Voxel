@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "id": "painted_chibi_v1",
+  "kind": "painted_frame_skin",
+  "cell_size": [
+    384,
+    448
+  ],
+  "settings": {
+    "grid": [
+      4,
+      12
+    ],
+    "directions": {
+      "se": 0,
+      "sw": 3,
+      "ne": 6,
+      "nw": 9
+    },
+    "walk_columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "idle_column": 8,
+    "idle_columns": [
+      8,
+      9
+    ],
+    "fps": 16,
+    "world_height": 1.45,
+    "alpha_threshold": 0.25,
+    "facing_space": "screen_diagonals",
+    "projection": "fixed orthographic camera; near/far three-quarter views",
+    "row_edges": [
+      0,
+      448,
+      896,
+      1344,
+      1792,
+      2240,
+      2688,
+      3136,
+      3584,
+      4032,
+      4480,
+      4928,
+      5376
+    ],
+    "frame_anchor": [
+      192,
+      420
+    ],
+    "authored_keyframes_per_direction": 8,
+    "idle": {
+      "breath_period": 3.6,
+      "breath_amplitude": 0.006,
+      "rear_breath_amplitude": 0.004,
+      "blink_interval": [
+        6,
+        7
+      ],
+      "blink_duration": 0.12,
+      "blink_directions": [
+        "se",
+        "sw"
+      ]
+    }
+  }
+}

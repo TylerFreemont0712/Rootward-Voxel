@@ -1,0 +1,37 @@
+{
+  "asset": "hollow-washstand",
+  "version": "v1",
+  "authoring_tool": "Blender 5.2.2 LTS; deliberate scripted geometry",
+  "source_authority": "model.blend; this script is a protected one-time authoring record",
+  "recipe": "washstand",
+  "sources": {
+    "art/source/world/village-library/v1/author.py": "4e0a2f4d10c33120f752e70d27f0d599d3bf11024c53d9260d916b7987d7e786",
+    "art/source/world/village-library/v1/modeling.py": "2e204b88cab0604d1435eef74e19dae12152339868f7cb2326602c1dd2740f1f",
+    "art/source/world/village-library/v1/furniture.py": "19f795388fbbac6869595ccde904d90225ababc5e63bd705ddb871161147ceec",
+    "art/source/world/village-library/v1/library.json": "cf9740d227bf11cc8aca9cd34e5ad28be137dd8fc699dd7656913ef062a38c16"
+  },
+  "materials": "Shared village palette; existing lush texture PNGs packed losslessly; no generated-image dependency.",
+  "blender_bounds": [
+    [
+      -0.5,
+      -0.3799999952316284,
+      0.0
+    ],
+    [
+      0.5,
+      0.3190000057220459,
+      1.709999918937683
+    ]
+  ],
+  "spec": {
+    "number": 8,
+    "id": "hollow-washstand",
+    "recipe": "washstand",
+    "category": "furniture",
+    "title": "Washstand",
+    "width": 1.0,
+    "depth": 0.65,
+    "blurb": "A wash basin and jug beneath a small framed mirror on an oak stand.",
+    "interaction": {}
+  }
+}

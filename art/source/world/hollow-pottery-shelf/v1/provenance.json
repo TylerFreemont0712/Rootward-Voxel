@@ -1,0 +1,37 @@
+{
+  "asset": "hollow-pottery-shelf",
+  "version": "v1",
+  "authoring_tool": "Blender 5.2.2 LTS; deliberate scripted geometry",
+  "source_authority": "model.blend; this script is a protected one-time authoring record",
+  "recipe": "pottery_shelf",
+  "sources": {
+    "art/source/world/village-library/v1/author.py": "4e0a2f4d10c33120f752e70d27f0d599d3bf11024c53d9260d916b7987d7e786",
+    "art/source/world/village-library/v1/modeling.py": "2e204b88cab0604d1435eef74e19dae12152339868f7cb2326602c1dd2740f1f",
+    "art/source/world/village-library/v1/market.py": "b3037de31edb99ddf33cde7fc5e87a5a14107d315663ee8dfb8359849d801fcb",
+    "art/source/world/village-library/v1/library.json": "cf9740d227bf11cc8aca9cd34e5ad28be137dd8fc699dd7656913ef062a38c16"
+  },
+  "materials": "Shared village palette; existing lush texture PNGs packed losslessly; no generated-image dependency.",
+  "blender_bounds": [
+    [
+      -0.6150000095367432,
+      -0.23999999463558197,
+      0.0
+    ],
+    [
+      0.6150000095367432,
+      0.23999999463558197,
+      1.7200000286102295
+    ]
+  ],
+  "spec": {
+    "number": 28,
+    "id": "hollow-pottery-shelf",
+    "recipe": "pottery_shelf",
+    "category": "market",
+    "title": "Pottery Shelf",
+    "width": 1.25,
+    "depth": 0.5,
+    "blurb": "Terracotta jars, teal glazed jugs and cream bowls on three open timber shelves.",
+    "interaction": {}
+  }
+}

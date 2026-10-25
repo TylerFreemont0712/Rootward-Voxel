@@ -1,0 +1,110 @@
+{
+  "status": "Rejected, inactive source history. Not a runtime or active authoring pipeline.",
+  "files": [
+    {
+      "original": "pipeline/character-catalog.json",
+      "archived": "art/source/archive/rejected-cutout/pipeline/character-catalog.json",
+      "sha256": "71aa46d9669c6073dc49a3e67d246471f73c7edcd4a8bece933e0e16c9bbea0e"
+    },
+    {
+      "original": "pipeline/build_character.gd",
+      "archived": "art/source/archive/rejected-cutout/pipeline/build_character.gd",
+      "sha256": "18c9c1115d3621783f0cb3ae9a2f7b2a1c923194089343f60517e6880cb775e9"
+    },
+    {
+      "original": "pipeline/seed_character_rig.gd",
+      "archived": "art/source/archive/rejected-cutout/pipeline/seed_character_rig.gd",
+      "sha256": "50869205ec0165359f12c4a95999c1926bbfafec28f33b3694a5f00404654eeb"
+    },
+    {
+      "original": "art/cutout_rig.gd",
+      "archived": "art/source/archive/rejected-cutout/art/cutout_rig.gd",
+      "sha256": "2581acb44b25f37b72a7a3e8fa2f56fc8183a1a08494f3984bc1852bcfab4d24"
+    },
+    {
+      "original": "art/cutout_skin.gd",
+      "archived": "art/source/archive/rejected-cutout/art/cutout_skin.gd",
+      "sha256": "bcd0763652c32279497f34f9c939218f9e4415c63dd4dd8a52660e3cf17cfabf"
+    },
+    {
+      "original": "art/rigs/chibi_v1/motion.tres",
+      "archived": "art/source/archive/rejected-cutout/art/rigs/chibi_v1/motion.tres",
+      "sha256": "fbd821048ab4ace3c5b7a62ab6aed7838680923627431eefc84b9ed99bb4b8bc"
+    },
+    {
+      "original": "art/rigs/chibi_v1/rig.json",
+      "archived": "art/source/archive/rejected-cutout/art/rigs/chibi_v1/rig.json",
+      "sha256": "83ee4e8a6b68a09e0553b071e88bc1c5c7985e267f43aae96459b5f13903205a"
+    },
+    {
+      "original": "art/rigs/chibi_v1/rig.tscn",
+      "archived": "art/source/archive/rejected-cutout/art/rigs/chibi_v1/rig.tscn",
+      "sha256": "19d9aa9523cbb50f136dade02bbd27092fe1b5f94c8f670051067d7fe29029f1"
+    },
+    {
+      "original": "assets/characters/adventurer-cutout/back.png",
+      "archived": "art/source/archive/rejected-cutout/assets/characters/adventurer-cutout/back.png",
+      "sha256": "28b5d6d55a6b4b3b994992053690b912f5264f6d5be1fb4402a79905a5965a5b"
+    },
+    {
+      "original": "assets/characters/adventurer-cutout/back.png.import",
+      "archived": "art/source/archive/rejected-cutout/assets/characters/adventurer-cutout/back.png.import",
+      "sha256": "f438b119467e674fb5f52e2c9c244eddcd065e3638cf858c1d793ee21ce6679f"
+    },
+    {
+      "original": "assets/characters/adventurer-cutout/dusk-skin.json",
+      "archived": "art/source/archive/rejected-cutout/assets/characters/adventurer-cutout/dusk-skin.json",
+      "sha256": "b0dada2628f84f23576393dc7f2451ac822425e94eb71c97eea4816d4b04381c"
+    },
+    {
+      "original": "assets/characters/adventurer-cutout/front.png",
+      "archived": "art/source/archive/rejected-cutout/assets/characters/adventurer-cutout/front.png",
+      "sha256": "5117d1c231664f7826bfa3fbd3ee8182911e6fa5ef991cc63feb7db7030aa78d"
+    },
+    {
+      "original": "assets/characters/adventurer-cutout/front.png.import",
+      "archived": "art/source/archive/rejected-cutout/assets/characters/adventurer-cutout/front.png.import",
+      "sha256": "43056b41f00aa66ae521e48ed91d2479277c8fac8b54115ae8430941ab0c9f41"
+    },
+    {
+      "original": "assets/characters/adventurer-cutout/skin.json",
+      "archived": "art/source/archive/rejected-cutout/assets/characters/adventurer-cutout/skin.json",
+      "sha256": "cd1a8518b7fd7bedb3fdf2913027736f93c6e7f06aa718a695cec4fcf5d0a11a"
+    },
+    {
+      "original": "tools/cutout_study.gd",
+      "archived": "art/source/archive/rejected-cutout/tools/cutout_study.gd",
+      "sha256": "dd139fba3d7399653596e20f68f12fa79ae87a53e6f57f07414d003c4ea219d2"
+    },
+    {
+      "original": "tools/cutout_study.tscn",
+      "archived": "art/source/archive/rejected-cutout/tools/cutout_study.tscn",
+      "sha256": "62134f8421b84c53ed39882593e84146fb22a04952e56db6a99ee7df460655b5"
+    },
+    {
+      "original": "tools/cutout_record.gd",
+      "archived": "art/source/archive/rejected-cutout/tools/cutout_record.gd",
+      "sha256": "babb3c4f1fa4a7255d3f07868b9b23783e8c4b7d8de28501df1fc6dd4a4e9099"
+    },
+    {
+      "original": "art/source/characters/adventurer-cutout/v1/back.png",
+      "archived": "art/source/archive/rejected-cutout/art/source/characters/adventurer-cutout/v1/back.png",
+      "sha256": "28b5d6d55a6b4b3b994992053690b912f5264f6d5be1fb4402a79905a5965a5b"
+    },
+    {
+      "original": "art/source/characters/adventurer-cutout/v1/front.png",
+      "archived": "art/source/archive/rejected-cutout/art/source/characters/adventurer-cutout/v1/front.png",
+      "sha256": "5117d1c231664f7826bfa3fbd3ee8182911e6fa5ef991cc63feb7db7030aa78d"
+    },
+    {
+      "original": "art/source/characters/adventurer-cutout/v1/prompt.json",
+      "archived": "art/source/archive/rejected-cutout/art/source/characters/adventurer-cutout/v1/prompt.json",
+      "sha256": "df03ec66692ecce8d7bd649da0e4b74771339cd40ac0966b85a8eda3611fc36d"
+    },
+    {
+      "original": "art/source/characters/adventurer-cutout/v1/rejected-runtime-snapshot.txt",
+      "archived": "art/source/archive/rejected-cutout/art/source/characters/adventurer-cutout/v1/rejected-runtime-snapshot.txt",
+      "sha256": "dafd30cf3d5d97a389b65677138b446f7f798ac8e42361cfe4e125a547367488"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schema": 4,
+  "ground": {
+    "version": "v1",
+    "source": "res://art/source/world/ground/v1/generation.json",
+    "manifest": "res://art/source/world/ground/v1/manifest.json",
+    "prompt": "res://art/source/world/ground/v1/prompts.md",
+    "normalizer": "res://pipeline/normalize_ground.py",
+    "height_outputs": "res://assets/world/ground/height/",
+    "references_runtime": false
+  },
+  "application_icon": {
+    "id": "rootward-voxel",
+    "version": "v1-lantern-roots",
+    "source": "res://art/source/brand/v1-lantern-roots/icon.png",
+    "prompt": "res://art/source/brand/v1-lantern-roots/prompt.txt",
+    "authoring_tool": "built-in imagegen",
+    "source_sha256": "52c4663d357281ebab2b87e6ff99ae1a10712aaddb41e438a41e68092d35688d",
+    "outputs": [
+      {
+        "size": 256,
+        "path": "res://assets/brand/icon-256.png"
+      },
+      {
+        "size": 512,
+        "path": "res://assets/brand/icon-512.png"
+      }
+    ]
+  },
+  "character": {
+    "id": "adventurer",
+    "version": "v9-directional-walk",
+    "source": "res://art/source/adventurer/v9-directional-walk/sheet.png",
+    "runtime_sheet": "res://assets/characters/adventurer/sheet.png",
+    "prompt": "res://art/source/adventurer/v9-directional-walk/blink-prompt.json",
+    "frames": "res://assets/characters/adventurer/frames.tres",
+    "manifest": "res://assets/characters/adventurer/manifest.json",
+    "mode": "painted_atlas",
+    "provenance": "res://art/source/adventurer/v9-directional-walk/provenance.json",
+    "animation_method": "approved eight-pose paintings; mirrored SW/NW; neutral breathing idle and eye-only blink",
+    "template": "res://pipeline/character-template.json"
+  },
+  "world": {
+    "reference": "res://reference/voxel-isometric.png",
+    "palette": "res://art/world_palette.gd",
+    "materials": "res://art/surface_materials.gd",
+    "geometry": "res://scenes/clearing_view.gd",
+    "layout_and_collision": "res://core/lab_world.gd",
+    "areas": "res://content/areas/",
+    "camera_elevation_degrees": 31,
+    "world_units_per_cell": 1,
+    "exclude": [
+      "other villagers",
+      "flowers",
+      "flower boxes",
+      "crates",
+      "sacks",
+      "scattered small props"
+    ],
+    "catalog": "res://pipeline/world-catalog.json"
+  },
+  "portraits": {
+    "version": "v1",
+    "provenance": "res://art/source/portraits/v1/generation.json",
+    "prompt": "res://art/source/portraits/v1/prompts.json",
+    "manifest": "res://assets/portraits/library.json",
+    "items": {
+      "mira": {
+        "source": "res://art/source/portraits/v1/mira.png",
+        "source_sha256": "3361513f4644ed933ed49cdc04fd3adbd385aa21577a041f525d05519f71f512",
+        "runtime": "res://assets/portraits/mira.png"
+      },
+      "rowan": {
+        "source": "res://art/source/portraits/v1/rowan.png",
+        "source_sha256": "f7d1c7b52a992c2901c0591b6e669f5965e099a5fdf7769b32b4a3b21e382ee5",
+        "runtime": "res://assets/portraits/rowan.png"
+      },
+      "bram": {
+        "source": "res://art/source/portraits/v1/bram.png",
+        "source_sha256": "751a32148299acceb66afb25d84a819b88e9470f434518d75677dafc55723baf",
+        "runtime": "res://assets/portraits/bram.png"
+      },
+      "tessa": {
+        "source": "res://art/source/portraits/v1/tessa.png",
+        "source_sha256": "73dfce8d4a257e3b8d4ab7ad8c8a6794537448af3bdb48d19fecb9796dcbf8b1",
+        "runtime": "res://assets/portraits/tessa.png"
+      },
+      "nell": {
+        "source": "res://art/source/portraits/v1/nell.png",
+        "source_sha256": "e0effea7c32cc87d383723fe72434baf6b805b122938d51cfbddd4c22ebc411b",
+        "runtime": "res://assets/portraits/nell.png"
+      }
+    }
+  },
+  "detail_textures": {
+    "version": "v2-detail",
+    "library": "res://art/source/world/textures/v2-detail/library.json",
+    "provenance": "res://art/source/world/textures/v2-detail/generation.json",
+    "manifest": "res://assets/world/textures/detail-library.json"
+  },
+  "building_textures": {
+    "version": "v1-concept-cottage",
+    "library": "res://art/source/world/concept-cottage/v1/textures/library.json",
+    "provenance": "res://art/source/world/concept-cottage/v1/textures/generation.json",
+    "manifest": "res://assets/world/textures/concept-cottage-manifest.json"
+  }
+}

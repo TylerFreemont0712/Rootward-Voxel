@@ -1,0 +1,9 @@
+{
+  "revision": "2026-10-24-buildings-v1",
+  "asset": "log-cabin-large-teal",
+  "before_sha256": "05908a53094a85bac7b2f4dfdf01896634a51b9086b4cd893dc8aa391a8f492a",
+  "source_sha256": "baae93f7e359d84637a86f2066e537a308e7deee98b69a488b62333422d38053",
+  "backup": "model.pre-building-polish.blend",
+  "script": "art/source/world/building-polish/v1/edit_sources.py",
+  "note": "Deliberate edit of existing source; original geometry retained except selected entrance components. Common painted roof scale, readable door hardware/thresholds; lamp glass preserved."
+}

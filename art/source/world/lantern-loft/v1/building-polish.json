@@ -1,0 +1,9 @@
+{
+  "revision": "2026-10-24-buildings-v1",
+  "asset": "lantern-loft",
+  "before_sha256": "d6b217bc51b5472b0fe69fa1f06eb1c6b7550ae2a6b46760d6c831f17c114800",
+  "source_sha256": "629cd619da70c78f7831e96f2337eb465901239850b5de9ec8ef6518c4e73d73",
+  "backup": "model.pre-building-polish.blend",
+  "script": "art/source/world/building-polish/v1/edit_sources.py",
+  "note": "Deliberate edit of existing source; original geometry retained except selected entrance components. Common painted roof scale, readable door hardware/thresholds; lamp glass preserved."
+}

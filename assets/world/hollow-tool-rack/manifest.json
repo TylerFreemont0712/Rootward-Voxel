@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "hollow-tool-rack",
+  "version": "v1",
+  "source": "art/source/world/hollow-tool-rack/v1/model.blend",
+  "source_sha256": "4b10d02a521e6f871530979eee261c5e48bdaa3c0fbf01f57db1f07433b1640f",
+  "runtime": "assets/world/hollow-tool-rack/model.glb",
+  "runtime_sha256": "8217c9abf3cd0b6ab887bbc10e86aaeecba89fb8dc9c99a686b7484cf0e8c225",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.694999992847443,
+      0.0,
+      -0.245000004768372,
+      0.694999992847443,
+      1.62999999523163,
+      0.245000004768372
+    ],
+    "geometry_sha256": "4ce9e1e0e297514f246d0143c308907565334be773b14678f1c8447be5db96a6",
+    "material_records": {
+      "iron": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "5aa901d0159be0f4db2bbfe0c3cee98970ef021a1f5b88ca2db951035e1bc042"
+      },
+      "oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "oak_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "silver": {
+        "albedo": [
+          6863,
+          7569,
+          7294,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": ""
+      },
+      "wood": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "f556d148ef2bc03c2e5f9b03b3794387093d909a3a5c75c69864a1d38969c3e9"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "iron",
+      "oak",
+      "oak_light",
+      "silver",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 6,
+    "triangles": 484
+  }
+}

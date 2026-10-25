@@ -1,0 +1,79 @@
+class_name SpriteAdventurer
+extends Node3D
+## A native 2D skeleton rendered into a depth-tested billboard in the 3D world.
+
+var sprite: Sprite3D
+var rig: CutoutRig
+var rig_viewport: SubViewport
+var animation_name: String:
+	get:
+		return rig.animation_name if rig != null else "idle_se"
+var _direction: String = "se"
+
+
+func _ready() -> void:
+	name = "SpriteAdventurer"
+	var catalog: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://pipeline/character-catalog.json"))
+	var config: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://art/rigs/chibi_v1/rig.json"))
+	rig_viewport = SubViewport.new()
+	rig_viewport.name = "CharacterCanvas"
+	rig_viewport.size = Vector2i(int(config.canvas[0]), int(config.canvas[1]))
+	rig_viewport.disable_3d = true
+	rig_viewport.transparent_bg = true
+	rig_viewport.world_2d = World2D.new()
+	rig_viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+	add_child(rig_viewport)
+	rig = (load(catalog.rig_scene) as PackedScene).instantiate() as CutoutRig
+	rig.skin_id = catalog.active
+	rig_viewport.add_child(rig)
+	sprite = Sprite3D.new()
+	sprite.name = "RigBillboard"
+	sprite.texture = rig_viewport.get_texture()
+	sprite.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	sprite.pixel_size = 1.45 / float(config.visible_height_pixels)
+	sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR
+	sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+	sprite.alpha_scissor_threshold = 0.10
+	sprite.shaded = false
+	sprite.modulate = Color("fff5e8")
+	sprite.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	sprite.offset = Vector2(0, float(config.foot_anchor[1]) - float(config.canvas[1]) * 0.5)
+	add_child(sprite)
+	_make_shadow()
+
+
+func set_screen_motion(motion: Vector2) -> void:
+	if rig == null:
+		return
+	var walking: bool = motion.length() > 0.001
+	if walking:
+		_direction = facing_for_screen_motion(motion)
+	rig.set_motion(_direction, walking)
+
+
+static func facing_for_screen_motion(motion: Vector2) -> String:
+	if motion.y >= 0.0:
+		return "se" if motion.x >= 0.0 else "sw"
+	return "ne" if motion.x >= 0.0 else "nw"
+
+
+func _make_shadow() -> void:
+	var image := Image.create(32, 32, false, Image.FORMAT_RGBA8)
+	for y: int in range(32):
+		for x: int in range(32):
+			var radius: float = Vector2(float(x) - 15.5, float(y) - 15.5).length() / 15.5
+			image.set_pixel(x, y, Color(0.16, 0.19, 0.13, maxf(0.0, 1.0 - radius) * 0.3))
+	var material := StandardMaterial3D.new()
+	material.albedo_texture = ImageTexture.create_from_image(image)
+	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	var mesh := QuadMesh.new()
+	mesh.size = Vector2(0.65, 0.42)
+	var shadow := MeshInstance3D.new()
+	shadow.name = "ContactShadow"
+	shadow.mesh = mesh
+	shadow.material_override = material
+	shadow.rotation.x = -PI / 2.0
+	shadow.position.y = 0.017
+	shadow.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	add_child(shadow)

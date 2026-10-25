@@ -1,0 +1,83 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-23",
+  "design_reference": "art/source/adventurer/v2-isometric/sheet.png",
+  "neutral_pass": {
+    "prompt": "Use case: identity-preserve.\nAsset type: corrected transparent game-character keyframe atlas for an orthographic 3D RPG.\nInput image 1 is both the edit target and strict identity/style reference: the approved brown-haired chibi adventurer's 4-by-4 sprite atlas.\nEdit the existing animation poses while preserving his exact face, orange-chestnut tousled hair silhouette, huge brown eyes, chibi proportions, teal tunic with cream hem and rolled cream sleeves, mustard yellow neckerchief, brown belt/gold buckle, dark brown trousers and cuffed brown boots. Retain the original painted/cel-shaded finish, restrained dark outline, colors and slightly overhead viewpoint. No redesign.\nCreate exactly FOUR columns and FOUR rows, one full-body sprite per equal rectangular cell, generous transparent gutters. This is an animation drawing sheet, no labels. Row 1: front three-quarter facing screen lower RIGHT (SE). Row 2: front three-quarter facing screen lower LEFT (SW). Row 3: REAR three-quarter facing screen upper RIGHT (NE), back of head/tunic visible, tiny cheek only. Row 4: REAR three-quarter facing screen upper LEFT (NW). Keep each row's angle constant in all four cells. Never mirror the head or asymmetrical clothes within a row.\nCritical correction: in every row draw this ordered sequence:\nColumn 1: genuine neutral standing IDLE, both boots grounded side by side, weight balanced, arms relaxed, knees straight but soft, no forward lunging leg.\nColumn 2: LEFT FOOT contact, left leg forward/right leg back, right arm forward/left arm back. A relaxed WALK with small stride, not running. One boot supports weight.\nColumn 3: same neutral standing IDLE as column 1, both boots planted, relaxed arms.\nColumn 4: OPPOSITE RIGHT FOOT contact, right leg forward/left leg back, LEFT arm forward/right arm back. The formerly rear boot MUST be visibly in FRONT. The boots must exchange which is forward and which is behind. Don't draw the same forward boot in columns 2 and 4. This requires redrawing the legs and arms, never just shifting the same leg.\nMaintain stable head/torso registration, full-body height, foot baseline, camera, proportions and costume across all four frames per row. Most motion is in arms and legs. Mouth and eyes remain calm and identical. Hair not inflated. No bouncing scale or tilted body. The original atlas is the design authority, not a loose inspiration.\nGenuinely transparent RGBA background. No shadows, floor, scenery, objects, equipment, text, captions, outlines around cells, checkerboard or watermark. Four equal columns, four equal rows, no cut-off hair or boots.",
+    "output": "exec-c7e9e562-7145-4618-a2cc-59d311fbeeb5.png"
+  },
+  "opposite_pass": {
+    "prompt": "Use case: precise-object-edit. Edit target: this 4-column by 4-row adventurer sprite sheet. Preserve every pixel in columns 1, 2 and 3. Preserve ALL HEADS, faces, hair, tunics and belts in column 4. Change ONLY LEGS/BOOTS and arm swing in COLUMN 4 of each row. Keep the same character, proportions, painted style and transparent background.\nThe bug: columns 2 and 4 currently have the SAME forward leg. COLUMN 4 must show the other boot coming forward. DO NOT recreate column 2. DO NOT flip/mirror the whole character. Keep every head facing exactly the same way.\nPrecise required COLUMN 4 boot arrangement:\nROW 1 front-right view: boot on SCREEN LEFT must be the BIG LOWER boot, flat at the BOTTOM of the sprite, just below the LEFT hip. Boot on SCREEN RIGHT must be SMALLER and HIGHER, bent BACK beneath the RIGHT hip. Current sheet has it backward; SWAP which side's boot touches the baseline.\nROW 2 front-left view: boot on SCREEN RIGHT must be the BIG LOWER boot, flat at the BOTTOM under the RIGHT hip. Boot on SCREEN LEFT is smaller and HIGHER, bent behind under the LEFT hip. Current sheet has it backward.\nROW 3 rear-right view: boot on SCREEN RIGHT must be the LOWER large trailing boot with sole visible near the BOTTOM under the RIGHT hip. Boot on SCREEN LEFT must be HIGHER and smaller, stepping away ahead under the LEFT hip. Current sheet has it backward.\nROW 4 rear-left view: boot on SCREEN LEFT must be the LOWER large trailing boot with sole visible near the BOTTOM under the LEFT hip. Boot on SCREEN RIGHT must be HIGHER and smaller, stepping away ahead under the RIGHT hip. Current sheet has it backward.\nKeep anatomical legs attached to their own hips: redraw the knee bends and which leg is in front of the other. Swap arm swing too. Do not cross the legs into an X. Exactly the same scale and baseline. No other changes. Transparent alpha, no floor/shadows/text/grid. The difference must be clearly visible in which BOOT is at the BOTTOM: col2 and col4 show opposite sides.",
+    "output": "exec-50ade422-4969-4886-bc40-2c0f11d451aa.png"
+  },
+  "directions": {
+    "se": {
+      "layout": [
+        3,
+        3
+      ],
+      "pose_order": [
+        "neutral_a",
+        "extend_a",
+        "contact_a",
+        "recover_a",
+        "neutral_b",
+        "extend_b",
+        "contact_b",
+        "recover_b",
+        "idle"
+      ]
+    },
+    "sw": {
+      "layout": [
+        3,
+        3
+      ],
+      "pose_order": [
+        "neutral_a",
+        "extend_a",
+        "contact_a",
+        "recover_a",
+        "neutral_b",
+        "extend_b",
+        "contact_b",
+        "recover_b",
+        "idle"
+      ]
+    },
+    "ne": {
+      "layout": [
+        3,
+        3
+      ],
+      "pose_order": [
+        "neutral_a",
+        "extend_a",
+        "contact_a",
+        "recover_a",
+        "neutral_b",
+        "extend_b",
+        "contact_b",
+        "recover_b",
+        "idle"
+      ]
+    },
+    "nw": {
+      "layout": [
+        3,
+        3
+      ],
+      "pose_order": [
+        "neutral_a",
+        "extend_a",
+        "contact_a",
+        "recover_a",
+        "neutral_b",
+        "extend_b",
+        "contact_b",
+        "recover_b",
+        "idle"
+      ]
+    }
+  }
+}

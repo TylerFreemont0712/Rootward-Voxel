@@ -1,0 +1,3435 @@
+{
+  "schema": 1,
+  "conventions": {
+    "world_units_per_cell": 1,
+    "logical_to_godot": "[x,y,height] -> (x,height,-y)",
+    "godot_forward": "+Z toward house front",
+    "blender_units": "meters, unit scale 1; glTF exporter converts Z-up to Y-up",
+    "source_authority": "model.blend after init; procedural seeds never overwrite it"
+  },
+  "assets": {
+    "cottage": {
+      "version": "v1",
+      "authority": "blender",
+      "source": "art/source/world/cottage/v1/model.blend",
+      "runtime": "assets/world/cottage/model.glb",
+      "pivot": "ground origin; preserve imported root",
+      "logical_footprint": [
+        -1.275,
+        -1.225,
+        2.55,
+        2.45
+      ],
+      "behavior": "visual_only; gameplay rules remain in core",
+      "notes": "Building shell; mill wheel and other mechanisms remain in Godot. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "plaster"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark",
+          "roof_light"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "entrance_oak"
+        ],
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light",
+          "entrance_stone"
+        ],
+        "metal": [
+          "gold",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 1.5,
+        "width": 0.86,
+        "height": 1.82,
+        "bottom": 0.17,
+        "steps": [
+          [
+            2.075,
+            1.5250000000000001,
+            1.51,
+            0.09620000000000001
+          ],
+          [
+            1.645,
+            0.5750000000000001,
+            1.26,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    },
+    "mill-house": {
+      "version": "v1",
+      "authority": "blender",
+      "source": "art/source/world/mill-house/v1/model.blend",
+      "runtime": "assets/world/mill-house/model.glb",
+      "pivot": "ground origin; preserve imported root",
+      "logical_footprint": [
+        -1.275,
+        -1.225,
+        2.55,
+        2.45
+      ],
+      "behavior": "visual_only; gameplay rules remain in core",
+      "notes": "Building shell; mill wheel and other mechanisms remain in Godot. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "plaster"
+        ],
+        "roof": [
+          "teal",
+          "teal_dark",
+          "teal_light"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "entrance_oak"
+        ],
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light",
+          "entrance_stone"
+        ],
+        "metal": [
+          "gold",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 1.5,
+        "width": 0.86,
+        "height": 1.82,
+        "bottom": 0.17,
+        "steps": [
+          [
+            2.075,
+            1.5250000000000001,
+            1.51,
+            0.09620000000000001
+          ],
+          [
+            1.645,
+            0.5750000000000001,
+            1.26,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    },
+    "clearing-ground": {
+      "version": "v1",
+      "authority": "blender",
+      "source": "art/source/world/clearing-ground/v1/model.blend",
+      "runtime": "assets/world/clearing-ground/model.glb",
+      "pivot": "ground origin; preserve imported root",
+      "logical_footprint": null,
+      "behavior": "visual_only; gameplay rules remain in core",
+      "notes": "Static land, banks, paving and boundary fences; animated water remains in Godot.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light"
+        ]
+      }
+    },
+    "tree": {
+      "version": "v1",
+      "authority": "procedural_test",
+      "source": "art/source/world/tree/v1/model.blend",
+      "runtime": "assets/world/tree/model.glb",
+      "pivot": "ground origin; preserve imported root",
+      "logical_footprint": {
+        "trunk_radius": 0.18
+      },
+      "behavior": "visual_only; gameplay rules remain in core",
+      "notes": "Editable reference seed; existing per-placement procedural crown variants stay selected until reviewed.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood"
+        ]
+      }
+    },
+    "log-cabin": {
+      "version": "v1",
+      "authority": "blender",
+      "source": "art/source/world/log-cabin/v1/model.blend",
+      "runtime": "assets/world/log-cabin/model.glb",
+      "pivot": "ground origin; preserve imported root; door and gable face +Z",
+      "logical_footprint": [
+        -1.45,
+        -1.43,
+        2.9,
+        2.86
+      ],
+      "behavior": "visual_only; gameplay rules remain in core",
+      "notes": "Violet-roofed log cabin recreated from reference/voxel-isometric.png: limestone foundation, log courses, arched stone door, round gable window, stone chimney. Occupies three cells like the cottage; the roof overhang and doorstep are decoration, not blocking. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "oak",
+          "oak_light"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark",
+          "roof_light"
+        ],
+        "timber": [
+          "wood",
+          "wood_dark",
+          "wood_light",
+          "entrance_oak"
+        ],
+        "masonry": [
+          "stone_dark",
+          "stone_light",
+          "stone_warm",
+          "entrance_stone"
+        ],
+        "metal": [
+          "gold",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 1.53,
+        "width": 0.86,
+        "height": 1.82,
+        "bottom": 0.17,
+        "steps": [
+          [
+            2.28,
+            1.73,
+            1.51,
+            0.09620000000000001
+          ],
+          [
+            1.8499999999999999,
+            0.7799999999999999,
+            1.26,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    },
+    "lamppost": {
+      "version": "v1",
+      "authority": "blender",
+      "source": "art/source/world/lamppost/v1/model.blend",
+      "runtime": "assets/world/lamppost/model.glb",
+      "pivot": "ground origin, between the post and its limestone pedestal; lantern arm points +Z",
+      "logical_footprint": null,
+      "behavior": "visual_only; gameplay rules remain in core. The mesh using material lamp_glass is the lantern: the game swaps it for a lit material and adds the halo and light when the lamp's state is lit.",
+      "notes": "Hanging-lantern timber post on an iron foot beside a limestone pedestal, from reference/voxel-isometric.png. Used for every `post` lamp in an area document; the beacon stays procedural. Keep the glass a separate mesh/material named lamp_glass. Polished 2026-10-24: rain cap, brass cage/rivets, suspension ring and diagonal bracket; lamp_glass preserved.",
+      "finish_slots": {
+        "timber": [
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ],
+        "masonry": [
+          "stone_light",
+          "stone_warm"
+        ],
+        "metal": [
+          "iron",
+          "gold"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1"
+    },
+    "log-cabin-large": {
+      "version": "v1",
+      "authority": "blender",
+      "pivot": "ground origin; preserve imported root; door and gable face +Z",
+      "logical_footprint": [
+        -2.35,
+        -2.35,
+        4.7,
+        4.7
+      ],
+      "behavior": "visual_only; gameplay rules remain in core",
+      "source": "art/source/world/log-cabin-large/v1/model.blend",
+      "runtime": "assets/world/log-cabin-large/model.glb",
+      "notes": "The 5-cell house: the log cabin grown by two cells a side, with two windows a wall, windows beside the door, a taller door and a larger chimney. Violet roof. Its footprint is the foundation; roof overhang and doorstep are decoration, not blocking. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "oak",
+          "oak_light"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark",
+          "roof_light"
+        ],
+        "timber": [
+          "wood",
+          "wood_dark",
+          "wood_light",
+          "entrance_oak"
+        ],
+        "masonry": [
+          "stone_dark",
+          "stone_light",
+          "stone_warm",
+          "entrance_stone"
+        ],
+        "metal": [
+          "gold",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 2.43,
+        "width": 1.1,
+        "height": 2.2,
+        "bottom": 0.17,
+        "steps": [
+          [
+            3.2,
+            2.65,
+            1.75,
+            0.09620000000000001
+          ],
+          [
+            2.77,
+            1.7000000000000002,
+            1.5,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    },
+    "log-cabin-large-teal": {
+      "version": "v1",
+      "authority": "blender",
+      "pivot": "ground origin; preserve imported root; door and gable face +Z",
+      "logical_footprint": [
+        -2.35,
+        -2.35,
+        4.7,
+        4.7
+      ],
+      "behavior": "visual_only; gameplay rules remain in core",
+      "source": "art/source/world/log-cabin-large-teal/v1/model.blend",
+      "runtime": "assets/world/log-cabin-large-teal/model.glb",
+      "notes": "The same 5-cell house with a teal roof, to tie a home to the mill. Same footprint as log-cabin-large. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "oak",
+          "oak_light"
+        ],
+        "roof": [
+          "teal",
+          "teal_dark",
+          "teal_light"
+        ],
+        "timber": [
+          "wood",
+          "wood_dark",
+          "wood_light",
+          "entrance_oak"
+        ],
+        "masonry": [
+          "stone_dark",
+          "stone_light",
+          "stone_warm",
+          "entrance_stone"
+        ],
+        "metal": [
+          "gold",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 2.43,
+        "width": 1.1,
+        "height": 2.2,
+        "bottom": 0.17,
+        "steps": [
+          [
+            3.2,
+            2.65,
+            1.75,
+            0.09620000000000001
+          ],
+          [
+            2.77,
+            1.7000000000000002,
+            1.5,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    },
+    "hearth-oak": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_and_builder",
+      "label": "Hearth oak",
+      "source": "art/source/world/hearth-oak/v1/model.blend",
+      "runtime": "assets/world/hearth-oak/model.glb",
+      "pivot": "ground origin; front +Z; one unit per tile",
+      "logical_footprint": {
+        "trunk_radius": 0.5
+      },
+      "behavior": "static tree; only the catalog trunk radius blocks movement",
+      "notes": "Placed in Kindle Hollow version 2 and offered on the studio build shelf. Existing Blender source and runtime model preserved; decorative overhangs are not additional collision."
+    },
+    "ridge-cedar": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_and_builder",
+      "label": "Ridge cedar",
+      "source": "art/source/world/ridge-cedar/v1/model.blend",
+      "runtime": "assets/world/ridge-cedar/model.glb",
+      "pivot": "ground origin; front +Z; one unit per tile",
+      "logical_footprint": {
+        "trunk_radius": 0.36
+      },
+      "behavior": "static tree; only the catalog trunk radius blocks movement",
+      "notes": "Placed in Kindle Hollow version 2 and offered on the studio build shelf. Existing Blender source and runtime model preserved; decorative overhangs are not additional collision."
+    },
+    "river-willow": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_and_builder",
+      "label": "River willow",
+      "source": "art/source/world/river-willow/v1/model.blend",
+      "runtime": "assets/world/river-willow/model.glb",
+      "pivot": "ground origin; front +Z; one unit per tile",
+      "logical_footprint": {
+        "trunk_radius": 0.5
+      },
+      "behavior": "static tree; only the catalog trunk radius blocks movement",
+      "notes": "Placed in Kindle Hollow version 2 and offered on the studio build shelf. Existing Blender source and runtime model preserved; decorative overhangs are not additional collision."
+    },
+    "hearth-house": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_and_builder",
+      "label": "Hearth house",
+      "source": "art/source/world/hearth-house/v1/model.blend",
+      "runtime": "assets/world/hearth-house/model.glb",
+      "pivot": "ground origin; front +Z; one unit per tile",
+      "logical_footprint": [
+        -2.5,
+        -2.5,
+        5,
+        5
+      ],
+      "behavior": "static building with catalog footprint and instanced room",
+      "notes": "Placed in Kindle Hollow version 2 and offered on the studio build shelf. Existing Blender source and runtime model preserved; decorative overhangs are not additional collision. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster_warm"
+        ],
+        "roof": [
+          "roof_teal_dark",
+          "roof_teal_hi",
+          "roof_violet",
+          "roof_violet_dark",
+          "roof_violet_hi"
+        ],
+        "timber": [
+          "dark",
+          "oak",
+          "oak_edge",
+          "timber"
+        ],
+        "masonry": [
+          "mortar",
+          "stone",
+          "stone_edge",
+          "entrance_stone"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 2.47,
+        "width": 1.15,
+        "height": 2.18,
+        "bottom": 0.18,
+        "steps": [
+          [
+            3.35,
+            2.8,
+            1.7999999999999998,
+            0.1014
+          ],
+          [
+            2.92,
+            1.85,
+            1.5499999999999998,
+            0.195
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    },
+    "lantern-loft": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_and_builder",
+      "label": "Lantern loft",
+      "source": "art/source/world/lantern-loft/v1/model.blend",
+      "runtime": "assets/world/lantern-loft/model.glb",
+      "pivot": "ground origin; front +Z; one unit per tile",
+      "logical_footprint": [
+        -3.5,
+        -3.5,
+        7,
+        7
+      ],
+      "behavior": "static building with catalog footprint and instanced room",
+      "notes": "Placed in Kindle Hollow version 2 and offered on the studio build shelf. Existing Blender source and runtime model preserved; decorative overhangs are not additional collision. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster_warm"
+        ],
+        "roof": [
+          "roof_teal",
+          "roof_teal_dark",
+          "roof_teal_hi"
+        ],
+        "timber": [
+          "dark",
+          "oak",
+          "oak_edge",
+          "timber"
+        ],
+        "masonry": [
+          "mortar",
+          "stone",
+          "stone_edge",
+          "entrance_stone"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "planked oak",
+        "threshold": "pale stone",
+        "plane": 3.31,
+        "width": 1.3,
+        "height": 2.28,
+        "bottom": 0.15,
+        "steps": [
+          [
+            4.35,
+            3.8,
+            1.9500000000000002,
+            0.09620000000000001
+          ],
+          [
+            3.92,
+            2.85,
+            1.7000000000000002,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    },
+    "brook-mill": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_and_builder",
+      "label": "Brook mill",
+      "source": "art/source/world/brook-mill/v1/model.blend",
+      "runtime": "assets/world/brook-mill/model.glb",
+      "pivot": "ground origin; front +Z; one unit per tile",
+      "logical_footprint": [
+        -3,
+        -2.5,
+        6,
+        5
+      ],
+      "behavior": "static building with catalog footprint and instanced room",
+      "notes": "Placed in Kindle Hollow version 2 and offered on the studio build shelf. Existing Blender source and runtime model preserved; decorative overhangs are not additional collision. Its wheel and sluice remain decorative static scenery, separate from the lesson mill mechanism. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster_warm"
+        ],
+        "roof": [
+          "roof_teal",
+          "roof_teal_dark",
+          "roof_teal_hi",
+          "roof_violet",
+          "roof_violet_dark",
+          "roof_violet_hi"
+        ],
+        "timber": [
+          "dark",
+          "oak",
+          "oak_edge",
+          "timber"
+        ],
+        "masonry": [
+          "mortar",
+          "stone",
+          "stone_edge",
+          "entrance_stone"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "planked oak",
+        "threshold": "pale stone",
+        "plane": 2.52,
+        "width": 1.38,
+        "height": 2.2,
+        "bottom": 0.28,
+        "steps": [
+          [
+            3.35,
+            2.8,
+            2.03,
+            0.15340000000000004
+          ],
+          [
+            2.92,
+            1.85,
+            1.7799999999999998,
+            0.29500000000000004
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    },
+    "flower-pot": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Flower Pot",
+      "source": "art/source/world/flower-pot/v1/model.blend",
+      "runtime": "assets/world/flower-pot/model.glb",
+      "pivot": "ground origin at the pot's centre; no front face",
+      "logical_footprint": [
+        -0.3,
+        -0.3,
+        0.6,
+        0.6
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Voxel terracotta pot on a soil bed with four small plus-shaped blossoms on one-voxel stems. 0.05 m voxels: 0.6 m across, 0.45 m to the rim, about 0.9 m to the top of the flowers. Proposed footprint is the pot itself; the blossoms overhang it."
+    },
+    "hay-bale": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Hay Bale",
+      "source": "art/source/world/hay-bale/v1/model.blend",
+      "runtime": "assets/world/hay-bale/model.glb",
+      "pivot": "ground origin at the bale's centre; long axis along X",
+      "logical_footprint": [
+        -0.45,
+        -0.25,
+        0.9,
+        0.5
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Voxel square bale, 0.9 m by 0.5 m by 0.5 m at 0.05 m voxels, with straw runs along its length, three one-voxel twine wraps, rounded long edges and loose straws on top and on the grass. Proposed footprint is the bale's floor; the loose straws overhang it."
+    },
+    "wooden-barrel": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Wooden Barrel",
+      "source": "art/source/world/wooden-barrel/v1/model.blend",
+      "runtime": "assets/world/wooden-barrel/model.glb",
+      "pivot": "ground origin at the barrel's centre; base on z = 0",
+      "logical_footprint": [
+        -0.225,
+        -0.25,
+        0.45,
+        0.5
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Oak barrel with eight staves, three iron hoops, a dark base, a lid and a front bung. 0.45 m across, 0.5 m tall. The proposed footprint covers the whole barrel, so nothing overhangs it.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "crate-stack": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Crate Stack",
+      "source": "art/source/world/crate-stack/v1/model.blend",
+      "runtime": "assets/world/crate-stack/model.glb",
+      "pivot": "ground origin at the centre of the base crate; base on z = 0",
+      "logical_footprint": [
+        -0.225,
+        -0.225,
+        0.45,
+        0.45
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Two closed timber crates with dark corner posts and plank seams. The 0.35 m top crate is offset one voxel to +X, leaving a ledge on the -X side. The footprint is the base crate; nothing overhangs it.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    },
+    "grain-sacks": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Grain Sacks",
+      "source": "art/source/world/grain-sacks/v1/model.blend",
+      "runtime": "assets/world/grain-sacks/model.glb",
+      "pivot": "ground origin at the centre of the pile; base on z = 0",
+      "logical_footprint": [
+        -0.475,
+        -0.225,
+        0.95,
+        0.45
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Three burlap sacks piled two and one: a pair on the ground and one in the gap above, each with a belly, a twine tie and a gathered mouth. About 0.95 m wide, 0.45 m deep, 0.7 m tall. Proposed footprint is the pile; nothing overhangs it."
+    },
+    "woodpile": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Woodpile",
+      "source": "art/source/world/woodpile/v1/model.blend",
+      "runtime": "assets/world/woodpile/model.glb",
+      "pivot": "ground origin at the centre of the stack; base on z = 0",
+      "logical_footprint": [
+        -0.45,
+        -0.2,
+        0.9,
+        0.4
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Split logs in two layers, eight voxels deep, with pale cut ends to the front and back and bark along the sides. 0.9 m long, 0.4 m deep, 0.5 m tall. The footprint covers the whole stack, so nothing overhangs it.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ]
+      }
+    },
+    "window-planter": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Window Planter",
+      "source": "art/source/world/window-planter/v1/model.blend",
+      "runtime": "assets/world/window-planter/model.glb",
+      "pivot": "ground centre of the box",
+      "logical_footprint": [
+        -0.4,
+        -0.15,
+        0.8,
+        0.25
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A timber flower box 0.8 m by 0.25 m, with a row of violet, cream and mauve blossoms. The footprint is the box body; the blossoms overhang it.",
+      "finish_slots": {
+        "timber": [
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ]
+      }
+    },
+    "mossy-boulder": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Mossy Boulder",
+      "source": "art/source/world/mossy-boulder/v1/model.blend",
+      "runtime": "assets/world/mossy-boulder/model.glb",
+      "pivot": "ground centre of the base",
+      "logical_footprint": [
+        -0.35,
+        -0.35,
+        0.7,
+        0.7
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A rounded grey stone 0.8 m across with a moss cap on top. The widest belly overhangs the proposed footprint by about 0.05 m.",
+      "finish_slots": {
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light"
+        ]
+      }
+    },
+    "tree-stump": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Tree Stump",
+      "source": "art/source/world/tree-stump/v1/model.blend",
+      "runtime": "assets/world/tree-stump/model.glb",
+      "pivot": "ground centre of the stump",
+      "logical_footprint": [
+        -0.25,
+        -0.25,
+        0.5,
+        0.5
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A cut stump 0.5 m across with bark sides, a pale ringed cut top and a small moss cap on one edge. The root flare overhangs the footprint by about 0.05 m.",
+      "finish_slots": {
+        "timber": [
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ]
+      }
+    },
+    "stream-reeds": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Stream Reeds",
+      "source": "art/source/world/stream-reeds/v1/model.blend",
+      "runtime": "assets/world/stream-reeds/model.glb",
+      "pivot": "ground centre of the mud bed",
+      "logical_footprint": null,
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
+      "notes": "A clump of six one-voxel reeds, 0.6 m to 1.0 m tall, with brown seed heads and teal-green blades. No footprint: reeds stand at the water's edge."
+    },
+    "park-bench": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Park Bench",
+      "source": "art/source/world/park-bench/v1/model.blend",
+      "runtime": "assets/world/park-bench/model.glb",
+      "pivot": "ground origin at the seat centre",
+      "logical_footprint": [
+        -0.45,
+        -0.2,
+        0.9,
+        0.4
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Timber slatted bench with dark iron ends, 0.9 m long. The footprint covers the seat; the feet overhang it by 0.05 m at ground level.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "signpost": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Signpost",
+      "source": "art/source/world/signpost/v1/model.blend",
+      "runtime": "assets/world/signpost/model.glb",
+      "pivot": "ground origin at the post's iron shoe",
+      "logical_footprint": [
+        -0.1,
+        -0.1,
+        0.2,
+        0.2
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A 1.3 m timber post with a cream board pointing right and a violet board pointing left. The footprint is the iron shoe; the boards overhang it at height.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster_shade"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark"
+        ],
+        "timber": [
+          "wood",
+          "wood_light"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "stone-well": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Stone Well",
+      "source": "art/source/world/stone-well/v1/model.blend",
+      "runtime": "assets/world/stone-well/model.glb",
+      "pivot": "ground origin at the ring centre",
+      "logical_footprint": [
+        -0.45,
+        -0.45,
+        0.9,
+        0.9
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A limestone ring 0.9 m across with a timber frame, violet hood and bucket, 1.45 m tall. The footprint is the ring; the hood eave stays within it.",
+      "finish_slots": {
+        "walls": [
+          "plaster"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark",
+          "roof_light"
+        ],
+        "timber": [
+          "wood",
+          "wood_light"
+        ],
+        "masonry": [
+          "stone_warm",
+          "stone_warm_dark"
+        ],
+        "metal": [
+          "iron"
+        ],
+        "fabric": [
+          "leather_light"
+        ]
+      }
+    },
+    "cart-wheel": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Cart Wheel",
+      "source": "art/source/world/cart-wheel/v1/model.blend",
+      "runtime": "assets/world/cart-wheel/model.glb",
+      "pivot": "ground contact at the bottom of the rim",
+      "logical_footprint": [
+        -0.5,
+        -0.05,
+        1.0,
+        0.1
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "An upright iron-rimmed wagon wheel, 1.0 m across and 0.1 m thick, with six timber spokes. The footprint is a strip the wheel's width; the hub caps overhang it by 0.05 m.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "wooden-chair": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Wooden Chair",
+      "source": "art/source/world/wooden-chair/v1/model.blend",
+      "runtime": "assets/world/wooden-chair/model.glb",
+      "pivot": "ground origin at the footprint centre; base on z = 0",
+      "logical_footprint": [
+        -0.225,
+        -0.225,
+        0.45,
+        0.45
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Plain timber chair, 0.45 m square seat at 0.45 m high and 0.9 m tall, with a slatted back on +Y. The footprint is the seat; nothing overhangs it.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    },
+    "dining-table": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Dining Table",
+      "source": "art/source/world/dining-table/v1/model.blend",
+      "runtime": "assets/world/dining-table/model.glb",
+      "pivot": "ground origin at the footprint centre; base on z = 0",
+      "logical_footprint": [
+        -0.4,
+        -0.4,
+        0.8,
+        0.8
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Square timber table, 0.8 m across and 0.75 m high, with a three-plank top, four legs and a one-voxel apron. The footprint covers the top; the legs sit inside it.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    },
+    "cottage-bed": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Cottage Bed",
+      "source": "art/source/world/cottage-bed/v1/model.blend",
+      "runtime": "assets/world/cottage-bed/model.glb",
+      "pivot": "ground origin at the footprint centre; base on z = 0",
+      "logical_footprint": [
+        -0.55,
+        -0.35,
+        1.1,
+        0.7
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Low timber cot, 1.1 m by 0.7 m, with a 0.5 m headboard at -X, a cream blanket and a folded pillow at the head. The footprint covers the whole cot; nothing overhangs it.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    },
+    "bookshelf": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Bookshelf",
+      "source": "art/source/world/bookshelf/v1/model.blend",
+      "runtime": "assets/world/bookshelf/model.glb",
+      "pivot": "ground origin at the footprint centre; base on z = 0",
+      "logical_footprint": [
+        -0.25,
+        -0.15,
+        0.5,
+        0.3
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Tall open timber bookcase, 0.5 m wide, 0.3 m deep and 1.0 m tall, with four compartments of violet, teal and cream book spines facing -Y. The footprint covers the whole cabinet; nothing overhangs it.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster"
+        ],
+        "roof": [
+          "roof",
+          "roof_light",
+          "teal",
+          "teal_light"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    },
+    "storage-chest": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Storage Chest",
+      "source": "art/source/world/storage-chest/v1/model.blend",
+      "runtime": "assets/world/storage-chest/model.glb",
+      "pivot": "ground origin at the footprint centre; base on z = 0",
+      "logical_footprint": [
+        -0.3,
+        -0.2,
+        0.6,
+        0.4
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Wooden chest, 0.6 m long, 0.4 m deep and 0.4 m high, with iron corner straps, a dark lid band and a flush iron latch on the -Y front. The footprint is the body; nothing overhangs it.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "hearth-stool": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Hearth Stool",
+      "source": "art/source/world/hearth-stool/v1/model.blend",
+      "runtime": "assets/world/hearth-stool/model.glb",
+      "pivot": "ground origin at the seat centre; base on z = 0",
+      "logical_footprint": [
+        -0.175,
+        -0.175,
+        0.35,
+        0.35
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Round three-legged stool, 0.35 m across and 0.45 m high, with a timber seat and a pale cushion. The footprint is the seat; the legs sit inside it, so nothing overhangs.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    },
+    "watering-can": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Watering Can",
+      "source": "art/source/world/watering-can/v1/model.blend",
+      "runtime": "assets/world/watering-can/model.glb",
+      "pivot": "ground origin at the bounding-box centre; body axis 0.125 m behind it",
+      "logical_footprint": null,
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
+      "notes": "Galvanised can with a dark foot ring, a spout rising to a holed rose, and an iron carrying handle. 0.25 m across the body, 0.35 m tall. No blocking footprint is proposed; the spout and rose overhang the body."
+    },
+    "wooden-bucket": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Wooden Bucket",
+      "source": "art/source/world/wooden-bucket/v1/model.blend",
+      "runtime": "assets/world/wooden-bucket/model.glb",
+      "pivot": "ground origin at the bucket's centre, on the body axis",
+      "logical_footprint": null,
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
+      "notes": "Eight oak staves in a one-voxel shell, a dark floor, two iron hoops, a little water in the top and a twine bail. 0.3 m across, 0.35 m tall to the rim, about 0.45 m with the bail. No blocking footprint is proposed.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "wheelbarrow": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Wheelbarrow",
+      "source": "art/source/world/wheelbarrow/v1/model.blend",
+      "runtime": "assets/world/wheelbarrow/model.glb",
+      "pivot": "ground origin at the bounding-box centre; tray centre 0.125 m toward the handles",
+      "logical_footprint": [
+        -0.225,
+        -0.45,
+        0.45,
+        0.9
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Timber tray with an iron rim and a hay load, one wheel at -Y on an iron axle, and two handles at +Y. 0.45 m wide, 0.9 m long, 0.5 m tall. The footprint covers the whole barrow because the wheel and handle grips would block a walker.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "clay-jug": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Clay Jug",
+      "source": "art/source/world/clay-jug/v1/model.blend",
+      "runtime": "assets/world/clay-jug/model.glb",
+      "pivot": "ground origin at the bounding-box centre; body axis 0.05 m toward -X",
+      "logical_footprint": null,
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
+      "notes": "Terracotta jug with a wide belly, a cream glazed shoulder, neck and lip, a dark throat and one loop handle on the +X side. 0.45 m across the belly, 0.5 m tall. No blocking footprint is proposed; the handle overhangs the belly.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ]
+      }
+    },
+    "notice-board": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Notice Board",
+      "source": "art/source/world/notice-board/v1/model.blend",
+      "runtime": "assets/world/notice-board/model.glb",
+      "pivot": "ground origin at the bounding-box centre; posts 0 to 0.1 m behind it",
+      "logical_footprint": [
+        -0.4,
+        -0.1,
+        0.8,
+        0.2
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Framed timber board on two posts with a cream notice, teal pins and a violet tiled cap. 0.8 m wide board, 1.2 m tall with the cap. The footprint covers the posts and the board line; the cap overhangs it by about 0.05 m.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark",
+          "roof_light",
+          "teal"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ]
+      }
+    },
+    "milk-churn": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Milk Churn",
+      "source": "art/source/world/milk-churn/v1/model.blend",
+      "runtime": "assets/world/milk-churn/model.glb",
+      "pivot": "ground origin on the body axis",
+      "logical_footprint": [
+        -0.2,
+        -0.2,
+        0.4,
+        0.4
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Tall galvanised churn on a dark iron foot, with two iron bands, a flared lid and a small arched iron handle on the lid. 0.4 m across the body, 0.8 m tall. The footprint is the body; the bands and lid rim overhang it by 0.03 to 0.05 m.",
+      "finish_slots": {
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "stepping-stones": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Stepping Stones",
+      "source": "art/source/world/stepping-stones/v1/model.blend",
+      "runtime": "assets/world/stepping-stones/model.glb",
+      "pivot": "ground origin at the middle of the stone row",
+      "logical_footprint": null,
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
+      "notes": "Three flat grey stones in a gravel bed, with moss on the back rim. The stones are walkable, so no blocking footprint is proposed.",
+      "finish_slots": {
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light"
+        ]
+      }
+    },
+    "rowboat-upturned": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Rowboat Upturned",
+      "source": "art/source/world/rowboat-upturned/v1/model.blend",
+      "runtime": "assets/world/rowboat-upturned/model.glb",
+      "pivot": "ground origin at the hull centre",
+      "logical_footprint": [
+        -0.8,
+        -0.3,
+        1.6,
+        0.6
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "An upturned hull with a dark keel, plank strakes in two tones, and an oar lying along each flank. The oars and blades overhang the proposed hull footprint.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ]
+      }
+    },
+    "fallen-log": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Fallen Log",
+      "source": "art/source/world/fallen-log/v1/model.blend",
+      "runtime": "assets/world/fallen-log/model.glb",
+      "pivot": "ground origin at the centre of the log",
+      "logical_footprint": [
+        -0.6,
+        -0.2,
+        1.2,
+        0.4
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A round trunk with bark, a pale cut end at +X and moss on top. The proposed footprint is the trunk itself, which a walker would plausibly be blocked by.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    },
+    "mushroom-cluster": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Mushroom Cluster",
+      "source": "art/source/world/mushroom-cluster/v1/model.blend",
+      "runtime": "assets/world/mushroom-cluster/model.glb",
+      "pivot": "ground origin at the centre of the stump",
+      "logical_footprint": null,
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
+      "notes": "Six cream and violet mushrooms on a short cut stump, 0.3 m tall. The clump is small and walkable around, so no footprint is proposed.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ],
+        "roof": [
+          "roof",
+          "roof_light"
+        ],
+        "timber": [
+          "oak",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    },
+    "market-stall": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Market Stall",
+      "source": "art/source/world/market-stall/v1/model.blend",
+      "runtime": "assets/world/market-stall/model.glb",
+      "pivot": "ground origin at the centre of the stall body",
+      "logical_footprint": [
+        -0.75,
+        -0.45,
+        1.5,
+        0.9
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A plank counter with corner posts, a back board and a violet and cream striped canopy, with baskets and apples on the counter. The proposed footprint is the stall body, and the canopy overhangs it.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark",
+          "roof_light"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ]
+      }
+    },
+    "hanging-sign": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Hanging Sign",
+      "source": "art/source/world/hanging-sign/v1/model.blend",
+      "runtime": "assets/world/hanging-sign/model.glb",
+      "pivot": "foot of the post",
+      "logical_footprint": [
+        -0.075,
+        -0.075,
+        0.15,
+        0.15
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A timber post with an iron arm and a violet-rimmed board hung in front. The proposed footprint is the post only, since the arm and board overhang it; set it to null if the post should not block.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster_shade"
+        ],
+        "roof": [
+          "roof"
+        ],
+        "timber": [
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "hollow-highback-armchair": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Highback Armchair",
+      "source": "art/source/world/hollow-highback-armchair/v1/model.blend",
+      "runtime": "assets/world/hollow-highback-armchair/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.5,
+        -0.45,
+        1.0,
+        0.9
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A carved oak chair with a plum cushion, scroll arms and brass studs.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass"
+        ],
+        "fabric": [
+          "cloth_lilac",
+          "cloth_plum"
+        ]
+      }
+    },
+    "hollow-trestle-table": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Trestle Table",
+      "source": "art/source/world/hollow-trestle-table/v1/model.blend",
+      "runtime": "assets/world/hollow-trestle-table/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -1.1,
+        -0.5,
+        2.2,
+        1.0
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A broad plank table with splayed trestles and a pegged centre stretcher.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass"
+        ]
+      }
+    },
+    "hollow-writing-desk": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Writing Desk",
+      "source": "art/source/world/hollow-writing-desk/v1/model.blend",
+      "runtime": "assets/world/hollow-writing-desk/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.775,
+        -0.4,
+        1.55,
+        0.8
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A sloped writing desk with drawers, an ink pot, quill and folded letters.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    },
+    "hollow-mapmakers-table": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Mapmaker\u2019s Table",
+      "source": "art/source/world/hollow-mapmakers-table/v1/model.blend",
+      "runtime": "assets/world/hollow-mapmakers-table/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.825,
+        -0.5,
+        1.65,
+        1.0
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A brass-edged map table with rolled charts, compass and coloured route markers.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "cloth_teal",
+          "linen"
+        ]
+      }
+    },
+    "hollow-apothecary-cabinet": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Apothecary Cabinet",
+      "source": "art/source/world/hollow-apothecary-cabinet/v1/model.blend",
+      "runtime": "assets/world/hollow-apothecary-cabinet/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.675,
+        -0.31,
+        1.35,
+        0.62
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "Tiny labelled drawers, teal bottles and a cream carved pediment.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass"
+        ]
+      }
+    },
+    "hollow-kitchen-dresser": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Kitchen Dresser",
+      "source": "art/source/world/hollow-kitchen-dresser/v1/model.blend",
+      "runtime": "assets/world/hollow-kitchen-dresser/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.775,
+        -0.325,
+        1.55,
+        0.65
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A cottage sideboard with open plate shelves, cups and a linen runner.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass"
+        ],
+        "fabric": [
+          "cloth_plum",
+          "cloth_teal",
+          "linen"
+        ]
+      }
+    },
+    "hollow-oak-wardrobe": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Oak Wardrobe",
+      "source": "art/source/world/hollow-oak-wardrobe/v1/model.blend",
+      "runtime": "assets/world/hollow-oak-wardrobe/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.65,
+        -0.35,
+        1.3,
+        0.7
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A tall panelled wardrobe with carved diamonds, violet inlay and brass pulls.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass"
+        ],
+        "fabric": [
+          "cloth_plum"
+        ]
+      }
+    },
+    "hollow-washstand": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Washstand",
+      "source": "art/source/world/hollow-washstand/v1/model.blend",
+      "runtime": "assets/world/hollow-washstand/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.5,
+        -0.325,
+        1.0,
+        0.65
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A wash basin and jug beneath a small framed mirror on an oak stand.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    },
+    "hollow-woven-settee": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Woven Settee",
+      "source": "art/source/world/hollow-woven-settee/v1/model.blend",
+      "runtime": "assets/world/hollow-woven-settee/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.8,
+        -0.4,
+        1.6,
+        0.8
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A two-seat timber settle with woven teal upholstery and cream pillows.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "fabric": [
+          "cloth_light",
+          "cloth_teal",
+          "linen"
+        ]
+      }
+    },
+    "hollow-patchwork-bed": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Patchwork Bed",
+      "source": "art/source/world/hollow-patchwork-bed/v1/model.blend",
+      "runtime": "assets/world/hollow-patchwork-bed/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.55,
+        -1.0,
+        1.1,
+        2.0
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A full-length cottage bed with turned posts and a violet-and-cream patchwork quilt.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass"
+        ],
+        "fabric": [
+          "cloth_lilac",
+          "cloth_plum",
+          "linen"
+        ]
+      }
+    },
+    "hollow-carpenters-bench": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Carpenter\u2019s Bench",
+      "source": "art/source/world/hollow-carpenters-bench/v1/model.blend",
+      "runtime": "assets/world/hollow-carpenters-bench/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.95,
+        -0.425,
+        1.9,
+        0.85
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A substantial workbench with a screw vise, hand plane and saw.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "hollow-blacksmiths-anvil": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Blacksmith\u2019s Anvil",
+      "source": "art/source/world/hollow-blacksmiths-anvil/v1/model.blend",
+      "runtime": "assets/world/hollow-blacksmiths-anvil/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.5,
+        -0.325,
+        1.0,
+        0.65
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A faceted iron anvil, tapering horn and hammer on a banded oak stump.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "hollow-bellows-forge": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Bellows Forge",
+      "source": "art/source/world/hollow-bellows-forge/v1/model.blend",
+      "runtime": "assets/world/hollow-bellows-forge/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.85,
+        -0.525,
+        1.7,
+        1.05
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A stone fire bed, copper hood, side bellows and glowing coals.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "light",
+        "on": "Stoke",
+        "off": "Bank"
+      },
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light"
+        ],
+        "metal": [
+          "copper",
+          "iron"
+        ]
+      }
+    },
+    "hollow-grinding-wheel": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Grinding Wheel",
+      "source": "art/source/world/hollow-grinding-wheel/v1/model.blend",
+      "runtime": "assets/world/hollow-grinding-wheel/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.55,
+        -0.375,
+        1.1,
+        0.75
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A pale stone wheel on a braced timber stand with treadle and water cup.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "spin_x",
+        "on": "Start",
+        "off": "Stop"
+      },
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone",
+          "stone_light"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ]
+      }
+    },
+    "hollow-tool-rack": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Tool Rack",
+      "source": "art/source/world/hollow-tool-rack/v1/model.blend",
+      "runtime": "assets/world/hollow-tool-rack/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.7,
+        -0.25,
+        1.4,
+        0.5
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A freestanding rack of axes, a spade, rakes and iron hooks.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "hollow-potters-wheel": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Potter\u2019s Wheel",
+      "source": "art/source/world/hollow-potters-wheel/v1/model.blend",
+      "runtime": "assets/world/hollow-potters-wheel/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.55,
+        -0.45,
+        1.1,
+        0.9
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A clay pot on a turntable with a lower flywheel and a little water bowl.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "spin_y",
+        "on": "Start",
+        "off": "Stop"
+      },
+      "finish_slots": {
+        "timber": [
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    },
+    "hollow-weavers-loom": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Weaver\u2019s Loom",
+      "source": "art/source/world/hollow-weavers-loom/v1/model.blend",
+      "runtime": "assets/world/hollow-weavers-loom/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.75,
+        -0.5,
+        1.5,
+        1.0
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A framed hand loom with visible warp threads, violet cloth and a shuttle.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass"
+        ],
+        "fabric": [
+          "cloth_lilac",
+          "cloth_plum"
+        ]
+      }
+    },
+    "hollow-spinning-wheel": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Spinning Wheel",
+      "source": "art/source/world/hollow-spinning-wheel/v1/model.blend",
+      "runtime": "assets/world/hollow-spinning-wheel/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.625,
+        -0.325,
+        1.25,
+        0.65
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "An eight-spoked drive wheel, spindle, treadle and cream wool bundle.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "spin_x",
+        "on": "Start",
+        "off": "Stop"
+      },
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    },
+    "hollow-alchemy-bench": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Alchemy Bench",
+      "source": "art/source/world/hollow-alchemy-bench/v1/model.blend",
+      "runtime": "assets/world/hollow-alchemy-bench/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.775,
+        -0.4,
+        1.55,
+        0.8
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "Copper piping, a flask cradle and three luminous coloured bottles.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "light",
+        "on": "Awaken",
+        "off": "Dim"
+      },
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "copper"
+        ]
+      }
+    },
+    "hollow-bookbinders-press": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Bookbinder\u2019s Press",
+      "source": "art/source/world/hollow-bookbinders-press/v1/model.blend",
+      "runtime": "assets/world/hollow-bookbinders-press/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.575,
+        -0.4,
+        1.15,
+        0.8
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "Twin screw uprights squeeze a brass-cornered book between timber platens.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "cloth_plum"
+        ]
+      }
+    },
+    "hollow-bakers-oven": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Baker\u2019s Oven",
+      "source": "art/source/world/hollow-bakers-oven/v1/model.blend",
+      "runtime": "assets/world/hollow-bakers-oven/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.8,
+        -0.65,
+        1.6,
+        1.3
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A cream masonry oven with an arched mouth, violet cap and stacked firewood.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Extinguish"
+      },
+      "finish_slots": {
+        "walls": [
+          "plaster"
+        ],
+        "roof": [
+          "roof"
+        ],
+        "timber": [
+          "wood",
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light"
+        ]
+      }
+    },
+    "hollow-bread-display": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Bread Display",
+      "source": "art/source/world/hollow-bread-display/v1/model.blend",
+      "runtime": "assets/world/hollow-bread-display/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.725,
+        -0.35,
+        1.45,
+        0.7
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A market counter piled with rounded loaves, baguettes and a linen basket.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    },
+    "hollow-cheese-stand": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Cheese Stand",
+      "source": "art/source/world/hollow-cheese-stand/v1/model.blend",
+      "runtime": "assets/world/hollow-cheese-stand/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.625,
+        -0.35,
+        1.25,
+        0.7
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A striped canopy shades cheese wheels, a wedge and a small cutting board.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "fabric": [
+          "cloth_teal"
+        ]
+      }
+    },
+    "hollow-fishmongers-counter": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Fishmonger\u2019s Counter",
+      "source": "art/source/world/hollow-fishmongers-counter/v1/model.blend",
+      "runtime": "assets/world/hollow-fishmongers-counter/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.775,
+        -0.4,
+        1.55,
+        0.8
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "Three silver fish rest on a teal counter with a bucket beneath.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "iron"
+        ],
+        "fabric": [
+          "cloth_teal"
+        ]
+      }
+    },
+    "hollow-spice-cart": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Spice Cart",
+      "source": "art/source/world/hollow-spice-cart/v1/model.blend",
+      "runtime": "assets/world/hollow-spice-cart/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.75,
+        -0.425,
+        1.5,
+        0.85
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A wheeled cart with a violet awning and open jars of colourful spices.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "cloth_plum",
+          "linen"
+        ]
+      }
+    },
+    "hollow-covered-handcart": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Covered Handcart",
+      "source": "art/source/world/hollow-covered-handcart/v1/model.blend",
+      "runtime": "assets/world/hollow-covered-handcart/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.625,
+        -1.0,
+        1.25,
+        2.0
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A little timber wagon with curved cream cover, iron-rimmed wheels and a tow bar.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    },
+    "hollow-linen-rack": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Linen Rack",
+      "source": "art/source/world/hollow-linen-rack/v1/model.blend",
+      "runtime": "assets/world/hollow-linen-rack/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.6,
+        -0.275,
+        1.2,
+        0.55
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "Folded towels, hanging cream cloth and a basket on a cross-braced drying rack.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "fabric": [
+          "cloth_teal",
+          "linen"
+        ]
+      }
+    },
+    "hollow-pottery-shelf": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Pottery Shelf",
+      "source": "art/source/world/hollow-pottery-shelf/v1/model.blend",
+      "runtime": "assets/world/hollow-pottery-shelf/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.625,
+        -0.25,
+        1.25,
+        0.5
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "Terracotta jars, teal glazed jugs and cream bowls on three open timber shelves.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    },
+    "hollow-candle-stand": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Candle Stand",
+      "source": "art/source/world/hollow-candle-stand/v1/model.blend",
+      "runtime": "assets/world/hollow-candle-stand/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.325,
+        -0.325,
+        0.65,
+        0.65
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A brass three-branch candle stand with wax drips and warm flames.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Extinguish"
+      },
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "metal": [
+          "brass",
+          "copper"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    },
+    "hollow-copper-wash-tub": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Copper Wash Tub",
+      "source": "art/source/world/hollow-copper-wash-tub/v1/model.blend",
+      "runtime": "assets/world/hollow-copper-wash-tub/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.55,
+        -0.375,
+        1.1,
+        0.75
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A hammered copper wash tub with side handles, pale water and a washboard.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "wood_dark"
+        ],
+        "metal": [
+          "copper",
+          "iron"
+        ]
+      }
+    },
+    "hollow-straw-beehive": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Straw Beehive",
+      "source": "art/source/world/hollow-straw-beehive/v1/model.blend",
+      "runtime": "assets/world/hollow-straw-beehive/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.425,
+        -0.425,
+        0.85,
+        0.85
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A coiled straw skep on a timber stand with a little landing board.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood_dark"
+        ]
+      }
+    },
+    "hollow-rabbit-hutch": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Rabbit Hutch",
+      "source": "art/source/world/hollow-rabbit-hutch/v1/model.blend",
+      "runtime": "assets/world/hollow-rabbit-hutch/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.7,
+        -0.35,
+        1.4,
+        0.7
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A raised hutch with wire-style slats, sleeping box, hay and a bowl; no live animal.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "roof": [
+          "roof_teal"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    },
+    "hollow-chicken-coop": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Chicken Coop",
+      "source": "art/source/world/hollow-chicken-coop/v1/model.blend",
+      "runtime": "assets/world/hollow-chicken-coop/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.8,
+        -0.65,
+        1.6,
+        1.3
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A violet-roofed coop with a ladder, nesting boxes and small shuttered windows.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "roof": [
+          "roof",
+          "roof_teal"
+        ],
+        "timber": [
+          "oak",
+          "wood",
+          "wood_dark"
+        ],
+        "fabric": [
+          "cloth_teal"
+        ]
+      }
+    },
+    "hollow-seedling-tray": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Seedling Tray",
+      "source": "art/source/world/hollow-seedling-tray/v1/model.blend",
+      "runtime": "assets/world/hollow-seedling-tray/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.55,
+        -0.3,
+        1.1,
+        0.6
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "An orderly bed of six seedlings, plant labels and a watering jug.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    },
+    "hollow-herb-drying-rack": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Herb Drying Rack",
+      "source": "art/source/world/hollow-herb-drying-rack/v1/model.blend",
+      "runtime": "assets/world/hollow-herb-drying-rack/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.65,
+        -0.325,
+        1.3,
+        0.65
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "Tied bundles of sage and lavender hang from a braced rack above wicker baskets.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "fabric": [
+          "cloth_lilac",
+          "linen"
+        ]
+      }
+    },
+    "hollow-vine-trellis": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Vine Trellis",
+      "source": "art/source/world/hollow-vine-trellis/v1/model.blend",
+      "runtime": "assets/world/hollow-vine-trellis/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.75,
+        -0.275,
+        1.5,
+        0.55
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A low stone planter supports a timber lattice and curling grape vines.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone"
+        ],
+        "fabric": [
+          "cloth_plum"
+        ]
+      }
+    },
+    "hollow-field-scarecrow": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Field Scarecrow",
+      "source": "art/source/world/hollow-field-scarecrow/v1/model.blend",
+      "runtime": "assets/world/hollow-field-scarecrow/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.5,
+        -0.3,
+        1.0,
+        0.6
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A straw hat, russet coat and teal scarf on a forked timber field marker.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "wood",
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone_dark"
+        ],
+        "fabric": [
+          "cloth_plum",
+          "cloth_teal",
+          "linen"
+        ]
+      }
+    },
+    "hollow-rain-barrel": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Rain Barrel",
+      "source": "art/source/world/hollow-rain-barrel/v1/model.blend",
+      "runtime": "assets/world/hollow-rain-barrel/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.475,
+        -0.425,
+        0.95,
+        0.85
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A banded barrel with a copper downpipe, lid and brass garden tap.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "copper",
+          "iron"
+        ]
+      }
+    },
+    "hollow-butter-churn": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Butter Churn",
+      "source": "art/source/world/hollow-butter-churn/v1/model.blend",
+      "runtime": "assets/world/hollow-butter-churn/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.325,
+        -0.325,
+        0.65,
+        0.65
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A tall stave churn with iron bands, a plunger and a small cream cloth.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "metal": [
+          "iron"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    },
+    "hollow-hay-handcart": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Hay Handcart",
+      "source": "art/source/world/hollow-hay-handcart/v1/model.blend",
+      "runtime": "assets/world/hollow-hay-handcart/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.625,
+        -0.825,
+        1.25,
+        1.65
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A two-wheeled farm cart piled with bound golden hay and a wooden pitchfork.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    },
+    "hollow-copper-brazier": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Copper Brazier",
+      "source": "art/source/world/hollow-copper-brazier/v1/model.blend",
+      "runtime": "assets/world/hollow-copper-brazier/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.425,
+        -0.425,
+        0.85,
+        0.85
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "An embossed copper bowl on three iron legs with split logs and amber fire.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Extinguish"
+      },
+      "finish_slots": {
+        "timber": [
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "copper",
+          "iron"
+        ]
+      }
+    },
+    "hollow-shard-lantern": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Shard Lantern",
+      "source": "art/source/world/hollow-shard-lantern/v1/model.blend",
+      "runtime": "assets/world/hollow-shard-lantern/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.375,
+        -0.375,
+        0.75,
+        0.75
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A teal crystal glows inside an open brass lantern under a violet cap.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Dim"
+      },
+      "finish_slots": {
+        "roof": [
+          "roof"
+        ],
+        "timber": [
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone_dark"
+        ],
+        "metal": [
+          "brass"
+        ]
+      }
+    },
+    "hollow-crystal-obelisk": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Crystal Obelisk",
+      "source": "art/source/world/hollow-crystal-obelisk/v1/model.blend",
+      "runtime": "assets/world/hollow-crystal-obelisk/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.5,
+        -0.5,
+        1.0,
+        1.0
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "Three faceted turquoise crystals grow from a carved cream stone base.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "light",
+        "on": "Awaken",
+        "off": "Dim"
+      },
+      "finish_slots": {
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light"
+        ],
+        "metal": [
+          "brass"
+        ]
+      }
+    },
+    "hollow-rune-standing-stone": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Rune Standing Stone",
+      "source": "art/source/world/hollow-rune-standing-stone/v1/model.blend",
+      "runtime": "assets/world/hollow-rune-standing-stone/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.475,
+        -0.325,
+        0.95,
+        0.65
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A weathered stone slab with a teal rune, brass inset and moss at its foot.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "light",
+        "on": "Awaken",
+        "off": "Dim"
+      },
+      "finish_slots": {
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light"
+        ],
+        "metal": [
+          "brass"
+        ]
+      }
+    },
+    "hollow-village-bell": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Village Bell",
+      "source": "art/source/world/hollow-village-bell/v1/model.blend",
+      "runtime": "assets/world/hollow-village-bell/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.6,
+        -0.4,
+        1.2,
+        0.8
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A brass village bell and visible clapper hang in a violet-capped timber frame.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "bell",
+        "on": "Ring",
+        "off": "Silence"
+      },
+      "finish_slots": {
+        "roof": [
+          "roof"
+        ],
+        "timber": [
+          "oak",
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    },
+    "hollow-brass-lever": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Brass Lever",
+      "source": "art/source/world/hollow-brass-lever/v1/model.blend",
+      "runtime": "assets/world/hollow-brass-lever/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.325,
+        -0.325,
+        0.65,
+        0.65
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A chunky lever with a teal grip and brass dial on a stone plinth.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "lever",
+        "on": "Pull",
+        "off": "Reset"
+      },
+      "finish_slots": {
+        "timber": [
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone",
+          "stone_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "cloth_teal"
+        ]
+      }
+    },
+    "hollow-water-pump": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Water Pump",
+      "source": "art/source/world/hollow-water-pump/v1/model.blend",
+      "runtime": "assets/world/hollow-water-pump/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.425,
+        -0.4,
+        0.85,
+        0.8
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A green iron hand pump pours into a stone trough beneath a brass spout.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "pump",
+        "on": "Start",
+        "off": "Stop"
+      },
+      "finish_slots": {
+        "timber": [
+          "oak"
+        ],
+        "masonry": [
+          "stone",
+          "stone_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "cloth_teal"
+        ]
+      }
+    },
+    "hollow-wayfarers-chest": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Wayfarer\u2019s Chest",
+      "source": "art/source/world/hollow-wayfarers-chest/v1/model.blend",
+      "runtime": "assets/world/hollow-wayfarers-chest/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.575,
+        -0.375,
+        1.15,
+        0.75
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "An iron-strapped travel chest with an arched violet lid and brass clasp.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "hinge",
+        "on": "Open",
+        "off": "Close"
+      },
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "cloth_plum"
+        ]
+      }
+    },
+    "hollow-little-shrine": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Little Shrine",
+      "source": "art/source/world/hollow-little-shrine/v1/model.blend",
+      "runtime": "assets/world/hollow-little-shrine/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.55,
+        -0.4,
+        1.1,
+        0.8
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A little cream-and-timber shrine shelters a votive crystal beneath a teal roof.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Dim"
+      },
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster"
+        ],
+        "roof": [
+          "roof_teal"
+        ],
+        "timber": [
+          "oak",
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone_dark",
+          "stone_light"
+        ],
+        "metal": [
+          "brass"
+        ]
+      }
+    },
+    "hollow-weather-vane": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Weather Vane",
+      "source": "art/source/world/hollow-weather-vane/v1/model.blend",
+      "runtime": "assets/world/hollow-weather-vane/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.35,
+        -0.35,
+        0.7,
+        0.7
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A brass sun-and-rooster vane above four compass arms on a stone foot.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "masonry": [
+          "stone",
+          "stone_dark"
+        ],
+        "metal": [
+          "brass",
+          "copper",
+          "iron"
+        ]
+      }
+    },
+    "hollow-bakery": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_and_builder",
+      "label": "Hearth Bakery",
+      "source": "art/source/world/hollow-bakery/v1/model.blend",
+      "runtime": "assets/world/hollow-bakery/model.glb",
+      "pivot": "Ground centre, front +Z; one metre per cell",
+      "logical_footprint": [
+        -2.5,
+        -2.0,
+        5,
+        4
+      ],
+      "behavior": "Static shop building with saved instanced room; forge/oven are decorative",
+      "notes": "Authored 2026-10-24 for the village kit: centred readable oak entry, painted tile roof, shop silhouette and sign. Edit the adopted Blender master. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "plaster"
+        ],
+        "roof": [
+          "roof_violet"
+        ],
+        "timber": [
+          "wood",
+          "entrance_oak"
+        ],
+        "masonry": [
+          "stone",
+          "brick",
+          "entrance_stone"
+        ],
+        "metal": [
+          "iron",
+          "gold"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 2.15,
+        "width": 1.07,
+        "height": 2.13,
+        "bottom": 0.17,
+        "steps": [
+          [
+            2.85,
+            2.3,
+            1.7200000000000002,
+            0.09620000000000001
+          ],
+          [
+            2.42,
+            1.35,
+            1.4700000000000002,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    },
+    "hollow-smithy": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_and_builder",
+      "label": "Riverside Smithy",
+      "source": "art/source/world/hollow-smithy/v1/model.blend",
+      "runtime": "assets/world/hollow-smithy/model.glb",
+      "pivot": "Ground centre, front +Z; one metre per cell",
+      "logical_footprint": [
+        -3.0,
+        -2.5,
+        6,
+        5
+      ],
+      "behavior": "Static shop building with saved instanced room; forge/oven are decorative",
+      "notes": "Authored 2026-10-24 for the village kit: centred readable oak entry, painted tile roof, shop silhouette and sign. Edit the adopted Blender master. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "plaster"
+        ],
+        "roof": [
+          "roof_teal"
+        ],
+        "timber": [
+          "wood",
+          "entrance_oak"
+        ],
+        "masonry": [
+          "stone",
+          "brick",
+          "entrance_stone"
+        ],
+        "metal": [
+          "iron",
+          "gold"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 2.65,
+        "width": 1.07,
+        "height": 2.13,
+        "bottom": 0.17,
+        "steps": [
+          [
+            3.35,
+            2.8,
+            1.7200000000000002,
+            0.09620000000000001
+          ],
+          [
+            2.92,
+            1.85,
+            1.4700000000000002,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    },
+    "concept-cottage": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_builder",
+      "label": "Concept Cottage",
+      "source": "art/source/world/concept-cottage/v1/model.blend",
+      "runtime": "assets/world/concept-cottage/model.glb",
+      "pivot": "Ground center; front +Z; one metre per cell",
+      "logical_footprint": [
+        -1.9,
+        -1.7,
+        3.8,
+        3.4
+      ],
+      "behavior": "Hinged entry with separate saved cottage room",
+      "notes": "Original mesh from the left log cottage in reference/voxel-isometric.png. Individual glazed clay tiles, oak courses, cream voussoirs, porthole, hollow chimney and daisies. No prior house geometry reused. Modelled from scratch and reviewed in Godot.",
+      "finish_slots": {
+        "walls": [
+          "cottage_oak",
+          "cottage_oak_light"
+        ],
+        "roof": [
+          "cottage_roof",
+          "cottage_roof_light",
+          "cottage_roof_dark"
+        ],
+        "timber": [
+          "cottage_timber",
+          "cottage_endgrain"
+        ],
+        "masonry": [
+          "cottage_stone",
+          "cottage_stone_light",
+          "cottage_stone_warm",
+          "cottage_mortar"
+        ],
+        "metal": [
+          "cottage_iron",
+          "cottage_brass"
+        ]
+      },
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak with upper pane",
+        "threshold": "pale limestone",
+        "plane": 1.855,
+        "width": 1.08,
+        "height": 2.11,
+        "bottom": 0.22,
+        "steps": [
+          [
+            2.55,
+            2.03,
+            1.66,
+            0.12
+          ],
+          [
+            2.15,
+            1.18,
+            1.46,
+            0.235
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    }
+  },
+  "areas": {
+    "rune-mill": {
+      "document": "content/areas/rune-mill.json",
+      "ground": "clearing-ground (Blender)",
+      "notes": "The original 16x12 clearing, extracted unchanged. Kept as a regression fixture and a second loadable area."
+    },
+    "kindle-hollow": {
+      "document": "content/areas/kindle-hollow.json",
+      "quests": "content/areas/kindle-hollow.quests.json",
+      "ground": "generated from the document by art/terrain_builder.gd (procedural_test, not yet adopted into Blender)",
+      "notes": "Level 1 version 2: 96x80, fourteen zones, 21 buildings, five residents, 19 lamps, one gate, one four-deck bridge, five quests. House doors open separate saved rooms. Original lesson coordinates retained; land remains generated."
+    },
+    "village-cottage": {
+      "document": "content/areas/village-cottage.json",
+      "ground": "procedural cutaway room from interior furniture data",
+      "notes": "Instanced per exterior building id through content/interiors/catalog.json; independent state and program memory."
+    },
+    "village-workshop": {
+      "document": "content/areas/village-workshop.json",
+      "ground": "procedural cutaway room from interior furniture data",
+      "notes": "Instanced per exterior building id through content/interiors/catalog.json; independent state and program memory."
+    },
+    "village-loft": {
+      "document": "content/areas/village-loft.json",
+      "ground": "procedural cutaway room from interior furniture data",
+      "notes": "Instanced per exterior building id through content/interiors/catalog.json; independent state and program memory."
+    },
+    "village-mill": {
+      "document": "content/areas/village-mill.json",
+      "ground": "procedural cutaway room from interior furniture data",
+      "notes": "Instanced per exterior building id through content/interiors/catalog.json; independent state and program memory."
+    }
+  }
+}

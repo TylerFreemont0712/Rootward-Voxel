@@ -1,0 +1,37 @@
+{
+  "asset": "hollow-patchwork-bed",
+  "version": "v1",
+  "authoring_tool": "Blender 5.2.2 LTS; deliberate scripted geometry",
+  "source_authority": "model.blend; this script is a protected one-time authoring record",
+  "recipe": "patchwork_bed",
+  "sources": {
+    "art/source/world/village-library/v1/author.py": "4e0a2f4d10c33120f752e70d27f0d599d3bf11024c53d9260d916b7987d7e786",
+    "art/source/world/village-library/v1/modeling.py": "2e204b88cab0604d1435eef74e19dae12152339868f7cb2326602c1dd2740f1f",
+    "art/source/world/village-library/v1/furniture.py": "19f795388fbbac6869595ccde904d90225ababc5e63bd705ddb871161147ceec",
+    "art/source/world/village-library/v1/library.json": "cf9740d227bf11cc8aca9cd34e5ad28be137dd8fc699dd7656913ef062a38c16"
+  },
+  "materials": "Shared village palette; existing lush texture PNGs packed losslessly; no generated-image dependency.",
+  "blender_bounds": [
+    [
+      -0.5799999833106995,
+      -1.0,
+      0.0
+    ],
+    [
+      0.5799999833106995,
+      1.0,
+      1.090000033378601
+    ]
+  ],
+  "spec": {
+    "number": 10,
+    "id": "hollow-patchwork-bed",
+    "recipe": "patchwork_bed",
+    "category": "furniture",
+    "title": "Patchwork Bed",
+    "width": 1.1,
+    "depth": 2.0,
+    "blurb": "A full-length cottage bed with turned posts and a violet-and-cream patchwork quilt.",
+    "interaction": {}
+  }
+}

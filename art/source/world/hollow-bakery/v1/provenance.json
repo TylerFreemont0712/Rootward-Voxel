@@ -1,0 +1,10 @@
+{
+  "asset": "hollow-bakery",
+  "authoring": "Bespoke Blender mesh source; shared painted village materials",
+  "script": "art/source/world/building-polish/v1/edit_sources.py",
+  "revision": "2026-10-24-buildings-v1",
+  "source_sha256": "48712b6e5bb89062d13844fb9ead31ec78450562df7b0e852a8e41ff6238a8c9",
+  "note": "One-time original authoring; edit this saved master for later changes.",
+  "review_correction": "Roof slopes aligned with ridge/eaves; open forge firebox; warm display panes.",
+  "detail_edit": "art/source/world/building-polish/v1/shop_details.py"
+}

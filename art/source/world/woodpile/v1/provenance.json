@@ -1,0 +1,9 @@
+{
+  "asset": "woodpile",
+  "version": "v1",
+  "created": "2026-10-23T08:54:45.804217+00:00",
+  "author": "art/source/world/doodads-kit/v1/farmyard.py",
+  "author_sha256": "a3fcea9f31a0b2279b24387a52e0502e43140d374df282129a5f0aa7d7b9be91",
+  "voxel_metres": 0.05,
+  "note": "One-time procedural voxel authoring. model.blend becomes the editable source after this run."
+}

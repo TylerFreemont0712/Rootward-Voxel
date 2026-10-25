@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "ridge-cedar",
+  "version": "v1",
+  "source": "art/source/world/ridge-cedar/v1/model.blend",
+  "source_sha256": "4fc49b818a7c931f0a98e570713d1093baf4259721abbe0dcaf870c22adef695",
+  "runtime": "assets/world/ridge-cedar/model.glb",
+  "runtime_sha256": "a2db15c66d458162014826b3a6db82185c8e497911260af582bbf345aec110fd",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -2.33999991416931,
+      -0.0230282079428434,
+      -2.33999991416931,
+      2.51999998092651,
+      6.65999984741211,
+      2.33999991416931
+    ],
+    "geometry_sha256": "d5550bfcc857e28445922b89a29a3bd52cfbd70e02f0ce5afdb9725e04a37df4",
+    "material_records": {
+      "bark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "40e0dbb61ca7b2b1b22bbea7b9482dc707d8f13fa787410324e7c100f32700f7"
+      },
+      "bark_dark": {
+        "albedo": [
+          2863,
+          2196,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "cedar": {
+        "albedo": [
+          2471,
+          4392,
+          3804,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "cedar_dark": {
+        "albedo": [
+          1765,
+          3333,
+          2980,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "cedar_light": {
+        "albedo": [
+          3961,
+          5765,
+          4196,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "bark",
+      "bark_dark",
+      "cedar",
+      "cedar_dark",
+      "cedar_light"
+    ],
+    "meshes": 4,
+    "triangles": 10220
+  }
+}

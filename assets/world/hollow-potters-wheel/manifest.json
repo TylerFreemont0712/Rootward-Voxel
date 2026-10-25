@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "hollow-potters-wheel",
+  "version": "v1",
+  "source": "art/source/world/hollow-potters-wheel/v1/model.blend",
+  "source_sha256": "fed3b9d22f288cde9c44b5fe808adcd735146741a480fcdbf6b22eb2f0a98232",
+  "runtime": "assets/world/hollow-potters-wheel/model.glb",
+  "runtime_sha256": "88935bca6171c55ae7c0b8eca9e44c97a2a97243b255907c095017b0957ce783",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.540000021457672,
+      0.0,
+      -0.439999997615814,
+      0.540000021457672,
+      1.16670000553131,
+      0.439999997615814
+    ],
+    "geometry_sha256": "f6b2d852b13c7b5a026be525fb21d643c1808fcc014fc14cb1561053019ecf43",
+    "material_records": {
+      "clay": {
+        "albedo": [
+          7216,
+          4196,
+          2706,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "clay_light": {
+        "albedo": [
+          8392,
+          5529,
+          3843,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "iron": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "5aa901d0159be0f4db2bbfe0c3cee98970ef021a1f5b88ca2db951035e1bc042"
+      },
+      "oak_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "wood": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "f556d148ef2bc03c2e5f9b03b3794387093d909a3a5c75c69864a1d38969c3e9"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "clay",
+      "clay_light",
+      "iron",
+      "oak_light",
+      "stone",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 7,
+    "triangles": 636
+  }
+}

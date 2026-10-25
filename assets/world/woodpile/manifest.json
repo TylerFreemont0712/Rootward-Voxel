@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "woodpile",
+  "version": "v1",
+  "source": "art/source/world/woodpile/v1/model.blend",
+  "source_sha256": "3f3c371d7d949650fc334f822292309ebd136b5a1c5ca1acd9a072958d4042d3",
+  "runtime": "assets/world/woodpile/model.glb",
+  "runtime_sha256": "c0edb63d2739f206082077e9751eafb5a688c09b50109ef33872d4ee1f33ddc4",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.449999988079071,
+      0.0,
+      -0.200000002980232,
+      0.449999988079071,
+      0.449999988079071,
+      0.200000002980232
+    ],
+    "geometry_sha256": "eb61e588e1ec961460aad770c27fe3b58f608c7d1a89b4deefca381ab10e12f7",
+    "material_records": {
+      "cut": {
+        "albedo": [
+          8863,
+          7686,
+          5608,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "cut_ring": {
+        "albedo": [
+          6902,
+          4784,
+          2706,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          6902,
+          4784,
+          2706,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak_light": {
+        "albedo": [
+          7725,
+          5804,
+          3451,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood": {
+        "albedo": [
+          4627,
+          3137,
+          2235,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood_dark": {
+        "albedo": [
+          2863,
+          2196,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood_light": {
+        "albedo": [
+          6431,
+          4824,
+          3176,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "cut",
+      "cut_ring",
+      "oak",
+      "oak_light",
+      "wood",
+      "wood_dark",
+      "wood_light"
+    ],
+    "meshes": 7,
+    "triangles": 1560
+  }
+}

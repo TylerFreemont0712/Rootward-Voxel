@@ -1,0 +1,8 @@
+.godot/
+.cache/
+sandbox/runtime/
+evidence/*.log
+evidence/*.webm
+__pycache__/
+*.py[cod]
+*.blend[0-9]*

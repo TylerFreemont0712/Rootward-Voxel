@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "hollow-copper-wash-tub",
+  "version": "v1",
+  "source": "art/source/world/hollow-copper-wash-tub/v1/model.blend",
+  "source_sha256": "0c704687d21275ea319f5f82f0f49ad3db6748eb056917fc38c39b238cec5181",
+  "runtime": "assets/world/hollow-copper-wash-tub/model.glb",
+  "runtime_sha256": "63a9afcbe831cd509cafbd7001eff91d361f34f8f335b6bfa03e0991ea081eeb",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.590000033378601,
+      0.0,
+      -0.5,
+      0.590000033378601,
+      0.921257376670837,
+      0.5
+    ],
+    "geometry_sha256": "6272681de960686a446dd97c7e916ba575e9081e8fd89fa7370c2a3ad356006e",
+    "material_records": {
+      "copper": {
+        "albedo": [
+          7216,
+          4745,
+          2863,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": ""
+      },
+      "copper_light": {
+        "albedo": [
+          8314,
+          6078,
+          3922,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "iron": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "5aa901d0159be0f4db2bbfe0c3cee98970ef021a1f5b88ca2db951035e1bc042"
+      },
+      "silver": {
+        "albedo": [
+          6863,
+          7569,
+          7294,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": ""
+      },
+      "water": {
+        "albedo": [
+          4078,
+          6980,
+          6902,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "copper",
+      "copper_light",
+      "iron",
+      "silver",
+      "water",
+      "wood_dark"
+    ],
+    "meshes": 6,
+    "triangles": 408
+  }
+}

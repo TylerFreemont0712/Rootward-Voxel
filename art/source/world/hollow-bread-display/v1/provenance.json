@@ -1,0 +1,37 @@
+{
+  "asset": "hollow-bread-display",
+  "version": "v1",
+  "authoring_tool": "Blender 5.2.2 LTS; deliberate scripted geometry",
+  "source_authority": "model.blend; this script is a protected one-time authoring record",
+  "recipe": "bread_display",
+  "sources": {
+    "art/source/world/village-library/v1/author.py": "4e0a2f4d10c33120f752e70d27f0d599d3bf11024c53d9260d916b7987d7e786",
+    "art/source/world/village-library/v1/modeling.py": "2e204b88cab0604d1435eef74e19dae12152339868f7cb2326602c1dd2740f1f",
+    "art/source/world/village-library/v1/market.py": "b3037de31edb99ddf33cde7fc5e87a5a14107d315663ee8dfb8359849d801fcb",
+    "art/source/world/village-library/v1/library.json": "cf9740d227bf11cc8aca9cd34e5ad28be137dd8fc699dd7656913ef062a38c16"
+  },
+  "materials": "Shared village palette; existing lush texture PNGs packed losslessly; no generated-image dependency.",
+  "blender_bounds": [
+    [
+      -0.7250000238418579,
+      -0.41600000858306885,
+      0.0
+    ],
+    [
+      0.7250000238418579,
+      0.343999981880188,
+      1.1100000143051147
+    ]
+  ],
+  "spec": {
+    "number": 22,
+    "id": "hollow-bread-display",
+    "recipe": "bread_display",
+    "category": "market",
+    "title": "Bread Display",
+    "width": 1.45,
+    "depth": 0.7,
+    "blurb": "A market counter piled with rounded loaves, baguettes and a linen basket.",
+    "interaction": {}
+  }
+}

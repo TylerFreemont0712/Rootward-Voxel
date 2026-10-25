@@ -1,0 +1,10 @@
+{
+  "asset": "mill-house",
+  "version": "v1",
+  "created": "2026-10-22T08:56:21.299875+00:00",
+  "seed_sha256": "62aa2abb5dc072eb2b267de46b383531386b4c84f5c0ba0e64303bab2a7e27a2",
+  "recipe": "pipeline/world_seed.gd",
+  "recipe_sha256": "501c1350f960f3ace9610a3163566eab32bdb425a369ddb513caa63c06d64765",
+  "geometry_recipe_sha256": "a8704a28e125dc4eea98a4142f2c2902a81a6b6effe29a49e08b84986e9a40bd",
+  "note": "One-way procedural bootstrap. model.blend becomes the editable source after init."
+}

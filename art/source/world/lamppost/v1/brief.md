@@ -1,0 +1,18 @@
+# Asset brief: lamppost
+
+Status: accepted as the first concept-matched lamp (adopted 2026-10-23); see [the review](../../../../../pipeline/reviews/2026-10-23-log-cabin-and-lamppost.md).
+
+- Purpose and player-visible role: every `post` lamp in an area document, and the object a player's program lights with `lamp.set_lit(True)`. It replaces the thin procedural post. The beacon stays procedural.
+- Reference and the three visual qualities to match: the hanging-lantern posts on the village green in [reference/voxel-isometric.png](../../../../../reference/voxel-isometric.png). (1) A tall square timber post on a dark iron foot, capped in iron. (2) An arm with a brace, carrying a chunky brown-framed lantern with a pitched cap. (3) A pale limestone pedestal beside the post.
+- Source folder/version and authoring tool/version: `art/source/world/lamppost/v1/model.blend`, Blender 5.2.2 LTS. First geometry came from `lamppost()` in `pipeline/world_recipes.gd`, seeded and imported by `scripts/world-art.sh seed` / `init`.
+- Exact prompt or generator/export steps: `scripts/world-art.sh seed lamppost`, `init`, `build`, `compare` (the round trip is lossless).
+- Dimensions in world units and comparison to player: 2.86 high, more than twice the character (2.42 as first built; see the hand edit below). Pedestal 0.66 square and 0.46 high, with the iron foot and the post standing centred on it; post 0.17 square; the lantern's glass is 0.35 square and its centre is 2.11 above the ground.
+- Ground pivot and forward direction: ground origin at the centre of the pedestal, with the post above it. The arm and lantern point +Z.
+- Visible overhang versus solid logical footprint: none in the catalog (`logical_footprint` is null). A lamp is a mechanism, not a building; `core/` gives each lamp its own small blocking radius from the area document's `at`.
+- Hand edit (2026-10-23, done in Blender by the project owner, then rebuilt with `build`): the post, foot, arm and lantern objects were moved up onto the pedestal (+0.267 x, +0.448 up), the pedestal was moved to sit under them, and the dark pedestal core `stone_dark_geometry` was deleted. No vertex changed. The game reads the lantern's glass bounds, so the halo and light follow the lantern's new height.
+- Shared materials, textures and import requirements: the shared palette: `wood`, `wood_light`, `wood_dark`, `iron`, `stone_warm`, `stone_light`, plus the new `lamp_glass` (`stone_dark` is no longer used after the hand edit). **Keep the glass as its own mesh with the material `lamp_glass`**: `MechanismBuilder` finds it by that material name, swaps in the lit material, and puts the halo and light where its bounds are.
+- Variant names and parts that move or change state: one stateful part, the lantern glass (`lamp_glass_geometry`, in the `Lantern` group). Lit or dark comes from the world state, not from the model.
+- Fields/commands exposed to player programs, or decorative only: the model is decorative. `world.lamp(id).set_lit(...)` and `.lit` are rules in `core/`.
+- Active runtime output and catalog entry: `assets/world/lamppost/model.glb`, catalog id `lamppost`, authority `blender`.
+- Build command and second-placement/rebuild check: `scripts/world-art.sh build lamppost`. Rune Mill's three lamps and Kindle Hollow's eighteen post lamps all use it.
+- Acceptance review/evidence and known limitations: [evidence/cabin-lamppost-vs-concept.png](../../../../../evidence/cabin-lamppost-vs-concept.png). Limits: the concept's conifer in the planter is left out (no shrubs in this prototype), so the pedestal is solid; every lamp points its lantern the same way, as there is no per-lamp facing yet.

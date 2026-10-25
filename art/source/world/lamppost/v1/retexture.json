@@ -1,0 +1,9 @@
+{
+  "asset": "lamppost",
+  "retextured": "2026-10-23T02:10:33.407652+00:00",
+  "texture_catalog_sha256": "81ed8fc9c8923419cb50943e2e286d71fcbe7f8302a50ef8c2be5859fb94cebc",
+  "texture_set": "lush",
+  "script": "pipeline/blender_retexture.py",
+  "backup": "model.pre-retexture.blend",
+  "note": "Materials and UVs rewritten from the texture catalog inside the owner's open Blender session (the file also holds the owner's hand edit and one added lantern_mullions_geometry object); geometry untouched. Run build to export."
+}

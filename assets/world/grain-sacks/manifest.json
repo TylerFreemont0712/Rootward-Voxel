@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "grain-sacks",
+  "version": "v1",
+  "source": "art/source/world/grain-sacks/v1/model.blend",
+  "source_sha256": "23904a25d3877e9e924e3358072abbe3f491ba2c486d5eac605379507e28cb16",
+  "runtime": "assets/world/grain-sacks/model.glb",
+  "runtime_sha256": "90e7957409b16a97c17d4478c2ec763356ff8ee87b9f1e6b9f5f0b59f3ef0bc0",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.474999994039536,
+      0.0,
+      -0.224999994039536,
+      0.474999994039536,
+      0.699999988079071,
+      0.224999994039536
+    ],
+    "geometry_sha256": "7477391488fb4b7aba1bd0e31f3bb8a55784f12739c7867db40f9c5ce401f2f3",
+    "material_records": {
+      "burlap": {
+        "albedo": [
+          7216,
+          5176,
+          2471,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "burlap_dark": {
+        "albedo": [
+          4784,
+          3098,
+          1490,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "burlap_light": {
+        "albedo": [
+          8510,
+          6824,
+          4000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "twine": {
+        "albedo": [
+          3686,
+          2902,
+          1804,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "burlap",
+      "burlap_dark",
+      "burlap_light",
+      "twine"
+    ],
+    "meshes": 4,
+    "triangles": 1956
+  }
+}

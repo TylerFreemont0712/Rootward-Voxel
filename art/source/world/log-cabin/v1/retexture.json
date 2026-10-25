@@ -1,0 +1,9 @@
+{
+  "asset": "log-cabin",
+  "retextured": "2026-10-23T02:15:23.773586+00:00",
+  "texture_catalog_sha256": "81ed8fc9c8923419cb50943e2e286d71fcbe7f8302a50ef8c2be5859fb94cebc",
+  "texture_set": "lush",
+  "script": "pipeline/blender_retexture.py",
+  "backup": "model.pre-retexture.blend",
+  "note": "Materials and UVs rewritten from the texture catalog; geometry untouched. Run build to export."
+}

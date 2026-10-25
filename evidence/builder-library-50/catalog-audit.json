@@ -1,0 +1,1233 @@
+{
+  "schema": 1,
+  "review": "2026-10-24",
+  "new_objects": 50,
+  "interactive_objects": 16,
+  "protected_existing_art_files": 519,
+  "changed_existing_art_files": [],
+  "protected_art_snapshot_sha256": "81b031bf9f2c2abc05286c07c301511556df5159abb0952e1cdcfe79c6689fdc",
+  "triangles": {
+    "min": 186,
+    "max": 2676,
+    "median": 484.0,
+    "total": 34354
+  },
+  "objects": [
+    {
+      "number": 1,
+      "id": "hollow-highback-armchair",
+      "category": "furniture",
+      "source": "art/source/world/hollow-highback-armchair/v1/model.blend",
+      "source_sha256": "4e3a3077a0ca1879340cb3155ed45c52627ac8e74b9aa3b4e06cab9399122343",
+      "runtime": "assets/world/hollow-highback-armchair/model.glb",
+      "runtime_sha256": "51f370e2b6032c6ea3470974f745da351ab5d1e51a9f654cf746012eeb5f7eb7",
+      "triangles": 380,
+      "bounds": [
+        -0.524999976158142,
+        0.0,
+        -0.419999986886978,
+        0.524999976158142,
+        1.52727913856506,
+        0.450000017881393
+      ],
+      "footprint": [
+        1.0,
+        0.9
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 2,
+      "id": "hollow-trestle-table",
+      "category": "furniture",
+      "source": "art/source/world/hollow-trestle-table/v1/model.blend",
+      "source_sha256": "3f874f506a5ff688d831658716a858f41a2c08e9180703908809ca4c53e8fbcd",
+      "runtime": "assets/world/hollow-trestle-table/model.glb",
+      "runtime_sha256": "d5fe8f573c5ffde6c9917c7406ee36f5c1b3e76e8f2b0a37b8088f5ca983b85e",
+      "triangles": 352,
+      "bounds": [
+        -1.10000002384186,
+        0.00499999523162842,
+        -0.493999987840652,
+        1.10000002384186,
+        0.920000016689301,
+        0.493999987840652
+      ],
+      "footprint": [
+        2.2,
+        1.0
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 3,
+      "id": "hollow-writing-desk",
+      "category": "furniture",
+      "source": "art/source/world/hollow-writing-desk/v1/model.blend",
+      "source_sha256": "dc35272312063d74195042a3e07c94696abdcc5b375e13cb2ccbaf8cf379f9ea",
+      "runtime": "assets/world/hollow-writing-desk/model.glb",
+      "runtime_sha256": "36e8a663e25ea580a093421a391bd004be703e6e6b16f13031a7c0bbfce54352",
+      "triangles": 452,
+      "bounds": [
+        -0.774999976158142,
+        0.0,
+        -0.393999993801117,
+        0.774999976158142,
+        1.32000005245209,
+        0.477500021457672
+      ],
+      "footprint": [
+        1.55,
+        0.8
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 4,
+      "id": "hollow-mapmakers-table",
+      "category": "furniture",
+      "source": "art/source/world/hollow-mapmakers-table/v1/model.blend",
+      "source_sha256": "0e3b5751cdc3927ebe9c70b9409859a693dfc818f0761d0fc883c7dac3594c6a",
+      "runtime": "assets/world/hollow-mapmakers-table/model.glb",
+      "runtime_sha256": "9755b28fdda64fa6fd2fb96c78125ffa047ad82f91ecb7e809a1fc00e34f13d9",
+      "triangles": 524,
+      "bounds": [
+        -0.824999988079071,
+        0.0,
+        -0.494000017642975,
+        0.824999988079071,
+        1.01499998569489,
+        0.494000017642975
+      ],
+      "footprint": [
+        1.65,
+        1.0
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 5,
+      "id": "hollow-apothecary-cabinet",
+      "category": "furniture",
+      "source": "art/source/world/hollow-apothecary-cabinet/v1/model.blend",
+      "source_sha256": "32347664b1cd4a2eecc654e15ad9f5afa6b113ae731451dfb6e6351ecda5b48b",
+      "runtime": "assets/world/hollow-apothecary-cabinet/model.glb",
+      "runtime_sha256": "f43062815457deccaab3270afcaca37cf589870f8aa8ceac21f1f0bc394f861a",
+      "triangles": 1728,
+      "bounds": [
+        -0.680000007152557,
+        0.0,
+        -0.330000013113022,
+        0.680000007152557,
+        1.69485282897949,
+        0.392500013113022
+      ],
+      "footprint": [
+        1.35,
+        0.62
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 6,
+      "id": "hollow-kitchen-dresser",
+      "category": "furniture",
+      "source": "art/source/world/hollow-kitchen-dresser/v1/model.blend",
+      "source_sha256": "45e2f4a8c8286561e6f970c8c75ee843131fbc1e9734a50bd33bc3597f4b91f1",
+      "runtime": "assets/world/hollow-kitchen-dresser/model.glb",
+      "runtime_sha256": "c0e26ce89e18ccb42f24ac2e486c3d58aee94a304db70e6d6a4e6d7c21b534c3",
+      "triangles": 1904,
+      "bounds": [
+        -0.774999976158142,
+        0.0,
+        -0.349999994039536,
+        0.774999976158142,
+        1.83749997615814,
+        0.417500019073486
+      ],
+      "footprint": [
+        1.55,
+        0.65
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 7,
+      "id": "hollow-oak-wardrobe",
+      "category": "furniture",
+      "source": "art/source/world/hollow-oak-wardrobe/v1/model.blend",
+      "source_sha256": "322a578d24e6f88716efa42af150df0e4bdbf7bcd2049ad8f1545383cc0185b7",
+      "runtime": "assets/world/hollow-oak-wardrobe/model.glb",
+      "runtime_sha256": "9c1df9ecc0f4bf78def108202e14419aa5977cf75df97e1a33b867643f77c577",
+      "triangles": 388,
+      "bounds": [
+        -0.670000016689301,
+        0.0,
+        -0.375,
+        0.670000016689301,
+        2.0550000667572,
+        0.432500004768372
+      ],
+      "footprint": [
+        1.3,
+        0.7
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 8,
+      "id": "hollow-washstand",
+      "category": "furniture",
+      "source": "art/source/world/hollow-washstand/v1/model.blend",
+      "source_sha256": "acb5cfb57d054cd142be2f3348003bca27170784475a97dfc2cc9894957425dc",
+      "runtime": "assets/world/hollow-washstand/model.glb",
+      "runtime_sha256": "3891acfac9075ddccbd0aaf294fef6af074045e9a54b1b82058f6e9b2a08e603",
+      "triangles": 668,
+      "bounds": [
+        -0.5,
+        0.0,
+        -0.319000005722046,
+        0.5,
+        1.70999991893768,
+        0.379999995231628
+      ],
+      "footprint": [
+        1.0,
+        0.65
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 9,
+      "id": "hollow-woven-settee",
+      "category": "furniture",
+      "source": "art/source/world/hollow-woven-settee/v1/model.blend",
+      "source_sha256": "91947ea06fc865a7c25b61d46b2014ab3a833275cba1afc4353798809e1e663b",
+      "runtime": "assets/world/hollow-woven-settee/model.glb",
+      "runtime_sha256": "75dfed71c231d6e60e22db89383cdfd35ee7caaed9b2666819f669b5eed8842c",
+      "triangles": 252,
+      "bounds": [
+        -0.810000061988831,
+        0.0,
+        -0.400000005960464,
+        0.810000061988831,
+        1.16499996185303,
+        0.430000007152557
+      ],
+      "footprint": [
+        1.6,
+        0.8
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 10,
+      "id": "hollow-patchwork-bed",
+      "category": "furniture",
+      "source": "art/source/world/hollow-patchwork-bed/v1/model.blend",
+      "source_sha256": "3a057f7ffebc2ff445518e38c3d65b69651f459dc5425c5a6c04ecb7d7e6e746",
+      "runtime": "assets/world/hollow-patchwork-bed/model.glb",
+      "runtime_sha256": "d3b10b2eb690cbf72af2e493619540ffe72eca459c5dd5659c1c01c3b9c12be8",
+      "triangles": 672,
+      "bounds": [
+        -0.579999983310699,
+        0.0,
+        -1.0,
+        0.579999983310699,
+        1.0900000333786,
+        1.0
+      ],
+      "footprint": [
+        1.1,
+        2.0
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 11,
+      "id": "hollow-carpenters-bench",
+      "category": "workshop",
+      "source": "art/source/world/hollow-carpenters-bench/v1/model.blend",
+      "source_sha256": "cba38dc9f35475e57f0e7c64f0865160f29bd775c4ab944aca42de38987446f8",
+      "runtime": "assets/world/hollow-carpenters-bench/model.glb",
+      "runtime_sha256": "b49c38bb521a4ad5d8e8d5dac85fef3c1391f5f58157856855a8524490123935",
+      "triangles": 440,
+      "bounds": [
+        -0.949999988079071,
+        0.0,
+        -0.418999999761581,
+        0.949999988079071,
+        1.0699999332428,
+        0.792500019073486
+      ],
+      "footprint": [
+        1.9,
+        0.85
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 12,
+      "id": "hollow-blacksmiths-anvil",
+      "category": "workshop",
+      "source": "art/source/world/hollow-blacksmiths-anvil/v1/model.blend",
+      "source_sha256": "e60b8ed2572978c1b1818d7455b48ac7962554db36622619e2cc1aa364b951ee",
+      "runtime": "assets/world/hollow-blacksmiths-anvil/model.glb",
+      "runtime_sha256": "70e56566b826df883e4233cd7a0a6c8c846237558a80124739b13db77fa653fe",
+      "triangles": 288,
+      "bounds": [
+        -0.464048951864243,
+        0.0,
+        -0.280561685562134,
+        0.569999992847443,
+        0.970000028610229,
+        0.319999992847443
+      ],
+      "footprint": [
+        1.0,
+        0.65
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 13,
+      "id": "hollow-bellows-forge",
+      "category": "workshop",
+      "source": "art/source/world/hollow-bellows-forge/v1/model.blend",
+      "source_sha256": "3276fffd13dce25e5e421127106497699f342ff122bf99ef1affb8b496713d8b",
+      "runtime": "assets/world/hollow-bellows-forge/model.glb",
+      "runtime_sha256": "b8530c8b7119b440090754e68cdbaa7b74f69c86173840a5b91bef411a834e57",
+      "triangles": 420,
+      "bounds": [
+        -0.774999976158142,
+        0.0,
+        -0.675000011920929,
+        0.814999997615814,
+        2.0,
+        0.370000004768372
+      ],
+      "footprint": [
+        1.7,
+        1.05
+      ],
+      "interaction": {
+        "kind": "light",
+        "on": "Stoke",
+        "off": "Bank"
+      }
+    },
+    {
+      "number": 14,
+      "id": "hollow-grinding-wheel",
+      "category": "workshop",
+      "source": "art/source/world/hollow-grinding-wheel/v1/model.blend",
+      "source_sha256": "60179774a60bc2aa355b38558315e92bc48773cfb150fd3ef091f985d90f0b15",
+      "runtime": "assets/world/hollow-grinding-wheel/model.glb",
+      "runtime_sha256": "078b30fbe3776fec60aa6ea75010bd6ea68c7c8e7428f2557785062784cddef8",
+      "triangles": 484,
+      "bounds": [
+        -0.490000009536743,
+        0.0,
+        -0.360000014305115,
+        0.490000009536743,
+        1.26999998092651,
+        0.360000014305115
+      ],
+      "footprint": [
+        1.1,
+        0.75
+      ],
+      "interaction": {
+        "kind": "spin_x",
+        "on": "Start",
+        "off": "Stop"
+      }
+    },
+    {
+      "number": 15,
+      "id": "hollow-tool-rack",
+      "category": "workshop",
+      "source": "art/source/world/hollow-tool-rack/v1/model.blend",
+      "source_sha256": "4b10d02a521e6f871530979eee261c5e48bdaa3c0fbf01f57db1f07433b1640f",
+      "runtime": "assets/world/hollow-tool-rack/model.glb",
+      "runtime_sha256": "8217c9abf3cd0b6ab887bbc10e86aaeecba89fb8dc9c99a686b7484cf0e8c225",
+      "triangles": 484,
+      "bounds": [
+        -0.694999992847443,
+        0.0,
+        -0.245000004768372,
+        0.694999992847443,
+        1.62999999523163,
+        0.245000004768372
+      ],
+      "footprint": [
+        1.4,
+        0.5
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 16,
+      "id": "hollow-potters-wheel",
+      "category": "workshop",
+      "source": "art/source/world/hollow-potters-wheel/v1/model.blend",
+      "source_sha256": "fed3b9d22f288cde9c44b5fe808adcd735146741a480fcdbf6b22eb2f0a98232",
+      "runtime": "assets/world/hollow-potters-wheel/model.glb",
+      "runtime_sha256": "88935bca6171c55ae7c0b8eca9e44c97a2a97243b255907c095017b0957ce783",
+      "triangles": 636,
+      "bounds": [
+        -0.540000021457672,
+        0.0,
+        -0.439999997615814,
+        0.540000021457672,
+        1.16670000553131,
+        0.439999997615814
+      ],
+      "footprint": [
+        1.1,
+        0.9
+      ],
+      "interaction": {
+        "kind": "spin_y",
+        "on": "Start",
+        "off": "Stop"
+      }
+    },
+    {
+      "number": 17,
+      "id": "hollow-weavers-loom",
+      "category": "workshop",
+      "source": "art/source/world/hollow-weavers-loom/v1/model.blend",
+      "source_sha256": "ebf108812e20ff3ccbcb28bb25641635599851abcfc2116b1faa1623b85ebf49",
+      "runtime": "assets/world/hollow-weavers-loom/model.glb",
+      "runtime_sha256": "857a48efc515d211def19ca9bd891763a0d37d8b5f870bdbd29e423845b7cd14",
+      "triangles": 440,
+      "bounds": [
+        -0.715000033378601,
+        0.0,
+        -0.469999998807907,
+        0.715000033378601,
+        1.75499999523163,
+        0.469999998807907
+      ],
+      "footprint": [
+        1.5,
+        1.0
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 18,
+      "id": "hollow-spinning-wheel",
+      "category": "workshop",
+      "source": "art/source/world/hollow-spinning-wheel/v1/model.blend",
+      "source_sha256": "d98d15c43a8424cf964ae17406e0a4c815e41e34e3a2df15c855f72dd2e53dc4",
+      "runtime": "assets/world/hollow-spinning-wheel/model.glb",
+      "runtime_sha256": "6ee9d101e04e9ea9a432b5a84de2ba483401c7580d625743493b3f1f2eecc35b",
+      "triangles": 512,
+      "bounds": [
+        -0.550000011920929,
+        0.0,
+        -0.490000009536743,
+        0.5,
+        1.36000001430511,
+        0.449999988079071
+      ],
+      "footprint": [
+        1.25,
+        0.65
+      ],
+      "interaction": {
+        "kind": "spin_x",
+        "on": "Start",
+        "off": "Stop"
+      }
+    },
+    {
+      "number": 19,
+      "id": "hollow-alchemy-bench",
+      "category": "workshop",
+      "source": "art/source/world/hollow-alchemy-bench/v1/model.blend",
+      "source_sha256": "b796cec0ae58e7a335656696916635330914029fce100e323edc96ad80273335",
+      "runtime": "assets/world/hollow-alchemy-bench/model.glb",
+      "runtime_sha256": "ca2bccb2e60fd823bc3c8cbf81110d28c4dd9a0cd70b81afc610f5b196426eb2",
+      "triangles": 892,
+      "bounds": [
+        -0.774999976158142,
+        0.0,
+        -0.393999993801117,
+        0.774999976158142,
+        1.83865010738373,
+        0.393999993801117
+      ],
+      "footprint": [
+        1.55,
+        0.8
+      ],
+      "interaction": {
+        "kind": "light",
+        "on": "Awaken",
+        "off": "Dim"
+      }
+    },
+    {
+      "number": 20,
+      "id": "hollow-bookbinders-press",
+      "category": "workshop",
+      "source": "art/source/world/hollow-bookbinders-press/v1/model.blend",
+      "source_sha256": "2d92e7c4af3dc530c3a034a8cc5ae479fa23752e313d0bdbb9736222c8bc520f",
+      "runtime": "assets/world/hollow-bookbinders-press/model.glb",
+      "runtime_sha256": "bf3b2424799052fd2a8512317c2c481f61822055489819df6508ccac4cd8d0d6",
+      "triangles": 1104,
+      "bounds": [
+        -0.574999988079071,
+        0.0,
+        -0.393999993801117,
+        0.574999988079071,
+        1.6599999666214,
+        0.393999993801117
+      ],
+      "footprint": [
+        1.15,
+        0.8
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 21,
+      "id": "hollow-bakers-oven",
+      "category": "market",
+      "source": "art/source/world/hollow-bakers-oven/v1/model.blend",
+      "source_sha256": "74ce123a7eac5cf48406c92fd95b8d33d8f72107cb27db319c9c4706914f9e50",
+      "runtime": "assets/world/hollow-bakers-oven/model.glb",
+      "runtime_sha256": "6774e40c1f993971f20304c0e2a87777f27ba2ed8376b15bc6f74473cb5f111a",
+      "triangles": 480,
+      "bounds": [
+        -0.800000011920929,
+        0.0,
+        -0.714999973773956,
+        0.800000011920929,
+        2.00999999046326,
+        0.649999976158142
+      ],
+      "footprint": [
+        1.6,
+        1.3
+      ],
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Extinguish"
+      }
+    },
+    {
+      "number": 22,
+      "id": "hollow-bread-display",
+      "category": "market",
+      "source": "art/source/world/hollow-bread-display/v1/model.blend",
+      "source_sha256": "d31f02000482e50146f44b2c6d643c363981f91203c5e96fc8b351d8242acbb5",
+      "runtime": "assets/world/hollow-bread-display/model.glb",
+      "runtime_sha256": "1eeeccc0118f1a72b8efef8ee6b9d602d5feca756281ddbeb2004e2947b37294",
+      "triangles": 1032,
+      "bounds": [
+        -0.725000023841858,
+        0.0,
+        -0.343999981880188,
+        0.725000023841858,
+        1.11000001430511,
+        0.416000008583069
+      ],
+      "footprint": [
+        1.45,
+        0.7
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 23,
+      "id": "hollow-cheese-stand",
+      "category": "market",
+      "source": "art/source/world/hollow-cheese-stand/v1/model.blend",
+      "source_sha256": "3f0e1bbdc763be2f1f97697de9212dda05bcfcc7bd2933b35810f80cfb810dea",
+      "runtime": "assets/world/hollow-cheese-stand/model.glb",
+      "runtime_sha256": "b8031326b9ea1586715654a502b25a3e8218ecb1eb68818fe7ff2b480fa0ebbb",
+      "triangles": 852,
+      "bounds": [
+        -0.625,
+        0.0,
+        -0.436360985040665,
+        0.625,
+        1.76930510997772,
+        0.450000017881393
+      ],
+      "footprint": [
+        1.25,
+        0.7
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 24,
+      "id": "hollow-fishmongers-counter",
+      "category": "market",
+      "source": "art/source/world/hollow-fishmongers-counter/v1/model.blend",
+      "source_sha256": "482adea1d19d9b8cae1cc2419b3fae3ef6673515e7b22d70765873722725ffbf",
+      "runtime": "assets/world/hollow-fishmongers-counter/model.glb",
+      "runtime_sha256": "dbaef9dbf74c2532c6fe957aa1e628a4414ca4410f40c101f729e7f298578984",
+      "triangles": 744,
+      "bounds": [
+        -0.774999976158142,
+        0.0,
+        -0.393999993801117,
+        0.774999976158142,
+        1.00750005245209,
+        0.393999993801117
+      ],
+      "footprint": [
+        1.55,
+        0.8
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 25,
+      "id": "hollow-spice-cart",
+      "category": "market",
+      "source": "art/source/world/hollow-spice-cart/v1/model.blend",
+      "source_sha256": "061294e1e8004ad3a14a2410c3b7a192883753069f6606ba67188b0c87fcfe3f",
+      "runtime": "assets/world/hollow-spice-cart/model.glb",
+      "runtime_sha256": "d0951820f35533a86905f6ebe018d2b91eaaa4d1b0f9a30241fa34e0f1f58452",
+      "triangles": 2000,
+      "bounds": [
+        -0.726999998092651,
+        0.0,
+        -0.560000002384186,
+        0.726999998092651,
+        1.88280868530273,
+        0.560000002384186
+      ],
+      "footprint": [
+        1.5,
+        0.85
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 26,
+      "id": "hollow-covered-handcart",
+      "category": "market",
+      "source": "art/source/world/hollow-covered-handcart/v1/model.blend",
+      "source_sha256": "075a0a503e331714540063a5f2c70ebd32c79105adf4ad999bc2c30062f43b30",
+      "runtime": "assets/world/hollow-covered-handcart/model.glb",
+      "runtime_sha256": "082cb634d37c24cf048814f77384e63288ba94941e7341b5e63e7d74d0acb73b",
+      "triangles": 1640,
+      "bounds": [
+        -0.625,
+        0.0,
+        -0.850000023841858,
+        0.625,
+        1.48000001907349,
+        1.15499997138977
+      ],
+      "footprint": [
+        1.25,
+        2.0
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 27,
+      "id": "hollow-linen-rack",
+      "category": "market",
+      "source": "art/source/world/hollow-linen-rack/v1/model.blend",
+      "source_sha256": "c3159ef396b9e6a138803c5a8821b67548466e52095b4cbd8f47b336e8f9691a",
+      "runtime": "assets/world/hollow-linen-rack/model.glb",
+      "runtime_sha256": "33f65048d501ca91a0f3c39a858428fda8cd212dc5ea5b0b4aa6ddec082600e3",
+      "triangles": 216,
+      "bounds": [
+        -0.589999973773956,
+        0.0,
+        -0.264999985694885,
+        0.589999973773956,
+        1.43499994277954,
+        0.264999985694885
+      ],
+      "footprint": [
+        1.2,
+        0.55
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 28,
+      "id": "hollow-pottery-shelf",
+      "category": "market",
+      "source": "art/source/world/hollow-pottery-shelf/v1/model.blend",
+      "source_sha256": "29ffdd8551d647669de5f677304c3cad01c6fc568fe8d57a81e4ff3103ad1d35",
+      "runtime": "assets/world/hollow-pottery-shelf/model.glb",
+      "runtime_sha256": "2431d951dd433231feedcdec59eed13e33f6c1c2fd47cda6933dcc6012ef075a",
+      "triangles": 2676,
+      "bounds": [
+        -0.615000009536743,
+        0.0,
+        -0.239999994635582,
+        0.615000009536743,
+        1.72000002861023,
+        0.239999994635582
+      ],
+      "footprint": [
+        1.25,
+        0.5
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 29,
+      "id": "hollow-candle-stand",
+      "category": "market",
+      "source": "art/source/world/hollow-candle-stand/v1/model.blend",
+      "source_sha256": "028e3f7309259fe0abe8e4736a24f2e81c7d1e75356d50d25b60b189a8ef2075",
+      "runtime": "assets/world/hollow-candle-stand/model.glb",
+      "runtime_sha256": "0ad3bd2e287341340cf8e727b6ff118abaec28c888511b1e0452da86458f872b",
+      "triangles": 568,
+      "bounds": [
+        -0.330000013113022,
+        0.0,
+        -0.256785273551941,
+        0.330000013113022,
+        1.57624995708466,
+        0.256785273551941
+      ],
+      "footprint": [
+        0.65,
+        0.65
+      ],
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Extinguish"
+      }
+    },
+    {
+      "number": 30,
+      "id": "hollow-copper-wash-tub",
+      "category": "market",
+      "source": "art/source/world/hollow-copper-wash-tub/v1/model.blend",
+      "source_sha256": "0c704687d21275ea319f5f82f0f49ad3db6748eb056917fc38c39b238cec5181",
+      "runtime": "assets/world/hollow-copper-wash-tub/model.glb",
+      "runtime_sha256": "63a9afcbe831cd509cafbd7001eff91d361f34f8f335b6bfa03e0991ea081eeb",
+      "triangles": 408,
+      "bounds": [
+        -0.590000033378601,
+        0.0,
+        -0.5,
+        0.590000033378601,
+        0.921257376670837,
+        0.5
+      ],
+      "footprint": [
+        1.1,
+        0.75
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 31,
+      "id": "hollow-straw-beehive",
+      "category": "garden",
+      "source": "art/source/world/hollow-straw-beehive/v1/model.blend",
+      "source_sha256": "b0258f00b5e8ddffb25bf30f3b676162815c706b34ca3eea7c36fe52467808e0",
+      "runtime": "assets/world/hollow-straw-beehive/model.glb",
+      "runtime_sha256": "75bd39d290480a2f6d3f3c9108fcc679bb246872ed3167e63712eca326dc3fc5",
+      "triangles": 508,
+      "bounds": [
+        -0.400000005960464,
+        0.0,
+        -0.384999990463257,
+        0.400000005960464,
+        1.09750008583069,
+        0.485000014305115
+      ],
+      "footprint": [
+        0.85,
+        0.85
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 32,
+      "id": "hollow-rabbit-hutch",
+      "category": "garden",
+      "source": "art/source/world/hollow-rabbit-hutch/v1/model.blend",
+      "source_sha256": "f379aeb0d9f10d30d7a7816a0b324df701cafcf2ba742db06bca62f293f95931",
+      "runtime": "assets/world/hollow-rabbit-hutch/model.glb",
+      "runtime_sha256": "656c1874850119666a1e021253149bc0c9c00979f6c1e806417f5e4ba81b15a0",
+      "triangles": 496,
+      "bounds": [
+        -0.759999990463257,
+        0.0,
+        -0.439999997615814,
+        0.759999990463257,
+        1.37999999523163,
+        0.439999997615814
+      ],
+      "footprint": [
+        1.4,
+        0.7
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 33,
+      "id": "hollow-chicken-coop",
+      "category": "garden",
+      "source": "art/source/world/hollow-chicken-coop/v1/model.blend",
+      "source_sha256": "17ebd9f06bd2a36e78f807dd55f77437e2787233651339df85977d446f7505f4",
+      "runtime": "assets/world/hollow-chicken-coop/model.glb",
+      "runtime_sha256": "5af1fdc5d0b6ab1e3d2ed4c1dde96ae822088bb0e61a420c943105718edf7c35",
+      "triangles": 288,
+      "bounds": [
+        -0.814999997615814,
+        0.0,
+        -0.660000026226044,
+        0.814999997615814,
+        1.73999989032745,
+        0.930131316184998
+      ],
+      "footprint": [
+        1.6,
+        1.3
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 34,
+      "id": "hollow-seedling-tray",
+      "category": "garden",
+      "source": "art/source/world/hollow-seedling-tray/v1/model.blend",
+      "source_sha256": "a9a8c78b80e22120ce10500d2d7e36c95d17989f5c5e7959e0dd4cdc090c728e",
+      "runtime": "assets/world/hollow-seedling-tray/model.glb",
+      "runtime_sha256": "59522973799be5963c4df099442f187e2e33e3690f0d454134f23e6e2ecb596e",
+      "triangles": 480,
+      "bounds": [
+        -0.552500009536743,
+        0.0,
+        -0.300000011920929,
+        0.552500009536743,
+        0.489999979734421,
+        0.300000011920929
+      ],
+      "footprint": [
+        1.1,
+        0.6
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 35,
+      "id": "hollow-herb-drying-rack",
+      "category": "garden",
+      "source": "art/source/world/hollow-herb-drying-rack/v1/model.blend",
+      "source_sha256": "f32d23414c00d223cfe2337ba792524c1bd6d7da676d4cd384feabd410ae14ac",
+      "runtime": "assets/world/hollow-herb-drying-rack/model.glb",
+      "runtime_sha256": "0366a37b3949bc0d934914a6bc674c231e44fe02c4b5aaa0d234114140acdbe4",
+      "triangles": 1808,
+      "bounds": [
+        -0.650000035762787,
+        0.0,
+        -0.305000007152557,
+        0.650000035762787,
+        1.5,
+        0.305000007152557
+      ],
+      "footprint": [
+        1.3,
+        0.65
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 36,
+      "id": "hollow-vine-trellis",
+      "category": "garden",
+      "source": "art/source/world/hollow-vine-trellis/v1/model.blend",
+      "source_sha256": "8a98f8a509ca7875f1ccccae09a272c83a8cf5454cc480573ac607f8c479e129",
+      "runtime": "assets/world/hollow-vine-trellis/model.glb",
+      "runtime_sha256": "4054fa53a20b979372cbb037987ca1dd5e9fa0e4ced5c529fc9736326b13baa2",
+      "triangles": 1356,
+      "bounds": [
+        -0.740000009536743,
+        0.0,
+        -0.264999985694885,
+        0.740000009536743,
+        1.83999991416931,
+        0.264999985694885
+      ],
+      "footprint": [
+        1.5,
+        0.55
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 37,
+      "id": "hollow-field-scarecrow",
+      "category": "garden",
+      "source": "art/source/world/hollow-field-scarecrow/v1/model.blend",
+      "source_sha256": "e1b9dd9ac774347a9b72fc4d936638f7ac8e87a2a526a44d5aaabe7d257fdb2a",
+      "runtime": "assets/world/hollow-field-scarecrow/model.glb",
+      "runtime_sha256": "15a68ec92176df78537ac2a8b5208a666a642105c875990d9f2d85e065d9db17",
+      "triangles": 380,
+      "bounds": [
+        -0.506600022315979,
+        0.0,
+        -0.247274696826935,
+        0.506600022315979,
+        1.72000002861023,
+        0.247274696826935
+      ],
+      "footprint": [
+        1.0,
+        0.6
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 38,
+      "id": "hollow-rain-barrel",
+      "category": "garden",
+      "source": "art/source/world/hollow-rain-barrel/v1/model.blend",
+      "source_sha256": "78c08f1dc4206f6bca314c0a1f26fc24e08da9884dabf2d378ff3cf93c4aafc6",
+      "runtime": "assets/world/hollow-rain-barrel/model.glb",
+      "runtime_sha256": "9cedbeabd9440af670d8ec484dcb0f4c45d7113a5d303ccbdf62ebc67471b1a1",
+      "triangles": 464,
+      "bounds": [
+        -0.395000010728836,
+        0.0,
+        -0.395000010728836,
+        0.395000010728836,
+        1.51999998092651,
+        0.512499988079071
+      ],
+      "footprint": [
+        0.95,
+        0.85
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 39,
+      "id": "hollow-butter-churn",
+      "category": "garden",
+      "source": "art/source/world/hollow-butter-churn/v1/model.blend",
+      "source_sha256": "42ca0a276d850b5c9a8ae3554bb1433c1844e8855556ff4aec796d4817869ecb",
+      "runtime": "assets/world/hollow-butter-churn/model.glb",
+      "runtime_sha256": "124f7819af92a1135c4569713e71c8033cb748c1e10dd272da5a62937f834b97",
+      "triangles": 364,
+      "bounds": [
+        -0.234999999403954,
+        0.0,
+        -0.223498284816742,
+        0.283697009086609,
+        1.24750006198883,
+        0.223498284816742
+      ],
+      "footprint": [
+        0.65,
+        0.65
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 40,
+      "id": "hollow-hay-handcart",
+      "category": "garden",
+      "source": "art/source/world/hollow-hay-handcart/v1/model.blend",
+      "source_sha256": "1cbf6eb24773af04717d893a658222a751c4ed0087baca41954dcabe5d00977e",
+      "runtime": "assets/world/hollow-hay-handcart/model.glb",
+      "runtime_sha256": "7af2018637ea7b26027ddd4ded29b275533c0ddbfbdb3f4dba352b012c56a3ed",
+      "triangles": 1228,
+      "bounds": [
+        -0.634999990463257,
+        0.0,
+        -0.699999988079071,
+        0.634999990463257,
+        1.79999995231628,
+        1.00500011444092
+      ],
+      "footprint": [
+        1.25,
+        1.65
+      ],
+      "interaction": {}
+    },
+    {
+      "number": 41,
+      "id": "hollow-copper-brazier",
+      "category": "village-magic",
+      "source": "art/source/world/hollow-copper-brazier/v1/model.blend",
+      "source_sha256": "8bdda32236f3990953f9821fb8fd5abebb92d63655e98754357b19ede1f8c33e",
+      "runtime": "assets/world/hollow-copper-brazier/model.glb",
+      "runtime_sha256": "d228cdc730c0df6e61f43cd2f489d8cff2f241842cf3be99a356cfdc1db60951",
+      "triangles": 544,
+      "bounds": [
+        -0.400000005960464,
+        0.0,
+        -0.400000005960464,
+        0.400000005960464,
+        1.19749999046326,
+        0.400000005960464
+      ],
+      "footprint": [
+        0.85,
+        0.85
+      ],
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Extinguish"
+      }
+    },
+    {
+      "number": 42,
+      "id": "hollow-shard-lantern",
+      "category": "village-magic",
+      "source": "art/source/world/hollow-shard-lantern/v1/model.blend",
+      "source_sha256": "84bf6311136f56433b2678888adca2a6260c34965cc7364193bc293afabd0320",
+      "runtime": "assets/world/hollow-shard-lantern/model.glb",
+      "runtime_sha256": "89ffd2a24abc82e427ab0e685f5548aca0a0f4c8c0599a5357920266e6bf9bb5",
+      "triangles": 254,
+      "bounds": [
+        -0.384999990463257,
+        0.0,
+        -0.365000009536743,
+        0.384999990463257,
+        1.70461618900299,
+        0.365000009536743
+      ],
+      "footprint": [
+        0.75,
+        0.75
+      ],
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Dim"
+      }
+    },
+    {
+      "number": 43,
+      "id": "hollow-crystal-obelisk",
+      "category": "village-magic",
+      "source": "art/source/world/hollow-crystal-obelisk/v1/model.blend",
+      "source_sha256": "1e31f8eb6ce29316fe73a1b01e3605797ca740b1efdfc8b6c9cb0ddc2826971a",
+      "runtime": "assets/world/hollow-crystal-obelisk/model.glb",
+      "runtime_sha256": "72b2462f04ce18ec66be3d19b71ba610992dfd17b2ea48727c10d99024646101",
+      "triangles": 186,
+      "bounds": [
+        -0.469999998807907,
+        0.0,
+        -0.46000000834465,
+        0.482400000095367,
+        1.59200000762939,
+        0.46000000834465
+      ],
+      "footprint": [
+        1.0,
+        1.0
+      ],
+      "interaction": {
+        "kind": "light",
+        "on": "Awaken",
+        "off": "Dim"
+      }
+    },
+    {
+      "number": 44,
+      "id": "hollow-rune-standing-stone",
+      "category": "village-magic",
+      "source": "art/source/world/hollow-rune-standing-stone/v1/model.blend",
+      "source_sha256": "212d433e46e24dd4237af74fca985dfb4ab4f4ea21119259ea985f58e30eb69b",
+      "runtime": "assets/world/hollow-rune-standing-stone/model.glb",
+      "runtime_sha256": "2e80ff6c3c44112189df386d962aea2d657d83ffd1b3c5e646bce43f3fa7f9f0",
+      "triangles": 240,
+      "bounds": [
+        -0.455000013113022,
+        0.0,
+        -0.305000007152557,
+        0.455000013113022,
+        1.59500002861023,
+        0.305000007152557
+      ],
+      "footprint": [
+        0.95,
+        0.65
+      ],
+      "interaction": {
+        "kind": "light",
+        "on": "Awaken",
+        "off": "Dim"
+      }
+    },
+    {
+      "number": 45,
+      "id": "hollow-village-bell",
+      "category": "village-magic",
+      "source": "art/source/world/hollow-village-bell/v1/model.blend",
+      "source_sha256": "1337054c2afa2ccf682aa554b667f2cbf6de1601b4665527df87836bcba66d60",
+      "runtime": "assets/world/hollow-village-bell/model.glb",
+      "runtime_sha256": "2a34455adcebfd3289c46ac1d957be5e982509b439a25ab71709824f0c65fa2b",
+      "triangles": 500,
+      "bounds": [
+        -0.670000016689301,
+        0.0,
+        -0.490000009536743,
+        0.670000016689301,
+        2.05999994277954,
+        0.490000009536743
+      ],
+      "footprint": [
+        1.2,
+        0.8
+      ],
+      "interaction": {
+        "kind": "bell",
+        "on": "Ring",
+        "off": "Silence"
+      }
+    },
+    {
+      "number": 46,
+      "id": "hollow-brass-lever",
+      "category": "village-magic",
+      "source": "art/source/world/hollow-brass-lever/v1/model.blend",
+      "source_sha256": "0836771c74d74dda117539d0d8b7ad937bdfa20e5da604cb0eced42c8102ca80",
+      "runtime": "assets/world/hollow-brass-lever/model.glb",
+      "runtime_sha256": "a5cf5a7bcf4cfcec39c290324fee19a0b87a2f955fd522003019554ba34b8cd0",
+      "triangles": 200,
+      "bounds": [
+        -0.305000007152557,
+        0.0,
+        -0.300000011920929,
+        0.305000007152557,
+        1.05019414424896,
+        0.300000011920929
+      ],
+      "footprint": [
+        0.65,
+        0.65
+      ],
+      "interaction": {
+        "kind": "lever",
+        "on": "Pull",
+        "off": "Reset"
+      }
+    },
+    {
+      "number": 47,
+      "id": "hollow-water-pump",
+      "category": "village-magic",
+      "source": "art/source/world/hollow-water-pump/v1/model.blend",
+      "source_sha256": "25188645009f55a596bb9ac75ac17627eef89d1ac1f960451fc49f15a6eea063",
+      "runtime": "assets/world/hollow-water-pump/model.glb",
+      "runtime_sha256": "05d55adf295e1a3c85dd86a5e3ef1e84aeb2f33cd9bf0e9ff69099e75be2783e",
+      "triangles": 212,
+      "bounds": [
+        -0.379999995231628,
+        0.0,
+        -0.535000026226044,
+        0.379999995231628,
+        1.26499998569489,
+        0.430000007152557
+      ],
+      "footprint": [
+        0.85,
+        0.8
+      ],
+      "interaction": {
+        "kind": "pump",
+        "on": "Start",
+        "off": "Stop"
+      }
+    },
+    {
+      "number": 48,
+      "id": "hollow-wayfarers-chest",
+      "category": "village-magic",
+      "source": "art/source/world/hollow-wayfarers-chest/v1/model.blend",
+      "source_sha256": "9d3a4dbe9697e18b425c7ba26337522b02308d3c01d0004525da7e715839392f",
+      "runtime": "assets/world/hollow-wayfarers-chest/model.glb",
+      "runtime_sha256": "0af95811296ed2925a501e603299e54d95852b3ca04bb3759b17860bafb7d920",
+      "triangles": 684,
+      "bounds": [
+        -0.589999973773956,
+        0.0,
+        -0.388599991798401,
+        0.589999973773956,
+        0.777499973773956,
+        0.403500020503998
+      ],
+      "footprint": [
+        1.15,
+        0.75
+      ],
+      "interaction": {
+        "kind": "hinge",
+        "on": "Open",
+        "off": "Close"
+      }
+    },
+    {
+      "number": 49,
+      "id": "hollow-little-shrine",
+      "category": "village-magic",
+      "source": "art/source/world/hollow-little-shrine/v1/model.blend",
+      "source_sha256": "ba2964d10d3a4e6c7c27fe6ada1c26e938b40be99362b32d7a153f172257061a",
+      "runtime": "assets/world/hollow-little-shrine/model.glb",
+      "runtime_sha256": "ebb3c0b9972c7de6e6adf2e36a8295d7a1f801177d0f97750eb8f6597f3f9844",
+      "triangles": 246,
+      "bounds": [
+        -0.589999973773956,
+        0.0,
+        -0.480000019073486,
+        0.589999973773956,
+        1.66999995708466,
+        0.480000019073486
+      ],
+      "footprint": [
+        1.1,
+        0.8
+      ],
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Dim"
+      }
+    },
+    {
+      "number": 50,
+      "id": "hollow-weather-vane",
+      "category": "village-magic",
+      "source": "art/source/world/hollow-weather-vane/v1/model.blend",
+      "source_sha256": "3f2cfee2a1b0a5f4b6570c92c4624b27b0ff025dc5bb993f1969dd87012e690d",
+      "runtime": "assets/world/hollow-weather-vane/model.glb",
+      "runtime_sha256": "d10913549a75252d4a81c6b67382e300d9e170beaae502f19c127cbba16f54db",
+      "triangles": 280,
+      "bounds": [
+        -0.370000004768372,
+        0.0,
+        -0.36656853556633,
+        0.441923856735229,
+        2.20000004768372,
+        0.36656853556633
+      ],
+      "footprint": [
+        0.7,
+        0.7
+      ],
+      "interaction": {}
+    }
+  ],
+  "protected_art_snapshot": "evidence/builder-library-50/preserved-art.json",
+  "verification": "evidence/builder-library-50/verification.json"
+}

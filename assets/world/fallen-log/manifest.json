@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "fallen-log",
+  "version": "v1",
+  "source": "art/source/world/fallen-log/v1/model.blend",
+  "source_sha256": "be4bb641c0568f4760a739a610392779eaba1d9d0aeae261c4a62694fd3c2b22",
+  "runtime": "assets/world/fallen-log/model.glb",
+  "runtime_sha256": "3a0ee991d8d21201b627efc201f43ba2c843758bbe5676c42a8e8a54b54db7a8",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.600000023841858,
+      0.0,
+      -0.200000002980232,
+      0.600000023841858,
+      0.449999988079071,
+      0.200000002980232
+    ],
+    "geometry_sha256": "399333ee2413ee7f87adfd000d7cc31d838a52a0493f011db61543e0b9030b28",
+    "material_records": {
+      "cut": {
+        "albedo": [
+          8863,
+          7686,
+          5608,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "grass": {
+        "albedo": [
+          3882,
+          5451,
+          2549,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "grass_dark": {
+        "albedo": [
+          3059,
+          4627,
+          2314,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "grass_light": {
+        "albedo": [
+          5137,
+          6588,
+          3216,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          6902,
+          4784,
+          2706,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak_light": {
+        "albedo": [
+          7725,
+          5804,
+          3451,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood": {
+        "albedo": [
+          4627,
+          3137,
+          2235,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood_dark": {
+        "albedo": [
+          2863,
+          2196,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "cut",
+      "grass",
+      "grass_dark",
+      "grass_light",
+      "oak",
+      "oak_light",
+      "wood",
+      "wood_dark"
+    ],
+    "meshes": 8,
+    "triangles": 1832
+  }
+}

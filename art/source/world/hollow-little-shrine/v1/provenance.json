@@ -1,0 +1,41 @@
+{
+  "asset": "hollow-little-shrine",
+  "version": "v1",
+  "authoring_tool": "Blender 5.2.2 LTS; deliberate scripted geometry",
+  "source_authority": "model.blend; this script is a protected one-time authoring record",
+  "recipe": "little_shrine",
+  "sources": {
+    "art/source/world/village-library/v1/author.py": "4e0a2f4d10c33120f752e70d27f0d599d3bf11024c53d9260d916b7987d7e786",
+    "art/source/world/village-library/v1/modeling.py": "2e204b88cab0604d1435eef74e19dae12152339868f7cb2326602c1dd2740f1f",
+    "art/source/world/village-library/v1/village_magic.py": "b00d7c9a89ea1c155e05202be5ff888a0c7c8739539bb8bff31f23f3cceb032d",
+    "art/source/world/village-library/v1/library.json": "cf9740d227bf11cc8aca9cd34e5ad28be137dd8fc699dd7656913ef062a38c16"
+  },
+  "materials": "Shared village palette; existing lush texture PNGs packed losslessly; no generated-image dependency.",
+  "blender_bounds": [
+    [
+      -0.5899999737739563,
+      -0.48000001907348633,
+      0.0
+    ],
+    [
+      0.5899999737739563,
+      0.48000001907348633,
+      1.6699999570846558
+    ]
+  ],
+  "spec": {
+    "number": 49,
+    "id": "hollow-little-shrine",
+    "recipe": "little_shrine",
+    "category": "village-magic",
+    "title": "Little Shrine",
+    "width": 1.1,
+    "depth": 0.8,
+    "blurb": "A little cream-and-timber shrine shelters a votive crystal beneath a teal roof.",
+    "interaction": {
+      "kind": "light",
+      "on": "Light",
+      "off": "Dim"
+    }
+  }
+}

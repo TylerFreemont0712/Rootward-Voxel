@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "asset": "window-planter",
+  "version": "v1",
+  "source": "art/source/world/window-planter/v1/model.blend",
+  "source_sha256": "0cff67582e4f7bba01970eaf0fc33a615a89732e97888dd9a16504e720554d1c",
+  "runtime": "assets/world/window-planter/model.glb",
+  "runtime_sha256": "5dcb9866583d2dac4d3fb3e041bf6b168c98777da39208b7e93a29a023802833",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.400000005960464,
+      0.0,
+      -0.100000001490116,
+      0.400000005960464,
+      0.550000011920929,
+      0.200000002980232
+    ],
+    "geometry_sha256": "69be5023630305eaab2dd74c5da1207dce465b023d6e4a210519045841c8b37c",
+    "material_records": {
+      "centre": {
+        "albedo": [
+          7882,
+          5412,
+          2353,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "leaf": {
+        "albedo": [
+          3020,
+          4941,
+          2078,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "leaf_dark": {
+        "albedo": [
+          1804,
+          3451,
+          2078,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "leaf_light": {
+        "albedo": [
+          4863,
+          6627,
+          2745,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "petal_cream": {
+        "albedo": [
+          10000,
+          9412,
+          7961,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "petal_mauve": {
+        "albedo": [
+          7647,
+          6000,
+          6784,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "petal_violet": {
+        "albedo": [
+          5098,
+          4431,
+          6941,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "soil": {
+        "albedo": [
+          4588,
+          3451,
+          2745,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "soil_dark": {
+        "albedo": [
+          3451,
+          2941,
+          2824,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood": {
+        "albedo": [
+          4627,
+          3137,
+          2235,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood_dark": {
+        "albedo": [
+          2863,
+          2196,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "wood_light": {
+        "albedo": [
+          6431,
+          4824,
+          3176,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "centre",
+      "leaf",
+      "leaf_dark",
+      "leaf_light",
+      "petal_cream",
+      "petal_mauve",
+      "petal_violet",
+      "soil",
+      "soil_dark",
+      "wood",
+      "wood_dark",
+      "wood_light"
+    ],
+    "meshes": 12,
+    "triangles": 1144
+  }
+}

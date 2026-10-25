@@ -1,0 +1,72 @@
+{
+  "bounds": [
+    -1.38999998569489,
+    0.0,
+    -1.35000002384186,
+    1.42999994754791,
+    3.61749982833862,
+    1.35000002384186
+  ],
+  "geometry_sha256": "05a95fbf1c4861e3683014aec3610a8b9a90a7c09cc10fd8787a5bfd4028c6e1",
+  "material_records": {
+    "leaf": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "97437b83ce9849a61e3fa4e0e377e61abd9320fde32db3646e08373b2757ed65"
+    },
+    "leaf_dark": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "adabc113277ebb5a32e5c48f4f73f06f668d7573baeba56d7030f5d94177d64a"
+    },
+    "leaf_light": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "4a5c4271af2c9ebbf3b3527087c75e3776c3c72835bacacb5374e838b4738463"
+    },
+    "oak": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "ccfa65227118fb554a23af05bb512c2072592fe9f2e38490e6642ed9fc895e4a"
+    },
+    "wood": {
+      "albedo": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "roughness": 9400,
+      "texture_rgba_sha256": "5119b2ee1d219e5a1e6489d5d1afea954570d859f1009488c4ae9c3fa5b22e96"
+    }
+  },
+  "materials": [
+    "leaf",
+    "leaf_dark",
+    "leaf_light",
+    "oak",
+    "wood"
+  ],
+  "meshes": 5,
+  "triangles": 1284
+}

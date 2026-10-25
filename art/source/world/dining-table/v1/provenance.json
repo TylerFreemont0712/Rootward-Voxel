@@ -1,0 +1,9 @@
+{
+  "asset": "dining-table",
+  "version": "v1",
+  "created": "2026-10-23T09:02:34.269884+00:00",
+  "author": "art/source/world/doodads-kit/v1/indoor.py",
+  "author_sha256": "eab1de30de6c47c7707bc959b995a10d3d0ef974ae234a5fe955ff60ebbcfe41",
+  "voxel_metres": 0.05,
+  "note": "One-time procedural voxel authoring. model.blend becomes the editable source after this run."
+}

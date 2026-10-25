@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed",
+  "seed": "Not exposed",
+  "transparent_background": true,
+  "portraits": [
+    {
+      "id": "mira",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-31a8e88b-e20a-4c70-afbe-1cc96c965483.png",
+      "source": "art/source/portraits/v1/mira.png",
+      "references": [
+        "art/source/characters/mira/v1/idle-se.png",
+        "art/source/ui/village-dialogue-concepts/v1/a-classic-portrait-stage.png"
+      ],
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "3361513f4644ed933ed49cdc04fd3adbd385aa21577a041f525d05519f71f512",
+      "reference_sha256": {
+        "art/source/characters/mira/v1/idle-se.png": "420541c4b06ee597f99424905d27c1c9c57523df7006f484956baeeb979aaebf",
+        "art/source/ui/village-dialogue-concepts/v1/a-classic-portrait-stage.png": "8e3d79359403870cc436492bf619364364d83d439fb4072e43b5e9be85392969"
+      }
+    },
+    {
+      "id": "rowan",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-05d92bdc-f149-4e1c-a21f-bf9de6aebb03.png",
+      "source": "art/source/portraits/v1/rowan.png",
+      "references": [
+        "art/source/characters/rowan/v1/idle-se.png",
+        "art/source/ui/village-dialogue-concepts/v1/a-classic-portrait-stage.png"
+      ],
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "f7d1c7b52a992c2901c0591b6e669f5965e099a5fdf7769b32b4a3b21e382ee5",
+      "reference_sha256": {
+        "art/source/characters/rowan/v1/idle-se.png": "7bf2c2dce1ba6eec69404c0f4dd2c586567f378f68783e890e3a188727665fd6",
+        "art/source/ui/village-dialogue-concepts/v1/a-classic-portrait-stage.png": "8e3d79359403870cc436492bf619364364d83d439fb4072e43b5e9be85392969"
+      }
+    },
+    {
+      "id": "bram",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-eddf0348-bd05-41f0-b0f0-0478b74b318c.png",
+      "source": "art/source/portraits/v1/bram.png",
+      "references": [
+        "art/source/characters/bram/v1/idle-se.png",
+        "art/source/ui/village-dialogue-concepts/v1/a-classic-portrait-stage.png"
+      ],
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "751a32148299acceb66afb25d84a819b88e9470f434518d75677dafc55723baf",
+      "reference_sha256": {
+        "art/source/characters/bram/v1/idle-se.png": "b52ffbe58e5035bad7db286a8dcef21d228d6c9ce85b8de8ddc45efde58bddfc",
+        "art/source/ui/village-dialogue-concepts/v1/a-classic-portrait-stage.png": "8e3d79359403870cc436492bf619364364d83d439fb4072e43b5e9be85392969"
+      }
+    },
+    {
+      "id": "tessa",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-b3596b87-fe47-4f57-ac31-58811124cdc0.png",
+      "source": "art/source/portraits/v1/tessa.png",
+      "references": [
+        "art/source/characters/tessa/v1/idle-se.png",
+        "art/source/ui/village-dialogue-concepts/v1/a-classic-portrait-stage.png"
+      ],
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "73dfce8d4a257e3b8d4ab7ad8c8a6794537448af3bdb48d19fecb9796dcbf8b1",
+      "reference_sha256": {
+        "art/source/characters/tessa/v1/idle-se.png": "dd6891314353ff0e8a4a925320feb77679d169ba196e1671cc2496a7e4a63a66",
+        "art/source/ui/village-dialogue-concepts/v1/a-classic-portrait-stage.png": "8e3d79359403870cc436492bf619364364d83d439fb4072e43b5e9be85392969"
+      }
+    },
+    {
+      "id": "nell",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-309762e9-69ff-4a14-b7aa-3cc33a7f8cb0.png",
+      "source": "art/source/portraits/v1/nell.png",
+      "references": [
+        "art/source/characters/nell/v1/idle-se.png",
+        "art/source/ui/village-dialogue-concepts/v1/a-classic-portrait-stage.png"
+      ],
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "e0effea7c32cc87d383723fe72434baf6b805b122938d51cfbddd4c22ebc411b",
+      "reference_sha256": {
+        "art/source/characters/nell/v1/idle-se.png": "09897c56ece7d0d51e2662f64cfc6bb725ce28205023a84423b62519a383e055",
+        "art/source/ui/village-dialogue-concepts/v1/a-classic-portrait-stage.png": "8e3d79359403870cc436492bf619364364d83d439fb4072e43b5e9be85392969"
+      }
+    }
+  ],
+  "prompt_sha256": "257d1c0be05ee3bd2cf2016c105f6e59b482689bcb2fe78c975d3077a04917bf"
+}

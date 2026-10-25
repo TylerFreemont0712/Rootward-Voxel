@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "hollow-straw-beehive",
+  "version": "v1",
+  "source": "art/source/world/hollow-straw-beehive/v1/model.blend",
+  "source_sha256": "b0258f00b5e8ddffb25bf30f3b676162815c706b34ca3eea7c36fe52467808e0",
+  "runtime": "assets/world/hollow-straw-beehive/model.glb",
+  "runtime_sha256": "75bd39d290480a2f6d3f3c9108fcc679bb246872ed3167e63712eca326dc3fc5",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.400000005960464,
+      0.0,
+      -0.384999990463257,
+      0.400000005960464,
+      1.09750008583069,
+      0.485000014305115
+    ],
+    "geometry_sha256": "4e89ffa4f9d2464ab9fb37795ac6d0396188d4942b7f6245dff946b5ab9d82c8",
+    "material_records": {
+      "hay": {
+        "albedo": [
+          8510,
+          6627,
+          3059,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "hay_light": {
+        "albedo": [
+          9255,
+          7843,
+          4235,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "hay",
+      "hay_light",
+      "oak",
+      "wood_dark"
+    ],
+    "meshes": 4,
+    "triangles": 508
+  }
+}

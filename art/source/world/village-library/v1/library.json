@@ -1,0 +1,620 @@
+{
+  "schema": 1,
+  "theme": "Kindle Hollow: warm painted timber, cream masonry, violet/teal fabric and roofs, aged brass, small restrained magic.",
+  "assets": [
+    {
+      "number": 1,
+      "id": "hollow-highback-armchair",
+      "recipe": "highback_armchair",
+      "category": "furniture",
+      "title": "Highback Armchair",
+      "width": 1.0,
+      "depth": 0.9,
+      "blurb": "A carved oak chair with a plum cushion, scroll arms and brass studs.",
+      "interaction": {}
+    },
+    {
+      "number": 2,
+      "id": "hollow-trestle-table",
+      "recipe": "trestle_table",
+      "category": "furniture",
+      "title": "Trestle Table",
+      "width": 2.2,
+      "depth": 1.0,
+      "blurb": "A broad plank table with splayed trestles and a pegged centre stretcher.",
+      "interaction": {}
+    },
+    {
+      "number": 3,
+      "id": "hollow-writing-desk",
+      "recipe": "writing_desk",
+      "category": "furniture",
+      "title": "Writing Desk",
+      "width": 1.55,
+      "depth": 0.8,
+      "blurb": "A sloped writing desk with drawers, an ink pot, quill and folded letters.",
+      "interaction": {}
+    },
+    {
+      "number": 4,
+      "id": "hollow-mapmakers-table",
+      "recipe": "mapmakers_table",
+      "category": "furniture",
+      "title": "Mapmaker’s Table",
+      "width": 1.65,
+      "depth": 1.0,
+      "blurb": "A brass-edged map table with rolled charts, compass and coloured route markers.",
+      "interaction": {}
+    },
+    {
+      "number": 5,
+      "id": "hollow-apothecary-cabinet",
+      "recipe": "apothecary_cabinet",
+      "category": "furniture",
+      "title": "Apothecary Cabinet",
+      "width": 1.35,
+      "depth": 0.62,
+      "blurb": "Tiny labelled drawers, teal bottles and a cream carved pediment.",
+      "interaction": {}
+    },
+    {
+      "number": 6,
+      "id": "hollow-kitchen-dresser",
+      "recipe": "kitchen_dresser",
+      "category": "furniture",
+      "title": "Kitchen Dresser",
+      "width": 1.55,
+      "depth": 0.65,
+      "blurb": "A cottage sideboard with open plate shelves, cups and a linen runner.",
+      "interaction": {}
+    },
+    {
+      "number": 7,
+      "id": "hollow-oak-wardrobe",
+      "recipe": "oak_wardrobe",
+      "category": "furniture",
+      "title": "Oak Wardrobe",
+      "width": 1.3,
+      "depth": 0.7,
+      "blurb": "A tall panelled wardrobe with carved diamonds, violet inlay and brass pulls.",
+      "interaction": {}
+    },
+    {
+      "number": 8,
+      "id": "hollow-washstand",
+      "recipe": "washstand",
+      "category": "furniture",
+      "title": "Washstand",
+      "width": 1.0,
+      "depth": 0.65,
+      "blurb": "A wash basin and jug beneath a small framed mirror on an oak stand.",
+      "interaction": {}
+    },
+    {
+      "number": 9,
+      "id": "hollow-woven-settee",
+      "recipe": "woven_settee",
+      "category": "furniture",
+      "title": "Woven Settee",
+      "width": 1.6,
+      "depth": 0.8,
+      "blurb": "A two-seat timber settle with woven teal upholstery and cream pillows.",
+      "interaction": {}
+    },
+    {
+      "number": 10,
+      "id": "hollow-patchwork-bed",
+      "recipe": "patchwork_bed",
+      "category": "furniture",
+      "title": "Patchwork Bed",
+      "width": 1.1,
+      "depth": 2.0,
+      "blurb": "A full-length cottage bed with turned posts and a violet-and-cream patchwork quilt.",
+      "interaction": {}
+    },
+    {
+      "number": 11,
+      "id": "hollow-carpenters-bench",
+      "recipe": "carpenters_bench",
+      "category": "workshop",
+      "title": "Carpenter’s Bench",
+      "width": 1.9,
+      "depth": 0.85,
+      "blurb": "A substantial workbench with a screw vise, hand plane and saw.",
+      "interaction": {}
+    },
+    {
+      "number": 12,
+      "id": "hollow-blacksmiths-anvil",
+      "recipe": "blacksmiths_anvil",
+      "category": "workshop",
+      "title": "Blacksmith’s Anvil",
+      "width": 1.0,
+      "depth": 0.65,
+      "blurb": "A faceted iron anvil, tapering horn and hammer on a banded oak stump.",
+      "interaction": {}
+    },
+    {
+      "number": 13,
+      "id": "hollow-bellows-forge",
+      "recipe": "bellows_forge",
+      "category": "workshop",
+      "title": "Bellows Forge",
+      "width": 1.7,
+      "depth": 1.05,
+      "blurb": "A stone fire bed, copper hood, side bellows and glowing coals.",
+      "interaction": {
+        "kind": "light",
+        "on": "Stoke",
+        "off": "Bank"
+      }
+    },
+    {
+      "number": 14,
+      "id": "hollow-grinding-wheel",
+      "recipe": "grinding_wheel",
+      "category": "workshop",
+      "title": "Grinding Wheel",
+      "width": 1.1,
+      "depth": 0.75,
+      "blurb": "A pale stone wheel on a braced timber stand with treadle and water cup.",
+      "interaction": {
+        "kind": "spin_x",
+        "on": "Start",
+        "off": "Stop"
+      }
+    },
+    {
+      "number": 15,
+      "id": "hollow-tool-rack",
+      "recipe": "tool_rack",
+      "category": "workshop",
+      "title": "Tool Rack",
+      "width": 1.4,
+      "depth": 0.5,
+      "blurb": "A freestanding rack of axes, a spade, rakes and iron hooks.",
+      "interaction": {}
+    },
+    {
+      "number": 16,
+      "id": "hollow-potters-wheel",
+      "recipe": "potters_wheel",
+      "category": "workshop",
+      "title": "Potter’s Wheel",
+      "width": 1.1,
+      "depth": 0.9,
+      "blurb": "A clay pot on a turntable with a lower flywheel and a little water bowl.",
+      "interaction": {
+        "kind": "spin_y",
+        "on": "Start",
+        "off": "Stop"
+      }
+    },
+    {
+      "number": 17,
+      "id": "hollow-weavers-loom",
+      "recipe": "weavers_loom",
+      "category": "workshop",
+      "title": "Weaver’s Loom",
+      "width": 1.5,
+      "depth": 1.0,
+      "blurb": "A framed hand loom with visible warp threads, violet cloth and a shuttle.",
+      "interaction": {}
+    },
+    {
+      "number": 18,
+      "id": "hollow-spinning-wheel",
+      "recipe": "spinning_wheel",
+      "category": "workshop",
+      "title": "Spinning Wheel",
+      "width": 1.25,
+      "depth": 0.65,
+      "blurb": "An eight-spoked drive wheel, spindle, treadle and cream wool bundle.",
+      "interaction": {
+        "kind": "spin_x",
+        "on": "Start",
+        "off": "Stop"
+      }
+    },
+    {
+      "number": 19,
+      "id": "hollow-alchemy-bench",
+      "recipe": "alchemy_bench",
+      "category": "workshop",
+      "title": "Alchemy Bench",
+      "width": 1.55,
+      "depth": 0.8,
+      "blurb": "Copper piping, a flask cradle and three luminous coloured bottles.",
+      "interaction": {
+        "kind": "light",
+        "on": "Awaken",
+        "off": "Dim"
+      }
+    },
+    {
+      "number": 20,
+      "id": "hollow-bookbinders-press",
+      "recipe": "bookbinders_press",
+      "category": "workshop",
+      "title": "Bookbinder’s Press",
+      "width": 1.15,
+      "depth": 0.8,
+      "blurb": "Twin screw uprights squeeze a brass-cornered book between timber platens.",
+      "interaction": {}
+    },
+    {
+      "number": 21,
+      "id": "hollow-bakers-oven",
+      "recipe": "bakers_oven",
+      "category": "market",
+      "title": "Baker’s Oven",
+      "width": 1.6,
+      "depth": 1.3,
+      "blurb": "A cream masonry oven with an arched mouth, violet cap and stacked firewood.",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Extinguish"
+      }
+    },
+    {
+      "number": 22,
+      "id": "hollow-bread-display",
+      "recipe": "bread_display",
+      "category": "market",
+      "title": "Bread Display",
+      "width": 1.45,
+      "depth": 0.7,
+      "blurb": "A market counter piled with rounded loaves, baguettes and a linen basket.",
+      "interaction": {}
+    },
+    {
+      "number": 23,
+      "id": "hollow-cheese-stand",
+      "recipe": "cheese_stand",
+      "category": "market",
+      "title": "Cheese Stand",
+      "width": 1.25,
+      "depth": 0.7,
+      "blurb": "A striped canopy shades cheese wheels, a wedge and a small cutting board.",
+      "interaction": {}
+    },
+    {
+      "number": 24,
+      "id": "hollow-fishmongers-counter",
+      "recipe": "fishmongers_counter",
+      "category": "market",
+      "title": "Fishmonger’s Counter",
+      "width": 1.55,
+      "depth": 0.8,
+      "blurb": "Three silver fish rest on a teal counter with a bucket beneath.",
+      "interaction": {}
+    },
+    {
+      "number": 25,
+      "id": "hollow-spice-cart",
+      "recipe": "spice_cart",
+      "category": "market",
+      "title": "Spice Cart",
+      "width": 1.5,
+      "depth": 0.85,
+      "blurb": "A wheeled cart with a violet awning and open jars of colourful spices.",
+      "interaction": {}
+    },
+    {
+      "number": 26,
+      "id": "hollow-covered-handcart",
+      "recipe": "covered_handcart",
+      "category": "market",
+      "title": "Covered Handcart",
+      "width": 1.25,
+      "depth": 2.0,
+      "blurb": "A little timber wagon with curved cream cover, iron-rimmed wheels and a tow bar.",
+      "interaction": {}
+    },
+    {
+      "number": 27,
+      "id": "hollow-linen-rack",
+      "recipe": "linen_rack",
+      "category": "market",
+      "title": "Linen Rack",
+      "width": 1.2,
+      "depth": 0.55,
+      "blurb": "Folded towels, hanging cream cloth and a basket on a cross-braced drying rack.",
+      "interaction": {}
+    },
+    {
+      "number": 28,
+      "id": "hollow-pottery-shelf",
+      "recipe": "pottery_shelf",
+      "category": "market",
+      "title": "Pottery Shelf",
+      "width": 1.25,
+      "depth": 0.5,
+      "blurb": "Terracotta jars, teal glazed jugs and cream bowls on three open timber shelves.",
+      "interaction": {}
+    },
+    {
+      "number": 29,
+      "id": "hollow-candle-stand",
+      "recipe": "candle_stand",
+      "category": "market",
+      "title": "Candle Stand",
+      "width": 0.65,
+      "depth": 0.65,
+      "blurb": "A brass three-branch candle stand with wax drips and warm flames.",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Extinguish"
+      }
+    },
+    {
+      "number": 30,
+      "id": "hollow-copper-wash-tub",
+      "recipe": "copper_wash_tub",
+      "category": "market",
+      "title": "Copper Wash Tub",
+      "width": 1.1,
+      "depth": 0.75,
+      "blurb": "A hammered copper wash tub with side handles, pale water and a washboard.",
+      "interaction": {}
+    },
+    {
+      "number": 31,
+      "id": "hollow-straw-beehive",
+      "recipe": "straw_beehive",
+      "category": "garden",
+      "title": "Straw Beehive",
+      "width": 0.85,
+      "depth": 0.85,
+      "blurb": "A coiled straw skep on a timber stand with a little landing board.",
+      "interaction": {}
+    },
+    {
+      "number": 32,
+      "id": "hollow-rabbit-hutch",
+      "recipe": "rabbit_hutch",
+      "category": "garden",
+      "title": "Rabbit Hutch",
+      "width": 1.4,
+      "depth": 0.7,
+      "blurb": "A raised hutch with wire-style slats, sleeping box, hay and a bowl; no live animal.",
+      "interaction": {}
+    },
+    {
+      "number": 33,
+      "id": "hollow-chicken-coop",
+      "recipe": "chicken_coop",
+      "category": "garden",
+      "title": "Chicken Coop",
+      "width": 1.6,
+      "depth": 1.3,
+      "blurb": "A violet-roofed coop with a ladder, nesting boxes and small shuttered windows.",
+      "interaction": {}
+    },
+    {
+      "number": 34,
+      "id": "hollow-seedling-tray",
+      "recipe": "seedling_tray",
+      "category": "garden",
+      "title": "Seedling Tray",
+      "width": 1.1,
+      "depth": 0.6,
+      "blurb": "An orderly bed of six seedlings, plant labels and a watering jug.",
+      "interaction": {}
+    },
+    {
+      "number": 35,
+      "id": "hollow-herb-drying-rack",
+      "recipe": "herb_drying_rack",
+      "category": "garden",
+      "title": "Herb Drying Rack",
+      "width": 1.3,
+      "depth": 0.65,
+      "blurb": "Tied bundles of sage and lavender hang from a braced rack above wicker baskets.",
+      "interaction": {}
+    },
+    {
+      "number": 36,
+      "id": "hollow-vine-trellis",
+      "recipe": "vine_trellis",
+      "category": "garden",
+      "title": "Vine Trellis",
+      "width": 1.5,
+      "depth": 0.55,
+      "blurb": "A low stone planter supports a timber lattice and curling grape vines.",
+      "interaction": {}
+    },
+    {
+      "number": 37,
+      "id": "hollow-field-scarecrow",
+      "recipe": "field_scarecrow",
+      "category": "garden",
+      "title": "Field Scarecrow",
+      "width": 1.0,
+      "depth": 0.6,
+      "blurb": "A straw hat, russet coat and teal scarf on a forked timber field marker.",
+      "interaction": {}
+    },
+    {
+      "number": 38,
+      "id": "hollow-rain-barrel",
+      "recipe": "rain_barrel",
+      "category": "garden",
+      "title": "Rain Barrel",
+      "width": 0.95,
+      "depth": 0.85,
+      "blurb": "A banded barrel with a copper downpipe, lid and brass garden tap.",
+      "interaction": {}
+    },
+    {
+      "number": 39,
+      "id": "hollow-butter-churn",
+      "recipe": "butter_churn",
+      "category": "garden",
+      "title": "Butter Churn",
+      "width": 0.65,
+      "depth": 0.65,
+      "blurb": "A tall stave churn with iron bands, a plunger and a small cream cloth.",
+      "interaction": {}
+    },
+    {
+      "number": 40,
+      "id": "hollow-hay-handcart",
+      "recipe": "hay_handcart",
+      "category": "garden",
+      "title": "Hay Handcart",
+      "width": 1.25,
+      "depth": 1.65,
+      "blurb": "A two-wheeled farm cart piled with bound golden hay and a wooden pitchfork.",
+      "interaction": {}
+    },
+    {
+      "number": 41,
+      "id": "hollow-copper-brazier",
+      "recipe": "copper_brazier",
+      "category": "village-magic",
+      "title": "Copper Brazier",
+      "width": 0.85,
+      "depth": 0.85,
+      "blurb": "An embossed copper bowl on three iron legs with split logs and amber fire.",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Extinguish"
+      }
+    },
+    {
+      "number": 42,
+      "id": "hollow-shard-lantern",
+      "recipe": "shard_lantern",
+      "category": "village-magic",
+      "title": "Shard Lantern",
+      "width": 0.75,
+      "depth": 0.75,
+      "blurb": "A teal crystal glows inside an open brass lantern under a violet cap.",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Dim"
+      }
+    },
+    {
+      "number": 43,
+      "id": "hollow-crystal-obelisk",
+      "recipe": "crystal_obelisk",
+      "category": "village-magic",
+      "title": "Crystal Obelisk",
+      "width": 1.0,
+      "depth": 1.0,
+      "blurb": "Three faceted turquoise crystals grow from a carved cream stone base.",
+      "interaction": {
+        "kind": "light",
+        "on": "Awaken",
+        "off": "Dim"
+      }
+    },
+    {
+      "number": 44,
+      "id": "hollow-rune-standing-stone",
+      "recipe": "rune_standing_stone",
+      "category": "village-magic",
+      "title": "Rune Standing Stone",
+      "width": 0.95,
+      "depth": 0.65,
+      "blurb": "A weathered stone slab with a teal rune, brass inset and moss at its foot.",
+      "interaction": {
+        "kind": "light",
+        "on": "Awaken",
+        "off": "Dim"
+      }
+    },
+    {
+      "number": 45,
+      "id": "hollow-village-bell",
+      "recipe": "village_bell",
+      "category": "village-magic",
+      "title": "Village Bell",
+      "width": 1.2,
+      "depth": 0.8,
+      "blurb": "A brass village bell and visible clapper hang in a violet-capped timber frame.",
+      "interaction": {
+        "kind": "bell",
+        "on": "Ring",
+        "off": "Silence"
+      }
+    },
+    {
+      "number": 46,
+      "id": "hollow-brass-lever",
+      "recipe": "brass_lever",
+      "category": "village-magic",
+      "title": "Brass Lever",
+      "width": 0.65,
+      "depth": 0.65,
+      "blurb": "A chunky lever with a teal grip and brass dial on a stone plinth.",
+      "interaction": {
+        "kind": "lever",
+        "on": "Pull",
+        "off": "Reset"
+      }
+    },
+    {
+      "number": 47,
+      "id": "hollow-water-pump",
+      "recipe": "water_pump",
+      "category": "village-magic",
+      "title": "Water Pump",
+      "width": 0.85,
+      "depth": 0.8,
+      "blurb": "A green iron hand pump pours into a stone trough beneath a brass spout.",
+      "interaction": {
+        "kind": "pump",
+        "on": "Start",
+        "off": "Stop"
+      }
+    },
+    {
+      "number": 48,
+      "id": "hollow-wayfarers-chest",
+      "recipe": "wayfarers_chest",
+      "category": "village-magic",
+      "title": "Wayfarer’s Chest",
+      "width": 1.15,
+      "depth": 0.75,
+      "blurb": "An iron-strapped travel chest with an arched violet lid and brass clasp.",
+      "interaction": {
+        "kind": "hinge",
+        "on": "Open",
+        "off": "Close"
+      }
+    },
+    {
+      "number": 49,
+      "id": "hollow-little-shrine",
+      "recipe": "little_shrine",
+      "category": "village-magic",
+      "title": "Little Shrine",
+      "width": 1.1,
+      "depth": 0.8,
+      "blurb": "A little cream-and-timber shrine shelters a votive crystal beneath a teal roof.",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Dim"
+      }
+    },
+    {
+      "number": 50,
+      "id": "hollow-weather-vane",
+      "recipe": "weather_vane",
+      "category": "village-magic",
+      "title": "Weather Vane",
+      "width": 0.7,
+      "depth": 0.7,
+      "blurb": "A brass sun-and-rooster vane above four compass arms on a stone foot.",
+      "interaction": {}
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "hollow-brass-lever",
+  "version": "v1",
+  "source": "art/source/world/hollow-brass-lever/v1/model.blend",
+  "source_sha256": "0836771c74d74dda117539d0d8b7ad937bdfa20e5da604cb0eced42c8102ca80",
+  "runtime": "assets/world/hollow-brass-lever/model.glb",
+  "runtime_sha256": "a5cf5a7bcf4cfcec39c290324fee19a0b87a2f955fd522003019554ba34b8cd0",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.305000007152557,
+      0.0,
+      -0.300000011920929,
+      0.305000007152557,
+      1.05019414424896,
+      0.300000011920929
+    ],
+    "geometry_sha256": "93bb03c1761fca4c48030bb2717ed9aec2f36f5ec7bfd020277c4b45008c5dc2",
+    "material_records": {
+      "brass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "08413d11709d341311dcef96d31c4037bb82820d05623175f768a36f2fe65eda"
+      },
+      "cloth_teal": {
+        "albedo": [
+          2039,
+          4824,
+          5216,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "glass_teal": {
+        "albedo": [
+          4118,
+          6745,
+          6745,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "iron": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5500,
+        "texture_rgba_sha256": "5aa901d0159be0f4db2bbfe0c3cee98970ef021a1f5b88ca2db951035e1bc042"
+      },
+      "rust": {
+        "albedo": [
+          6118,
+          3412,
+          2392,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "stone_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "8a5bfcdcc9d7cda745e0ca4547bfddfa2ac5a4e08d97905a2f4a17997076adf9"
+      },
+      "wood_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      }
+    },
+    "materials": [
+      "brass",
+      "cloth_teal",
+      "glass_teal",
+      "iron",
+      "rust",
+      "stone",
+      "stone_dark",
+      "wood_dark"
+    ],
+    "meshes": 8,
+    "triangles": 200
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "revision": "2026-10-24-buildings-v1",
+  "asset": "lamppost",
+  "before_sha256": "ce2849389edc1c1acafc0523bfed7e5f15bddacb39bd9853f8d457d3c3860bb9",
+  "source_sha256": "3386d38e03318d696ddadbfd48e8ba0e375a635ec8886df072bd6006d915afa0",
+  "backup": "model.pre-building-polish.blend",
+  "script": "art/source/world/building-polish/v1/edit_sources.py",
+  "note": "Deliberate edit of existing source; original geometry retained except selected entrance components. Common painted roof scale, readable door hardware/thresholds; lamp glass preserved."
+}

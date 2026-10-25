@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed",
+  "seed": "Not exposed",
+  "materials": [
+    {
+      "id": "herringbone_oak",
+      "source": "art/source/world/textures/v2-detail/native/herringbone_oak.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-2411aeee-7003-48c3-b372-460f3df87931.png",
+      "sha256": "abf20d79bf0a70e9788e0721747fa3e3101e8d878e6e2ee988de6e45f03dc530"
+    },
+    {
+      "id": "terracotta_tile",
+      "source": "art/source/world/textures/v2-detail/native/terracotta_tile.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-78963d10-c66f-4a2f-ac52-18e3623dd0a9.png",
+      "sha256": "cccf37948033160ef961753e90bcff6d83012c8b32057e04aa8a6bfb12646732"
+    },
+    {
+      "id": "encaustic_tile",
+      "source": "art/source/world/textures/v2-detail/native/encaustic_tile.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-a09ab786-f969-46b6-8c2a-205909d70e4a.png",
+      "sha256": "d7f39654ed173749a5703555b791939d2a06f16f8d7d7e9415d76df8dc897540"
+    },
+    {
+      "id": "limestone_flags",
+      "source": "art/source/world/textures/v2-detail/native/limestone_flags.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-03638aa1-699b-430f-9c6c-068b3c17add0.png",
+      "sha256": "e0384a990c005e6f5683782ce38c25ec8e93aaf7cd2f10d28090a6c38ef489ed"
+    },
+    {
+      "id": "limewash",
+      "source": "art/source/world/textures/v2-detail/native/limewash.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-7973c496-aba2-43ac-81c8-e9fbd09acdc6.png",
+      "sha256": "e3b12767c847096c73a8bf642acee3880eb1f32b683eeb5b44682c7693116a0f"
+    },
+    {
+      "id": "sage_wallpaper",
+      "source": "art/source/world/textures/v2-detail/native/sage_wallpaper.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-752ff543-a8fb-4d3c-b819-a40acc99fdd6.png",
+      "sha256": "046e412b11250ded8cb3b73cd80b114f5880702ac8b14baa3e2db5cbbf122a3f"
+    },
+    {
+      "id": "timber_panels",
+      "source": "art/source/world/textures/v2-detail/native/timber_panels.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-06ddf21b-9c6e-4ad8-81ca-c537654bbab6.png",
+      "sha256": "781adacdae6db7dfb5812c901e4779bb8546b933730de7ef98a1eb9eec8e58d3"
+    },
+    {
+      "id": "red_brick",
+      "source": "art/source/world/textures/v2-detail/native/red_brick.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-517bc8b8-349b-45ac-b40a-aee5107fa775.png",
+      "sha256": "e9bf6002d2c2cd1f14da58938a91c61eb8d291c2326e7733a00494a1fe1e51e4"
+    },
+    {
+      "id": "riverstone",
+      "source": "art/source/world/textures/v2-detail/native/riverstone.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-393368e6-167e-4315-8510-81d2c089b2a3.png",
+      "sha256": "8711bd168cfaf01aeb64592f91bb5fa77919c803e03ac2652671dbd5e7fda3da"
+    },
+    {
+      "id": "slate_shingles",
+      "source": "art/source/world/textures/v2-detail/native/slate_shingles.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-8867e30b-e195-4004-9439-3881b254103b.png",
+      "sha256": "dd68f76dc6c9ce18065b60d41b22ec20e658c7b480daab983cbb9632633b7be1"
+    },
+    {
+      "id": "cedar_shingles",
+      "source": "art/source/world/textures/v2-detail/native/cedar_shingles.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-85429f77-9890-4987-9239-e1555ef896c1.png",
+      "sha256": "1a46458a5fa8681fe310e491a980ea4b97a4627c4aae74267117d274a4d3b1db"
+    },
+    {
+      "id": "copper_patina",
+      "source": "art/source/world/textures/v2-detail/native/copper_patina.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-44b7b679-f7be-443c-a5bc-f8ee6cab7a73.png",
+      "sha256": "8e9cf0f04af8c5baafcea610225e4c49642a944a1cd4c7316de30420dfec41b4"
+    },
+    {
+      "id": "woven_linen",
+      "source": "art/source/world/textures/v2-detail/native/woven_linen.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-dcf6665a-3d6e-4eb6-a397-66530bcef84e.png",
+      "sha256": "657d949ee9107938b8f3305b611bc7c21246876fa4d45f5cbc435ba8985662c9"
+    },
+    {
+      "id": "violet_quilt",
+      "source": "art/source/world/textures/v2-detail/native/violet_quilt.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-28663436-b44a-4e50-b9c7-1992ce1550e9.png",
+      "sha256": "972a8dbf30a1e6ddf6017215c4891e477dfe8175e8b83a6c6430b14b9bf468e3"
+    },
+    {
+      "id": "tooled_leather",
+      "source": "art/source/world/textures/v2-detail/native/tooled_leather.png",
+      "generated_file": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-7ab029ea-ce84-431e-9af9-1c60be2455c1.png",
+      "sha256": "68ff712b4e038530d6c1ccf58b55573b4063e4c9f696452e7e9f52bf7dbd7d15"
+    }
+  ],
+  "library_sha256": "a2e381304aad38d9ba045164bfdaa2e9d5876f731fc30eee83e0a838c3ae0fb5",
+  "reference_sha256": {
+    "art/source/world/textures/v1/contact-sheet.png": "2f3553465c69fc75a53531906ee1aa046ed0741ac76724b5b5bd6c77f2b6c8b0",
+    "assets/world/textures/lush/plank_wood.png": "db7a9baa7f51971cbfb8d83f4705ad47cd33994e86956d303ea597991e1a0c45",
+    "reference/voxel-isometric.png": "f4754b8d166594e87eb1ecfc2ac408cbaf560fdf6ad67684ffb3e34168921760"
+  }
+}

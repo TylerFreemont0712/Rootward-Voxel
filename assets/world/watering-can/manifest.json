@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "watering-can",
+  "version": "v1",
+  "source": "art/source/world/watering-can/v1/model.blend",
+  "source_sha256": "c961dcc6770c487adb90e9603d16af01f5a6126c07b248e46199baab3b328037",
+  "runtime": "assets/world/watering-can/model.glb",
+  "runtime_sha256": "1e60206af0336aa3209141ce7b5717c1bd42eabcd581f3ad2bc859b9330a7173",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.125,
+      0.0,
+      -0.25,
+      0.125,
+      0.349999994039536,
+      0.25
+    ],
+    "geometry_sha256": "3b3d00d977d4a156d071fd13b4fa11dce4d5f86e658a0074ae8ae3d69a2388eb",
+    "material_records": {
+      "galv": {
+        "albedo": [
+          5725,
+          6039,
+          6039,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "galv_dark": {
+        "albedo": [
+          3843,
+          4353,
+          4510,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "galv_light": {
+        "albedo": [
+          7373,
+          7608,
+          6824,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_dark": {
+        "albedo": [
+          1686,
+          2000,
+          2078,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_light": {
+        "albedo": [
+          3725,
+          4235,
+          4314,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "galv",
+      "galv_dark",
+      "galv_light",
+      "iron_dark",
+      "iron_light"
+    ],
+    "meshes": 5,
+    "triangles": 456
+  }
+}

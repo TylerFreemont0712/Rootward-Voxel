@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "date": "2026-10-24",
+  "engine": "Godot 4.7.2",
+  "art_build": "scripts/art.sh, exit 0",
+  "full_test_command": "scripts/test.sh",
+  "exit_code": 0,
+  "suite_count": 21,
+  "total_checks": 3552,
+  "suites": [
+    {
+      "suite": "Voxel lab",
+      "checks": 73
+    },
+    {
+      "suite": "Area documents and the level's teaching arc",
+      "checks": 125
+    },
+    {
+      "suite": "Places and village",
+      "checks": 93
+    },
+    {
+      "suite": "House travel and saves",
+      "checks": 22
+    },
+    {
+      "suite": "Village dialogue",
+      "checks": 119
+    },
+    {
+      "suite": "Build rules",
+      "checks": 386
+    },
+    {
+      "suite": "Builder scenery",
+      "checks": 62
+    },
+    {
+      "suite": "Builder library",
+      "checks": 570
+    },
+    {
+      "suite": "Working prop flow",
+      "checks": 16
+    },
+    {
+      "suite": "Ground",
+      "checks": 121
+    },
+    {
+      "suite": "Build mode",
+      "checks": 146
+    },
+    {
+      "suite": "Building by code",
+      "checks": 86
+    },
+    {
+      "suite": "Learning interface helpers",
+      "checks": 32
+    },
+    {
+      "suite": "Voxel app",
+      "checks": 95
+    },
+    {
+      "suite": "Grid movement and routing",
+      "checks": 30
+    },
+    {
+      "suite": "Painted art and idle contract",
+      "checks": 100
+    },
+    {
+      "suite": "Shared frame skins",
+      "checks": 66
+    },
+    {
+      "suite": "World art, area views and projected facing",
+      "checks": 471
+    },
+    {
+      "suite": "Authoring source protection",
+      "checks": 7
+    },
+    {
+      "suite": "Active pipelines and handoff links",
+      "checks": 811
+    },
+    {
+      "suite": "Ground art handoff",
+      "checks": 121
+    }
+  ],
+  "warnings_or_errors": [],
+  "protected_existing_character_files": 134,
+  "changed_existing_character_files": [],
+  "portrait_sources": "art/source/portraits/v1/generation.json",
+  "windowed_reviews": [
+    {
+      "resolution": [
+        1600,
+        1000
+      ],
+      "ui_scale": 1.0,
+      "result": "All five F conversations, Space/H/Escape, portraits, replies, optional code, save/Continue; exit 0"
+    },
+    {
+      "resolution": [
+        1280,
+        720
+      ],
+      "ui_scale": 1.0,
+      "result": "Same tour with viewport/layout checks; exit 0"
+    },
+    {
+      "resolution": [
+        1280,
+        720
+      ],
+      "ui_scale": 1.5,
+      "result": "All five conversations, wrapping controls and scrolling optional panels; exit 0"
+    }
+  ],
+  "portrait_height_limit": "50% of canvas",
+  "portrait_lift_at_1000px_canvas": 125,
+  "larger_ui_extra_lift": "Keep shoulders visible when wrapped controls raise the dialogue box",
+  "cleanup_fix": "Free two unattached temporary skill controls created by test_code_build.gd; 86 assertions still pass and shutdown warnings are gone."
+}

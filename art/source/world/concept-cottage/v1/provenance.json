@@ -1,0 +1,18 @@
+{
+  "asset": "concept-cottage",
+  "version": "v1",
+  "source_sha256": "2d7fe1531beac5925286c24468edd3a108210f60e8084e6d12e2c761ea7a502b",
+  "authoring_record": "art/source/world/concept-cottage/v1/author.py",
+  "reference_sha256": "f4754b8d166594e87eb1ecfc2ac408cbaf560fdf6ad67684ffb3e34168921760",
+  "textures": "textures/generation.json",
+  "note": "Original geometry authored from scratch. No previous building meshes reused. Subsequent edits use model.blend and scripts/world-art.sh build concept-cottage.",
+  "review_backup": "model.pre-doorway-review.blend",
+  "review_backup_sha256": "cddad25cba34d80b83dccdf658532f40c48af17a52dab58fee88984a4e6028c9",
+  "review_script": "art/source/world/doorways/v1/review_corrections.py",
+  "final_fit_backup": "model.pre-final-fit.blend",
+  "final_fit_backup_sha256": "99edf6a0641fc3237a1f8b24e74595cc49a6b66526823f474eb70db5981985e8",
+  "final_fit_script": "art/source/world/doorways/v1/final_fit.py",
+  "binding_backup": "model.pre-material-bindings.blend",
+  "binding_backup_sha256": "f3b7f6f5fc903b5ab8a3e2d25088f489f8a8d805a38c7923e58562779d93b9fd",
+  "binding_review": "art/source/world/doorways/v1/restore_bindings.py"
+}

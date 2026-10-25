@@ -1,0 +1,10 @@
+{
+  "asset": "lamppost",
+  "version": "v1",
+  "created": "2026-10-23T00:42:09.950729+00:00",
+  "seed_sha256": "a32a3449c1d78072154471a176bfa115991feb0f3340c9a517059a14f96f13a0",
+  "recipe": "pipeline/world_seed.gd",
+  "recipe_sha256": "12fc4c4b6d882a35770ca106bddd5677ecd7a98224ac4caa36bc19562c62fbd8",
+  "geometry_recipe_sha256": "fc7ffac0cb72480d1ac7d3357da737d22fcb26c0b63e77ab7fd922ca150d8e05",
+  "note": "One-way procedural bootstrap. model.blend becomes the editable source after init."
+}

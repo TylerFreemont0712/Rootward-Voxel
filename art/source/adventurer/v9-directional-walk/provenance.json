@@ -1,0 +1,401 @@
+{
+  "anchor": [
+    192,
+    420
+  ],
+  "authoring_script_sha256": "4107bdc106ee015f41b20e5f9602041a763255d04b77a6ae4414f472f44a68f4",
+  "blink_index": 9,
+  "cell_size": [
+    384,
+    448
+  ],
+  "directions": {
+    "ne": {
+      "key_rgba_sha256": [
+        "658d5a63db07309649c742fe6c2a6b8f69a352bb8a77e05dba427e63451a38ca",
+        "e8a71ebb17a490cf8da6074e9606869867195a6f5cf6e8faec2d42af5b0cb2fb",
+        "0a9d00ee52de7f3c05cbc144b21cfdc966ca4cadab87ab4b934873e87493318f",
+        "de274ab3592dd98a3e47b7f8d4c3bf2fc08e1074b28c57d77a905f3036f3b6c4",
+        "8b19ee4c5d7b93b0638be205f0dc1b029aae6079a51afedadf06de34a1fc2bd8",
+        "c2711b30a93baf6c3eb90064963b1432839aa8a785a9039df1646db248028926",
+        "97d16dfeea51f1d657aa3e2701a9d42f9b2996e1cfd67206ef800e94162feb96",
+        "2c57858ad1cbda68193c14f1fe085ce1da43e0585e35416018917c9c5e01f0cd",
+        "c56658c97bbd5ae6b686d023c9694c0b5bb6e0678e8094c103a8596a41ce8db8"
+      ],
+      "row": 6,
+      "transforms": [
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NE.png",
+          "source_pose": 0,
+          "translation": [
+            -20,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NE.png",
+          "source_pose": 1,
+          "translation": [
+            -11,
+            16
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NE.png",
+          "source_pose": 2,
+          "translation": [
+            -21,
+            16
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NE.png",
+          "source_pose": 3,
+          "translation": [
+            -22,
+            34
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NE.png",
+          "source_pose": 4,
+          "translation": [
+            -16,
+            35
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NE.png",
+          "source_pose": 5,
+          "translation": [
+            -33,
+            30
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NE.png",
+          "source_pose": 6,
+          "translation": [
+            -25,
+            50
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NE.png",
+          "source_pose": 7,
+          "translation": [
+            -17,
+            56
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NE.png",
+          "source_pose": 8,
+          "translation": [
+            -33,
+            46
+          ]
+        }
+      ]
+    },
+    "nw": {
+      "key_rgba_sha256": [
+        "bbc0a2f5d1452b105458c3ddf0a91ba7a2566af13c230dbdc379295bfea54183",
+        "eaf56272e1ac1b702f2f6380f1ba2e65d040d88e56a3bacf574e3814a4375b95",
+        "ead41c00c589b984ae87b4acc66dbc2735297b44815d92fc3081c7789f072490",
+        "b439ddb58721e0c7c3c708fa33c745a048d5603ee4c831f0e0580df6320fc905",
+        "3a1cb2e72bf6cb8d7e71f6bfcfa720bc7786447b5862a9f3e0d833f362906dd2",
+        "9e890e3375ddbfee6ae3759c27cf17ac7e0ff47b43a78d1d28de8d49446d9df1",
+        "c02a3ef81355b9b5aec90d81a3518237c4473751ce2f275cee263f187333a3e3",
+        "adaa61a77dba11ba474052c0c8279a46310e7007bd5d31c1d12dfcf8d060998b",
+        "ae05d21c6bbecfa112afbaf76446de7253ffe70aaffb042a30d76e5a6cfa63bd"
+      ],
+      "row": 9,
+      "transforms": [
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NW.png",
+          "source_pose": 0,
+          "translation": [
+            -13,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NW.png",
+          "source_pose": 1,
+          "translation": [
+            -23,
+            16
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NW.png",
+          "source_pose": 2,
+          "translation": [
+            -12,
+            16
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NW.png",
+          "source_pose": 3,
+          "translation": [
+            -12,
+            34
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NW.png",
+          "source_pose": 4,
+          "translation": [
+            -18,
+            35
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NW.png",
+          "source_pose": 5,
+          "translation": [
+            -1,
+            30
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NW.png",
+          "source_pose": 6,
+          "translation": [
+            -8,
+            50
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NW.png",
+          "source_pose": 7,
+          "translation": [
+            -17,
+            56
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/NW.png",
+          "source_pose": 8,
+          "translation": [
+            -1,
+            46
+          ]
+        }
+      ]
+    },
+    "se": {
+      "key_rgba_sha256": [
+        "0de466209522d33e404b7058ae02c6f3ae1a54ce94d20c7c3595ad9e68efa54a",
+        "8920f628bc9242828e8cc33925c38d198079bdb46b99909463a5e4bbf270d426",
+        "742771cbd6ad8748ddc658ab251c4c76969b447231fefb0b3e704656aa8f70b8",
+        "bd80015912fcf0b2420c543394728224f5f03ccc0a3e97508d06fec5be381a06",
+        "a7ea72f3cdcd0afec1287e84b2c69a990ae1614467cfe12dcdd1ac08104e18e0",
+        "8675d7e60ae54fad144c9f0950a9e263f1ccc9bffbdda434005ec4baaf011dfc",
+        "530b2330d83c0cf5df54fc8e8a5a71b3f6d611442a11f355dc14db0fdbd22a6f",
+        "225d0ce0ac666fc950f816a19dc04680649053af7fd60a8f9edf3d86b01dd80e",
+        "5ebe83cb89a876f31a28f930773ad1b1a713fa72af837b878bbee744aab0985a",
+        "7a3de022d3681988e83d7ab4d57b7adbdb8ce6a381681910db48fe5382b77862"
+      ],
+      "row": 0,
+      "transforms": [
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SE.png",
+          "source_pose": 0,
+          "translation": [
+            -28,
+            17
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SE.png",
+          "source_pose": 1,
+          "translation": [
+            -27,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SE.png",
+          "source_pose": 2,
+          "translation": [
+            -34,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SE.png",
+          "source_pose": 3,
+          "translation": [
+            -35,
+            22
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SE.png",
+          "source_pose": 4,
+          "translation": [
+            -23,
+            25
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SE.png",
+          "source_pose": 5,
+          "translation": [
+            -28,
+            29
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SE.png",
+          "source_pose": 6,
+          "translation": [
+            -30,
+            45
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SE.png",
+          "source_pose": 7,
+          "translation": [
+            -29,
+            40
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SE.png",
+          "source_pose": 8,
+          "translation": [
+            -26,
+            49
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/blink-se.png",
+          "source_pose": 8,
+          "translation": [
+            -26,
+            49
+          ]
+        }
+      ]
+    },
+    "sw": {
+      "key_rgba_sha256": [
+        "675b6c0cea8f052d85299e93f953fe8d57f6d165f9aafaa9acde29c0ab6c408a",
+        "7e63e01e970391a17a891a9e2e0b80e795d995668a42973edaa62ccee9e642d3",
+        "d6bd355b45cabf14740785492397a454b001e1a4e17dca0386826c7ee95bc951",
+        "9740e0d3f8463c61279fdac4251b70cc4c91050cbb7533075122910902d9cd31",
+        "bce138196c62b49af277b832eeaa74f3a152b59785a1758812edd09302f1725b",
+        "e0cb08d491297f8f30350636688e681d083b6e20a02072899723269ceb91f640",
+        "fd16a9dc6b9d5d8372a33cc2395a7adc6882db7f60fa9ccd7d34897ebe7cff7c",
+        "8b7dd8558335355a477c23253284b1bb487d0e62f4aa8a46977d717510b471f0",
+        "883005b25b4cc2ecbb004b431c8d8bcc4634000c1e4fb0eff4a733f81c8354db",
+        "f9adc136c5811d03067d89f3db5ffaec3f390cd10c462839337221a7edff8c5d"
+      ],
+      "row": 3,
+      "transforms": [
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SW.png",
+          "source_pose": 0,
+          "translation": [
+            -6,
+            17
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SW.png",
+          "source_pose": 1,
+          "translation": [
+            -7,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SW.png",
+          "source_pose": 2,
+          "translation": [
+            0,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SW.png",
+          "source_pose": 3,
+          "translation": [
+            1,
+            22
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SW.png",
+          "source_pose": 4,
+          "translation": [
+            -11,
+            25
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SW.png",
+          "source_pose": 5,
+          "translation": [
+            -6,
+            29
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SW.png",
+          "source_pose": 6,
+          "translation": [
+            -3,
+            45
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SW.png",
+          "source_pose": 7,
+          "translation": [
+            -4,
+            40
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/SW.png",
+          "source_pose": 8,
+          "translation": [
+            -8,
+            49
+          ]
+        },
+        {
+          "source": "res://art/source/adventurer/v9-directional-walk/blink-sw.png",
+          "source_pose": 8,
+          "translation": [
+            -8,
+            49
+          ]
+        }
+      ]
+    }
+  },
+  "grid": [
+    4,
+    12
+  ],
+  "idle_index": 8,
+  "method": "Approved eight-pose sheets plus neutral idle; integer translation only; eye-only blink patch",
+  "output_sha256": "6e7db11c4c1403efc3af748014cbe06b600779319117bf29ab30f3fe9abd471d",
+  "schema": 4,
+  "sources": {
+    "res://art/source/adventurer/v9-directional-walk/NE.png": "0cd31a9cf3e94ad1ecec7937f51512e4a7c7c654c601df71b1ef2fa9a5492187",
+    "res://art/source/adventurer/v9-directional-walk/NW.png": "d9b9cd631f81dffaeb91b5a11dd184a1cd4eccdd2de4a3d391b81f624e0d2207",
+    "res://art/source/adventurer/v9-directional-walk/SE.png": "0c2067d8dcfe105d42e747487c87527544db78d38bd4afc775fa493744dee6e4",
+    "res://art/source/adventurer/v9-directional-walk/SW.png": "1267ea3638750a5902fca21ab39c22697d170b8d7741508e4944dc1115ce5d38",
+    "res://art/source/adventurer/v9-directional-walk/blink-se.png": "1e0f90340eae33b55147e130b6581b65a6a8f727e12e65fcabefd54944ee8e69",
+    "res://art/source/adventurer/v9-directional-walk/blink-sw.png": "f8130960f2f4c9312215a333c506d63d8731a20fee0b928c08702c2bae86b050"
+  },
+  "walk_poses": 8
+}

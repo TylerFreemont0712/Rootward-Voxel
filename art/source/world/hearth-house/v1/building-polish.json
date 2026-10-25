@@ -1,0 +1,9 @@
+{
+  "revision": "2026-10-24-buildings-v1",
+  "asset": "hearth-house",
+  "before_sha256": "9d2efb414d6ceeac095deb68906fae04a157e33e32bfce3aed81bf3e2d42e46e",
+  "source_sha256": "e820f1e49177d5f0f33ecd11e2f207a4d9864f220e3fdb8b5b1f52563afd16dc",
+  "backup": "model.pre-building-polish.blend",
+  "script": "art/source/world/building-polish/v1/edit_sources.py",
+  "note": "Deliberate edit of existing source; original geometry retained except selected entrance components. Common painted roof scale, readable door hardware/thresholds; lamp glass preserved."
+}

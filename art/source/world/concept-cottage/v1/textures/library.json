@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed",
+  "seed": "Not exposed",
+  "materials": [
+    {
+      "id": "cottage_violet_glaze",
+      "title": "Cottage violet glaze",
+      "prompt": "Use case: stylized-concept\nAsset type: seamless square albedo texture for individual 3D roof tiles in a cozy voxel fantasy village game.\nPrimary request: a flat, straight-on, orthographic painted material swatch of muted purple glazed terracotta. Broad hand-painted violet/lavender strokes, subtle worn lilac edge variations, warm tiny flecks and blue-violet pooled glaze, restrained color variation. This is the surface of ONE tile, no tile grid, no seams or bevels drawn in, no layout, no objects. Surface fills the entire square. Medium-light violet so normal game lighting can darken it naturally. Matches a storybook fantasy cottage with chunky violet roof tiles, honey oak logs and cream limestone.\nLighting: completely even diffuse illumination, no directional light or cast shadows; no vignette, no baked ambient occlusion.\nConstraints: truly seamless edges, no text, no border, no watermark, no perspective, no highlights suggesting 3D geometry. Painterly readable marks at game scale, never photorealistic or noisy. Opaque background.\n",
+      "usage": "Surface of individual modeled clay tiles, with full per-tile UVs."
+    },
+    {
+      "id": "cottage_honey_oak",
+      "title": "Cottage honey oak",
+      "prompt": "Use case: stylized-concept\nAsset type: one seamless, opaque, square albedo material for the honey oak timber walls of a cozy fantasy log cottage in a voxel-inspired village game.\nPrimary request: flat painted honey-brown oak with broad horizontal flowing wood grain, a few small knots, warm caramel midtones and gentle golden grain strokes. Old crafted oak, subtle hand-painted gouache brush marks, chunky restrained shapes, readable at 128 pixels. No planks or divisions; an uninterrupted wood surface. Wood grain flows horizontally across the whole square. Match cream limestone and lavender roof tiles in storybook fantasy concept art.\nComposition and lighting: orthographic straight-on material swatch filling entire image, perfectly even diffuse illumination; no perspective, no 3D objects, no shadows, no bevel shading, no vignette, no text, border or watermark. Truly seamless edges. Moderate low contrast; avoid dark stripes, distressed cracks, photorealism, high frequency noise or prominent isolated marks.\n",
+      "usage": "World-scale horizontal grain on modeled log courses."
+    }
+  ]
+}

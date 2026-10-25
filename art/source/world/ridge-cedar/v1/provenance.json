@@ -1,0 +1,16 @@
+{
+  "asset": "ridge-cedar",
+  "version": "v1",
+  "status": "unplaced candidate",
+  "tool": "Blender 5.2.2 LTS",
+  "initial_authoring_record": "art/source/world/expansion-kit/v1/author.py",
+  "record_sha256": "9be0b46469dc91f0fe750ea460ace58291eb6147a8e42200c073472ccf319cf1",
+  "seed": 231023,
+  "seed_scope": "deterministic geometry/tile variation only; no AI generation",
+  "texture_source": "art/source/world/textures/v1/manifest.json",
+  "authority": "saved model.blend; normal rebuild uses scripts/world-art.sh build ridge-cedar",
+  "review_edits": [
+    "art/source/world/expansion-kit/v1/refine.py"
+  ],
+  "source_sha256": "4fc49b818a7c931f0a98e570713d1093baf4259721abbe0dcaf870c22adef695"
+}
