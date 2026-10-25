@@ -31,6 +31,8 @@ def exec_argument(value):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--prepare-only", action="store_true", help="Write a reviewable .cache/desktop launcher without installing it")
+    parser.add_argument("--nvidia", action="store_true",
+                        help="Launch on the NVIDIA card of a hybrid-graphics laptop (ROOTWARD_GPU=nvidia); re-run without it to go back")
     args = parser.parse_args()
     godot = shutil.which(os.environ.get("GODOT_BIN", "godot"))
     if not godot:
@@ -38,9 +40,12 @@ def main():
     icon = ROOT / "assets/brand/icon-512.png"
     if not icon.is_file():
         parser.error("The selected icon is missing. Run scripts/art.sh first.")
+    if args.nvidia and not Path("/proc/driver/nvidia").is_dir():
+        parser.error("--nvidia needs the NVIDIA driver, which is not loaded.")
+    environment = [f"GODOT_BIN={godot}"] + (["ROOTWARD_GPU=nvidia"] if args.nvidia else [])
     entry = Template((ROOT / "packaging/rootward-voxel.desktop.in").read_text()).substitute(
         EXEC=" ".join(exec_argument(part) for part in (
-            "/usr/bin/env", f"GODOT_BIN={godot}", ROOT / "scripts/play.sh")),
+            "/usr/bin/env", *environment, ROOT / "scripts/play.sh")),
         GODOT=desktop_value(godot),
         PROJECT=desktop_value(ROOT),
         ICON=desktop_value(icon),
