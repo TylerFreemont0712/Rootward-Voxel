@@ -44,7 +44,7 @@ This is the active pipeline for the approved main-project foundation. Keep the a
 
 ## Follow the guide for the change
 
-The application icon depicts a violet-capped amber lantern, golden roots and teal code brackets. It is separate from the code-drawn in-game glyphs. `project.godot` uses the 256 px PNG; the Linux launcher uses 512 px. `packaging/rootward-voxel.desktop.in` and `scripts/install-desktop.py` produce the applications-menu and desktop shortcuts for the current checkout. Installation needs host Python only; launching uses the existing `scripts/play.sh` and local game runtime.
+The application icon depicts a violet-capped amber lantern, golden roots and teal code brackets. It is separate from the code-drawn in-game glyphs. `project.godot` uses the 256 px PNG; the Linux launcher uses 512 px. `packaging/rootward-voxel.desktop.in` and `scripts/install-desktop.py` produce the applications-menu and desktop shortcuts for the current checkout. Installation needs host Python only; launching uses the existing `scripts/play.sh` and local game runtime. `--nvidia` makes the shortcut set `ROOTWARD_GPU=nvidia`, which `scripts/play.sh` turns into NVIDIA PRIME render offload for the game window only.
 
 | Change | Guide |
 |---|---|

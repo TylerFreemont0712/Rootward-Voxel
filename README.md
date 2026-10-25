@@ -12,6 +12,8 @@ Godot 4.7.2 is installed here. You can also open the root `project.godot` in the
 
 For one-click Linux launching, run `python3 scripts/install-desktop.py` once. It adds **Rootward Voxel** to the applications menu and your existing desktop folder, with a lantern-and-roots icon. The shortcut opens this checkout directly without a terminal. Run the installer again if you move the project or change the Godot location; it records the current Godot executable, including a `GODOT_BIN` override. `--prepare-only` writes a reviewable launcher to `.cache/desktop/rootward-voxel.desktop` without installing it.
 
+On a hybrid-graphics laptop the game uses the system's default GPU, usually the integrated one, which runs it comfortably at 60 fps. To draw it on the NVIDIA card instead (faster, but more power and heat), start it with `ROOTWARD_GPU=nvidia scripts/play.sh`, or install the shortcut with `python3 scripts/install-desktop.py --nvidia`; running the installer again without `--nvidia` switches the shortcut back. See the [frame rate review](pipeline/reviews/2026-10-25-frame-rate-and-gpu.md) for measurements.
+
 The game opens on a title screen drawn over the live valley: **Continue** (when there is a save), **New journey** (name your apprentice), **Character**, **Settings**, **Quit**. The boy is the player. Mira is the village cartographer, joined by Rowan the millwright, Bram the carpenter, Tessa the gardener and Nell the herbalist.
 
 ## Playing
