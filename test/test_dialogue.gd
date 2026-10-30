@@ -89,7 +89,7 @@ func _game_flow() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	game.session.set_physics_process(false)
 	game.view.villagers.set_process(false)
 	var actor: SpriteAdventurer = game.view.villagers.actors.mira
@@ -144,7 +144,7 @@ func _game_flow() -> void:
 	_check(game.notebook_open and game._modals.is_empty() and game.hud.visible and game.session.source == program, "Open notebook preserves the existing draft and restores play presentation")
 	game.close_notebook(true)
 	await game._return_to_title()
-	await game.continue_game()
+	await game.continue_game("kindle-hollow")
 	_check(game._dialogue_read.mira.has("map-notes:1"), "Continue restores read flags for Skip read")
 	game.view.villagers.set_process(false)
 	actor = game.view.villagers.actors.mira
@@ -200,7 +200,7 @@ func _prompts_flow(people: Dictionary) -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	game.session.set_physics_process(false)
 	game.view.villagers.set_process(false)
 	_check(game.hud.get("_interaction") == null and game.prompts != null and game.prompts.get_parent() == game.hud, "The F button is gone; F's prompts are drawn in the world, with the HUD")

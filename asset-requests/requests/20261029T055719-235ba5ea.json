@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "id": "20261029T055719-235ba5ea",
+  "kind": "delete",
+  "title": "Delete Stone Well",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "stone-well",
+    "label": "Stone Well",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/stone-well/v1/model.blend",
+    "runtime": "assets/world/stone-well/model.glb",
+    "manifest": "assets/world/stone-well/manifest.json",
+    "catalog_notes": "A limestone ring 0.9 m across with a timber frame, violet hood and bucket, 1.45 m tall. The footprint is the ring; the hood eave stays within it.",
+    "related_files": [
+      "art/source/world/stone-well/v1/brief.md",
+      "art/source/world/stone-well/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Stone Well",
+      "source": "art/source/world/stone-well/v1/model.blend",
+      "runtime": "assets/world/stone-well/model.glb",
+      "pivot": "ground origin at the ring centre",
+      "logical_footprint": [
+        -0.45,
+        -0.45,
+        0.9,
+        0.9
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A limestone ring 0.9 m across with a timber frame, violet hood and bucket, 1.45 m tall. The footprint is the ring; the hood eave stays within it.",
+      "finish_slots": {
+        "walls": [
+          "plaster"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark",
+          "roof_light"
+        ],
+        "timber": [
+          "wood",
+          "wood_light"
+        ],
+        "masonry": [
+          "stone_warm",
+          "stone_warm_dark"
+        ],
+        "metal": [
+          "iron"
+        ],
+        "fabric": [
+          "leather_light"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:57:19+00:00",
+  "updated": "2026-10-29T06:29:01+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:57:19+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:29:01+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/stone-well/v1/brief.md",
+    "art/source/world/stone-well/v1/model.blend",
+    "art/source/world/stone-well/v1/provenance.json",
+    "assets/world/stone-well/manifest.json",
+    "assets/world/stone-well/model.glb",
+    "assets/world/stone-well/model.glb.import"
+  ]
+}

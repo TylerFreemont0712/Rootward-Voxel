@@ -1,9 +1,0 @@
-{
-  "asset": "crate-stack",
-  "version": "v1",
-  "created": "2026-10-23T08:44:33.861830+00:00",
-  "author": "art/source/world/doodads-kit/v1/farmyard.py",
-  "author_sha256": "0ec1119b6d6d5bd8476bb7ff940242efabfd0d9f82d0fa1e0feb34d15cd5b5d9",
-  "voxel_metres": 0.05,
-  "note": "One-time procedural voxel authoring. model.blend becomes the editable source after this run."
-}

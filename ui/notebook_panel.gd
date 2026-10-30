@@ -1,5 +1,5 @@
 class_name NotebookPanel
-extends PanelContainer
+extends SideDrawer
 ## The Village Notebook: the summonable code menu. Four tabs (Code, Lesson, Reference, World), a Run /
 ## Apply / Undo bar and a result area that explains what happened in plain words. It talks to the
 ## session; it never touches the world directly.
@@ -36,7 +36,7 @@ func setup(game_session: GameSession, game_settings: GameSettings) -> void:
 	session = game_session
 	settings = game_settings
 	theme_type_variation = &"PanelDrawer"
-	var column := UI.vbox(10)
+	var column := UI.vbox(6)
 	add_child(column)
 	column.add_child(_header())
 	column.add_child(_tab_row())
@@ -129,7 +129,7 @@ func _header() -> Control:
 	row.add_child(icon)
 	var titles := UI.vbox(0)
 	titles.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	titles.add_child(UI.heading("Village Notebook", 26))
+	titles.add_child(UI.heading("Village Notebook", 21))
 	titles.add_child(UI.caps("Python · your program changes the world"))
 	row.add_child(titles)
 	var close := UI.icon_button(&"cross", "Close the notebook (E or Esc)", func() -> void: close_requested.emit())
@@ -145,7 +145,7 @@ func _tab_row() -> Control:
 		var button := UI.button(tab, &"", &"ButtonTab")
 		button.toggle_mode = true
 		button.button_group = group
-		button.custom_minimum_size.y = 38
+		button.custom_minimum_size.y = 30
 		button.focus_mode = Control.FOCUS_NONE
 		button.pressed.connect(_show_tab.bind(tab))
 		row.add_child(button)
@@ -244,7 +244,7 @@ func _action_bar() -> Control:
 
 func _result_area() -> Control:
 	var panel := UI.panel(&"PanelInset")
-	panel.custom_minimum_size = Vector2(0, 196)
+	panel.custom_minimum_size = Vector2(0, 130)
 	var scroll := ScrollContainer.new()
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	panel.add_child(scroll)

@@ -30,7 +30,7 @@ func setup(options: Dictionary) -> void:
 	var right := UI.vbox(12)
 	right.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	layout.add_child(right)
-	right.add_child(UI.caps("Apprentice tinker of Kindle Hollow", Pal.BRASS))
+	right.add_child(UI.caps(str(options.get("caption", "Your first morning in the village" if area.movement_lesson else "Apprentice tinker of Kindle Hollow")), Pal.BRASS))
 	_name_edit = LineEdit.new()
 	_name_edit.text = str(options.name)
 	_name_edit.max_length = 16
@@ -49,7 +49,7 @@ func setup(options: Dictionary) -> void:
 	right.add_child(UI.caps("Ideas learned", Pal.VIOLET))
 	right.add_child(_skills(area, options.completed))
 	right.add_child(UI.spacer(0, true))
-	right.add_child(UI.dim("You are the boy apprenticed to the lamplighter. Mira and the other residents live in the village.", 15))
+	right.add_child(UI.dim(str(options.get("blurb", "Your first morning begins at home with Hotaru. Give your program a voice, then teach your keys to move." if area.movement_lesson else "You are the boy apprenticed to the lamplighter. Mira and the other residents live in the village.")), 15))
 	var row := UI.hbox(12)
 	right.add_child(row)
 	if new_game:

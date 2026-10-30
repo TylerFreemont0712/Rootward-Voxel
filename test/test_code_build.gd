@@ -247,7 +247,7 @@ func _epilogue() -> void:
 	var game: Game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await _frames(8)
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	await _frames(6)
 	var session: GameSession = game.session
 	# Before the main arc is done, the optional chapter is not in the journal or on the character screen.
@@ -335,7 +335,7 @@ func _end_to_end() -> void:
 	var game: Game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await _frames(8)
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	await _frames(6)
 	game.ledger = ledger
 	game.area = ledger.area

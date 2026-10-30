@@ -1,0 +1,333 @@
+{
+  "anchor": [
+    352,
+    660
+  ],
+  "cell_size": [
+    704,
+    704
+  ],
+  "directions": [
+    "SE",
+    "SW",
+    "NE",
+    "NW"
+  ],
+  "frames_per_direction": 4,
+  "horizontal_flips": false,
+  "independent_directions": true,
+  "method": "Each physical direction separately painted with imagegen; integer translation only for registration, no resampling or mirrored views.",
+  "opaque_height": 472,
+  "output": "res://art/source/robots/v0.72/tender/movement-v1/movement-atlas.png",
+  "output_sha256": "4e63db199c1c6ca52f334d33f5d1dc8b550c6258d3617da346cfc3c81d967de6",
+  "poses": {
+    "NE": [
+      {
+        "opaque_bounds": [
+          64,
+          107,
+          528,
+          453
+        ],
+        "source_rect": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          30,
+          100
+        ]
+      },
+      {
+        "opaque_bounds": [
+          63,
+          104,
+          528,
+          456
+        ],
+        "source_rect": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          31,
+          100
+        ]
+      },
+      {
+        "opaque_bounds": [
+          64,
+          105,
+          528,
+          455
+        ],
+        "source_rect": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          31,
+          100
+        ]
+      },
+      {
+        "opaque_bounds": [
+          63,
+          105,
+          528,
+          455
+        ],
+        "source_rect": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          31,
+          100
+        ]
+      }
+    ],
+    "NW": [
+      {
+        "opaque_bounds": [
+          102,
+          112,
+          498,
+          444
+        ],
+        "source_rect": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          7,
+          104
+        ]
+      },
+      {
+        "opaque_bounds": [
+          80,
+          112,
+          495,
+          446
+        ],
+        "source_rect": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          32,
+          102
+        ]
+      },
+      {
+        "opaque_bounds": [
+          103,
+          66,
+          496,
+          443
+        ],
+        "source_rect": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          7,
+          151
+        ]
+      },
+      {
+        "opaque_bounds": [
+          80,
+          65,
+          498,
+          446
+        ],
+        "source_rect": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          31,
+          149
+        ]
+      }
+    ],
+    "SE": [
+      {
+        "opaque_bounds": [
+          79,
+          105,
+          546,
+          468
+        ],
+        "source_rect": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          13,
+          87
+        ]
+      },
+      {
+        "opaque_bounds": [
+          47,
+          105,
+          545,
+          469
+        ],
+        "source_rect": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          44,
+          86
+        ]
+      },
+      {
+        "opaque_bounds": [
+          77,
+          48,
+          547,
+          469
+        ],
+        "source_rect": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          14,
+          143
+        ]
+      },
+      {
+        "opaque_bounds": [
+          49,
+          48,
+          549,
+          472
+        ],
+        "source_rect": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          41,
+          140
+        ]
+      }
+    ],
+    "SW": [
+      {
+        "opaque_bounds": [
+          57,
+          106,
+          541,
+          470
+        ],
+        "source_rect": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          22,
+          84
+        ]
+      },
+      {
+        "opaque_bounds": [
+          28,
+          107,
+          543,
+          469
+        ],
+        "source_rect": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          50,
+          84
+        ]
+      },
+      {
+        "opaque_bounds": [
+          57,
+          58,
+          542,
+          470
+        ],
+        "source_rect": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          23,
+          132
+        ]
+      },
+      {
+        "opaque_bounds": [
+          28,
+          58,
+          543,
+          471
+        ],
+        "source_rect": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          50,
+          131
+        ]
+      }
+    ]
+  },
+  "preview_fps": 8,
+  "schema": 1,
+  "source_adapter": "pipeline/prepare_robot_movement.gd",
+  "source_adapter_sha256": "45cdd1465ab2325335d3728ecb6507227c5d5d557fe4bc215c14b6158e0ee3ec",
+  "sources": {
+    "res://art/source/robots/v0.72/tender/movement-v1/NE-generated.png": "9d645e50b04aeab37253c945c2716331c9564857498f0c67c74c830b4e7699da",
+    "res://art/source/robots/v0.72/tender/movement-v1/NW-generated.png": "8bc2bff43efa5c0c7a49abdc1f8c6be1858b49f99e9ddec25aa6f5a04229e3bd",
+    "res://art/source/robots/v0.72/tender/movement-v1/SE-generated.png": "c1095761da4b2921af76dad8249253a7410e23a06ec7f4d89f5dac2a9b30f3b5",
+    "res://art/source/robots/v0.72/tender/movement-v1/SW-generated.png": "cbacce1ac621a612fd4ad2c6fbf8298cc4a4ff9047deed70f8789af433760c66"
+  },
+  "status": "registered sprite movement candidate; current runtime robot models unchanged",
+  "source_adapter_snapshot": "res://art/source/robots/v0.72/tender/movement-v1/registration-adapter.gd"
+}

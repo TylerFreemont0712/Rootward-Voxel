@@ -8,13 +8,13 @@ extends SceneTree
 ## What the yard holds: [item id, where to look for room, facing]. Positions are relative to (37, 7); the tour moves
 ## them to the roomiest open ground. Each is put on the nearest spot the rules allow.
 const YARD: Array = [
-	["stone-well", Vector2(31.5, 11), "S"], ["market-stall", Vector2(37, 11), "S"], ["notice-board", Vector2(41, 11), "S"],
-	["hanging-sign", Vector2(34, 8.5), "S"], ["park-bench", Vector2(37, 8), "S"], ["signpost", Vector2(40, 8), "S"],
-	["dining-table", Vector2(33, 5.5), "S"], ["wooden-chair", Vector2(31.5, 5.5), "E"], ["wooden-chair", Vector2(34.5, 5.5), "W"],
-	["cottage-bed", Vector2(38, 5.5), "S"], ["bookshelf", Vector2(41, 5.5), "S"], ["storage-chest", Vector2(43, 5.5), "S"],
-	["hay-bale", Vector2(32, 3), "S"], ["woodpile", Vector2(35.5, 3), "S"], ["wooden-barrel", Vector2(38.5, 3), "S"],
-	["crate-stack", Vector2(40, 3), "S"], ["wheelbarrow", Vector2(42, 3), "S"], ["flower-pot", Vector2(36.5, 6.5), "S"],
-	["milk-churn", Vector2(39.5, 6.8), "S"], ["watering-can", Vector2(35, 6.8), "S"],
+	
+	["park-bench", Vector2(37, 8), "S"], 
+	["wooden-chair", Vector2(31.5, 5.5), "E"], ["wooden-chair", Vector2(34.5, 5.5), "W"],
+	["bookshelf", Vector2(41, 5.5), "S"], 
+	["woodpile", Vector2(35.5, 3), "S"], ["wooden-barrel", Vector2(38.5, 3), "S"],
+	["wheelbarrow", Vector2(42, 3), "S"], 
+	["watering-can", Vector2(35, 6.8), "S"],
 ]
 
 var game: Game
@@ -32,7 +32,7 @@ func _run() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await _frames(30)
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	await _frames(60)
 	game.open_build()
 	await _frames(70)

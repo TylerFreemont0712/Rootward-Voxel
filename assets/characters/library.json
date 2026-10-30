@@ -74,6 +74,66 @@
         1.0
       ]
     },
+    "sparks_bram": {
+      "atlas": "res://assets/characters/skins/sparks_bram.png",
+      "label": "Bram — Sparks",
+      "selectable": false,
+      "source_sha256": "172d69af5a2d10c0af86aa11fc199aee53ecb2ed64b443ab805fb246c6c21e9a",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_mira": {
+      "atlas": "res://assets/characters/skins/sparks_mira.png",
+      "label": "Mira — Sparks",
+      "selectable": false,
+      "source_sha256": "e7142190a862a08f62e89741f5a7db96f7a476fb96b8cea65213e92c2df263f9",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_nell": {
+      "atlas": "res://assets/characters/skins/sparks_nell.png",
+      "label": "Nell — Sparks",
+      "selectable": false,
+      "source_sha256": "11fa1a998b6d7cc575366a319ba677b2ee078b229a13d604fe6a516b2b43dfdb",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_rowan": {
+      "atlas": "res://assets/characters/skins/sparks_rowan.png",
+      "label": "Rowan — Sparks",
+      "selectable": false,
+      "source_sha256": "287dcc7d46be945623604fe14cd0c893bd6e9cab4817b005980ba118b728f113",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_tessa": {
+      "atlas": "res://assets/characters/skins/sparks_tessa.png",
+      "label": "Tessa — Sparks",
+      "selectable": false,
+      "source_sha256": "59a0a43fb7f9a4f85901c5935b0a2ece94408adead5cd2325f4e93eaafed281e",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
     "tessa": {
       "atlas": "res://assets/characters/skins/tessa.png",
       "label": "Tessa",
@@ -92,7 +152,7 @@
     "frames": "res://assets/characters/adventurer/frames.tres",
     "id": "painted_chibi_v1",
     "manifest": "res://assets/characters/adventurer/manifest.json",
-    "sha256": "136c5c50b15927bbf6313bef91852eddbfe9dea87b693be99b8eb279115ca152",
+    "sha256": "b84741d46f4de4548648268d30ddcf823cd30b1ec5255cacdeaedec23da720d2",
     "sheet_size": [
       1536,
       5376

@@ -98,6 +98,8 @@ func _to_screen(world: Vector3) -> Vector2:
 
 ## The top of a resident's head on screen, smoothed so changing animation frames do not make the mark jitter.
 func _head(id: String) -> Variant:
+	if id=="hotaru" and view!=null and view.companion_present():
+		return _to_screen(view.companion_anchor())
 	if view == null or view.villagers == null or not view.villagers.actors.has(id):
 		return null
 	var actor: SpriteAdventurer = view.villagers.actors[id]
@@ -111,6 +113,10 @@ func _head(id: String) -> Variant:
 
 ## The top of a placed thing on screen, or null if it is not drawn.
 func _top_of_prop(id: String) -> Variant:
+	var link: Dictionary = RoomLinks.find(view.area, id) if view != null else {}
+	if not link.is_empty():
+		var at: Array = link.get("approach", link.at)
+		return _to_screen(Vector3(float(at[0]), view._deck_height(Vector2(float(at[0]),float(at[1]))) + .35, -float(at[1])))
 	var node: Node3D = view.building_node(id) if view != null else null
 	if node == null:
 		return null

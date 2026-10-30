@@ -1,0 +1,13 @@
+{
+  "asset": "robot-heron",
+  "date": "2026-10-29",
+  "previous_source": "art/source/world/robot-heron/v1/model.blend",
+  "previous_source_sha256": "5ad3773a72c03f4f66deec27e2e12b25f9eb856f51da1745f0eeb3ec3e9404fa",
+  "source": "art/source/world/robot-heron/v2/model.blend",
+  "source_sha256": "22fd33eee95021fcd1775b6f2f47aea58236e2f3d77c77e3f53d3b82b91f0140",
+  "edit_record": "art/source/world/sparks-robot-refinement/v1/refine_other_sources.py",
+  "edit_record_sha256": "bd835cfde30c9947c5fc1440f84c72bb2de9bce21271eac79b932d62ba29d7ba",
+  "helper": "art/source/world/sparks-robot-refinement/v1/refine_sources.py",
+  "helper_sha256": "d5adcb1492650674a7c5dab251a3f8f2f77807b23d7eecf0e4ce9abc01b99cac",
+  "note": "Deliberate native geometry refinement preserving adopted root/wheel objects; further edits use the saved source."
+}

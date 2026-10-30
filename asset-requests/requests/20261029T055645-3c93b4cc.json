@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "id": "20261029T055645-3c93b4cc",
+  "kind": "delete",
+  "title": "Delete Mossy Boulder",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "mossy-boulder",
+    "label": "Mossy Boulder",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/mossy-boulder/v1/model.blend",
+    "runtime": "assets/world/mossy-boulder/model.glb",
+    "manifest": "assets/world/mossy-boulder/manifest.json",
+    "catalog_notes": "A rounded grey stone 0.8 m across with a moss cap on top. The widest belly overhangs the proposed footprint by about 0.05 m.",
+    "related_files": [
+      "art/source/world/mossy-boulder/v1/brief.md",
+      "art/source/world/mossy-boulder/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Mossy Boulder",
+      "source": "art/source/world/mossy-boulder/v1/model.blend",
+      "runtime": "assets/world/mossy-boulder/model.glb",
+      "pivot": "ground centre of the base",
+      "logical_footprint": [
+        -0.35,
+        -0.35,
+        0.7,
+        0.7
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A rounded grey stone 0.8 m across with a moss cap on top. The widest belly overhangs the proposed footprint by about 0.05 m.",
+      "finish_slots": {
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:56:45+00:00",
+  "updated": "2026-10-29T06:27:59+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:56:45+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:27:59+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/mossy-boulder/v1/brief.md",
+    "art/source/world/mossy-boulder/v1/model.blend",
+    "art/source/world/mossy-boulder/v1/provenance.json",
+    "assets/world/mossy-boulder/manifest.json",
+    "assets/world/mossy-boulder/model.glb",
+    "assets/world/mossy-boulder/model.glb.import"
+  ]
+}

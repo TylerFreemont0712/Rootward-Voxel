@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-27",
+  "record": "art/source/world/sparks-workshop/v1/review_sources.py",
+  "sources": [
+    {
+      "asset": "workshop-shell",
+      "before": "d9dadf9c8bb64d1b9c98dd0df588504f2942d7e013ad51ab3313d64384e34f53",
+      "backup": "art/source/world/workshop-shell/v1/model.pre-gameplay-review.blend",
+      "after": "430e4b7255897f1cd37d95108356a71a410d220a813513c3bc1481116c604e9f"
+    },
+    {
+      "asset": "workshop-shop-doors",
+      "before": "ef4830c89de7acd39444174367ca630eae0e02036b4352191a2b7c16f3aef2c4",
+      "backup": "art/source/world/workshop-shop-doors/v1/model.pre-gameplay-review.blend",
+      "after": "2802aacf48949016aa1a01507e2ae997676920f908870a88f29e002b0b2098a0"
+    },
+    {
+      "asset": "workshop-repair-bench",
+      "before": "10d5c48d630634c0746d3fe6914e6e9acfc8917f5341d224aa5148b93ed6da39",
+      "backup": "art/source/world/workshop-repair-bench/v1/model.pre-gameplay-review.blend",
+      "after": "746f637f1326d378f793dec303ff6b0ed971556a841b19a7eda32b0668667c4c"
+    },
+    {
+      "asset": "workshop-stove",
+      "before": "fac24621b7da2e761070c5088c91fda9ec375d11099ba8a379f5757ffe1b67e4",
+      "backup": "art/source/world/workshop-stove/v1/model.pre-gameplay-review.blend",
+      "after": "d9c4eab87c0c07de0646e8c0f95b784c6e05466978a9dbecabc667ab87a6a43e"
+    }
+  ]
+}

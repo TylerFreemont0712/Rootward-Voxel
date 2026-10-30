@@ -12,6 +12,12 @@ static func goal_met(area: AreaDef, state: Dictionary, goal: Dictionary) -> bool
 ## {done, total}: how far a goal has got, for the objective readout.
 static func goal_progress(area: AreaDef, state: Dictionary, goal: Dictionary) -> Dictionary:
 	match str(goal.get("type", "")):
+		"hotaru_greeted":
+			return {"done":1 if state.get("hotaru_greeted",false) else 0,"total":1,"noun":"hello spoken"}
+		"movement_ready":
+			return {"done": MovementBindings.tried(state), "total": 4, "noun": "directions tried"}
+		"inspection_read":
+			return {"done": 1 if (state.get("inspections_read", []) as Array).has(str(goal.get("id", ""))) else 0, "total": 1, "noun": "ticket read"}
 		"lamps_lit":
 			var ids: Array[String] = _lamp_targets(area, goal)
 			var lit: int = 0

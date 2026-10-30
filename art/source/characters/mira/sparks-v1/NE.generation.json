@@ -1,0 +1,18 @@
+{
+  "key": "sparks-mira-ne",
+  "dest": "art/source/characters/mira/sparks-v1/NE.png",
+  "prompt": "Use case: precise-object-edit, complete rear-view painted character skin.\nInput image 1 is the approved BACK-RIGHT / NORTHEAST nine-pose sheet, the strict POSE, CAMERA, LAYOUT and SCALE reference. Input image 2 is this character's newly generated FRONT walk sheet, defining the SAME identity, clothing, props and rendering. Image 3 is the selected single-view wardrobe reference.\nRepaint all nine figures in image 1 as this character seen from BEHIND, all facing away and right, showing the back of the head/clothes. No front-facing eyes or faces. Exactly preserve the nine corresponding boot positions, supporting legs, sole angles, arm swing, body scale and direction of image 1. Frames 1\u20138 are the eight different walk phases; frame 9 bottom-right is neutral standing. This is an appearance repaint on the approved motion family, not new poses.\n1254x1254 square transparent RGBA canvas, EXACT 3x3 equal 418x418 cells. Preserve full-body height and head/boot scale from the approved pose template, warm painterly shading and crisp warm dark-brown outlines. Every hat, accessory and carried prop stays inside its own cell. The outfit reads identically from behind: apron straps/ties, satchel strap or cap as appropriate; no belt buckle, front apron pocket, front face or chest gauge painted on the back. Keep props visibly attached and consistent across frames. No shadows, no floor/background, labels, grid lines, extra poses or cropped figures.\nCHARACTER IDENTITY:\nMira, a surveyor/map-maker: medium warm brown skin, friendly brown eyes, short wavy espresso bob and two brass hair clips. Plum collared field jacket with pocket flaps and sage turned cuffs, cream shirt, ochre neckerchief, dark olive trousers, chestnut boots and a compact brown map satchel with two short rolled maps. Exact character identity and clothes of the supplied selected concept.",
+  "refs": [
+    "art/source/adventurer/v9-directional-walk/NE.png",
+    "art/source/characters/mira/sparks-v1/SE.png",
+    "docs/concept/v0.7/art/7-cast/C3b-mira-sprite.png"
+  ],
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-404b19f5-8f0c-4fdc-a86c-c26d6756bb2e.png",
+  "tool": "built-in image_gen.imagegen",
+  "output_sha256": "dd643fc42eb69c099c53853121d5eb461514cc2f8e84c96966658fc9ad2bc859",
+  "reference_sha256": {
+    "art/source/adventurer/v9-directional-walk/NE.png": "0cd31a9cf3e94ad1ecec7937f51512e4a7c7c654c601df71b1ef2fa9a5492187",
+    "art/source/characters/mira/sparks-v1/SE.png": "6e380f17e93578c98566c9fff3fbad0b6ca2f094a23585c9291376e0cac20731",
+    "docs/concept/v0.7/art/7-cast/C3b-mira-sprite.png": "b7e7b3ca18975e61bf95d61f1def9a96e83509909e7cb67e696a7e8606e37931"
+  }
+}

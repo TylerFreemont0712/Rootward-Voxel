@@ -221,24 +221,6 @@
       "audience": "studio"
     },
     {
-      "id": "dining-table",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "dining-table",
-      "title": "Dining Table",
-      "blurb": "A square plank table on four legs.",
-      "audience": "studio"
-    },
-    {
-      "id": "cottage-bed",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "cottage-bed",
-      "title": "Cottage Bed",
-      "blurb": "A low cot with a cream blanket and a pillow.",
-      "audience": "studio"
-    },
-    {
       "id": "bookshelf",
       "category": "doodads",
       "kind": "prop",
@@ -248,30 +230,12 @@
       "audience": "studio"
     },
     {
-      "id": "storage-chest",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "storage-chest",
-      "title": "Storage Chest",
-      "blurb": "A wooden chest with iron straps and a latch.",
-      "audience": "studio"
-    },
-    {
       "id": "hearth-stool",
       "category": "doodads",
       "kind": "prop",
       "asset": "hearth-stool",
       "title": "Hearth Stool",
       "blurb": "A round three-legged stool with a pale cushion.",
-      "audience": "studio"
-    },
-    {
-      "id": "clay-jug",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "clay-jug",
-      "title": "Clay Jug",
-      "blurb": "A glazed clay jug with one handle.",
       "audience": "studio"
     },
     {
@@ -293,24 +257,6 @@
       "audience": "studio"
     },
     {
-      "id": "milk-churn",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "milk-churn",
-      "title": "Milk Churn",
-      "blurb": "A tall iron churn with a lid and a handle.",
-      "audience": "studio"
-    },
-    {
-      "id": "flower-pot",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "flower-pot",
-      "title": "Flower Pot",
-      "blurb": "A terracotta pot of violet, cream and mauve blossoms.",
-      "audience": "studio"
-    },
-    {
       "id": "window-planter",
       "category": "doodads",
       "kind": "prop",
@@ -320,39 +266,12 @@
       "audience": "studio"
     },
     {
-      "id": "hay-bale",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "hay-bale",
-      "title": "Hay Bale",
-      "blurb": "A tied golden bale with a few loose straws.",
-      "audience": "studio"
-    },
-    {
       "id": "wooden-barrel",
       "category": "doodads",
       "kind": "prop",
       "asset": "wooden-barrel",
       "title": "Wooden Barrel",
       "blurb": "An oak barrel banded in iron.",
-      "audience": "studio"
-    },
-    {
-      "id": "crate-stack",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "crate-stack",
-      "title": "Crate Stack",
-      "blurb": "Two timber crates, the top one set off-centre.",
-      "audience": "studio"
-    },
-    {
-      "id": "grain-sacks",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "grain-sacks",
-      "title": "Grain Sacks",
-      "blurb": "Burlap sacks of grain piled two and one.",
       "audience": "studio"
     },
     {
@@ -374,15 +293,6 @@
       "audience": "studio"
     },
     {
-      "id": "cart-wheel",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "cart-wheel",
-      "title": "Cart Wheel",
-      "blurb": "A wagon wheel standing on its rim.",
-      "audience": "studio"
-    },
-    {
       "id": "park-bench",
       "category": "doodads",
       "kind": "prop",
@@ -392,111 +302,12 @@
       "audience": "studio"
     },
     {
-      "id": "signpost",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "signpost",
-      "title": "Signpost",
-      "blurb": "A timber post with two arrow boards.",
-      "audience": "studio"
-    },
-    {
-      "id": "notice-board",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "notice-board",
-      "title": "Notice Board",
-      "blurb": "A board for notices under a violet cap.",
-      "audience": "studio"
-    },
-    {
-      "id": "hanging-sign",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "hanging-sign",
-      "title": "Hanging Sign",
-      "blurb": "An inn sign hanging from an iron arm.",
-      "audience": "studio"
-    },
-    {
-      "id": "market-stall",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "market-stall",
-      "title": "Market Stall",
-      "blurb": "A striped-canopy stall with a plank counter.",
-      "audience": "studio"
-    },
-    {
-      "id": "stone-well",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "stone-well",
-      "title": "Stone Well",
-      "blurb": "A limestone well under a violet hood.",
-      "audience": "studio"
-    },
-    {
       "id": "tree-stump",
       "category": "doodads",
       "kind": "prop",
       "asset": "tree-stump",
       "title": "Tree Stump",
       "blurb": "A cut stump with growth rings.",
-      "audience": "studio"
-    },
-    {
-      "id": "fallen-log",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "fallen-log",
-      "title": "Fallen Log",
-      "blurb": "A mossy trunk lying where it fell.",
-      "audience": "studio"
-    },
-    {
-      "id": "mossy-boulder",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "mossy-boulder",
-      "title": "Mossy Boulder",
-      "blurb": "A rounded grey stone with moss on top.",
-      "audience": "studio"
-    },
-    {
-      "id": "mushroom-cluster",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "mushroom-cluster",
-      "title": "Mushroom Cluster",
-      "blurb": "A clump of spotted mushrooms.",
-      "audience": "studio"
-    },
-    {
-      "id": "stream-reeds",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "stream-reeds",
-      "title": "Stream Reeds",
-      "blurb": "Cattails and reeds for the water's edge.",
-      "audience": "studio"
-    },
-    {
-      "id": "stepping-stones",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "stepping-stones",
-      "title": "Stepping Stones",
-      "blurb": "Flat stones set in gravel to cross muddy ground.",
-      "audience": "studio"
-    },
-    {
-      "id": "rowboat-upturned",
-      "category": "doodads",
-      "kind": "prop",
-      "asset": "rowboat-upturned",
-      "title": "Rowboat Upturned",
-      "blurb": "A rowboat turned over on the bank, oars beside it.",
       "audience": "studio"
     },
     {
@@ -531,7 +342,7 @@
       "category": "furniture",
       "kind": "prop",
       "asset": "hollow-mapmakers-table",
-      "title": "Mapmaker\u2019s Table",
+      "title": "Mapmaker’s Table",
       "blurb": "A brass-edged map table with rolled charts, compass and coloured route markers.",
       "audience": "studio"
     },
@@ -594,17 +405,8 @@
       "category": "workshop",
       "kind": "prop",
       "asset": "hollow-carpenters-bench",
-      "title": "Carpenter\u2019s Bench",
+      "title": "Carpenter’s Bench",
       "blurb": "A substantial workbench with a screw vise, hand plane and saw.",
-      "audience": "studio"
-    },
-    {
-      "id": "hollow-blacksmiths-anvil",
-      "category": "workshop",
-      "kind": "prop",
-      "asset": "hollow-blacksmiths-anvil",
-      "title": "Blacksmith\u2019s Anvil",
-      "blurb": "A faceted iron anvil, tapering horn and hammer on a banded oak stump.",
       "audience": "studio"
     },
     {
@@ -639,7 +441,7 @@
       "category": "workshop",
       "kind": "prop",
       "asset": "hollow-potters-wheel",
-      "title": "Potter\u2019s Wheel",
+      "title": "Potter’s Wheel",
       "blurb": "A clay pot on a turntable with a lower flywheel and a little water bowl.",
       "audience": "studio"
     },
@@ -648,7 +450,7 @@
       "category": "workshop",
       "kind": "prop",
       "asset": "hollow-weavers-loom",
-      "title": "Weaver\u2019s Loom",
+      "title": "Weaver’s Loom",
       "blurb": "A framed hand loom with visible warp threads, violet cloth and a shuttle.",
       "audience": "studio"
     },
@@ -671,20 +473,11 @@
       "audience": "studio"
     },
     {
-      "id": "hollow-bookbinders-press",
-      "category": "workshop",
-      "kind": "prop",
-      "asset": "hollow-bookbinders-press",
-      "title": "Bookbinder\u2019s Press",
-      "blurb": "Twin screw uprights squeeze a brass-cornered book between timber platens.",
-      "audience": "studio"
-    },
-    {
       "id": "hollow-bakers-oven",
       "category": "market",
       "kind": "prop",
       "asset": "hollow-bakers-oven",
-      "title": "Baker\u2019s Oven",
+      "title": "Baker’s Oven",
       "blurb": "A cream masonry oven with an arched mouth, violet cap and stacked firewood.",
       "audience": "studio"
     },
@@ -711,7 +504,7 @@
       "category": "market",
       "kind": "prop",
       "asset": "hollow-fishmongers-counter",
-      "title": "Fishmonger\u2019s Counter",
+      "title": "Fishmonger’s Counter",
       "blurb": "Three silver fish rest on a teal counter with a bucket beneath.",
       "audience": "studio"
     },
@@ -722,15 +515,6 @@
       "asset": "hollow-spice-cart",
       "title": "Spice Cart",
       "blurb": "A wheeled cart with a violet awning and open jars of colourful spices.",
-      "audience": "studio"
-    },
-    {
-      "id": "hollow-covered-handcart",
-      "category": "market",
-      "kind": "prop",
-      "asset": "hollow-covered-handcart",
-      "title": "Covered Handcart",
-      "blurb": "A little timber wagon with curved cream cover, iron-rimmed wheels and a tow bar.",
       "audience": "studio"
     },
     {
@@ -749,15 +533,6 @@
       "asset": "hollow-pottery-shelf",
       "title": "Pottery Shelf",
       "blurb": "Terracotta jars, teal glazed jugs and cream bowls on three open timber shelves.",
-      "audience": "studio"
-    },
-    {
-      "id": "hollow-candle-stand",
-      "category": "market",
-      "kind": "prop",
-      "asset": "hollow-candle-stand",
-      "title": "Candle Stand",
-      "blurb": "A brass three-branch candle stand with wax drips and warm flames.",
       "audience": "studio"
     },
     {
@@ -788,15 +563,6 @@
       "audience": "studio"
     },
     {
-      "id": "hollow-chicken-coop",
-      "category": "garden",
-      "kind": "prop",
-      "asset": "hollow-chicken-coop",
-      "title": "Chicken Coop",
-      "blurb": "A violet-roofed coop with a ladder, nesting boxes and small shuttered windows.",
-      "audience": "studio"
-    },
-    {
       "id": "hollow-seedling-tray",
       "category": "garden",
       "kind": "prop",
@@ -824,15 +590,6 @@
       "audience": "studio"
     },
     {
-      "id": "hollow-field-scarecrow",
-      "category": "garden",
-      "kind": "prop",
-      "asset": "hollow-field-scarecrow",
-      "title": "Field Scarecrow",
-      "blurb": "A straw hat, russet coat and teal scarf on a forked timber field marker.",
-      "audience": "studio"
-    },
-    {
       "id": "hollow-rain-barrel",
       "category": "garden",
       "kind": "prop",
@@ -848,24 +605,6 @@
       "asset": "hollow-butter-churn",
       "title": "Butter Churn",
       "blurb": "A tall stave churn with iron bands, a plunger and a small cream cloth.",
-      "audience": "studio"
-    },
-    {
-      "id": "hollow-hay-handcart",
-      "category": "garden",
-      "kind": "prop",
-      "asset": "hollow-hay-handcart",
-      "title": "Hay Handcart",
-      "blurb": "A two-wheeled farm cart piled with bound golden hay and a wooden pitchfork.",
-      "audience": "studio"
-    },
-    {
-      "id": "hollow-copper-brazier",
-      "category": "village-magic",
-      "kind": "prop",
-      "asset": "hollow-copper-brazier",
-      "title": "Copper Brazier",
-      "blurb": "An embossed copper bowl on three iron legs with split logs and amber fire.",
       "audience": "studio"
     },
     {
@@ -927,7 +666,7 @@
       "category": "village-magic",
       "kind": "prop",
       "asset": "hollow-wayfarers-chest",
-      "title": "Wayfarer\u2019s Chest",
+      "title": "Wayfarer’s Chest",
       "blurb": "An iron-strapped travel chest with an arched violet lid and brass clasp.",
       "audience": "studio"
     },
@@ -947,6 +686,34 @@
       "asset": "hollow-weather-vane",
       "title": "Weather Vane",
       "blurb": "A brass sun-and-rooster vane above four compass arms on a stone foot.",
+      "audience": "studio"
+    },
+    {
+      "id": "painted-cottage",
+      "category": "houses",
+      "kind": "building",
+      "asset": "painted-cottage",
+      "title": "Painted cottage",
+      "blurb": "Honey timber, violet clay tiles and fine drawn edges.",
+      "audience": "studio"
+    },
+    {
+      "id": "painted-oak",
+      "category": "trees",
+      "kind": "tree",
+      "asset": "painted-oak",
+      "title": "Painted leafy oak",
+      "blurb": "A bent warm trunk and sculpted, dappled voxel leaves.",
+      "audience": "studio",
+      "size": 1.0
+    },
+    {
+      "id": "painted-garden-fence",
+      "category": "doodads",
+      "kind": "prop",
+      "asset": "painted-garden-fence",
+      "title": "Painted garden fence",
+      "blurb": "Two warm rails, hewn posts and dark drawn grain.",
       "audience": "studio"
     }
   ]

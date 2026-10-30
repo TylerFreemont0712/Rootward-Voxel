@@ -24,7 +24,7 @@ func _run() -> void:
 	var image := Image.load_from_file(ProjectSettings.globalize_path(spec.runtime_sheet))
 	_check(image.detect_alpha(), "Character atlas has real transparency")
 	_check((load(spec.runtime_sheet) as Texture2D).get_image().has_mipmaps(), "Sprite imports mipmaps")
-	_check(is_equal_approx(8.0 / float(spec.fps), 2.0 * preload("res://core/lab_world.gd").STEP_SECONDS), "Eight poses retain the half-second/two-step cycle")
+	_check(is_equal_approx(8.0 / float(spec.fps), 2.0 * preload("res://core/lab_world.gd").STEP_SECONDS), "Eight poses retain their two-step cycle")
 	for direction: String in spec.directions:
 		var record: Dictionary = provenance.directions[direction]
 		var exact := true

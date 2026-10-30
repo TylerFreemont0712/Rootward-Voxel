@@ -59,7 +59,7 @@ func _run() -> void:
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	game.session.set_physics_process(false)
 	game.set_process_unhandled_key_input(false)
 	game._hint_timer.stop()
@@ -82,7 +82,7 @@ func _run() -> void:
 		panel.close()
 		game.save_now()
 		await game._return_to_title()
-		await game.continue_game()
+		await game.continue_game("kindle-hollow")
 		_check(game.inside_house() and game.session.state.memory.get("shop")==pair[1] and game.area.interior.finishes.floor=="terracotta_tile","Continue restores this shop's room state and finish")
 		await _shot(pair[1]+"-room")
 		_visit(Vector2i(game.area.interior.exit[0],game.area.interior.exit[1]))

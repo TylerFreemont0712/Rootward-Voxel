@@ -1,0 +1,276 @@
+{
+  "eye_rectangles": [
+    [
+      102.0,
+      101.0,
+      43.0,
+      42.0
+    ],
+    [
+      157.0,
+      94.0,
+      30.0,
+      42.0
+    ]
+  ],
+  "inputs": {
+    "res://art/source/characters/tessa/sparks-v1/NE.png": "da2d44173f1cdb4b15406bed327be83c028e0c4cb9f1e02c3daab43282808374",
+    "res://art/source/characters/tessa/sparks-v1/SE.png": "2e642c04ab0a96165149067a60e3f902b75e7077fad0e49720e09a7afde863f6",
+    "res://art/source/characters/tessa/sparks-v1/authoring.json": "3ff1f5f20e371c952ba26bb5d4e1b3c366bc05c344f764808128cc8e56d3a68d",
+    "res://art/source/characters/tessa/sparks-v1/blink-se.png": "6ac70481c8a9bd326eb653c38d76c83200ee9579509192602e504d8d66241f73",
+    "res://art/source/characters/tessa/sparks-v1/idle-se.png": "dc18c669d2955a644990600a10871fda4914bbc5b40eb93fc5b37d0884b49320"
+  },
+  "method": "Whole figures recovered from uneven generated rows; integer translations only, no resampling. Existing eye-only blink differences translated onto the recovered complete neutral. Original paintings retained in source_version.",
+  "outputs": {
+    "NE.png": "ca6189b9d19bf3ee66fa590320a78ed86508f711f0a65a0be1fefb4ddcea2642",
+    "NW.png": "3d25e5ad0a7a3cbbe59278924c254852c047cf27e155f8b800f6f11c30ea713b",
+    "SE.png": "da759d03659da5b84b22047d6c5a7b3e8c3559690d22f75b7589ab83989c12c0",
+    "SW.png": "43cccdef54543ca7955ad4d84cec6d1023b1d4269207be3290b69a5e4e95b719",
+    "blink-se.png": "2ff5384f48b723d653f36760e76b090205e3288b0843f8d4fa280c79db62737e",
+    "blink-sw.png": "27675a419bd4f8189866c27e47b127bc03c0f2e9698373681779be7fedb4285a",
+    "idle-se.png": "b11b45ed532c2f2a8d1ef1571eb7001740cf36cf5006bae1f8610810bb82e553"
+  },
+  "registrations": {
+    "NE": [
+      {
+        "destination": [
+          0,
+          19
+        ],
+        "source_rect": [
+          0,
+          20,
+          418,
+          389
+        ],
+        "vertical_translation": -1
+      },
+      {
+        "destination": [
+          418,
+          19
+        ],
+        "source_rect": [
+          418,
+          20,
+          418,
+          389
+        ],
+        "vertical_translation": -1
+      },
+      {
+        "destination": [
+          836,
+          18
+        ],
+        "source_rect": [
+          836,
+          19,
+          418,
+          390
+        ],
+        "vertical_translation": -1
+      },
+      {
+        "destination": [
+          0,
+          449
+        ],
+        "source_rect": [
+          0,
+          435,
+          418,
+          377
+        ],
+        "vertical_translation": 14
+      },
+      {
+        "destination": [
+          418,
+          448
+        ],
+        "source_rect": [
+          418,
+          435,
+          418,
+          378
+        ],
+        "vertical_translation": 13
+      },
+      {
+        "destination": [
+          836,
+          443
+        ],
+        "source_rect": [
+          836,
+          434,
+          418,
+          383
+        ],
+        "vertical_translation": 9
+      },
+      {
+        "destination": [
+          0,
+          871
+        ],
+        "source_rect": [
+          0,
+          837,
+          418,
+          373
+        ],
+        "vertical_translation": 34
+      },
+      {
+        "destination": [
+          418,
+          871
+        ],
+        "source_rect": [
+          418,
+          837,
+          418,
+          373
+        ],
+        "vertical_translation": 34
+      },
+      {
+        "destination": [
+          836,
+          864
+        ],
+        "source_rect": [
+          836,
+          838,
+          418,
+          380
+        ],
+        "vertical_translation": 26
+      }
+    ],
+    "SE": [
+      {
+        "destination": [
+          0,
+          16
+        ],
+        "source_rect": [
+          0,
+          16,
+          418,
+          392
+        ],
+        "vertical_translation": 0
+      },
+      {
+        "destination": [
+          418,
+          11
+        ],
+        "source_rect": [
+          418,
+          16,
+          418,
+          397
+        ],
+        "vertical_translation": -5
+      },
+      {
+        "destination": [
+          836,
+          10
+        ],
+        "source_rect": [
+          836,
+          15,
+          418,
+          398
+        ],
+        "vertical_translation": -5
+      },
+      {
+        "destination": [
+          0,
+          429
+        ],
+        "source_rect": [
+          0,
+          428,
+          418,
+          397
+        ],
+        "vertical_translation": 1
+      },
+      {
+        "destination": [
+          418,
+          436
+        ],
+        "source_rect": [
+          418,
+          431,
+          418,
+          390
+        ],
+        "vertical_translation": 5
+      },
+      {
+        "destination": [
+          836,
+          435
+        ],
+        "source_rect": [
+          836,
+          430,
+          418,
+          391
+        ],
+        "vertical_translation": 5
+      },
+      {
+        "destination": [
+          0,
+          853
+        ],
+        "source_rect": [
+          0,
+          831,
+          418,
+          391
+        ],
+        "vertical_translation": 22
+      },
+      {
+        "destination": [
+          418,
+          856
+        ],
+        "source_rect": [
+          418,
+          833,
+          418,
+          388
+        ],
+        "vertical_translation": 23
+      },
+      {
+        "destination": [
+          836,
+          858
+        ],
+        "source_rect": [
+          836,
+          834,
+          418,
+          386
+        ],
+        "vertical_translation": 24
+      }
+    ]
+  },
+  "source_adapter": "pipeline/reflow_cast_source.gd",
+  "source_adapter_sha256": "5ab55be15ec4de358a52c95d0d6379a9a6ff6e1eeb1ccef3166fdf43e707097a",
+  "source_version": "res://art/source/characters/tessa/sparks-v1/"
+}

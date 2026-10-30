@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed by built-in tool",
+  "name": "E — Guildhall Square",
+  "role": "Combined D square and C guild hall, flatter and more open; new concept candidate",
+  "prompt_file": "prompt.json",
+  "prompt_file_sha256": "b15a1162cd30898c865cf8efb5596ebdf401a003bbea1cbbd35d468f0c8d620a",
+  "prompt_sha256": "75d72d028393cc091b4e3a713ef9334f5b7351f8a4ee992046fc15ed843605a8",
+  "references": [
+    {
+      "path": "art/source/world/sparks-square/v2-city-concepts/D-lantern-exchange.png",
+      "role": "D: primary square and power beacon",
+      "sha256": "8b327bb25c9e3f49e3197f41eabff4778e1062275a9c5f70093440d5ef370b5a"
+    },
+    {
+      "path": "art/source/world/sparks-square/v2-city-concepts/C-terraced-exchange.png",
+      "role": "C: guild hall architecture only; remove the terraces",
+      "sha256": "2a601336ac2252f5ea47a9307dd4faa08faaa744c230192011000e3cb51a66d6"
+    },
+    {
+      "path": "evidence/sparks-workshop/spindle-lane/1600/01-arrival.png",
+      "role": "Approved workshop exterior: style, scale and physical adjacency",
+      "sha256": "f86164ad1fcf567831e6c0cd1933b57a6775a74d88e886c85be1a75247e03b6d"
+    }
+  ],
+  "output": {
+    "path": "art/source/world/sparks-square/v3-guildhall-square/E-guildhall-square.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "53fe10c8ff47f1468e474d2166a2d197b892c3043f36d795c30f9e6f92c9817b",
+    "original_generated_path": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-5006c755-87b7-401c-9340-b3d2ba972923.png"
+  },
+  "runtime_status": "Concept reference only. Existing source models and playable area are preserved."
+}

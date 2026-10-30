@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "asset": "square-timber-store",
+  "version": "v1",
+  "source": "art/source/world/square-timber-store/v1/model.blend",
+  "source_sha256": "b98925421119fe196934d9f29567da94f06ade0631175b3789c9cab6746d4489",
+  "runtime": "assets/world/square-timber-store/model.glb",
+  "runtime_sha256": "6c82eacffd77e6579a237b141974fc3093a2594d84d0d916486d57333385350d",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.80799996852875,
+      -0.00571072101593018,
+      -0.830000042915344,
+      2.02999997138977,
+      0.769999980926514,
+      1.52473282814026
+    ],
+    "geometry_sha256": "efcb93fb879a8b4a8a1477eadbb1a63ed2d75d1e5ce1f8f05cf17111bcb4797a",
+    "material_records": {
+      "square_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_ochre": {
+        "albedo": [
+          7608,
+          6039,
+          3333,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_red": {
+        "albedo": [
+          7098,
+          2745,
+          2275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_red_dark": {
+        "albedo": [
+          5451,
+          2000,
+          1608,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_steel": {
+        "albedo": [
+          4275,
+          4667,
+          4902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_teal": {
+        "albedo": [
+          2471,
+          4824,
+          4549,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_teal_dark": {
+        "albedo": [
+          1922,
+          3725,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_wood_light": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "square_iron",
+      "square_ochre",
+      "square_red",
+      "square_red_dark",
+      "square_steel",
+      "square_teal",
+      "square_teal_dark",
+      "square_wood",
+      "square_wood_dark",
+      "square_wood_light"
+    ],
+    "meshes": 10,
+    "triangles": 4908
+  }
+}

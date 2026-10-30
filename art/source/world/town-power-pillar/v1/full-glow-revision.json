@@ -1,0 +1,16 @@
+{
+  "asset": "town-power-pillar",
+  "date": "2026-10-29",
+  "record": "art/source/world/square-hub/v1/pillar_glow_revision.py",
+  "backup": "model.pre-full-glow.blend",
+  "glass_face": [
+    1.12,
+    0.52
+  ],
+  "hangs": [
+    -0.7,
+    -14.0
+  ],
+  "hoops": 2.4,
+  "note": "The stone stiles replaced by one full-width glass shaft wrapping the sides; capital and plinth kept."
+}

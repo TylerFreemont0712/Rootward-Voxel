@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "painted-garden-fence",
+  "version": "v1",
+  "source": "art/source/world/painted-garden-fence/v1/model.blend",
+  "source_sha256": "18deb44276690f4351c0f3f3a15d64bf9290e8b0aa4f2b9ab29be5bb706b4ae5",
+  "runtime": "assets/world/painted-garden-fence/model.glb",
+  "runtime_sha256": "142022fb99ef0098e8569882f3d6be898cab5bea11ca8b747887f717408ffcca",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.36000001430511,
+      0.0,
+      -0.159999996423721,
+      1.36000001430511,
+      0.970000028610229,
+      0.159999996423721
+    ],
+    "geometry_sha256": "826c71abd0807c363cbcbe71005e75b38d222046030eba812fc19c27b5301936",
+    "material_records": {
+      "painted_ink": {
+        "albedo": [
+          2706,
+          2549,
+          2078,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "painted_oak": {
+        "albedo": [
+          5961,
+          4039,
+          2314,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "painted_oak_dark": {
+        "albedo": [
+          3882,
+          2706,
+          1765,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "painted_oak_light": {
+        "albedo": [
+          7412,
+          5412,
+          3020,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "painted_ink",
+      "painted_oak",
+      "painted_oak_dark",
+      "painted_oak_light"
+    ],
+    "meshes": 22,
+    "triangles": 920
+  }
+}

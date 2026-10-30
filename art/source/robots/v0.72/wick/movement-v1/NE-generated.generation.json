@@ -1,0 +1,17 @@
+{
+  "id": "wick",
+  "dir": "NE",
+  "key": "robot-motion-wick-ne-caster-fix",
+  "dest": "art/source/robots/v0.72/wick/movement-v1/NE-generated.png",
+  "refs": [
+    "art/source/robots/v0.72/wick/movement-v1/NE-first-attempt.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Preserve this exact transparent four-key 2x2 robot sprite sheet, its full canvas, all poses, camera, pole LEFT hand, cap, lantern, cream/teal body, eyes-free REAR head, rear service seam, two large drive wheels, wheel hub index phases, painterly detail and spacing. Change ONLY the erroneous small caster showing under the near rear edge of the motor base in all four figures: the actual caster is on the FRONT of the robot, which is hidden in this rear view. Remove that little caster and its brass fork from the visible rear underside and show a clean, rounded, supported chassis edge between the TWO large drive wheels. The front caster may remain fully occluded behind the chassis. Do not add another visible wheel or shift any other part. Preserve actual transparency, no new background or shadow. Do not crop, scale or horizontally flip the figures.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-29905027-a3b6-4394-a367-4d2810f1f811.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "f374b886e71e0af509190f6d3f91605c10ad75f0d1ff39688a7b3e70e58e12dc",
+  "reference_sha256": {
+    "art/source/robots/v0.72/wick/movement-v1/NE-first-attempt.png": "71331cb3104178d9bfdc9c9a69d6d488ae0dc9cdcd74828a5e095df037dae406"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "schema": 1,
+  "id": "20261029T055701-51a1c2cc",
+  "kind": "delete",
+  "title": "Delete Reference Cottage",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "reference-cottage",
+    "label": "Reference Cottage",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/reference-cottage/v1/model.blend",
+    "runtime": "assets/world/reference-cottage/model.glb",
+    "manifest": "assets/world/reference-cottage/manifest.json",
+    "catalog_notes": "Separate comparison building for Village Morning. New geometry and imagegen-painted violet clay/honey oak; three Godot review passes. Original morning-home and Concept Cottage source preserved.",
+    "related_files": [
+      "art/source/world/reference-cottage/v1/author.py",
+      "art/source/world/reference-cottage/v1/brief.md",
+      "art/source/world/reference-cottage/v1/pass-02.json",
+      "art/source/world/reference-cottage/v1/pass-03.json",
+      "art/source/world/reference-cottage/v1/provenance.json",
+      "art/source/world/reference-cottage/v1/refine_pass02.py",
+      "art/source/world/reference-cottage/v1/refine_pass03.py"
+    ],
+    "usage_files": [
+      "content/areas/village-morning.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_morning_comparison",
+      "label": "Reference Cottage",
+      "source": "art/source/world/reference-cottage/v1/model.blend",
+      "runtime": "assets/world/reference-cottage/model.glb",
+      "pivot": "Ground center; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -2,
+        -1.8,
+        4,
+        3.6
+      ],
+      "collision_rects": [
+        [
+          -2.04,
+          -1.77,
+          4.08,
+          3.75
+        ],
+        [
+          -2.04,
+          -2.19,
+          1.45,
+          0.42
+        ],
+        [
+          0.59,
+          -2.19,
+          1.45,
+          0.42
+        ],
+        [
+          -2.05,
+          -2.9,
+          1.34,
+          1.03
+        ],
+        [
+          0.8,
+          -2.53,
+          1.14,
+          0.66
+        ],
+        [
+          -2.51,
+          0.64,
+          0.7,
+          0.74
+        ]
+      ],
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "plane": 1.985,
+        "width": 1.15,
+        "height": 2.135,
+        "bottom": 0.28,
+        "kind": "recessed arched oak with four blue upper panes",
+        "threshold": "dressed limestone",
+        "steps": [
+          [
+            3.15,
+            2.56,
+            1.8,
+            0.12
+          ],
+          [
+            2.72,
+            1.47,
+            1.55,
+            0.26
+          ]
+        ],
+        "hinge": "DoorHinge"
+      },
+      "behavior": "Detailed concept reconstruction with hinged entry and a separate saved room instance. Wall, garden, planter and barrel footprints block movement; roof overhang does not.",
+      "notes": "Separate comparison building for Village Morning. New geometry and imagegen-painted violet clay/honey oak; three Godot review passes. Original morning-home and Concept Cottage source preserved.",
+      "finish_slots": {
+        "walls": [
+          "study_oak",
+          "study_oak_warm",
+          "study_oak_light"
+        ],
+        "roof": [
+          "study_violet",
+          "study_violet_light",
+          "study_violet_dark",
+          "study_tile_edge",
+          "study_clay_under"
+        ],
+        "timber": [
+          "study_timber",
+          "study_door_oak",
+          "study_endgrain",
+          "study_endgrain_dark"
+        ],
+        "masonry": [
+          "study_stone",
+          "study_stone_light",
+          "study_stone_warm",
+          "study_mortar"
+        ],
+        "metal": [
+          "study_iron",
+          "study_brass"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:57:01+00:00",
+  "updated": "2026-10-29T05:57:01+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:57:01+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: painted-cottage"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "An area presentation selects this asset."
+    },
+    {
+      "path": "content/areas/village-morning.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "pipeline/art-catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_reference_cottage.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_illustrated_village.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

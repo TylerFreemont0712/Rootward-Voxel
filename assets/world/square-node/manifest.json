@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "asset": "square-node",
+  "version": "v1",
+  "source": "art/source/world/square-node/v1/model.blend",
+  "source_sha256": "1cd9c4c086f2f454ff3a65eb5bb4988cf51009da3b9e8b884883deaeb11fd2f7",
+  "runtime": "assets/world/square-node/model.glb",
+  "runtime_sha256": "60547f7c0570d97f9c3f37b0a15eb744eb4369c3234096e8bbb609f3ac0b1ac2",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.479999989271164,
+      0.0,
+      -0.300000011920929,
+      0.479999989271164,
+      2.02999997138977,
+      0.300000011920929
+    ],
+    "geometry_sha256": "83f7c45360741ff110e56991389f002d1a6ea7f907c6730bc4e36ca65304e66f",
+    "material_records": {
+      "square_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_enamel_cream": {
+        "albedo": [
+          9255,
+          8863,
+          7843,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_ink": {
+        "albedo": [
+          3137,
+          2392,
+          1882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_lamp_glass": {
+        "albedo": [
+          10000,
+          8784,
+          6275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_steel_dark": {
+        "albedo": [
+          2039,
+          2431,
+          2667,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_teal": {
+        "albedo": [
+          2471,
+          4824,
+          4549,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_teal_dark": {
+        "albedo": [
+          1922,
+          3725,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_window": {
+        "albedo": [
+          2039,
+          3255,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "square_brass",
+      "square_enamel_cream",
+      "square_ink",
+      "square_lamp_glass",
+      "square_limestone",
+      "square_steel_dark",
+      "square_teal",
+      "square_teal_dark",
+      "square_window"
+    ],
+    "meshes": 9,
+    "triangles": 2378
+  }
+}

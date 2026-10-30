@@ -1,0 +1,10 @@
+{
+  "asset": "hotaru-robot",
+  "version": "v1",
+  "date": "2026-10-26",
+  "derived_from": null,
+  "brief": "docs/concept/v0.7/03-robot-companion.md",
+  "authoring_record": "author.py",
+  "authoring_record_sha256": "ef06118847eaf4590cf42b7cd52ca7cbeaa3afa59bd0d28b7a0196f67942f2c5",
+  "note": "New model authored from the v0.7 robot companion design. model.blend is now authority."
+}

@@ -1,0 +1,446 @@
+{
+  "schema": 1,
+  "asset": "haverlund-lane-set",
+  "version": "v1",
+  "source": "art/source/world/haverlund-lane-set/v1/model.blend",
+  "source_sha256": "4ef25674f1974c97305938495f7c6a370079131cdec5c548d9f83a7d14279dc5",
+  "runtime": "assets/world/haverlund-lane-set/model.glb",
+  "runtime_sha256": "9d3d03ec44b1a5de93e94a041cb7fa0f81b785c20cc09f972e796434dd75ea8d",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -3.45000076293945,
+      -1.60000014305115,
+      -29.7000007629395,
+      23.7000007629395,
+      5.39839506149292,
+      1.56989812850952
+    ],
+    "geometry_sha256": "cc856b97dc159084775eb8bc7ebabee3e83757bd9d6d95507e94bf0ce922c1e8",
+    "material_records": {
+      "grid_bed": {
+        "albedo": [
+          3035,
+          3318,
+          3227,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "grid_bronze": {
+        "albedo": [
+          6097,
+          5271,
+          3811,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "grid_glass": {
+        "albedo": [
+          6800,
+          5271,
+          2828,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_cat": {
+        "albedo": [
+          4902,
+          5098,
+          5216,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_cat_light": {
+        "albedo": [
+          7882,
+          7961,
+          7765,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_ceramic": {
+        "albedo": [
+          7137,
+          6784,
+          5686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_chalk": {
+        "albedo": [
+          9529,
+          9373,
+          8941,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_cobbles": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "66ca389b305a99aa5a0d43690a6be756d098285882c69e76c61f00a0417bca09"
+      },
+      "lane_cream": {
+        "albedo": [
+          9098,
+          8745,
+          7922,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_enamel_blue": {
+        "albedo": [
+          1843,
+          3725,
+          4784,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flags": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "f941b1f207c57ee7845ac7de975562f91530049fe0260ace5fc64051b83a6d58"
+      },
+      "lane_flower_blue": {
+        "albedo": [
+          4980,
+          6196,
+          8392,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_pink": {
+        "albedo": [
+          8980,
+          6039,
+          6588,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_violet": {
+        "albedo": [
+          6078,
+          5176,
+          7686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_white": {
+        "albedo": [
+          9647,
+          9412,
+          8863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_yellow": {
+        "albedo": [
+          9216,
+          7725,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_grass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "39b26b9bc0b466eb4bfc09e7c0a64cbe9d86e59c40a95a3ee100c8b0a5079dce"
+      },
+      "lane_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf": {
+        "albedo": [
+          3569,
+          5412,
+          2706,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf_dark": {
+        "albedo": [
+          2471,
+          4157,
+          2353,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf_light": {
+        "albedo": [
+          5255,
+          6784,
+          3608,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone_pale": {
+        "albedo": [
+          9333,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone_shade": {
+        "albedo": [
+          7686,
+          6980,
+          5569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone_warm": {
+        "albedo": [
+          8471,
+          7647,
+          6118,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_ochre": {
+        "albedo": [
+          7608,
+          6039,
+          3333,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_rail": {
+        "albedo": [
+          4863,
+          5176,
+          5294,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_red": {
+        "albedo": [
+          7098,
+          2745,
+          2275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_rock": {
+        "albedo": [
+          6157,
+          5686,
+          4863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_soil": {
+        "albedo": [
+          4196,
+          3216,
+          2510,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_soil_dark": {
+        "albedo": [
+          3098,
+          2353,
+          1804,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_tunnel": {
+        "albedo": [
+          1647,
+          1412,
+          1255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_water": {
+        "albedo": [
+          3686,
+          5961,
+          6275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_white": {
+        "albedo": [
+          9490,
+          9176,
+          8471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_light": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "grid_bed",
+      "grid_bronze",
+      "grid_glass",
+      "lane_brass",
+      "lane_cat",
+      "lane_cat_light",
+      "lane_ceramic",
+      "lane_chalk",
+      "lane_cobbles",
+      "lane_cream",
+      "lane_enamel_blue",
+      "lane_flags",
+      "lane_flower_blue",
+      "lane_flower_pink",
+      "lane_flower_violet",
+      "lane_flower_white",
+      "lane_flower_yellow",
+      "lane_grass",
+      "lane_iron",
+      "lane_leaf",
+      "lane_leaf_dark",
+      "lane_leaf_light",
+      "lane_limestone",
+      "lane_limestone_pale",
+      "lane_limestone_shade",
+      "lane_limestone_warm",
+      "lane_ochre",
+      "lane_rail",
+      "lane_red",
+      "lane_rock",
+      "lane_soil",
+      "lane_soil_dark",
+      "lane_tunnel",
+      "lane_water",
+      "lane_white",
+      "lane_wood",
+      "lane_wood_dark",
+      "lane_wood_light"
+    ],
+    "meshes": 39,
+    "triangles": 358132
+  }
+}

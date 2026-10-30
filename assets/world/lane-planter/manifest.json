@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "asset": "lane-planter",
+  "version": "v1",
+  "source": "art/source/world/lane-planter/v1/model.blend",
+  "source_sha256": "2aa6fc580f4685ec3fe4a8173db7502897b18ccf9e5bea1e0bd1016652c99668",
+  "runtime": "assets/world/lane-planter/model.glb",
+  "runtime_sha256": "5d6883f463ae2d63682723307c28944a4652cfcd339035efa4b41aa1f20c9631",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.560000002384186,
+      -0.00999999046325684,
+      -0.219999998807907,
+      0.560000002384186,
+      0.607911705970764,
+      0.256929129362106
+    ],
+    "geometry_sha256": "6759ea4b482373b67d086df6b9d08fdb86151dfd71252e6ca7919750c1594f99",
+    "material_records": {
+      "lane_flower_pink": {
+        "albedo": [
+          8980,
+          6039,
+          6588,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_red": {
+        "albedo": [
+          8118,
+          3098,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_white": {
+        "albedo": [
+          9647,
+          9412,
+          8863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf": {
+        "albedo": [
+          3569,
+          5412,
+          2706,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf_dark": {
+        "albedo": [
+          2471,
+          4157,
+          2353,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf_light": {
+        "albedo": [
+          5255,
+          6784,
+          3608,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_soil": {
+        "albedo": [
+          4196,
+          3216,
+          2510,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_flower_pink",
+      "lane_flower_red",
+      "lane_flower_white",
+      "lane_iron",
+      "lane_leaf",
+      "lane_leaf_dark",
+      "lane_leaf_light",
+      "lane_soil",
+      "lane_wood",
+      "lane_wood_dark"
+    ],
+    "meshes": 10,
+    "triangles": 13032
+  }
+}

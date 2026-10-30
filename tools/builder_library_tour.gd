@@ -23,7 +23,7 @@ func _run() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	game.session.set_physics_process(false)
 	game.set_process_unhandled_key_input(false)
 	game._hint_timer.stop()
@@ -121,7 +121,7 @@ func _run() -> void:
 	game.close_notebook(true)
 	game.save_now()
 	await game._return_to_title()
-	await game.continue_game()
+	await game.continue_game("kindle-hollow")
 	for item: Dictionary in placed:
 		if not game.session.state.props.get(item.id,false):
 			push_error("Continue lost working state for " + str(item.id))

@@ -1,0 +1,73 @@
+{
+  "materials": {
+    "reference_cream_limestone": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/reference_cream_limestone.png",
+          "sha256": "a264b6c5977380ffbb5baba3a4426ce827ab10733e795048ababbca7177b0dcd",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/reference_cream_limestone.png",
+          "sha256": "9f7fc6e6e47be50fe05e1985a03f50a7224602fe2bcd1ef92cd0fb01ca1de06d",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/reference-cottage/v1/textures/cream_limestone.png",
+      "source_sha256": "ca4a98c9b21b1bdd99b32072fac9b4c2e6991c31d7f4674022ade35d1ecefeb2"
+    },
+    "reference_honey_oak": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/reference_honey_oak.png",
+          "sha256": "e1eb9711b18828fa3434d3ef1ae29deed0301375f36b3f2bf051e8a0f104af6e",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/reference_honey_oak.png",
+          "sha256": "e4f4026ea1516ed80663e9d5029eff07ce6ce6aabfe2dd57fb73b597f5bcd58e",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/reference-cottage/v1/textures/honey_oak.png",
+      "source_sha256": "e98e6f2a1b92027229ad537c22fcf37eac1738caf5bb35f071d946f013123c59"
+    },
+    "reference_violet_clay": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/reference_violet_clay.png",
+          "sha256": "fe3be2e3ac89a6daf9f431ad140f866a4d16478dd182ebeaa3acebbb4b1d9a5d",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/reference_violet_clay.png",
+          "sha256": "1404a4661ead58eb6a80bc0db0b2bd7d112340911ca7571734fbfe2028b0bb58",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/reference-cottage/v1/textures/violet_clay.png",
+      "source_sha256": "c0c6753ad1de27f5ea02fc909e67a4cec2984cbe6f9f1cc4c1508cd8cc829aa0"
+    }
+  },
+  "normalization": "Lush: Lanczos to 128; solid: Lanczos to 64 then nearest to 128. Opposite edge pixels paired to make a periodic boundary. Native paintings preserved.",
+  "schema": 1,
+  "version": "v1-reference-cottage"
+}

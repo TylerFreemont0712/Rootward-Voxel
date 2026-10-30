@@ -1,0 +1,1957 @@
+{
+  "date": "2026-10-27",
+  "revision": "annotated art fixes and live speech",
+  "result": "pass",
+  "audited_models": 15,
+  "preserved_previous_masters": 5,
+  "original_concepts_preserved": 6,
+  "painted_outputs_unchanged": 6,
+  "local_links_checked": 185,
+  "unedited_bed_rebuild_identical": true,
+  "checks": {
+    "full_project_suite": "pass; no script errors or failed checks",
+    "journey_integration": 56,
+    "world_art": 577,
+    "review_sizes": [
+      [
+        1600,
+        1000
+      ],
+      [
+        1280,
+        720
+      ]
+    ]
+  },
+  "paintings": [
+    {
+      "file": "honey-oak.png",
+      "sha256": "a1a68167e5b3bc088eab647d9dde0733fca749a9c03f005eb00d1e24ee65bc3a",
+      "rgba_sha256": "1fe3f6ef2ef729478d94996c56daffe94347f614708c46d7e4d1fddc6f98ebd0"
+    },
+    {
+      "file": "teal-quilt.png",
+      "sha256": "461b67cd6250f2ecc1b19a7438d334c0bf6c1fbb5f6b3654cfbba0689c638ccc",
+      "rgba_sha256": "89e1a37add945c8a6ba144d48241018ff0781abff809b84b9561f403ece08b43"
+    },
+    {
+      "file": "woven-rug.png",
+      "sha256": "803cd92f0ddffc5828451b0e1df378d8fb2822d7d834a1b7c1d12d47da0b9483",
+      "rgba_sha256": "984d0c4776fcbc61e8dcf9d6a77aa6f83bfea78cd8e0b731011f8e06630f26a2"
+    },
+    {
+      "file": "harbour-view.png",
+      "sha256": "2a1464d2f7c6aaf6bcf9e3293bd572625380107b1bbd4829d09bfeba84d35600",
+      "rgba_sha256": "06163ed60c3f6ef423f116ec7ab523fa317208a63b62ae0f14a0ac28f99d95b9"
+    },
+    {
+      "file": "honey-oak-v2.png",
+      "sha256": "cb3c6636bc80daf17fa439198c6b2e8d69547fa814aad331a5f43d6f4dfe35e7",
+      "rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+    },
+    {
+      "file": "cream-plaster.png",
+      "sha256": "70d0b6ea1c8e56fb66674392ef0e5b5d6d486728a62a40b96ee72bbc78d47377",
+      "rgba_sha256": "23d3a02cd880e8d5e554bdf397a7adcc8c19c2c04dd26469ef68620edd32c6ff"
+    }
+  ],
+  "assets": [
+    {
+      "id": "loft-shell",
+      "source_sha256": "9921f7aa4d637826f923cb770c931a24d24f56715762bf582d5ec42d0e6570e4",
+      "runtime_sha256": "31c95579e604f3d1f0e6fe8504c83b5f15b1724cad17e19affcc7567478f91be",
+      "audit": {
+        "bounds": [
+          -0.759999990463257,
+          -0.620000004768372,
+          -9.76000022888184,
+          11.6000003814697,
+          4.93228149414062,
+          -0.780000030994415
+        ],
+        "geometry_sha256": "1d09d18b78cdaa9e4fd5fbce7a51e867e2e2711e22256d81aa330a846837bd59",
+        "material_records": {
+          "loft_brass": {
+            "albedo": [
+              7686,
+              6039,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_oak": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+          },
+          "loft_panel_seam": {
+            "albedo": [
+              5255,
+              4039,
+              2941,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_plaster": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "23d3a02cd880e8d5e554bdf397a7adcc8c19c2c04dd26469ef68620edd32c6ff"
+          },
+          "loft_wainscot": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+          },
+          "loft_window_view": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "06163ed60c3f6ef423f116ec7ab523fa317208a63b62ae0f14a0ac28f99d95b9"
+          },
+          "loft_wood": {
+            "albedo": [
+              5804,
+              4235,
+              2863,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_dark": {
+            "albedo": [
+              4588,
+              3216,
+              2235,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_edge": {
+            "albedo": [
+              7098,
+              5490,
+              3804,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_brass",
+          "loft_oak",
+          "loft_panel_seam",
+          "loft_plaster",
+          "loft_wainscot",
+          "loft_window_view",
+          "loft_wood",
+          "loft_wood_dark",
+          "loft_wood_edge"
+        ],
+        "meshes": 64,
+        "triangles": 7744
+      }
+    },
+    {
+      "id": "loft-bed",
+      "source_sha256": "64d6bf8fb5c469511925808ac9b827114c4ba2ad20db438b32b7be658432453b",
+      "runtime_sha256": "4d075ed89b13b79880eb30efe08c081600b88f687b7fcfdd6baa9e24ca2180e9",
+      "audit": {
+        "bounds": [
+          -1.09500002861023,
+          0.0,
+          -1.50499999523163,
+          1.09500002861023,
+          1.46000003814697,
+          1.50499999523163
+        ],
+        "geometry_sha256": "f86d914b562ac35d745817c6d18dd1512997cebda50d8301fae34d46a3e6dbd4",
+        "material_records": {
+          "loft_brass": {
+            "albedo": [
+              7686,
+              6039,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_linen": {
+            "albedo": [
+              9333,
+              8980,
+              8275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_linen_shade": {
+            "albedo": [
+              7843,
+              7451,
+              6549,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_oak": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+          },
+          "loft_quilt": {
+            "albedo": [
+              8434,
+              8434,
+              8434,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "89e1a37add945c8a6ba144d48241018ff0781abff809b84b9561f403ece08b43"
+          },
+          "loft_white": {
+            "albedo": [
+              8784,
+              8235,
+              7255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood": {
+            "albedo": [
+              6784,
+              4745,
+              2902,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_dark": {
+            "albedo": [
+              4745,
+              3137,
+              2000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_edge": {
+            "albedo": [
+              7647,
+              5882,
+              3882,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_brass",
+          "loft_linen",
+          "loft_linen_shade",
+          "loft_oak",
+          "loft_quilt",
+          "loft_white",
+          "loft_wood",
+          "loft_wood_dark",
+          "loft_wood_edge"
+        ],
+        "meshes": 9,
+        "triangles": 11620
+      }
+    },
+    {
+      "id": "loft-desk",
+      "source_sha256": "7f8dfc00667813f6edb77838652759aafe35fe0edac3126c1e187ed21a1979e4",
+      "runtime_sha256": "ec90b912bc78e10feb873b2c7e3cce5d7478f0b899a7672a743ddb2e670b55b3",
+      "audit": {
+        "bounds": [
+          -1.29999995231628,
+          0.0,
+          -0.609999895095825,
+          1.30000007152557,
+          1.7407374382019,
+          0.579999983310699
+        ],
+        "geometry_sha256": "9abeca74b71964f8750c31bc14453664979712322ae7e1a17cc64a98462db5de",
+        "material_records": {
+          "loft_blue": {
+            "albedo": [
+              3255,
+              4196,
+              5373,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_brass": {
+            "albedo": [
+              7686,
+              6039,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_ceramic": {
+            "albedo": [
+              7922,
+              7176,
+              5961,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_cream": {
+            "albedo": [
+              9373,
+              8941,
+              8000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_lamp_glass": {
+            "albedo": [
+              10000,
+              8784,
+              6275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leather_dark": {
+            "albedo": [
+              3569,
+              2353,
+              1725,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_oak": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+          },
+          "loft_ochre": {
+            "albedo": [
+              7725,
+              6118,
+              3451,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_pages": {
+            "albedo": [
+              8392,
+              7686,
+              6275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_paper": {
+            "albedo": [
+              9608,
+              9137,
+              8000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_red": {
+            "albedo": [
+              7098,
+              3686,
+              3020,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal": {
+            "albedo": [
+              2235,
+              4863,
+              4863,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal_dark": {
+            "albedo": [
+              1922,
+              3608,
+              3529,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood": {
+            "albedo": [
+              6784,
+              4745,
+              2902,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_dark": {
+            "albedo": [
+              4745,
+              3137,
+              2000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_blue",
+          "loft_brass",
+          "loft_ceramic",
+          "loft_cream",
+          "loft_lamp_glass",
+          "loft_leather_dark",
+          "loft_oak",
+          "loft_ochre",
+          "loft_pages",
+          "loft_paper",
+          "loft_red",
+          "loft_teal",
+          "loft_teal_dark",
+          "loft_wood",
+          "loft_wood_dark"
+        ],
+        "meshes": 15,
+        "triangles": 7404
+      }
+    },
+    {
+      "id": "loft-chair",
+      "source_sha256": "9e0970618070dc2aac2a8027ba2aa93f48c010f1ef1f1d536c84bc0853bb668e",
+      "runtime_sha256": "c493ce0ed39b4c1ad489a54b80ec35ee5e8fe68b0a729a920ff886e3d8666e52",
+      "audit": {
+        "bounds": [
+          -0.33500000834465,
+          0.0157968997955322,
+          -0.332280874252319,
+          0.33500000834465,
+          1.25999999046326,
+          0.332280814647675
+        ],
+        "geometry_sha256": "9716f016038c9c44c0f16b00f8e266a039a346d8685cade68977e3f9f14b513a",
+        "material_records": {
+          "loft_linen": {
+            "albedo": [
+              9333,
+              8980,
+              8275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_oak": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+          },
+          "loft_wood": {
+            "albedo": [
+              6784,
+              4745,
+              2902,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_dark": {
+            "albedo": [
+              4745,
+              3137,
+              2000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_linen",
+          "loft_oak",
+          "loft_wood",
+          "loft_wood_dark"
+        ],
+        "meshes": 4,
+        "triangles": 924
+      }
+    },
+    {
+      "id": "loft-shelf",
+      "source_sha256": "686601bd080820ff8a9043dc415619389df107f9c9b771b7026ed6a57e993100",
+      "runtime_sha256": "ccccb438f7b75d0e6bbdae279192ae41e7e711d485ceef2c26f6c058a95175ed",
+      "audit": {
+        "bounds": [
+          -1.19000005722046,
+          0.0,
+          -0.330000013113022,
+          1.29876434803009,
+          2.42092251777649,
+          0.349999994039536
+        ],
+        "geometry_sha256": "3d13384afcd879dca8bed0a9af352a73ae380b7dc887be29f9f585d05a1b2155",
+        "material_records": {
+          "loft_blue": {
+            "albedo": [
+              3255,
+              4196,
+              5373,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_brass": {
+            "albedo": [
+              7686,
+              6039,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_ceramic": {
+            "albedo": [
+              7922,
+              7176,
+              5961,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf": {
+            "albedo": [
+              3098,
+              5098,
+              2745,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf_dark": {
+            "albedo": [
+              2078,
+              3725,
+              2314,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf_light": {
+            "albedo": [
+              4471,
+              6000,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_oak": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+          },
+          "loft_ochre": {
+            "albedo": [
+              7725,
+              6118,
+              3451,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_pages": {
+            "albedo": [
+              8392,
+              7686,
+              6275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_paper": {
+            "albedo": [
+              9608,
+              9137,
+              8000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_red": {
+            "albedo": [
+              7098,
+              3686,
+              3020,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_soil": {
+            "albedo": [
+              3569,
+              2863,
+              2118,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal": {
+            "albedo": [
+              2235,
+              4863,
+              4863,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal_dark": {
+            "albedo": [
+              1922,
+              3608,
+              3529,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood": {
+            "albedo": [
+              6784,
+              4745,
+              2902,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_dark": {
+            "albedo": [
+              4745,
+              3137,
+              2000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_edge": {
+            "albedo": [
+              7647,
+              5882,
+              3882,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_blue",
+          "loft_brass",
+          "loft_ceramic",
+          "loft_leaf",
+          "loft_leaf_dark",
+          "loft_leaf_light",
+          "loft_oak",
+          "loft_ochre",
+          "loft_pages",
+          "loft_paper",
+          "loft_red",
+          "loft_soil",
+          "loft_teal",
+          "loft_teal_dark",
+          "loft_wood",
+          "loft_wood_dark",
+          "loft_wood_edge"
+        ],
+        "meshes": 17,
+        "triangles": 10996
+      }
+    },
+    {
+      "id": "loft-luggage",
+      "source_sha256": "afc7c1c9f73133bedfb2c557f06279942c4a5372cd13e7627b2c04e737b13abc",
+      "runtime_sha256": "a290e52309b232e1b60759716d9884d61dc640eda9400c2bea7bfbd37b40cd7e",
+      "audit": {
+        "bounds": [
+          -0.680000007152557,
+          0.0249999761581421,
+          -0.518734872341156,
+          0.679999947547913,
+          1.39527559280396,
+          1.19999980926514
+        ],
+        "geometry_sha256": "b9748af52dae749b820fad2dd6810da52f4745b3ced9082080f5072e51463ec0",
+        "material_records": {
+          "loft_blue": {
+            "albedo": [
+              3255,
+              4196,
+              5373,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_blue_light": {
+            "albedo": [
+              5176,
+              5804,
+              6667,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_brass": {
+            "albedo": [
+              7686,
+              6039,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_ceramic": {
+            "albedo": [
+              7922,
+              7176,
+              5961,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leather": {
+            "albedo": [
+              5020,
+              3373,
+              2314,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leather_dark": {
+            "albedo": [
+              3569,
+              2353,
+              1725,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_linen": {
+            "albedo": [
+              9333,
+              8980,
+              8275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_ochre": {
+            "albedo": [
+              7725,
+              6118,
+              3451,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_blue",
+          "loft_blue_light",
+          "loft_brass",
+          "loft_ceramic",
+          "loft_leather",
+          "loft_leather_dark",
+          "loft_linen",
+          "loft_ochre"
+        ],
+        "meshes": 8,
+        "triangles": 4032
+      }
+    },
+    {
+      "id": "loft-cabinet",
+      "source_sha256": "d7cff8be9d1e59e1605fbc63c812c37c5fb3e5f3e08282a193a7d9130ca349ab",
+      "runtime_sha256": "802291d46dbc78f685ce330121cdf448f38ef3ac6c05f23e6522c170c2194390",
+      "audit": {
+        "bounds": [
+          -0.560000002384186,
+          0.0,
+          -0.389999985694885,
+          0.560000002384186,
+          1.72499990463257,
+          0.487293869256973
+        ],
+        "geometry_sha256": "f01d6be9ab93a4dfcb9cecb56d4475085876d43c4a14f8ff581f889cc7cffb9b",
+        "material_records": {
+          "loft_brass": {
+            "albedo": [
+              7686,
+              6039,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_cream": {
+            "albedo": [
+              9373,
+              8941,
+              8000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_lamp_glass": {
+            "albedo": [
+              10000,
+              8784,
+              6275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf_dark": {
+            "albedo": [
+              2078,
+              3725,
+              2314,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_oak": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+          },
+          "loft_white": {
+            "albedo": [
+              8784,
+              8235,
+              7255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_dark": {
+            "albedo": [
+              4745,
+              3137,
+              2000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_brass",
+          "loft_cream",
+          "loft_lamp_glass",
+          "loft_leaf_dark",
+          "loft_oak",
+          "loft_white",
+          "loft_wood_dark"
+        ],
+        "meshes": 7,
+        "triangles": 3864
+      }
+    },
+    {
+      "id": "loft-wall-life",
+      "source_sha256": "4ed6bac05b245e1aabf19b10f1726662cd4fe4c91367bd3fabaf056756278a2c",
+      "runtime_sha256": "1898645d9a773fc795d68b036d1322170f38589a75c40e4e304b35c572dce2f9",
+      "audit": {
+        "bounds": [
+          -1.01999998092651,
+          0.737999975681305,
+          -0.190000027418137,
+          0.875,
+          2.69061517715454,
+          0.364499986171722
+        ],
+        "geometry_sha256": "c4d65b9208fc2d9da8f4f8b1a613725ae3db0c0cbfd9159c00180c075cca3887",
+        "material_records": {
+          "loft_blue": {
+            "albedo": [
+              3255,
+              4196,
+              5373,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_blue_light": {
+            "albedo": [
+              5176,
+              5804,
+              6667,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_brass": {
+            "albedo": [
+              7686,
+              6039,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_ceramic": {
+            "albedo": [
+              7922,
+              7176,
+              5961,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_cream": {
+            "albedo": [
+              9373,
+              8941,
+              8000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf": {
+            "albedo": [
+              3098,
+              5098,
+              2745,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf_dark": {
+            "albedo": [
+              2078,
+              3725,
+              2314,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf_light": {
+            "albedo": [
+              4471,
+              6000,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leather": {
+            "albedo": [
+              5020,
+              3373,
+              2314,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_linen": {
+            "albedo": [
+              9333,
+              8980,
+              8275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_oak": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+          },
+          "loft_ochre": {
+            "albedo": [
+              7725,
+              6118,
+              3451,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_pages": {
+            "albedo": [
+              8392,
+              7686,
+              6275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_red": {
+            "albedo": [
+              7098,
+              3686,
+              3020,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_soil": {
+            "albedo": [
+              3569,
+              2863,
+              2118,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal_dark": {
+            "albedo": [
+              1922,
+              3608,
+              3529,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_dark": {
+            "albedo": [
+              4745,
+              3137,
+              2000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_edge": {
+            "albedo": [
+              7647,
+              5882,
+              3882,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_blue",
+          "loft_blue_light",
+          "loft_brass",
+          "loft_ceramic",
+          "loft_cream",
+          "loft_leaf",
+          "loft_leaf_dark",
+          "loft_leaf_light",
+          "loft_leather",
+          "loft_linen",
+          "loft_oak",
+          "loft_ochre",
+          "loft_pages",
+          "loft_red",
+          "loft_soil",
+          "loft_teal_dark",
+          "loft_wood_dark",
+          "loft_wood_edge"
+        ],
+        "meshes": 18,
+        "triangles": 6648
+      }
+    },
+    {
+      "id": "loft-rug",
+      "source_sha256": "6417b9c30551ec5a9951e4d8fd9a2b32bf3b9e308c44dd0947e199e54121052a",
+      "runtime_sha256": "76186a7fdd0cf0e17beea055b2d75ad994f6f898a4bda4388a4891c0e1ed3ae9",
+      "audit": {
+        "bounds": [
+          -1.8513445854187,
+          0.0130348242819309,
+          -1.34665060043335,
+          1.85134017467499,
+          0.0589190050959587,
+          1.34665024280548
+        ],
+        "geometry_sha256": "0f266807e3fb8cb605b08600126c7bdff035cb6c253a105b6b4c164ec3ed47e8",
+        "material_records": {
+          "loft_linen": {
+            "albedo": [
+              9333,
+              8980,
+              8275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_rug": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "984d0c4776fcbc61e8dcf9d6a77aa6f83bfea78cd8e0b731011f8e06630f26a2"
+          }
+        },
+        "materials": [
+          "loft_linen",
+          "loft_rug"
+        ],
+        "meshes": 2,
+        "triangles": 4096
+      }
+    },
+    {
+      "id": "loft-travel-stacks",
+      "source_sha256": "ff81caf5b01a2ae5b1d85222892062a2cd9e2d3f56e6b5cb46a59cd73cbd8788",
+      "runtime_sha256": "0081b63319665e07b2240c0d599e4a62b94f0962213b7ff0dc92efb75d0c79e8",
+      "audit": {
+        "bounds": [
+          -0.717499971389771,
+          0.0,
+          -0.720000028610229,
+          0.807149231433868,
+          1.24950003623962,
+          0.412499994039536
+        ],
+        "geometry_sha256": "c966cf8aff2b46e0f5398bd6f5426f8c3eee79a780ee00e8b97c19c036e4ed23",
+        "material_records": {
+          "loft_blue": {
+            "albedo": [
+              3255,
+              4196,
+              5373,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_ceramic": {
+            "albedo": [
+              7922,
+              7176,
+              5961,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_ink": {
+            "albedo": [
+              3294,
+              2314,
+              1686,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf": {
+            "albedo": [
+              3098,
+              5098,
+              2745,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf_dark": {
+            "albedo": [
+              2078,
+              3725,
+              2314,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf_light": {
+            "albedo": [
+              4471,
+              6000,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_oak": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+          },
+          "loft_ochre": {
+            "albedo": [
+              7725,
+              6118,
+              3451,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_pages": {
+            "albedo": [
+              8392,
+              7686,
+              6275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_paper": {
+            "albedo": [
+              9608,
+              9137,
+              8000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_red": {
+            "albedo": [
+              7098,
+              3686,
+              3020,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_soil": {
+            "albedo": [
+              3569,
+              2863,
+              2118,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal": {
+            "albedo": [
+              2235,
+              4863,
+              4863,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood": {
+            "albedo": [
+              6784,
+              4745,
+              2902,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_blue",
+          "loft_ceramic",
+          "loft_ink",
+          "loft_leaf",
+          "loft_leaf_dark",
+          "loft_leaf_light",
+          "loft_oak",
+          "loft_ochre",
+          "loft_pages",
+          "loft_paper",
+          "loft_red",
+          "loft_soil",
+          "loft_teal",
+          "loft_wood"
+        ],
+        "meshes": 14,
+        "triangles": 6696
+      }
+    },
+    {
+      "id": "loft-window-life",
+      "source_sha256": "ad33fd45e8522bddba0ef1210e8c7fe8caccdbbe819b340bba99ae587c92f598",
+      "runtime_sha256": "ffb9ada5b89106303dd1649ba2e81370ea71d7b09e1d344523d5504f4557f178",
+      "audit": {
+        "bounds": [
+          -0.58948016166687,
+          0.00999999046325684,
+          -0.259172141551971,
+          0.486234903335571,
+          0.609500050544739,
+          0.264598459005356
+        ],
+        "geometry_sha256": "806bb6983a949d96e2cf628b88ee539f30874ce3fc6332239171df2f1a587bc8",
+        "material_records": {
+          "loft_ceramic": {
+            "albedo": [
+              7922,
+              7176,
+              5961,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf": {
+            "albedo": [
+              3098,
+              5098,
+              2745,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf_dark": {
+            "albedo": [
+              2078,
+              3725,
+              2314,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leaf_light": {
+            "albedo": [
+              4471,
+              6000,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_ochre": {
+            "albedo": [
+              7725,
+              6118,
+              3451,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_pages": {
+            "albedo": [
+              8392,
+              7686,
+              6275,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_soil": {
+            "albedo": [
+              3569,
+              2863,
+              2118,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal": {
+            "albedo": [
+              2235,
+              4863,
+              4863,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal_dark": {
+            "albedo": [
+              1922,
+              3608,
+              3529,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_white": {
+            "albedo": [
+              8784,
+              8235,
+              7255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_ceramic",
+          "loft_leaf",
+          "loft_leaf_dark",
+          "loft_leaf_light",
+          "loft_ochre",
+          "loft_pages",
+          "loft_soil",
+          "loft_teal",
+          "loft_teal_dark",
+          "loft_white"
+        ],
+        "meshes": 10,
+        "triangles": 4408
+      }
+    },
+    {
+      "id": "loft-postcard",
+      "source_sha256": "f561d920a76e3ea1c0dc7a78ac6e0a4669eb738aa22a1c090579cf5dd2bc1987",
+      "runtime_sha256": "4af6c5927aacef7bd7b73ead43d8133c78a96c7e72fdbef94e2d33b25b3bf0d4",
+      "audit": {
+        "bounds": [
+          -0.439999997615814,
+          -0.319999992847443,
+          -0.025000000372529,
+          0.439999997615814,
+          0.319999992847443,
+          0.0724999979138374
+        ],
+        "geometry_sha256": "7e8888217b470b2d4cb47c21b9f2cae7f71e2383c72dcc52fec179e01f3dd986",
+        "material_records": {
+          "loft_brass": {
+            "albedo": [
+              7686,
+              6039,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_harbour": {
+            "albedo": [
+              10000,
+              10000,
+              10000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": "06163ed60c3f6ef423f116ec7ab523fa317208a63b62ae0f14a0ac28f99d95b9"
+          },
+          "loft_paper": {
+            "albedo": [
+              9608,
+              9137,
+              8000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_dark": {
+            "albedo": [
+              4745,
+              3137,
+              2000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_brass",
+          "loft_harbour",
+          "loft_paper",
+          "loft_wood_dark"
+        ],
+        "meshes": 4,
+        "triangles": 434
+      }
+    },
+    {
+      "id": "loft-tape-machine",
+      "source_sha256": "632d9603fce028837b3e41dcb422b40566a1da12834a55cbe2f4e48a6827b61b",
+      "runtime_sha256": "dea7913f5ad1a32930c45c2056d07a5d10777499bbb0c82c06c64905ae38ccb3",
+      "audit": {
+        "bounds": [
+          -0.365000009536743,
+          0.0,
+          -0.294999957084656,
+          0.379999995231628,
+          0.714999973773956,
+          0.310000002384186
+        ],
+        "geometry_sha256": "dee25e38c7fb892357edd14eee106d7fe6adb6c58bfe5e4074403ccab9ae5e20",
+        "material_records": {
+          "loft_brass": {
+            "albedo": [
+              7686,
+              6039,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_cream": {
+            "albedo": [
+              9373,
+              8941,
+              8000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_leather_dark": {
+            "albedo": [
+              3569,
+              2353,
+              1725,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_paper": {
+            "albedo": [
+              9608,
+              9137,
+              8000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal_dark": {
+            "albedo": [
+              1922,
+              3608,
+              3529,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_dark": {
+            "albedo": [
+              4745,
+              3137,
+              2000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_brass",
+          "loft_cream",
+          "loft_leather_dark",
+          "loft_paper",
+          "loft_teal_dark",
+          "loft_wood_dark"
+        ],
+        "meshes": 8,
+        "triangles": 2500
+      }
+    },
+    {
+      "id": "loft-hotaru",
+      "source_sha256": "901abc6b249d883d5230e5c5ef2af1d6c4cb373fcac8e61cd04f95b50ddee04a",
+      "runtime_sha256": "3af680d081978e04555ef0e77232ae7aec70c866f0aaabd64b4cdcfac2f15e15",
+      "audit": {
+        "bounds": [
+          -0.311899989843369,
+          -0.00499999895691872,
+          -0.277999997138977,
+          0.311899989843369,
+          0.717999994754791,
+          0.277999997138977
+        ],
+        "geometry_sha256": "34192c973b81c1c2eaecd7b4479380d914b60b941010cbde25e9b26dbf2ef1d8",
+        "material_records": {
+          "loft_brass": {
+            "albedo": [
+              7686,
+              6039,
+              3255,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_cream": {
+            "albedo": [
+              9373,
+              8941,
+              8000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_glass": {
+            "albedo": [
+              2824,
+              2353,
+              1608,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_paper": {
+            "albedo": [
+              9608,
+              9137,
+              8000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_red": {
+            "albedo": [
+              7098,
+              3686,
+              3020,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_rubber": {
+            "albedo": [
+              2353,
+              2549,
+              2510,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal": {
+            "albedo": [
+              2235,
+              4863,
+              4863,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal_dark": {
+            "albedo": [
+              1922,
+              3608,
+              3529,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_teal_light": {
+            "albedo": [
+              4549,
+              6510,
+              6078,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_dark": {
+            "albedo": [
+              4745,
+              3137,
+              2000,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          },
+          "loft_wood_edge": {
+            "albedo": [
+              7647,
+              5882,
+              3882,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_brass",
+          "loft_cream",
+          "loft_glass",
+          "loft_paper",
+          "loft_red",
+          "loft_rubber",
+          "loft_teal",
+          "loft_teal_dark",
+          "loft_teal_light",
+          "loft_wood_dark",
+          "loft_wood_edge"
+        ],
+        "meshes": 12,
+        "triangles": 4830
+      }
+    },
+    {
+      "id": "loft-cable",
+      "source_sha256": "8524a67a9137ff589cd09aec5df6053355d909c6c36b4f5912f0dffed87c14ae",
+      "runtime_sha256": "369e21e56c67a195d5f663d9b2ddccdd7737185ae747fbed4d8bcb408b324f96",
+      "audit": {
+        "bounds": [
+          -0.502637267112732,
+          1.16068041324615,
+          -2.55305314064026,
+          0.00713622942566872,
+          2.2866530418396,
+          0.0155026651918888
+        ],
+        "geometry_sha256": "e4b7fa8f2d71a9baa104eb31e1acc64c2e281b35ae9de5c43f58afd530274596",
+        "material_records": {
+          "loft_cable": {
+            "albedo": [
+              2039,
+              2314,
+              2314,
+              10000
+            ],
+            "roughness": 8600,
+            "texture_rgba_sha256": ""
+          }
+        },
+        "materials": [
+          "loft_cable"
+        ],
+        "meshes": 1,
+        "triangles": 400
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "file": "evidence/sparks-loft/refined/answer-1280.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "516f5201c43390eb2dbc71fbb9235146bad31844cc358cc0b2e42429b17fce08"
+    },
+    {
+      "file": "evidence/sparks-loft/refined/answer-1600.png",
+      "size": [
+        1600,
+        1000
+      ],
+      "sha256": "09fc1808ac8ff3f7ce82c1058539755fe85f85e4d262312b892eaee8f54c525b"
+    },
+    {
+      "file": "evidence/sparks-loft/refined/choices-1280.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "560677ee45deeb36d6363e2606ca1f7450c6e439bbd09741b0a39adde71da5a0"
+    },
+    {
+      "file": "evidence/sparks-loft/refined/choices-1600.png",
+      "size": [
+        1600,
+        1000
+      ],
+      "sha256": "e1f351bbca08dc7f9649095f0eee488197cca42de29d339136f51d484b45f2f9"
+    },
+    {
+      "file": "evidence/sparks-loft/refined/ghost-1280.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "1557668512ea65ffbf24231fef07113b0f90770c36d20b3c3f2faf64f36af0ed"
+    },
+    {
+      "file": "evidence/sparks-loft/refined/ghost-1600.png",
+      "size": [
+        1600,
+        1000
+      ],
+      "sha256": "0e38fff6792914fd021181b993625b76bcf56d3017b5659b9e14830c131aef98"
+    },
+    {
+      "file": "evidence/sparks-loft/refined/loft-1280.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "7ee29a054abeca122f6ccd8b3d897f7cea123e098217bdb303733f5d8c17c0b3"
+    },
+    {
+      "file": "evidence/sparks-loft/refined/loft-1600.png",
+      "size": [
+        1600,
+        1000
+      ],
+      "sha256": "58bc7d122579c634d2191914a63d1e1e86d9e917d70170239049f22350d126ff"
+    },
+    {
+      "file": "evidence/sparks-loft/refined/test-1280.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "55e2e48e0264101820fc9a1b0a6e349a3444aecccb8cee0e74e9c5ea8ab1f01a"
+    },
+    {
+      "file": "evidence/sparks-loft/refined/test-1600.png",
+      "size": [
+        1600,
+        1000
+      ],
+      "sha256": "34a626a795da7b50dbc3ee7cc24a58a63e3f31709b6b3c3feaf356ed5d3b818c"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "asset": "town-garden-pier",
+  "version": "v1",
+  "source": "art/source/world/town-garden-pier/v1/model.blend",
+  "source_sha256": "466b25b34fdc7030a9ae9e8b152b5122f582cf9dd5c539c58bb6600a9e942226",
+  "runtime": "assets/world/town-garden-pier/model.glb",
+  "runtime_sha256": "516e089e8527137cd11f05c2d8bc1fca21cd150ca412db5134932b9c589ec1f8",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.330000013113022,
+      0.0,
+      -0.330000013113022,
+      0.330000013113022,
+      1.8199999332428,
+      0.330000013113022
+    ],
+    "geometry_sha256": "8ff69faea9180fc8d8243b2a0cee9753e6977b801300a728c9c90fab35e6bfd5",
+    "material_records": {
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      }
+    },
+    "materials": [
+      "seaside_stone"
+    ],
+    "meshes": 1,
+    "triangles": 268
+  }
+}

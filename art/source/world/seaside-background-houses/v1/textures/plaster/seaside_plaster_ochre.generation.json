@@ -1,0 +1,21 @@
+{
+  "id": "seaside_plaster_ochre",
+  "title": "Ochre limewash",
+  "color": "pale honey-ochre / sandy butter limewash, warm rather than bright yellow",
+  "family": "plaster",
+  "tile": 1.5,
+  "roughness": 0.94,
+  "key": "house-texture-seaside_plaster_ochre",
+  "dest": "art/source/world/seaside-background-houses/v1/textures/plaster/seaside_plaster_ochre.png",
+  "refs": [
+    "art/source/world/seaside-background-houses/v1/textures/plaster/seaside_plaster_cream.png"
+  ],
+  "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling plaster ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to pale honey-ochre / sandy butter limewash, warm rather than bright yellow. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nPreserve fine surface texture and tonal shading while making the new palette clearly distinct.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-1ef04d66-9746-4a47-b55d-8be685011937.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "c57a301ab5ef60d951666bea42c74655a48d5705327ee662351ba9d08de9da2b",
+  "reference_sha256": {
+    "art/source/world/seaside-background-houses/v1/textures/plaster/seaside_plaster_cream.png": "551565f3761c309d428b39b510248c4bbe0038bd3c0aeac1920474dd1baed627"
+  }
+}

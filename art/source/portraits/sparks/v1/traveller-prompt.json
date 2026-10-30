@@ -1,0 +1,9 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "transparent_background": true,
+  "references": [
+    "art/source/adventurer/v9-directional-walk/idle-se.png",
+    "art/source/portraits/sparks/v1/hotaru-robot.png"
+  ],
+  "prompt": "Use case: identity-preserve. Asset: a single high-definition transparent visual-novel character portrait for a cozy illustrated game. Reference 1 is the exact approved protagonist identity, clothing and colors; reference 2 is the companion portrait and finish. Paint the SAME young traveller from reference 1, now a readable waist-up portrait with his whole head and both shoulders visible, facing slightly toward the viewer's LEFT so he can converse with Hotaru on the left. Keep his characteristic tousled warm auburn-red hair, very large warm brown eyes, fair skin, teal short-sleeved tunic with cream rolled cuffs and hem, ochre-gold neck scarf, plain brown leather belt and brass square buckle. Preserve his face, hair silhouette, expression, proportions and clothing from reference 1; he is a young traveller, not an adult warrior. Neutral, observant, approachable expression. Confident dark brown outline and soft painterly storybook shading that harmonize with reference 2. Upper body centered in the lower two-thirds of a vertical 1024x1536 canvas, leaving generous clear space above and 8% side margins. GENUINELY TRANSPARENT background including all corners and areas outside the silhouette. No background, aura, scenery, props, lettering, watermark, extra characters or character redesign."
+}

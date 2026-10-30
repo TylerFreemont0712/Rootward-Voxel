@@ -1,0 +1,10 @@
+{
+  "pass": 2,
+  "prior_source": "model.pass-01.blend",
+  "before_sha256": "3296cfba7acf1767b86d70c43108f14258ca94d4db32f2c24e9e20008e4f9800",
+  "after_sha256": "dc858ef56b3281f84b169dc74f10ecc8ff6b33fe3bccfe4800bad095cac9a44b",
+  "shingles_refined": 184,
+  "treads_refined": 2,
+  "review": "Godot pass 1 showed flat overlap, uniform masonry and slab-like steps. Existing tiles were deformed, source geometry preserved elsewhere, stone surfaces painted and entry joints/treads refined.",
+  "source_edit": "art/source/world/reference-cottage/v1/refine_pass02.py"
+}

@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "lane-laundry",
+  "version": "v1",
+  "source": "art/source/world/lane-laundry/v1/model.blend",
+  "source_sha256": "269bfa538b10d933d16d836da3ba47120c6c41929c1faf9b466927ec099c3fdd",
+  "runtime": "assets/world/lane-laundry/model.glb",
+  "runtime_sha256": "16edf57e55d35d2fc7841aaff549190ac52b7c0fe9c8a323cdfe2469665f38d9",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.64999997615814,
+      0.0,
+      -0.25,
+      1.64999997615814,
+      1.79999995231628,
+      0.25
+    ],
+    "geometry_sha256": "5c7ceade0c9c01e7f90ae4218bdff94c8dcd79ef6af2a30b1e3641cdcfac6d3d",
+    "material_records": {
+      "lane_cloth_blue": {
+        "albedo": [
+          4353,
+          5608,
+          7020,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_cloth_rose": {
+        "albedo": [
+          8510,
+          6039,
+          5569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_linen": {
+        "albedo": [
+          8980,
+          8667,
+          7843,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_white": {
+        "albedo": [
+          9490,
+          9176,
+          8471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_light": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_cloth_blue",
+      "lane_cloth_rose",
+      "lane_linen",
+      "lane_white",
+      "lane_wood",
+      "lane_wood_light"
+    ],
+    "meshes": 8,
+    "triangles": 1896
+  }
+}

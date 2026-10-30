@@ -1,0 +1,66 @@
+{
+  "asset": "seaside-saltwind-house",
+  "source": "art/source/world/seaside-saltwind-house/v1/model.blend",
+  "backup": "art/source/world/seaside-saltwind-house/v1/model.pre-plant-style.blend",
+  "before_sha256": "e9f72a30af9e86517d3b97ca2be9b983829e103d8393be9a4850c6d783e659ec",
+  "after_sha256": "1348381559ec0097a182977a0e49fb3ccd20a2c92119970103be1d72000fb8b5",
+  "objects": [
+    {
+      "object": "detail_planters",
+      "replaced_components": {
+        "olive": 6,
+        "leaf": 16,
+        "leaf_light": 16,
+        "cypress_light": 26,
+        "cypress": 54,
+        "leaf_dark": 4,
+        "flower_orange": 5,
+        "flower_red": 5,
+        "flower_white": 7,
+        "flower_pink": 3
+      },
+      "protected_faces": 282,
+      "protected_sha256": "7e1294d661004859ba69f65de939968e9d60d02842a494d24c8f458ff99a944d"
+    },
+    {
+      "object": "detail_vines",
+      "replaced_components": {
+        "leaf_dark": 23,
+        "leaf_light": 20,
+        "leaf": 35,
+        "flower_white": 12,
+        "flower_pink": 6
+      },
+      "protected_faces": 119,
+      "protected_sha256": "e61cc593d2b24381d75ba25e88efcb450c4a09f6937c29a297567798a52bc22a"
+    },
+    {
+      "object": "detail_window_boxes",
+      "replaced_components": {
+        "leaf": 48,
+        "flower_red": 8,
+        "leaf_light": 24,
+        "leaf_dark": 48,
+        "flower_white": 20,
+        "flower_orange": 9,
+        "flower_pink": 15
+      },
+      "protected_faces": 352,
+      "protected_sha256": "1962b0ac29868c4a245902a680eb20a811b5a0f7a4fcf3fc3ca9fa4c789913d6"
+    },
+    {
+      "object": "detail_yard",
+      "replaced_components": {
+        "leaf": 6,
+        "leaf_light": 6,
+        "leaf_dark": 2,
+        "flower_white": 2,
+        "flower_red": 4,
+        "olive": 3
+      },
+      "protected_faces": 820,
+      "protected_sha256": "3ae7e202e6a0a0ce6a502584b9e3dffb3bd068818e05297a60a1a0dac9c629c3"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

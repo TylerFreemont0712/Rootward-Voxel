@@ -1,0 +1,9 @@
+# Original-concept cottage study
+
+Reconstruct the left honey-oak, violet-roofed log cottage in `reference/voxel-isometric.png`, with a separate authored source and placement beside the current Village Morning home. The original house and its room/save stay intact. Three actual Godot review passes cover proportions, materials/details, then playable entry/collision and final presentation.
+
+Ground pivot; one metre per cell; Blender front −Y / Godot +Z. Wall footprint about 3.9 × 3.6 m, roof about 4.6 × 4.5 m, ridge 4.65 m and chimney 5.25 m. The placed E-facing front matches the concept’s visible gable; it faces the existing lane. Solid rectangles separately cover walls, planter/fenced bed and the barrel. The roof overhang does not block movement. A centered hinged door and two shallow limestone treads use the shared entrance adapter.
+
+Priorities: thick softly rolled individual violet shingles with pale worn edges and actual overlapping courses; half-round ridge caps; notched honey-oak log courses and substantial framing; a slim inset porthole; dressed stone arch around a real open recess and paneled oak door; one warm side window; hollow coursed chimney; a stone daisy box, low fenced bed and a coopered barrel. No front windows absent from the concept. Back/hidden faces receive complete construction too.
+
+Imagegen painted new violet clay and honey oak. Their exact prompts, native images and hashes are in `textures/`; `scripts/art.sh` builds their selected opaque, mipmapped runtime pictures through the existing texture packager. Initial geometry is recorded by the protected `author.py`. After first creation, edit `model.blend` deliberately and export with `scripts/world-art.sh build reference-cottage`; never rerun the author over it. Review revisions retain prior masters beside it.

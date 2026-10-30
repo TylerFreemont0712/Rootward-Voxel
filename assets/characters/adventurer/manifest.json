@@ -514,7 +514,7 @@
     ]
   },
   "facing_space": "screen_diagonals",
-  "fps": 16.0,
+  "fps": 18.4615384615385,
   "id": "adventurer",
   "idle": {
     "blink_directions": [
@@ -540,7 +540,7 @@
   "source": "res://art/source/adventurer/v9-directional-walk/sheet.png",
   "source_sha256": "6e7db11c4c1403efc3af748014cbe06b600779319117bf29ab30f3fe9abd471d",
   "template_id": "painted_chibi_v1",
-  "template_sha256": "136c5c50b15927bbf6313bef91852eddbfe9dea87b693be99b8eb279115ca152",
+  "template_sha256": "b84741d46f4de4548648268d30ddcf823cd30b1ec5255cacdeaedec23da720d2",
   "version": "v9-directional-walk",
   "world_height": 1.45
 }

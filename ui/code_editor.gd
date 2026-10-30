@@ -191,7 +191,7 @@ func _highlighter() -> CodeHighlighter:
 
 func _theme_editor() -> void:
 	add_theme_font_override("font", UITheme.mono_font())
-	add_theme_font_size_override("font_size", 18)
+	add_theme_font_size_override("font_size", 15)
 	add_theme_color_override("font_color", Color("ebe0c4"))
 	add_theme_color_override("font_readonly_color", Color("ebe0c4"))
 	add_theme_color_override("line_number_color", Color("6f624d"))
@@ -207,7 +207,7 @@ func _theme_editor() -> void:
 	add_theme_color_override("completion_scroll_hovered_color", Pal.BRASS)
 	add_theme_constant_override("completion_lines", 7)
 	add_theme_constant_override("completion_max_width", 26)
-	add_theme_constant_override("line_spacing", 5)
+	add_theme_constant_override("line_spacing", 1)
 	add_theme_stylebox_override("normal", UITheme.panel("inset"))
 	var focused: FantasyBox = UITheme.panel("inset")
 	focused.border = Pal.BRASS_LO

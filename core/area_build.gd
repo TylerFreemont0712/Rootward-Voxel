@@ -143,11 +143,39 @@ static func prop_rect(assets: Dictionary, asset: String, at: Vector2, facing: St
 	return Rect2(at - size * 0.5, size)
 
 
-## The cell just in front of a door, past the doorstep: the one the player stands on to use it.
-static func door_cell(rect: Rect2, at: Vector2, facing: String) -> Vector2i:
+## The former threshold cell can intersect the closed leaf. Keep it for the
+## closed-entry barrier and migration; players arrive one cell farther outside.
+static func threshold_cell(rect: Rect2, at: Vector2, facing: String) -> Vector2i:
 	var direction: Vector2i = {"S": Vector2i(0, -1), "E": Vector2i(1, 0), "N": Vector2i(0, 1), "W": Vector2i(-1, 0)}[facing]
 	var half: float = rect.size.x * 0.5 if direction.x != 0 else rect.size.y * 0.5
 	return Vector2i(roundi(at.x + float(direction.x) * (half + 0.7)), roundi(at.y + float(direction.y) * (half + 0.7)))
+
+
+## Shared safe landing used by travel, routing and the builder's access checks.
+static func door_cell(rect: Rect2, at: Vector2, facing: String, offset: int = 0) -> Vector2i:
+	var outward: Vector2i = {"S": Vector2i(0, -1), "E": Vector2i(1, 0), "N": Vector2i(0, 1), "W": Vector2i(-1, 0)}[facing]
+	return threshold_cell(rect, at, facing) + outward * offset
+
+
+## Rotate the catalog's closed leaf into logical ground coordinates.
+static func entrance_rect(at: Vector2, facing: String, scale: float, entrance: Dictionary) -> Rect2:
+	if entrance.is_empty():return Rect2()
+	var leaf:=Rect2(float(entrance.get("center_x",0))-float(entrance.width)*.5,-float(entrance.plane)-.09,float(entrance.width),.18)
+	var angle: float=deg_to_rad(float(AreaDef.FACINGS[facing]))
+	var barrier:=Rect2(at+leaf.position.rotated(angle)*scale,Vector2.ZERO)
+	for corner: Vector2 in [leaf.position,leaf.end,Vector2(leaf.end.x,leaf.position.y),Vector2(leaf.position.x,leaf.end.y)]:barrier=barrier.expand(at+corner.rotated(angle)*scale)
+	return barrier
+
+
+## Model-authored clearance, with an automatic extra cell when scaling/rounding
+## would put the original grid stop inside the closed leaf's foot clearance.
+static func door_offset(rect: Rect2, at: Vector2, facing: String, scale: float, entrance: Dictionary) -> int:
+	if entrance.is_empty():return 0
+	var threshold:=Vector2(threshold_cell(rect,at,facing))
+	var leaf:=entrance_rect(at,facing,scale,entrance)
+	var closest: Vector2=threshold.clamp(leaf.position,leaf.end)
+	var overlaps: bool=threshold.distance_squared_to(closest)<LabWorld.PLAYER_RADIUS*LabWorld.PLAYER_RADIUS
+	return maxi(int(entrance.get("approach_cells",0)),1 if overlaps else 0)
 
 
 static func turned(facing: String, steps: int = 1) -> String:
@@ -186,7 +214,7 @@ static func check_building(ctx: Dictionary, asset: String, at: Vector2, facing: 
 	if rect.size == Vector2.ZERO:
 		result.reason = "That building has no footprint."
 		return result
-	result.door = door_cell(rect, at, facing)
+	result.door = door_cell(rect, at, facing, door_offset(rect,at,facing,scale,ctx.assets[asset].get("entrance",{})))
 	if rect.position.x < 0.0 or rect.position.y < 0.0 or rect.end.x > float(area.width) or rect.end.y > float(area.height):
 		result.reason = "Keep it inside the valley."
 		return result
@@ -464,7 +492,7 @@ static func land_blockers(area: AreaDef) -> Dictionary:
 	mark.call(area.spawn, "Keep the starting spot as it is.")
 	for building: Dictionary in area.buildings:
 		cover.call((building.rect as Rect2).grow(0.05), "A building stands there.")
-		mark.call(door_cell(building.rect, building.at, building.facing), "Keep the ground before a door as it is.")
+		mark.call(door_cell(building.rect, building.at, building.facing, int(building.get("door_offset",0))), "Keep the ground before a door as it is.")
 	for prop: Dictionary in area.props:
 		cover.call((prop.rect as Rect2).grow(0.05), "A doodad stands there.")
 	for tree: Dictionary in area.trees:
@@ -569,7 +597,7 @@ static func check_stairs(ctx: Dictionary, at: Vector2i, up: String) -> Dictionar
 	for building: Dictionary in area.buildings:
 		if body.intersects((building.rect as Rect2).grow(0.05)):
 			return refuse.call("A building is in the way.")
-		if door_cell(building.rect, building.at, building.facing) == at:
+		if door_cell(building.rect, building.at, building.facing, int(building.get("door_offset",0))) == at:
 			return refuse.call("Keep the ground before a door clear.")
 	for prop: Dictionary in area.props:
 		if body.intersects(prop.rect):
@@ -642,7 +670,7 @@ static func needs(area: AreaDef, skip_building: Variant = "") -> Array[Dictionar
 		groups.append({"label": "%s" % zone.title, "cells": cells})
 	for building: Dictionary in area.buildings:
 		if not _skipped(building.id, skip_building):
-			groups.append({"label": "the door of %s" % building.id, "cells": [door_cell(building.rect, building.at, building.facing)]})
+			groups.append({"label": "the door of %s" % building.id, "cells": [door_cell(building.rect, building.at, building.facing, int(building.get("door_offset",0)))]})
 	for resident: Dictionary in area.villagers:
 		var stops: Array = [resident.at]
 		stops.append_array(resident.route)

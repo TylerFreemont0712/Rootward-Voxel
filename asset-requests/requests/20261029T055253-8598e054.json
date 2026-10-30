@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "id": "20261029T055253-8598e054",
+  "kind": "delete",
+  "title": "Delete Hay Handcart",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "hollow-hay-handcart",
+    "label": "Hay Handcart",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hollow-hay-handcart/v1/model.blend",
+    "runtime": "assets/world/hollow-hay-handcart/model.glb",
+    "manifest": "assets/world/hollow-hay-handcart/manifest.json",
+    "catalog_notes": "A two-wheeled farm cart piled with bound golden hay and a wooden pitchfork.",
+    "related_files": [
+      "art/source/world/hollow-hay-handcart/v1/brief.md",
+      "art/source/world/hollow-hay-handcart/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Hay Handcart",
+      "source": "art/source/world/hollow-hay-handcart/v1/model.blend",
+      "runtime": "assets/world/hollow-hay-handcart/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.625,
+        -0.825,
+        1.25,
+        1.65
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A two-wheeled farm cart piled with bound golden hay and a wooden pitchfork.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:52:53+00:00",
+  "updated": "2026-10-29T06:28:23+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:52:53+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:23+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/hollow-hay-handcart/v1/brief.md",
+    "art/source/world/hollow-hay-handcart/v1/model.blend",
+    "art/source/world/hollow-hay-handcart/v1/provenance.json",
+    "assets/world/hollow-hay-handcart/manifest.json",
+    "assets/world/hollow-hay-handcart/model.glb",
+    "assets/world/hollow-hay-handcart/model.glb.import",
+    "assets/world/hollow-hay-handcart/model_brass.png",
+    "assets/world/hollow-hay-handcart/model_brass.png.import",
+    "assets/world/hollow-hay-handcart/model_iron.png",
+    "assets/world/hollow-hay-handcart/model_iron.png.import",
+    "assets/world/hollow-hay-handcart/model_log_wood.png",
+    "assets/world/hollow-hay-handcart/model_log_wood.png.import",
+    "assets/world/hollow-hay-handcart/model_plank_wood.png",
+    "assets/world/hollow-hay-handcart/model_plank_wood.png.import",
+    "assets/world/hollow-hay-handcart/model_timber_dark.png",
+    "assets/world/hollow-hay-handcart/model_timber_dark.png.import"
+  ]
+}

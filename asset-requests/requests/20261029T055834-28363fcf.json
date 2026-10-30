@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "id": "20261029T055834-28363fcf",
+  "kind": "delete",
+  "title": "Delete Rootward",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "rootward-tree",
+    "label": "Rootward",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/rootward-tree/v1/model.blend",
+    "runtime": "assets/world/rootward-tree/model.glb",
+    "manifest": "assets/world/rootward-tree/manifest.json",
+    "catalog_notes": "Monumental 24-metre namesake oak, roughly 24 metres across. Twisted bole, huge branching buttress roots, living amber fissures, gold ward-stone ring, thirty suspended jewel lanterns, nine festoon garlands and editable wisp/light anchors. The saved Blender master owns all geometry and anchors; small rendering-only lights/motes animate in Godot. Gameplay uses a permanent trunk cutaway: authored Crown/Boughs parts stay hidden, upper trunk/chains fade from 8 to 10 metres, and only lower lanterns get halos/local lights. The complete adopted source and GLB remain intact.",
+    "related_files": [
+      "art/source/world/rootward-tree/v1/brief.md",
+      "art/source/world/rootward-tree/v1/provenance.json",
+      "art/source/world/rootward-tree/v1/revision.json"
+    ],
+    "usage_files": [
+      "content/areas/village-morning.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_morning",
+      "label": "Rootward",
+      "source": "art/source/world/rootward-tree/v1/model.blend",
+      "runtime": "assets/world/rootward-tree/model.glb",
+      "pivot": "Ground center; Blender Z-up; one metre per cell",
+      "logical_footprint": {
+        "trunk_radius": 8.6
+      },
+      "behavior": "Static namesake landmark; the trunk, buttress roots and ward-stone ring block movement. Canopy overhang is decorative.",
+      "notes": "Monumental 24-metre namesake oak, roughly 24 metres across. Twisted bole, huge branching buttress roots, living amber fissures, gold ward-stone ring, thirty suspended jewel lanterns, nine festoon garlands and editable wisp/light anchors. The saved Blender master owns all geometry and anchors; small rendering-only lights/motes animate in Godot. Gameplay uses a permanent trunk cutaway: authored Crown/Boughs parts stay hidden, upper trunk/chains fade from 8 to 10 metres, and only lower lanterns get halos/local lights. The complete adopted source and GLB remain intact.",
+      "presentation": "rootward-presence"
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:58:34+00:00",
+  "updated": "2026-10-29T05:58:34+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:58:34+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/areas/village-morning.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_illustrated_village.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

@@ -1,0 +1,2208 @@
+{
+  "schema": 1,
+  "id": "haverlund-lane",
+  "title": "Haverlund",
+  "version": 4,
+  "size": [
+    24,
+    28
+  ],
+  "spawn": [
+    10,
+    12
+  ],
+  "voice_lesson": true,
+  "terrain": [
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................"
+  ],
+  "levels": [
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111100111111111",
+    "000000000000000000000000",
+    "000000000000000000000000",
+    "000000000000000000000000",
+    "000000000000000000000000",
+    "000000000000000000000000"
+  ],
+  "stairs": [
+    {
+      "at": [
+        13,
+        5
+      ],
+      "up": "N"
+    },
+    {
+      "at": [
+        14,
+        5
+      ],
+      "up": "N"
+    }
+  ],
+  "buildings": [],
+  "trees": [],
+  "zones": [
+    {
+      "id": "lookout",
+      "title": "The rail above the town",
+      "rect": [
+        16,
+        22,
+        8,
+        6
+      ]
+    },
+    {
+      "id": "tram-halt",
+      "title": "The tram halt",
+      "rect": [
+        0,
+        0,
+        24,
+        5
+      ]
+    },
+    {
+      "id": "spindle-lane",
+      "title": "Spindle Lane",
+      "rect": [
+        0,
+        5,
+        24,
+        23
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "id": "gate-lamp",
+      "at": [
+        14.35,
+        27.2
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Gate lamp",
+      "stand": [
+        14,
+        26
+      ],
+      "requires": "field-tablet"
+    }
+  ],
+  "props": [],
+  "interior": {
+    "style": "workshop-lane",
+    "shell": "haverlund-lane-set",
+    "exit": [
+      10,
+      12
+    ],
+    "exit_direction": "W",
+    "exit_posts": [],
+    "walk_front": 0,
+    "zoom": 16.0,
+    "outdoor": {
+      "sun": {
+        "rotation": [
+          -52.0,
+          -38.0,
+          0.0
+        ],
+        "color": "fff0d9",
+        "energy": 0.88
+      },
+      "ambient": {
+        "color": "c5d2e4",
+        "energy": 0.4
+      },
+      "haze": "c4d6da",
+      "backdrop": "res://assets/world/backdrops/haverlund-harbour.png",
+      "parallax": 0.22
+    },
+    "life": {
+      "smoke": [
+        {
+          "at": [
+            6.8,
+            16.4
+          ],
+          "height": 10.95
+        },
+        {
+          "at": [
+            2.1,
+            20.0
+          ],
+          "height": 10.65
+        },
+        {
+          "at": [
+            0.6,
+            25.8
+          ],
+          "height": 7.25
+        }
+      ],
+      "sway": [
+        "washing-line"
+      ],
+      "tram": {
+        "asset": "hill-tram",
+        "out": -4.6,
+        "stop": 19.45,
+        "edge": -0.5,
+        "fade": 3.0,
+        "travel": 11,
+        "period": 90,
+        "offset": 14
+      },
+      "gulls": {
+        "at": [
+          18.5,
+          30.5
+        ],
+        "height": 6.0,
+        "count": 3
+      }
+    },
+    "furniture": [
+      {
+        "kind": "counter",
+        "at": [
+          12.0,
+          0.55
+        ],
+        "size": [
+          24.0,
+          1.1
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          19.6,
+          3.95
+        ],
+        "size": [
+          2.4,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          19.6,
+          4.2
+        ],
+        "size": [
+          3.3,
+          0.2
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          18.05,
+          3.2
+        ],
+        "size": [
+          0.22,
+          0.22
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          21.15,
+          3.2
+        ],
+        "size": [
+          0.22,
+          0.22
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          3.5,
+          4.18
+        ],
+        "size": [
+          0.3,
+          0.3
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          8.5,
+          4.18
+        ],
+        "size": [
+          0.3,
+          0.3
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          16.0,
+          4.18
+        ],
+        "size": [
+          0.3,
+          0.3
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          22.4,
+          4.18
+        ],
+        "size": [
+          0.3,
+          0.3
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          23.05,
+          4.25
+        ],
+        "size": [
+          0.36,
+          0.36
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          0.3,
+          4.25
+        ],
+        "size": [
+          0.36,
+          0.36
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          11.6,
+          3.95
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          7.0,
+          4.41
+        ],
+        "size": [
+          0.66,
+          0.22
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          0.15,
+          7.0
+        ],
+        "size": [
+          0.3,
+          5.0
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          1.3,
+          6.4
+        ],
+        "size": [
+          0.6,
+          0.6
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          6.6,
+          5.45
+        ],
+        "size": [
+          1.6,
+          0.55
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          6.4,
+          8.45
+        ],
+        "size": [
+          1.0,
+          2.1
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          8.44,
+          8.9
+        ],
+        "size": [
+          1.2,
+          0.55
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          4.85,
+          8.8
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          2.45,
+          9.0
+        ],
+        "size": [
+          3.4,
+          1.05
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          10.25,
+          6.3
+        ],
+        "size": [
+          0.3,
+          0.3
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          4.75,
+          13.5
+        ],
+        "size": [
+          8.5,
+          8.0
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          0.25,
+          16.0
+        ],
+        "size": [
+          0.5,
+          13.0
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          9.45,
+          10.35
+        ],
+        "size": [
+          0.4,
+          1.4
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          9.27,
+          14.7
+        ],
+        "size": [
+          0.45,
+          1.15
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          9.32,
+          17.2
+        ],
+        "size": [
+          0.55,
+          0.55
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          4.8,
+          20.0
+        ],
+        "size": [
+          7.6,
+          5.0
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          8.95,
+          19.3
+        ],
+        "size": [
+          0.75,
+          2.2
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          8.85,
+          22.2
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          2.5,
+          23.0
+        ],
+        "size": [
+          5.0,
+          1.0
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          2.5,
+          25.45
+        ],
+        "size": [
+          5.0,
+          4.0
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          7.22,
+          25.0
+        ],
+        "size": [
+          4.55,
+          5.0
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          16.5,
+          27.25
+        ],
+        "size": [
+          14.0,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          23.27,
+          16.0
+        ],
+        "size": [
+          0.46,
+          22.5
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          16.9,
+          7.0
+        ],
+        "size": [
+          1.4,
+          0.3
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          16.6,
+          10.0
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          19.3,
+          6.5
+        ],
+        "size": [
+          3.2,
+          2.3
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          22.0,
+          6.7
+        ],
+        "size": [
+          2.0,
+          1.8
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          19.9,
+          14.4
+        ],
+        "size": [
+          2.1,
+          2.1
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          21.2,
+          19.6
+        ],
+        "size": [
+          0.6,
+          0.6
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          17.95,
+          11.0
+        ],
+        "size": [
+          0.55,
+          1.6
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          21.65,
+          10.85
+        ],
+        "size": [
+          1.2,
+          1.0
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          16.3,
+          14.6
+        ],
+        "size": [
+          0.3,
+          0.3
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          16.3,
+          23.4
+        ],
+        "size": [
+          0.3,
+          0.3
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          16.5,
+          19.5
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          19.0,
+          26.45
+        ],
+        "size": [
+          1.6,
+          0.55
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          21.8,
+          26.5
+        ],
+        "size": [
+          0.45,
+          0.45
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          23.0,
+          26.9
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          17.1,
+          26.8
+        ],
+        "size": [
+          0.36,
+          0.36
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "workshop-front",
+        "asset": "lane-workshop",
+        "at": [
+          4.75,
+          13.5
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "nell-house",
+        "asset": "lane-nell-house",
+        "at": [
+          4.8,
+          20.0
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "bram-cottage",
+        "asset": "lane-cottage",
+        "at": [
+          2.5,
+          25.45
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "gate-lantern",
+        "asset": "lane-lamp",
+        "at": [
+          14.35,
+          27.2
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "platform-lantern",
+        "asset": "lane-lamp",
+        "at": [
+          11.6,
+          3.95
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1
+      },
+      {
+        "id": "pavement-lamp",
+        "asset": "lane-lamp",
+        "at": [
+          16.5,
+          19.5
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "post-box",
+        "asset": "lane-post-box",
+        "at": [
+          16.6,
+          10.0
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "lane-notices",
+        "asset": "lane-notice-board",
+        "at": [
+          16.9,
+          7.0
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "view-bench",
+        "asset": "lane-bench",
+        "at": [
+          19.0,
+          26.45
+        ],
+        "turn": 180,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "green-bench",
+        "asset": "lane-bench",
+        "at": [
+          17.95,
+          11.0
+        ],
+        "turn": 270,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "yard-bench",
+        "asset": "lane-bench",
+        "at": [
+          6.6,
+          5.45
+        ],
+        "turn": 180,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "telescope",
+        "asset": "lane-telescope",
+        "at": [
+          21.8,
+          26.5
+        ],
+        "turn": 180,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "green-tree",
+        "asset": "lane-tree",
+        "at": [
+          19.9,
+          14.4
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "green-tree-north",
+        "asset": "lane-tree",
+        "at": [
+          21.2,
+          19.6
+        ],
+        "turn": 70,
+        "height": 1.0,
+        "scale": 0.9
+      },
+      {
+        "id": "yard-tree",
+        "asset": "lane-tree",
+        "at": [
+          1.3,
+          6.4
+        ],
+        "turn": 140,
+        "height": 1.0,
+        "scale": 0.82
+      },
+      {
+        "id": "garden-cypress",
+        "asset": "lane-cypress",
+        "at": [
+          5.6,
+          23.1
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "rail-cypress",
+        "asset": "lane-cypress",
+        "at": [
+          23.0,
+          26.9
+        ],
+        "turn": 60,
+        "height": 1.0,
+        "scale": 0.9
+      },
+      {
+        "id": "bicycle",
+        "asset": "lane-bicycle",
+        "at": [
+          9.45,
+          10.35
+        ],
+        "turn": 90,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "yard-crates",
+        "asset": "lane-crates",
+        "at": [
+          8.2,
+          8.9
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "shop-planter",
+        "asset": "lane-planter",
+        "at": [
+          9.27,
+          14.7
+        ],
+        "turn": 90,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "handcart",
+        "asset": "lane-handcart",
+        "at": [
+          6.4,
+          8.45
+        ],
+        "turn": 270,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "washing-line",
+        "asset": "lane-laundry",
+        "at": [
+          7.6,
+          25.6
+        ],
+        "turn": 90,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "pump",
+        "asset": "lane-pump",
+        "at": [
+          21.6,
+          11.0
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "shed",
+        "asset": "lane-shed",
+        "at": [
+          22.0,
+          6.7
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1
+      },
+      {
+        "id": "tram-shelter",
+        "asset": "lane-tram-shelter",
+        "at": [
+          19.6,
+          3.75
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1
+      },
+      {
+        "id": "hill-tram",
+        "asset": "lane-tram",
+        "at": [
+          -4.6,
+          0.45
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1
+      },
+      {
+        "id": "dormant-hotaru",
+        "asset": "loft-hotaru",
+        "at": [
+          11.4,
+          10.4
+        ],
+        "turn": 0,
+        "height": 1.85,
+        "scale": 1
+      },
+      {
+        "id": "town-ground",
+        "asset": "haverlund-lane-surround",
+        "at": [
+          0,
+          0
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-house-1",
+        "asset": "seaside-saltwind-house",
+        "at": [
+          -14.0,
+          -15.0
+        ],
+        "turn": 180,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 101,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-2",
+        "asset": "seaside-rosewash-house",
+        "at": [
+          -2.0,
+          -14.0
+        ],
+        "turn": 180,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 102,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-3",
+        "asset": "seaside-eaveside-terrace",
+        "at": [
+          9.5,
+          -15.0
+        ],
+        "turn": 180,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 103,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-4",
+        "asset": "seaside-shingle-court-cottage",
+        "at": [
+          22.0,
+          -13.5
+        ],
+        "turn": 180,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": 104
+      },
+      {
+        "id": "town-house-5",
+        "asset": "seaside-lantern-row-house",
+        "at": [
+          33.0,
+          -13.5
+        ],
+        "turn": 180,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 105,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-6",
+        "asset": "seaside-rosewash-house",
+        "at": [
+          43.0,
+          -14.0
+        ],
+        "turn": 180,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 106,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-7",
+        "asset": "seaside-rosewash-house",
+        "at": [
+          -8.0,
+          -33.0
+        ],
+        "turn": 0,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 107,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-8",
+        "asset": "seaside-saltwind-house",
+        "at": [
+          6.0,
+          -34.0
+        ],
+        "turn": 0,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 108,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-9",
+        "asset": "seaside-eaveside-terrace",
+        "at": [
+          22.0,
+          -34.0
+        ],
+        "turn": 0,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 109,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-10",
+        "asset": "seaside-lantern-row-house",
+        "at": [
+          37.0,
+          -33.0
+        ],
+        "turn": 0,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 110,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-11",
+        "asset": "seaside-rosewash-house",
+        "at": [
+          36.0,
+          -2.0
+        ],
+        "turn": 270,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 111,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-12",
+        "asset": "seaside-saltwind-house",
+        "at": [
+          36.5,
+          10.0
+        ],
+        "turn": 270,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 112,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-13",
+        "asset": "seaside-shingle-court-cottage",
+        "at": [
+          36.0,
+          22.0
+        ],
+        "turn": 270,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": 113
+      },
+      {
+        "id": "town-house-14",
+        "asset": "seaside-lantern-row-house",
+        "at": [
+          52.0,
+          0.0
+        ],
+        "turn": 90,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 114,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-15",
+        "asset": "seaside-eaveside-terrace",
+        "at": [
+          54.0,
+          13.0
+        ],
+        "turn": 90,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 115,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-16",
+        "asset": "seaside-rosewash-house",
+        "at": [
+          53.0,
+          25.0
+        ],
+        "turn": 90,
+        "height": -8.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 116,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-17",
+        "asset": "seaside-rosewash-house",
+        "at": [
+          -10.0,
+          9.0
+        ],
+        "turn": 90,
+        "height": 3.0,
+        "scale": 1.0,
+        "look": 117
+      },
+      {
+        "id": "town-house-18",
+        "asset": "seaside-saltwind-house",
+        "at": [
+          -11.0,
+          20.0
+        ],
+        "turn": 90,
+        "height": 3.0,
+        "scale": 1.0,
+        "look": 118
+      },
+      {
+        "id": "town-house-19",
+        "asset": "seaside-lantern-row-house",
+        "at": [
+          -10.0,
+          30.5
+        ],
+        "turn": 90,
+        "height": 3.0,
+        "scale": 1.0,
+        "look": 119
+      },
+      {
+        "id": "town-house-20",
+        "asset": "seaside-eaveside-terrace",
+        "at": [
+          -26.0,
+          12.0
+        ],
+        "turn": 90,
+        "height": 5.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 120,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-21",
+        "asset": "seaside-rosewash-house",
+        "at": [
+          -26.0,
+          25.0
+        ],
+        "turn": 90,
+        "height": 5.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 121,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-22",
+        "asset": "seaside-shingle-court-cottage",
+        "at": [
+          -12.0,
+          -3.0
+        ],
+        "turn": 0,
+        "height": 4.7,
+        "scale": 1.0,
+        "look": {
+          "seed": 122,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-23",
+        "asset": "seaside-saltwind-house",
+        "at": [
+          -27.0,
+          -2.0
+        ],
+        "turn": 0,
+        "height": 4.7,
+        "scale": 1.0,
+        "look": {
+          "seed": 123,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-24",
+        "asset": "seaside-rosewash-house",
+        "at": [
+          4.0,
+          32.5
+        ],
+        "turn": 90,
+        "height": 1.0,
+        "scale": 1.0,
+        "look": 124
+      },
+      {
+        "id": "town-house-25",
+        "asset": "seaside-lantern-row-house",
+        "at": [
+          6.0,
+          44.0
+        ],
+        "turn": 90,
+        "height": -2.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 125,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-26",
+        "asset": "seaside-shingle-court-cottage",
+        "at": [
+          22.0,
+          35.5
+        ],
+        "turn": 270,
+        "height": -3.0,
+        "scale": 1.0,
+        "look": 126
+      },
+      {
+        "id": "town-house-27",
+        "asset": "seaside-saltwind-house",
+        "at": [
+          22.5,
+          45.0
+        ],
+        "turn": 270,
+        "height": -3.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 127,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-28",
+        "asset": "seaside-eaveside-terrace",
+        "at": [
+          36.0,
+          38.0
+        ],
+        "turn": 0,
+        "height": -3.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 128,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-29",
+        "asset": "seaside-rosewash-house",
+        "at": [
+          -9.0,
+          41.0
+        ],
+        "turn": 90,
+        "height": 3.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 129,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-30",
+        "asset": "seaside-saltwind-house",
+        "at": [
+          6.0,
+          60.0
+        ],
+        "turn": 0,
+        "height": -5.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 130,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-house-31",
+        "asset": "seaside-lantern-row-house",
+        "at": [
+          22.0,
+          60.0
+        ],
+        "turn": 0,
+        "height": -5.0,
+        "scale": 1.0,
+        "look": {
+          "seed": 131,
+          "plain": true
+        }
+      },
+      {
+        "id": "town-tree-1",
+        "asset": "lane-tree",
+        "at": [
+          -6.0,
+          2.0
+        ],
+        "turn": 0,
+        "height": 4.7,
+        "scale": 1.0
+      },
+      {
+        "id": "town-tree-2",
+        "asset": "lane-cypress",
+        "at": [
+          -6.0,
+          14.5
+        ],
+        "turn": 0,
+        "height": 3.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-tree-3",
+        "asset": "lane-tree",
+        "at": [
+          -17.0,
+          24.0
+        ],
+        "turn": 90,
+        "height": 3.0,
+        "scale": 0.9
+      },
+      {
+        "id": "town-tree-4",
+        "asset": "lane-tree",
+        "at": [
+          30.0,
+          -22.0
+        ],
+        "turn": 30,
+        "height": -8.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-tree-5",
+        "asset": "lane-tree",
+        "at": [
+          8.0,
+          -24.0
+        ],
+        "turn": 120,
+        "height": -8.0,
+        "scale": 1.1
+      },
+      {
+        "id": "town-tree-6",
+        "asset": "lane-cypress",
+        "at": [
+          31.0,
+          4.0
+        ],
+        "turn": 0,
+        "height": -8.0,
+        "scale": 1.1
+      },
+      {
+        "id": "town-tree-7",
+        "asset": "lane-tree",
+        "at": [
+          44.0,
+          18.0
+        ],
+        "turn": 200,
+        "height": -8.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-tree-8",
+        "asset": "lane-tree",
+        "at": [
+          9.0,
+          39.0
+        ],
+        "turn": 0,
+        "height": -2.0,
+        "scale": 0.9
+      },
+      {
+        "id": "town-tree-9",
+        "asset": "lane-cypress",
+        "at": [
+          17.0,
+          41.0
+        ],
+        "turn": 0,
+        "height": -3.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-tree-10",
+        "asset": "lane-tree",
+        "at": [
+          30.0,
+          46.0
+        ],
+        "turn": 80,
+        "height": -3.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-balustrade-1",
+        "asset": "town-balustrade",
+        "at": [
+          -0.45,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0021
+      },
+      {
+        "id": "town-balustrade-2",
+        "asset": "town-balustrade",
+        "at": [
+          2.556,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0021
+      },
+      {
+        "id": "town-balustrade-3",
+        "asset": "town-balustrade",
+        "at": [
+          5.563,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0021
+      },
+      {
+        "id": "town-balustrade-4",
+        "asset": "town-balustrade",
+        "at": [
+          8.569,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0021
+      },
+      {
+        "id": "town-balustrade-5",
+        "asset": "town-balustrade",
+        "at": [
+          11.575,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0021
+      },
+      {
+        "id": "town-balustrade-6",
+        "asset": "town-balustrade",
+        "at": [
+          14.581,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0021
+      },
+      {
+        "id": "town-balustrade-7",
+        "asset": "town-balustrade",
+        "at": [
+          17.588,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0021
+      },
+      {
+        "id": "town-balustrade-8",
+        "asset": "town-balustrade",
+        "at": [
+          20.594,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0021
+      },
+      {
+        "id": "town-balustrade-pier-1",
+        "asset": "town-balustrade-pier",
+        "at": [
+          -0.45,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-balustrade-pier-2",
+        "asset": "town-balustrade-pier",
+        "at": [
+          2.556,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-balustrade-pier-3",
+        "asset": "town-balustrade-pier",
+        "at": [
+          5.563,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-balustrade-pier-4",
+        "asset": "town-balustrade-pier",
+        "at": [
+          8.569,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-balustrade-pier-5",
+        "asset": "town-balustrade-pier",
+        "at": [
+          11.575,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-balustrade-pier-6",
+        "asset": "town-balustrade-pier",
+        "at": [
+          14.581,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-balustrade-pier-7",
+        "asset": "town-balustrade-pier",
+        "at": [
+          17.588,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-balustrade-pier-8",
+        "asset": "town-balustrade-pier",
+        "at": [
+          20.594,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "town-balustrade-pier-9",
+        "asset": "town-balustrade-pier",
+        "at": [
+          23.6,
+          -1.55
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-1",
+        "asset": "town-power-pillar",
+        "at": [
+          -42.0,
+          -8.5
+        ],
+        "turn": 0,
+        "height": 4.7,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-2",
+        "asset": "town-power-pillar",
+        "at": [
+          -36.0,
+          -8.5
+        ],
+        "turn": 0,
+        "height": 4.7,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-3",
+        "asset": "town-power-pillar",
+        "at": [
+          -30.0,
+          -8.5
+        ],
+        "turn": 0,
+        "height": 4.7,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-4",
+        "asset": "town-power-pillar",
+        "at": [
+          -24.0,
+          -8.5
+        ],
+        "turn": 0,
+        "height": 4.7,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-5",
+        "asset": "town-power-pillar",
+        "at": [
+          -18.0,
+          -8.5
+        ],
+        "turn": 0,
+        "height": 4.7,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-6",
+        "asset": "town-power-pillar",
+        "at": [
+          -12.0,
+          -8.5
+        ],
+        "turn": 0,
+        "height": 4.7,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-7",
+        "asset": "town-power-pillar",
+        "at": [
+          -6.0,
+          -8.5
+        ],
+        "turn": 0,
+        "height": 4.7,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-8",
+        "asset": "town-power-pillar",
+        "at": [
+          0.0,
+          -1.54
+        ],
+        "turn": 0,
+        "height": -0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-9",
+        "asset": "town-power-pillar",
+        "at": [
+          6.0,
+          -1.54
+        ],
+        "turn": 0,
+        "height": -0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-10",
+        "asset": "town-power-pillar",
+        "at": [
+          12.0,
+          -1.54
+        ],
+        "turn": 0,
+        "height": -0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-11",
+        "asset": "town-power-pillar",
+        "at": [
+          18.0,
+          -1.54
+        ],
+        "turn": 0,
+        "height": -0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-12",
+        "asset": "town-power-pillar",
+        "at": [
+          -3.5,
+          -6.0
+        ],
+        "turn": 90,
+        "height": 4.7,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-13",
+        "asset": "town-power-pillar",
+        "at": [
+          23.64,
+          0.0
+        ],
+        "turn": 90,
+        "height": -0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-14",
+        "asset": "town-power-pillar",
+        "at": [
+          23.64,
+          6.0
+        ],
+        "turn": 90,
+        "height": 1.0,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-15",
+        "asset": "town-power-pillar",
+        "at": [
+          23.64,
+          12.0
+        ],
+        "turn": 90,
+        "height": 1.0,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-16",
+        "asset": "town-power-pillar",
+        "at": [
+          23.64,
+          18.0
+        ],
+        "turn": 90,
+        "height": 1.0,
+        "scale": 1.0
+      },
+      {
+        "id": "power-pillar-17",
+        "asset": "town-power-pillar",
+        "at": [
+          23.64,
+          24.0
+        ],
+        "turn": 90,
+        "height": 1.0,
+        "scale": 1.0
+      }
+    ],
+    "lamp_fixtures": [
+      {
+        "id": "gate-lamp",
+        "asset": "gate-lantern",
+        "range": 5.0,
+        "energy": 0.8
+      }
+    ],
+    "links": [
+      {
+        "id": "workshop-door",
+        "at": [
+          10,
+          12
+        ],
+        "approach": [
+          10,
+          12
+        ],
+        "direction": "W",
+        "to": "workshop-floor",
+        "arrival": [
+          12,
+          4
+        ],
+        "facing": "W",
+        "label": "Go into Nell's workshop",
+        "walk_through": true,
+        "enter": 1,
+        "doors": "workshop-front"
+      },
+      {
+        "id": "town-steps",
+        "at": [
+          12,
+          26
+        ],
+        "approach": [
+          12,
+          26
+        ],
+        "direction": "N",
+        "to": "haverlund-square",
+        "arrival": [
+          1,
+          8
+        ],
+        "facing": "E",
+        "label": "Go down to Rootward Square",
+        "cells": [
+          [
+            12,
+            26
+          ],
+          [
+            13,
+            26
+          ]
+        ],
+        "arrivals": [
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            9
+          ]
+        ],
+        "walk_through": true,
+        "enter": 2
+      }
+    ],
+    "inspections": [
+      {
+        "id": "shop-sign",
+        "at": [
+          10,
+          14
+        ],
+        "title": "The workshop sign",
+        "text": "A cast gear on a scrolled bracket, painted green over an older green. The bracket bolts are brighter than the wall around them."
+      },
+      {
+        "id": "shop-window",
+        "at": [
+          10,
+          16
+        ],
+        "title": "The shop window",
+        "text": "Jars of screws sorted by size, a brass gear as big as a dinner plate, and a small enamel hand propped against the glass, waving at nobody."
+      },
+      {
+        "id": "bicycle",
+        "at": [
+          10,
+          9
+        ],
+        "title": "Nell's bicycle",
+        "text": "Green frame, a wicker basket, a toolbag strapped behind the saddle. Wherever Nell went this morning, she walked."
+      },
+      {
+        "id": "nell-door",
+        "at": [
+          10,
+          19
+        ],
+        "title": "Nell's door",
+        "text": "A plum door with a brass knocker shaped like a hand holding a ball. The step has been swept this morning. The boot scraper hasn't."
+      },
+      {
+        "id": "lane-notices",
+        "at": [
+          17,
+          6
+        ],
+        "title": "The notice board",
+        "text": "Piano lessons, Thursdays. A dance at the hall. A drawing of a grey cat: ANSWERS TO PEPPER. DOES NOT COME WHEN CALLED."
+      },
+      {
+        "id": "post-box",
+        "at": [
+          16,
+          10
+        ],
+        "title": "The post box",
+        "text": "Collections at nine and half past four. Someone has left a lost glove on top, palm down, so it can be seen from the lane."
+      },
+      {
+        "id": "white-fence",
+        "at": [
+          10,
+          25
+        ],
+        "title": "The white fence",
+        "text": "Every picket the same height, the gate freshly painted. A card hangs from the latch: PAINT. — B."
+      },
+      {
+        "id": "town-gate",
+        "at": [
+          12,
+          26
+        ],
+        "title": "The gate at the steps",
+        "text": "Steps drop away between the roofs toward the square. Someone has chalked a number on the top one: 212."
+      },
+      {
+        "id": "view-bench",
+        "at": [
+          19,
+          25
+        ],
+        "title": "The bench at the rail",
+        "text": "From here the roofs fall away to the harbour. Down in the square, a small glass dome catches the light."
+      },
+      {
+        "id": "telescope",
+        "at": [
+          21,
+          26
+        ],
+        "title": "The telescope",
+        "text": "A coin telescope on a cast-iron foot. It takes a coin you don't have, and it's been left pointing at the lighthouse."
+      },
+      {
+        "id": "handcart",
+        "at": [
+          6,
+          7
+        ],
+        "title": "The handcart",
+        "text": "Chained to a ring in the wall: two empty crates, a coil of cable with its end taped, and a ledger with a pencil through the spine."
+      },
+      {
+        "id": "tram-halt",
+        "at": [
+          18,
+          2
+        ],
+        "title": "The tram halt",
+        "text": "First car up at twenty to seven, then every twenty minutes. Beside the twenty-to-eight, in pencil: late."
+      },
+      {
+        "id": "wall-spout",
+        "at": [
+          7,
+          4
+        ],
+        "title": "The spout in the wall",
+        "text": "A brass spout over a stone basin. It still runs, cold enough to ache, and the basin's lip is worn smooth on one side."
+      },
+      {
+        "id": "street-sign",
+        "at": [
+          10,
+          4
+        ],
+        "title": "The street sign",
+        "text": "SPINDLE LANE, white on blue enamel, one corner chipped back to the iron. Someone has chalked an arrow under it, pointing up the steps."
+      },
+      {
+        "id": "grey-cat",
+        "at": [
+          22,
+          12
+        ],
+        "title": "A grey cat",
+        "text": "Asleep on the warm coping with one paw over her nose. An ear turns toward you. The rest of her doesn't."
+      }
+    ]
+  }
+}

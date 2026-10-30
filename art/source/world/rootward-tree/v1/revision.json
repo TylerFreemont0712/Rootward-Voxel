@@ -1,0 +1,21 @@
+{
+  "asset": "rootward-tree",
+  "date": "2026-10-26",
+  "authority": "model.blend",
+  "source_sha256": "2a25779c70cbf4f2683487ec5c2a99353e04e86e98e35771612a9a969b008cbe",
+  "edits": [
+    {
+      "path": "art/source/world/village-landmarks/v1/enchant.py",
+      "sha256": "8aa6297625cb5e4b2711d2959f172937104ebbc729db739e85711e92a97b84bc"
+    },
+    {
+      "path": "art/source/world/village-landmarks/v1/finish_uvs.py",
+      "sha256": "10c34e277742175e0a28f5e5e8fff5798d0e393b170f0e1f8395965049b43fd2"
+    },
+    {
+      "path": "art/source/world/village-landmarks/v1/ground_light.py",
+      "sha256": "eeb22a8854b3842e88a31911f41787c1d36dca0c87fb419bdad12b5a381b54e2"
+    }
+  ],
+  "note": "Deliberate edits to the first saved master. Prior sources retained beside model.blend. Rebuild with scripts/world-art.sh build rootward-tree."
+}

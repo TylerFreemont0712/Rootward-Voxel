@@ -9,6 +9,10 @@ var _failures: Array[String] = []
 
 ## Reference solutions live here, not in the shipped content: the game never shows an answer.
 const SOLUTIONS: Dictionary = {
+	"say-hello": CompanionLesson.STARTER,
+	"landing-light": "def program(world):\n    world.lamp(\"landing-lamp\").set_lit(True)\n",
+	"morning-round": "def program(world):\n    for lamp in world.zone(\"workshop\").lamps:\n        lamp.set_lit(True)\n",
+	"first-steps": "def program(world):\n    x = y = 0\n    y += 1\n    world.controls.bind_move(\"W\", x, y)\n    x = y = 0\n    x -= 1\n    world.controls.bind_move(\"A\", x, y)\n    x = y = 0\n    y -= 1\n    world.controls.bind_move(\"S\", x, y)\n    x = y = 0\n    x += 1\n    world.controls.bind_move(\"D\", x, y)\n",
 	"first-light": "def program(world):\n    lamp = world.lamp(\"landing-lamp\")\n    lamp.set_lit(True)\n",
 	"light-the-green": "def program(world):\n    green = world.zone(\"green\")\n    for lamp in green.lamps:\n        lamp.set_lit(True)\n",
 	"mill-bridge": "def program(world):\n    bridge = world.bridge(\"mill-bridge\")\n    deck_count = 4\n    for cell in bridge.cells[:deck_count]:\n        bridge.place_deck(cell)\n",
@@ -44,10 +48,84 @@ func _run() -> void:
 	_geometry(area, rules)
 	_cabin_footprint()
 	if Sandbox.is_available(SandboxJob.PYTHON):
+		await _morning_quest()
+		var workshop: AreaDef = AreaStore.load_area("workshop-floor")
+		var workshop_rules := LabWorld.new(workshop)
+		var initial: Dictionary = workshop_rules.initial_state()
+		var hello: Dictionary = LabProgram.run(SOLUTIONS["say-hello"], workshop_rules.snapshot(initial))
+		var voice: Dictionary = workshop_rules.propose(initial, hello.get("commands", []), hello.get("memory", {}))
+		_check(hello.ok and voice.ok and not initial.hotaru_greeted and Quests.goal_met(workshop, voice.state, workshop.quest("say-hello").goal), "The workshop greeting has a real WASI reference solution and remains a detached proposal")
+		await _workshop_jobs(workshop, workshop_rules)
 		await _playthrough(area, rules)
 	else:
 		_check(false, "Python/WASI runtime is available")
 	_finish()
+
+
+func _workshop_jobs(room: AreaDef, rules: LabWorld) -> void:
+	var state: Dictionary = rules.initial_state()
+	state.hotaru_greeted = true
+	var completed: Array = ["say-hello"]
+	state.player = [12,10,0]
+	var ticket: Dictionary = rules.read_inspection(state, "job-board")
+	_check(ticket.ok and not Quests.goal_met(room,state,room.quest("waiting-ticket").goal), "Reading the nearby ticket is a detached discovery proposal")
+	if not ticket.ok: return
+	state = ticket.state
+	state.player = [1,2,0]
+	_check(not ZoneTerminals.connect_at(room, state, "workshop-terminal").ok, "The wall screen's socket needs the tablet the player carries from the loft")
+	state.items = ["field-tablet"]
+	var connection: Dictionary = ZoneTerminals.connect_at(room, state, "workshop-terminal")
+	_check(connection.ok, "The reference playthrough jacks the tablet into the wall screen before programming its zone")
+	if not connection.ok: return
+	state = connection.state
+	completed.append_array(Quests.newly_completed(room,state,completed))
+	_check(completed.has("waiting-ticket"), "The ticket's reference interaction unlocks the stair-light job")
+	for id: String in ["landing-light", "morning-round"]:
+		var quest: Dictionary = room.quest(id)
+		var unchanged: Dictionary = LabProgram.run(quest.starter,rules.snapshot(state))
+		var attempt: Dictionary = rules.propose(state,unchanged.get("commands",[]),unchanged.get("memory",{}))
+		_check(unchanged.ok and attempt.ok and not Quests.goal_met(room,attempt.state,quest.goal), "The workshop starter leaves its actual goal incomplete: "+id)
+		var answer: Dictionary = LabProgram.run(SOLUTIONS[id],rules.snapshot(state))
+		var proposal: Dictionary = rules.propose(state,answer.get("commands",[]),answer.get("memory",{}))
+		_check(answer.ok and proposal.ok and Quests.goal_met(room,proposal.state,quest.goal), "The real WASI reference solution completes the world goal: "+id)
+		_check(not Quests.goal_met(room,state,quest.goal), "A test does not commit the workshop goal: "+id)
+		if not proposal.ok:return
+		state=proposal.state
+		completed.append_array(Quests.newly_completed(room,state,completed))
+	_check(Quests.main_arc_done(room,completed), "The ticket and both reference routines complete the connected workshop chapter")
+
+
+func _morning_quest() -> void:
+	var loaded: Dictionary=AreaStore.read("morning-bedroom")
+	_check(loaded.ok,"The unique starting bedroom and movement quest validate: "+str(loaded.errors))
+	if not loaded.ok:return
+	var room: AreaDef=loaded.area
+	var rules:=LabWorld.new(room)
+	var state: Dictionary=rules.initial_state()
+	var hello: Dictionary=LabProgram.run(SOLUTIONS["say-hello"],rules.snapshot(state))
+	_check(hello.ok and hello.commands.size()==1 and hello.commands[0].op=="say" and hello.stdout=="Hello, Hotaru!","The hello reference solution uses real Python print and a typed speech command")
+	var voice: Dictionary=rules.propose(state,hello.get("commands",[]),hello.get("memory",{}))
+	_check(voice.ok and not state.hotaru_greeted and Quests.goal_met(room,voice.state,room.quest("say-hello").goal),"Saying hello remains a detached proposal until Apply")
+	if not voice.ok:return
+	state=voice.state
+	_check(Quests.newly_completed(room,state,[])==["say-hello"] and Quests.current(room,["say-hello"]).id=="first-steps","Greeting unlocks movement as lesson two")
+	var starter: Dictionary=LabProgram.run(room.quest("first-steps").starter,rules.snapshot(state))
+	_check(starter.ok,"The movement starter runs in real Python/WASI")
+	if starter.ok:
+		var partial: Dictionary=rules.propose(state,starter.commands,starter.memory)
+		_check(partial.ok and not Quests.goal_met(room,partial.state,room.quest("first-steps").goal),"The starter does not solve the movement lesson")
+	var answer: Dictionary=LabProgram.run(SOLUTIONS["first-steps"],rules.snapshot(state))
+	_check(answer.ok,"The first-step reference program runs through Python/WASI")
+	if not answer.ok:return
+	var proposal: Dictionary=rules.propose(state,answer.commands,answer.memory)
+	_check(proposal.ok and not Quests.goal_met(room,proposal.state,room.quest("first-steps").goal),"Connecting keys still requires trying the keys")
+	if not proposal.ok:return
+	state=proposal.state
+	for key: String in ["W","D","S","A"]:
+		var step: Dictionary=rules.move(state,MovementBindings.direction(state.controls,key),key)
+		_check(step.ok,"The authored bedroom gives the first-step solution clear walking space")
+		if step.ok:state=step.state
+	_check(Quests.goal_met(room,state,room.quest("first-steps").goal),"The reference solution plus four bound-key steps completes the first quest")
 
 
 func _geometry(area: AreaDef, rules: LabWorld) -> void:
@@ -130,7 +208,7 @@ func _door_cell(building: Dictionary) -> Vector2i:
 	var rect: Rect2 = building.rect
 	var direction: Vector2i = {"S": Vector2i(0, -1), "E": Vector2i(1, 0), "N": Vector2i(0, 1), "W": Vector2i(-1, 0)}[building.facing]
 	var half: float = rect.size.x * 0.5 if direction.x != 0 else rect.size.y * 0.5
-	return Vector2i(roundi(building.at.x + direction.x * (half + 0.7)), roundi(building.at.y + direction.y * (half + 0.7)))
+	return Vector2i(roundi(building.at.x + direction.x * (half + 0.7 + int(building.get("door_offset",0)))), roundi(building.at.y + direction.y * (half + 0.7 + int(building.get("door_offset",0)))))
 
 
 func _walk(rules: LabWorld, state: Dictionary, goal: Vector2i) -> Dictionary:

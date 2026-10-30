@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "id": "20261029T054932-e8095116",
+  "kind": "delete",
+  "title": "Delete Bookshelf",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "bookshelf",
+    "label": "Bookshelf",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/bookshelf/v1/model.blend",
+    "runtime": "assets/world/bookshelf/model.glb",
+    "manifest": "assets/world/bookshelf/manifest.json",
+    "catalog_notes": "Tall open timber bookcase, 0.5 m wide, 0.3 m deep and 1.0 m tall, with four compartments of violet, teal and cream book spines facing -Y. The footprint covers the whole cabinet; nothing overhangs it.",
+    "related_files": [
+      "art/source/world/bookshelf/v1/brief.md",
+      "art/source/world/bookshelf/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/areas/morning-bedroom.json",
+      "content/areas/morning-town-hall-room.json",
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Bookshelf",
+      "source": "art/source/world/bookshelf/v1/model.blend",
+      "runtime": "assets/world/bookshelf/model.glb",
+      "pivot": "ground origin at the footprint centre; base on z = 0",
+      "logical_footprint": [
+        -0.25,
+        -0.15,
+        0.5,
+        0.3
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Tall open timber bookcase, 0.5 m wide, 0.3 m deep and 1.0 m tall, with four compartments of violet, teal and cream book spines facing -Y. The footprint covers the whole cabinet; nothing overhangs it.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster"
+        ],
+        "roof": [
+          "roof",
+          "roof_light",
+          "teal",
+          "teal_light"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:49:32+00:00",
+  "updated": "2026-10-29T05:49:32+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:49:32+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/morning-town-hall-room.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/morning-bedroom.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

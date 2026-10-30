@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-28",
+  "source_before_sha256": "430e4b7255897f1cd37d95108356a71a410d220a813513c3bc1481116c604e9f",
+  "preserved_source": "model.pre-party-wall.blend",
+  "edit_record": "art/source/world/sparks-workshop/v1/party_wall_revision.py",
+  "removed_faces_by_object": {
+    "workshop_oak": 54,
+    "workshop_harbour": 1,
+    "workshop_wood_edge": 324,
+    "workshop_ochre": 258,
+    "workshop_ceramic": 144,
+    "workshop_soil": 18,
+    "workshop_leaf_dark": 84,
+    "workshop_leaf": 180,
+    "workshop_white": 1200,
+    "workshop_leaf_light": 180
+  },
+  "note": "Deliberate source edit: the north window is removed because the north wall is the party wall with Nell's house. Everything else is retained; a jar shelf (workshop-jar-shelf) is placed on the wall by the area document."
+}

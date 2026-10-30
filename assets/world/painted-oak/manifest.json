@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "painted-oak",
+  "version": "v1",
+  "source": "art/source/world/painted-oak/v1/model.blend",
+  "source_sha256": "25a44321229e68a8289c2b038b2bd644ba0fffe923ef5884bc25630e74eb5819",
+  "runtime": "assets/world/painted-oak/model.glb",
+  "runtime_sha256": "8e7f00e53df0ea3b0e093baa9ac54e7fbeb98155079e068a7d7fbbdd6d5c3895",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -2.34765124320984,
+      0.0149999996647239,
+      -1.9687774181366,
+      2.32373976707458,
+      5.29663324356079,
+      1.95399165153503
+    ],
+    "geometry_sha256": "c12161681d7204b6d6a0e14e793577660160a8fb5190a2ab3dd9eee7a3affd26",
+    "material_records": {
+      "leaf_deep": {
+        "albedo": [
+          2196,
+          3922,
+          2353,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "leaf_green": {
+        "albedo": [
+          3098,
+          4863,
+          2471,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "leaf_light": {
+        "albedo": [
+          4392,
+          5961,
+          2902,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "leaf_shadow": {
+        "albedo": [
+          1569,
+          3059,
+          2196,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "leaf_sun": {
+        "albedo": [
+          5451,
+          6784,
+          3216,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "painted_oak": {
+        "albedo": [
+          5961,
+          4039,
+          2314,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "painted_oak_dark": {
+        "albedo": [
+          3882,
+          2706,
+          1765,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "painted_oak_light": {
+        "albedo": [
+          7412,
+          5412,
+          3020,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "leaf_deep",
+      "leaf_green",
+      "leaf_light",
+      "leaf_shadow",
+      "leaf_sun",
+      "painted_oak",
+      "painted_oak_dark",
+      "painted_oak_light"
+    ],
+    "meshes": 17,
+    "triangles": 20760
+  }
+}

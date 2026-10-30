@@ -1,0 +1,26 @@
+{
+  "asset": "workshop-shop-doors",
+  "source": "art/source/world/workshop-shop-doors/v1/model.blend",
+  "backup": "art/source/world/workshop-shop-doors/v1/model.pre-plant-style.blend",
+  "before_sha256": "dc0e2f3fe2566f88fbc0fb48c74fcda9f079ec5fbf1eb156617f5c3338a88838",
+  "after_sha256": "188a208bf3ac9cf221e8465495c52bd104786131878dc4a9159b29e601d0cad3",
+  "objects": [
+    {
+      "object": "workshop_leaf",
+      "replaced_components": {
+        "leaf": 8
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "workshop_leaf_light",
+      "replaced_components": {
+        "leaf_light": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

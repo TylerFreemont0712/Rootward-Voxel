@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "asset": "town-fountain",
+  "version": "v1",
+  "source": "art/source/world/town-fountain/v1/model.blend",
+  "source_sha256": "4d6d8d034adcfc911fb95b6434b9c54400016131bcea6aefd19e1f6d0f8c7334",
+  "runtime": "assets/world/town-fountain/model.glb",
+  "runtime_sha256": "168ae5d1992f2c1f9fd3cc602c391778d77c80670c4c062870bf5386aad1e104",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.5,
+      0.0,
+      -0.5,
+      0.509999990463257,
+      1.64999997615814,
+      0.560000002384186
+    ],
+    "geometry_sha256": "30838be86a81a2117b85d9532b899a1f79de30a2fcc9684fe38d0e0fde20698e",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      }
+    },
+    "materials": [
+      "house_paint",
+      "seaside_stone"
+    ],
+    "meshes": 2,
+    "triangles": 732
+  }
+}

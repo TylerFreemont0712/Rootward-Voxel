@@ -1,0 +1,10 @@
+{
+  "asset": "robot-heron",
+  "date": "2026-10-29",
+  "source_sha256": "a56f8218f2125fd70f983457a17cfbdec811a098e23cae39f80503de316bf363",
+  "backup": "model.pre-payload-pose.blend",
+  "backup_sha256": "353aa2241c2f7f9c7e30a2e2afa7bf73c3a900e2cd2f196ffd765da787caeaea",
+  "edit_record": "art/source/world/sparks-robot-refinement/v1/final_heron_pose.py",
+  "edit_record_sha256": "c1daf4d53e54b02e89a53fd3a0d257e17aa594452f3791a3b3b7a500499187d9",
+  "reason": "Keep the held crate and its actual slings below Heron\u2019s readable spark face."
+}

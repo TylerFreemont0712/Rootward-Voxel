@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "20261029T055824-fbf2c4b2",
+  "kind": "delete",
+  "title": "Delete Rowboat Upturned",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "rowboat-upturned",
+    "label": "Rowboat Upturned",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/rowboat-upturned/v1/model.blend",
+    "runtime": "assets/world/rowboat-upturned/model.glb",
+    "manifest": "assets/world/rowboat-upturned/manifest.json",
+    "catalog_notes": "An upturned hull with a dark keel, plank strakes in two tones, and an oar lying along each flank. The oars and blades overhang the proposed hull footprint.",
+    "related_files": [
+      "art/source/world/rowboat-upturned/v1/brief.md",
+      "art/source/world/rowboat-upturned/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Rowboat Upturned",
+      "source": "art/source/world/rowboat-upturned/v1/model.blend",
+      "runtime": "assets/world/rowboat-upturned/model.glb",
+      "pivot": "ground origin at the hull centre",
+      "logical_footprint": [
+        -0.8,
+        -0.3,
+        1.6,
+        0.6
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "An upturned hull with a dark keel, plank strakes in two tones, and an oar lying along each flank. The oars and blades overhang the proposed hull footprint.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:58:24+00:00",
+  "updated": "2026-10-29T06:28:00+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:58:24+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:00+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/rowboat-upturned/v1/brief.md",
+    "art/source/world/rowboat-upturned/v1/model.blend",
+    "art/source/world/rowboat-upturned/v1/provenance.json",
+    "assets/world/rowboat-upturned/manifest.json",
+    "assets/world/rowboat-upturned/model.glb",
+    "assets/world/rowboat-upturned/model.glb.import"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "source": "art/source/companions/hotaru/v1/sprite.png",
+  "sha256": "71d2fece696d9227d8bf59d27b9dbf8b863307063ae4962ce4a891e027b91383",
+  "role": "Hotaru fairy companion sprite; cosmetic hovering, separate from shared human frame skins."
+}

@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "asset": "lane-bench",
+  "version": "v1",
+  "source": "art/source/world/lane-bench/v1/model.blend",
+  "source_sha256": "f669a1f0c5a93eed8794331d2eaad4dae3318e0701c841a1e097a27aca45172c",
+  "runtime": "assets/world/lane-bench/model.glb",
+  "runtime_sha256": "2b79981c67b4a55b3715c6923471e7a1db4774a774c86c1383d525f37e0349b3",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.75,
+      0.0,
+      -0.258349627256393,
+      0.75,
+      0.843754351139069,
+      0.189999997615814
+    ],
+    "geometry_sha256": "3d9716d82467e6dac2e5498544ec572d082d020327d5279c713e60bba69cc221",
+    "material_records": {
+      "lane_shutter_dark": {
+        "albedo": [
+          2275,
+          4235,
+          3333,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_light": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_shutter_dark",
+      "lane_wood",
+      "lane_wood_light"
+    ],
+    "meshes": 3,
+    "triangles": 748
+  }
+}

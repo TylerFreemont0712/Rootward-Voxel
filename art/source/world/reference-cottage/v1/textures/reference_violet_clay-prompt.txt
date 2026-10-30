@@ -1,0 +1,6 @@
+Use case: stylized-concept
+Asset type: production seamless albedo texture for a new detailed 3D voxel cottage matched to an existing storybook concept.
+Primary request: one flat square swatch of rich blue-violet, hand-glazed clay. Muted indigo-purple midtones, subtle lavender scumbling, tiny warm terracotta pinholes, a few broad irregular brush strokes and smooth pooled glaze. The surface of ONE ceramic shingle, without drawing a shingle shape or a grid. This will wrap individual physically modeled chunky roof tiles with separate curved bevels; all shape, tile joints, edge highlights and cast shadows come from 3D geometry.
+Style: beautifully hand-painted fantasy game material, bold simple painterly detail that remains legible at 128 pixels, restrained low contrast, richer and darker than pale lavender. Medium value, not black.
+Composition: material fills the whole square. Perfectly straight-on orthographic material scan, uniform diffuse neutral lighting, no lighting gradients, no vignette, no perspective, no objects, no tile grid, no border, no text, no watermark.
+Constraints: seamless left/right and top/bottom edges, opaque. Do not add any decorative pattern, cracks, scratches, grout or baked bevel shading.

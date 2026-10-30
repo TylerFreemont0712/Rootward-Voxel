@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "asset": "loft-bed",
+  "version": "v1",
+  "source": "art/source/world/loft-bed/v1/model.blend",
+  "source_sha256": "d49538ae8d40cb79766052a62b28fb7928abea35c54ee31d2b72d6131850c795",
+  "runtime": "assets/world/loft-bed/model.glb",
+  "runtime_sha256": "a0a4864b36a5063118530ebfc022b05b916db8148ed6a73f636dfaccedd9fed6",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.09500002861023,
+      0.0,
+      -1.50499999523163,
+      1.09500002861023,
+      1.46000003814697,
+      1.50499999523163
+    ],
+    "geometry_sha256": "dc5385c361e7ef4e338ec219d684f0e667dd24bd15b0dac52dcd2926543e35a6",
+    "material_records": {
+      "loft_brass": {
+        "albedo": [
+          7686,
+          6039,
+          3255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_linen": {
+        "albedo": [
+          9333,
+          8980,
+          8275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_linen_shade": {
+        "albedo": [
+          7843,
+          7451,
+          6549,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+      },
+      "loft_quilt": {
+        "albedo": [
+          8434,
+          8434,
+          8434,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "89e1a37add945c8a6ba144d48241018ff0781abff809b84b9561f403ece08b43"
+      },
+      "loft_white": {
+        "albedo": [
+          8784,
+          8235,
+          7255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_wood": {
+        "albedo": [
+          6784,
+          4745,
+          2902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_wood_dark": {
+        "albedo": [
+          4745,
+          3137,
+          2000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_wood_edge": {
+        "albedo": [
+          7647,
+          5882,
+          3882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_brass",
+      "loft_linen",
+      "loft_linen_shade",
+      "loft_oak",
+      "loft_quilt",
+      "loft_white",
+      "loft_wood",
+      "loft_wood_dark",
+      "loft_wood_edge"
+    ],
+    "meshes": 9,
+    "triangles": 13860
+  }
+}

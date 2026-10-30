@@ -5,6 +5,10 @@ extends RefCounted
 static func prepare(spec: Dictionary) -> bool:
 	if spec.is_empty():
 		return true
+	var output_root: String=str(spec.get("output_root","res://assets/world/textures")).trim_suffix("/")
+	if ".." in output_root or not (output_root=="res://assets/world/textures" or output_root.begins_with("res://assets/world/textures/")):
+		push_error("Detail texture output must stay inside assets/world/textures.")
+		return false
 	var record: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(str(spec.provenance)))
 	if FileAccess.get_sha256(str(spec.library)) != str(record.get("library_sha256", "")):
 		push_error("Detail texture design/prompt record changed. Author a new source version.")
@@ -13,7 +17,9 @@ static func prepare(spec: Dictionary) -> bool:
 		if FileAccess.get_sha256("res://"+path) != str(record.reference_sha256[path]):
 			push_error("Detail texture reference changed: "+path+". Preserve the authored reference or version the handoff.")
 			return false
-	var manifest: Dictionary = {"schema":1, "version":spec.get("version", "v2-detail"), "normalization":"Lush: Lanczos to 128; solid: Lanczos to 64 then nearest to 128. Opposite edge pixels paired to make a periodic boundary. Native paintings preserved.", "materials":{}}
+	# An optional sharper tier for authored models whose surfaces swap colour at runtime (seaside houses).
+	var detail: int = int(spec.get("detail_size", 0))
+	var manifest: Dictionary = {"schema":1, "version":spec.get("version", "v2-detail"), "normalization":"Lush: Lanczos to 128; solid: Lanczos to 64 then nearest to 128. %sOpposite edge pixels paired to make a periodic boundary. Native paintings preserved." % ("Detail: Lanczos to %d. " % detail if detail > 0 else ""), "materials":{}}
 	for item: Dictionary in record.materials:
 		var source: String = "res://" + str(item.source)
 		if FileAccess.get_sha256(source) != str(item.sha256):
@@ -37,12 +43,33 @@ static func prepare(spec: Dictionary) -> bool:
 				var vertical: Color = image.get_pixel(index,0).lerp(image.get_pixel(index,127),0.5)
 				image.set_pixel(index,0,vertical)
 				image.set_pixel(index,127,vertical)
-			var path: String = "res://assets/world/textures/%s/%s.png" % [style,item.id]
+			var path: String = "%s/%s/%s.png" % [output_root,style,item.id]
 			DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(path.get_base_dir()))
 			if image.save_png(ProjectSettings.globalize_path(path)) != OK:
 				return false
 			outputs[style] = {"path":path, "sha256":FileAccess.get_sha256(path), "size":[128,128]}
+		if detail > 0:
+			var sharp := native.duplicate() as Image
+			sharp.convert(Image.FORMAT_RGB8)
+			sharp.resize(detail, detail, Image.INTERPOLATE_LANCZOS)
+			for index: int in range(detail):
+				var across: Color = sharp.get_pixel(0,index).lerp(sharp.get_pixel(detail-1,index),0.5)
+				sharp.set_pixel(0,index,across)
+				sharp.set_pixel(detail-1,index,across)
+			for index: int in range(detail):
+				var down: Color = sharp.get_pixel(index,0).lerp(sharp.get_pixel(index,detail-1),0.5)
+				sharp.set_pixel(index,0,down)
+				sharp.set_pixel(index,detail-1,down)
+			var sharp_path: String = "%s/detail/%s.png" % [output_root,item.id]
+			DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(sharp_path.get_base_dir()))
+			if sharp.save_png(ProjectSettings.globalize_path(sharp_path)) != OK:
+				return false
+			outputs["detail"] = {"path":sharp_path, "sha256":FileAccess.get_sha256(sharp_path), "size":[detail,detail]}
 		manifest.materials[item.id] = {"source":source, "source_sha256":item.sha256, "outputs":outputs}
+	# Curated colour combinations travel with the runtime pictures (houses pick from them per placement).
+	var library: Variant = JSON.parse_string(FileAccess.get_file_as_string(str(spec.library)))
+	if library is Dictionary and (library as Dictionary).has("presets"):
+		manifest["presets"] = library.presets
 	var file := FileAccess.open(str(spec.manifest),FileAccess.WRITE)
 	if file == null:
 		return false

@@ -19,7 +19,7 @@ static func template_errors(template: Dictionary) -> PackedStringArray:
 		errors.append("Template must retain SE/SW/NE/NW and all eight ordered walk poses.")
 	if template.cell_size != [384.0, 448.0] or settings.grid != [4.0, 12.0] or settings.frame_anchor != [192.0, 420.0]:
 		errors.append("Template must retain the approved cell layout and foot origin.")
-	if float(settings.fps) != 16.0 or float(settings.world_height) != 1.45 or int(settings.idle_column) != 8 or settings.idle_columns != [8.0, 9.0]:
+	if not is_equal_approx(float(settings.fps), 240.0 / 13.0) or float(settings.world_height) != 1.45 or int(settings.idle_column) != 8 or settings.idle_columns != [8.0, 9.0]:
 		errors.append("Template must retain approved walk timing, scale and neutral/blink slots.")
 	var idle: Dictionary = settings.idle
 	if float(idle.get("breath_period", 0)) <= 0 or idle.get("blink_interval", []) != [6.0, 7.0] or float(idle.get("blink_duration", 0)) != 0.12 or idle.get("blink_directions", []) != ["se", "sw"]:

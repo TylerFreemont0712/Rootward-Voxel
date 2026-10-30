@@ -1,0 +1,35 @@
+{
+  "asset": "haverlund-bookshop",
+  "source": "art/source/world/haverlund-bookshop/v1/model.blend",
+  "backup": "art/source/world/haverlund-bookshop/v1/model.pre-plant-style.blend",
+  "before_sha256": "3446560a72a4f0c691a16ba324ad1ffbe92c2c25010942f1487d56d93453845c",
+  "after_sha256": "ff2db86eea588c0bfbd1e272300a2546fc00bf0018c07d743e236ca0c842113a",
+  "objects": [
+    {
+      "object": "detail_planters",
+      "replaced_components": {
+        "leaf": 3,
+        "leaf_light": 3,
+        "leaf_dark": 2,
+        "flower_white": 4,
+        "flower_violet": 2
+      },
+      "protected_faces": 40,
+      "protected_sha256": "30321b6b40ed46ef141558df057ca36f94d4ad128177be908c7e496dac07a66d"
+    },
+    {
+      "object": "detail_window_boxes",
+      "replaced_components": {
+        "leaf": 31,
+        "flower_white": 17,
+        "leaf_light": 15,
+        "leaf_dark": 31,
+        "flower_violet": 11,
+        "flower_red": 2
+      },
+      "protected_faces": 220,
+      "protected_sha256": "ee70894b47ddb6a64dfef67bc9b9bed2e3c7cd45105d0144c605a40fd7ca7f33"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

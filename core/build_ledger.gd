@@ -399,7 +399,7 @@ func title_for_asset(asset: String) -> String:
 	for entry: Variant in build_catalog.get("items", []):
 		if entry is Dictionary and (entry as Dictionary).get("asset") == asset:
 			return str((entry as Dictionary).get("title", asset))
-	return asset.replace("-", " ").capitalize()
+	return str((assets.get(asset,{}) as Dictionary).get("label",asset.replace("-", " ").capitalize()))
 
 
 # ---------------------------------------------------------------- plumbing

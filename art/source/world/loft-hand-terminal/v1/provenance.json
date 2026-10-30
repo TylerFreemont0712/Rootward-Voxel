@@ -1,0 +1,9 @@
+{
+  "asset": "loft-hand-terminal",
+  "date": "2026-10-27",
+  "reference": "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png",
+  "authoring_record": "art/source/world/sparks-loft/v1/first_morning_props.py",
+  "authoring_record_sha256": "f55136d3533b4276f6cfbd4ff9405bdcfe38156ead9d47dbdddebb18bbe28984",
+  "textures": "art/source/world/sparks-loft/v1/prompts.json",
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh."
+}

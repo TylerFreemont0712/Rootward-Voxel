@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "asset": "haverlund-bakery",
+  "version": "v1",
+  "source": "art/source/world/haverlund-bakery/v1/model.blend",
+  "source_sha256": "0414657f88db5a0793c3146b4ed90f9af24b68700957b1c33e4dfb995bbfee6e",
+  "runtime": "assets/world/haverlund-bakery/model.glb",
+  "runtime_sha256": "50ea66853ba395be379428ae815f70d71a8911799e324b8de5520130170966ec",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -2.93364477157593,
+      -0.0028284159488976,
+      -3.35190010070801,
+      2.93364477157593,
+      13.3543844223022,
+      4.28594493865967
+    ],
+    "geometry_sha256": "98574247f60a29741837d8afc9f3bfccfba98b48a7257349b739af11b189d369",
+    "material_records": {
+      "bread": {
+        "albedo": [
+          8039,
+          5608,
+          2902,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "bread_dark": {
+        "albedo": [
+          6549,
+          4157,
+          2039,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "house_brick": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "a1cc1afc886ca6ee1007ecd2dc472e8f7e38b52588dbced45c60df50660caa38"
+      },
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "house_window_pane": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3500,
+        "texture_rgba_sha256": "0521fe9168475a9da488e23ca89b12bdfdc600fcde1d4eb37051e2cec2478c37"
+      },
+      "seaside_plaster": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "491d49702b9d152c888c2e78d7fb4b0ace16aadf59ddd4ab75607654e59ecbbe"
+      },
+      "seaside_ridge": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "ded5a294cd42a02ed6d2b8bb815cbb0b45fd4cf6ae6066ce5c7674d079ff0e61"
+      },
+      "seaside_roof": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "ded5a294cd42a02ed6d2b8bb815cbb0b45fd4cf6ae6066ce5c7674d079ff0e61"
+      },
+      "seaside_shutter": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "c4e7a24a15a5ec12722f3b0247221d7e62e925da54c6b585a45d69716ff3e8d3"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      },
+      "seaside_timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shop_glass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3500,
+        "texture_rgba_sha256": "562da4319f4a639aa398d7bf75d75910ac2dff2624196407f75f455a8ce283b4"
+      }
+    },
+    "materials": [
+      "bread",
+      "bread_dark",
+      "house_brick",
+      "house_paint",
+      "house_window_pane",
+      "seaside_plaster",
+      "seaside_ridge",
+      "seaside_roof",
+      "seaside_shutter",
+      "seaside_stone",
+      "seaside_timber",
+      "shop_glass"
+    ],
+    "meshes": 15,
+    "triangles": 60339
+  }
+}

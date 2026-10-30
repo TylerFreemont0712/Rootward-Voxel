@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "id": "20261029T055143-bd436263",
+  "kind": "delete",
+  "title": "Delete Bookbinder’s Press",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "hollow-bookbinders-press",
+    "label": "Bookbinder’s Press",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hollow-bookbinders-press/v1/model.blend",
+    "runtime": "assets/world/hollow-bookbinders-press/model.glb",
+    "manifest": "assets/world/hollow-bookbinders-press/manifest.json",
+    "catalog_notes": "Twin screw uprights squeeze a brass-cornered book between timber platens.",
+    "related_files": [
+      "art/source/world/hollow-bookbinders-press/v1/brief.md",
+      "art/source/world/hollow-bookbinders-press/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Bookbinder’s Press",
+      "source": "art/source/world/hollow-bookbinders-press/v1/model.blend",
+      "runtime": "assets/world/hollow-bookbinders-press/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.575,
+        -0.4,
+        1.15,
+        0.8
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "Twin screw uprights squeeze a brass-cornered book between timber platens.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "cloth_plum"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:51:43+00:00",
+  "updated": "2026-10-29T06:28:21+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:51:43+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:21+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/hollow-bookbinders-press/v1/brief.md",
+    "art/source/world/hollow-bookbinders-press/v1/model.blend",
+    "art/source/world/hollow-bookbinders-press/v1/provenance.json",
+    "assets/world/hollow-bookbinders-press/manifest.json",
+    "assets/world/hollow-bookbinders-press/model.glb",
+    "assets/world/hollow-bookbinders-press/model.glb.import",
+    "assets/world/hollow-bookbinders-press/model_brass.png",
+    "assets/world/hollow-bookbinders-press/model_brass.png.import",
+    "assets/world/hollow-bookbinders-press/model_iron.png",
+    "assets/world/hollow-bookbinders-press/model_iron.png.import",
+    "assets/world/hollow-bookbinders-press/model_plank_wood.png",
+    "assets/world/hollow-bookbinders-press/model_plank_wood.png.import",
+    "assets/world/hollow-bookbinders-press/model_timber_dark.png",
+    "assets/world/hollow-bookbinders-press/model_timber_dark.png.import"
+  ]
+}

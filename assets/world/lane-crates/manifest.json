@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "lane-crates",
+  "version": "v1",
+  "source": "art/source/world/lane-crates/v1/model.blend",
+  "source_sha256": "4f57812c71f5015e338b93fe60c652b5c79014a4579ccfd97eb7b16192d3f31b",
+  "runtime": "assets/world/lane-crates/model.glb",
+  "runtime_sha256": "67cab502a3e63b174d2c5c307c996b44d232cc8d524c6e1844346c501aafa831",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.382124364376068,
+      0.0,
+      -0.280000001192093,
+      0.86212432384491,
+      0.8314488530159,
+      0.280000001192093
+    ],
+    "geometry_sha256": "d4b38a6fa07381dc05c12a16f0eb5b9e420f7f61c66b3a945fa5f25dc25540b4",
+    "material_records": {
+      "lane_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_iron_light": {
+        "albedo": [
+          3608,
+          3922,
+          4078,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_pages": {
+        "albedo": [
+          7961,
+          7373,
+          5961,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_steel": {
+        "albedo": [
+          4275,
+          4667,
+          4902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_light": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_brass",
+      "lane_iron",
+      "lane_iron_light",
+      "lane_pages",
+      "lane_steel",
+      "lane_wood",
+      "lane_wood_dark",
+      "lane_wood_light"
+    ],
+    "meshes": 8,
+    "triangles": 4124
+  }
+}

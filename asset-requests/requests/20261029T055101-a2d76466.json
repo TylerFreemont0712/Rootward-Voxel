@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "id": "20261029T055101-a2d76466",
+  "kind": "delete",
+  "title": "Delete Hay Bale",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "hay-bale",
+    "label": "Hay Bale",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hay-bale/v1/model.blend",
+    "runtime": "assets/world/hay-bale/model.glb",
+    "manifest": "assets/world/hay-bale/manifest.json",
+    "catalog_notes": "Voxel square bale, 0.9 m by 0.5 m by 0.5 m at 0.05 m voxels, with straw runs along its length, three one-voxel twine wraps, rounded long edges and loose straws on top and on the grass. Proposed footprint is the bale's floor; the loose straws overhang it.",
+    "related_files": [
+      "art/source/world/hay-bale/v1/brief.md",
+      "art/source/world/hay-bale/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Hay Bale",
+      "source": "art/source/world/hay-bale/v1/model.blend",
+      "runtime": "assets/world/hay-bale/model.glb",
+      "pivot": "ground origin at the bale's centre; long axis along X",
+      "logical_footprint": [
+        -0.45,
+        -0.25,
+        0.9,
+        0.5
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Voxel square bale, 0.9 m by 0.5 m by 0.5 m at 0.05 m voxels, with straw runs along its length, three one-voxel twine wraps, rounded long edges and loose straws on top and on the grass. Proposed footprint is the bale's floor; the loose straws overhang it."
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:51:01+00:00",
+  "updated": "2026-10-29T06:30:39+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:51:01+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:30:39+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_terrain.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/hay-bale/v1/brief.md",
+    "art/source/world/hay-bale/v1/model.blend",
+    "art/source/world/hay-bale/v1/provenance.json",
+    "assets/world/hay-bale/manifest.json",
+    "assets/world/hay-bale/model.glb",
+    "assets/world/hay-bale/model.glb.import"
+  ]
+}

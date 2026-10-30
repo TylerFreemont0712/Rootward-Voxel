@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "asset": "loft-cable",
+  "version": "v1",
+  "source": "art/source/world/loft-cable/v1/model.blend",
+  "source_sha256": "8524a67a9137ff589cd09aec5df6053355d909c6c36b4f5912f0dffed87c14ae",
+  "runtime": "assets/world/loft-cable/model.glb",
+  "runtime_sha256": "369e21e56c67a195d5f663d9b2ddccdd7737185ae747fbed4d8bcb408b324f96",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.502637267112732,
+      1.16068041324615,
+      -2.55305314064026,
+      0.00713622942566872,
+      2.2866530418396,
+      0.0155026651918888
+    ],
+    "geometry_sha256": "e4b7fa8f2d71a9baa104eb31e1acc64c2e281b35ae9de5c43f58afd530274596",
+    "material_records": {
+      "loft_cable": {
+        "albedo": [
+          2039,
+          2314,
+          2314,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_cable"
+    ],
+    "meshes": 1,
+    "triangles": 400
+  }
+}

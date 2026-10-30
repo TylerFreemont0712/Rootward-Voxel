@@ -1,0 +1,23 @@
+{
+  "asset": "haverlund-fruit-market",
+  "source": "art/source/world/haverlund-fruit-market/v1/model.blend",
+  "backup": "art/source/world/haverlund-fruit-market/v1/model.pre-plant-style.blend",
+  "before_sha256": "28079d5a17178516ef60c1f193e085afdc7ebf7e6d5e91c6a739e99176778ff6",
+  "after_sha256": "98f32365164d24ee12b4ffa6d573398015f19b2b98c2cad9e54021888b4720c7",
+  "objects": [
+    {
+      "object": "detail_planters",
+      "replaced_components": {
+        "leaf": 6,
+        "leaf_light": 6,
+        "leaf_dark": 4,
+        "flower_red": 5,
+        "flower_orange": 5,
+        "flower_white": 2
+      },
+      "protected_faces": 80,
+      "protected_sha256": "05df040f1d99946b8cd83c164486ff056d3733f323d2b44c4c80f08b66458eb2"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

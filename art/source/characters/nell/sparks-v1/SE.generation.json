@@ -1,0 +1,14 @@
+{
+  "key": "sparks-nell-se-repair",
+  "dest": "art/source/characters/nell/sparks-v1/SE.png",
+  "prompt": "Use case: precise-object-edit of a painted sprite sheet. Preserve this exact 1254x1254 transparent 3x3 nine-pose image: same figure, pixels, positions, camera, gait, style, and clothes. Correct ONLY Nell's short wooden walking stick: in the middle-right, bottom-left and bottom-middle cells it disappears. Add the same wooden stick held visibly in the same anatomically consistent hand in ALL nine poses. When the hand is behind her, let the stick show just outside her right silhouette so it never disappears or floats; keep a real continuous grip and shaft to the ferrule. Match the existing stick's wood, length and outlined style, keep the ferrule no lower than the supporting boot. Preserve the original neutral figure in bottom-right exactly, and preserve all faces, hair, clothes, boots, outlines and pose positions everywhere. No extra limbs, no extra prop, no background, no shadow, no change to cell order or size.",
+  "refs": [
+    "art/source/characters/nell/sparks-v1/SE-initial.png"
+  ],
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-694649ab-3457-4408-9ccf-eb41c4af21a1.png",
+  "tool": "built-in image_gen.imagegen",
+  "output_sha256": "1ed2dc03f69f0f1f53dea91184b6bdf743bf6e0890ae32e4dc02413b40556aa4",
+  "reference_sha256": {
+    "art/source/characters/nell/sparks-v1/SE-initial.png": "fc334590696e5015c13f839ee70b2049f12fa4dd39969b704783c5c622f16aae"
+  }
+}

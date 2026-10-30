@@ -51,7 +51,7 @@ func _run() -> void:
 			if furniture.kind != "rug":
 				_check(not room_rules.is_walkable(room_state, at), template + " blocks furniture footprint: " + str(furniture.kind))
 		_check(room.lamp("hearth-lamp").style == "sconce", template + " has its own programmable wall lamp")
-		for stop: Array in room.interior.host.route:
+		for stop: Array in room.interior.get("host",{}).get("route",[]):
 			var host_cell := Vector2i(int(stop[0]), int(stop[1]))
 			_check(not room_rules.find_path(room_rules.initial_state(), host_cell).is_empty(), template + " keeps its owner's indoor route clear of furniture")
 	var people: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://content/villagers.json")).residents

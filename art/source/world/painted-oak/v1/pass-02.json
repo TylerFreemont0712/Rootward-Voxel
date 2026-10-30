@@ -1,0 +1,7 @@
+{
+  "before_sha256": "ee83a38d74cd7724ac932a197ba28e7fb0d3d61cf625f8a2744af59511817aff",
+  "after_sha256": "25a44321229e68a8289c2b038b2bd644ba0fffe923ef5884bc25630e74eb5819",
+  "backup": "model.pass-01.blend",
+  "note": "The first review had broad flat terraces. Replaced only the crown by individually offset, bevelled leaf clumps in six deeper greens. Trunk and root extent unchanged.",
+  "source_edit": "art/source/world/illustrated-village/v1/refine_pass02.py"
+}

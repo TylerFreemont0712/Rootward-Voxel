@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "default": "sparks-and-machines",
+  "levels": [
+    {
+      "id": "kindle-hollow",
+      "archived": true,
+      "title": "Kindle Hollow",
+      "subtitle": "Light the Hollow",
+      "description": "The original valley: five programming quests, a village to explore and a world to build.",
+      "area": "kindle-hollow",
+      "opening_house": ""
+    },
+    {
+      "id": "village-morning",
+      "archived": true,
+      "title": "Village Morning",
+      "subtitle": "A first day at home",
+      "description": "Wake at home with Hotaru, your fairy guide. Say hello and connect your movement keys with blocks or Python, then follow the lane to the giant Rootward tree and the town hall.",
+      "area": "village-morning",
+      "opening_house": "morning-home"
+    },
+    {
+      "id": "sparks-and-machines",
+      "title": "Sparks & Machines",
+      "subtitle": "An apprentice's year",
+      "description": "Move into the old workshop above Haverlund, wake Hotaru, and give the town's quiet machines their jobs back.",
+      "area": "workshop-loft",
+      "opening_house": "",
+      "look": "paper",
+      "companion": "hotaru-robot",
+      "journal": "workshop",
+      "story": "res://content/journeys/sparks-and-machines.json",
+      "build": false,
+      "character": {
+        "caption": "Lodger in Nell's loft",
+        "blurb": "You've come to Haverlund to learn a trade. Nell's workshop is below you; her old robot sleeps on the shelf."
+      },
+      "room_areas": [
+        "workshop-loft",
+        "workshop-floor",
+        "haverlund-lane",
+        "haverlund-square"
+      ]
+    }
+  ]
+}

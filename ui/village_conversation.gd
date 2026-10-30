@@ -82,19 +82,26 @@ func setup(person: Dictionary, preferences: GameSettings = null, previously_read
 		_clock = 0.0
 		_update_buttons())
 	_footer.add_child(auto_button)
+	auto_button.visible = not dialogue.is_guided()
 	skip_button = _toggle("Skip read", &"", _toggle_skip)
 	skip_button.tooltip_text = "Fast-forward pages already read. Stops at new text and choices."
 	_footer.add_child(skip_button)
-	_footer.add_child(UI.button("Hide UI", &"", &"ButtonQuiet", toggle_ui))
+	skip_button.visible = not dialogue.is_guided()
+	var hide_button := UI.button("Hide UI", &"", &"ButtonQuiet", toggle_ui)
+	hide_button.visible = not dialogue.is_guided()
+	_footer.add_child(hide_button)
 	_footer.add_child(UI.button("Settings", &"gear", &"ButtonQuiet", func() -> void: show_panel("settings")))
-	_footer.add_child(UI.button("Leave", &"door", &"ButtonQuiet", close))
+	if not dialogue.is_guided():
+		_footer.add_child(UI.button("Leave", &"door", &"ButtonQuiet", close))
+	if not dialogue.is_guided() and not str(person.get("notebook_title", "")).is_empty():
+		_footer.add_child(UI.button(str(person.notebook_title),&"book",&"ButtonPrimary",func() -> void:notebook_requested.emit()))
 	_footer.add_child(UI.spacer(0, true))
 	code_button = UI.button("Show code", &"code", &"ButtonTab", func() -> void: show_panel("code" if mode != "code" else ""))
 	code_button.tooltip_text = "An optional code example for what this character is explaining."
 	_footer.add_child(code_button)
 	_hint = UI.label("Click / Space", &"", 17, Pal.PARCH_DIM)
 	_footer.add_child(_hint)
-	next_button = UI.button("Next", &"chevron", &"ButtonPrimary", advance)
+	next_button = UI.button("Continue" if dialogue.is_guided() else "Next", &"chevron", &"ButtonPrimary", advance)
 	_footer.add_child(next_button)
 	choices = UI.vbox(8)
 	choices.name = "Responses"
@@ -178,7 +185,7 @@ func _present() -> void:
 		button.add_theme_font_size_override("font_size", 23)
 		choices.add_child(button)
 	choices.visible = false
-	code_button.visible = not (page.lesson as Dictionary).is_empty()
+	code_button.visible = not dialogue.is_guided() and not (page.lesson as Dictionary).is_empty()
 	next_button.disabled = not (page.choices as Array).is_empty()
 	if skipping and not dialogue.read_before_enter:
 		skipping = false
@@ -210,7 +217,13 @@ func advance() -> void:
 	if text.visible_characters != -1:
 		reveal()
 	elif dialogue.advance():
-		_present()
+		if dialogue.closed:
+			var open_notes: bool = dialogue.person.get("on_finish", "") == "notebook"
+			close()
+			if open_notes:
+				notebook_requested.emit()
+		else:
+			_present()
 
 
 func choose(id: String) -> void:

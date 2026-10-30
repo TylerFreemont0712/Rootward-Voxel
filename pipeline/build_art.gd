@@ -31,15 +31,36 @@ func _run() -> void:
 	var destination: String = spec.runtime_sheet
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(destination.get_base_dir()))
 	if "--prepare" in OS.get_cmdline_user_args():
+		for companion: Dictionary in catalog.get("companions",{}).values():
+			var origin: Variant=JSON.parse_string(FileAccess.get_file_as_string("res://"+str(companion.provenance)))
+			if not origin is Dictionary or FileAccess.get_sha256(companion.source)!=str(origin.get("sha256","")):
+				printerr("Companion source does not match its provenance.");quit(1);return
+			if origin.has("prompt_sha256") and FileAccess.get_sha256("res://"+str(companion.prompt))!=str(origin.prompt_sha256):
+				printerr("Companion prompt does not match its provenance.");quit(1);return
+			var picture:=Image.load_from_file(ProjectSettings.globalize_path(companion.source))
+			if picture==null or picture.is_empty() or not picture.detect_alpha():
+				printerr("Companion source needs RGBA transparency.");quit(1);return
+			if companion.has("portrait_runtime"):
+				DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(str(companion.portrait_runtime).get_base_dir()))
+				if DirAccess.copy_absolute(ProjectSettings.globalize_path(companion.source),ProjectSettings.globalize_path(companion.portrait_runtime))!=OK:quit(1);return
+			picture.resize(roundi(float(picture.get_width())*float(companion.height)/float(picture.get_height())),int(companion.height),Image.INTERPOLATE_LANCZOS)
+			DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(str(companion.runtime).get_base_dir()))
+			if picture.save_png(ProjectSettings.globalize_path(companion.runtime))!=OK:quit(1);return
 		if not DetailTextures.prepare(catalog.get("building_textures", {})):
 			quit(1)
 			return
+		for library: Dictionary in catalog.get("building_texture_libraries", []):
+			if not DetailTextures.prepare(library):
+				quit(1)
+				return
 		if not DetailTextures.prepare(catalog.get("detail_textures", {})):
 			quit(1)
 			return
 		if not _prepare_icon(catalog) or not PortraitBuilder.prepare(catalog.get("portraits", {})):
 			quit(1)
 			return
+		for portraits: Dictionary in catalog.get("portrait_libraries", []):
+			if not PortraitBuilder.prepare(portraits): quit(1); return
 		var error: Error = DirAccess.copy_absolute(ProjectSettings.globalize_path(source_path), ProjectSettings.globalize_path(destination))
 		if error != OK:
 			printerr("Could not copy the selected source atlas: ", error_string(error))
@@ -55,13 +76,21 @@ func _run() -> void:
 		if not DetailTextures.configure(catalog.get("building_textures", {})):
 			quit(1)
 			return
+		for library: Dictionary in catalog.get("building_texture_libraries", []):
+			if not DetailTextures.configure(library):
+				quit(1)
+				return
 		if not DetailTextures.configure(catalog.get("detail_textures", {})):
 			quit(1)
 			return
 		if not PortraitBuilder.configure(catalog.get("portraits", {})):
 			quit(1)
 			return
-		for path: String in SkinBuilder.runtime_atlases(skin_catalog, spec):
+		for portraits: Dictionary in catalog.get("portrait_libraries", []):
+			if not PortraitBuilder.configure(portraits): quit(1); return
+		var rgba_atlases: Array[String]=SkinBuilder.runtime_atlases(skin_catalog, spec)
+		for companion: Dictionary in catalog.get("companions",{}).values():rgba_atlases.append(str(companion.runtime))
+		for path: String in rgba_atlases:
 			var settings := ConfigFile.new()
 			if settings.load(path + ".import") != OK:
 				printerr("Import the skin atlas before configuring it: ", path)
@@ -72,6 +101,16 @@ func _run() -> void:
 			settings.set_value("params", "process/fix_alpha_border", true)
 			settings.set_value("params", "detect_3d/compress_to", 0)
 			settings.save(path + ".import")
+		for companion: Dictionary in catalog.get("companions",{}).values():
+			if not companion.has("portrait_runtime"):continue
+			var path: String=str(companion.portrait_runtime)+".import"
+			var preferences:=ConfigFile.new()
+			if preferences.load(path)!=OK:quit(1);return
+			preferences.set_value("params","mipmaps/generate",false)
+			preferences.set_value("params","compress/mode",0)
+			preferences.set_value("params","process/fix_alpha_border",true)
+			preferences.set_value("params","detect_3d/compress_to",0)
+			preferences.save(path)
 		print("Pinned character import: lossless RGBA, mipmaps, transparent edge repair.")
 		quit()
 		return
@@ -82,6 +121,8 @@ func _run() -> void:
 	if not PortraitBuilder.build(catalog.portraits):
 		quit(1)
 		return
+	for portraits: Dictionary in catalog.get("portrait_libraries", []):
+		if not PortraitBuilder.build(portraits): quit(1); return
 	var image := Image.load_from_file(ProjectSettings.globalize_path(destination))
 	if image == null or image.is_empty() or not image.detect_alpha():
 		printerr("Character atlas must have transparency. Run scripts/art.sh.")

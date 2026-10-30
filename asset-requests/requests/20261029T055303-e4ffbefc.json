@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "id": "20261029T055303-e4ffbefc",
+  "kind": "delete",
+  "title": "Delete Patchwork Bed",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "hollow-patchwork-bed",
+    "label": "Patchwork Bed",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hollow-patchwork-bed/v1/model.blend",
+    "runtime": "assets/world/hollow-patchwork-bed/model.glb",
+    "manifest": "assets/world/hollow-patchwork-bed/manifest.json",
+    "catalog_notes": "A full-length cottage bed with turned posts and a violet-and-cream patchwork quilt.",
+    "related_files": [
+      "art/source/world/hollow-patchwork-bed/v1/brief.md",
+      "art/source/world/hollow-patchwork-bed/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/areas/morning-bedroom.json",
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Patchwork Bed",
+      "source": "art/source/world/hollow-patchwork-bed/v1/model.blend",
+      "runtime": "assets/world/hollow-patchwork-bed/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.55,
+        -1.0,
+        1.1,
+        2.0
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A full-length cottage bed with turned posts and a violet-and-cream patchwork quilt.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass"
+        ],
+        "fabric": [
+          "cloth_lilac",
+          "cloth_plum",
+          "linen"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:53:03+00:00",
+  "updated": "2026-10-29T05:53:03+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:53:03+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/morning-bedroom.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

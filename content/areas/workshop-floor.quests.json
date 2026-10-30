@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "area": "workshop-floor",
+  "quests": [
+    {
+      "id": "say-hello",
+      "title": "Hello, Hotaru",
+      "concept": "print and words",
+      "summary": "Hotaru is dozing on the shelf. Send her a greeting through the loft terminal.",
+      "goal": {
+        "type": "hotaru_greeted"
+      },
+      "requires": [],
+      "lesson": [
+        "The terminal shows the output of your program. A greeting addressed to Hotaru rings her message bell when you send it.",
+        "`print()` sends words out of your program. Words go inside quotation marks.",
+        "```python",
+        "def program(world):",
+        "    print(\"Hello, Hotaru!\")",
+        "```",
+        "Test ghost-types your actual words above the player and shows them on the screen. Send message delivers them to Hotaru. After she wakes, answer her question."
+      ],
+      "starter": [
+        "def program(world):",
+        "    print(\"Hello\")"
+      ],
+      "hints": [
+        "A greeting addressed to Hotaru rings her message bell.",
+        "A greeting with her name: print(\"Hello, Hotaru!\")"
+      ],
+      "done": "Hotaru has heard your message."
+    },
+    {
+      "id": "waiting-ticket",
+      "title": "The waiting ticket",
+      "concept": "Find the work",
+      "summary": "Nell has left a work ticket on the board by the window.",
+      "requires": [
+        "say-hello"
+      ],
+      "goal": {
+        "type": "inspection_read",
+        "id": "job-board"
+      },
+      "lesson": [
+        "Find the job board beside the workshop window. Press F to read the ticket."
+      ],
+      "starter": [
+        "def program(world):",
+        "    pass"
+      ],
+      "hints": [
+        "The board is on the wall beside the armchair. Read the ticket with F."
+      ],
+      "done": "The fitting is repaired. The new relay is waiting for its instruction."
+    },
+    {
+      "id": "landing-light",
+      "title": "The landing light",
+      "concept": "An object and a method",
+      "summary": "The stair lantern has a new relay. Nell wants it back in service before evening.",
+      "requires": [
+        "waiting-ticket"
+      ],
+      "goal": {
+        "type": "lamps_lit",
+        "ids": [
+          "landing-lamp"
+        ]
+      },
+      "lesson": [
+        "Stand beside the stair lantern with your tablet and press F to open its code. Code reaches only what you are standing beside.",
+        "The ticket gives the lantern’s address: landing-lamp. The relay is sound; this routine decides whether it is on.",
+        "world.lamp(\"landing-lamp\") finds that lamp. set_lit(True) switches it on; False switches it off.",
+        "Test shows the proposed light in the workshop. Apply routine keeps the tested change."
+      ],
+      "starter": [
+        "def program(world):",
+        "    lamp = world.lamp(\"landing-lamp\")",
+        "    lamp.set_lit(False)"
+      ],
+      "hints": [
+        "The starter tells the lamp to stay off. Look at the value inside set_lit(...).",
+        "Use True to request light, then Test and Apply routine."
+      ],
+      "focus": {
+        "at": [
+          5,
+          11
+        ]
+      },
+      "done": "The stair lantern is lit.",
+      "access": {
+        "kind": "device",
+        "id": "landing-lamp"
+      }
+    },
+    {
+      "id": "morning-round",
+      "title": "The morning round",
+      "concept": "A list and a for loop",
+      "summary": "The opening card lists the stair lantern and both work lights. Finish Nell’s round while she is out.",
+      "requires": [
+        "landing-light"
+      ],
+      "goal": {
+        "type": "lamps_lit",
+        "zone": "workshop"
+      },
+      "lesson": [
+        "Jack your tablet into the wall screen. A whole zone is reached from its screen, not from each lamp, and only while you stand at it.",
+        "The old card reaches one lamp. The workshop needs all three: landing-lamp, repair-light and assembly-light.",
+        "The screen names this zone workshop. world.zone(\"workshop\").lamps is its list of lamps. A for loop runs the indented instruction once for each item.",
+        "Replace the single-item instruction with a loop over the list. Your earlier stair-light work stays saved on its own page."
+      ],
+      "starter": [
+        "def program(world):",
+        "    lamps = world.zone(\"workshop\").lamps",
+        "    lamps[0].set_lit(True)"
+      ],
+      "hints": [
+        "The starter only uses lamps[0], the first lamp in the list.",
+        "Start with for lamp in lamps: and indent lamp.set_lit(True) beneath it."
+      ],
+      "done": "Both tables and the stairs are lit. The opening card is ready.",
+      "access": {
+        "kind": "zone",
+        "id": "workshop"
+      },
+      "focus": {
+        "at": [
+          1,
+          2
+        ]
+      }
+    }
+  ]
+}

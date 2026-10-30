@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "tool": "adoption of existing approved built-in imagegen output",
+  "prompt_sha256": "6b47bed5bc89065dcfcaceaf967433811dffba640bdad0f7485bbdcdb0567987",
+  "portraits": [
+    {
+      "id": "hotaru-robot",
+      "source": "art/source/portraits/sparks/v1/hotaru-robot.png",
+      "sha256": "4fca154096bc72a53a38d92428636fd13de76ece28cc17e0329639260af68a95",
+      "reference_sha256": {
+        "docs/concept/v0.7/art/2-hotaru/H3-portrait.png": "4fca154096bc72a53a38d92428636fd13de76ece28cc17e0329639260af68a95"
+      }
+    }
+  ]
+}

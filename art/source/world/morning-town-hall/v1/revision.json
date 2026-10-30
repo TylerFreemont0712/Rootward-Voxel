@@ -1,0 +1,13 @@
+{
+  "asset": "morning-town-hall",
+  "date": "2026-10-26",
+  "authority": "model.blend",
+  "source_sha256": "7ea29354a27ccccfc5c630e1517bb94e94abf73a36bd764f1e7800d5334e7fba",
+  "edits": [
+    {
+      "path": "art/source/world/village-landmarks/v1/reveal_clock.py",
+      "sha256": "9ff8afe9d316d1e8e3ae49d04ce242da1a6a81c6c6575e06965d89fe88db0cfe"
+    }
+  ],
+  "note": "Deliberate edits to the first saved master. Prior sources retained beside model.blend. Rebuild with scripts/world-art.sh build morning-town-hall."
+}

@@ -1,0 +1,6 @@
+Use case: stylized-concept
+Asset type: production seamless albedo texture for the thick honey-oak log courses of a detailed 3D cottage in a cozy voxel fantasy village.
+Primary request: a flat square swatch of warm, old golden chestnut oak, with long hand-painted flowing wood grain moving HORIZONTALLY from left to right. Caramel and amber midtones, softly darker ochre grain, a few elongated restrained knots, subtle golden brush marks. Crafted weathered wood that feels cared for, not damaged. No planks or seams: the actual 3D building supplies separate broad log courses, bevels, corner joints and shadows.
+Style: beautifully painted storybook gouache game material, broad legible organic grain with sparse finer marks, restrained contrast and moderate saturation; warm toasted honey, never pale tan or orange stripes.
+Composition: uninterrupted material filling the entire square, perfectly orthographic straight-on, flat diffuse neutral illumination. No perspective, no directional light, no cast shadows or painted edge shadows, no bevels, vignette, border, text or watermark.
+Constraints: truly seamless in both axes. Opaque. No wood planks, log ends, checkerboard, tile grid, gashes or photorealistic photographic grain.

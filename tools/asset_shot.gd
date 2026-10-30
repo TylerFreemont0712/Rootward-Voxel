@@ -69,6 +69,7 @@ func _run() -> void:
 		view.set_warmth(0.1)
 	var zoom: float = float(args[3]) if args.size() > 3 else 7.0
 	view.set_zoom(zoom)
+	view._zoom_target = zoom  # a close-up below the game's own 7 minimum
 	view.camera.size = zoom
 	var focus_height: float = float(args[6]) if args.size() > 6 else 1.6
 	view._focus = Vector3(float(args[7]) if args.size() > 7 else 0.0, focus_height, float(args[8]) if args.size() > 8 else 0.0)

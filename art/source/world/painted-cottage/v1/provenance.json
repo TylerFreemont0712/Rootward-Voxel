@@ -1,0 +1,11 @@
+{
+  "asset": "painted-cottage",
+  "version": "v1",
+  "date": "2026-10-26",
+  "reference": "reference/voxel-isometric.png",
+  "authoring_record": "art/source/world/illustrated-village/v1/author.py",
+  "derived_from": "art/source/world/reference-cottage/v1/model.blend",
+  "original_sha256": "212b569e95736b1bd20e2500045b2ebd316118da98cce11c5509b6efeaa854d9",
+  "geometry": "Retained adopted reference-cottage geometry, door hinge, UVs, tile noses, masonry, garden and barrel.",
+  "finish": "New calm honey, violet and limestone palette; colour by individual clay tile, without the old surface noise."
+}

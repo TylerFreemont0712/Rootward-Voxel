@@ -1,0 +1,8 @@
+{
+  "asset": "workshop-assembly-table",
+  "date": "2026-10-27",
+  "reference": "docs/concept/v0.7/art/4-opening/T7b-workshop-floor.png",
+  "record": "art/source/world/sparks-workshop/v1/author.py",
+  "record_sha256": "f55addc2a69b480bf4df7139b796cf59d617f4194e76d912feb874b54fb08f2e",
+  "painted_sources": "art/source/world/sparks-workshop/v1/prompts.json"
+}

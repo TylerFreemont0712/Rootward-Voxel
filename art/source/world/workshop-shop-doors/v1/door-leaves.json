@@ -1,0 +1,51 @@
+{
+  "asset": "workshop-shop-doors",
+  "date": "2026-10-29",
+  "record": "art/source/world/square-hub/v1/door_leaves_revision.py",
+  "backup": "model.pre-door-leaves.blend",
+  "leaves": [
+    {
+      "name": "door_leaf_w",
+      "box": [
+        [
+          -1.36,
+          -0.24,
+          0
+        ],
+        [
+          -0.02,
+          0.09,
+          2.56
+        ]
+      ],
+      "hinge": [
+        -1.34,
+        0,
+        0
+      ],
+      "swing": 95
+    },
+    {
+      "name": "door_leaf_e",
+      "box": [
+        [
+          0.02,
+          -0.24,
+          0
+        ],
+        [
+          1.36,
+          0.09,
+          2.56
+        ]
+      ],
+      "hinge": [
+        1.34,
+        0,
+        0
+      ],
+      "swing": -95
+    }
+  ],
+  "note": "Door leaves separated as hinged parts for DoorSwing; geometry otherwise unchanged."
+}

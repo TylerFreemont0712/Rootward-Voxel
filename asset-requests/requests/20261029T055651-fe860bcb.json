@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "id": "20261029T055651-fe860bcb",
+  "kind": "delete",
+  "title": "Delete Notice Board",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "notice-board",
+    "label": "Notice Board",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/notice-board/v1/model.blend",
+    "runtime": "assets/world/notice-board/model.glb",
+    "manifest": "assets/world/notice-board/manifest.json",
+    "catalog_notes": "Framed timber board on two posts with a cream notice, teal pins and a violet tiled cap. 0.8 m wide board, 1.2 m tall with the cap. The footprint covers the posts and the board line; the cap overhangs it by about 0.05 m.",
+    "related_files": [
+      "art/source/world/notice-board/v1/brief.md",
+      "art/source/world/notice-board/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/areas/haverlund-lane.json",
+      "content/areas/village-morning.json",
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Notice Board",
+      "source": "art/source/world/notice-board/v1/model.blend",
+      "runtime": "assets/world/notice-board/model.glb",
+      "pivot": "ground origin at the bounding-box centre; posts 0 to 0.1 m behind it",
+      "logical_footprint": [
+        -0.4,
+        -0.1,
+        0.8,
+        0.2
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Framed timber board on two posts with a cream notice, teal pins and a violet tiled cap. 0.8 m wide board, 1.2 m tall with the cap. The footprint covers the posts and the board line; the cap overhangs it by about 0.05 m.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark",
+          "roof_light",
+          "teal"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:56:51+00:00",
+  "updated": "2026-10-29T06:29:20+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:56:51+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:29:20+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/haverlund-lane.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/village-morning.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_lane.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/notice-board/v1/brief.md",
+    "art/source/world/notice-board/v1/model.blend",
+    "art/source/world/notice-board/v1/provenance.json",
+    "assets/world/notice-board/manifest.json",
+    "assets/world/notice-board/model.glb",
+    "assets/world/notice-board/model.glb.import"
+  ]
+}

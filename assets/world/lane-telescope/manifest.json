@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "lane-telescope",
+  "version": "v1",
+  "source": "art/source/world/lane-telescope/v1/model.blend",
+  "source_sha256": "4a154f7695880ad0d2a504865d7ed86171f73e23d9f5f1d1ae0363d76016a045",
+  "runtime": "assets/world/lane-telescope/model.glb",
+  "runtime_sha256": "7894203a3ef04e314ca0a9411c2e28570901aab18287a553aaa4fa0bc37c7ffb",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.239999994635582,
+      0.0,
+      -0.239999994635582,
+      0.239999994635582,
+      1.47680270671844,
+      0.574467062950134
+    ],
+    "geometry_sha256": "d645bfa15beb7dea5dcc5d6c02d49b3118fb6b936cf510076f6e6aa2e90072a3",
+    "material_records": {
+      "lane_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_ink": {
+        "albedo": [
+          3137,
+          2392,
+          1882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_teal": {
+        "albedo": [
+          2471,
+          4824,
+          4549,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_brass",
+      "lane_ink",
+      "lane_iron",
+      "lane_teal"
+    ],
+    "meshes": 4,
+    "triangles": 372
+  }
+}

@@ -1,0 +1,413 @@
+{
+  "schema": 1,
+  "asset": "lane-workshop",
+  "version": "v1",
+  "source": "art/source/world/lane-workshop/v1/model.blend",
+  "source_sha256": "55891338307b7b363ecb7c7f47cb18ec034ef65bcff9965544759d8553a3ebe4",
+  "runtime": "assets/world/lane-workshop/model.glb",
+  "runtime_sha256": "ab70ea41200263799b93ab0e3381a5d6c12d3c07ab58c5339f3abb831a2b4d25",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -4.68013191223145,
+      0.0,
+      -4.10000038146973,
+      5.24499988555908,
+      9.86495018005371,
+      5.17164468765259
+    ],
+    "geometry_sha256": "6bfbe8d45bb36eb933a87627f07d14acfbdb471e3ee6134cbdfd8ec35fcb2c80",
+    "material_records": {
+      "doorway_dark": {
+        "albedo": [
+          0,
+          0,
+          0,
+          10000
+        ],
+        "roughness": 10000,
+        "texture_rgba_sha256": ""
+      },
+      "lane_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_brick": {
+        "albedo": [
+          6902,
+          3804,
+          2902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_pink": {
+        "albedo": [
+          8980,
+          6039,
+          6588,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_red": {
+        "albedo": [
+          8118,
+          3098,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_violet": {
+        "albedo": [
+          6078,
+          5176,
+          7686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_white": {
+        "albedo": [
+          9647,
+          9412,
+          8863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_yellow": {
+        "albedo": [
+          9216,
+          7725,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_gold": {
+        "albedo": [
+          8392,
+          6980,
+          4157,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf": {
+        "albedo": [
+          3569,
+          5412,
+          2706,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf_dark": {
+        "albedo": [
+          2471,
+          4157,
+          2353,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf_light": {
+        "albedo": [
+          5255,
+          6784,
+          3608,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone_pale": {
+        "albedo": [
+          9333,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone_shade": {
+        "albedo": [
+          7686,
+          6980,
+          5569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone_warm": {
+        "albedo": [
+          8471,
+          7647,
+          6118,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_plaster": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "23d3a02cd880e8d5e554bdf397a7adcc8c19c2c04dd26469ef68620edd32c6ff"
+      },
+      "lane_shutter": {
+        "albedo": [
+          2980,
+          5412,
+          4235,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_shutter_dark": {
+        "albedo": [
+          2275,
+          4235,
+          3333,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_steel": {
+        "albedo": [
+          4275,
+          4667,
+          4902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_steel_dark": {
+        "albedo": [
+          2039,
+          2431,
+          2667,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_teal": {
+        "albedo": [
+          2471,
+          4824,
+          4549,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_teal_dark": {
+        "albedo": [
+          1922,
+          3725,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_terracotta": {
+        "albedo": [
+          7843,
+          3922,
+          2471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_terracotta_dark": {
+        "albedo": [
+          6627,
+          3176,
+          2275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_terracotta_light": {
+        "albedo": [
+          8510,
+          4784,
+          3059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_timber": {
+        "albedo": [
+          4196,
+          2902,
+          2000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_water": {
+        "albedo": [
+          3686,
+          5961,
+          6275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_white": {
+        "albedo": [
+          9490,
+          9176,
+          8471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_window_pane": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "0521fe9168475a9da488e23ca89b12bdfdc600fcde1d4eb37051e2cec2478c37"
+      },
+      "lane_window_shop": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "562da4319f4a639aa398d7bf75d75910ac2dff2624196407f75f455a8ce283b4"
+      },
+      "lane_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_light": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "doorway_dark",
+      "lane_brass",
+      "lane_brick",
+      "lane_flower_pink",
+      "lane_flower_red",
+      "lane_flower_violet",
+      "lane_flower_white",
+      "lane_flower_yellow",
+      "lane_gold",
+      "lane_iron",
+      "lane_leaf",
+      "lane_leaf_dark",
+      "lane_leaf_light",
+      "lane_limestone",
+      "lane_limestone_pale",
+      "lane_limestone_shade",
+      "lane_limestone_warm",
+      "lane_plaster",
+      "lane_shutter",
+      "lane_shutter_dark",
+      "lane_steel",
+      "lane_steel_dark",
+      "lane_teal",
+      "lane_teal_dark",
+      "lane_terracotta",
+      "lane_terracotta_dark",
+      "lane_terracotta_light",
+      "lane_timber",
+      "lane_water",
+      "lane_white",
+      "lane_window_pane",
+      "lane_window_shop",
+      "lane_wood",
+      "lane_wood_dark",
+      "lane_wood_light"
+    ],
+    "meshes": 37,
+    "triangles": 132208
+  }
+}

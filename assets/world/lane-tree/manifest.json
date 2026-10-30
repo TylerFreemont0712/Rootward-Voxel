@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "lane-tree",
+  "version": "v1",
+  "source": "art/source/world/lane-tree/v1/model.blend",
+  "source_sha256": "b4d388ea3ef661438bbe9af2bb18dd850ac9cd3c4c61fec0a787a08e3f147350",
+  "runtime": "assets/world/lane-tree/model.glb",
+  "runtime_sha256": "daedae1aeffd48d68e5168d43f99f2b60c96d0878e400930d4229166af881330",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.78852117061615,
+      -0.0219577848911285,
+      -1.42234206199646,
+      1.47426128387451,
+      4.104332447052,
+      1.40002477169037
+    ],
+    "geometry_sha256": "ea9a881d6c0c8cccbb61571f2bcf3bf4d756dfb5377dc2b2590d58e996bcf59b",
+    "material_records": {
+      "lane_bark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "40e0dbb61ca7b2b1b22bbea7b9482dc707d8f13fa787410324e7c100f32700f7"
+      },
+      "lane_flower_pink": {
+        "albedo": [
+          8980,
+          6039,
+          6588,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_flower_white": {
+        "albedo": [
+          9647,
+          9412,
+          8863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf": {
+        "albedo": [
+          3569,
+          5412,
+          2706,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf_dark": {
+        "albedo": [
+          2471,
+          4157,
+          2353,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf_light": {
+        "albedo": [
+          5255,
+          6784,
+          3608,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_timber": {
+        "albedo": [
+          4196,
+          2902,
+          2000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_bark",
+      "lane_flower_pink",
+      "lane_flower_white",
+      "lane_leaf",
+      "lane_leaf_dark",
+      "lane_leaf_light",
+      "lane_timber"
+    ],
+    "meshes": 7,
+    "triangles": 112736
+  }
+}

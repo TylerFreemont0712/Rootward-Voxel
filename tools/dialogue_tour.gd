@@ -20,7 +20,7 @@ func _run() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	game.session.set_physics_process(false)
 	game.set_process_unhandled_key_input(false)
 	game._hint_timer.stop()
@@ -90,7 +90,7 @@ func _run() -> void:
 			scene.close()
 	game.save_now()
 	await game._return_to_title()
-	await game.continue_game()
+	await game.continue_game("kindle-hollow")
 	for id: String in ["mira","rowan","bram","tessa","nell"]:
 		if not game._dialogue_read.has(id):
 			push_error("Continue lost read dialogue for "+id)

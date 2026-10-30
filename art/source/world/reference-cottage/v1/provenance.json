@@ -1,0 +1,9 @@
+{
+  "asset": "reference-cottage",
+  "version": "v1",
+  "authoring_record": "art/source/world/reference-cottage/v1/author.py",
+  "authoring_sha256": "c98fabb48b74e3105a4a331ea9bde3ea5b08bff75d7bb2910378cb77acccdd4d",
+  "source_sha256": "3296cfba7acf1767b86d70c43108f14258ca94d4db32f2c24e9e20008e4f9800",
+  "reference_sha256": "f4754b8d166594e87eb1ecfc2ac408cbaf560fdf6ad67684ffb3e34168921760",
+  "note": "New geometry and new textures. Existing Concept Cottage master and placed morning-home remain untouched. Subsequent review passes deliberately edit this saved master."
+}

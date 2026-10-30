@@ -6,6 +6,7 @@ validates every recorded command again before anything changes.
 """
 import json
 import sys
+import builtins
 
 
 class WorldError(Exception):
@@ -19,6 +20,14 @@ def _names(items):
 class _Recorder:
     def __init__(self):
         self.commands = []
+
+    def record(self, command):
+        self.commands.append(command)
+        frame = sys._getframe(1)
+        while frame and frame.f_code.co_filename != "player.py":
+            frame = frame.f_back
+        if frame:
+            _event(frame, len(self.commands) - 1)
 
 
 _recorder = _Recorder()
@@ -61,7 +70,7 @@ class Lamp:
     def set_lit(self, value):
         if not isinstance(value, bool):
             raise TypeError("set_lit needs True or False, not " + repr(value))
-        _recorder.commands.append({"op": "set_field", "entity_id": self.id, "field": "enabled", "value": value})
+        _recorder.record({"op": "set_field", "entity_id": self.id, "field": "enabled", "value": value})
         self.lit = value
 
     def __repr__(self):
@@ -78,7 +87,7 @@ class Gate:
     def set_open(self, value):
         if not isinstance(value, bool):
             raise TypeError("set_open needs True or False, not " + repr(value))
-        _recorder.commands.append({"op": "set_field", "entity_id": self.id, "field": "open", "value": value})
+        _recorder.record({"op": "set_field", "entity_id": self.id, "field": "open", "value": value})
         self.is_open = value
 
     def __repr__(self):
@@ -94,13 +103,13 @@ class Bridge:
 
     def place_deck(self, cell):
         cell = _cell(cell, "place_deck")
-        _recorder.commands.append({"op": "place", "kind": "bridge_deck", "at": cell})
+        _recorder.record({"op": "place", "kind": "bridge_deck", "at": cell})
         if self.built < len(self.cells) and cell == self.cells[self.built]:
             self.built += 1
 
     def remove_deck(self, cell):
         cell = _cell(cell, "remove_deck")
-        _recorder.commands.append({"op": "remove", "at": cell})
+        _recorder.record({"op": "remove", "at": cell})
         if self.built > 0 and cell == self.cells[self.built - 1]:
             self.built -= 1
 
@@ -121,7 +130,7 @@ class Prop:
     def set_active(self, value):
         if not isinstance(value, bool):
             raise TypeError("set_active needs True or False, not " + repr(value))
-        _recorder.commands.append({"op": "set_field", "entity_id": self.id, "field": "active", "value": value})
+        _recorder.record({"op": "set_field", "entity_id": self.id, "field": "active", "value": value})
         self.active = value
 
     def __repr__(self):
@@ -146,7 +155,7 @@ class _Standing:
         direction = _direction(direction)
         if direction == self.facing:
             return
-        _recorder.commands.append({"op": "rotate", "entity_id": self.id, "facing": _FACINGS[direction]})
+        _recorder.record({"op": "rotate", "entity_id": self.id, "facing": _FACINGS[direction]})
         self.facing = direction
 
 
@@ -211,6 +220,31 @@ class Zone:
         return "<Zone %r: %d lamps>" % (self.id, len(self.lamps))
 
 
+class Controls:
+    """A small declarative key map, recorded for validation by the game."""
+    def __init__(self, raw):
+        self.enabled = raw.get("enabled", False)
+        self.bindings = dict(raw.get("bindings", {}))
+
+    def bind(self, key, direction):
+        if not self.enabled:
+            raise WorldError("Movement bindings are available in Village Morning.")
+        if not isinstance(key, str) or not isinstance(direction, str):
+            raise TypeError('Use text, for example world.controls.bind("W", "north").')
+        _recorder.record({"op": "bind_key", "target": "player", "key": key, "direction": direction})
+        self.bindings[key] = direction
+
+    def bind_move(self, key, x, y):
+        if not self.enabled:
+            raise WorldError("Movement bindings are available in Village Morning.")
+        if not isinstance(key, str) or type(x) is not int or type(y) is not int:
+            raise TypeError('Use a key and whole x/y amounts, for example bind_move("W", 0, 1).')
+        _recorder.record({"op": "bind_key", "target": "player", "key": key, "delta": [x, y]})
+        name = {(0, 1): "north", (-1, 0): "west", (0, -1): "south", (1, 0): "east"}.get((x, y))
+        if name:
+            self.bindings[key] = name
+
+
 class World:
     def __init__(self, raw):
         self._raw = raw
@@ -226,6 +260,7 @@ class World:
         self.zones = [Zone(item, self.lamps, self.gates, self.bridges, self.props, self._houses, self._trees, self._doodads) for item in raw.get("zones", [])]
         self.player = raw["player"]
         self.memory = raw["memory"]
+        self.controls = Controls(raw.get("controls", {}))
 
     def _find(self, items, wanted, kind):
         for item in items:
@@ -299,13 +334,56 @@ with open("player.py", encoding="utf-8") as source_file:
 
 # The normal Rootward launcher reports syntax/runtime/memory errors and enforces
 # WASI isolation. The harness provides data, never engine objects or host callbacks.
+# Execution evidence is collected inside WASI, bounded independently of the time/fuel limit.
+_trace = []
+
+def _event(frame, command=None):
+    if len(_trace) >= 96:
+        return
+    values = {}
+    for name in ("x", "y", "key", "message"):
+        value = frame.f_locals.get(name)
+        if type(value) is int and abs(value) <= 1000000:
+            values[name] = value
+        elif type(value) is str:
+            values[name] = value[:60]
+    event = {"line": frame.f_lineno}
+    if values:
+        event["values"] = values
+    if command is not None:
+        event["command"] = command
+    _trace.append(event)
+
+def _on_line(frame, event, arg):
+    if event == "line" and frame.f_code.co_filename == "player.py":
+        _event(frame)
+    return _on_line
+
+def _voice_print(*args, **kwargs):
+    # Ordinary Python print still writes stdout. In this lesson it also proposes a voice.
+    builtins.print(*args, **kwargs)
+    sep = kwargs.get("sep", " ")
+    sep = " " if sep is None else sep
+    text = sep.join(str(arg) for arg in args)
+    if text.strip():
+        _recorder.record({"op": "say", "target": "hotaru", "text": text})
+
 namespace = {"__name__": "player", "__file__": "player.py"}
-exec(compile(source, "player.py", "exec"), namespace)
-program = namespace.get("program")
-if not callable(program):
-    raise TypeError("Define program(world) and put your changes inside it.")
-world = World(raw_world)
-answer = program(world)
+if raw_world.get("companion", {}).get("enabled", False):
+    namespace["print"] = _voice_print
+try:
+    sys.settrace(_on_line)
+    exec(compile(source, "player.py", "exec"), namespace)
+    program = namespace.get("program")
+    if not callable(program):
+        raise TypeError("Define program(world) and put your changes inside it.")
+    world = World(raw_world)
+    answer = program(world)
+finally:
+    sys.settrace(None)
+    # Kept separate on failure so a partial execution can still be explained.
+    if sys.exc_info()[0] is not None:
+        builtins.print("\n__VOXEL_TRACE__" + json.dumps(_trace, separators=(",", ":")))
 commands = list(_recorder.commands)
 memory = world.memory
 if answer is None:
@@ -321,7 +399,16 @@ else:
     raise TypeError("program(world) does not need to return anything. Returned " + repr(answer)[:40] + ".")
 if not isinstance(commands, list) or not isinstance(memory, dict):
     raise TypeError("commands must be a list; memory must be a dictionary.")
-payload = json.dumps({"commands": commands, "memory": memory}, allow_nan=False, separators=(",", ":"))
+payload_data = {"commands": commands, "memory": memory}
+payload = json.dumps(payload_data, allow_nan=False, separators=(",", ":"))
 if len(payload.encode("utf-8")) > 16384:
     raise ValueError("Returned commands exceed the 16 KiB result limit.")
-print("\n__VOXEL_RESULT__" + payload)
+# Evidence must never make an otherwise valid command batch exceed the result budget.
+while _trace:
+    payload_data["trace"] = _trace
+    candidate = json.dumps(payload_data, allow_nan=False, separators=(",", ":"))
+    if len(candidate.encode("utf-8")) <= 16384:
+        payload = candidate
+        break
+    _trace.pop()
+builtins.print("\n__VOXEL_RESULT__" + payload)

@@ -1,0 +1,23 @@
+{
+  "asset": "haverlund-greengrocer",
+  "source": "art/source/world/haverlund-greengrocer/v1/model.blend",
+  "backup": "art/source/world/haverlund-greengrocer/v1/model.pre-plant-style.blend",
+  "before_sha256": "75ca19bcd66f202b6ca14db49d595d9431223e52e9fa32264634d0ab4cb67784",
+  "after_sha256": "ef647435bcc44001cc74f2a52b46f1d002be78764aa295da27066ada18b5c568",
+  "objects": [
+    {
+      "object": "detail_window_boxes",
+      "replaced_components": {
+        "leaf": 13,
+        "flower_yellow": 3,
+        "leaf_light": 9,
+        "leaf_dark": 13,
+        "flower_red": 6,
+        "flower_white": 8
+      },
+      "protected_faces": 132,
+      "protected_sha256": "d6ff2ab025672b99f10a62bc1e5ce9d2480cb76574e6e3ceb1ffdeb8f5357d58"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

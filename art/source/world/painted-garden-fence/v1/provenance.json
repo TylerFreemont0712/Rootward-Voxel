@@ -1,0 +1,9 @@
+{
+  "asset": "painted-garden-fence",
+  "version": "v1",
+  "date": "2026-10-26",
+  "reference": "reference/voxel-isometric.png",
+  "authoring_record": "art/source/world/illustrated-village/v1/author.py",
+  "geometry": "New 2.6 m two-rail fence; bevelled end posts, low iron shoes, pins and broad drawn grain strokes.",
+  "footprint": "Full 2.6 by 0.32 m ground strip, blocks walking independently of the mesh."
+}

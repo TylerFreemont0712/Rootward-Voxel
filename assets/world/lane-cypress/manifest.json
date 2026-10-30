@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "lane-cypress",
+  "version": "v1",
+  "source": "art/source/world/lane-cypress/v1/model.blend",
+  "source_sha256": "3c672570b2f5fb521390e9b76dd246472e27dd3a9acbe39c40e517af826375cc",
+  "runtime": "assets/world/lane-cypress/model.glb",
+  "runtime_sha256": "844232fc2edfb1177c26a0ec4d9031365b3ae8abed25c84532e82c11384ceeeb",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.659094274044037,
+      -0.0145869515836239,
+      -0.680497944355011,
+      0.667612075805664,
+      5.17895984649658,
+      0.633254706859589
+    ],
+    "geometry_sha256": "d0987ae98254f2d64460d588c8160c2ba60d6f9603b96bd111fb363de1d5e677",
+    "material_records": {
+      "lane_bark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "40e0dbb61ca7b2b1b22bbea7b9482dc707d8f13fa787410324e7c100f32700f7"
+      },
+      "lane_cypress": {
+        "albedo": [
+          1843,
+          3529,
+          2392,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_cypress_light": {
+        "albedo": [
+          2667,
+          4471,
+          2980,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_leaf_dark": {
+        "albedo": [
+          2471,
+          4157,
+          2353,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_bark",
+      "lane_cypress",
+      "lane_cypress_light",
+      "lane_leaf_dark"
+    ],
+    "meshes": 4,
+    "triangles": 38868
+  }
+}

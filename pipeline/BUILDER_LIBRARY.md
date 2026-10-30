@@ -1,6 +1,6 @@
 # Kindle Hollow builder library
 
-Fifty new, individually authored objects extend the original thirty-two Doodads. The studio builder now offers **95 entries, including 82 props**. This set follows Kindle Hollow’s painted timber, cream stone, violet/teal cloth and aged brass, with modest magical accents.
+The original handoff added fifty individually authored objects. After the asset deletion pass, 42 of those remain; the studio builder currently offers **72 entries**. This set follows Kindle Hollow’s painted timber, cream stone, violet/teal cloth and aged brass, with modest magical accents.
 
 Press **B → Objects**, choose a category and a card, and place on open ground. Use **R** or the facing compass to rotate; Move, Delete, undo/redo and saved edits use the existing builder rules. Search covers every category. The category header scrolls separately from the model cards. These pieces are outdoor studio items; indoor furnishing and stacking are future features.
 
@@ -8,7 +8,7 @@ Press **B → Objects**, choose a category and a card, and place on open ground.
 
 ## The fifty objects
 
-Each row links its individual brief; the editable master is `art/source/world/<id>/v1/model.blend`. Footprints are width × depth in cells at the default facing and rotate with the item. Decorative handles, cloth and caps can overhang slightly. All fifty have blocking ground footprints, independent of activation.
+This historical list marks deleted models. Each retained row links its individual brief; the editable master is `art/source/world/<id>/v1/model.blend`. Footprints are width × depth in cells at the default facing and rotate with the item. Decorative handles, cloth and caps can overhang slightly. All retained models have blocking ground footprints, independent of activation.
 
 ### Furniture
 
@@ -34,7 +34,7 @@ Each row links its individual brief; the editable master is `art/source/world/<i
 | # | Object / individual brief | Footprint | Detail | Interaction |
 |---|---|---|---|---|
 | 11 | [Carpenter’s Bench](../art/source/world/hollow-carpenters-bench/v1/brief.md) | 1.9 × 0.85 | A substantial workbench with a screw vise, hand plane and saw. | Scenery |
-| 12 | [Blacksmith’s Anvil](../art/source/world/hollow-blacksmiths-anvil/v1/brief.md) | 1 × 0.65 | A faceted iron anvil, tapering horn and hammer on a banded oak stump. | Scenery |
+| 12 | Blacksmith’s Anvil (deleted) | 1 × 0.65 | A faceted iron anvil, tapering horn and hammer on a banded oak stump. | Scenery |
 | 13 | [Bellows Forge](../art/source/world/hollow-bellows-forge/v1/brief.md) | 1.7 × 1.05 | A stone fire bed, copper hood, side bellows and glowing coals. | Stoke / Bank |
 | 14 | [Grinding Wheel](../art/source/world/hollow-grinding-wheel/v1/brief.md) | 1.1 × 0.75 | A pale stone wheel on a braced timber stand with treadle and water cup. | Start / Stop |
 | 15 | [Tool Rack](../art/source/world/hollow-tool-rack/v1/brief.md) | 1.4 × 0.5 | A freestanding rack of axes, a spade, rakes and iron hooks. | Scenery |
@@ -42,7 +42,7 @@ Each row links its individual brief; the editable master is `art/source/world/<i
 | 17 | [Weaver’s Loom](../art/source/world/hollow-weavers-loom/v1/brief.md) | 1.5 × 1 | A framed hand loom with visible warp threads, violet cloth and a shuttle. | Scenery |
 | 18 | [Spinning Wheel](../art/source/world/hollow-spinning-wheel/v1/brief.md) | 1.25 × 0.65 | An eight-spoked drive wheel, spindle, treadle and cream wool bundle. | Start / Stop |
 | 19 | [Alchemy Bench](../art/source/world/hollow-alchemy-bench/v1/brief.md) | 1.55 × 0.8 | Copper piping, a flask cradle and three luminous coloured bottles. | Awaken / Dim |
-| 20 | [Bookbinder’s Press](../art/source/world/hollow-bookbinders-press/v1/brief.md) | 1.15 × 0.8 | Twin screw uprights squeeze a brass-cornered book between timber platens. | Scenery |
+| 20 | Bookbinder’s Press (deleted) | 1.15 × 0.8 | Twin screw uprights squeeze a brass-cornered book between timber platens. | Scenery |
 
 ### Market
 
@@ -55,10 +55,10 @@ Each row links its individual brief; the editable master is `art/source/world/<i
 | 23 | [Cheese Stand](../art/source/world/hollow-cheese-stand/v1/brief.md) | 1.25 × 0.7 | A striped canopy shades cheese wheels, a wedge and a small cutting board. | Scenery |
 | 24 | [Fishmonger’s Counter](../art/source/world/hollow-fishmongers-counter/v1/brief.md) | 1.55 × 0.8 | Three silver fish rest on a teal counter with a bucket beneath. | Scenery |
 | 25 | [Spice Cart](../art/source/world/hollow-spice-cart/v1/brief.md) | 1.5 × 0.85 | A wheeled cart with a violet awning and open jars of colourful spices. | Scenery |
-| 26 | [Covered Handcart](../art/source/world/hollow-covered-handcart/v1/brief.md) | 1.25 × 2 | A little timber wagon with curved cream cover, iron-rimmed wheels and a tow bar. | Scenery |
+| 26 | Covered Handcart (deleted) | 1.25 × 2 | A little timber wagon with curved cream cover, iron-rimmed wheels and a tow bar. | Scenery |
 | 27 | [Linen Rack](../art/source/world/hollow-linen-rack/v1/brief.md) | 1.2 × 0.55 | Folded towels, hanging cream cloth and a basket on a cross-braced drying rack. | Scenery |
 | 28 | [Pottery Shelf](../art/source/world/hollow-pottery-shelf/v1/brief.md) | 1.25 × 0.5 | Terracotta jars, teal glazed jugs and cream bowls on three open timber shelves. | Scenery |
-| 29 | [Candle Stand](../art/source/world/hollow-candle-stand/v1/brief.md) | 0.65 × 0.65 | A brass three-branch candle stand with wax drips and warm flames. | Light / Extinguish |
+| 29 | Candle Stand (deleted) | 0.65 × 0.65 | A brass three-branch candle stand with wax drips and warm flames. | Light / Extinguish |
 | 30 | [Copper Wash Tub](../art/source/world/hollow-copper-wash-tub/v1/brief.md) | 1.1 × 0.75 | A hammered copper wash tub with side handles, pale water and a washboard. | Scenery |
 
 ### Garden
@@ -69,14 +69,14 @@ Each row links its individual brief; the editable master is `art/source/world/<i
 |---|---|---|---|---|
 | 31 | [Straw Beehive](../art/source/world/hollow-straw-beehive/v1/brief.md) | 0.85 × 0.85 | A coiled straw skep on a timber stand with a little landing board. | Scenery |
 | 32 | [Rabbit Hutch](../art/source/world/hollow-rabbit-hutch/v1/brief.md) | 1.4 × 0.7 | A raised hutch with wire-style slats, sleeping box, hay and a bowl; no live animal. | Scenery |
-| 33 | [Chicken Coop](../art/source/world/hollow-chicken-coop/v1/brief.md) | 1.6 × 1.3 | A violet-roofed coop with a ladder, nesting boxes and small shuttered windows. | Scenery |
+| 33 | Chicken Coop (deleted) | 1.6 × 1.3 | A violet-roofed coop with a ladder, nesting boxes and small shuttered windows. | Scenery |
 | 34 | [Seedling Tray](../art/source/world/hollow-seedling-tray/v1/brief.md) | 1.1 × 0.6 | An orderly bed of six seedlings, plant labels and a watering jug. | Scenery |
 | 35 | [Herb Drying Rack](../art/source/world/hollow-herb-drying-rack/v1/brief.md) | 1.3 × 0.65 | Tied bundles of sage and lavender hang from a braced rack above wicker baskets. | Scenery |
 | 36 | [Vine Trellis](../art/source/world/hollow-vine-trellis/v1/brief.md) | 1.5 × 0.55 | A low stone planter supports a timber lattice and curling grape vines. | Scenery |
-| 37 | [Field Scarecrow](../art/source/world/hollow-field-scarecrow/v1/brief.md) | 1 × 0.6 | A straw hat, russet coat and teal scarf on a forked timber field marker. | Scenery |
+| 37 | Field Scarecrow (deleted) | 1 × 0.6 | A straw hat, russet coat and teal scarf on a forked timber field marker. | Scenery |
 | 38 | [Rain Barrel](../art/source/world/hollow-rain-barrel/v1/brief.md) | 0.95 × 0.85 | A banded barrel with a copper downpipe, lid and brass garden tap. | Scenery |
 | 39 | [Butter Churn](../art/source/world/hollow-butter-churn/v1/brief.md) | 0.65 × 0.65 | A tall stave churn with iron bands, a plunger and a small cream cloth. | Scenery |
-| 40 | [Hay Handcart](../art/source/world/hollow-hay-handcart/v1/brief.md) | 1.25 × 1.65 | A two-wheeled farm cart piled with bound golden hay and a wooden pitchfork. | Scenery |
+| 40 | Hay Handcart (deleted) | 1.25 × 1.65 | A two-wheeled farm cart piled with bound golden hay and a wooden pitchfork. | Scenery |
 
 ### Village & Magic
 
@@ -84,7 +84,7 @@ Each row links its individual brief; the editable master is `art/source/world/<i
 
 | # | Object / individual brief | Footprint | Detail | Interaction |
 |---|---|---|---|---|
-| 41 | [Copper Brazier](../art/source/world/hollow-copper-brazier/v1/brief.md) | 0.85 × 0.85 | An embossed copper bowl on three iron legs with split logs and amber fire. | Light / Extinguish |
+| 41 | Copper Brazier (deleted) | 0.85 × 0.85 | An embossed copper bowl on three iron legs with split logs and amber fire. | Light / Extinguish |
 | 42 | [Shard Lantern](../art/source/world/hollow-shard-lantern/v1/brief.md) | 0.75 × 0.75 | A teal crystal glows inside an open brass lantern under a violet cap. | Light / Dim |
 | 43 | [Crystal Obelisk](../art/source/world/hollow-crystal-obelisk/v1/brief.md) | 1 × 1 | Three faceted turquoise crystals grow from a carved cream stone base. | Awaken / Dim |
 | 44 | [Rune Standing Stone](../art/source/world/hollow-rune-standing-stone/v1/brief.md) | 0.95 × 0.65 | A weathered stone slab with a teal rune, brass inset and moss at its foot. | Awaken / Dim |

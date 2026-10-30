@@ -18,7 +18,7 @@ func _run() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	_check(game.view.villagers.actors.size() == 5, "All five village residents are instantiated")
 	_check((game.view._body as SpriteAdventurer).skin_id == "adventurer", "The player is the approved boy")
 	game.session.state.lamps["landing-lamp"] = true
@@ -45,7 +45,7 @@ func _run() -> void:
 	game.save_now()
 	await game._return_to_title()
 	_check(not game.playing and game.view.area.id == "kindle-hollow", "The title returns to the outdoor view without losing the saved room")
-	await game.continue_game()
+	await game.continue_game("kindle-hollow")
 	_check(game.inside_house() and game._inside_id == "kindle-hollow/row-north-a" and game.session.state.memory.get("room_marker") == "second home", "Continue resumes inside the correct house")
 	_at_exit()
 	await game.leave_house()
@@ -81,16 +81,18 @@ func _run() -> void:
 	SaveStore.write(legacy)
 	await game._return_to_title()
 	SaveStore.write(legacy)
-	await game.continue_game()
+	await game.continue_game("kindle-hollow")
 	_check(not game.inside_house() and game.area.id == "kindle-hollow", "An older save without instances remains loadable")
 	# Travel is now triggered by walking into the door, with the real hinged mesh.
 	game.session.set_physics_process(false)
 	_at_door("home")
 	_check(game.session.request_step(Vector2i.LEFT) and game._flow_busy, "Walking inward starts the actual door transition without F")
+	var stationary: Vector3=game.view._player.position
 	var hinge := game.view.building_node("home").find_child("DoorHinge*",true,false) as Node3D
 	_check(hinge != null, "The adopted exterior contains a separate hinged leaf")
-	await create_timer(0.25).timeout
-	_check(hinge != null and absf(hinge.rotation.y)>0.5, "The leaf opens while the character walks into the opening")
+	await create_timer(0.08).timeout
+	_check(hinge != null and absf(hinge.rotation.y)>0.01, "The hinged leaf opens before the transition")
+	_check(game.view._player.position.is_equal_approx(stationary),"Exterior entry fades on the current space without phasing into the leaf")
 	while game._flow_busy:await process_frame
 	_check(game.inside_house() and game._inside_id=="kindle-hollow/home", "The walk-in fades to the correct saved interior")
 	_at_exit()
@@ -99,8 +101,29 @@ func _run() -> void:
 	_check(not game.inside_house() and game.session.player_cell()==HouseInstances.door(game.area,"home"), "Walking out restores the same safe exterior approach")
 	await create_timer(0.15).timeout
 	_check(not game.inside_house() and not game._flow_busy,"Standing on the returned doorstep does not enter again")
+	var landing:=HouseInstances.door(game.area,"home")
+	var outward: Vector2i=HouseInstances.OUTWARD[game.area.building("home").facing]
+	var outer: Vector2i=landing+outward
+	game.session.prepare_travel()
+	game.session.state.player=[outer.x,outer.y,0]
+	game.view.sync_player(game.session.state)
+	_check(game.session.request_step(-outward) and not game._flow_busy,"Walking to the landing does not open the door a tile early")
+	game.session.advance_walk(.12)
+	_check((game.view._body as SpriteAdventurer).animation_name.begins_with("walk_"),"The approach uses the approved walking animation")
+	game.session.advance_walk(1.0)
+	_check(game.session.player_cell()==landing and not game._flow_busy,"The normal step finishes on the landing")
+	_check(game.session.request_step(-outward) and game._flow_busy,"The next step toward the frame opens the door")
+	while game._flow_busy:await process_frame
+	_at_exit()
+	await game.leave_house()
+	_check(game.session.player_cell()==landing and not game.session.rules.is_walkable(game.session.state,landing-outward),"Leaving returns outside the closed threshold")
 	# Click routing selects an entrance before a route into an occupied building.
 	_check(game.session.walk_to(Vector2i(24,6)) and game.session._route_door=="home", "Clicking a building routes to its own door")
+	game.session._cancel_route()
+	var away: Vector2i=landing+outward*3
+	game.session.state.player=[away.x,away.y,0];game.view.sync_player(game.session.state)
+	_check(game.session.walk_to_door("home") and not game.session._route.is_empty() and game.session._route[-1]==landing,"Click routing walks all the way to the door landing")
+	_check(not game.session._route.has(landing-outward),"The route never walks into the closed threshold")
 	game.session._cancel_route()
 	game.queue_free()
 	await process_frame

@@ -1,0 +1,26 @@
+{
+  "asset": "rootwell-beacon",
+  "source": "art/source/world/rootwell-beacon/v1/model.blend",
+  "backup": "art/source/world/rootwell-beacon/v1/model.pre-plant-style.blend",
+  "before_sha256": "3850bf275c6e3bc45f70f2fa947c43b4685aa7e9a725769fcdde39edba3397fc",
+  "after_sha256": "b9767cd34d288297a77fd3d143a83bc0e629b9e3fce98c51f33894c4783e6682",
+  "objects": [
+    {
+      "object": "house_paint",
+      "replaced_components": {
+        "leaf_light": 141,
+        "leaf": 189,
+        "leaf_dark": 124,
+        "flower_white": 100,
+        "flower_yellow": 81,
+        "flower_red": 64,
+        "flower_orange": 64,
+        "cypress_light": 66,
+        "cypress": 134
+      },
+      "protected_faces": 719,
+      "protected_sha256": "d0de4a21d476035bfc3504b6bb262d797c28931f1868ecd0862c94c5bb4d719e"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

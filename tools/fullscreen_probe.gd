@@ -35,7 +35,7 @@ func _run() -> void:
 	await process_frame
 	game.settings.set_value("ui_scale", 0.8)
 	game.settings.set_value("fullscreen", true)
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	game._hint_timer.stop()
 	for id: String in game.session.state.gates:
 		game.session.state.gates[id] = true

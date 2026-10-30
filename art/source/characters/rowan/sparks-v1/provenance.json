@@ -1,0 +1,401 @@
+{
+  "anchor": [
+    192,
+    420
+  ],
+  "authoring_script_sha256": "da0722e4103a555fd4b6e71e63a3872e09d2ae882ad693e40de48eac38234187",
+  "blink_index": 9,
+  "cell_size": [
+    384,
+    448
+  ],
+  "directions": {
+    "ne": {
+      "key_rgba_sha256": [
+        "50d8e6eb2eff746307dc3f5f19e9e3a5f69b7665aa3512e2ec981faf605fc02b",
+        "4f3eec6f75baf3f15667b580001c18448c0f68a867e98f55443533bcfd2c7326",
+        "0d622700aeaa8f86af70964e14e4a1e5d0b2b0751a1663cc816692f4baea48ea",
+        "eb4840ac8169478ec096a1c62396500090f8e0ad98f74a92c372cfdc11292cbe",
+        "bb65b0f57df03b030b1bc0c17d2fd9833be8f6256aed9f68b856f1a7d0a2155b",
+        "dbb91045440f16711e1be1a3af994033669f2b111832e8d4909f4379e2e2ab18",
+        "be302ecd346d5f11bbc4610279c973c1557cd1bf2907e51d209d14061f6a8b2c",
+        "3920813041e10f9a6ebfffece0abb56dc9fb7cc6436ce880299c9ce96b6ab552",
+        "7245f3b58dd1e186e5b6be4155f56e6a74f8881fb8bec77158b8bf3fb41d1ca1"
+      ],
+      "row": 6,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NE.png",
+          "source_pose": 0,
+          "translation": [
+            -36,
+            7
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NE.png",
+          "source_pose": 1,
+          "translation": [
+            -29,
+            5
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NE.png",
+          "source_pose": 2,
+          "translation": [
+            -38,
+            5
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NE.png",
+          "source_pose": 3,
+          "translation": [
+            -34,
+            22
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NE.png",
+          "source_pose": 4,
+          "translation": [
+            -28,
+            23
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NE.png",
+          "source_pose": 5,
+          "translation": [
+            -40,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NE.png",
+          "source_pose": 6,
+          "translation": [
+            -36,
+            42
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NE.png",
+          "source_pose": 7,
+          "translation": [
+            -28,
+            43
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NE.png",
+          "source_pose": 8,
+          "translation": [
+            -39,
+            39
+          ]
+        }
+      ]
+    },
+    "nw": {
+      "key_rgba_sha256": [
+        "791d931ac6421dbb1665fa24d0dce5d182db39990132da4f9d0be7d1ada8f2ea",
+        "7967ce40240d16557f274878fec77c74eb6ffaedafb38e3643e7e069e9d21222",
+        "670937903f885a3a10951fab88b1f808df80fb3908e41e161a7d74311eb27f5a",
+        "9682ecfe0b9432258a08a09e9f9e4ee9db55ddfcb50d3372e55b81e4c2fd4899",
+        "073ca7ad4342d5bbbfe44572c54fea558cfe9fbc7aca37e990017231cb3d0377",
+        "4667312edcd5ef10afc5850f95ab28533c0b1b7b20e7572e0d30250c0afae422",
+        "3167c1e41b733866589a82ae5e3b6146cc5c27629fd7f70521d7e516bd3ab6ca",
+        "5a83f539088715cb9501ddc6704335913789f7c1d2d5c4060ae3f6af2682df7e",
+        "34b0d6ccdac19b65a057e8f9bec435bdf0d9c30b4d52c2a3e7754b9765c97d8c"
+      ],
+      "row": 9,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NW.png",
+          "source_pose": 0,
+          "translation": [
+            3,
+            7
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NW.png",
+          "source_pose": 1,
+          "translation": [
+            -5,
+            5
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NW.png",
+          "source_pose": 2,
+          "translation": [
+            5,
+            5
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NW.png",
+          "source_pose": 3,
+          "translation": [
+            0,
+            22
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NW.png",
+          "source_pose": 4,
+          "translation": [
+            -6,
+            23
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NW.png",
+          "source_pose": 5,
+          "translation": [
+            6,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NW.png",
+          "source_pose": 6,
+          "translation": [
+            3,
+            42
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NW.png",
+          "source_pose": 7,
+          "translation": [
+            -6,
+            43
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/NW.png",
+          "source_pose": 8,
+          "translation": [
+            6,
+            39
+          ]
+        }
+      ]
+    },
+    "se": {
+      "key_rgba_sha256": [
+        "0955e0e6a3a55b2e874529c9d4ee5d1ddca7aa34e679c5d1ac083d06cefafcbd",
+        "3bec5b2c767cee7eac20e694333389f3061347898200e35ef72ce715771cf962",
+        "8790528db6cabf29069905ee38190e87343dcc89e7d75a80391d0e48e0f05b5a",
+        "c5a5f262e1e9488345cb3938c0425948613c9846b59106a11f29e1a09fccde31",
+        "061ab006adcb4b388b89d4fa44c13f904c0a341a800807cdc11e69a85d463487",
+        "92582f04612b7fd3ebf2845f763db4489ce89c49da1d5ff62cbd69789c30529a",
+        "05c14582d470887c774e0eee0173e8f6041c1a382d41933122568947cbc99f40",
+        "210d87c83351e584bbb59f0dc91b2f02a0f1a1fb8e2635dc5052e6e08ad88cd6",
+        "a99611e1d0e0e35bb0ff40aa9b082eadee2637bd748e1c0c39748c651e1f7979",
+        "482d8c6e9c9890eb761d8738e9df93f35bef7441811b46eceeef2bd528b07836"
+      ],
+      "row": 0,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SE.png",
+          "source_pose": 0,
+          "translation": [
+            -32,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SE.png",
+          "source_pose": 1,
+          "translation": [
+            -36,
+            10
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SE.png",
+          "source_pose": 2,
+          "translation": [
+            -37,
+            10
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SE.png",
+          "source_pose": 3,
+          "translation": [
+            -31,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SE.png",
+          "source_pose": 4,
+          "translation": [
+            -24,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SE.png",
+          "source_pose": 5,
+          "translation": [
+            -30,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SE.png",
+          "source_pose": 6,
+          "translation": [
+            -31,
+            46
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SE.png",
+          "source_pose": 7,
+          "translation": [
+            -32,
+            39
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SE.png",
+          "source_pose": 8,
+          "translation": [
+            -25,
+            45
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/blink-se.png",
+          "source_pose": 8,
+          "translation": [
+            -25,
+            45
+          ]
+        }
+      ]
+    },
+    "sw": {
+      "key_rgba_sha256": [
+        "886da1eee9168a79caf1c9757a9bb29dc4a2026107681aa8da624a8665f896a9",
+        "2be7d0da7c9ea3a202e0a6bcbda9c50c666e1c553bea81b292abb86c52a3f180",
+        "531943552d3c77780b6f7b84a74d3d468c3ee04e7675ef91643625cc0d6fe84f",
+        "548f2f7bcfc451cd69d1c13836918ef26103a53810e389c89b6b51f201779a47",
+        "845c7de41903b235ed364e954e82152c9aec1d8f82c7a1809f16750976dd86f2",
+        "a8136faaff17a6877b6b7f684271033fa035936895f1b09a1e0415a524ac1a4e",
+        "9f4ea61d8f05ac541d3f9c2519128980c4a42baf6473b5d688fe2b09881751b0",
+        "6b841563460b6b48dea0acd3ef84d248f321e337764283a4a197991aa381ffac",
+        "9380bd62a97f009c56fa82ead247bbe3e6cd5e6dfb4e6cc652e40922f8db47af",
+        "e80d7a3069ddfcfadaefda4a2f2e2824f79c4bd6c103c73cda38327d9f3e2979"
+      ],
+      "row": 3,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SW.png",
+          "source_pose": 0,
+          "translation": [
+            -2,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SW.png",
+          "source_pose": 1,
+          "translation": [
+            2,
+            10
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SW.png",
+          "source_pose": 2,
+          "translation": [
+            4,
+            10
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SW.png",
+          "source_pose": 3,
+          "translation": [
+            -2,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SW.png",
+          "source_pose": 4,
+          "translation": [
+            -9,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SW.png",
+          "source_pose": 5,
+          "translation": [
+            -4,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SW.png",
+          "source_pose": 6,
+          "translation": [
+            -2,
+            46
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SW.png",
+          "source_pose": 7,
+          "translation": [
+            -2,
+            39
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/SW.png",
+          "source_pose": 8,
+          "translation": [
+            -8,
+            45
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/sparks-v1/blink-sw.png",
+          "source_pose": 8,
+          "translation": [
+            -8,
+            45
+          ]
+        }
+      ]
+    }
+  },
+  "grid": [
+    4,
+    12
+  ],
+  "idle_index": 8,
+  "method": "Approved eight-pose sheets plus neutral idle; integer translation only; eye-only blink patch",
+  "output_sha256": "99d0ec67b8c36dc9d45044fb5ac8c0bb3f899b1013bf9e82856ed878e6b1f7c2",
+  "schema": 4,
+  "sources": {
+    "res://art/source/characters/rowan/sparks-v1/NE.png": "2ba084fd1c342f2ea03851e8c57ffefe64f6dc4845c0bb747747257370cb0cb1",
+    "res://art/source/characters/rowan/sparks-v1/NW.png": "a52d686d69ced1b5c076c8c8d204822bd75be349464faece569d154c6216f8f0",
+    "res://art/source/characters/rowan/sparks-v1/SE.png": "10eeb5a9fccafe264d34c00168d9860c961bdd7b29735569befd16ea4b8cd677",
+    "res://art/source/characters/rowan/sparks-v1/SW.png": "3226ebefb5ea544cdf86240e7f7e72a7b8380ff4564a0b3b2ef3fef3f5c46558",
+    "res://art/source/characters/rowan/sparks-v1/blink-se.png": "9daf41e42d8d3170c5810cbc7bfcfe47d1eb9deb4ac6f4ada25dcef16cba276d",
+    "res://art/source/characters/rowan/sparks-v1/blink-sw.png": "3a318283fd4137589c284d3684f6defd174ec58b8ec01a217efd32deadfb3198"
+  },
+  "walk_poses": 8
+}

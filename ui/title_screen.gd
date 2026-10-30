@@ -1,12 +1,13 @@
 class_name TitleScreen
 extends Control
-## The main menu, laid over the live 3D valley. Everything on it is built from the shared UI kit: no
+## The main menu, laid over the live 3D world. Everything on it is built from the shared UI kit: no
 ## painted backdrop is needed, because the world itself is the title art.
 
 signal continue_requested
 signal new_game_requested
 signal character_requested
 signal settings_requested
+signal showcase_requested
 signal quit_requested
 
 var _column: VBoxContainer
@@ -44,14 +45,14 @@ func setup(has_save: bool, summary: String) -> void:
 	_column.add_child(wordmark)
 	var sub := UI.hbox(12)
 	_column.add_child(sub)
-	var voxel := UI.label("VOXEL", &"LabelHeading", 26, Pal.PARCHMENT)
+	var voxel := UI.label("SPARKS & MACHINES", &"LabelHeading", 26, Pal.PARCHMENT)
 	voxel.add_theme_font_override("font", UITheme.display_font(700, 10))
 	sub.add_child(voxel)
 	var rule := UI.rule()
 	rule.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	rule.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	sub.add_child(rule)
-	var tagline := UI.dim("Write the spell. Light the hollow.", 24)
+	var tagline := UI.dim("An apprentice’s year in Haverlund.", 24)
 	tagline.add_theme_color_override("font_color", Pal.PARCHMENT)
 	_column.add_child(tagline)
 	_column.add_child(UI.spacer(26))
@@ -62,12 +63,15 @@ func setup(has_save: bool, summary: String) -> void:
 		_first_button = _continue
 		_summary = UI.dim(summary, 17)
 		_column.add_child(_summary)
-	var new_game := UI.button("New journey", &"star", &"ButtonPrimary" if not has_save else &"", func() -> void: new_game_requested.emit())
+	var new_game := UI.button("New game", &"star", &"ButtonPrimary" if not has_save else &"", func() -> void: new_game_requested.emit())
 	new_game.custom_minimum_size = Vector2(340, 56)
 	_column.add_child(new_game)
 	if _first_button == null:
 		_first_button = new_game
-	for spec: Array in [["Character", &"person", character_requested], ["Settings", &"gear", settings_requested], ["Quit", &"door", quit_requested]]:
+	var choices: Array=[["Character", &"person", character_requested], ["Settings", &"gear", settings_requested]]
+	if AssetShowcase.enabled():choices.append(["Asset Showcase (Dev)",&"hammer",showcase_requested])
+	choices.append(["Quit",&"door",quit_requested])
+	for spec: Array in choices:
 		var button := UI.button(spec[0], spec[1], &"", func() -> void: (spec[2] as Signal).emit())
 		button.custom_minimum_size = Vector2(340, 50)
 		_column.add_child(button)

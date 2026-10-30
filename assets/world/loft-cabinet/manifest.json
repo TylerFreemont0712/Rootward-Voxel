@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "loft-cabinet",
+  "version": "v1",
+  "source": "art/source/world/loft-cabinet/v1/model.blend",
+  "source_sha256": "d7cff8be9d1e59e1605fbc63c812c37c5fb3e5f3e08282a193a7d9130ca349ab",
+  "runtime": "assets/world/loft-cabinet/model.glb",
+  "runtime_sha256": "802291d46dbc78f685ce330121cdf448f38ef3ac6c05f23e6522c170c2194390",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.560000002384186,
+      0.0,
+      -0.389999985694885,
+      0.560000002384186,
+      1.72499990463257,
+      0.487293869256973
+    ],
+    "geometry_sha256": "f01d6be9ab93a4dfcb9cecb56d4475085876d43c4a14f8ff581f889cc7cffb9b",
+    "material_records": {
+      "loft_brass": {
+        "albedo": [
+          7686,
+          6039,
+          3255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_cream": {
+        "albedo": [
+          9373,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_lamp_glass": {
+        "albedo": [
+          10000,
+          8784,
+          6275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leaf_dark": {
+        "albedo": [
+          2078,
+          3725,
+          2314,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+      },
+      "loft_white": {
+        "albedo": [
+          8784,
+          8235,
+          7255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_wood_dark": {
+        "albedo": [
+          4745,
+          3137,
+          2000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_brass",
+      "loft_cream",
+      "loft_lamp_glass",
+      "loft_leaf_dark",
+      "loft_oak",
+      "loft_white",
+      "loft_wood_dark"
+    ],
+    "meshes": 7,
+    "triangles": 3864
+  }
+}

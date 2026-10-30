@@ -4,7 +4,9 @@
     "village-cottage": "village-cottage",
     "village-workshop": "village-workshop",
     "village-loft": "village-loft",
-    "village-mill": "village-mill"
+    "village-mill": "village-mill",
+    "morning-bedroom": "morning-bedroom",
+    "morning-town-hall-room": "morning-town-hall-room"
   },
   "assets": {
     "log-cabin-large": "village-cottage",
@@ -17,6 +19,12 @@
     "brook-mill": "village-mill",
     "hollow-bakery": "village-cottage",
     "hollow-smithy": "village-workshop",
-    "concept-cottage": "village-cottage"
+    "concept-cottage": "village-cottage",
+    "painted-cottage": "village-cottage"
+  },
+  "houses": {
+    "village-morning/morning-home": "morning-bedroom",
+    "village-morning/town-hall": "morning-town-hall-room",
+    "village-morning/concept-comparison": "morning-bedroom"
   }
 }

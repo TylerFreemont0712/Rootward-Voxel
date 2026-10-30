@@ -1,0 +1,49 @@
+{
+  "asset": "haverlund-harbour backdrop",
+  "date": "2026-10-28",
+  "runtime": "assets/world/backdrops/haverlund-harbour.png",
+  "selected": "haverlund-harbour.png",
+  "selected_sha256": "6373ba42c5ef9a144f9783bfec99472c5c4f19415ec3ffaf0f131da9d436cc4e",
+  "method": "Two img2img passes in a local ComfyUI (no network service) over a composite of the selected T7c concept's harbour view. The game hazes its lower part (art/backdrop_haze.gdshader).",
+  "init": {
+    "file": "init-composite.png",
+    "sha256": "89412d6d9ad70b271ea0a6f58e635fe957a5993eeff634cfabb13623c2c81706",
+    "script": "compose.py",
+    "script_sha256": "fdeea48e9e0f335e6d4bd7c0aa2308c10d8eaffe197e888649d90285845137b3",
+    "source": "docs/concept/v0.7/art/4-opening/T7c-workshop-lane.wheels.png",
+    "source_sha256": "a11f14de87f770c0d78d14a70f8b330c069ae7049a9d882c5d7898653046c966",
+    "layout": "1536x864: the concept's columns x 1180-1536 (right), the same column mirrored (left), and x 830-1180 stretched between (centre, hidden behind the lane in play)"
+  },
+  "passes": [
+    {
+      "output": "pass-1.png",
+      "sha256": "fe92c9d7a767647f7f49248ba0b6f89014f7bf21a7c7378f301b776365bf9ef0",
+      "input": "init-composite.png",
+      "seed": 1028,
+      "denoise": 0.45,
+      "negative": "people, text, watermark, signature, blurry, lowres, seams, duplicate, frame, border, mirrored"
+    },
+    {
+      "output": "haverlund-harbour.png",
+      "sha256": "6373ba42c5ef9a144f9783bfec99472c5c4f19415ec3ffaf0f131da9d436cc4e",
+      "input": "pass-1-sea-patched.png",
+      "input_sha256": "8655af76100f4ccc06b2c2e88fc8cfe3b58b14c16225c385b25c0e959c7ee715",
+      "input_script": "patch.py",
+      "input_script_sha256": "672b7d9347600a28df6ee22f498f17841ea1b5cc7e83399f59d259be573ef94c",
+      "why": "Pass 1's mirrored left half repeated the dome and lighthouse; patch.py paints open sea over them before this light pass.",
+      "seed": 1030,
+      "denoise": 0.33,
+      "negative": "people, text, watermark, signature, blurry, lowres, seams, duplicate, frame, border, mirrored, tiled, repeated pattern"
+    }
+  ],
+  "sampler": {
+    "checkpoint": "novaAnimeXL_ilV190.safetensors",
+    "steps": 32,
+    "cfg": 5.0,
+    "sampler_name": "dpmpp_2m",
+    "scheduler": "karras",
+    "positive": "masterpiece, best quality, scenery, no humans, sunny mediterranean harbour town seen from a high hillside, terracotta tiled roofs, cream and salmon plaster houses with green shutters, cypress trees, glass dome in a small square, harbour with sailboats and stone pier, white lighthouse on a rocky islet, calm blue open sea with a few small sailboats, distant green headland, soft white clouds, warm late morning light, painterly hand-painted background, soft brush texture, consistent lighting"
+  },
+  "rejected": "Four text-only candidates (seeds 71028, 281026, 90417) ignored the hillside vantage (a pier foreground, floating islands, cliffs), and a third composite with open sea on its left (seed 1029) left a hard seam. None are kept.",
+  "status": "Starter backdrop. Its hidden centre still shows two cottages from the concept, behind the lane."
+}

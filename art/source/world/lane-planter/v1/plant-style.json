@@ -1,0 +1,58 @@
+{
+  "asset": "lane-planter",
+  "source": "art/source/world/lane-planter/v1/model.blend",
+  "backup": "art/source/world/lane-planter/v1/model.pre-plant-style.blend",
+  "before_sha256": "56544e1b1071258f2735b5f8473abc3daef6945e3c6cc71024beff3efd7c5bf6",
+  "after_sha256": "2aa6fc580f4685ec3fe4a8173db7502897b18ccf9e5bea1e0bd1016652c99668",
+  "objects": [
+    {
+      "object": "lane_leaf_dark",
+      "replaced_components": {
+        "leaf_dark": 7
+      },
+      "protected_faces": 160,
+      "protected_sha256": "1e0aee44c38e799e200ab4c6c680da0d358dfa121109f7988d93bbb417181877"
+    },
+    {
+      "object": "lane_leaf",
+      "replaced_components": {
+        "leaf": 14
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_leaf_light",
+      "replaced_components": {
+        "leaf_light": 7
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_white",
+      "replaced_components": {
+        "flower_white": 8
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_pink",
+      "replaced_components": {
+        "flower_pink": 7
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_red",
+      "replaced_components": {
+        "flower_red": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

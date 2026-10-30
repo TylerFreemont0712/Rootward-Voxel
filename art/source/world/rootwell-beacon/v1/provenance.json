@@ -1,0 +1,26 @@
+{
+  "asset": "rootwell-beacon",
+  "date": "2026-10-29",
+  "references": {
+    "docs/concept/v0.72/art/rootwell/front-threequarter.png": "e1919cf42213c86b5881968366981c3db60fbcedbeff08f45a2295564c08722d",
+    "docs/concept/v0.72/art/rootwell/rear-threequarter.png": "645f6cde8bb3b4181b684e7218e3ef30a166e6b4cf9e3320362df50195a3b682"
+  },
+  "authoring_record": "art/source/world/rootwell/v1/author_rootwell.py",
+  "authoring_record_sha256": "11e19a1cfd56f68e725e5c3397d5cdad611c8830b7ae3cdfe80795da294b2eaf",
+  "kit": "art/source/world/seaside-houses/v1/house_kit.py",
+  "kit_sha256": "30980673d647d8659ee2f715a574f398748a87cdad43d60eae74d4bee76be857",
+  "verdigris": {
+    "path": "art/source/world/rootwell/v1/verdigris.png",
+    "sha256": "400ae2be496613c8f4c2d15f9b50d9de27ce3bf989d3ec8c537a99a28975b800",
+    "derived_from": "art/source/world/textures/v2-detail/native/copper_patina.png",
+    "derived_from_sha256": "8e9cf0f04af8c5baafcea610225e4c49642a944a1cd4c7316de30420dfec41b4"
+  },
+  "palette": {
+    "stone": "seaside_stone_limestone",
+    "roof": "seaside_roof_terracotta",
+    "ridge": "seaside_roof_terracotta",
+    "timber": "seaside_timber_oak",
+    "shutter": "seaside_shutter_teal"
+  },
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh."
+}

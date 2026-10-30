@@ -1,0 +1,1270 @@
+{
+  "date": "2026-10-26",
+  "result": "pass",
+  "selected_concepts": 38,
+  "preserved_pngs": 91,
+  "decoded_pngs": 91,
+  "directly_approved_originals_preserved": 6,
+  "checked_local_links": 347,
+  "unique_files_hashed": 110,
+  "shared_prompt_blocks": "Exact blocks and order checked against 04-art-prompts.md for every saved image.",
+  "runtime_adopted": false,
+  "game_tests": "Full scripts/test.sh passed during Phase 1; not repeated for later concept-image and documentation-only changes.",
+  "warnings": [
+    {
+      "file": "3-cast/C1-apprentice-se.png",
+      "detail": "Low-alpha corner noise retained for later production cleanup.",
+      "corner_alpha": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-cast/C4a-rowan-portrait.png",
+      "detail": "Low-alpha corner noise retained for later production cleanup.",
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        14
+      ]
+    },
+    {
+      "file": "7-cast/C6a-tessa-portrait.png",
+      "detail": "Low-alpha corner noise retained for later production cleanup.",
+      "corner_alpha": [
+        0,
+        0,
+        1,
+        4
+      ]
+    }
+  ],
+  "errors": [],
+  "images": [
+    {
+      "file": "1-style/T1-haverlund-key-art.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "0a3bc0bd12a686bccbbcc77346301c664e934d5f2a581018b1fbeba89e16f659",
+      "selected": false
+    },
+    {
+      "file": "1-style/T1-haverlund-key-art.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "1ce1b5faea6993a76d1b0aa464e763831c3d1d4ae9504148eec956fffcc69e0a",
+      "selected": false
+    },
+    {
+      "file": "1-style/T6-lighting-key.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "fbee306ed024cc76183606e8d3fd0d7b603d3f37ce77fed3fd0b13d53e092412",
+      "selected": true
+    },
+    {
+      "file": "1-style/T6-lighting-key.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "8c72a1640e3dd8ac8ae26b824110f5940cb8c8b4e79dddcd320fcc687e19c693",
+      "selected": false
+    },
+    {
+      "file": "2-hotaru/H1-turnaround.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "c9d0673030c64f8cbabc8396be7f154da0335f4c6496f24856b1510480e2181a",
+      "selected": false
+    },
+    {
+      "file": "2-hotaru/H1-turnaround.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "1f2bde8ac0638f284f71ba1e85a3398e9175c998b18331ad802459df15319301",
+      "selected": false
+    },
+    {
+      "file": "2-hotaru/H2-expressions.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "c7860669f823bbf58250e5d927b3fd58f6791164b93de473db4ddac1abda5bfd",
+      "selected": false
+    },
+    {
+      "file": "2-hotaru/H2-expressions.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "d498cb779fb224af1805d3c565df2ecf941998f31f6cf2c83fa4e77f5ea9c876",
+      "selected": false
+    },
+    {
+      "file": "2-hotaru/H3-portrait.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "4fca154096bc72a53a38d92428636fd13de76ece28cc17e0329639260af68a95",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.6442
+      }
+    },
+    {
+      "file": "2-hotaru/H3-portrait.alt1.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "460ba4f91e1070c672a986a824749f6ceaa28bfc45b39db2cd022e2c1863755e",
+      "selected": false,
+      "alpha": {
+        "extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.55463
+      }
+    },
+    {
+      "file": "2-hotaru/H4-in-world.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "3f94fa8f480ee689463e3c4fbbf73b744959a38027d90112ddef155db3d7d4f1",
+      "selected": true
+    },
+    {
+      "file": "2-hotaru/H4-in-world.alt2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "4e5fd4204c2c9bb25465f3cda493b452ebab97c3c369b461df5f4f108ac5936c",
+      "selected": false
+    },
+    {
+      "file": "2-hotaru/H4-in-world.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "15d2fce99ca045c77c347041988cef5945518613e72f6cbca6d897b764f1f521",
+      "selected": false
+    },
+    {
+      "file": "2-hotaru/H2-expressions.v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "61a073c5af844154369072338125ce949bc0931caa8ca0d8c6d58096df83b3a3",
+      "selected": false
+    },
+    {
+      "file": "3-cast/C1-apprentice-se.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "33912d325f40468c052ec8b5f5dd991461402ebb47435ee2998a9a44c975916c",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.74058
+      }
+    },
+    {
+      "file": "3-cast/C1-apprentice-se.alt1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "c0601a1949ec069d19761c0d0a436af55218fbc9c4297b1f903d118b3e76784a",
+      "selected": false,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.72618
+      }
+    },
+    {
+      "file": "3-cast/C1-apprentice-ne.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "bda54d89af75d1159516a9a6db2defc2a40bc2360d786dcf3f32a17367eeae0a",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.75586
+      }
+    },
+    {
+      "file": "3-cast/C1-apprentice-ne.alt1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "0e178f35d0b227b9bf917f03acc09838b6c6443cef892fac21fe13c5ed9d7970",
+      "selected": false,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.74826
+      }
+    },
+    {
+      "file": "3-cast/C2a-nell-portrait.alt1.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "7d542820713223cdf3c6262ae2deec4bcc90a9727a7af9a6297e2d09ec16e6fe",
+      "selected": false,
+      "alpha": {
+        "extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.36249
+      }
+    },
+    {
+      "file": "3-cast/C2a-nell-portrait.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "9036108f2e047f8422294997e7f020277bec07304b0a1b8ae54ca3ea39269896",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.37461
+      }
+    },
+    {
+      "file": "3-cast/C2b-nell-sprite.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "6d475ddcf12521712f7ea822717cd595d0ab5ead528b4272a0fc0601a0c7c137",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.67582
+      }
+    },
+    {
+      "file": "3-cast/C2b-nell-sprite.alt1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "95154ca77261d3e021158800be1d83b10448a7500ddb6ab087ca04b2c9b7959e",
+      "selected": false,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.66055
+      }
+    },
+    {
+      "file": "4-opening/T7a-workshop-loft.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "608739cc88411b795d869594b307999bad594485e9893f724296a2bef7f67e30",
+      "selected": false
+    },
+    {
+      "file": "4-opening/T7a-workshop-loft.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "fa72cf8b84d3358d1daaaa24042b36cd0fb63280f8022a307e45375cb9f068f2",
+      "selected": false
+    },
+    {
+      "file": "4-opening/T7b-workshop-floor.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "60e4dfa99d8b1a08b37c2fbe509361e1fc660cac258d32882aa5fb7038ff8c61",
+      "selected": true
+    },
+    {
+      "file": "4-opening/T7b-workshop-floor.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "7a5d22e10e4bc20848f0462f32743ae4c300b45c5ea0e8d9ac278733479790d1",
+      "selected": false
+    },
+    {
+      "file": "4-opening/P3-workshop-props.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "2cb12edf91e7919c3aeabc0d6c3a41e5f2da66682b484dda486ae1304ab7764b",
+      "selected": true
+    },
+    {
+      "file": "4-opening/P3-workshop-props.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "39c1614ec029de2fd7b47d1cbab98ad987b77df4fd4538b4ee268b55b3e2372b",
+      "selected": false
+    },
+    {
+      "file": "4-opening/T7c-workshop-lane.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "7a2c95d2972915f500856270a99fb4ca9a9bcc5202548344531abcbd6708fe2d",
+      "selected": false
+    },
+    {
+      "file": "4-opening/P1-street-props.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "c82c6a49caccabf81f11ff808eaf31d6635b90e399ced21bf3865591ecc3e77c",
+      "selected": true
+    },
+    {
+      "file": "4-opening/P1-street-props.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "ad859616cff5b4341c552a63c6002d3bd670ce00c0ef614b00272f3ede4c1104",
+      "selected": false
+    },
+    {
+      "file": "4-opening/T7c-workshop-lane.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "e63f5159bf79dd0568da0b91b944a65398e963a1c98f269dad3aef271ecc053a",
+      "selected": false
+    },
+    {
+      "file": "5-town/T2-outskirts-golden-hour.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "85c36400088e26d985b902746a3b45b01d573cf787ceeee1514eb5271a04d3de",
+      "selected": false
+    },
+    {
+      "file": "5-town/T2-outskirts-golden-hour.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "7abc5cd97586ba48f13398a9e4b08a9ec7d3e8cd7dc8fff5a7a14d5984fd7c77",
+      "selected": false
+    },
+    {
+      "file": "5-town/T3-rootward-square-day.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "7038e46c616a4b988fda72253cbf1211eb49a119c890768b5738b681bfc5d0f2",
+      "selected": false
+    },
+    {
+      "file": "5-town/P2-outskirts-buildings.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "28405834e367edfdd46392011a4f62aa9a8125bbd521ae5373f388332cbe7e44",
+      "selected": false
+    },
+    {
+      "file": "5-town/P2-outskirts-buildings.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "3e4e6576ea93282e56ec92064e1c8db979c3c9b7e91609bd585d397fb24b2a11",
+      "selected": false
+    },
+    {
+      "file": "5-town/T3-rootward-square-day.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "b987893ad208e8db203e5d37fa465ff8282724bdf71e49c664d950b35e9e8a56",
+      "selected": false
+    },
+    {
+      "file": "5-town/T4-rootward-square-dusk.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "8475946059eac4b3dcb09b8dbad77f08a4262161d0c06e3f50972341790803ea",
+      "selected": false
+    },
+    {
+      "file": "5-town/T4-rootward-square-dusk.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "eac2e389e8d4d019c78ebe9af244f66fd94e563522a8a172ff9a354399caa342",
+      "selected": false
+    },
+    {
+      "file": "5-town/T5-rootwell-sheet.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "2a620b498782f1d8b64808ad53ce29aab0d3c6bd19bcefb5b8b110d2d8439d99",
+      "selected": true
+    },
+    {
+      "file": "5-town/T5-rootwell-sheet.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "cb539fb62dce4ee22ac61b9eed992f126ce119497d4a87951d41d66805c0c960",
+      "selected": false
+    },
+    {
+      "file": "6-automatons/A1-family.alt2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "eed4ab3f909ceb2efac936af0acfcd74e2715c553b08c2e03555d72d19b7502c",
+      "selected": false
+    },
+    {
+      "file": "2-hotaru/H1-turnaround.wheels.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "112e3d9822fef9066fd46070573f086dddf6d8947f15ca8c5003a3ec6221f507",
+      "selected": true
+    },
+    {
+      "file": "2-hotaru/H1-turnaround.wheels.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "a83d9e9fe6fcbc6157d5a27c6d4bad1e4bb41a6796368db86b8ecbdc1d44cdd6",
+      "selected": false
+    },
+    {
+      "file": "6-automatons/A1-family.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "36f02def5cc1774e91eecd258aec6ccd413696a7f6761bb8746ca196555acc14",
+      "selected": true
+    },
+    {
+      "file": "6-automatons/A1-family.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "efa827046af7a818caf1d45a44dae5be5c020ae977ed9a8b1297656ec472c659",
+      "selected": false
+    },
+    {
+      "file": "2-hotaru/H2-expressions.wheels.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "cba2db242cb71bab284f0e2df25769dba6f40fbdf69c7cee2943aef15873319a",
+      "selected": true
+    },
+    {
+      "file": "2-hotaru/H2-expressions.wheels.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "28d151c008734d9eb3938407c6c3db8dd0464bfd1718c2a200303be3e06fb2cf",
+      "selected": false
+    },
+    {
+      "file": "6-automatons/A2-lamplighter.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "31045ae566359a3740382ecf6096a591a8b52df74dcf70afe5de5af096f4cad3",
+      "selected": true
+    },
+    {
+      "file": "6-automatons/A2-lamplighter.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "9787af36a0ea00fed4583ef710ffdbef6fc40100dadb1ba967422e21632a5872",
+      "selected": false
+    },
+    {
+      "file": "6-automatons/A3-yard-crane.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "6f5cf4816d9c415c772054508bcf42048c35918c974ee9f7f6fa244aa6b0c6bb",
+      "selected": true
+    },
+    {
+      "file": "6-automatons/A3-yard-crane.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "b21ed2b778b12b509657567767594423b291132b99fc3ac8b7a43de41f1d5bbe",
+      "selected": false
+    },
+    {
+      "file": "6-automatons/A4-sleeper.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "6ae5cd88b853827472fd2d15f6da53dee33b412d508c11d081c635e4088284e0",
+      "selected": false
+    },
+    {
+      "file": "6-automatons/A4-sleeper.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "e47c6cf1a28eef48e095bb092c2dfd532caf96368faa44053f94ed0ecc086e25",
+      "selected": true
+    },
+    {
+      "file": "7-cast/C3a-mira-portrait.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "bb79bbf94370a8142e922a9a744f5752343d6fcf0968c3923698557e2cf3cf95",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.30163
+      }
+    },
+    {
+      "file": "7-cast/C3a-mira-portrait.alt1.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "38ce13b34cdd68e6696a6cab076a83f9681d773a5d0f57125e3e32af8a9382f7",
+      "selected": false,
+      "alpha": {
+        "extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.32052
+      }
+    },
+    {
+      "file": "7-cast/C4a-rowan-portrait.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "3b1d26aaba5b2dfe6be638d2c6cc546cee65cf8dd63c4eea3ed4307a759ae1b1",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          14
+        ],
+        "fully_transparent_fraction": 0.29333
+      }
+    },
+    {
+      "file": "7-cast/C4a-rowan-portrait.alt1.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "b1b22fa0a6c04a4c1a320dd2331f1c60616bb212bc1045742f9f30ca3dd86632",
+      "selected": false,
+      "alpha": {
+        "extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.31346
+      }
+    },
+    {
+      "file": "7-cast/C5a-bram-portrait.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "b231a3b45a86a2a07c02ff2f6923c1fa887bdec0f03221186c9ba892bbc4a5fc",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.35705
+      }
+    },
+    {
+      "file": "7-cast/C6a-tessa-portrait.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "e6367769bf77526eef07c5f324c202e356a4f7638cc878149f9e9f077b5a3b92",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          1,
+          4
+        ],
+        "fully_transparent_fraction": 0.29465
+      }
+    },
+    {
+      "file": "7-cast/C3b-mira-sprite.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "b7e7b3ca18975e61bf95d61f1def9a96e83509909e7cb67e696a7e8606e37931",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.69048
+      }
+    },
+    {
+      "file": "7-cast/C3b-mira-sprite.alt1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "a16088ec57139fe85a883dead356bde6030f829ec4cf2c8d8b03fa8fb722013d",
+      "selected": false,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.68995
+      }
+    },
+    {
+      "file": "7-cast/C4b-rowan-sprite.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "9ec297ac6ae8f4db565d5490c36c3ffcd603c42c43691cf129dd6085d524cf9f",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.72067
+      }
+    },
+    {
+      "file": "7-cast/C4b-rowan-sprite.alt1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "be762e05d5d98f5e6625ae1ffe356b9ace65a445c28234865edf9d5ec9aaf14e",
+      "selected": false,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.70692
+      }
+    },
+    {
+      "file": "7-cast/C5b-bram-sprite.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "81a7c161d33479ccad8a19ae882b899963402d85cb45df4bd901c50f37a16dff",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.70287
+      }
+    },
+    {
+      "file": "7-cast/C5b-bram-sprite.alt1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "8bd2fd2e8e03129e3155e651be394e16f734b8cef1e974160b96d868df782ff7",
+      "selected": false,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.71437
+      }
+    },
+    {
+      "file": "7-cast/C6b-tessa-sprite.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "7a190cd69a295d0689103129879c4ced07bbfb5cfcde49e6a4f76f54eb87876a",
+      "selected": true,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.68901
+      }
+    },
+    {
+      "file": "7-cast/C6b-tessa-sprite.alt1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "6d48e013936a9e73b3d3de934f6936d46cb0a19527c240a3f480591b4f07eac8",
+      "selected": false,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fully_transparent_fraction": 0.70773
+      }
+    },
+    {
+      "file": "8-interface/U1-ui-sheet.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "961dd0f1085569c40b129aeb9fead59bfac7a82ce1515e1921ab52b851bade6b",
+      "selected": true
+    },
+    {
+      "file": "8-interface/U1-ui-sheet.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "7beec32e521cfa96148d0a734966a6b58341975449c2d592fdf499f1978171ba",
+      "selected": false
+    },
+    {
+      "file": "8-interface/U2-journey-card.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "d74e1be3510884861cf41edc8c95c293fd538e19f842787c40cf34854f60b426",
+      "selected": false
+    },
+    {
+      "file": "8-interface/U2-journey-card.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "11137860e76047999348972bf31f8c7304c425297b6944c363c375f587935eb1",
+      "selected": false
+    },
+    {
+      "file": "7-cast/C7-cast-lineup.study.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "74ea47ca3e774dbc8b809574b84d546eb1bae82c2b403b39cf4062acc92cd3c9",
+      "selected": false
+    },
+    {
+      "file": "7-cast/C7-cast-lineup.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "92b6cfb1d164bc07b44f03d038d4baa45b328a585625b7911f7178b0cda541de",
+      "selected": true
+    },
+    {
+      "file": "7-cast/C7-cast-lineup.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "47cdc2a75786f5d9a98b1aa09b0b54aad9cd03e1613593e75cb97684b2418310",
+      "selected": false
+    },
+    {
+      "file": "9-future/F1-harbour-street.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "fe9827c73f6a7153750c0881ec3fe6c9f7ff6aa4a564d73a7ebc1fc700fc7ba7",
+      "selected": true
+    },
+    {
+      "file": "9-future/F1-harbour-street.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "964ba700f858a89da998acccb222c22abec8a4ce1c0087e6d2bef38b1afbcb3f",
+      "selected": false
+    },
+    {
+      "file": "9-future/F2-rootworks-chamber.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "5c2253a0f767162f419bac75caf49d1953f970ab1677db51e538e314493febe2",
+      "selected": true
+    },
+    {
+      "file": "9-future/F2-rootworks-chamber.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "e7334ffd271a80bf43067f6504a229f47d72835cbb0780fc85135ad80ba31ba0",
+      "selected": false
+    },
+    {
+      "file": "9-future/F3-festival-night.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "70a1932d60a0121baa28c4454e56fc014d727ea4d508c0c74ddda0b64a4eed54",
+      "selected": false
+    },
+    {
+      "file": "9-future/F3-festival-night.alt1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "9e21f2386c8cde0dd5396f7c0dcf919dee15c6c7daee8a82e91894a10c4b9f97",
+      "selected": false
+    },
+    {
+      "file": "4-opening/T7a-workshop-loft.wheels.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "c2dcece4c70004e41961ab9ffe5773b6605181950c2aec68b2d8eec135d330e6",
+      "selected": true
+    },
+    {
+      "file": "1-style/T1-haverlund-key-art.wheels.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "65c9b1ced1e92bea4212030fee71c95c53ebb4dfe9b68b111b449c404fee6fa5",
+      "selected": true
+    },
+    {
+      "file": "5-town/T2-outskirts-golden-hour.wheels.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "769ad096f4475134ec4895d310e6d5d1ce79816f79c7faeeba64e9101434d030",
+      "selected": true
+    },
+    {
+      "file": "5-town/T3-rootward-square-day.wheels.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "92e1c900ba587a2c1230dac98c9192564e5188b0af19439825f2e829656a5980",
+      "selected": true
+    },
+    {
+      "file": "5-town/T4-rootward-square-dusk.wheels.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "e5ddfc26bb2ef3f9f650f91f3beeaf9a520f5edfb3ae51ad66b5982308587315",
+      "selected": true
+    },
+    {
+      "file": "4-opening/T7c-workshop-lane.wheels.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "a11f14de87f770c0d78d14a70f8b330c069ae7049a9d882c5d7898653046c966",
+      "selected": true
+    },
+    {
+      "file": "5-town/P2-outskirts-buildings.wheels.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "44a90c3957940551db32c20bb1edd9b3e51748b4392460743b8b163eff9f6bc1",
+      "selected": true
+    },
+    {
+      "file": "8-interface/U2-journey-card.wheels.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "f76fe12390646029e4c0f3751414c7730601a718ba64aab863ad9d6e06a5c70a",
+      "selected": true
+    },
+    {
+      "file": "9-future/F3-festival-night.circuit.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "64e9f09761224615feac08790cba940d41e289a4d7e8b88b986402ff411babfe",
+      "selected": true
+    }
+  ]
+}

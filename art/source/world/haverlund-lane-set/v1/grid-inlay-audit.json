@@ -1,0 +1,97 @@
+{
+  "asset": "haverlund-lane-set",
+  "routes": [
+    {
+      "route": "street-trunk",
+      "start": [
+        12.5,
+        29.5
+      ],
+      "end": [
+        13.5,
+        2.9
+      ],
+      "length": 30.34,
+      "risers": 22,
+      "surface_start": -0.5400009155273438,
+      "surface_end": -1.9073486328125e-06
+    },
+    {
+      "route": "workshop-threshold",
+      "start": [
+        13.5,
+        12
+      ],
+      "end": [
+        8.65,
+        12
+      ],
+      "length": 5.19,
+      "risers": 6,
+      "surface_start": 1.0,
+      "surface_end": 1.0
+    },
+    {
+      "route": "nell-threshold",
+      "start": [
+        13.5,
+        19.3
+      ],
+      "end": [
+        8.38,
+        19.3
+      ],
+      "length": 5.49,
+      "risers": 8,
+      "surface_start": 1.0,
+      "surface_end": 1.2999999523162842
+    },
+    {
+      "route": "bram-threshold",
+      "start": [
+        13.5,
+        24.85
+      ],
+      "end": [
+        4.78,
+        24.85
+      ],
+      "length": 10.033,
+      "risers": 19,
+      "surface_start": 1.0,
+      "surface_end": 1.0
+    },
+    {
+      "route": "tram-platform",
+      "start": [
+        1.2,
+        2.9
+      ],
+      "end": [
+        23.2,
+        2.9
+      ],
+      "length": 22.0,
+      "risers": 0,
+      "surface_start": 0.0,
+      "surface_end": -1.9073486328125e-06
+    },
+    {
+      "route": "tram-shelter",
+      "start": [
+        19.6,
+        2.9
+      ],
+      "end": [
+        19.6,
+        4.0
+      ],
+      "length": 1.1,
+      "risers": 0,
+      "surface_start": 0.0,
+      "surface_end": 0.0
+    }
+  ],
+  "paving_cuts": 164,
+  "existing_pillars": 0
+}

@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "id": "20261029T055716-b34eddc3",
+  "kind": "delete",
+  "title": "Delete Storage Chest",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "storage-chest",
+    "label": "Storage Chest",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/storage-chest/v1/model.blend",
+    "runtime": "assets/world/storage-chest/model.glb",
+    "manifest": "assets/world/storage-chest/manifest.json",
+    "catalog_notes": "Wooden chest, 0.6 m long, 0.4 m deep and 0.4 m high, with iron corner straps, a dark lid band and a flush iron latch on the -Y front. The footprint is the body; nothing overhangs it.",
+    "related_files": [
+      "art/source/world/storage-chest/v1/brief.md",
+      "art/source/world/storage-chest/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Storage Chest",
+      "source": "art/source/world/storage-chest/v1/model.blend",
+      "runtime": "assets/world/storage-chest/model.glb",
+      "pivot": "ground origin at the footprint centre; base on z = 0",
+      "logical_footprint": [
+        -0.3,
+        -0.2,
+        0.6,
+        0.4
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Wooden chest, 0.6 m long, 0.4 m deep and 0.4 m high, with iron corner straps, a dark lid band and a flush iron latch on the -Y front. The footprint is the body; nothing overhangs it.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:57:16+00:00",
+  "updated": "2026-10-29T06:30:39+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:57:16+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:30:39+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/storage-chest/v1/brief.md",
+    "art/source/world/storage-chest/v1/model.blend",
+    "art/source/world/storage-chest/v1/provenance.json",
+    "assets/world/storage-chest/manifest.json",
+    "assets/world/storage-chest/model.glb",
+    "assets/world/storage-chest/model.glb.import"
+  ]
+}

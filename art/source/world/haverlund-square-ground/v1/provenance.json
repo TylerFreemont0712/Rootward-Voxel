@@ -1,0 +1,12 @@
+{
+  "asset": "haverlund-square-ground",
+  "date": "2026-10-29",
+  "reference": "docs/concept/v0.72/art/guildhall-square.png",
+  "authoring_record": "art/source/world/square-hub/v1/author_ground.py",
+  "authoring_record_sha256": "7f5bfae9c23792b5ac264370d01232a98a2aae93cc86d29387fa6ee81ceca0b6",
+  "plan": "art/source/world/square-hub/v1/plan.py",
+  "plan_sha256": "f703d3a5053e7917a9ea9c03ffb86a5c3fa76073d8d981f21f80476e6ebcff3c",
+  "kit": "art/source/world/seaside-houses/v1/house_kit.py",
+  "kit_sha256": "724da2be608b59c97b706a51f99070233101483a65f9608cb24af16e5457868e",
+  "note": "Base ground only; buildings, railings and houses are separate placed models. Build through scripts/world-art.sh."
+}

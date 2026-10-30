@@ -90,6 +90,71 @@
         1,
         1
       ]
+    },
+    "sparks_nell": {
+      "label": "Nell \u2014 Sparks",
+      "selectable": false,
+      "source": "res://art/source/characters/nell/sparks-v2/sheet.png",
+      "provenance": "res://art/source/characters/nell/sparks-v2/provenance.json",
+      "runtime": "res://assets/characters/skins/sparks_nell.png",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "sparks_mira": {
+      "label": "Mira \u2014 Sparks",
+      "selectable": false,
+      "source": "res://art/source/characters/mira/sparks-v2/sheet.png",
+      "provenance": "res://art/source/characters/mira/sparks-v2/provenance.json",
+      "runtime": "res://assets/characters/skins/sparks_mira.png",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "sparks_rowan": {
+      "label": "Rowan \u2014 Sparks",
+      "selectable": false,
+      "source": "res://art/source/characters/rowan/sparks-v2/sheet.png",
+      "provenance": "res://art/source/characters/rowan/sparks-v2/provenance.json",
+      "runtime": "res://assets/characters/skins/sparks_rowan.png",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "sparks_bram": {
+      "label": "Bram \u2014 Sparks",
+      "selectable": false,
+      "source": "res://art/source/characters/bram/sparks-v2/sheet.png",
+      "provenance": "res://art/source/characters/bram/sparks-v2/provenance.json",
+      "runtime": "res://assets/characters/skins/sparks_bram.png",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "sparks_tessa": {
+      "label": "Tessa \u2014 Sparks",
+      "selectable": false,
+      "source": "res://art/source/characters/tessa/sparks-v2/sheet.png",
+      "provenance": "res://art/source/characters/tessa/sparks-v2/provenance.json",
+      "runtime": "res://assets/characters/skins/sparks_tessa.png",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ]
     }
   }
 }

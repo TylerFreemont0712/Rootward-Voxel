@@ -4,7 +4,7 @@ extends Modal
 
 
 func setup(session: GameSession) -> void:
-	title_row("Kindle Hollow", "Dim places are unexplored. Walk into them to reveal them, and your notebook will be able to reach what is there.")
+	title_row(session.area.title, "Dim places are unexplored. Walk into them to reveal them, and your notebook will be able to reach what is there.")
 	var frame := UI.panel(&"PanelInset")
 	body.add_child(frame)
 	var map := MapView.new()

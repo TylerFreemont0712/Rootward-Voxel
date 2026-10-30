@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "id": "20261029T055018-86fb0a2c",
+  "kind": "delete",
+  "title": "Delete Concept Cottage",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "concept-cottage",
+    "label": "Concept Cottage",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/concept-cottage/v1/model.blend",
+    "runtime": "assets/world/concept-cottage/model.glb",
+    "manifest": "assets/world/concept-cottage/manifest.json",
+    "catalog_notes": "Original mesh from the left log cottage in reference/voxel-isometric.png. Individual glazed clay tiles, oak courses, cream voussoirs, porthole, hollow chimney and daisies. No prior house geometry reused. Modelled from scratch and reviewed in Godot.",
+    "related_files": [
+      "art/source/world/concept-cottage/v1/README.md",
+      "art/source/world/concept-cottage/v1/author.py",
+      "art/source/world/concept-cottage/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/areas/village-morning.json",
+      "content/build/catalog.json",
+      "content/interiors/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_builder",
+      "label": "Concept Cottage",
+      "source": "art/source/world/concept-cottage/v1/model.blend",
+      "runtime": "assets/world/concept-cottage/model.glb",
+      "pivot": "Ground center; front +Z; one metre per cell",
+      "logical_footprint": [
+        -1.9,
+        -1.7,
+        3.8,
+        3.4
+      ],
+      "behavior": "Hinged entry with separate saved cottage room",
+      "notes": "Original mesh from the left log cottage in reference/voxel-isometric.png. Individual glazed clay tiles, oak courses, cream voussoirs, porthole, hollow chimney and daisies. No prior house geometry reused. Modelled from scratch and reviewed in Godot.",
+      "finish_slots": {
+        "walls": [
+          "cottage_oak",
+          "cottage_oak_light"
+        ],
+        "roof": [
+          "cottage_roof",
+          "cottage_roof_light",
+          "cottage_roof_dark"
+        ],
+        "timber": [
+          "cottage_timber",
+          "cottage_endgrain"
+        ],
+        "masonry": [
+          "cottage_stone",
+          "cottage_stone_light",
+          "cottage_stone_warm",
+          "cottage_mortar"
+        ],
+        "metal": [
+          "cottage_iron",
+          "cottage_brass"
+        ]
+      },
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak with upper pane",
+        "threshold": "pale limestone",
+        "plane": 1.855,
+        "width": 1.08,
+        "height": 2.11,
+        "bottom": 0.22,
+        "steps": [
+          [
+            2.55,
+            2.03,
+            1.66,
+            0.12
+          ],
+          [
+            2.15,
+            1.18,
+            1.46,
+            0.235
+          ]
+        ],
+        "hinge": "DoorHinge",
+        "approach_cells": 1
+      },
+      "collision_rects": [
+        [
+          -1.98,
+          -1.7,
+          3.96,
+          3.68
+        ],
+        [
+          -1.98,
+          -1.98,
+          1.44,
+          0.28
+        ],
+        [
+          0.54,
+          -1.98,
+          1.44,
+          0.28
+        ]
+      ],
+      "collision_notes": "Solid log/foundation envelope in local S-facing logical coordinates. The entrance reserves one extra exterior landing cell; parsing also closes the leaf and former threshold to walking. Placement footprint is unchanged."
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:50:18+00:00",
+  "updated": "2026-10-29T05:50:18+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:50:18+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/interiors/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/village-morning.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "pipeline/art-catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/building_review.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doorway_review.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_reference_cottage.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_building_refresh.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_doorway_boundaries.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_house_flow.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

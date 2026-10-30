@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "id": "morning-bedroom",
+  "title": "Your room",
+  "version": 3,
+  "size": [
+    12,
+    11
+  ],
+  "spawn": [
+    4,
+    6
+  ],
+  "movement_lesson": true,
+  "terrain": [
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............"
+  ],
+  "buildings": [],
+  "trees": [],
+  "zones": [
+    {
+      "id": "your-room",
+      "title": "Morning light",
+      "rect": [
+        0,
+        0,
+        12,
+        11
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "id": "hearth-lamp",
+      "at": [
+        0.2,
+        3.5
+      ],
+      "zone": "your-room",
+      "style": "sconce"
+    }
+  ],
+  "props": [
+    {
+      "id": "bed",
+      "asset": "hollow-patchwork-bed",
+      "at": [
+        5.5,
+        8.65
+      ],
+      "facing": "S",
+      "scale": 1.35
+    },
+    {
+      "id": "wardrobe",
+      "asset": "hollow-oak-wardrobe",
+      "at": [
+        0.44,
+        8.9
+      ],
+      "facing": "E",
+      "scale": 1.2
+    },
+    {
+      "id": "desk",
+      "asset": "hollow-writing-desk",
+      "at": [
+        0.46,
+        6.8
+      ],
+      "facing": "E",
+      "scale": 1.15
+    },
+    {
+      "id": "washstand",
+      "asset": "hollow-washstand",
+      "at": [
+        0.375,
+        4.8
+      ],
+      "facing": "E",
+      "scale": 1.15
+    },
+    {
+      "id": "armchair",
+      "asset": "hollow-highback-armchair",
+      "at": [
+        10.5,
+        8.4
+      ],
+      "facing": "W",
+      "scale": 1.05
+    },
+    {
+      "id": "books",
+      "asset": "bookshelf",
+      "at": [
+        10.5,
+        9.85
+      ],
+      "facing": "S",
+      "scale": 1.6
+    },
+    {
+      "id": "bedside",
+      "asset": "hearth-stool",
+      "at": [
+        7.15,
+        9.35
+      ],
+      "facing": "S",
+      "scale": 1.0
+    }
+  ],
+  "interior": {
+    "style": "morning-bedroom",
+    "exit": [
+      6,
+      1
+    ],
+    "host": {
+      "at": [
+        7,
+        6
+      ],
+      "route": [
+        [
+          7,
+          6
+        ]
+      ]
+    },
+    "materials": {
+      "floor": "herringbone_oak",
+      "walls": "limewash",
+      "timber": "timber_panels",
+      "rug": "violet_quilt",
+      "cloth": "woven_linen",
+      "hearth": "limestone_flags"
+    },
+    "furniture": [
+      {
+        "kind": "rug",
+        "at": [
+          5.6,
+          4.9
+        ],
+        "size": [
+          4.4,
+          3.2
+        ]
+      }
+    ]
+  }
+}

@@ -7,20 +7,20 @@ var settings: GameSettings
 
 func setup(game_settings: GameSettings) -> void:
 	settings = game_settings
-	card.custom_minimum_size = Vector2(620, 0)
+	card.custom_minimum_size = Vector2(660, 0)
 	title_row("Settings", "Changes apply right away and are remembered.")
 	body.add_child(UI.caps("Display"))
 	var fullscreen := Toggle.make("Fullscreen", bool(settings.get_value("fullscreen")))
 	fullscreen.toggled.connect(func(on: bool) -> void: settings.set_value("fullscreen", on))
 	body.add_child(fullscreen)
-	body.add_child(_slider("Interface size", "ui_scale", 0.8, 1.5, 0.05, "%d%%", 100.0, true))
+	body.add_child(_slider("Interface size", "ui_scale", 0.6, 1.5, 0.05, "%d%%", 100.0, true))
 	body.add_child(UI.caps("World"))
 	body.add_child(_slider("Camera zoom", "zoom", 8.0, 20.0, 0.5, "%.1f", 1.0))
 	var hints := Toggle.make("Show the controls hint", bool(settings.get_value("show_controls")))
 	hints.toggled.connect(func(on: bool) -> void: settings.set_value("show_controls", on))
 	body.add_child(hints)
 	body.add_child(UI.caps("Notebook"))
-	body.add_child(_slider("Code text size", "font_size", 12, 26, 1, "%d px", 1.0))
+	body.add_child(_slider("Code text size", "font_size", 10, 26, 1, "%d px", 1.0))
 	var completion := Toggle.make("Suggest names as you type", bool(settings.get_value("completion")))
 	completion.toggled.connect(func(on: bool) -> void: settings.set_value("completion", on))
 	body.add_child(completion)
@@ -47,11 +47,11 @@ func _rebuild() -> void:
 	setup(settings)
 
 
-## `scale` converts the stored value to what the label shows (a 0.8..1.5 size shown as percent).
+## `scale` converts the stored value to what the label shows (a 0.6..1.5 size shown as percent).
 ## `on_release` waits for the handle to be let go: resizing the whole interface mid-drag moves the slider.
 func _slider(label: String, key: String, low: float, high: float, step: float, format: String, scale: float, on_release: bool = false) -> Control:
 	var row := UI.hbox(14)
-	var name := UI.label(label, &"", 19)
+	var name := UI.label(label, &"", 16)
 	name.custom_minimum_size.x = 200
 	row.add_child(name)
 	var slider := HSlider.new()
@@ -63,7 +63,7 @@ func _slider(label: String, key: String, low: float, high: float, step: float, f
 	slider.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	slider.custom_minimum_size = Vector2(240, 26)
 	row.add_child(slider)
-	var readout := UI.label(format % (slider.value * scale), &"LabelDim", 18)
+	var readout := UI.label(format % (slider.value * scale), &"LabelDim", 15)
 	readout.custom_minimum_size.x = 70
 	readout.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	row.add_child(readout)

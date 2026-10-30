@@ -1,6 +1,6 @@
 extends SceneTree
 ## Render an area document at gameplay camera scale. Usage:
-##   -- <area id> <absolute PNG path> [focus_x focus_y] [zoom] [lit 0|1] [frames]
+##   -- <area id> <absolute PNG path> [focus_x focus_y] [zoom] [lit 0|1] [frames] [free]
 ## It also reports build time and frame rate, so an area that is too heavy shows up here.
 
 func _initialize() -> void:
@@ -28,8 +28,14 @@ func _run() -> void:
 		focus = Vector2(float(args[2]), float(args[3]))
 	view.set_camera_mode(ClearingView.CameraMode.FIXED)
 	view.focus_on(focus, true)
+	if args.size() >= 8 and args[7] == "free":
+		# The gameplay camera keeps small rooms near their middle; a review can look at any wall.
+		view._focus = Vector3(focus.x, 0.0, -focus.y)
+		view._focus_target = view._focus
+		view._place_camera()
 	if args.size() >= 5:
 		view.set_zoom(float(args[4]))
+		view._zoom_target = float(args[4])  # a review may pull back past the game's own limit
 		view.camera.size = float(args[4])
 	var rules := LabWorld.new(area)
 	var state: Dictionary = rules.initial_state()

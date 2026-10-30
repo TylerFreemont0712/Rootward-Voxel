@@ -1,0 +1,9 @@
+{
+  "asset": "workshop-bread-cupboard",
+  "date": "2026-10-27",
+  "reference": "docs/concept/v0.7/art/4-opening/T7b-workshop-floor.png",
+  "record": "art/source/world/sparks-workshop/v1/household_additions.py",
+  "record_sha256": "cf3cd77a4a6f600dba267e8fe65cd550d28f7e2226fcd08fb4a95c7da8e6890f",
+  "painted_sources": "art/source/world/sparks-workshop/v1/prompts.json",
+  "purpose": "Smaller downstairs furniture, household breakfast continuity and useful repair storage."
+}

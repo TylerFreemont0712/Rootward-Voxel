@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "workshop-hanging-lamp",
+  "version": "v1",
+  "source": "art/source/world/workshop-hanging-lamp/v1/model.blend",
+  "source_sha256": "49aa5ad121b135f02b3bef78e1d6a6cb0d549a79eabce3f53147824434098a34",
+  "runtime": "assets/world/workshop-hanging-lamp/model.glb",
+  "runtime_sha256": "c9b204cecba00abef7dacea2acb8593665d58f63adb94359249795029faf2cff",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.324999988079071,
+      0.137009620666504,
+      -0.324999988079071,
+      0.324999988079071,
+      1.14999997615814,
+      0.324999988079071
+    ],
+    "geometry_sha256": "18469892f90ccafb5af444b2c3da5e77c3b01abdde18b9c78aea5ffc0faf9dbf",
+    "material_records": {
+      "workshop_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_lamp_glass": {
+        "albedo": [
+          10000,
+          8941,
+          6784,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_steel_dark": {
+        "albedo": [
+          2039,
+          2431,
+          2667,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_teal_dark": {
+        "albedo": [
+          2078,
+          3725,
+          3569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "workshop_brass",
+      "workshop_lamp_glass",
+      "workshop_steel_dark",
+      "workshop_teal_dark"
+    ],
+    "meshes": 4,
+    "triangles": 616
+  }
+}

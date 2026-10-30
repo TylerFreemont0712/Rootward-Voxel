@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "workshop-rug",
+  "version": "v1",
+  "source": "art/source/world/workshop-rug/v1/model.blend",
+  "source_sha256": "c138131d5ad73ca6c00974087f87663f44e262ac6bed60d1ef19a6df7560d7b7",
+  "runtime": "assets/world/workshop-rug/model.glb",
+  "runtime_sha256": "cf1bfe5991b742beb32e5fdae6267ed76113cd59f6a4e073ff9588ab8ff6c028",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -2.20000004768372,
+      0.0124999992549419,
+      -1.60033273696899,
+      2.20000004768372,
+      0.0597766861319542,
+      1.60033285617828
+    ],
+    "geometry_sha256": "ca7be1a425ab776d7b18ace779795d5580994aa17d8b99fd5ef3ceb1c5032ba9",
+    "material_records": {
+      "workshop_linen": {
+        "albedo": [
+          8980,
+          8667,
+          7843,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_linen_shade": {
+        "albedo": [
+          7373,
+          6980,
+          6039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_teal_dark": {
+        "albedo": [
+          2078,
+          3725,
+          3569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_woven": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "984d0c4776fcbc61e8dcf9d6a77aa6f83bfea78cd8e0b731011f8e06630f26a2"
+      }
+    },
+    "materials": [
+      "workshop_linen",
+      "workshop_linen_shade",
+      "workshop_teal_dark",
+      "workshop_woven"
+    ],
+    "meshes": 4,
+    "triangles": 4924
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "asset": "haverlund-square-set",
+  "date": "2026-10-28",
+  "authoring_record": "art/source/world/sparks-square/v1/author_initial_set.py",
+  "authoring_record_sha256": "8a0bb3178dfc70db4e2975d07cf23fd2e3f189247f6071204e46aa6db8bed7cf",
+  "references": [
+    "docs/concept/v0.7/art/5-town/T3-rootward-square-day.wheels.png",
+    "docs/concept/v0.7/art/5-town/T5-rootwell-sheet.png"
+  ],
+  "shared_kit": "art/source/world/sparks-lane/v1/lane_kit.py",
+  "shared_kit_sha256": "26267046a1dc1a943f8d91d12e36863bdd670edc41951c7b46d51683c24d7aec",
+  "note": "New native geometry; packed lane paintings reused. model.blend is editable authority."
+}

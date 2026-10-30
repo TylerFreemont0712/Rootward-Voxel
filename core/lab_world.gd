@@ -6,7 +6,7 @@ extends RefCounted
 ## `initial_state()` -> state, then `move`, `propose`, `find_path`... never mutate the state they are given.
 
 const PLAYER_RADIUS: float = 0.18
-const STEP_SECONDS: float = 0.25
+const STEP_SECONDS: float = 13.0 / 60.0
 const TRUNK_RADIUS: float = 0.18
 const LAMP_RADIUS: float = 0.16
 const BEACON_RADIUS: float = 0.42
@@ -26,7 +26,10 @@ func _init(definition: AreaDef) -> void:
 	area = definition
 	var rects: Array[Rect2] = []
 	for building: Dictionary in area.buildings:
-		rects.append(building.rect)
+		var solids: Array=building.get("collision_rects",[])
+		if solids.is_empty():rects.append(building.rect)
+		else:
+			for solid: Rect2 in solids:rects.append(solid)
 	for prop: Dictionary in area.props:
 		if prop.solid:
 			rects.append(prop.rect)
@@ -37,12 +40,13 @@ func _init(definition: AreaDef) -> void:
 	for furniture: Dictionary in area.interior.get("furniture", []):
 		if furniture.kind != "rug":
 			rects.append(furniture.rect)
+	rects.append_array(HouseInstances.frame_posts(area))
 	for rect: Rect2 in rects:
 		_register(_rect_index, rect.grow(PLAYER_RADIUS), rect)
 	for tree: Dictionary in area.trees:
 		_register_circle(tree.at, float(tree.get("trunk_radius", TRUNK_RADIUS)))
 	for lamp: Dictionary in area.lamps:
-		_register_circle(lamp.at, BEACON_RADIUS if lamp.style == "beacon" else LAMP_RADIUS)
+		if lamp.style != "fixture": _register_circle(lamp.at, BEACON_RADIUS if lamp.style == "beacon" else LAMP_RADIUS)
 	var dynamic: Array[Vector2i] = []
 	for gate: Dictionary in area.gates:
 		_gate_cells[gate.cell] = gate.id
@@ -78,6 +82,13 @@ func initial_state() -> Dictionary:
 		"zones_seen": seen,
 		"memory": {},
 		"props": {},
+		"controls": {},
+		"movement_used": [],
+		"spoken": "",
+		"hotaru_greeted": false,
+		"inspections_read": [],
+		"terminal_links": [],
+		"items": [],
 	}
 
 
@@ -104,11 +115,11 @@ func normalize_state(raw: Variant) -> Dictionary:
 	for lamp_id: String in state.lamps:
 		if not (raw.lamps is Dictionary) or not (raw.lamps as Dictionary).get(lamp_id, false) is bool:
 			return {}
-		state.lamps[lamp_id] = raw.lamps[lamp_id]
+		state.lamps[lamp_id] = raw.lamps.get(lamp_id, false)
 	for gate_id: String in state.gates:
 		if not (raw.gates is Dictionary) or not (raw.gates as Dictionary).get(gate_id, false) is bool:
 			return {}
-		state.gates[gate_id] = raw.gates[gate_id]
+		state.gates[gate_id] = raw.gates.get(gate_id, false)
 	for bridge: Dictionary in area.bridges:
 		var built: Variant = (raw.bridges as Dictionary).get(bridge.id, 0) if raw.bridges is Dictionary else null
 		if not _whole_number(built) or int(built) < 0 or int(built) > (bridge.sockets as Array).size():
@@ -128,9 +139,63 @@ func normalize_state(raw: Variant) -> Dictionary:
 		if not id is String or not AreaDef._id(id) or not prop_states[id] is bool:
 			return {}
 	state.props = prop_states.duplicate(true)
-	if not is_walkable(state, cell):
+	if not MovementBindings.valid(raw.get("controls", {})) or not raw.get("movement_used", []) is Array:
 		return {}
+	state.controls = raw.get("controls", {}).duplicate(true)
+	for direction: Variant in raw.get("movement_used", []):
+		if not direction is String or not MovementBindings.DIRECTIONS.has(direction):return {}
+		if not state.movement_used.has(direction):state.movement_used.append(direction)
+	if not raw.get("spoken", "") is String or str(raw.get("spoken", "")).length()>160 or not raw.get("hotaru_greeted", false) is bool:return {}
+	state.spoken=raw.get("spoken", "")
+	state.hotaru_greeted=raw.get("hotaru_greeted", false)
+	var read: Variant = raw.get("inspections_read", [])
+	if not read is Array or read.size() > 24: return {}
+	for id: Variant in read:
+		if not id is String: return {}
+		if (area.interior.get("inspections", []) as Array).any(func(item: Dictionary) -> bool: return item.id == id) and not state.inspections_read.has(id): state.inspections_read.append(id)
+	var links: Variant = raw.get("terminal_links", [])
+	if not links is Array or links.size() > 24: return {}
+	for id: Variant in links:
+		if not id is String: return {}
+		if not ZoneTerminals.find(area, id).is_empty() and not state.terminal_links.has(id): state.terminal_links.append(id)
+	var carried: Variant = raw.get("items", [])
+	if not carried is Array or carried.size() > 16: return {}
+	state.items = PlayerItems.restore(carried)
+	if not is_walkable(state, cell):
+		if not _cell_open(state,cell):return {}
+		# Recover the two formerly walkable doorway-edge cases introduced before
+		# the room boundary / cottage hull fix. Keep the rest of the saved world.
+		var recovered:=Vector2i(-1,-1)
+		if not area.interior.is_empty() and cell.y<=int(area.interior.exit[1]):
+			recovered=Vector2i(cell.x,int(area.interior.exit[1]))
+			if cell.y==int(area.interior.exit[1]):recovered.y+=1
+			if not is_walkable(state,recovered):recovered=Vector2i(int(area.interior.exit[0]),int(area.interior.exit[1]))
+		else:
+			for building: Dictionary in area.buildings:
+				if (building.get("collision_rects",[]) as Array).is_empty() or _circle_intersects_rect(Vector2(cell),building.rect):continue
+				for solid: Rect2 in building.collision_rects:
+					if _circle_intersects_rect(Vector2(cell),solid):recovered=HouseInstances.door(area,building.id)
+		if recovered.x<0 and area.id in ["morning-bedroom", "workshop-loft", "workshop-floor"]:
+			# These rooms gained/rearranged furniture in version 2. Preserve the
+			# saved program memory and lessons; move only an obstructed player.
+			recovered=area.spawn
+		if recovered.x<0 or not is_walkable(state,recovered):return {}
+		state.player=[recovered.x,recovered.y,0]
 	return state
+
+
+## Reading a nearby room object is a discovery, independent of Python and Undo.
+func read_inspection(state: Dictionary, id: String) -> Dictionary:
+	for item: Dictionary in area.interior.get("inspections", []):
+		if item.id != id: continue
+		var point := Vector2(float(item.at[0]), float(item.at[1]))
+		if Vector2(int(state.player[0]), int(state.player[1])).distance_to(point) >= 1.6: return _reject(state, "Walk closer to read it.")
+		var candidate: Dictionary = state.duplicate(true)
+		if not candidate.inspections_read.has(id):
+			candidate.inspections_read.append(id)
+			candidate.revision = int(state.revision) + 1
+		return {"ok": true, "state": candidate, "changes": [], "reason": ""}
+	return _reject(state, "That object isn't in this room.")
 
 
 ## What a program is allowed to know: only places the player has actually been to.
@@ -142,7 +207,7 @@ func snapshot(state: Dictionary) -> Dictionary:
 			zones.append({"id": zone.id, "title": zone.title, "rect": [r.position.x, r.position.y, r.size.x, r.size.y]})
 	var lamps: Array = []
 	for lamp: Dictionary in area.lamps:
-		if _seen(state, lamp.zone):
+		if _lamp_seen(state, lamp):
 			lamps.append({"id": lamp.id, "zone": lamp.zone, "cell": [lamp.cell.x, lamp.cell.y, 0], "lit": state.lamps[lamp.id]})
 	var gates: Array = []
 	for gate: Dictionary in area.gates:
@@ -157,7 +222,7 @@ func snapshot(state: Dictionary) -> Dictionary:
 			bridges.append({"id": bridge.id, "zone": bridge.zone, "cells": cells, "built": state.bridges[bridge.id]})
 	var props: Array = []
 	for prop: Dictionary in area.props:
-		if not (prop.interaction as Dictionary).is_empty() and PropInteractions.known(state, prop):
+		if not (prop.interaction as Dictionary).is_empty() and PropInteractions.known(state, prop) and ZoneTerminals.connected(area, state, prop.zone):
 			props.append({"id": prop.id, "asset": prop.asset, "name": prop.title, "zone": prop.zone,
 				"cell": [roundi(prop.at.x), roundi(prop.at.y), 0], "active": bool((state.get("props", {}) as Dictionary).get(prop.id, false))})
 	return {
@@ -172,6 +237,8 @@ func snapshot(state: Dictionary) -> Dictionary:
 		"bridges": bridges,
 		"props": props,
 		"memory": state.memory.duplicate(true),
+		"companion": {"enabled": area.movement_lesson or area.voice_lesson},
+		"controls": {"enabled": area.movement_lesson, "bindings": state.get("controls", {}).duplicate(true)},
 	}
 
 
@@ -213,6 +280,10 @@ func revert(current: Dictionary, before: Dictionary) -> Dictionary:
 	candidate.bridges = (before.bridges as Dictionary).duplicate(true)
 	candidate.props = (before.get("props", {}) as Dictionary).duplicate(true)
 	candidate.memory = (before.memory as Dictionary).duplicate(true)
+	candidate.controls = before.get("controls", {}).duplicate(true)
+	candidate.movement_used = before.get("movement_used", []).duplicate()
+	candidate.spoken=before.get("spoken", "")
+	candidate.hotaru_greeted=before.get("hotaru_greeted", false)
 	if not is_walkable(candidate, Vector2i(int(current.player[0]), int(current.player[1]))):
 		return _reject(current, "Walk off the bridge or gate first: undoing would remove the ground you are standing on.")
 	candidate.revision = int(current.revision) + 1
@@ -220,13 +291,17 @@ func revert(current: Dictionary, before: Dictionary) -> Dictionary:
 
 
 ## One authoritative cardinal cell step. The renderer animates the accepted transition.
-func move(state: Dictionary, delta: Vector2i) -> Dictionary:
+func move(state: Dictionary, delta: Vector2i, key: String = "") -> Dictionary:
 	if absi(delta.x) + absi(delta.y) != 1:
 		return _reject(state, "Choose one neighboring cell on the x or y axis.")
 	var from := Vector2i(int(state.player[0]), int(state.player[1]))
 	if not can_step(state, from, from + delta):
 		return _reject(state, "That passage is blocked. Build a bridge, open a gate or choose another route.")
+	if key != "" and (not area.movement_lesson or MovementBindings.direction(state.controls, key) != delta):
+		return _reject(state, "That key is not connected to this movement. Preview and Apply your bindings first.")
 	var candidate: Dictionary = state.duplicate(true)
+	if key != "" and not candidate.movement_used.has(str(candidate.controls[key])):
+		candidate.movement_used.append(str(candidate.controls[key]))
 	var arrived: Vector2i = from + delta
 	candidate.player = [arrived.x, arrived.y, 0]
 	candidate.revision = int(state.revision) + 1
@@ -314,6 +389,9 @@ func deck_built(state: Dictionary, cell: Vector2i) -> bool:
 func _can_stand(state: Dictionary, at: Vector2, static_only: bool) -> bool:
 	if not at.is_finite():
 		return false
+	# The south cutaway is a room boundary, not extra floor behind the exit.
+	# The one outward step from this line is handled by HouseInstances.crossing.
+	if not area.interior.is_empty() and at.y<float(area.interior.get("walk_front", area.interior.exit[1]))-.0001:return false
 	if at.x < -0.5 + PLAYER_RADIUS or at.y < -0.5 + PLAYER_RADIUS or at.x > float(area.width) - 0.5 - PLAYER_RADIUS or at.y > float(area.height) - 0.5 - PLAYER_RADIUS:
 		return false
 	for x: int in range(floori(at.x - PLAYER_RADIUS + 0.5), floori(at.x + PLAYER_RADIUS + 0.5) + 1):
@@ -349,6 +427,7 @@ func _static_edge(from: Vector2i, to: Vector2i) -> bool:
 ## May a step cross between these neighbouring cells' levels? Level ground joins level ground; a cliff never lets
 ## anyone by. Stairs are walked only along their own line: up onto the cell above them, or down off their foot.
 func level_step(from: Vector2i, to: Vector2i) -> bool:
+	if not RoomLinks.stair_edge(area, from, to): return false
 	var delta: Vector2i = to - from
 	for flight: Dictionary in [area.stair_at(from), area.stair_at(to)]:
 		if not flight.is_empty():
@@ -390,8 +469,14 @@ func _register_circle(at: Vector2, radius: float) -> void:
 	_register(_circle_index, Rect2(at, Vector2.ZERO).grow(radius + PLAYER_RADIUS), Vector3(at.x, at.y, radius))
 
 
+## A zone's fittings are in reach once visited and, where the zone has a terminal, while standing at it.
 func _seen(state: Dictionary, zone_id: String) -> bool:
-	return (state.zones_seen as Array).has(zone_id)
+	return (state.zones_seen as Array).has(zone_id) and ZoneTerminals.connected(area, state, zone_id) and FieldAccess.zone_in_reach(area, state, zone_id)
+
+
+## A lamp answers to code through its zone's screen or from the place it names to stand.
+func _lamp_seen(state: Dictionary, lamp: Dictionary) -> bool:
+	return (state.zones_seen as Array).has(lamp.zone) and FieldAccess.lamp_in_reach(area, state, lamp)
 
 
 func _circle_intersects_rect(at: Vector2, rect: Rect2) -> bool:
@@ -405,6 +490,10 @@ func _player_overlaps_cell(state: Dictionary, cell: Vector2i) -> bool:
 
 func _apply(candidate: Dictionary, command: Dictionary, changes: Array[String]) -> String:
 	match command.op:
+		"say":
+			return CompanionLesson.apply(area, candidate, command, changes)
+		"bind_key":
+			return MovementBindings.apply(area, candidate, command, changes)
 		"set_field":
 			return _set_field(candidate, command, changes)
 		"place", "remove":
@@ -424,6 +513,7 @@ func _set_field(candidate: Dictionary, command: Dictionary, changes: Array[Strin
 		var prop: Dictionary = area.prop(entity_id)
 		if prop.is_empty() or (prop.interaction as Dictionary).is_empty():
 			return "Unknown interactive object '%s'. Read world.props for the working objects." % entity_id
+		if not ZoneTerminals.connected(area, candidate, prop.zone): return _unexplored(prop.zone)
 		if not PropInteractions.known(candidate, prop):
 			return "You have not visited this object's place yet. Walk there before using it in code."
 		if not candidate.has("props"):
@@ -434,8 +524,8 @@ func _set_field(candidate: Dictionary, command: Dictionary, changes: Array[Strin
 		return ""
 	var lamp: Dictionary = area.lamp(entity_id)
 	if not lamp.is_empty() and command.field == "enabled":
-		if not _seen(candidate, lamp.zone):
-			return _unexplored(lamp.zone)
+		if not _lamp_seen(candidate, lamp):
+			return FieldAccess.lamp_reason(area, lamp)
 		if candidate.lamps[entity_id] != value:
 			candidate.lamps[entity_id] = value
 			changes.append("%s %s" % [entity_id, "lit" if value else "extinguished"])
@@ -502,7 +592,7 @@ func _bridge(candidate: Dictionary, command: Dictionary, changes: Array[String])
 
 
 func _unexplored(zone_id: String) -> String:
-	return "You have not explored %s yet. Walk there first, then your notebook can reach it." % area.zone(zone_id).title
+	return FieldAccess.zone_reason(area, zone_id)
 
 
 static func _keys_match(value: Dictionary, expected: Array[String]) -> bool:

@@ -12,7 +12,7 @@ func _run() -> void:
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	game.session.set_physics_process(false)
 	game._hint_timer.stop()
 	for house: String in ["home","cedar-lodge","brook-hall","village-bakery"]:

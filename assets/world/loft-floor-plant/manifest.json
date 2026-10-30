@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "loft-floor-plant",
+  "version": "v1",
+  "source": "art/source/world/loft-floor-plant/v1/model.blend",
+  "source_sha256": "e34d41446d562df52d5c2895128351ed4bf8e6b2372bf17d6d97376ea320320b",
+  "runtime": "assets/world/loft-floor-plant/model.glb",
+  "runtime_sha256": "ffd4538b079f21f67cc5103eeedb8e56aa90d50dc607e4ddad95b0157c75e127",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.475427150726318,
+      0.0,
+      -0.426670134067535,
+      0.481843948364258,
+      1.711305975914,
+      0.440631836652756
+    ],
+    "geometry_sha256": "5670eac857da2bb9da9286ec65124646719698948e689391e10b7c37d3d96bb4",
+    "material_records": {
+      "loft_ceramic": {
+        "albedo": [
+          7922,
+          7176,
+          5961,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leaf": {
+        "albedo": [
+          3098,
+          5098,
+          2745,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leaf_dark": {
+        "albedo": [
+          2078,
+          3725,
+          2314,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leaf_light": {
+        "albedo": [
+          4471,
+          6000,
+          3255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_ochre": {
+        "albedo": [
+          7725,
+          6118,
+          3451,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_soil": {
+        "albedo": [
+          3569,
+          2863,
+          2118,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_ceramic",
+      "loft_leaf",
+      "loft_leaf_dark",
+      "loft_leaf_light",
+      "loft_ochre",
+      "loft_soil"
+    ],
+    "meshes": 6,
+    "triangles": 1276
+  }
+}

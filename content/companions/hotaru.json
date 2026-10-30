@@ -1,0 +1,69 @@
+{
+  "name": "Hotaru",
+  "role": "Your fairy companion",
+  "skin": "hotaru",
+  "greeting": "A small light hovers beside the bed, its wings trembling.\n\nThere you are, {player}. I’m Hotaru. I’ll stay with you. Before we go anywhere, let me hear your voice.",
+  "prompt": "We can take this one step at a time. What would you like to try?",
+  "topics": [
+    {
+      "id": "hello",
+      "title": "How do I say hello?",
+      "helps": [
+        "say-hello"
+      ],
+      "lines": [
+        "Your lips move, but no words come yet. That’s all right. We’ll start with something small.",
+        "I’ve opened a place in your Field Notes for your first program. Put Hello, Hotaru! inside print, with quotation marks around the words. Test lets you listen first. Speak lets me hear you."
+      ],
+      "lesson": {
+        "title": "Field Notes / 00 · Saying Hello",
+        "concept": "Your first voice",
+        "source": "def program(world):\n    print(\"Hello, Hotaru!\")\n",
+        "explanation": "print sends text out of your program. In your first morning, the words also become a proposed voice. Test, then Speak."
+      }
+    },
+    {
+      "id": "movement",
+      "title": "What comes after hello?",
+      "helps": [
+        "first-steps"
+      ],
+      "lines": [
+        "Hello. There’s your voice. Hotaru’s wings give a quick flutter. Now let’s give those feet a little direction. One press, one step.",
+        "Your next page is First Steps. Each key starts at x = y = 0. Add one to y to step north, or one to x to step east. You can watch what happens in the little room before trying it here.",
+        "We’ll open that page now. Test a block with its arrow, or Test code to check the whole program. Apply connects the keys. Then Continue brings you back to me to practise."
+      ],
+      "lesson": {
+        "title": "Field Notes / 01 · Your first steps",
+        "concept": "Events & movement",
+        "source": "def program(world):\n    x = y = 0\n    y += 1\n    world.controls.bind_move(\"W\", x, y)\n",
+        "explanation": "A key event begins at zero, adds a movement and records that binding. Only one cardinal step can be applied. Add the other three directions in your notes."
+      }
+    },
+    {
+      "id": "company",
+      "title": "Will you come with me?",
+      "lines": [
+        "Of course. I’ll keep close. If you lose your way, speak to me again.",
+        "There’s no hurry to finish the whole village today. A voice and a few steady steps are a good beginning."
+      ]
+    },
+    {
+      "id": "hollow",
+      "title": "What should I do in the hollow?",
+      "lines": [
+        "The lamps have gone quiet. Mira is nearby; she knows this village better than either of us.",
+        "Walk with WASD or click a place. Your notebook opens with E. Test a small change, look at its preview, then Apply when you’re ready. I’ll keep you company."
+      ]
+    }
+  ],
+  "introductions": {
+    "hello": [
+      "greeting",
+      "hello"
+    ],
+    "movement": [
+      "movement"
+    ]
+  }
+}
