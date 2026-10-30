@@ -14,7 +14,7 @@ static func label(text: String, variation: StringName = &"", font_size: int = 0,
 	return node
 
 
-static func heading(text: String, font_size: int = 24) -> Label:
+static func heading(text: String, font_size: int = 22) -> Label:
 	return label(text, &"LabelHeading", font_size)
 
 
@@ -22,7 +22,7 @@ static func caps(text: String, color: Color = Color(0, 0, 0, 0)) -> Label:
 	return label(text.to_upper(), &"LabelCaps", 0, color)
 
 
-static func dim(text: String, font_size: int = 17) -> Label:
+static func dim(text: String, font_size: int = 16) -> Label:
 	var node := label(text, &"LabelDim", font_size)
 	node.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	return node
@@ -37,7 +37,7 @@ static func button(text: String, icon: StringName = &"", variation: StringName =
 
 static func icon_button(icon: StringName, tip: String, action: Callable = Callable()) -> FButton:
 	var node := FButton.make("", icon, &"ButtonIcon")
-	node.custom_minimum_size = Vector2(46, 46)
+	node.custom_minimum_size = Vector2(30, 30)
 	node.tooltip_text = tip
 	if action.is_valid():
 		node.pressed.connect(action)

@@ -12,6 +12,7 @@ var line_index: int = 0
 var stage: String = "greeting"
 var closed: bool = false
 var read_before_enter: bool = false
+var _sequence_index: int = 0
 
 
 func _init(definition: Dictionary = {}, previously_read: Array = []) -> void:
@@ -23,6 +24,8 @@ func _init(definition: Dictionary = {}, previously_read: Array = []) -> void:
 	for key: Variant in previously_read:
 		if key is String and permitted.has(key):
 			read_pages[key] = true
+	if is_guided():
+		_enter_sequence_part()
 	_enter()
 
 
@@ -65,7 +68,32 @@ static func validate(definition: Dictionary) -> Array[String]:
 					errors.append("An optional lesson needs " + key + ".")
 			if str(lesson.get("source", "")).to_utf8_buffer().size() > 16384:
 				errors.append("A lesson example must fit the notebook's source limit.")
+	if definition.has("sequence"):
+		var sequence: Variant = definition.sequence
+		if not sequence is Array or sequence.is_empty() or sequence.size() > 9:
+			errors.append("A guided conversation needs one to nine pages or topics in its sequence.")
+		else:
+			var used: Array[String] = []
+			for part: Variant in sequence:
+				if not part is String or (part != "greeting" and not ids.has(part)) or used.has(part):
+					errors.append("A guided sequence needs distinct greeting/topic ids from this conversation.")
+				else:
+					used.append(part)
+	var finish: Variant = definition.get("on_finish", "")
+	if not finish is String or finish not in ["", "notebook"] or (finish != "" and not definition.has("sequence")):
+		errors.append("Only a guided conversation can request the notebook when it finishes.")
 	return errors
+
+
+func is_guided() -> bool:
+	return person.has("sequence")
+
+
+func _enter_sequence_part() -> void:
+	var part: String = person.sequence[_sequence_index]
+	stage = "greeting" if part == "greeting" else "topic"
+	topic = "" if part == "greeting" else part
+	line_index = 0
 
 
 static func page_keys(definition: Dictionary) -> Array[String]:
@@ -145,6 +173,17 @@ func advance() -> bool:
 	if closed or not issues.is_empty() or stage == "menu":
 		return false
 	mark_read()
+	if is_guided():
+		if stage == "topic" and line_index + 1 < (_topic().lines as Array).size():
+			line_index += 1
+		else:
+			_sequence_index += 1
+			if _sequence_index >= (person.sequence as Array).size():
+				closed = true
+				return true
+			_enter_sequence_part()
+		_enter()
+		return true
 	if stage == "greeting":
 		stage = "menu"
 	elif line_index + 1 < (_topic().lines as Array).size():
@@ -156,7 +195,7 @@ func advance() -> bool:
 
 
 func choose(id: String) -> bool:
-	if closed or not issues.is_empty() or stage != "menu":
+	if closed or not issues.is_empty() or is_guided() or stage != "menu":
 		return false
 	for choice: Dictionary in current().choices:
 		if choice.id != id:

@@ -1,0 +1,18 @@
+{
+  "key": "sparks-tessa-ne",
+  "dest": "art/source/characters/tessa/sparks-v1/NE.png",
+  "prompt": "Use case: precise-object-edit, complete rear-view painted character skin.\nInput image 1 is the approved BACK-RIGHT / NORTHEAST nine-pose sheet, the strict POSE, CAMERA, LAYOUT and SCALE reference. Input image 2 is this character's newly generated FRONT walk sheet, defining the SAME identity, clothing, props and rendering. Image 3 is the selected single-view wardrobe reference.\nRepaint all nine figures in image 1 as this character seen from BEHIND, all facing away and right, showing the back of the head/clothes. No front-facing eyes or faces. Exactly preserve the nine corresponding boot positions, supporting legs, sole angles, arm swing, body scale and direction of image 1. Frames 1\u20138 are the eight different walk phases; frame 9 bottom-right is neutral standing. This is an appearance repaint on the approved motion family, not new poses.\n1254x1254 square transparent RGBA canvas, EXACT 3x3 equal 418x418 cells. Preserve full-body height and head/boot scale from the approved pose template, warm painterly shading and crisp warm dark-brown outlines. Every hat, accessory and carried prop stays inside its own cell. The outfit reads identically from behind: apron straps/ties, satchel strap or cap as appropriate; no belt buckle, front apron pocket, front face or chest gauge painted on the back. Keep props visibly attached and consistent across frames. No shadows, no floor/background, labels, grid lines, extra poses or cropped figures.\nCHARACTER IDENTITY:\nTessa, the orchard keeper: warm fair skin, light freckles, friendly brown eyes and copper-orange hair in a long side braid. Wide straw sun hat with a sage ribbon, sage neckerchief, short rust-red rolled-sleeve work jacket over a cream shirt, olive trousers and chestnut boots. Gardening gloves are tucked securely into her belt. Match the selected concept exactly, especially the broad soft hat and copper braid. Keep the hat inside each cell. Empty hands.",
+  "refs": [
+    "art/source/adventurer/v9-directional-walk/NE.png",
+    "art/source/characters/tessa/sparks-v1/SE.png",
+    "docs/concept/v0.7/art/7-cast/C6b-tessa-sprite.png"
+  ],
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-331018c8-9745-4e8c-acd3-5203e82d79c6.png",
+  "tool": "built-in image_gen.imagegen",
+  "output_sha256": "da2d44173f1cdb4b15406bed327be83c028e0c4cb9f1e02c3daab43282808374",
+  "reference_sha256": {
+    "art/source/adventurer/v9-directional-walk/NE.png": "0cd31a9cf3e94ad1ecec7937f51512e4a7c7c654c601df71b1ef2fa9a5492187",
+    "art/source/characters/tessa/sparks-v1/SE.png": "2e642c04ab0a96165149067a60e3f902b75e7077fad0e49720e09a7afde863f6",
+    "docs/concept/v0.7/art/7-cast/C6b-tessa-sprite.png": "7a190cd69a295d0689103129879c4ced07bbfb5cfcde49e6a4f76f54eb87876a"
+  }
+}

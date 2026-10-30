@@ -1,0 +1,15 @@
+{
+  "portraits": {
+    "traveller": {
+      "runtime": "res://assets/portraits/sparks/traveller.png",
+      "sha256": "425e8681b79c835958d2e3f7d9cd660fcc1ed5b0d3a8ddd45811bc09fa94fc87",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "res://art/source/portraits/sparks/v1/traveller.png"
+    }
+  },
+  "schema": 1,
+  "version": "v1-traveller"
+}

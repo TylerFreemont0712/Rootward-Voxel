@@ -11,7 +11,7 @@ static func make(label: String, icon: StringName = &"", variation: StringName = 
 	button.text = label
 	button.glyph = icon
 	button.theme_type_variation = variation
-	button.custom_minimum_size.y = 46
+	button.custom_minimum_size.y = 32
 	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	return button
 
@@ -19,7 +19,7 @@ static func make(label: String, icon: StringName = &"", variation: StringName = 
 func _ready() -> void:
 	focus_mode = Control.FOCUS_ALL
 	if glyph != &"":
-		_glyph_space = 34.0 if text != "" else 0.0
+		_glyph_space = 24.0 if text != "" else 0.0
 		for state: StringName in [&"normal", &"hover", &"pressed", &"disabled", &"focus"]:
 			var box: StyleBox = get_theme_stylebox(state).duplicate()
 			if text != "":
@@ -40,7 +40,7 @@ func _draw() -> void:
 	elif is_hovered():
 		tint = get_theme_color("font_hover_color")
 	var box: StyleBox = get_theme_stylebox("normal")
-	var icon_size: float = clampf(size.y - 24.0, 16.0, 26.0)
+	var icon_size: float = clampf(size.y - 14.0, 14.0, 20.0)
 	if text == "":
 		Glyph.paint(self, glyph, Rect2((size - Vector2(icon_size, icon_size)) * 0.5, Vector2(icon_size, icon_size)), tint)
 	else:

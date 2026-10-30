@@ -1,0 +1,34 @@
+{
+  "asset": "workshop-tool-wall",
+  "source": "art/source/world/workshop-tool-wall/v1/model.blend",
+  "backup": "art/source/world/workshop-tool-wall/v1/model.pre-plant-style.blend",
+  "before_sha256": "32faa246b8cabb26f1f68a6226cfeaac81982cd2f5f4c60e90b115ef9388802f",
+  "after_sha256": "180313994c5be400fc9dddf9d90d0beb4abec8f4e8115f0db4f039b9bad6b1ad",
+  "objects": [
+    {
+      "object": "workshop_leaf_dark",
+      "replaced_components": {
+        "leaf_dark": 4
+      },
+      "protected_faces": 240,
+      "protected_sha256": "f7cc08d07fea471383a44e0654b4fa39ec762752dc64da6d756790a8907e8e26"
+    },
+    {
+      "object": "workshop_leaf",
+      "replaced_components": {
+        "leaf": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "workshop_leaf_light",
+      "replaced_components": {
+        "leaf_light": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

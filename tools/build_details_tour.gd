@@ -18,7 +18,7 @@ func _run() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await _frames(30)
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	await _frames(60)
 	game.open_build()
 	await _frames(70)

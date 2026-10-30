@@ -670,40 +670,6 @@
         "hinge": "DoorHinge"
       }
     },
-    "flower-pot": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Flower Pot",
-      "source": "art/source/world/flower-pot/v1/model.blend",
-      "runtime": "assets/world/flower-pot/model.glb",
-      "pivot": "ground origin at the pot's centre; no front face",
-      "logical_footprint": [
-        -0.3,
-        -0.3,
-        0.6,
-        0.6
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "Voxel terracotta pot on a soil bed with four small plus-shaped blossoms on one-voxel stems. 0.05 m voxels: 0.6 m across, 0.45 m to the rim, about 0.9 m to the top of the flowers. Proposed footprint is the pot itself; the blossoms overhang it."
-    },
-    "hay-bale": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Hay Bale",
-      "source": "art/source/world/hay-bale/v1/model.blend",
-      "runtime": "assets/world/hay-bale/model.glb",
-      "pivot": "ground origin at the bale's centre; long axis along X",
-      "logical_footprint": [
-        -0.45,
-        -0.25,
-        0.9,
-        0.5
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "Voxel square bale, 0.9 m by 0.5 m by 0.5 m at 0.05 m voxels, with straw runs along its length, three one-voxel twine wraps, rounded long edges and loose straws on top and on the grass. Proposed footprint is the bale's floor; the loose straws overhang it."
-    },
     "wooden-barrel": {
       "version": "v1",
       "authority": "blender",
@@ -731,48 +697,6 @@
           "iron"
         ]
       }
-    },
-    "crate-stack": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Crate Stack",
-      "source": "art/source/world/crate-stack/v1/model.blend",
-      "runtime": "assets/world/crate-stack/model.glb",
-      "pivot": "ground origin at the centre of the base crate; base on z = 0",
-      "logical_footprint": [
-        -0.225,
-        -0.225,
-        0.45,
-        0.45
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "Two closed timber crates with dark corner posts and plank seams. The 0.35 m top crate is offset one voxel to +X, leaving a ledge on the -X side. The footprint is the base crate; nothing overhangs it.",
-      "finish_slots": {
-        "timber": [
-          "oak",
-          "oak_light",
-          "wood",
-          "wood_dark"
-        ]
-      }
-    },
-    "grain-sacks": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Grain Sacks",
-      "source": "art/source/world/grain-sacks/v1/model.blend",
-      "runtime": "assets/world/grain-sacks/model.glb",
-      "pivot": "ground origin at the centre of the pile; base on z = 0",
-      "logical_footprint": [
-        -0.475,
-        -0.225,
-        0.95,
-        0.45
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "Three burlap sacks piled two and one: a pair on the ground and one in the gap above, each with a belly, a twine tie and a gathered mouth. About 0.95 m wide, 0.45 m deep, 0.7 m tall. Proposed footprint is the pile; nothing overhangs it."
     },
     "woodpile": {
       "version": "v1",
@@ -824,30 +748,6 @@
         ]
       }
     },
-    "mossy-boulder": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Mossy Boulder",
-      "source": "art/source/world/mossy-boulder/v1/model.blend",
-      "runtime": "assets/world/mossy-boulder/model.glb",
-      "pivot": "ground centre of the base",
-      "logical_footprint": [
-        -0.35,
-        -0.35,
-        0.7,
-        0.7
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "A rounded grey stone 0.8 m across with a moss cap on top. The widest belly overhangs the proposed footprint by about 0.05 m.",
-      "finish_slots": {
-        "masonry": [
-          "stone",
-          "stone_dark",
-          "stone_light"
-        ]
-      }
-    },
     "tree-stump": {
       "version": "v1",
       "authority": "blender",
@@ -871,18 +771,6 @@
           "wood_light"
         ]
       }
-    },
-    "stream-reeds": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Stream Reeds",
-      "source": "art/source/world/stream-reeds/v1/model.blend",
-      "runtime": "assets/world/stream-reeds/model.glb",
-      "pivot": "ground centre of the mud bed",
-      "logical_footprint": null,
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
-      "notes": "A clump of six one-voxel reeds, 0.6 m to 1.0 m tall, with brown seed heads and teal-green blades. No footprint: reeds stand at the water's edge."
     },
     "park-bench": {
       "version": "v1",
@@ -910,107 +798,6 @@
         ]
       }
     },
-    "signpost": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Signpost",
-      "source": "art/source/world/signpost/v1/model.blend",
-      "runtime": "assets/world/signpost/model.glb",
-      "pivot": "ground origin at the post's iron shoe",
-      "logical_footprint": [
-        -0.1,
-        -0.1,
-        0.2,
-        0.2
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "A 1.3 m timber post with a cream board pointing right and a violet board pointing left. The footprint is the iron shoe; the boards overhang it at height.",
-      "finish_slots": {
-        "walls": [
-          "cream",
-          "plaster_shade"
-        ],
-        "roof": [
-          "roof",
-          "roof_dark"
-        ],
-        "timber": [
-          "wood",
-          "wood_light"
-        ],
-        "metal": [
-          "iron"
-        ]
-      }
-    },
-    "stone-well": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Stone Well",
-      "source": "art/source/world/stone-well/v1/model.blend",
-      "runtime": "assets/world/stone-well/model.glb",
-      "pivot": "ground origin at the ring centre",
-      "logical_footprint": [
-        -0.45,
-        -0.45,
-        0.9,
-        0.9
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "A limestone ring 0.9 m across with a timber frame, violet hood and bucket, 1.45 m tall. The footprint is the ring; the hood eave stays within it.",
-      "finish_slots": {
-        "walls": [
-          "plaster"
-        ],
-        "roof": [
-          "roof",
-          "roof_dark",
-          "roof_light"
-        ],
-        "timber": [
-          "wood",
-          "wood_light"
-        ],
-        "masonry": [
-          "stone_warm",
-          "stone_warm_dark"
-        ],
-        "metal": [
-          "iron"
-        ],
-        "fabric": [
-          "leather_light"
-        ]
-      }
-    },
-    "cart-wheel": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Cart Wheel",
-      "source": "art/source/world/cart-wheel/v1/model.blend",
-      "runtime": "assets/world/cart-wheel/model.glb",
-      "pivot": "ground contact at the bottom of the rim",
-      "logical_footprint": [
-        -0.5,
-        -0.05,
-        1.0,
-        0.1
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "An upright iron-rimmed wagon wheel, 1.0 m across and 0.1 m thick, with six timber spokes. The footprint is a strip the wheel's width; the hub caps overhang it by 0.05 m.",
-      "finish_slots": {
-        "timber": [
-          "oak",
-          "wood"
-        ],
-        "metal": [
-          "iron"
-        ]
-      }
-    },
     "wooden-chair": {
       "version": "v1",
       "authority": "blender",
@@ -1028,61 +815,6 @@
       "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
       "notes": "Plain timber chair, 0.45 m square seat at 0.45 m high and 0.9 m tall, with a slatted back on +Y. The footprint is the seat; nothing overhangs it.",
       "finish_slots": {
-        "timber": [
-          "oak",
-          "oak_light",
-          "wood",
-          "wood_dark"
-        ]
-      }
-    },
-    "dining-table": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Dining Table",
-      "source": "art/source/world/dining-table/v1/model.blend",
-      "runtime": "assets/world/dining-table/model.glb",
-      "pivot": "ground origin at the footprint centre; base on z = 0",
-      "logical_footprint": [
-        -0.4,
-        -0.4,
-        0.8,
-        0.8
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "Square timber table, 0.8 m across and 0.75 m high, with a three-plank top, four legs and a one-voxel apron. The footprint covers the top; the legs sit inside it.",
-      "finish_slots": {
-        "timber": [
-          "oak",
-          "oak_light",
-          "wood",
-          "wood_dark"
-        ]
-      }
-    },
-    "cottage-bed": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Cottage Bed",
-      "source": "art/source/world/cottage-bed/v1/model.blend",
-      "runtime": "assets/world/cottage-bed/model.glb",
-      "pivot": "ground origin at the footprint centre; base on z = 0",
-      "logical_footprint": [
-        -0.55,
-        -0.35,
-        1.1,
-        0.7
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "Low timber cot, 1.1 m by 0.7 m, with a 0.5 m headboard at -X, a cream blanket and a folded pillow at the head. The footprint covers the whole cot; nothing overhangs it.",
-      "finish_slots": {
-        "walls": [
-          "cream",
-          "plaster",
-          "plaster_shade"
-        ],
         "timber": [
           "oak",
           "oak_light",
@@ -1123,34 +855,6 @@
           "oak_light",
           "wood",
           "wood_dark"
-        ]
-      }
-    },
-    "storage-chest": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Storage Chest",
-      "source": "art/source/world/storage-chest/v1/model.blend",
-      "runtime": "assets/world/storage-chest/model.glb",
-      "pivot": "ground origin at the footprint centre; base on z = 0",
-      "logical_footprint": [
-        -0.3,
-        -0.2,
-        0.6,
-        0.4
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "Wooden chest, 0.6 m long, 0.4 m deep and 0.4 m high, with iron corner straps, a dark lid band and a flush iron latch on the -Y front. The footprint is the body; nothing overhangs it.",
-      "finish_slots": {
-        "timber": [
-          "oak",
-          "oak_light",
-          "wood",
-          "wood_dark"
-        ],
-        "metal": [
-          "iron"
         ]
       }
     },
@@ -1239,252 +943,6 @@
         "timber": [
           "oak",
           "oak_light",
-          "wood",
-          "wood_dark",
-          "wood_light"
-        ],
-        "metal": [
-          "iron"
-        ]
-      }
-    },
-    "clay-jug": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Clay Jug",
-      "source": "art/source/world/clay-jug/v1/model.blend",
-      "runtime": "assets/world/clay-jug/model.glb",
-      "pivot": "ground origin at the bounding-box centre; body axis 0.05 m toward -X",
-      "logical_footprint": null,
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
-      "notes": "Terracotta jug with a wide belly, a cream glazed shoulder, neck and lip, a dark throat and one loop handle on the +X side. 0.45 m across the belly, 0.5 m tall. No blocking footprint is proposed; the handle overhangs the belly.",
-      "finish_slots": {
-        "walls": [
-          "cream",
-          "plaster",
-          "plaster_shade"
-        ]
-      }
-    },
-    "notice-board": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Notice Board",
-      "source": "art/source/world/notice-board/v1/model.blend",
-      "runtime": "assets/world/notice-board/model.glb",
-      "pivot": "ground origin at the bounding-box centre; posts 0 to 0.1 m behind it",
-      "logical_footprint": [
-        -0.4,
-        -0.1,
-        0.8,
-        0.2
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "Framed timber board on two posts with a cream notice, teal pins and a violet tiled cap. 0.8 m wide board, 1.2 m tall with the cap. The footprint covers the posts and the board line; the cap overhangs it by about 0.05 m.",
-      "finish_slots": {
-        "walls": [
-          "cream",
-          "plaster",
-          "plaster_shade"
-        ],
-        "roof": [
-          "roof",
-          "roof_dark",
-          "roof_light",
-          "teal"
-        ],
-        "timber": [
-          "oak",
-          "oak_light",
-          "wood",
-          "wood_dark",
-          "wood_light"
-        ]
-      }
-    },
-    "milk-churn": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Milk Churn",
-      "source": "art/source/world/milk-churn/v1/model.blend",
-      "runtime": "assets/world/milk-churn/model.glb",
-      "pivot": "ground origin on the body axis",
-      "logical_footprint": [
-        -0.2,
-        -0.2,
-        0.4,
-        0.4
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "Tall galvanised churn on a dark iron foot, with two iron bands, a flared lid and a small arched iron handle on the lid. 0.4 m across the body, 0.8 m tall. The footprint is the body; the bands and lid rim overhang it by 0.03 to 0.05 m.",
-      "finish_slots": {
-        "metal": [
-          "iron"
-        ]
-      }
-    },
-    "stepping-stones": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Stepping Stones",
-      "source": "art/source/world/stepping-stones/v1/model.blend",
-      "runtime": "assets/world/stepping-stones/model.glb",
-      "pivot": "ground origin at the middle of the stone row",
-      "logical_footprint": null,
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
-      "notes": "Three flat grey stones in a gravel bed, with moss on the back rim. The stones are walkable, so no blocking footprint is proposed.",
-      "finish_slots": {
-        "masonry": [
-          "stone",
-          "stone_dark",
-          "stone_light"
-        ]
-      }
-    },
-    "rowboat-upturned": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Rowboat Upturned",
-      "source": "art/source/world/rowboat-upturned/v1/model.blend",
-      "runtime": "assets/world/rowboat-upturned/model.glb",
-      "pivot": "ground origin at the hull centre",
-      "logical_footprint": [
-        -0.8,
-        -0.3,
-        1.6,
-        0.6
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "An upturned hull with a dark keel, plank strakes in two tones, and an oar lying along each flank. The oars and blades overhang the proposed hull footprint.",
-      "finish_slots": {
-        "timber": [
-          "oak",
-          "oak_light",
-          "wood",
-          "wood_dark",
-          "wood_light"
-        ]
-      }
-    },
-    "fallen-log": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Fallen Log",
-      "source": "art/source/world/fallen-log/v1/model.blend",
-      "runtime": "assets/world/fallen-log/model.glb",
-      "pivot": "ground origin at the centre of the log",
-      "logical_footprint": [
-        -0.6,
-        -0.2,
-        1.2,
-        0.4
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "A round trunk with bark, a pale cut end at +X and moss on top. The proposed footprint is the trunk itself, which a walker would plausibly be blocked by.",
-      "finish_slots": {
-        "timber": [
-          "oak",
-          "oak_light",
-          "wood",
-          "wood_dark"
-        ]
-      }
-    },
-    "mushroom-cluster": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Mushroom Cluster",
-      "source": "art/source/world/mushroom-cluster/v1/model.blend",
-      "runtime": "assets/world/mushroom-cluster/model.glb",
-      "pivot": "ground origin at the centre of the stump",
-      "logical_footprint": null,
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
-      "notes": "Six cream and violet mushrooms on a short cut stump, 0.3 m tall. The clump is small and walkable around, so no footprint is proposed.",
-      "finish_slots": {
-        "walls": [
-          "cream",
-          "plaster",
-          "plaster_shade"
-        ],
-        "roof": [
-          "roof",
-          "roof_light"
-        ],
-        "timber": [
-          "oak",
-          "wood",
-          "wood_dark"
-        ]
-      }
-    },
-    "market-stall": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Market Stall",
-      "source": "art/source/world/market-stall/v1/model.blend",
-      "runtime": "assets/world/market-stall/model.glb",
-      "pivot": "ground origin at the centre of the stall body",
-      "logical_footprint": [
-        -0.75,
-        -0.45,
-        1.5,
-        0.9
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "A plank counter with corner posts, a back board and a violet and cream striped canopy, with baskets and apples on the counter. The proposed footprint is the stall body, and the canopy overhangs it.",
-      "finish_slots": {
-        "walls": [
-          "cream",
-          "plaster",
-          "plaster_shade"
-        ],
-        "roof": [
-          "roof",
-          "roof_dark",
-          "roof_light"
-        ],
-        "timber": [
-          "oak",
-          "oak_light",
-          "wood",
-          "wood_dark",
-          "wood_light"
-        ]
-      }
-    },
-    "hanging-sign": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "candidate_unplaced",
-      "label": "Hanging Sign",
-      "source": "art/source/world/hanging-sign/v1/model.blend",
-      "runtime": "assets/world/hanging-sign/model.glb",
-      "pivot": "foot of the post",
-      "logical_footprint": [
-        -0.075,
-        -0.075,
-        0.15,
-        0.15
-      ],
-      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
-      "notes": "A timber post with an iron arm and a violet-rimmed board hung in front. The proposed footprint is the post only, since the arm and board overhang it; set it to null if the post should not block.",
-      "finish_slots": {
-        "walls": [
-          "cream",
-          "plaster_shade"
-        ],
-        "roof": [
-          "roof"
-        ],
-        "timber": [
           "wood",
           "wood_dark",
           "wood_light"
@@ -1597,7 +1055,7 @@
       "version": "v1",
       "authority": "blender",
       "status": "builder_library",
-      "label": "Mapmaker\u2019s Table",
+      "label": "Mapmaker’s Table",
       "source": "art/source/world/hollow-mapmakers-table/v1/model.blend",
       "runtime": "assets/world/hollow-mapmakers-table/model.glb",
       "pivot": "Ground centre; front +Z in Godot; one metre per cell",
@@ -1844,7 +1302,7 @@
       "version": "v1",
       "authority": "blender",
       "status": "builder_library",
-      "label": "Carpenter\u2019s Bench",
+      "label": "Carpenter’s Bench",
       "source": "art/source/world/hollow-carpenters-bench/v1/model.blend",
       "runtime": "assets/world/hollow-carpenters-bench/model.glb",
       "pivot": "Ground centre; front +Z in Godot; one metre per cell",
@@ -1864,34 +1322,6 @@
           "oak_light",
           "wood",
           "wood_dark"
-        ],
-        "metal": [
-          "iron"
-        ]
-      }
-    },
-    "hollow-blacksmiths-anvil": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "builder_library",
-      "label": "Blacksmith\u2019s Anvil",
-      "source": "art/source/world/hollow-blacksmiths-anvil/v1/model.blend",
-      "runtime": "assets/world/hollow-blacksmiths-anvil/model.glb",
-      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
-      "logical_footprint": [
-        -0.5,
-        -0.325,
-        1.0,
-        0.65
-      ],
-      "behavior": "Static decorative prop; catalog footprint blocks movement",
-      "notes": "A faceted iron anvil, tapering horn and hammer on a banded oak stump.",
-      "library": "village-library-v1",
-      "interaction": {},
-      "finish_slots": {
-        "timber": [
-          "oak",
-          "wood"
         ],
         "metal": [
           "iron"
@@ -2008,7 +1438,7 @@
       "version": "v1",
       "authority": "blender",
       "status": "builder_library",
-      "label": "Potter\u2019s Wheel",
+      "label": "Potter’s Wheel",
       "source": "art/source/world/hollow-potters-wheel/v1/model.blend",
       "runtime": "assets/world/hollow-potters-wheel/model.glb",
       "pivot": "Ground centre; front +Z in Godot; one metre per cell",
@@ -2044,7 +1474,7 @@
       "version": "v1",
       "authority": "blender",
       "status": "builder_library",
-      "label": "Weaver\u2019s Loom",
+      "label": "Weaver’s Loom",
       "source": "art/source/world/hollow-weavers-loom/v1/model.blend",
       "runtime": "assets/world/hollow-weavers-loom/model.glb",
       "pivot": "Ground centre; front +Z in Godot; one metre per cell",
@@ -2155,47 +1585,11 @@
         ]
       }
     },
-    "hollow-bookbinders-press": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "builder_library",
-      "label": "Bookbinder\u2019s Press",
-      "source": "art/source/world/hollow-bookbinders-press/v1/model.blend",
-      "runtime": "assets/world/hollow-bookbinders-press/model.glb",
-      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
-      "logical_footprint": [
-        -0.575,
-        -0.4,
-        1.15,
-        0.8
-      ],
-      "behavior": "Static decorative prop; catalog footprint blocks movement",
-      "notes": "Twin screw uprights squeeze a brass-cornered book between timber platens.",
-      "library": "village-library-v1",
-      "interaction": {},
-      "finish_slots": {
-        "walls": [
-          "cream"
-        ],
-        "timber": [
-          "oak",
-          "oak_light",
-          "wood_dark"
-        ],
-        "metal": [
-          "brass",
-          "iron"
-        ],
-        "fabric": [
-          "cloth_plum"
-        ]
-      }
-    },
     "hollow-bakers-oven": {
       "version": "v1",
       "authority": "blender",
       "status": "builder_library",
-      "label": "Baker\u2019s Oven",
+      "label": "Baker’s Oven",
       "source": "art/source/world/hollow-bakers-oven/v1/model.blend",
       "runtime": "assets/world/hollow-bakers-oven/model.glb",
       "pivot": "Ground centre; front +Z in Godot; one metre per cell",
@@ -2297,7 +1691,7 @@
       "version": "v1",
       "authority": "blender",
       "status": "builder_library",
-      "label": "Fishmonger\u2019s Counter",
+      "label": "Fishmonger’s Counter",
       "source": "art/source/world/hollow-fishmongers-counter/v1/model.blend",
       "runtime": "assets/world/hollow-fishmongers-counter/model.glb",
       "pivot": "Ground centre; front +Z in Godot; one metre per cell",
@@ -2356,43 +1750,6 @@
         ],
         "fabric": [
           "cloth_plum",
-          "linen"
-        ]
-      }
-    },
-    "hollow-covered-handcart": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "builder_library",
-      "label": "Covered Handcart",
-      "source": "art/source/world/hollow-covered-handcart/v1/model.blend",
-      "runtime": "assets/world/hollow-covered-handcart/model.glb",
-      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
-      "logical_footprint": [
-        -0.625,
-        -1.0,
-        1.25,
-        2.0
-      ],
-      "behavior": "Static decorative prop; catalog footprint blocks movement",
-      "notes": "A little timber wagon with curved cream cover, iron-rimmed wheels and a tow bar.",
-      "library": "village-library-v1",
-      "interaction": {},
-      "finish_slots": {
-        "walls": [
-          "cream"
-        ],
-        "timber": [
-          "oak",
-          "oak_light",
-          "wood",
-          "wood_dark"
-        ],
-        "metal": [
-          "brass",
-          "iron"
-        ],
-        "fabric": [
           "linen"
         ]
       }
@@ -2457,41 +1814,6 @@
           "oak_light",
           "wood",
           "wood_dark"
-        ],
-        "fabric": [
-          "linen"
-        ]
-      }
-    },
-    "hollow-candle-stand": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "builder_library",
-      "label": "Candle Stand",
-      "source": "art/source/world/hollow-candle-stand/v1/model.blend",
-      "runtime": "assets/world/hollow-candle-stand/model.glb",
-      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
-      "logical_footprint": [
-        -0.325,
-        -0.325,
-        0.65,
-        0.65
-      ],
-      "behavior": "Interactive prop; boolean active state, static ground footprint",
-      "notes": "A brass three-branch candle stand with wax drips and warm flames.",
-      "library": "village-library-v1",
-      "interaction": {
-        "kind": "light",
-        "on": "Light",
-        "off": "Extinguish"
-      },
-      "finish_slots": {
-        "walls": [
-          "cream"
-        ],
-        "metal": [
-          "brass",
-          "copper"
         ],
         "fabric": [
           "linen"
@@ -2578,39 +1900,6 @@
           "oak_light",
           "wood",
           "wood_dark"
-        ]
-      }
-    },
-    "hollow-chicken-coop": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "builder_library",
-      "label": "Chicken Coop",
-      "source": "art/source/world/hollow-chicken-coop/v1/model.blend",
-      "runtime": "assets/world/hollow-chicken-coop/model.glb",
-      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
-      "logical_footprint": [
-        -0.8,
-        -0.65,
-        1.6,
-        1.3
-      ],
-      "behavior": "Static decorative prop; catalog footprint blocks movement",
-      "notes": "A violet-roofed coop with a ladder, nesting boxes and small shuttered windows.",
-      "library": "village-library-v1",
-      "interaction": {},
-      "finish_slots": {
-        "roof": [
-          "roof",
-          "roof_teal"
-        ],
-        "timber": [
-          "oak",
-          "wood",
-          "wood_dark"
-        ],
-        "fabric": [
-          "cloth_teal"
         ]
       }
     },
@@ -2707,39 +1996,6 @@
         ]
       }
     },
-    "hollow-field-scarecrow": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "builder_library",
-      "label": "Field Scarecrow",
-      "source": "art/source/world/hollow-field-scarecrow/v1/model.blend",
-      "runtime": "assets/world/hollow-field-scarecrow/model.glb",
-      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
-      "logical_footprint": [
-        -0.5,
-        -0.3,
-        1.0,
-        0.6
-      ],
-      "behavior": "Static decorative prop; catalog footprint blocks movement",
-      "notes": "A straw hat, russet coat and teal scarf on a forked timber field marker.",
-      "library": "village-library-v1",
-      "interaction": {},
-      "finish_slots": {
-        "timber": [
-          "wood",
-          "wood_dark"
-        ],
-        "masonry": [
-          "stone_dark"
-        ],
-        "fabric": [
-          "cloth_plum",
-          "cloth_teal",
-          "linen"
-        ]
-      }
-    },
     "hollow-rain-barrel": {
       "version": "v1",
       "authority": "blender",
@@ -2800,74 +2056,6 @@
         ],
         "fabric": [
           "linen"
-        ]
-      }
-    },
-    "hollow-hay-handcart": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "builder_library",
-      "label": "Hay Handcart",
-      "source": "art/source/world/hollow-hay-handcart/v1/model.blend",
-      "runtime": "assets/world/hollow-hay-handcart/model.glb",
-      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
-      "logical_footprint": [
-        -0.625,
-        -0.825,
-        1.25,
-        1.65
-      ],
-      "behavior": "Static decorative prop; catalog footprint blocks movement",
-      "notes": "A two-wheeled farm cart piled with bound golden hay and a wooden pitchfork.",
-      "library": "village-library-v1",
-      "interaction": {},
-      "finish_slots": {
-        "timber": [
-          "oak",
-          "oak_light",
-          "wood",
-          "wood_dark"
-        ],
-        "metal": [
-          "brass",
-          "iron"
-        ],
-        "fabric": [
-          "linen"
-        ]
-      }
-    },
-    "hollow-copper-brazier": {
-      "version": "v1",
-      "authority": "blender",
-      "status": "builder_library",
-      "label": "Copper Brazier",
-      "source": "art/source/world/hollow-copper-brazier/v1/model.blend",
-      "runtime": "assets/world/hollow-copper-brazier/model.glb",
-      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
-      "logical_footprint": [
-        -0.425,
-        -0.425,
-        0.85,
-        0.85
-      ],
-      "behavior": "Interactive prop; boolean active state, static ground footprint",
-      "notes": "An embossed copper bowl on three iron legs with split logs and amber fire.",
-      "library": "village-library-v1",
-      "interaction": {
-        "kind": "light",
-        "on": "Light",
-        "off": "Extinguish"
-      },
-      "finish_slots": {
-        "timber": [
-          "wood",
-          "wood_dark"
-        ],
-        "metal": [
-          "brass",
-          "copper",
-          "iron"
         ]
       }
     },
@@ -3098,7 +2286,7 @@
       "version": "v1",
       "authority": "blender",
       "status": "builder_library",
-      "label": "Wayfarer\u2019s Chest",
+      "label": "Wayfarer’s Chest",
       "source": "art/source/world/hollow-wayfarers-chest/v1/model.blend",
       "runtime": "assets/world/hollow-wayfarers-chest/model.glb",
       "pivot": "Ground centre; front +Z in Godot; one metre per cell",
@@ -3395,8 +2583,2695 @@
             0.235
           ]
         ],
+        "hinge": "DoorHinge",
+        "approach_cells": 1
+      },
+      "collision_rects": [
+        [
+          -1.98,
+          -1.7,
+          3.96,
+          3.68
+        ],
+        [
+          -1.98,
+          -1.98,
+          1.44,
+          0.28
+        ],
+        [
+          0.54,
+          -1.98,
+          1.44,
+          0.28
+        ]
+      ],
+      "collision_notes": "Solid log/foundation envelope in local S-facing logical coordinates. The entrance reserves one extra exterior landing cell; parsing also closes the leaf and former threshold to walking. Placement footprint is unchanged."
+    },
+    "rootward-tree": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_morning",
+      "label": "Rootward",
+      "source": "art/source/world/rootward-tree/v1/model.blend",
+      "runtime": "assets/world/rootward-tree/model.glb",
+      "pivot": "Ground center; Blender Z-up; one metre per cell",
+      "logical_footprint": {
+        "trunk_radius": 8.6
+      },
+      "behavior": "Static namesake landmark; the trunk, buttress roots and ward-stone ring block movement. Canopy overhang is decorative.",
+      "notes": "Monumental 24-metre namesake oak, roughly 24 metres across. Twisted bole, huge branching buttress roots, living amber fissures, gold ward-stone ring, thirty suspended jewel lanterns, nine festoon garlands and editable wisp/light anchors. The saved Blender master owns all geometry and anchors; small rendering-only lights/motes animate in Godot. Gameplay uses a permanent trunk cutaway: authored Crown/Boughs parts stay hidden, upper trunk/chains fade from 8 to 10 metres, and only lower lanterns get halos/local lights. The complete adopted source and GLB remain intact.",
+      "presentation": "rootward-presence"
+    },
+    "morning-town-hall": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_morning",
+      "label": "Town Hall",
+      "source": "art/source/world/morning-town-hall/v1/model.blend",
+      "runtime": "assets/world/morning-town-hall/model.glb",
+      "pivot": "Ground center; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -4.3,
+        -3.4,
+        8.6,
+        6.8
+      ],
+      "behavior": "Static civic building with hinged double entrance and its own saved council room.",
+      "notes": "Original limestone and cream half-timbered hall; staggered teal shingles, arched doubled oak doors, warm divided windows, brass clock, open bronze-bell belfry, leaf vane, civic banners and public noticeboard.",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "plane": 3.51,
+        "width": 1.8,
+        "height": 3.3,
+        "bottom": 0.25,
+        "steps": [
+          [
+            4.55,
+            3.9,
+            2.65,
+            0.13
+          ],
+          [
+            4.05,
+            2.7,
+            2.4,
+            0.26
+          ]
+        ],
+        "hinge": "DoorHinge",
+        "kind": "arched double oak",
+        "threshold": "limestone"
+      },
+      "collision_rects": [
+        [
+          -4.3,
+          -3.4,
+          8.6,
+          6.8
+        ]
+      ]
+    },
+    "morning-civic-bench": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_morning",
+      "label": "Civic oak bench",
+      "source": "art/source/world/morning-civic-bench/v1/model.blend",
+      "runtime": "assets/world/morning-civic-bench/model.glb",
+      "pivot": "Ground center; front +Z; one metre per cell",
+      "logical_footprint": [
+        -1.17,
+        -0.25,
+        2.34,
+        0.5
+      ],
+      "behavior": "Static seat; footprint blocks walking",
+      "notes": "Wider version of the adopted park bench, with unchanged 0.9-metre backrest height. Original source untouched."
+    },
+    "reference-cottage": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_morning_comparison",
+      "label": "Reference Cottage",
+      "source": "art/source/world/reference-cottage/v1/model.blend",
+      "runtime": "assets/world/reference-cottage/model.glb",
+      "pivot": "Ground center; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -2,
+        -1.8,
+        4,
+        3.6
+      ],
+      "collision_rects": [
+        [
+          -2.04,
+          -1.77,
+          4.08,
+          3.75
+        ],
+        [
+          -2.04,
+          -2.19,
+          1.45,
+          0.42
+        ],
+        [
+          0.59,
+          -2.19,
+          1.45,
+          0.42
+        ],
+        [
+          -2.05,
+          -2.9,
+          1.34,
+          1.03
+        ],
+        [
+          0.8,
+          -2.53,
+          1.14,
+          0.66
+        ],
+        [
+          -2.51,
+          0.64,
+          0.7,
+          0.74
+        ]
+      ],
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "plane": 1.985,
+        "width": 1.15,
+        "height": 2.135,
+        "bottom": 0.28,
+        "kind": "recessed arched oak with four blue upper panes",
+        "threshold": "dressed limestone",
+        "steps": [
+          [
+            3.15,
+            2.56,
+            1.8,
+            0.12
+          ],
+          [
+            2.72,
+            1.47,
+            1.55,
+            0.26
+          ]
+        ],
         "hinge": "DoorHinge"
+      },
+      "behavior": "Detailed concept reconstruction with hinged entry and a separate saved room instance. Wall, garden, planter and barrel footprints block movement; roof overhang does not.",
+      "notes": "Separate comparison building for Village Morning. New geometry and imagegen-painted violet clay/honey oak; three Godot review passes. Original morning-home and Concept Cottage source preserved.",
+      "finish_slots": {
+        "walls": [
+          "study_oak",
+          "study_oak_warm",
+          "study_oak_light"
+        ],
+        "roof": [
+          "study_violet",
+          "study_violet_light",
+          "study_violet_dark",
+          "study_tile_edge",
+          "study_clay_under"
+        ],
+        "timber": [
+          "study_timber",
+          "study_door_oak",
+          "study_endgrain",
+          "study_endgrain_dark"
+        ],
+        "masonry": [
+          "study_stone",
+          "study_stone_light",
+          "study_stone_warm",
+          "study_mortar"
+        ],
+        "metal": [
+          "study_iron",
+          "study_brass"
+        ]
       }
+    },
+    "square-lamppost": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_morning",
+      "label": "Square garden lantern",
+      "source": "art/source/world/square-lamppost/v1/model.blend",
+      "runtime": "assets/world/square-lamppost/model.glb",
+      "pivot": "Ground center; lantern hangs toward Godot +Z; one metre per cell",
+      "logical_footprint": null,
+      "behavior": "Post-lamp presentation only. Separate lamp_glass mesh uses existing state, halo and light; no new collision or commands.",
+      "illustrated_edges": true,
+      "notes": "Reference-inspired dark timber and charcoal cage, sloping hood, warm painted amber panes, bevelled cream limestone planter and evergreen. Original adopted lamppost unchanged. Selected for Village Morning post lamps only.",
+      "painted_glow": true
+    },
+    "painted-cottage": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_morning",
+      "label": "Painted village cottage",
+      "source": "art/source/world/painted-cottage/v1/model.blend",
+      "runtime": "assets/world/painted-cottage/model.glb",
+      "pivot": "Ground center; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -2,
+        -1.8,
+        4,
+        3.6
+      ],
+      "collision_rects": [
+        [
+          -2.04,
+          -1.77,
+          4.08,
+          3.75
+        ],
+        [
+          -2.04,
+          -2.19,
+          1.45,
+          0.42
+        ],
+        [
+          0.59,
+          -2.19,
+          1.45,
+          0.42
+        ],
+        [
+          -2.05,
+          -2.9,
+          1.34,
+          1.03
+        ],
+        [
+          0.8,
+          -2.53,
+          1.14,
+          0.66
+        ],
+        [
+          -2.51,
+          0.64,
+          0.7,
+          0.74
+        ]
+      ],
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "plane": 1.985,
+        "width": 1.15,
+        "height": 2.135,
+        "bottom": 0.28,
+        "kind": "recessed arched oak with four blue upper panes",
+        "threshold": "dressed limestone",
+        "steps": [
+          [
+            3.15,
+            2.56,
+            1.8,
+            0.12
+          ],
+          [
+            2.72,
+            1.47,
+            1.55,
+            0.26
+          ]
+        ],
+        "hinge": "DoorHinge"
+      },
+      "behavior": "Detailed concept reconstruction with hinged entry and a separate saved room instance. Wall, garden, planter and barrel footprints block movement; roof overhang does not.",
+      "notes": "Adopted reference-cottage geometry, with calm honey timber, individually varied violet tiles, warm cream masonry and fine drawn edges. Earlier master unchanged. Selected as the morning comparison house presentation; identical door and collision.",
+      "finish_slots": {
+        "walls": [
+          "study_oak",
+          "study_oak_warm",
+          "study_oak_light",
+          "Painted honey grain"
+        ],
+        "roof": [
+          "study_violet_light",
+          "Painted violet tile 0",
+          "Painted violet tile 1",
+          "Painted violet tile 2",
+          "Painted violet tile 3",
+          "Painted violet tile 4",
+          "Painted violet tile 5"
+        ],
+        "timber": [
+          "study_timber",
+          "study_door_oak",
+          "study_endgrain",
+          "study_endgrain_dark"
+        ],
+        "masonry": [
+          "study_stone",
+          "study_stone_light",
+          "study_stone_warm",
+          "study_mortar"
+        ],
+        "metal": [
+          "study_iron",
+          "study_brass"
+        ]
+      },
+      "illustrated_edges": true
+    },
+    "painted-oak": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_morning",
+      "label": "Painted leafy oak",
+      "source": "art/source/world/painted-oak/v1/model.blend",
+      "runtime": "assets/world/painted-oak/model.glb",
+      "pivot": "Ground origin; one metre per cell",
+      "logical_footprint": {
+        "trunk_radius": 0.5
+      },
+      "illustrated_edges": true,
+      "behavior": "Static tree. Solid 0.5 m root/trunk radius; canopy is decorative.",
+      "notes": "Bent warm trunk and forked boughs beneath individually offset, bevelled voxel leaf clumps in six deep greens. Sparse drawn bark marks. The original 0.5 m oak root occupancy is retained. Selected for Village Morning hearth-oak presentations."
+    },
+    "painted-garden-fence": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_morning",
+      "label": "Painted garden fence",
+      "source": "art/source/world/painted-garden-fence/v1/model.blend",
+      "runtime": "assets/world/painted-garden-fence/model.glb",
+      "pivot": "Ground center; front +Z; one metre per cell",
+      "logical_footprint": [
+        -1.3,
+        -0.16,
+        2.6,
+        0.32
+      ],
+      "illustrated_edges": true,
+      "behavior": "Static two-rail fence; full strip blocks walking.",
+      "notes": "Honey rails, chamfered posts, dark pins and simple drawn grain. Reference-matched village fence."
+    },
+    "loft-shell": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Workshop loft shell",
+      "source": "art/source/world/loft-shell/v1/model.blend",
+      "runtime": "assets/world/loft-shell/model.glb",
+      "pivot": "Room origin: centre of cell (0, 0) on the floor; logical +y is Blender +Y (Godot -Z); one metre per cell",
+      "logical_footprint": null,
+      "behavior": "Room presentation only, placed by WorkshopLoftRoom. The area document owns the exit, walls and collision.",
+      "illustrated_edges": true,
+      "notes": "T7a shell deliberately refined from the adopted master: calm painted oak, staggered plank joints, open stair hatch, clear painted harbour windows. First source retained as model.pre-furnishing.blend. Flipped revision 2026-10-28 (sparks-loft/v1/flipped_loft_revision.py): seen from the yard side, 14 by 12, three street windows and two gable windows matching the lane, the stair opening mid-room."
+    },
+    "loft-bed": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft patchwork bed",
+      "source": "art/source/world/loft-bed/v1/model.blend",
+      "runtime": "assets/world/loft-bed/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-desk": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft writing desk",
+      "source": "art/source/world/loft-desk/v1/model.blend",
+      "runtime": "assets/world/loft-desk/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-chair": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft writing chair",
+      "source": "art/source/world/loft-chair/v1/model.blend",
+      "runtime": "assets/world/loft-chair/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-shelf": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft filled bookcase",
+      "source": "art/source/world/loft-shelf/v1/model.blend",
+      "runtime": "assets/world/loft-shelf/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-luggage": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft half-unpacked suitcase",
+      "source": "art/source/world/loft-luggage/v1/model.blend",
+      "runtime": "assets/world/loft-luggage/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-cabinet": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft bedside cabinet",
+      "source": "art/source/world/loft-cabinet/v1/model.blend",
+      "runtime": "assets/world/loft-cabinet/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-wall-life": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft coat pegs and wall shelf",
+      "source": "art/source/world/loft-wall-life/v1/model.blend",
+      "runtime": "assets/world/loft-wall-life/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-rug": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft woven rag rug",
+      "source": "art/source/world/loft-rug/v1/model.blend",
+      "runtime": "assets/world/loft-rug/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-travel-stacks": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft moving-in belongings",
+      "source": "art/source/world/loft-travel-stacks/v1/model.blend",
+      "runtime": "assets/world/loft-travel-stacks/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-window-life": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft window flowers and keepsakes",
+      "source": "art/source/world/loft-window-life/v1/model.blend",
+      "runtime": "assets/world/loft-window-life/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-postcard": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft harbour postcard",
+      "source": "art/source/world/loft-postcard/v1/model.blend",
+      "runtime": "assets/world/loft-postcard/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-wardrobe": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft wardrobe",
+      "source": "art/source/world/loft-wardrobe/v1/model.blend",
+      "runtime": "assets/world/loft-wardrobe/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority."
+    },
+    "loft-window-seat": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft window seat",
+      "source": "art/source/world/loft-window-seat/v1/model.blend",
+      "runtime": "assets/world/loft-window-seat/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority."
+    },
+    "loft-rocking-chair": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft rocking chair",
+      "source": "art/source/world/loft-rocking-chair/v1/model.blend",
+      "runtime": "assets/world/loft-rocking-chair/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority."
+    },
+    "loft-floor-plant": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft floor plant",
+      "source": "art/source/world/loft-floor-plant/v1/model.blend",
+      "runtime": "assets/world/loft-floor-plant/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority."
+    },
+    "loft-tape-machine": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Loft tape reader",
+      "source": "art/source/world/loft-tape-machine/v1/model.blend",
+      "runtime": "assets/world/loft-tape-machine/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Retained original typewriter concept source. The active Sparks rooms use zone-terminal; this master is preserved for history and future reuse."
+    },
+    "loft-hotaru": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Dormant rolling Hotaru",
+      "source": "art/source/world/loft-hotaru/v1/model.blend",
+      "runtime": "assets/world/loft-hotaru/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    },
+    "loft-cable": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Loft reader cable",
+      "source": "art/source/world/loft-cable/v1/model.blend",
+      "runtime": "assets/world/loft-cable/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Retained original typewriter concept source. The active Sparks rooms use zone-terminal; this master is preserved for history and future reuse."
+    },
+    "workshop-shell": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop shell",
+      "source": "art/source/world/workshop-shell/v1/model.blend",
+      "runtime": "assets/world/workshop-shell/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/. Party-wall revision 2026-10-28 (sparks-workshop/v1/party_wall_revision.py): the north window removed; the north wall is shared with Nell's house."
+    },
+    "workshop-staircase": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop staircase",
+      "source": "art/source/world/workshop-staircase/v1/model.blend",
+      "runtime": "assets/world/workshop-staircase/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/. Placed turned 180 degrees about its centre since 2026-10-28, so it climbs from the north wall to the middle of the room."
+    },
+    "workshop-repair-bench": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop repair bench",
+      "source": "art/source/world/workshop-repair-bench/v1/model.blend",
+      "runtime": "assets/world/workshop-repair-bench/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-tool-wall": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop tool wall",
+      "source": "art/source/world/workshop-tool-wall/v1/model.blend",
+      "runtime": "assets/world/workshop-tool-wall/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-parts-drawers": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop parts drawers",
+      "source": "art/source/world/workshop-parts-drawers/v1/model.blend",
+      "runtime": "assets/world/workshop-parts-drawers/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-assembly-table": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop assembly table",
+      "source": "art/source/world/workshop-assembly-table/v1/model.blend",
+      "runtime": "assets/world/workshop-assembly-table/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-parts-crate": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop parts crate",
+      "source": "art/source/world/workshop-parts-crate/v1/model.blend",
+      "runtime": "assets/world/workshop-parts-crate/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-stove": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop stove",
+      "source": "art/source/world/workshop-stove/v1/model.blend",
+      "runtime": "assets/world/workshop-stove/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-armchair": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop armchair",
+      "source": "art/source/world/workshop-armchair/v1/model.blend",
+      "runtime": "assets/world/workshop-armchair/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-tea-table": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop tea table",
+      "source": "art/source/world/workshop-tea-table/v1/model.blend",
+      "runtime": "assets/world/workshop-tea-table/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-job-board": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop job board",
+      "source": "art/source/world/workshop-job-board/v1/model.blend",
+      "runtime": "assets/world/workshop-job-board/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-shop-doors": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop shop doors",
+      "source": "art/source/world/workshop-shop-doors/v1/model.blend",
+      "runtime": "assets/world/workshop-shop-doors/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-hanging-lamp": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop hanging lamp",
+      "source": "art/source/world/workshop-hanging-lamp/v1/model.blend",
+      "runtime": "assets/world/workshop-hanging-lamp/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-stool": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop stool",
+      "source": "art/source/world/workshop-stool/v1/model.blend",
+      "runtime": "assets/world/workshop-stool/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-rug": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop rug",
+      "source": "art/source/world/workshop-rug/v1/model.blend",
+      "runtime": "assets/world/workshop-rug/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/. It casts no shadow and lies .02 above the floor in the area document: cast onto itself and level with the plank tops, its weave showed a hatched shadow whenever the view pulled back.",
+      "casts_shadow": false
+    },
+    "workshop-wall-shelf": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop wall shelf",
+      "source": "art/source/world/workshop-wall-shelf/v1/model.blend",
+      "runtime": "assets/world/workshop-wall-shelf/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-jar-shelf": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop jar shelf",
+      "source": "art/source/world/workshop-jar-shelf/v1/model.blend",
+      "runtime": "assets/world/workshop-jar-shelf/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "Jars and parts on the party wall with Nell's house, where the north window was (2026-10-28). Authored with art/source/world/sparks-workshop/v1/jar_shelf.py; model.blend is the editable authority."
+    },
+    "workshop-umbrella-stand": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop umbrella stand",
+      "source": "art/source/world/workshop-umbrella-stand/v1/model.blend",
+      "runtime": "assets/world/workshop-umbrella-stand/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-bread-cupboard": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop bread cupboard",
+      "source": "art/source/world/workshop-bread-cupboard/v1/model.blend",
+      "runtime": "assets/world/workshop-bread-cupboard/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-service-trolley": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop service trolley",
+      "source": "art/source/world/workshop-service-trolley/v1/model.blend",
+      "runtime": "assets/world/workshop-service-trolley/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-wall-clock": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop wall clock",
+      "source": "art/source/world/workshop-wall-clock/v1/model.blend",
+      "runtime": "assets/world/workshop-wall-clock/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+    },
+    "workshop-stair-lamp": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop stair lantern",
+      "source": "art/source/world/workshop-stair-lamp/v1/model.blend",
+      "runtime": "assets/world/workshop-stair-lamp/model.glb",
+      "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+      "notes": "Addressable lantern: separate workshop_lamp_glass mesh. The area maps it to landing-lamp."
+    },
+    "loft-note-slip": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Nell's note",
+      "source": "art/source/world/loft-note-slip/v1/model.blend",
+      "runtime": "assets/world/loft-note-slip/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "First-morning prop; model.blend is the editable authority. Authored with sparks-loft/v1/first_morning_props.py."
+    },
+    "loft-hand-terminal": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Hand terminal",
+      "source": "art/source/world/loft-hand-terminal/v1/model.blend",
+      "runtime": "assets/world/loft-hand-terminal/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "First-morning prop; model.blend is the editable authority. Authored with sparks-loft/v1/first_morning_props.py."
+    },
+    "zone-terminal": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_terminal",
+      "label": "Zone terminal",
+      "source": "art/source/world/zone-terminal/v1/model.blend",
+      "runtime": "assets/world/zone-terminal/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Reusable zone computer; the area document owns connection scope and approach. Screen and connection lamp are separate presentation parts.",
+      "notes": "New outlined cream and teal computer, used in both Sparks rooms. Existing typewriter master is retained.",
+      "zone_terminal": true
+    },
+    "field-tablet": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Nell's field tablet",
+      "source": "art/source/world/field-tablet/v1/model.blend",
+      "runtime": "assets/world/field-tablet/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "The carried slate and its cord. The area document's pickups list owns where it can be taken; the model has no collision and no command.",
+      "notes": "Authored with sparks-loft/v1/field_tablet.py; model.blend is the editable authority. It rests on its bottom face with the cord coiled beside it, as it lies on the loft bed."
+    },
+    "workshop-wall-screen": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_workshop",
+      "label": "Workshop wall screen",
+      "source": "art/source/world/workshop-wall-screen/v1/model.blend",
+      "runtime": "assets/world/workshop-wall-screen/model.glb",
+      "pivot": "Metres; Blender +Y is the wall and the front faces -y. The origin is the bottom centre of the backplate.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Zone node with a jack socket for the field tablet; the area document owns connection scope, approach and the item it requires. Screen glass and connection lamp are separate presentation parts.",
+      "notes": "Authored with sparks-workshop/v1/wall_screen.py; model.blend is the editable authority. Glass is named terminal_screen and the indicator connection_lamp, as on the desk computer.",
+      "zone_terminal": true
+    },
+    "haverlund-lane-set": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Haverlund lane set",
+      "source": "art/source/world/haverlund-lane-set/v1/model.blend",
+      "runtime": "assets/world/haverlund-lane-set/model.glb",
+      "pivot": "Area coordinates; Blender +X is logical +x, +Y logical +y, Z up. Level 0 (the tram halt) at z 0, level 1 (the lane) at z 1.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Spindle Lane terraces, paving, tram track and halt, stairs, walls, garden and fences. Framed power inlays run through the centered stairs and door thresholds and along the tram platform. Overhead power wires and poles have been removed. Cosmetic presentation only; placements and traversal belong to the area document.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator."
+    },
+    "lane-workshop": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Workshop front",
+      "source": "art/source/world/lane-workshop/v1/model.blend",
+      "runtime": "assets/world/lane-workshop/model.glb",
+      "pivot": "Footprint centre at ground height; the street doors face +X (logical east).",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Nell's workshop from the lane, matching the rooms inside: a plastered workshop floor with the green street doors a third of the way along from the south corner, the shop window and gear sign; the loft as a jettied, half-timbered upper floor with its round gable window, under a clay roof whose ridge runs north-south; woodshed, chimney and water butt. Glass sits inside real wall openings. The area document owns its footprint and the doorway link.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-nell-house": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Nell's house",
+      "source": "art/source/world/lane-nell-house/v1/model.blend",
+      "runtime": "assets/world/lane-nell-house/model.glb",
+      "pivot": "Footprint centre at ground height; the front door faces +X; its south wall is the workshop's party wall.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "The landlady's narrow dressed-stone house next to the workshop, gable to the lane: a plum panelled door under a stone hood, fanlight, teal shutters, lavender in the window boxes, a climbing rose and a stone chimney. The area document owns its footprint.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-cottage": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Bram's cottage",
+      "source": "art/source/world/lane-cottage/v1/model.blend",
+      "runtime": "assets/world/lane-cottage/model.glb",
+      "pivot": "Footprint centre at ground height; the door faces +X.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Salmon plaster cottage with limestone quoins, green shutters and a striped awning. The area document owns its footprint.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-lamp": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Street lamp",
+      "source": "art/source/world/lane-lamp/v1/model.blend",
+      "runtime": "assets/world/lane-lamp/model.glb",
+      "pivot": "Pedestal centre at ground height.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Lantern on an iron post over a limestone pedestal. The glass is a separate mesh with the material lamp_glass; a room lamp fixture lights it.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-post-box": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Post box",
+      "source": "art/source/world/lane-post-box/v1/model.blend",
+      "runtime": "assets/world/lane-post-box/model.glb",
+      "pivot": "Base centre; the slot faces -Y.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Red pillar box with a collection plate.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-notice-board": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Notice board",
+      "source": "art/source/world/lane-notice-board/v1/model.blend",
+      "runtime": "assets/world/lane-notice-board/model.glb",
+      "pivot": "Centre between the posts; the board faces -Y.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Tiled-roof notice board with pinned notices and a lost-cat drawing.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-bench": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Street bench",
+      "source": "art/source/world/lane-bench/v1/model.blend",
+      "runtime": "assets/world/lane-bench/model.glb",
+      "pivot": "Seat centre; sitters face -Y.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Slatted bench on green iron ends.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-telescope": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Coin telescope",
+      "source": "art/source/world/lane-telescope/v1/model.blend",
+      "runtime": "assets/world/lane-telescope/model.glb",
+      "pivot": "Foot centre; the eyepiece end looks along -Y.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Cast-iron coin telescope.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-tree": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Blossom tree",
+      "source": "art/source/world/lane-tree/v1/model.blend",
+      "runtime": "assets/world/lane-tree/model.glb",
+      "pivot": "Trunk base.",
+      "logical_footprint": null,
+      "illustrated_edges": false,
+      "behavior": "Broadleaf tree with clumped crown and white blossom; presentation only.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-cypress": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Cypress",
+      "source": "art/source/world/lane-cypress/v1/model.blend",
+      "runtime": "assets/world/lane-cypress/model.glb",
+      "pivot": "Trunk base.",
+      "logical_footprint": null,
+      "illustrated_edges": false,
+      "behavior": "Narrow dark cypress; presentation only.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-bicycle": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Bicycle",
+      "source": "art/source/world/lane-bicycle/v1/model.blend",
+      "runtime": "assets/world/lane-bicycle/model.glb",
+      "pivot": "Between the wheels at ground; the bicycle runs along X.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Green bicycle with a wicker basket and a toolbag.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-crates": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Crates",
+      "source": "art/source/world/lane-crates/v1/model.blend",
+      "runtime": "assets/world/lane-crates/model.glb",
+      "pivot": "Bottom crate centre.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Two stacked crates with apples and a potted flower.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-planter": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Planter",
+      "source": "art/source/world/lane-planter/v1/model.blend",
+      "runtime": "assets/world/lane-planter/model.glb",
+      "pivot": "Box centre; runs along X.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Wooden planter with flowers and trailing ivy.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-handcart": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Handcart",
+      "source": "art/source/world/lane-handcart/v1/model.blend",
+      "runtime": "assets/world/lane-handcart/model.glb",
+      "pivot": "Axle centre at ground; handles toward +X.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Nell's handcart with crates, a cable coil and a ledger.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-laundry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Washing line",
+      "source": "art/source/world/lane-laundry/v1/model.blend",
+      "runtime": "assets/world/lane-laundry/model.glb",
+      "pivot": "Between the two posts at ground; the line runs along X.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Washing on a line. Each cloth is a separate object cloth_N with its origin on the line; the lane stage sways them.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-pump": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Pump and trough",
+      "source": "art/source/world/lane-pump/v1/model.blend",
+      "runtime": "assets/world/lane-pump/model.glb",
+      "pivot": "Pump base.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Cast-iron hand pump over a limestone trough.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-shed": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Garden shed",
+      "source": "art/source/world/lane-shed/v1/model.blend",
+      "runtime": "assets/world/lane-shed/model.glb",
+      "pivot": "Floor centre; the door faces -Y.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Plank shed with a clay roof, tools and a watering can.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-tram-shelter": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Tram shelter",
+      "source": "art/source/world/lane-tram-shelter/v1/model.blend",
+      "runtime": "assets/world/lane-tram-shelter/model.glb",
+      "pivot": "Floor centre; open side faces -Y.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Tiled tram shelter with a bench, lantern, pots, the stop disc and a timetable.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "lane-tram": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Hill tram",
+      "source": "art/source/world/lane-tram/v1/model.blend",
+      "runtime": "assets/world/lane-tram/model.glb",
+      "pivot": "Track centreline at rail height; runs along X with its headlamp at +X. Wheels 1.1 apart; the trolley shoe at 3.75.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Hill tram No. 7: a double-ended teal and cream car on two sprung four-wheeled trucks, panelled and lined in gold, HAVERLUND TRAMWAYS, windows with seat backs, a clerestory, destination boxes, folding platform doors and a trolley pole to the halt's wire. The lane stage drives its round trip (interior.life.tram).",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+    },
+    "haverlund-square-set": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Rootward Square paving and hill approach",
+      "source": "art/source/world/haverlund-square-set/v1/model.blend",
+      "runtime": "assets/world/haverlund-square-set/model.glb",
+      "pivot": "Area coordinates, Z up",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "T3 and T5 concept references. Native shared lane materials. art/source/world/sparks-square/v1/author.py is initial authoring only; edit the adopted model.blend. Retained from the first square (2026-10-29); the Guildhall Square rebuild no longer places it."
+    },
+    "square-rootwell": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Rootwell, glass bell and pressure dial",
+      "source": "art/source/world/square-rootwell/v1/model.blend",
+      "runtime": "assets/world/square-rootwell/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "T3 and T5 concept references. Native shared lane materials. art/source/world/sparks-square/v1/author.py is initial authoring only; edit the adopted model.blend. Retained from the first square (2026-10-29); the Guildhall Square rebuild no longer places it."
+    },
+    "square-town-hall": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Haverlund town hall",
+      "source": "art/source/world/square-town-hall/v1/model.blend",
+      "runtime": "assets/world/square-town-hall/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "T3 and T5 concept references. Native shared lane materials. art/source/world/sparks-square/v1/author.py is initial authoring only; edit the adopted model.blend. Retained from the first square (2026-10-29); the Guildhall Square rebuild no longer places it."
+    },
+    "square-bakery": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Morning Loaf bakery",
+      "source": "art/source/world/square-bakery/v1/model.blend",
+      "runtime": "assets/world/square-bakery/model.glb",
+      "pivot": "Ground centre; shop front toward Blender +X (east)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "T3 and T5 concept references. Native shared lane materials. art/source/world/sparks-square/v1/author.py is initial authoring only; edit the adopted model.blend. Retained from the first square (2026-10-29); the Guildhall Square rebuild no longer places it."
+    },
+    "square-bookshop": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Finch & Sons bookshop",
+      "source": "art/source/world/square-bookshop/v1/model.blend",
+      "runtime": "assets/world/square-bookshop/model.glb",
+      "pivot": "Ground centre; shop front toward Blender +X (east)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "T3 and T5 concept references. Native shared lane materials. art/source/world/sparks-square/v1/author.py is initial authoring only; edit the adopted model.blend. Retained from the first square (2026-10-29); the Guildhall Square rebuild no longer places it."
+    },
+    "square-grocer": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Square greengrocer",
+      "source": "art/source/world/square-grocer/v1/model.blend",
+      "runtime": "assets/world/square-grocer/model.glb",
+      "pivot": "Ground centre; shop front toward Blender +X (east)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "T3 and T5 concept references. Native shared lane materials. art/source/world/sparks-square/v1/author.py is initial authoring only; edit the adopted model.blend. Retained from the first square (2026-10-29); the Guildhall Square rebuild no longer places it."
+    },
+    "square-market-stall": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Produce stall and weighing scales",
+      "source": "art/source/world/square-market-stall/v1/model.blend",
+      "runtime": "assets/world/square-market-stall/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "T3 and T5 concept references. Native shared lane materials. art/source/world/sparks-square/v1/author.py is initial authoring only; edit the adopted model.blend."
+    },
+    "square-cafe-table": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Cafe table, chairs and used cup",
+      "source": "art/source/world/square-cafe-table/v1/model.blend",
+      "runtime": "assets/world/square-cafe-table/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "T3 and T5 concept references. Native shared lane materials. art/source/world/sparks-square/v1/author.py is initial authoring only; edit the adopted model.blend. Retained from the first square (2026-10-29); the Guildhall Square rebuild no longer places it."
+    },
+    "square-node": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Square service screen",
+      "source": "art/source/world/square-node/v1/model.blend",
+      "runtime": "assets/world/square-node/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "T3 and T5 concept references. Native shared lane materials. art/source/world/sparks-square/v1/author.py is initial authoring only; edit the adopted model.blend.",
+      "zone_terminal": true
+    },
+    "guildhall-square-set": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Guildhall Square paving, street and surrounding town",
+      "source": "art/source/world/guildhall-square-set/v1/model.blend",
+      "runtime": "assets/world/guildhall-square-set/model.glb",
+      "pivot": "Area coordinates, Z up",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_set.py is initial authoring only; edit the adopted model.blend. Retained after Rootward Square v3 (2026-10-29) replaced it; no area places it."
+    },
+    "square-beacon": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Root-power beacon: octagonal steps, dial, amber bell and copper dome",
+      "source": "art/source/world/square-beacon/v1/model.blend",
+      "runtime": "assets/world/square-beacon/model.glb",
+      "pivot": "Ground centre; the dial faces logical south-east, toward the camera",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_landmarks.py is initial authoring only; edit the adopted model.blend. Retained after Rootward Square v3 (2026-10-29) replaced it; no area places it."
+    },
+    "square-guildhall": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Haverlund guild hall",
+      "source": "art/source/world/square-guildhall/v1/model.blend",
+      "runtime": "assets/world/square-guildhall/model.glb",
+      "pivot": "Footprint centre at ground; front toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_landmarks.py is initial authoring only; edit the adopted model.blend."
+    },
+    "square-post-office": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Square post office",
+      "source": "art/source/world/square-post-office/v1/model.blend",
+      "runtime": "assets/world/square-post-office/model.glb",
+      "pivot": "Footprint centre at ground; front toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_landmarks.py is initial authoring only; edit the adopted model.blend. Retained after Rootward Square v3 (2026-10-29) replaced it; no area places it."
+    },
+    "square-west-terrace": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Morning Loaf, the greengrocer and Finch & Sons",
+      "source": "art/source/world/square-west-terrace/v1/model.blend",
+      "runtime": "assets/world/square-west-terrace/model.glb",
+      "pivot": "Footprint centre at ground; shop fronts toward Blender +X (east)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_landmarks.py is initial authoring only; edit the adopted model.blend. Replaced on Rootward Square by haverlund-bakery, -greengrocer and -bookshop (2026-10-29)."
+    },
+    "square-banner-lamp": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Iron lamppost with the town banner",
+      "source": "art/source/world/square-banner-lamp/v1/model.blend",
+      "runtime": "assets/world/square-banner-lamp/model.glb",
+      "pivot": "Base centre; banner arm toward +X",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_props.py is initial authoring only; edit the adopted model.blend. Separate lamp_glass mesh for fixture lamps; the banner is cloth_banner, swayed by interior.life.sway."
+    },
+    "square-flower-stall": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Flower stall under a canvas roof",
+      "source": "art/source/world/square-flower-stall/v1/model.blend",
+      "runtime": "assets/world/square-flower-stall/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_props.py is initial authoring only; edit the adopted model.blend."
+    },
+    "square-fruit-stall": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Fruit stall under a striped roof",
+      "source": "art/source/world/square-fruit-stall/v1/model.blend",
+      "runtime": "assets/world/square-fruit-stall/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_props.py is initial authoring only; edit the adopted model.blend."
+    },
+    "square-tree-planter": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Shade tree in a stone planter with seats",
+      "source": "art/source/world/square-tree-planter/v1/model.blend",
+      "runtime": "assets/world/square-tree-planter/model.glb",
+      "pivot": "Planter centre at ground; seats on the south and east sides",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_props.py is initial authoring only; edit the adopted model.blend."
+    },
+    "square-timber-store": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Building timber, crates and tools",
+      "source": "art/source/world/square-timber-store/v1/model.blend",
+      "runtime": "assets/world/square-timber-store/model.glb",
+      "pivot": "Ground centre; working side toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_props.py is initial authoring only; edit the adopted model.blend."
+    },
+    "robot-pip": {
+      "version": "v2",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Pip, the postal robot",
+      "source": "art/source/world/robot-pip/v2/model.blend",
+      "runtime": "assets/world/robot-pip/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y; wheels are separate nodes wheel_* turning about X",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Square scenery. A working robot stands where the area document places it; robots on their rounds move along interior.life.robots, presentation only, never blocking. Separate wheel pivots carry wheel_radius metadata for correct rolling distance.",
+      "notes": "Concept-matched native source refinement after docs/concept/v0.72/art/robots/pip-sheet.png. Existing v1 source preserved. Refinement records and packed Blender-painted surfaces: art/source/world/sparks-robot-refinement/v1/. Edit the adopted v2 model.blend; use scripts/world-art.sh build robot-pip. User revision: no satchel; front cubbies hold small parcels.",
+      "spark_blink": true
+    },
+    "robot-trowel": {
+      "version": "v2",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Trowel, the gardening robot",
+      "source": "art/source/world/robot-trowel/v2/model.blend",
+      "runtime": "assets/world/robot-trowel/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y; wheels are separate nodes wheel_* turning about X",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Square scenery. A working robot stands where the area document places it; robots on their rounds move along interior.life.robots, presentation only, never blocking. Separate wheel pivots carry wheel_radius metadata for correct rolling distance.",
+      "notes": "Concept-matched native source refinement after docs/concept/v0.72/art/robots/trowel-sheet.png. Existing v1 source preserved. Refinement records and packed Blender-painted surfaces: art/source/world/sparks-robot-refinement/v1/. Edit the adopted v2 model.blend; use scripts/world-art.sh build robot-trowel.",
+      "spark_blink": true
+    },
+    "robot-wick": {
+      "version": "v2",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Wick, the lamplighting robot",
+      "source": "art/source/world/robot-wick/v2/model.blend",
+      "runtime": "assets/world/robot-wick/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y; wheels are separate nodes wheel_* turning about X",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Square scenery. A working robot stands where the area document places it; robots on their rounds move along interior.life.robots, presentation only, never blocking. Separate wheel pivots carry wheel_radius metadata for correct rolling distance.",
+      "notes": "Concept-matched native source refinement after docs/concept/v0.72/art/robots/wick-sheet.png. Existing v1 source preserved. Refinement records and packed Blender-painted surfaces: art/source/world/sparks-robot-refinement/v1/. Edit the adopted v2 model.blend; use scripts/world-art.sh build robot-wick. Pole stays in its own left hand (+X in Blender with front -Y).",
+      "spark_blink": true
+    },
+    "robot-heron": {
+      "version": "v2",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Heron, the crane robot",
+      "source": "art/source/world/robot-heron/v2/model.blend",
+      "runtime": "assets/world/robot-heron/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y; wheels are separate nodes wheel_* turning about X",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Square scenery. A working robot stands where the area document places it; robots on their rounds move along interior.life.robots, presentation only, never blocking. Separate wheel pivots carry wheel_radius metadata for correct rolling distance.",
+      "notes": "Concept-matched native source refinement after docs/concept/v0.72/art/robots/heron-sheet.png. Existing v1 source preserved. Refinement records and packed Blender-painted surfaces: art/source/world/sparks-robot-refinement/v1/. Edit the adopted v2 model.blend; use scripts/world-art.sh build robot-heron.",
+      "spark_blink": true
+    },
+    "robot-tender": {
+      "version": "v2",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Tender, the maintenance robot",
+      "source": "art/source/world/robot-tender/v2/model.blend",
+      "runtime": "assets/world/robot-tender/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y; wheels are separate nodes wheel_* turning about X",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Square scenery. A working robot stands where the area document places it; robots on their rounds move along interior.life.robots, presentation only, never blocking. Separate wheel pivots carry wheel_radius metadata for correct rolling distance.",
+      "notes": "Concept-matched native source refinement after docs/concept/v0.72/art/robots/tender-sheet.png. Existing v1 source preserved. Refinement records and packed Blender-painted surfaces: art/source/world/sparks-robot-refinement/v1/. Edit the adopted v2 model.blend; use scripts/world-art.sh build robot-tender. Moss and service coupling stay rear-right (-X,+Y in Blender).",
+      "spark_blink": true
+    },
+    "robot-tally": {
+      "version": "v2",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Tally, the trading robot",
+      "source": "art/source/world/robot-tally/v2/model.blend",
+      "runtime": "assets/world/robot-tally/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y; wheels are separate nodes wheel_* turning about X",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Square scenery. A working robot stands where the area document places it; robots on their rounds move along interior.life.robots, presentation only, never blocking. Separate wheel pivots carry wheel_radius metadata for correct rolling distance.",
+      "notes": "Concept-matched native source refinement after docs/concept/v0.72/art/robots/tally-sheet.png. Existing v1 source preserved. Refinement records and packed Blender-painted surfaces: art/source/world/sparks-robot-refinement/v1/. Edit the adopted v2 model.blend; use scripts/world-art.sh build robot-tally.",
+      "spark_blink": true
+    },
+    "seaside-rosewash-house": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "showcase_only",
+      "label": "Rosewash lane house",
+      "source": "art/source/world/seaside-rosewash-house/v1/model.blend",
+      "runtime": "assets/world/seaside-rosewash-house/model.glb",
+      "pivot": "Footprint centre at ground; front door toward Blender -Y (Godot +Z). Walls 5.4 x 4.6 (the upper floor oversails the front by 0.16); the rear porch, log store and laundry pole reach 2.2 north. No paving: streets and yards are separate pieces.",
+      "logical_footprint": [
+        -2.7,
+        -2.46,
+        5.4,
+        4.76
+      ],
+      "illustrated_edges": true,
+      "behavior": "Static background house, not placed in any area yet. A placement would own collision and support; doors are not enterable. HouseVariants presents per-placement paintings and dressing.",
+      "variants": {
+        "textures": "res://assets/world/textures/seaside-houses/manifest.json",
+        "surfaces": {
+          "plaster": {
+            "materials": [
+              "seaside_plaster"
+            ],
+            "authored": "seaside_plaster_rose",
+            "choices": [
+              "seaside_plaster_cream",
+              "seaside_plaster_rose",
+              "seaside_plaster_ochre"
+            ]
+          },
+          "roof": {
+            "materials": [
+              "seaside_roof"
+            ],
+            "authored": "seaside_roof_terracotta",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ]
+          },
+          "ridge": {
+            "materials": [
+              "seaside_ridge"
+            ],
+            "authored": "seaside_roof_terracotta",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ],
+            "follows": "roof"
+          },
+          "stone": {
+            "materials": [
+              "seaside_stone"
+            ],
+            "authored": "seaside_stone_limestone",
+            "choices": [
+              "seaside_stone_limestone",
+              "seaside_stone_honey",
+              "seaside_stone_grey"
+            ]
+          },
+          "timber": {
+            "materials": [
+              "seaside_timber"
+            ],
+            "authored": "seaside_timber_oak",
+            "choices": [
+              "seaside_timber_oak",
+              "seaside_timber_dark",
+              "seaside_timber_driftwood"
+            ]
+          },
+          "shutter": {
+            "materials": [
+              "seaside_shutter"
+            ],
+            "authored": "seaside_shutter_teal",
+            "choices": [
+              "seaside_shutter_teal",
+              "seaside_shutter_sage",
+              "seaside_shutter_blue"
+            ]
+          }
+        },
+        "details": {
+          "window_boxes": 0.85,
+          "planters": 0.85,
+          "vines": 0.6,
+          "yard": 0.8,
+          "wood_store": 0.7,
+          "laundry": 0.55
+        },
+        "alternates": {
+          "chimney": [
+            "brick",
+            "stone"
+          ],
+          "shutters": [
+            "open",
+            "drawn"
+          ]
+        }
+      },
+      "notes": "F in the concept plates: compact two storeys plus loft. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses.py (with house_kit.py) is initial authoring only; edit the adopted model.blend."
+    },
+    "seaside-saltwind-house": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "showcase_only",
+      "label": "Saltwind apartment house",
+      "source": "art/source/world/seaside-saltwind-house/v1/model.blend",
+      "runtime": "assets/world/seaside-saltwind-house/model.glb",
+      "pivot": "Footprint centre at ground; front door toward Blender -Y (Godot +Z). Walls 8.6 x 6.0; the rear laundry alcove reaches 1.6 north. No paving: streets and yards are separate pieces.",
+      "logical_footprint": [
+        -4.3,
+        -3.0,
+        8.6,
+        6.0
+      ],
+      "illustrated_edges": true,
+      "behavior": "Static background house, not placed in any area yet. A placement would own collision and support; doors are not enterable. HouseVariants presents per-placement paintings and dressing.",
+      "variants": {
+        "textures": "res://assets/world/textures/seaside-houses/manifest.json",
+        "surfaces": {
+          "plaster": {
+            "materials": [
+              "seaside_plaster"
+            ],
+            "authored": "seaside_plaster_ochre",
+            "choices": [
+              "seaside_plaster_cream",
+              "seaside_plaster_rose",
+              "seaside_plaster_ochre"
+            ]
+          },
+          "roof": {
+            "materials": [
+              "seaside_roof"
+            ],
+            "authored": "seaside_roof_teal",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ]
+          },
+          "ridge": {
+            "materials": [
+              "seaside_ridge"
+            ],
+            "authored": "seaside_roof_terracotta",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ],
+            "follows": "roof"
+          },
+          "stone": {
+            "materials": [
+              "seaside_stone"
+            ],
+            "authored": "seaside_stone_limestone",
+            "choices": [
+              "seaside_stone_limestone",
+              "seaside_stone_honey",
+              "seaside_stone_grey"
+            ]
+          },
+          "timber": {
+            "materials": [
+              "seaside_timber"
+            ],
+            "authored": "seaside_timber_oak",
+            "choices": [
+              "seaside_timber_oak",
+              "seaside_timber_dark",
+              "seaside_timber_driftwood"
+            ]
+          },
+          "shutter": {
+            "materials": [
+              "seaside_shutter"
+            ],
+            "authored": "seaside_shutter_teal",
+            "choices": [
+              "seaside_shutter_teal",
+              "seaside_shutter_sage",
+              "seaside_shutter_blue"
+            ]
+          }
+        },
+        "details": {
+          "window_boxes": 0.85,
+          "planters": 0.85,
+          "vines": 0.5,
+          "yard": 0.8,
+          "laundry": 0.6
+        },
+        "alternates": {
+          "chimney": [
+            "brick",
+            "stone"
+          ],
+          "shutters": [
+            "open",
+            "drawn"
+          ],
+          "front_door": [
+            "oak",
+            "painted"
+          ]
+        }
+      },
+      "notes": "E in the concept plates: broad, three storeys under a low hipped roof. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses.py (with house_kit.py) is initial authoring only; edit the adopted model.blend."
+    },
+    "seaside-lantern-row-house": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "showcase_only",
+      "illustrated_edges": true,
+      "behavior": "Static background house, not placed in any area yet. A placement would own collision and support; doors are not enterable. HouseVariants presents per-placement paintings and dressing.",
+      "label": "Lantern Row lodging house",
+      "source": "art/source/world/seaside-lantern-row-house/v1/model.blend",
+      "runtime": "assets/world/seaside-lantern-row-house/model.glb",
+      "pivot": "Footprint centre at ground; front door and street gable toward Blender -Y (Godot +Z). Walls 4.0 x 5.6, eave 11.0, ridge 13.6; the rear pantry reaches 1.4 north. No paving.",
+      "logical_footprint": [
+        -2.0,
+        -2.8,
+        4.0,
+        5.6
+      ],
+      "variants": {
+        "textures": "res://assets/world/textures/seaside-houses/manifest.json",
+        "surfaces": {
+          "plaster": {
+            "materials": [
+              "seaside_plaster"
+            ],
+            "authored": "seaside_plaster_cream",
+            "choices": [
+              "seaside_plaster_cream",
+              "seaside_plaster_rose",
+              "seaside_plaster_ochre"
+            ]
+          },
+          "roof": {
+            "materials": [
+              "seaside_roof"
+            ],
+            "authored": "seaside_roof_terracotta",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ]
+          },
+          "ridge": {
+            "materials": [
+              "seaside_ridge"
+            ],
+            "authored": "seaside_roof_terracotta",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ],
+            "follows": "roof"
+          },
+          "stone": {
+            "materials": [
+              "seaside_stone"
+            ],
+            "authored": "seaside_stone_limestone",
+            "choices": [
+              "seaside_stone_limestone",
+              "seaside_stone_honey",
+              "seaside_stone_grey"
+            ]
+          },
+          "timber": {
+            "materials": [
+              "seaside_timber"
+            ],
+            "authored": "seaside_timber_oak",
+            "choices": [
+              "seaside_timber_oak",
+              "seaside_timber_dark",
+              "seaside_timber_driftwood"
+            ]
+          },
+          "shutter": {
+            "materials": [
+              "seaside_shutter"
+            ],
+            "authored": "seaside_shutter_teal",
+            "choices": [
+              "seaside_shutter_teal",
+              "seaside_shutter_sage",
+              "seaside_shutter_blue"
+            ]
+          }
+        },
+        "details": {
+          "window_boxes": 0.85,
+          "planters": 0.85,
+          "vines": 0.6,
+          "yard": 0.8,
+          "laundry": 0.55
+        },
+        "alternates": {
+          "chimney": [
+            "brick",
+            "stone"
+          ],
+          "shutters": [
+            "open",
+            "drawn"
+          ]
+        }
+      },
+      "notes": "D in the concept plates: tall and narrow, four storeys plus attic, for thin gaps and taller roof accents. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses_dgh.py (with house_kit.py) is initial authoring only; edit the adopted model.blend."
+    },
+    "seaside-shingle-court-cottage": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "showcase_only",
+      "illustrated_edges": true,
+      "behavior": "Static background house, not placed in any area yet. A placement would own collision and support; doors are not enterable. HouseVariants presents per-placement paintings and dressing.",
+      "label": "Shingle Court cottage",
+      "source": "art/source/world/seaside-shingle-court-cottage/v1/model.blend",
+      "runtime": "assets/world/seaside-shingle-court-cottage/model.glb",
+      "pivot": "Footprint centre at ground; front door toward Blender -Y (Godot +Z). Walls 8.0 x 5.0, eave 2.8, ridge 5.3; the rear stoop reaches 1.7 north and the optional courtyard gate 2.3 east. No paving.",
+      "logical_footprint": [
+        -4.0,
+        -2.5,
+        8.0,
+        5.0
+      ],
+      "variants": {
+        "textures": "res://assets/world/textures/seaside-houses/manifest.json",
+        "surfaces": {
+          "plaster": {
+            "materials": [
+              "seaside_plaster"
+            ],
+            "authored": "seaside_plaster_cream",
+            "choices": [
+              "seaside_plaster_cream",
+              "seaside_plaster_rose",
+              "seaside_plaster_ochre"
+            ]
+          },
+          "roof": {
+            "materials": [
+              "seaside_roof"
+            ],
+            "authored": "seaside_roof_terracotta",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ]
+          },
+          "ridge": {
+            "materials": [
+              "seaside_ridge"
+            ],
+            "authored": "seaside_roof_terracotta",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ],
+            "follows": "roof"
+          },
+          "stone": {
+            "materials": [
+              "seaside_stone"
+            ],
+            "authored": "seaside_stone_limestone",
+            "choices": [
+              "seaside_stone_limestone",
+              "seaside_stone_honey",
+              "seaside_stone_grey"
+            ]
+          },
+          "timber": {
+            "materials": [
+              "seaside_timber"
+            ],
+            "authored": "seaside_timber_oak",
+            "choices": [
+              "seaside_timber_oak",
+              "seaside_timber_dark",
+              "seaside_timber_driftwood"
+            ]
+          },
+          "shutter": {
+            "materials": [
+              "seaside_shutter"
+            ],
+            "authored": "seaside_shutter_teal",
+            "choices": [
+              "seaside_shutter_teal",
+              "seaside_shutter_sage",
+              "seaside_shutter_blue"
+            ]
+          }
+        },
+        "details": {
+          "window_boxes": 0.85,
+          "planters": 0.85,
+          "vines": 0.6,
+          "yard": 0.8,
+          "laundry": 0.5,
+          "garden_gate": 0.6
+        },
+        "alternates": {
+          "chimney": [
+            "stone",
+            "brick"
+          ],
+          "shutters": [
+            "open",
+            "drawn"
+          ]
+        }
+      },
+      "notes": "G in the concept plates: low and wide, one storey plus loft, for courtyards and lower roof gaps. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses_dgh.py (with house_kit.py) is initial authoring only; edit the adopted model.blend."
+    },
+    "seaside-eaveside-terrace": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "showcase_only",
+      "illustrated_edges": true,
+      "behavior": "Static background house, not placed in any area yet. A placement would own collision and support; doors are not enterable. HouseVariants presents per-placement paintings and dressing.",
+      "label": "Eaveside terrace pair",
+      "source": "art/source/world/seaside-eaveside-terrace/v1/model.blend",
+      "runtime": "assets/world/seaside-eaveside-terrace/model.glb",
+      "pivot": "Ground pivot 0.1 east of the pair's footprint centre; front doors toward Blender -Y (Godot +Z). West home 4.0 x 5.2 (eave 8.2, ridge 10.6), east home 4.6 x 4.4 (eave 5.5), joined at x = -0.4; the rear wash house and washing line reach 2.1 north of the east home. No paving.",
+      "logical_footprint": [
+        -4.4,
+        -2.6,
+        8.6,
+        5.2
+      ],
+      "variants": {
+        "textures": "res://assets/world/textures/seaside-houses/manifest.json",
+        "surfaces": {
+          "plaster": {
+            "materials": [
+              "seaside_plaster"
+            ],
+            "authored": "seaside_plaster_cream",
+            "choices": [
+              "seaside_plaster_cream",
+              "seaside_plaster_rose",
+              "seaside_plaster_ochre"
+            ]
+          },
+          "roof": {
+            "materials": [
+              "seaside_roof"
+            ],
+            "authored": "seaside_roof_terracotta",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ]
+          },
+          "ridge": {
+            "materials": [
+              "seaside_ridge"
+            ],
+            "authored": "seaside_roof_terracotta",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ],
+            "follows": "roof"
+          },
+          "stone": {
+            "materials": [
+              "seaside_stone"
+            ],
+            "authored": "seaside_stone_limestone",
+            "choices": [
+              "seaside_stone_limestone",
+              "seaside_stone_honey",
+              "seaside_stone_grey"
+            ]
+          },
+          "timber": {
+            "materials": [
+              "seaside_timber"
+            ],
+            "authored": "seaside_timber_oak",
+            "choices": [
+              "seaside_timber_oak",
+              "seaside_timber_dark",
+              "seaside_timber_driftwood"
+            ]
+          },
+          "shutter": {
+            "materials": [
+              "seaside_shutter"
+            ],
+            "authored": "seaside_shutter_teal",
+            "choices": [
+              "seaside_shutter_teal",
+              "seaside_shutter_sage",
+              "seaside_shutter_blue"
+            ]
+          },
+          "plaster_2": {
+            "materials": [
+              "seaside_plaster_2"
+            ],
+            "authored": "seaside_plaster_ochre",
+            "choices": [
+              "seaside_plaster_cream",
+              "seaside_plaster_rose",
+              "seaside_plaster_ochre"
+            ]
+          },
+          "roof_2": {
+            "materials": [
+              "seaside_roof_2"
+            ],
+            "authored": "seaside_roof_teal",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ]
+          },
+          "ridge_2": {
+            "materials": [
+              "seaside_ridge_2"
+            ],
+            "authored": "seaside_roof_terracotta",
+            "choices": [
+              "seaside_roof_terracotta",
+              "seaside_roof_teal",
+              "seaside_roof_slate"
+            ],
+            "follows": "roof_2"
+          },
+          "shutter_2": {
+            "materials": [
+              "seaside_shutter_2"
+            ],
+            "authored": "seaside_shutter_teal",
+            "choices": [
+              "seaside_shutter_teal",
+              "seaside_shutter_sage",
+              "seaside_shutter_blue"
+            ]
+          }
+        },
+        "details": {
+          "window_boxes": 0.85,
+          "planters": 0.85,
+          "vines": 0.6,
+          "yard": 0.8,
+          "laundry": 0.55
+        },
+        "alternates": {
+          "chimney": [
+            "stone",
+            "brick"
+          ],
+          "shutters": [
+            "open",
+            "drawn"
+          ]
+        }
+      },
+      "notes": "H in the concept plates: joined three- and two-storey homes with a stepped roofline, for dense rows. Slots ending _2 paint the east home. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses_dgh.py (with house_kit.py) is initial authoring only; edit the adopted model.blend."
+    },
+    "rootwell-beacon": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "The Rootwell, the town's power beacon",
+      "source": "art/source/world/rootwell-beacon/v1/model.blend",
+      "runtime": "assets/world/rootwell-beacon/model.glb",
+      "pivot": "Ground centre. The octagon has a face toward each compass point and diagonal; the pressure gauge faces south-east, toward the game camera (notice board south, maintenance door east, service panel north-west). Steps 7.5 across the flats, 8.1 across the corners; the finial stands 9.5 high.",
+      "logical_footprint": [
+        -3.75,
+        -3.75,
+        7.5,
+        7.5
+      ],
+      "illustrated_edges": true,
+      "story_parts": [
+        "gauge_needle",
+        "maintenance_door",
+        "valve_wheel_e",
+        "valve_wheel_n",
+        "valve_wheel_w",
+        "valve_wheel_s",
+        "valve_wheel_service_w",
+        "valve_wheel_service_n",
+        "root",
+        "root_light"
+      ],
+      "behavior": "The centrepiece of Rootward Square v3 at (42, 24); the area document owns its blocks, inspections and lamps. Parts that story may move later are separate nodes with their pivots (story_parts): the needle turns about its local Z (-27 degrees per unit of pressure in Godot, authored at 1.3), the door swings about its hinge (local Y), the valve wheels spin about their axles. Model geometry grants no capability; placements, collision and interactions belong to the area document.",
+      "notes": "After the approved v0.72 paintings docs/concept/v0.72/art/rootwell/. art/source/world/rootwell/v1/author_rootwell.py (with the seaside house kit) is initial authoring only; edit the adopted model.blend. Replaces square-beacon in a later square layout pass."
+    },
+    "haverlund-square-ground": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Rootward Square ground and the town's land round it",
+      "source": "art/source/world/haverlund-square-ground/v1/model.blend",
+      "runtime": "assets/world/haverlund-square-ground/model.glb",
+      "pivot": "Area coordinates; Blender +X is logical +x, +Y logical +y, Z up. Level 0 (the square) at z 0; the lower town at z -10.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Base land of Rootward Square v3 only: paving, levels, retaining walls, copings, stairs, the Rootwell's setts and brass channels, and the town's ground past every edge. Buildings, railings, lamps, props and houses are separate models placed by content/areas/haverlund-square.json, which owns every walkable cell, level, stair and block.",
+      "notes": "Built from art/source/world/square-hub/v1/plan.py by author_ground.py (initial authoring only); edit the adopted model.blend. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator."
+    },
+    "town-balustrade": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Stone balustrade bay, 3 m",
+      "source": "art/source/world/town-balustrade/v1/model.blend",
+      "runtime": "assets/world/town-balustrade/model.glb",
+      "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+      "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-balustrade-short": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Stone balustrade bay, 1.5 m",
+      "source": "art/source/world/town-balustrade-short/v1/model.blend",
+      "runtime": "assets/world/town-balustrade-short/model.glb",
+      "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+      "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-balustrade-pier": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Balustrade pier",
+      "source": "art/source/world/town-balustrade-pier/v1/model.blend",
+      "runtime": "assets/world/town-balustrade-pier/model.glb",
+      "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+      "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-railing": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Iron railing bay, 2 m",
+      "source": "art/source/world/town-railing/v1/model.blend",
+      "runtime": "assets/world/town-railing/model.glb",
+      "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+      "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-railing-short": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Iron railing bay, 1 m",
+      "source": "art/source/world/town-railing-short/v1/model.blend",
+      "runtime": "assets/world/town-railing-short/model.glb",
+      "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+      "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-railing-stair": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Raked iron railing for one stair cell",
+      "source": "art/source/world/town-railing-stair/v1/model.blend",
+      "runtime": "assets/world/town-railing-stair/model.glb",
+      "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+      "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-railing-post": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Iron railing post",
+      "source": "art/source/world/town-railing-post/v1/model.blend",
+      "runtime": "assets/world/town-railing-post/model.glb",
+      "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+      "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-garden-wall": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Garden wall bay, 3 m",
+      "source": "art/source/world/town-garden-wall/v1/model.blend",
+      "runtime": "assets/world/town-garden-wall/model.glb",
+      "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+      "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-garden-wall-short": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Garden wall bay, 1.5 m",
+      "source": "art/source/world/town-garden-wall-short/v1/model.blend",
+      "runtime": "assets/world/town-garden-wall-short/model.glb",
+      "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+      "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-garden-pier": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Garden wall pier",
+      "source": "art/source/world/town-garden-pier/v1/model.blend",
+      "runtime": "assets/world/town-garden-pier/model.glb",
+      "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+      "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-garden-gate": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Garden gate between two piers, 2 m",
+      "source": "art/source/world/town-garden-gate/v1/model.blend",
+      "runtime": "assets/world/town-garden-gate/model.glb",
+      "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+      "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+    },
+    "haverlund-post-office": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Haverlund post office",
+      "source": "art/source/world/haverlund-post-office/v1/model.blend",
+      "runtime": "assets/world/haverlund-post-office/model.glb",
+      "pivot": "Footprint centre at ground; front toward Blender -Y (Godot +Z). Walls 9.0 x 6.8; the parcel bench and sign reach 1.0 in front.",
+      "logical_footprint": [
+        -4.5,
+        -3.4,
+        9.0,
+        6.8
+      ],
+      "illustrated_edges": true,
+      "behavior": "Static square building. Placement, blocks and inspections belong to the area document; the door is not enterable.",
+      "notes": "Replaces square-post-office on Rootward Square v3. art/source/world/square-hub/v1/author_buildings.py is initial authoring only; edit the adopted model.blend."
+    },
+    "haverlund-fruit-market": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "The fruit market hall",
+      "source": "art/source/world/haverlund-fruit-market/v1/model.blend",
+      "runtime": "assets/world/haverlund-fruit-market/model.glb",
+      "pivot": "Footprint centre at ground; the open arcade toward Blender -Y (Godot +Z). 12 x 8; the awnings reach 1.0 in front.",
+      "logical_footprint": [
+        -6.0,
+        -4.0,
+        12.0,
+        8.0
+      ],
+      "illustrated_edges": true,
+      "behavior": "Static square building, open-fronted. Placement and blocks belong to the area document; its stalls are scenery.",
+      "notes": "New on Rootward Square v3. art/source/world/square-hub/v1/author_buildings.py is initial authoring only; edit the adopted model.blend."
+    },
+    "haverlund-bank": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Haverlund Savings, the bank",
+      "source": "art/source/world/haverlund-bank/v1/model.blend",
+      "runtime": "assets/world/haverlund-bank/model.glb",
+      "pivot": "Footprint centre at ground; the portico toward Blender -Y (Godot +Z). Walls 10 x 8; the steps reach 1.3 in front.",
+      "logical_footprint": [
+        -5.0,
+        -4.0,
+        10.0,
+        8.0
+      ],
+      "illustrated_edges": true,
+      "behavior": "Static square building. Placement, blocks and inspections belong to the area document; the doors are not enterable.",
+      "notes": "New on Rootward Square v3. art/source/world/square-hub/v1/author_buildings.py is initial authoring only; edit the adopted model.blend."
+    },
+    "haverlund-lane-surround": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "The town's land round Spindle Lane",
+      "source": "art/source/world/haverlund-lane-surround/v1/model.blend",
+      "runtime": "assets/world/haverlund-lane-surround/model.glb",
+      "pivot": "Lane area coordinates; Blender +X is logical +x, +Y logical +y, Z up. The lower town at z -8.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Land only, round the haverlund-lane-set: the lower town south and east, the hill west, the town steps north, and dressed walls over the set's cut faces. It never draws the lane's own cells; nothing here is walkable. Houses are separate placed models.",
+      "notes": "Built from art/source/world/square-hub/v1/lane_plan.py by author_lane_ground.py (initial authoring only); edit the adopted model.blend. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator."
+    },
+    "town-power-pillar": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Glowing power pillar",
+      "source": "art/source/world/town-power-pillar/v1/model.blend",
+      "runtime": "assets/world/town-power-pillar/model.glb",
+      "pivot": "Top of the wall face at its centre; hangs 14 m down and stands out of the wall toward Blender -Y (Godot +Z).",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "A large amber power column on a retaining wall. Its glass is flagged power_column for the moving-light shader. Placed where the carved pilasters stood.",
+      "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend."
+    },
+    "rootwell-plaza": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "The Rootwell plaza ring",
+      "source": "art/source/world/rootwell-plaza/v1/model.blend",
+      "runtime": "assets/world/rootwell-plaza/model.glb",
+      "pivot": "The Rootwell's centre at ground.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Paving ring round the enlarged Rootwell with its brass band and four conduit bridges (glass flagged power_grid). Nothing here is walkable or blocks.",
+      "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-kiosk": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Newspaper kiosk",
+      "source": "art/source/world/town-kiosk/v1/model.blend",
+      "runtime": "assets/world/town-kiosk/model.glb",
+      "pivot": "Centre at ground; the counter faces Blender -Y.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-fountain": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Drinking fountain",
+      "source": "art/source/world/town-fountain/v1/model.blend",
+      "runtime": "assets/world/town-fountain/model.glb",
+      "pivot": "Step centre at ground; the spout faces Blender -Y.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-bollard": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Cast-iron bollard",
+      "source": "art/source/world/town-bollard/v1/model.blend",
+      "runtime": "assets/world/town-bollard/model.glb",
+      "pivot": "Centre at ground.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-bin": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Litter bin",
+      "source": "art/source/world/town-bin/v1/model.blend",
+      "runtime": "assets/world/town-bin/model.glb",
+      "pivot": "Post at the origin; the bin hangs toward Blender -Y.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-parasol-table": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Café table with parasol",
+      "source": "art/source/world/town-parasol-table/v1/model.blend",
+      "runtime": "assets/world/town-parasol-table/model.glb",
+      "pivot": "Table centre at ground.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-lawn": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Lawn panel 5 x 5",
+      "source": "art/source/world/town-lawn/v1/model.blend",
+      "runtime": "assets/world/town-lawn/model.glb",
+      "pivot": "Centre at ground.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-tree-grate": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Tree grate with guard",
+      "source": "art/source/world/town-tree-grate/v1/model.blend",
+      "runtime": "assets/world/town-tree-grate/model.glb",
+      "pivot": "Centre at ground; a tree stands on it.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend."
+    },
+    "haverlund-bakery": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Morning Loaf, the bakery",
+      "source": "art/source/world/haverlund-bakery/v1/model.blend",
+      "runtime": "assets/world/haverlund-bakery/model.glb",
+      "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
+      "logical_footprint": [
+        -2.5,
+        -3.2,
+        5.0,
+        6.4
+      ],
+      "illustrated_edges": true,
+      "behavior": "Static square building. The area document owns its blocks, inspections and the wares' blocks; the door is not enterable.",
+      "notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend."
+    },
+    "haverlund-greengrocer": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "The greengrocer",
+      "source": "art/source/world/haverlund-greengrocer/v1/model.blend",
+      "runtime": "assets/world/haverlund-greengrocer/model.glb",
+      "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
+      "logical_footprint": [
+        -2.3,
+        -3.2,
+        4.6,
+        6.4
+      ],
+      "illustrated_edges": true,
+      "behavior": "Static square building. The area document owns its blocks, inspections and the wares' blocks; the door is not enterable.",
+      "notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend."
+    },
+    "haverlund-bookshop": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Finch & Sons, books",
+      "source": "art/source/world/haverlund-bookshop/v1/model.blend",
+      "runtime": "assets/world/haverlund-bookshop/model.glb",
+      "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
+      "logical_footprint": [
+        -2.5,
+        -3.2,
+        5.0,
+        6.4
+      ],
+      "illustrated_edges": true,
+      "behavior": "Static square building. The area document owns its blocks, inspections and the wares' blocks; the door is not enterable.",
+      "notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend."
+    },
+    "haverlund-cafe": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "The Harbour Cup café",
+      "source": "art/source/world/haverlund-cafe/v1/model.blend",
+      "runtime": "assets/world/haverlund-cafe/model.glb",
+      "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
+      "logical_footprint": [
+        -3.5,
+        -3.0,
+        7.0,
+        6.0
+      ],
+      "illustrated_edges": true,
+      "behavior": "Static square building. The area document owns its blocks, inspections and the wares' blocks; the door is not enterable.",
+      "notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-festoon": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Festoon lights",
+      "source": "art/source/world/town-festoon/v1/model.blend",
+      "runtime": "assets/world/town-festoon/model.glb",
+      "pivot": "Centre at ground between the two posts; the string runs along Blender X, posts at x = ±4.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_square_life.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-signpost": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Cast-iron fingerpost",
+      "source": "art/source/world/town-signpost/v1/model.blend",
+      "runtime": "assets/world/town-signpost/model.glb",
+      "pivot": "Post at the origin; at turn 0 its arms point to Hill Street, Lantern Row, the Harbour Steps and Spindle Lane from the foot of Spindle Steps.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_square_life.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-planter-bench": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Planter bench",
+      "source": "art/source/world/town-planter-bench/v1/model.blend",
+      "runtime": "assets/world/town-planter-bench/model.glb",
+      "pivot": "Centre at ground; the bench faces Blender -Y.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_square_life.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-bollard-light": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Lit bollard",
+      "source": "art/source/world/town-bollard-light/v1/model.blend",
+      "runtime": "assets/world/town-bollard-light/model.glb",
+      "pivot": "Centre at ground.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_square_life.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-poster-column": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Advertising column",
+      "source": "art/source/world/town-poster-column/v1/model.blend",
+      "runtime": "assets/world/town-poster-column/model.glb",
+      "pivot": "Centre at ground.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_square_life.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-coffee-cart": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Coffee cart",
+      "source": "art/source/world/town-coffee-cart/v1/model.blend",
+      "runtime": "assets/world/town-coffee-cart/model.glb",
+      "pivot": "Centre of the body at ground; the counter faces Blender -Y, handles toward +X.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_square_life.py is initial authoring only; edit the adopted model.blend."
+    },
+    "town-bike-rack": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Bicycle rack",
+      "source": "art/source/world/town-bike-rack/v1/model.blend",
+      "runtime": "assets/world/town-bike-rack/model.glb",
+      "pivot": "Centre at ground; the hoops stand along Blender X.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+      "notes": "art/source/world/square-hub/v1/author_square_life.py is initial authoring only; edit the adopted model.blend."
     }
   },
   "areas": {
@@ -3430,6 +5305,46 @@
       "document": "content/areas/village-mill.json",
       "ground": "procedural cutaway room from interior furniture data",
       "notes": "Instanced per exterior building id through content/interiors/catalog.json; independent state and program memory."
+    },
+    "village-morning": {
+      "document": "content/areas/village-morning.json",
+      "ground": "generated from the document by art/terrain_builder.gd (procedural_test)",
+      "notes": "Village Morning version 3: 64x72 village, retained home lane, monumental enchanted Rootward tree and an enterable town hall. No new residents or lessons.",
+      "presentation": {
+        "post_lamp": "square-lamppost",
+        "illustrated_edges": true,
+        "assets": {
+          "reference-cottage": "painted-cottage",
+          "hearth-oak": "painted-oak"
+        }
+      }
+    },
+    "morning-bedroom": {
+      "document": "content/areas/morning-bedroom.json",
+      "quests": "content/areas/morning-bedroom.quests.json",
+      "ground": "authored procedural cutaway shell in art/morning_room.gd; existing Blender furniture instances from the area document",
+      "notes": "Village Morning starting home only, selected through the per-house interior override. Four movement bindings and four successful bound-key directions complete the first quest."
+    },
+    "morning-town-hall-room": {
+      "document": "content/areas/morning-town-hall-room.json",
+      "ground": "authored cutaway civic shell with adopted furniture",
+      "notes": "Saved per town-hall instance; reception desk, public benches, council table and archives. No new quest or NPC."
+    },
+    "workshop-floor": {
+      "document": "content/areas/workshop-floor.json",
+      "quests": "content/areas/workshop-floor.quests.json",
+      "ground": "Adopted workshop-shell Blender model; furniture, collisions and stairs owned by the area document.",
+      "notes": "Second Sparks room, connected to the loft; 21 adopted workshop assets, 27 placements, inspections, greeting and three connected workshop jobs. Street travel remains deferred."
+    },
+    "haverlund-lane": {
+      "document": "content/areas/haverlund-lane.json",
+      "ground": "Blender set haverlund-lane-set (interior style workshop-lane)",
+      "notes": "Sparks & Machines: the lane outside Nell's workshop, a 24x28 outdoor scene with a painted harbour backdrop: the workshop, Nell's house and Bram's cottage in a row, the green, the rail and the tram halt. Reached through the workshop's street doors."
+    },
+    "haverlund-square": {
+      "document": "content/areas/haverlund-square.json",
+      "ground": "Adopted haverlund-square-set, room style workshop-square",
+      "notes": "Fourth Sparks area. Downhill walk from Spindle Lane; civic and market square with Rootwell. No new quest or tram destination."
     }
   }
 }

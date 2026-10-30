@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "20261029T055601-1abeeb3c",
+  "kind": "update",
+  "title": "Update Loft wardrobe",
+  "asset_type": "world model",
+  "status": "finished",
+  "notes": "Turn the two flat surfaces on the closed door into two different posters.  The posters can be random as this can be multiply used dresser.",
+  "asset": {
+    "id": "loft-wardrobe",
+    "label": "Loft wardrobe",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/loft-wardrobe/v1/model.blend",
+    "runtime": "assets/world/loft-wardrobe/model.glb",
+    "manifest": "assets/world/loft-wardrobe/manifest.json",
+    "catalog_notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority.",
+    "related_files": [
+      "art/source/world/loft-wardrobe/v1/provenance.json",
+      "art/source/world/sparks-loft/v1/flipped_loft_props.py"
+    ],
+    "usage_files": [
+      "content/areas/workshop-loft.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft wardrobe",
+      "source": "art/source/world/loft-wardrobe/v1/model.blend",
+      "runtime": "assets/world/loft-wardrobe/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority."
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:56:01+00:00",
+  "updated": "2026-10-29T06:12:03+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:56:01+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:04:54+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-10-29T06:12:03+00:00",
+      "action": "finish"
+    }
+  ],
+  "result": {
+    "assets": [
+      "loft-wardrobe"
+    ],
+    "summary": "Added distinct travel and botanical posters to the closed door; rebuilt and reviewed in Godot. Full test suite passed.",
+    "review": "pipeline/reviews/2026-10-29-loft-asset-requests.md",
+    "contexts": [
+      {
+        "id": "loft-wardrobe",
+        "label": "Loft wardrobe",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/loft-wardrobe/v1/model.blend",
+        "runtime": "assets/world/loft-wardrobe/model.glb",
+        "manifest": "assets/world/loft-wardrobe/manifest.json",
+        "catalog_notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/loft-wardrobe/v1/provenance.json",
+          "art/source/world/sparks-loft/v1/flipped_loft_props.py"
+        ],
+        "usage_files": [
+          "content/areas/workshop-loft.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_loft",
+          "label": "Loft wardrobe",
+          "source": "art/source/world/loft-wardrobe/v1/model.blend",
+          "runtime": "assets/world/loft-wardrobe/model.glb",
+          "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+          "notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority."
+        }
+      }
+    ],
+    "fingerprints": {
+      "loft-wardrobe": {
+        "source": "8f9014ec0e5e36cba1df85fbb3d0a9b68c54abf5505b927e8ec27859532822ff",
+        "runtime": "6d0c33ca1d481dcfe9174352c2d8ab7650f67848425f68654240f1d2906f2991",
+        "entry": "c39d67e6eb0227003cb0d3b43cc0a2144bef691298e9426defab54059d71a1ee"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "asset": "town-planter-bench",
+  "source": "art/source/world/town-planter-bench/v1/model.blend",
+  "backup": "art/source/world/town-planter-bench/v1/model.pre-plant-style.blend",
+  "before_sha256": "537307162518c923ab5b4bfe30b65e36e66a6413ba3900635a4276be9ec99cdb",
+  "after_sha256": "d252343a95bfa272b5b407957bacaafc84b52e3682019177120301fd29f405c8",
+  "objects": [
+    {
+      "object": "house_paint",
+      "replaced_components": {
+        "leaf": 3,
+        "leaf_dark": 3,
+        "leaf_light": 3,
+        "flower_white": 3,
+        "flower_pink": 3,
+        "flower_yellow": 3,
+        "flower_violet": 3,
+        "cypress": 3
+      },
+      "protected_faces": 42,
+      "protected_sha256": "ff0e860fa86b51d6d78f1c920a0462e47b7c6b4a106829f357314a7c2b1fa7aa"
+    }
+  ],
+  "flower_stems": 12,
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

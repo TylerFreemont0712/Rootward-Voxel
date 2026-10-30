@@ -1,0 +1,13 @@
+{
+  "asset": "square-rootwell",
+  "date": "2026-10-28",
+  "authoring_record": "art/source/world/sparks-square/v1/author.py",
+  "authoring_record_sha256": "104a4fc53246b54206fb22e2a8061e2e2bb921ba42b56164e8deb5f3cbb4c019",
+  "references": [
+    "docs/concept/v0.7/art/5-town/T3-rootward-square-day.wheels.png",
+    "docs/concept/v0.7/art/5-town/T5-rootwell-sheet.png"
+  ],
+  "shared_kit": "art/source/world/sparks-lane/v1/lane_kit.py",
+  "shared_kit_sha256": "26267046a1dc1a943f8d91d12e36863bdd670edc41951c7b46d51683c24d7aec",
+  "note": "New native geometry; packed lane paintings reused. model.blend is editable authority."
+}

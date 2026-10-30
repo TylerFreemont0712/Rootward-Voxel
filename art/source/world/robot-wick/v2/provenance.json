@@ -1,0 +1,11 @@
+{
+  "asset": "robot-wick",
+  "date": "2026-10-29",
+  "previous_source": "art/source/world/robot-wick/v1/model.blend",
+  "previous_source_sha256": "9af651a682a90f0559dffbfae62b523586015627462c01a746bc83df2018782c",
+  "source": "art/source/world/robot-wick/v2/model.blend",
+  "source_sha256": "c8d2adb128ebf291717daaf36a046ebb1f74ed7f253347ffe24af10ad3e89c88",
+  "edit_record": "art/source/world/sparks-robot-refinement/v1/pip_wick_initial_edit.py",
+  "edit_record_sha256": "9d983b94862c14ee32a12939f976d688b4df802f3e2e232a1bde2bde6e93b11d",
+  "note": "Deliberate new source revision after approved robot concept. Existing root/drive-wheel objects retained, proxy shells replaced, wheels resized with axle pivots preserved. Future edits use saved v2 model.blend."
+}

@@ -43,11 +43,11 @@ func _run() -> void:
 		for direction: Vector2i in [outward, Vector2i(-outward.y, outward.x)]:
 			_check(HouseInstances.crossing(area, rules, state, direction, catalog).is_empty(), "Walking away/alongside does not enter: " + house.id)
 		state.player = [door.x + outward.x, door.y + outward.y, 0]
-		_check(HouseInstances.crossing(area, rules, state, -outward, catalog).is_empty(), "A neighboring approach cell does not teleport inside")
+		_check(HouseInstances.crossing(area, rules, state, -outward, catalog).is_empty(), "Walking onto the landing does not enter a cell early: "+house.id)
 	# A deliberately blocked approach cannot initiate travel, even if a caller sets the player's cell there.
 	var blocked_doc: Dictionary = source.document.duplicate(true)
 	var door: Vector2i = HouseInstances.door(area, "home")
-	blocked_doc.props = [{"id":"blocked-door", "asset":"crate-stack", "at":[door.x,door.y], "facing":"S"}]
+	blocked_doc.props = [{"id":"blocked-door", "asset":"wooden-chair", "at":[door.x,door.y], "facing":"S"}]
 	var blocked: Dictionary = AreaDef.parse(blocked_doc, source.assets, source.quests)
 	_check(blocked.ok, "Blocked-door fixture parses")
 	var blocked_rules := LabWorld.new(blocked.area)

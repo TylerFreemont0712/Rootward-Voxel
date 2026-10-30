@@ -21,7 +21,7 @@ func _run() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await physics_frame
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	session = game.session
 	var step: int = 1
 	var failed: bool = false

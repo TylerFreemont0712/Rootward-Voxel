@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "morning-civic-bench",
+  "version": "v1",
+  "source": "art/source/world/morning-civic-bench/v1/model.blend",
+  "source_sha256": "f7aa3477a8b60238b22974f73bc79d3f574f72ccd409877a0e1b9eb9c86d2d3f",
+  "runtime": "assets/world/morning-civic-bench/model.glb",
+  "runtime_sha256": "0a9cd5196ca75f1d4746c783eee1e4ea6fd6211d931937439ff4c7bee0893dd0",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.16999995708466,
+      0.0,
+      -0.25,
+      1.16999995708466,
+      0.899999976158142,
+      0.25
+    ],
+    "geometry_sha256": "7dda7ff09bcbb1c7cf1a343921cb0cc5b581fa6d954b4f602cd61203f4a625b6",
+    "material_records": {
+      "iron": {
+        "albedo": [
+          2235,
+          2667,
+          2745,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_dark": {
+        "albedo": [
+          1490,
+          1765,
+          1843,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "iron_light": {
+        "albedo": [
+          3529,
+          4000,
+          4039,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak": {
+        "albedo": [
+          6902,
+          4784,
+          2706,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      },
+      "oak_light": {
+        "albedo": [
+          7725,
+          5804,
+          3451,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "iron",
+      "iron_dark",
+      "iron_light",
+      "oak",
+      "oak_light"
+    ],
+    "meshes": 5,
+    "triangles": 2704
+  }
+}

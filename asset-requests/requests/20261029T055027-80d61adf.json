@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "id": "20261029T055027-80d61adf",
+  "kind": "delete",
+  "title": "Delete Crate Stack",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "crate-stack",
+    "label": "Crate Stack",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/crate-stack/v1/model.blend",
+    "runtime": "assets/world/crate-stack/model.glb",
+    "manifest": "assets/world/crate-stack/manifest.json",
+    "catalog_notes": "Two closed timber crates with dark corner posts and plank seams. The 0.35 m top crate is offset one voxel to +X, leaving a ledge on the -X side. The footprint is the base crate; nothing overhangs it.",
+    "related_files": [
+      "art/source/world/crate-stack/v1/brief.md",
+      "art/source/world/crate-stack/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Crate Stack",
+      "source": "art/source/world/crate-stack/v1/model.blend",
+      "runtime": "assets/world/crate-stack/model.glb",
+      "pivot": "ground origin at the centre of the base crate; base on z = 0",
+      "logical_footprint": [
+        -0.225,
+        -0.225,
+        0.45,
+        0.45
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Two closed timber crates with dark corner posts and plank seams. The 0.35 m top crate is offset one voxel to +X, leaving a ledge on the -X side. The footprint is the base crate; nothing overhangs it.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:50:27+00:00",
+  "updated": "2026-10-29T06:30:38+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:50:27+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:30:38+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_terrain.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_doorway_boundaries.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_walk_surfaces.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/crate-stack/v1/brief.md",
+    "art/source/world/crate-stack/v1/model.blend",
+    "art/source/world/crate-stack/v1/provenance.json",
+    "assets/world/crate-stack/manifest.json",
+    "assets/world/crate-stack/model.glb",
+    "assets/world/crate-stack/model.glb.import"
+  ]
+}

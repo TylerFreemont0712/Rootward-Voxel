@@ -1,0 +1,59 @@
+{
+  "asset": "haverlund-post-office",
+  "source": "art/source/world/haverlund-post-office/v1/model.blend",
+  "backup": "art/source/world/haverlund-post-office/v1/model.pre-plant-style.blend",
+  "before_sha256": "4f4d8de7feb53ac37ab9e00c0197fec2bc01bd2379e6cc972e968775163ae3e0",
+  "after_sha256": "9b2b09b69b7e4495b188847e53434a7b831f743e4d7191a98dd5ab48f35ea585",
+  "objects": [
+    {
+      "object": "detail_planters",
+      "replaced_components": {
+        "cypress_light": 26,
+        "cypress": 54,
+        "olive": 3,
+        "leaf": 3,
+        "leaf_light": 3
+      },
+      "protected_faces": 128,
+      "protected_sha256": "591adbd3a6ed54aeacf6ec50c675312f2e241c8170f836a9ef8d55cc20724a6d"
+    },
+    {
+      "object": "detail_vines",
+      "replaced_components": {
+        "leaf_dark": 11,
+        "leaf_light": 20,
+        "leaf": 20,
+        "flower_pink": 5,
+        "flower_white": 13
+      },
+      "protected_faces": 84,
+      "protected_sha256": "b2347d62f3090bce3e631a8703ad2f98ddbdad88079dc5070aeb2ddfba1a27e5"
+    },
+    {
+      "object": "detail_window_boxes",
+      "replaced_components": {
+        "leaf": 12,
+        "flower_red": 4,
+        "leaf_light": 6,
+        "flower_pink": 6,
+        "leaf_dark": 12,
+        "flower_white": 3
+      },
+      "protected_faces": 88,
+      "protected_sha256": "ec179a3fec07a455544171a643c600ced19ee916ff525a789445119ed15c4c9a"
+    },
+    {
+      "object": "house_paint",
+      "replaced_components": {
+        "leaf": 6,
+        "leaf_light": 6,
+        "leaf_dark": 4,
+        "flower_white": 6,
+        "flower_red": 6
+      },
+      "protected_faces": 3873,
+      "protected_sha256": "0a0563a482092dd335807954807fb78b01a8f10fac6bfded6f285f71d1860ed5"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

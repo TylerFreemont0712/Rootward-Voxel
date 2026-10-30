@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "id": "20261029T055627-687c8bcd",
+  "kind": "delete",
+  "title": "Delete Mill House",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "mill-house",
+    "label": "Mill House",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/mill-house/v1/model.blend",
+    "runtime": "assets/world/mill-house/model.glb",
+    "manifest": "assets/world/mill-house/manifest.json",
+    "catalog_notes": "Building shell; mill wheel and other mechanisms remain in Godot. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+    "related_files": [
+      "art/source/world/mill-house/v1/building-polish.json",
+      "art/source/world/mill-house/v1/doorways.json",
+      "art/source/world/mill-house/v1/provenance.json",
+      "art/source/world/mill-house/v1/retexture.json",
+      "art/source/world/mill-house/v1/seed.glb.audit.json"
+    ],
+    "usage_files": [
+      "content/areas/archive/kindle-hollow-v1.json",
+      "content/areas/kindle-hollow.json",
+      "content/areas/rune-mill.json",
+      "content/interiors/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "source": "art/source/world/mill-house/v1/model.blend",
+      "runtime": "assets/world/mill-house/model.glb",
+      "pivot": "ground origin; preserve imported root",
+      "logical_footprint": [
+        -1.275,
+        -1.225,
+        2.55,
+        2.45
+      ],
+      "behavior": "visual_only; gameplay rules remain in core",
+      "notes": "Building shell; mill wheel and other mechanisms remain in Godot. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "plaster"
+        ],
+        "roof": [
+          "teal",
+          "teal_dark",
+          "teal_light"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "entrance_oak"
+        ],
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light",
+          "entrance_stone"
+        ],
+        "metal": [
+          "gold",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 1.5,
+        "width": 0.86,
+        "height": 1.82,
+        "bottom": 0.17,
+        "steps": [
+          [
+            2.075,
+            1.5250000000000001,
+            1.51,
+            0.09620000000000001
+          ],
+          [
+            1.645,
+            0.5750000000000001,
+            1.26,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:56:27+00:00",
+  "updated": "2026-10-29T05:56:27+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:56:27+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/interiors/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/rune-mill.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/kindle-hollow.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/archive/kindle-hollow-v1.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "ui/map_view.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "pipeline/world_seed.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/building_review.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_building_refresh.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

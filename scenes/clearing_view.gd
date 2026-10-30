@@ -48,6 +48,7 @@ var _terrain_root: Node3D
 var _terrain_nodes: Dictionary = {}
 var _chunk: int = 0
 var _content: Node3D
+var _area_presentation: Dictionary = {}
 var _decks: Dictionary = {}
 var _lamps: Dictionary = {}
 var _gates: Dictionary = {}
@@ -55,6 +56,9 @@ var _wheels: Array[Node3D] = []
 var _player: Node3D
 var _player_cells: Dictionary = {}
 var _body: Node3D
+var hotaru: HotaruFairy
+## A room's own story presentation (RoomStage.for_area); null in every room that has none.
+var stage: RoomStage
 var _selection: Node3D
 var _route_visual: Node3D
 var _ghost: Node3D
@@ -73,6 +77,9 @@ var _focus_target: Vector3 = Vector3.ZERO
 var _zoom_target: float = 13.0
 var _view_shift: float = 0.0
 var _view_shift_target: float = 0.0
+## An outdoor room's own sun, sky and painted distance (area interior.outdoor); empty everywhere else.
+var _outdoor: Dictionary = {}
+var _backdrop: OutdoorBackdrop
 var _warmth: float = 0.3
 var _warmth_target: float = 0.3
 var _warmth_from_state: bool = true
@@ -80,6 +87,13 @@ var _light_focus: Vector3 = Vector3(1e6, 0, 0)
 var _cinematic_time: float = 0.0
 var _marker_cell: Variant = null
 var _marker_hidden: bool = false
+var terminal_display: ZoneTerminalDisplay
+## "paper" gives the Sparks journey round, outlined route dots, a lit destination and a brass-dial job mark; "" keeps
+## the original square gold route and tiled ring everywhere else.
+var marker_style: String = ""
+var _highlighted: Node3D
+var _highlight_material: ShaderMaterial
+var _motes: Array[Dictionary] = []
 
 
 func _ready() -> void:
@@ -147,6 +161,14 @@ func set_warmth(value: float, follow_state: bool = false) -> void:
 func _apply_warmth(w: float) -> void:
 	if _environment == null:
 		return
+	if not _outdoor.is_empty():
+		# An outdoor room keeps its own daylight; warmth is a valley's evening and does not reach it.
+		_environment.background_color = Color(str(_outdoor.haze))
+		_environment.ambient_light_color = Color(str(_outdoor.ambient.color))
+		_environment.ambient_light_energy = float(_outdoor.ambient.energy)
+		_sun.light_color = Color(str(_outdoor.sun.color))
+		_sun.light_energy = float(_outdoor.sun.energy)
+		return
 	# The void around the valley stays a deep teal night; warmth only lifts it a little.
 	_environment.background_color = Color("0f161d").lerp(Color("2a3a40"), w)
 	_environment.ambient_light_color = Color("98a6c2").lerp(Color("bbc9df"), w)
@@ -186,6 +208,7 @@ func focus_on(cell: Vector2, instant: bool = false) -> void:
 func _clamped_focus(point: Vector3) -> Vector3:
 	if area == null:
 		return point
+	if bool(area.interior.get("camera_floor_lock", false)): point.y = 0.0
 	var margin: float = 5.0
 	return Vector3(clampf(point.x, margin, float(area.width - 1) - margin), point.y, clampf(point.z, -(float(area.height - 1) - margin), -margin))
 
@@ -215,7 +238,7 @@ func _update_camera(delta: float) -> void:
 			_cinematic_time += delta
 			var t: float = _cinematic_time
 			# A slow loop from the green, over the mill race and back, so the title screen never sits still.
-			var centre := Vector3(33.0, 0.0, -19.5)
+			var centre := Vector3(33.0, 0.0, -19.5) if area==null or area.id=="kindle-hollow" else Vector3(float(area.width)*.5,0,-float(area.height)*.5)
 			_focus_target = _clamped_focus(centre + Vector3(sin(t * 0.045) * 11.0, 0.0, cos(t * 0.031) * 3.5 - sin(t * 0.045) * 1.5))
 	var blend: float = 1.0 - exp(-delta * follow_rate)
 	_focus = _focus.lerp(_focus_target, blend)
@@ -244,6 +267,8 @@ func setup(definition: AreaDef) -> void:
 		_lit_positions.clear()
 		_terrain_nodes.clear()
 	area = definition
+	_set_outdoor(area.interior.get("outdoor", {}) as Dictionary if area.interior.get("outdoor") is Dictionary else {})
+	_area_presentation = WorldAssets.area_presentation(area.id)
 	_refresh_entrance_surfaces()
 	_chunk = CHUNK
 	_content = Node3D.new()
@@ -254,7 +279,7 @@ func setup(definition: AreaDef) -> void:
 	villagers = null
 	_terrain_root = null
 	if not area.interior.is_empty():
-		InteriorBuilder.build(area, _block)
+		InteriorBuilder.build(area, _block, _try_world_asset)
 	elif area.ground.is_empty():
 		var skin := GroundSkin.new()
 		if skin.build(area):
@@ -282,12 +307,27 @@ func setup(definition: AreaDef) -> void:
 		for cy: int in range(0, area.height, CHUNK):
 			for cx: int in range(0, area.width, CHUNK):
 				_rebuild_terrain_chunk(Vector2i(cx / CHUNK, cy / CHUNK))
+				BuildPump.pump()
 	_tree_root = Node3D.new()
 	_tree_root.name = "Trees"
 	_content.add_child(_tree_root)
 	_sync_trees()
 	_make_mechanisms()
 	_make_player()
+	terminal_display = null
+	if not area.terminals.is_empty():
+		terminal_display = ZoneTerminalDisplay.new()
+		_content.add_child(terminal_display)
+		terminal_display.setup(self)
+	stage = RoomStage.for_area(area)
+	if stage != null:
+		_content.add_child(stage)
+		stage.setup(self)
+	hotaru = null
+	if stage == null or not stage.replaces_companion():
+		hotaru=HotaruFairy.new()
+		hotaru.target=_player
+		_content.add_child(hotaru)
 	_selection = Node3D.new()
 	_selection.name = "CellSelection"
 	_content.add_child(_selection)
@@ -305,6 +345,49 @@ func setup(definition: AreaDef) -> void:
 		villagers.setup(self)
 	focus_on(Vector2(area.spawn), true)
 	apply_state({"player": [area.spawn.x, area.spawn.y, 0], "lamps": {}, "gates": {}, "bridges": {}})
+
+
+## Daylight and the painted distance for an outdoor room, or the shared valley light everywhere else. The view
+## outlives each area, so a room that has none puts the sun back where it was.
+func _set_outdoor(outdoor: Dictionary) -> void:
+	_outdoor = outdoor
+	if is_instance_valid(_backdrop):
+		# Out of the tree at once, so a room set up again this frame never finds its predecessor.
+		_backdrop.get_parent().remove_child(_backdrop)
+		_backdrop.queue_free()
+	_backdrop = null
+	if _outdoor.is_empty():
+		_sun.rotation_degrees = Vector3(-48.0, -32.0, 0.0)
+	else:
+		var turn: Array = _outdoor.sun.rotation
+		_sun.rotation_degrees = Vector3(float(turn[0]), float(turn[1]), float(turn[2]))
+		if _outdoor.has("backdrop"):
+			_backdrop = OutdoorBackdrop.new()
+			_backdrop.name = "PaintedDistance"
+			camera.add_child(_backdrop)
+			if not _backdrop.setup(self, _outdoor):
+				_backdrop.queue_free()
+				_backdrop = null
+	_apply_warmth(_warmth)
+
+
+## Whether a companion is here to talk to: the fairy, or the room stage's own companion.
+func companion_present() -> bool:
+	return is_instance_valid(hotaru) or (stage != null and is_instance_valid(stage.companion_node()))
+
+
+## Where a speech mark sits over the companion, in world space; null when there is none.
+func companion_anchor() -> Variant:
+	if is_instance_valid(hotaru):
+		return hotaru.global_position + Vector3(0, .1, 0)
+	if stage != null and is_instance_valid(stage.companion_node()):
+		return stage.companion_anchor()
+	return null
+
+
+## The player's node, for presenters that follow or face the apprentice.
+func player_node() -> Node3D:
+	return _player
 
 
 # --------------------------------------------------------------- the player's edits
@@ -436,8 +519,22 @@ func _built_things() -> Array[Dictionary]:
 	return things
 
 
+## The model whose door leaves a room link swings: a placed room asset, or "shell" for the room's own set.
+func link_doors(id: String) -> Node3D:
+	if id == "":
+		return null
+	if id == "shell":
+		for name: String in ["LaneSet", "SquareSet", "WorkshopShell", "LoftShell"]:
+			var shell: Node3D = _content.find_child(name, false, false) as Node3D
+			if shell != null: return shell
+		return null
+	return building_node(id)
+
+
 ## The node drawn for a building or a prop (their ids never collide: "build-N" and "prop-N").
 func building_node(id: String) -> Node3D:
+	for item: Dictionary in area.interior.get("assets", []):
+		if str(item.id) == id: return _content.find_child(id, true, false) as Node3D
 	return (_drawn_buildings.get(id, {}) as Dictionary).get("node") as Node3D
 
 
@@ -454,16 +551,16 @@ func open_door(house: String) -> void:
 	var building: Node3D = building_node(house)
 	if building == null:
 		return
-	var hinge := building.find_child("DoorHinge*", true, false) as Node3D
-	if hinge != null:
-		create_tween().tween_property(hinge, "rotation:y", 1.3, 0.22)
+	for hinge: Node in building.find_children("DoorHinge*", "Node3D", true, false):
+		var angle: float = -1.3 if hinge.name.ends_with("_R") else 1.3
+		create_tween().tween_property(hinge, "rotation:y", angle, 0.22)
 
 
 ## Pick the actual door face, rather than the ground several cells behind it.
 func pick_door(point: Vector2) -> Dictionary:
 	if not area.interior.is_empty():
 		var exit: Array = area.interior.exit
-		var at := Vector3(float(exit[0]), 0.08, -float(exit[1]) + 0.65)
+		var at := Vector3(float(exit[0]), 0.08, -float(exit[1]))
 		if _door_polygon(at, Vector3.RIGHT, 1.3, 2.0, point):
 			return {"house": ""}
 		return {}
@@ -554,7 +651,7 @@ func _rebuild_tree_chunk(chunk: Vector2i, wanted: Dictionary) -> void:
 		if _drawn_trees[key] == chunk:
 			var tree: Dictionary = wanted[key]
 			if tree.get("asset", "") != "":
-				var model: Node3D = WorldAssets.instantiate(str(tree.asset))
+				var model: Node3D = WorldAssets.instantiate(_presented_asset(str(tree.asset)))
 				if model != null:
 					_tree_root.add_child(model)
 					model.position = Vector3(tree.at.x, ground_y(tree.at), -tree.at.y)
@@ -608,17 +705,29 @@ func focus_point() -> Vector2:
 	return Vector2(_focus.x, -_focus.z)
 
 
-func _try_world_asset(id: String, at: Vector3, size: float = 1.0, facing: float = 0.0, node_name: String = "") -> bool:
+## Where the camera is looking, in world space.
+func focus_world() -> Vector3:
+	return _focus
+
+
+func _presented_asset(id: String) -> String:
+	return (_area_presentation.get("assets", {}) as Dictionary).get(id, id)
+
+
+func _try_world_asset(id: String, at: Vector3, size: float = 1.0, facing: float = 0.0, node_name: String = "", look: Variant = null) -> bool:
 	if not WorldAssets.is_blender(id):
 		push_error("World asset '%s' is not a Blender-selected model. Adopt it through the world catalog first." % id)
 		return false
-	var asset: Node3D = WorldAssets.instantiate(id)
+	var presented: String = _presented_asset(id)
+	var variant: Dictionary = HouseVariants.look(WorldAssets.entry(presented), look) if look != null else {}
+	var asset: Node3D = WorldAssets.instantiate(presented, ResourceLoader.CACHE_MODE_REUSE, variant)
 	if asset != null:
 		asset.name = node_name if node_name != "" else id.replace("-", "_")
 		asset.position = at
 		asset.rotation_degrees.y = facing
 		asset.scale = Vector3.ONE * size
 		_content.add_child(asset)
+	BuildPump.pump()
 	return true  # A missing selected asset is an error; do not silently replace artist work.
 
 
@@ -629,7 +738,9 @@ func _place_building(building: Dictionary) -> Node3D:
 	var node: Node3D = _content.get_node_or_null(node_name) as Node3D
 	_drawn_buildings[building.id] = {"node": node, "key": _building_key(building)}
 	if node != null:
-		FinishMaterials.apply(node, WorldAssets.entry(str(building.asset)), building.get("finishes", {}))
+		FinishMaterials.apply(node, WorldAssets.entry(_presented_asset(str(building.asset))), building.get("finishes", {}))
+		if _area_presentation.get("illustrated_edges", false):
+			IllustratedEdges.apply(node)
 	if node != null and not (building.get("interaction", {}) as Dictionary).is_empty():
 		var visual := PropVisual.new()
 		node.add_child(visual)
@@ -644,8 +755,15 @@ static func _building_key(building: Dictionary) -> String:
 
 func _make_mechanisms() -> void:
 	var box := Callable(self, "_mesh_box")
+	var post_asset: String = _area_presentation.get("post_lamp", "lamppost")
 	for lamp: Dictionary in area.lamps:
-		var root: Node3D = MechanismBuilder.lamp(_content, box, lamp.style)
+		if lamp.style == "fixture":
+			for spec: Dictionary in area.interior.get("lamp_fixtures", []):
+				if spec.id != lamp.id: continue
+				var fixture := _content.get_node_or_null(NodePath(str(spec.asset))) as Node3D
+				if fixture != null and MechanismBuilder.bind_fixture(fixture, spec): _lamps[lamp.id] = fixture
+			continue
+		var root: Node3D = MechanismBuilder.lamp(_content, box, lamp.style, post_asset)
 		root.name = String(lamp.id).replace("-", "_")
 		root.position = Vector3(lamp.at.x, ground_y(lamp.at), -lamp.at.y)
 		_lamps[lamp.id] = root
@@ -694,6 +812,10 @@ func _make_quest_marker() -> void:
 	_quest_marker.name = "QuestMarker"
 	_quest_marker.visible = false
 	_content.add_child(_quest_marker)
+	_motes.clear()
+	if marker_style == "paper":
+		_make_spark_marker()
+		return
 	for index: int in range(8):
 		var angle: float = float(index) * TAU / 8.0
 		var tile := _mesh_box(_quest_marker, Vector3(cos(angle) * 0.62, 0.0, sin(angle) * 0.62), Vector3(0.22, 0.04, 0.12), "lit")
@@ -702,6 +824,47 @@ func _make_quest_marker() -> void:
 	var beam := _mesh_box(_quest_marker, Vector3(0, 1.4, 0), Vector3(0.07, 2.8, 0.07), "lit")
 	beam.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	beam.name = "Beam"
+
+
+## The paper journey's "look here": a brass dial on the floor with a ring of ticks and a warm glow, and a few sparks
+## rising from it. Sparks are this world's one gentle magic, so the mark where work is done is made of them.
+func _make_spark_marker() -> void:
+	var dial := MeshInstance3D.new()
+	dial.name = "Dial"
+	var quad := QuadMesh.new()
+	quad.size = Vector2(2.1, 2.1)
+	dial.mesh = quad
+	var dial_material := ShaderMaterial.new()
+	dial_material.shader = preload("res://art/spark_dial.gdshader")
+	dial_material.render_priority = 1
+	dial.material_override = dial_material
+	dial.rotation_degrees.x = -90.0
+	dial.position.y = 0.02
+	dial.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	_quest_marker.add_child(dial)
+	for index: int in range(6):
+		var mote := MeshInstance3D.new()
+		var point := QuadMesh.new()
+		point.size = Vector2(0.32, 0.32)
+		mote.mesh = point
+		var material := ShaderMaterial.new()
+		material.shader = preload("res://art/spark_mote.gdshader")
+		material.render_priority = 3
+		mote.material_override = material
+		mote.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		_quest_marker.add_child(mote)
+		_motes.append({"node": mote, "material": material, "phase": float(index) / 6.0, "angle": float(index) * 2.4})
+
+
+func _animate_spark_marker() -> void:
+	for mote: Dictionary in _motes:
+		var rise: float = fposmod(_elapsed * 0.32 + float(mote.phase), 1.0)
+		var around: float = float(mote.angle) + _elapsed * 0.7
+		var node := mote.node as MeshInstance3D
+		node.position = Vector3(cos(around) * 0.3 * (1.0 - rise * 0.5), 0.1 + rise * 1.6, sin(around) * 0.3 * (1.0 - rise * 0.5))
+		(mote.material as ShaderMaterial).set_shader_parameter("fade", sin(rise * PI))
+		# Quads face the camera whichever way the camera looks.
+		node.look_at(camera.global_position, Vector3.UP, true)
 
 
 ## A ring of light that sweeps outward across the ground, for the moment the hollow is fully lit.
@@ -945,9 +1108,11 @@ func apply_state(state: Dictionary, preview: bool = false) -> void:
 		return
 	if preview:
 		_show_preview(state)
+		if terminal_display != null: terminal_display.sync(state, true)
 		return
 	clear_preview()
 	_committed = state.duplicate(true)
+	if terminal_display != null: terminal_display.sync(state)
 	var bridges: Dictionary = state.get("bridges", {})
 	for bridge: Dictionary in area.bridges:
 		var built: int = int(bridges.get(bridge.id, 0))
@@ -962,14 +1127,16 @@ func apply_state(state: Dictionary, preview: bool = false) -> void:
 		if not root.has_meta("glass"):
 			continue  # The selected lamp model failed to load; MechanismBuilder already reported it.
 		# The lantern glass is found through the lamp's own metadata, so a lamp may be drawn by a procedural recipe or an adopted model.
-		(root.get_meta("glass") as MeshInstance3D).material_override = _materials["lit"] if lit else root.get_meta("unlit") as Material
+		(root.get_meta("glass") as MeshInstance3D).material_override = root.get_meta("lit", _materials["lit"]) as Material if lit else root.get_meta("unlit") as Material
 		var halo := root.get_node("Halo") as MeshInstance3D
 		halo.visible = lit
+		var fixture_light := root.get_node_or_null("FixtureLight") as OmniLight3D
+		if fixture_light != null: fixture_light.visible = lit
 		var embers := root.get_node_or_null("Embers") as CPUParticles3D
 		if embers != null:
 			embers.emitting = lit
 		if lit:
-			_lit_positions.append(root.position + halo.position)
+			_lit_positions.append(halo.global_position)
 	var gates: Dictionary = state.get("gates", {})
 	for gate_id: String in _gates:
 		(_gates[gate_id] as Node3D).rotation.y = -PI / 2.0 if bool(gates.get(gate_id, false)) else 0.0
@@ -1014,6 +1181,16 @@ func sync_player(state: Dictionary) -> void:
 	_player_cells = {Vector2i(at.round()): true}
 
 
+## A walk drawn without a step in the rules (through a scene change): past the area's edge the feet keep the height
+## of the nearest cell inside it.
+func walk_player_visual(from: Vector2, to: Vector2, fraction: float) -> void:
+	if _player == null:
+		return
+	var at: Vector2 = from.lerp(to, fraction)
+	var inside: Vector2 = at.clamp(Vector2.ZERO, Vector2(area.width - 1, area.height - 1))
+	_player.position = Vector3(at.x, _deck_height(inside), -at.y)
+
+
 func interpolate_player(from: Vector2, to: Vector2, fraction: float) -> void:
 	var at: Vector2 = from.lerp(to, fraction)
 	_player.position = Vector3(at.x, _deck_height(at), -at.y)
@@ -1035,16 +1212,86 @@ func player_screen_position() -> Vector2:
 	return camera.unproject_position(_player.position + Vector3(0, 0.8, 0)) if _player != null else Vector2.ZERO
 
 
+## Where a cell's ground, a little above it, falls in the viewport; a cell just beyond the area's edge keeps the
+## height of the nearest cell inside it.
+func screen_position_of_cell(cell: Vector2) -> Vector2:
+	var inside: Vector2 = cell.clamp(Vector2.ZERO, Vector2(area.width - 1, area.height - 1))
+	return camera.unproject_position(Vector3(cell.x, _deck_height(inside) + 0.8, -cell.y))
+
+
+func set_marker_style(style: String) -> void:
+	marker_style = style
+
+
 func show_route(route: Array[Vector2i]) -> void:
 	if _route_visual == null:
 		return
 	for child: Node in _route_visual.get_children():
 		_route_visual.remove_child(child)
 		child.queue_free()
+	if marker_style == "paper":
+		_show_paper_route(route)
+		return
 	for cell: Vector2i in route:
 		var height: float = ground_y(Vector2(cell)) + (0.14 if not area.socket(cell).is_empty() else 0.085)
 		var marker := _mesh_box(_route_visual, Vector3(cell.x, height, -cell.y), Vector3(0.13, 0.018, 0.13), "gold")
 		marker.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+
+
+## Round dots with a dark outline mark each step; the last cell gets a breathing ring so the end of the journey is
+## the clearest thing on the floor.
+func _show_paper_route(route: Array[Vector2i]) -> void:
+	for index: int in range(route.size()):
+		var cell: Vector2i = route[index]
+		var last: bool = index == route.size() - 1
+		var quad := QuadMesh.new()
+		quad.size = Vector2(1.35, 1.35) if last else Vector2(0.66, 0.66)
+		var marker := MeshInstance3D.new()
+		marker.mesh = quad
+		marker.material_override = _route_material(last)
+		marker.rotation_degrees.x = -90.0
+		marker.position = Vector3(cell.x, _deck_height(Vector2(cell)) - WalkingSurface.CLEARANCE + 0.02, -cell.y)
+		marker.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		_route_visual.add_child(marker)
+
+
+func _route_material(destination: bool) -> ShaderMaterial:
+	var material := ShaderMaterial.new()
+	material.shader = preload("res://art/route_marker.gdshader")
+	material.render_priority = 2 if destination else 1
+	if destination:
+		material.set_shader_parameter("radius", 0.6)
+		material.set_shader_parameter("ring_half", 0.1)
+		material.set_shader_parameter("line", 0.055)
+		material.set_shader_parameter("pulse", 0.06)
+	else:
+		material.set_shader_parameter("radius", 0.5)
+		material.set_shader_parameter("line", 0.17)
+	return material
+
+
+## Lights up one placed object, or none, with a soft brass-and-teal pulse: where the traveller is headed, or what F
+## would use. Only the paper style draws it.
+func set_target_highlight(id: String) -> void:
+	var target: Node3D = building_node(id) if id != "" and marker_style == "paper" else null
+	if target == _highlighted:
+		return
+	if is_instance_valid(_highlighted):
+		_set_overlay(_highlighted, null)
+	_highlighted = target
+	if target == null:
+		return
+	if _highlight_material == null:
+		_highlight_material = ShaderMaterial.new()
+		_highlight_material.shader = preload("res://art/target_glow.gdshader")
+	_set_overlay(target, _highlight_material)
+
+
+func _set_overlay(node: Node, material: Material) -> void:
+	if node is MeshInstance3D and node.name != &"IllustratedOutline":
+		(node as MeshInstance3D).material_overlay = material
+	for child: Node in node.get_children():
+		_set_overlay(child, material)
 
 
 func set_player_motion(velocity: Vector2) -> void:
@@ -1066,11 +1313,34 @@ func _screen_direction(logical: Vector2) -> Vector2:
 
 
 func clear_preview() -> void:
+	if terminal_display != null:
+		terminal_display.clear_test_output()
+		terminal_display.sync(_committed)
+	if area != null:
+		for lamp: Dictionary in area.lamps:
+			if lamp.style == "fixture" and _lamps.has(lamp.id): _set_fixture_preview(_lamps[lamp.id], bool((_committed.get("lamps", {}) as Dictionary).get(lamp.id, false)), false)
 	if _ghost == null:
 		return
 	for child: Node in _ghost.get_children():
 		_ghost.remove_child(child)
 		child.queue_free()
+
+
+func _set_fixture_preview(root: Node3D, lit: bool, provisional: bool) -> void:
+	var material: Material = root.get_meta("lit" if lit else "unlit") as Material
+	if provisional:
+		var key: String = "preview_lit" if lit else "preview_dark"
+		if not root.has_meta(key):
+			var preview := material.duplicate() as StandardMaterial3D
+			preview.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+			preview.albedo_color.a = .65
+			root.set_meta(key, preview)
+		material = root.get_meta(key) as Material
+	(root.get_meta("glass") as MeshInstance3D).material_override = material
+	(root.get_node("Halo") as Node3D).visible = lit
+	var light := root.get_node("FixtureLight") as OmniLight3D
+	light.visible = lit
+	light.light_energy = float(light.get_meta("committed_energy")) * (.55 if provisional else 1.0)
 
 
 func _show_preview(state: Dictionary) -> void:
@@ -1090,6 +1360,12 @@ func _show_preview(state: Dictionary) -> void:
 	var previous_lamps: Dictionary = _committed.get("lamps", {})
 	for lamp: Dictionary in area.lamps:
 		if bool(lamps.get(lamp.id, false)) != bool(previous_lamps.get(lamp.id, false)):
+			if lamp.style == "fixture" and _lamps.has(lamp.id):
+				var root: Node3D = _lamps[lamp.id]
+				_set_fixture_preview(root, bool(lamps.get(lamp.id, false)), true)
+				var halo := root.get_node("Halo") as Node3D
+				_ghost_box(halo.global_position, Vector3(.36,.48,.36), not bool(lamps.get(lamp.id, false)))
+				continue
 			var tall: bool = lamp.style == "beacon"
 			_ghost_box(Vector3(lamp.at.x, ground_y(lamp.at) + (2.5 if tall else 1.67), -lamp.at.y), Vector3(0.9, 1.1, 0.9) if tall else Vector3(0.43, 0.6, 0.43),
 				not bool(lamps.get(lamp.id, false)))
@@ -1136,7 +1412,7 @@ func show_build_preview(diff: Dictionary) -> void:
 func _preview_model(entry: Dictionary) -> Node3D:
 	var asset: String = str(entry.get("asset", ""))
 	if asset != "":
-		var model: Node3D = WorldAssets.instantiate(asset)
+		var model: Node3D = WorldAssets.instantiate(_presented_asset(asset))
 		if model != null and entry.kind == "tree":
 			model.scale = Vector3.ONE * float(entry.get("size", 1.0))
 		return model
@@ -1195,6 +1471,10 @@ func pick_point(viewport_position: Vector2) -> Variant:
 		return null
 	var origin := camera.project_ray_origin(viewport_position)
 	var direction := camera.project_ray_normal(viewport_position)
+	var stair_hit: Variant = _pick_room_stairs(origin, direction)
+	if stair_hit != null: return stair_hit
+	var flight_hit: Variant = _pick_rising_room_stairs(origin, direction)
+	if flight_hit != null: return flight_hit
 	for level: int in range(AreaDef.MAX_LEVEL, -1, -1):
 		var hit: Variant = Plane(Vector3.UP, float(level) * TerrainBuilder.LEVEL_RISE).intersects_ray(origin, direction)
 		if hit == null:
@@ -1202,6 +1482,50 @@ func pick_point(viewport_position: Vector2) -> Variant:
 		var point := Vector2((hit as Vector3).x, -(hit as Vector3).z)
 		if level == 0 or area.level_at(Vector2i(floori(point.x + 0.5), floori(point.y + 0.5))) >= level:
 			return point
+	return null
+
+
+## Pick the actual negative-height treads through the room's cutaway. A ray
+## whose floor intersection is outside the hatch (and north of the cut edge)
+## hits solid floor first, so a hidden tread cannot steal that click.
+func _pick_rising_room_stairs(origin: Vector3, direction: Vector3) -> Variant:
+	for flight: Dictionary in area.interior.get("stair_flights", []):
+		var r: Array = flight.rect
+		var rect := Rect2(float(r[0]), float(r[1]), float(r[2]), float(r[3]))
+		var forward := Vector2(AreaDef.STEPS[flight.up])
+		var length: float = rect.size.y if forward.y != 0 else rect.size.x
+		var depth: float = length / float(flight.treads.size())
+		for index: int in range(flight.treads.size() - 1, -1, -1):
+			var hit: Variant = Plane(Vector3.UP, float(flight.treads[index])).intersects_ray(origin, direction)
+			if hit == null: continue
+			var point := Vector2((hit as Vector3).x, -(hit as Vector3).z)
+			if not rect.has_point(point): continue
+			var along: float = (point - rect.get_center()).dot(forward) + length * .5
+			if along >= index * depth and along < (index + 1) * depth: return point
+	return null
+
+
+func _pick_room_stairs(origin: Vector3, direction: Vector3) -> Variant:
+	var well: Dictionary = area.interior.get("stairwell", {})
+	if well.is_empty(): return null
+	var raw: Array = well.rect
+	var rect := Rect2(float(raw[0]), float(raw[1]), float(raw[2]), float(raw[3]))
+	var floor_hit: Variant = Plane(Vector3.UP, float(well.floor)).intersects_ray(origin, direction)
+	if floor_hit != null:
+		var floor_point := Vector2((floor_hit as Vector3).x, -(floor_hit as Vector3).z)
+		# Solid floor runs from the room's walking front; a hatch at the front edge has none before it.
+		var front: float = float(area.interior.get("walk_front", rect.position.y + .5)) - .5
+		if not rect.has_point(floor_point) and floor_point.y >= front: return null
+	var forward := Vector2(AreaDef.STEPS[well.up])
+	var length: float = rect.size.y if forward.y != 0 else rect.size.x
+	var depth: float = length / float(well.treads.size())
+	for index: int in range(well.treads.size() - 1, -1, -1):
+		var hit: Variant = Plane(Vector3.UP, float(well.treads[index])).intersects_ray(origin, direction)
+		if hit == null: continue
+		var point := Vector2((hit as Vector3).x, -(hit as Vector3).z)
+		if not rect.has_point(point): continue
+		var along: float = (point - rect.get_center()).dot(forward) + length * .5
+		if along >= index * depth and along < (index + 1) * depth: return point
 	return null
 
 
@@ -1216,7 +1540,9 @@ func _process(delta: float) -> void:
 		_update_camera(delta)
 		if not _lit_positions.is_empty() and _focus.distance_to(_light_focus) > 1.5:
 			_update_light_pool()
-	if _quest_marker != null and _quest_marker.visible:
+	if _quest_marker != null and _quest_marker.visible and not _motes.is_empty():
+		_animate_spark_marker()
+	elif _quest_marker != null and _quest_marker.visible:
 		_quest_marker.rotation.y = _elapsed * 0.6
 		var beam := _quest_marker.get_node("Beam") as Node3D
 		beam.scale.y = 0.85 + 0.15 * sin(_elapsed * 2.4)
@@ -1235,6 +1561,7 @@ func _block(at: Vector3, size: Vector3, material_id: String, rotation: Vector3 =
 func _flush_batches(parent_node: Node = null, bucket: Variant = null, prefix: String = "Blocks", collected: Array = []) -> void:
 	var parent: Node = parent_node if parent_node != null else (_content if _content != null else self)
 	for material_id: String in _batches:
+		BuildPump.pump()
 		var buckets: Dictionary = {}
 		for transform: Transform3D in _batches[material_id]:
 			var key := Vector2i.ZERO

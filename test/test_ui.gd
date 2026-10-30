@@ -10,11 +10,13 @@ func _initialize() -> void:
 
 
 func _run() -> void:
+	_display_preferences()
 	_lesson_text()
 	_error_advice()
 	_api_reference()
 	await _code_editor()
 	await _widgets()
+	await _gear_veil()
 	if _failures.is_empty():
 		print("Learning interface helpers: %d checks passed." % _checks)
 		quit(0)
@@ -23,6 +25,16 @@ func _run() -> void:
 			printerr("FAIL: ", failure)
 		quit(1)
 
+
+func _display_preferences() -> void:
+	_check(GameSettings.DEFAULTS.fullscreen and GameSettings.DEFAULTS.font_size==15,"The desktop profile starts full screen with compact code text")
+	var preferences:=GameSettings.new()
+	var screen:=SettingsPanel.new()
+	screen.setup(preferences)
+	var scales: Array[Node]=screen.find_children("*","HSlider",true,false)
+	_check(scales.any(func(node: Node) -> bool:return is_equal_approx((node as HSlider).min_value,.6)),"Interface scale can go below the former 80% limit")
+	_check(scales.any(func(node: Node) -> bool:return is_equal_approx((node as HSlider).min_value,10)),"Code text can use a compact ten-pixel minimum independently of the interface")
+	screen.free()
 
 func _lesson_text() -> void:
 	var blocks: Array[Dictionary] = LessonText.blocks("First line\nsecond line.\n\n```\nlamp.set_lit(True)\n    indented\n```\n\nLast **bold** and `code`.")
@@ -158,6 +170,34 @@ func _widgets() -> void:
 		glyph.queue_free()
 	await process_frame
 	_check(true, "Every icon draws without error")
+
+
+func _gear_veil() -> void:
+	var veil := GearVeil.new()
+	root.add_child(veil)
+	veil.size = Vector2(1600, 900)
+	await process_frame
+	_check(not veil.covering() and veil.mouse_filter == Control.MOUSE_FILTER_IGNORE, "The clockwork veil starts out of the way")
+	var told: Array[float] = []
+	await veil.close(Vector2(0.4, 0.6), 0.05, func(fraction: float) -> void: told.append(fraction))
+	_check(veil.covering() and veil.mouse_filter == Control.MOUSE_FILTER_STOP, "Closed, the veil covers the screen and stops the mouse")
+	_check(is_equal_approx(float((veil.material as ShaderMaterial).get_shader_parameter("front")), 1.0), "The veil is opaque at the end of its closing sweep")
+	_check(not told.is_empty() and is_equal_approx(told[-1], 1.0), "A walk carried on under the veil is told when the sweep ends")
+	_check((veil.material as ShaderMaterial).get_shader_parameter("origin") == Vector2(0.4, 0.6), "The veil grows out of the point it was given")
+	# While a scene is being built the veil draws itself between pieces, with its gears turned to the clock.
+	BuildPump.tick = veil.keep_turning
+	await create_timer(0.06).timeout
+	BuildPump.pump()
+	_check(veil.pumped >= 1, "A builder's pump makes the veil redraw while the main thread is busy")
+	var spin_before: Variant = (veil.material as ShaderMaterial).get_shader_parameter("spin")
+	await create_timer(0.06).timeout
+	BuildPump.pump()
+	_check(float((veil.material as ShaderMaterial).get_shader_parameter("spin")) > float(spin_before), "The gears keep turning from one pump to the next")
+	BuildPump.tick = Callable()
+	await veil.open(Vector2(0.3, 0.7), 0.05)
+	_check(not veil.covering() and veil.mouse_filter == Control.MOUSE_FILTER_IGNORE, "Opened, the veil leaves the screen and the mouse alone")
+	_check(veil.material.shader.code.contains("meshed("), "The gears of the veil mesh with one another instead of turning on their own")
+	veil.queue_free()
 
 
 func _check(value: bool, message: String) -> void:

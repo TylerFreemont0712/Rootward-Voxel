@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "asset": "lane-shed",
+  "version": "v1",
+  "source": "art/source/world/lane-shed/v1/model.blend",
+  "source_sha256": "824e89a55cd6d08db008e9e6195d984047fcc37317be83818912fe3e9c73cc0b",
+  "runtime": "assets/world/lane-shed/model.glb",
+  "runtime_sha256": "297a7b46f728177bac027fa7f8e63070f84f85844018fc247518058baca1580e",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.14999997615814,
+      0.0,
+      -1.07168424129486,
+      1.15000009536743,
+      2.39499998092651,
+      1.14999997615814
+    ],
+    "geometry_sha256": "ee583eb5ba3db5e548a19b26d54274c40c04a3be2bd21a5ae6ed0b78bd43a0e0",
+    "material_records": {
+      "lane_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_rail": {
+        "albedo": [
+          4863,
+          5176,
+          5294,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_shutter": {
+        "albedo": [
+          2980,
+          5412,
+          4235,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_shutter_dark": {
+        "albedo": [
+          2275,
+          4235,
+          3333,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_teal": {
+        "albedo": [
+          2471,
+          4824,
+          4549,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_terracotta": {
+        "albedo": [
+          7843,
+          3922,
+          2471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_terracotta_dark": {
+        "albedo": [
+          6627,
+          3176,
+          2275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_terracotta_light": {
+        "albedo": [
+          8510,
+          4784,
+          3059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_timber": {
+        "albedo": [
+          4196,
+          2902,
+          2000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_white": {
+        "albedo": [
+          9490,
+          9176,
+          8471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_window_pane": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "0521fe9168475a9da488e23ca89b12bdfdc600fcde1d4eb37051e2cec2478c37"
+      },
+      "lane_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_light": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_brass",
+      "lane_limestone",
+      "lane_rail",
+      "lane_shutter",
+      "lane_shutter_dark",
+      "lane_teal",
+      "lane_terracotta",
+      "lane_terracotta_dark",
+      "lane_terracotta_light",
+      "lane_timber",
+      "lane_white",
+      "lane_window_pane",
+      "lane_wood",
+      "lane_wood_light"
+    ],
+    "meshes": 14,
+    "triangles": 6362
+  }
+}

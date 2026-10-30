@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "asset": "loft-travel-stacks",
+  "version": "v1",
+  "source": "art/source/world/loft-travel-stacks/v1/model.blend",
+  "source_sha256": "9a3f5954327711fb10aaca98b6384c7408bbb1387145121f194df6bda3d76e3b",
+  "runtime": "assets/world/loft-travel-stacks/model.glb",
+  "runtime_sha256": "bf31914c49fdf3437474b4b6d5becee683b9280122b94200348af63af200f4d2",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.717499971389771,
+      0.0,
+      -0.720000028610229,
+      0.807149231433868,
+      1.25635302066803,
+      0.412499994039536
+    ],
+    "geometry_sha256": "35037a7b84e78757593520117d4115c88a7a1565faa1ecff1f9e096d4b4f5237",
+    "material_records": {
+      "loft_blue": {
+        "albedo": [
+          3255,
+          4196,
+          5373,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_ceramic": {
+        "albedo": [
+          7922,
+          7176,
+          5961,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_ink": {
+        "albedo": [
+          3294,
+          2314,
+          1686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leaf": {
+        "albedo": [
+          3098,
+          5098,
+          2745,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leaf_dark": {
+        "albedo": [
+          2078,
+          3725,
+          2314,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leaf_light": {
+        "albedo": [
+          4471,
+          6000,
+          3255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+      },
+      "loft_ochre": {
+        "albedo": [
+          7725,
+          6118,
+          3451,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_pages": {
+        "albedo": [
+          8392,
+          7686,
+          6275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_paper": {
+        "albedo": [
+          9608,
+          9137,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_red": {
+        "albedo": [
+          7098,
+          3686,
+          3020,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_soil": {
+        "albedo": [
+          3569,
+          2863,
+          2118,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_teal": {
+        "albedo": [
+          2235,
+          4863,
+          4863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_wood": {
+        "albedo": [
+          6784,
+          4745,
+          2902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_blue",
+      "loft_ceramic",
+      "loft_ink",
+      "loft_leaf",
+      "loft_leaf_dark",
+      "loft_leaf_light",
+      "loft_oak",
+      "loft_ochre",
+      "loft_pages",
+      "loft_paper",
+      "loft_red",
+      "loft_soil",
+      "loft_teal",
+      "loft_wood"
+    ],
+    "meshes": 14,
+    "triangles": 6276
+  }
+}

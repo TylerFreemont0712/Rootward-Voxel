@@ -30,6 +30,7 @@ You do not need to return anything. Calls like `lamp.set_lit(True)` are recorded
 | House | `world.house("home")`, `world.houses`, `zone.houses` | `id`, `kind`, `name`, `at`, `cell`, `facing`, `zone`, `locked`, `face("north")` |
 | Doodad | `world.doodad("prop-1")`, `world.doodads`, `zone.doodads` | `id`, `kind`, `name`, `at`, `cell`, `facing`, `solid`, `zone`, `face("east")` |
 | Tree | `world.tree(31.5, 6)`, `world.trees`, `zone.trees` | `at`, `cell`, `size`, `kind`, `zone` |
+| Controls (Village Morning) | `world.controls` | `bindings`, `bind_move(key, x, y)`, `bind(key, direction)` |
 
 An object mirrors your own calls: after `lamp.set_lit(True)`, `lamp.lit` is `True` in the same run, so `if west.lit and east.lit:` sees what you just did. `world.memory` is a dictionary of small JSON values that persists once you Apply.
 
@@ -47,6 +48,36 @@ The objects above produce these commands, and `core/` validates every one, whate
 | `place` | `op`, `kind`, `at` | `kind` is `bridge_deck`; `at` is a bridge socket `[x,y,0]`. Decks go down in socket order, so each is supported by the one before. Placing a deck that exists is harmless. |
 | `remove` | `op`, `at` | Removes the last deck of a bridge. Not under the player; not leaving a deck unsupported. |
 | `rotate` | `op`, `entity_id`, `facing` | Turns a house or doodad on the spot; `facing` is `N`, `E`, `S` or `W`. Needs the `turn` ability; see [Houses, trees and doodads](#houses-trees-and-doodads). |
+| `bind_key` | `op`, `target`, `key`, `delta` (or `direction`) | Village Morning only; target is `player`, key is W/A/S/D or UP/LEFT/DOWN/RIGHT, delta is `[x,y]`. Apply requires a single cardinal cell; a direction string remains compatible. Bounded incorrect deltas can be demonstrated without applying. |
+
+## Your first voice in Village Morning
+
+Hotaru, your fairy companion, first asks for a greeting in **Field Notes / 00 — Saying Hello**:
+
+```python
+def program(world):
+    print("Hello, Hotaru!")
+```
+
+Blocks compile the same print statement. **Test code** previews your words; **Speak** commits them. Hotaru’s opening has no player reply choices and opens this page automatically when her explanation ends. Speaking a successful greeting automatically starts her First Steps explanation, then opens /01. Test alone remains a preview. Optional replies unlock after learning to speak, and that learning survives Undo. In this journey, print also records the bounded plain command `{"op":"say","target":"hotaru","text":"Hello, Hotaru!"}`. The game validates 1–160 characters and applies the whole batch atomically. Other journeys retain ordinary print output.
+
+Testing either lesson reveals actual executed Python lines with small variable values, plus Replay, Pause and Next line. Evidence comes from inside CPython/WASI and is bounded to the first 96 events. Failed runs can still show the lines that reached the error. The visual replay does not execute code or change the world.
+
+## Movement keys in Village Morning
+
+Choose the Python tab in the movement notebook to write your own key map:
+
+```python
+def program(world):
+    x = y = 0
+    y += 1
+    world.controls.bind_move("W", x, y)
+    # Repeat with fresh x/y for A, S and D.
+```
+
+The Blocks tab edits the same arithmetic in numbered event blocks, with **See Python** exposing the generated source. x += 1 goes east ↘, x -= 1 west ↖, y += 1 north ↗, y -= 1 south ↙. **Test code** runs the real program and animates the result in a copy of your room. Try 0, 1 or 3 and compare the numbered targets; malformed/unbounded values, diagonals, zero and excessive movement cannot be installed. The test does not move your real character or count as practice. The **>** on a block tests only that section and cannot be applied. **Test code** checks the full program. **Apply** installs the exact validated map; **Continue · try my keys** returns to the room for a successful step in each real direction to finish the quest.
+
+These are bounded declarations, not Python callbacks executed on every key press. `world.controls.bind("W", "north")` remains compatible, and valid calls update the proxy's `bindings` dictionary within the same run. Controls follow you from home to the lane; Kindle Hollow keeps its existing controls. See [Village Morning](../pipeline/MORNING.md).
 
 Extra fields and unknown commands are rejected. Commands run in order against a detached candidate; one invalid command rejects the whole batch. Up to 64 commands are allowed. Cells are whole-number `[x,y,height]`. Height is always 0 in code today, even where build mode has raised the land into terraces.
 

@@ -1,0 +1,12 @@
+{
+  "pass": 3,
+  "prior_source": "model.pass-02.blend",
+  "before_sha256": "dc858ef56b3281f84b169dc74f10ecc8ff6b33fe3bccfe4800bad095cac9a44b",
+  "after_sha256": "212b569e95736b1bd20e2500045b2ebd316118da98cce11c5509b6efeaa854d9",
+  "rolled_noses_finished": 184,
+  "ridge_caps_layered": 12,
+  "moving_meshes_before": 26,
+  "moving_meshes_after": 7,
+  "review": "Pass 2 exposed ragged arch bevels, flat warm glass and cap overlap. Entrance prisms were corrected, existing roof noses/caps refined and the existing painted window material reused.",
+  "source_edit": "art/source/world/reference-cottage/v1/refine_pass03.py"
+}

@@ -25,7 +25,7 @@ func _run() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	# Desktop keys typed while an authoring window is focused must not move the review subject.
 	game.session.set_physics_process(false)
 	game.set_process_unhandled_key_input(false)

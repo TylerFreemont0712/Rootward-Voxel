@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "loft-chair",
+  "version": "v1",
+  "source": "art/source/world/loft-chair/v1/model.blend",
+  "source_sha256": "f3315d9d49ee177bb545e849560b5a9af9815e2f78124f0e0b1dfda8b3f19211",
+  "runtime": "assets/world/loft-chair/model.glb",
+  "runtime_sha256": "d212241ebfa3244145ff7be6795dd9f33dc7a6ddfb9dc81ad09eb03fa82b5b21",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.509999990463257,
+      0.0157968997955322,
+      -0.501841366291046,
+      0.509999990463257,
+      1.35183930397034,
+      0.400356829166412
+    ],
+    "geometry_sha256": "eb9b583c43a1a9b9eb1c7c380d4d71dc2d062473b104f3e2f98a5a8787869af5",
+    "material_records": {
+      "loft_blue": {
+        "albedo": [
+          3255,
+          4196,
+          5373,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_blue_light": {
+        "albedo": [
+          5176,
+          5804,
+          6667,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_linen": {
+        "albedo": [
+          9333,
+          8980,
+          8275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+      },
+      "loft_wood": {
+        "albedo": [
+          6784,
+          4745,
+          2902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_wood_dark": {
+        "albedo": [
+          4745,
+          3137,
+          2000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_blue",
+      "loft_blue_light",
+      "loft_linen",
+      "loft_oak",
+      "loft_wood",
+      "loft_wood_dark"
+    ],
+    "meshes": 6,
+    "triangles": 12724
+  }
+}

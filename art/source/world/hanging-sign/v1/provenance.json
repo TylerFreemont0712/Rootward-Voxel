@@ -1,9 +1,0 @@
-{
-  "asset": "hanging-sign",
-  "version": "v1",
-  "created": "2026-10-23T09:07:11.950592+00:00",
-  "author": "art/source/world/doodads-kit/v1/outdoor.py",
-  "author_sha256": "52eb9e788ff0b74e0c59caa4948d53a62e1f091b72b00aef959486814d83090e",
-  "voxel_metres": 0.05,
-  "note": "One-time procedural voxel authoring. model.blend becomes the editable source after this run."
-}

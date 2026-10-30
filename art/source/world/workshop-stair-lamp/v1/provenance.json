@@ -1,0 +1,9 @@
+{
+  "asset": "workshop-stair-lamp",
+  "date": "2026-10-27",
+  "reference": "docs/concept/v0.7/art/4-opening/T7b-workshop-floor.png",
+  "record": "art/source/world/sparks-workshop/v1/stair_lamp.py",
+  "record_sha256": "131c770314293067cd150bed4281ad2296647bc5bc1920bfe436d1b0c5b51192",
+  "painted_sources": "art/source/world/sparks-workshop/v1/prompts.json",
+  "purpose": "Addressable stair light for the first workshop repair ticket."
+}

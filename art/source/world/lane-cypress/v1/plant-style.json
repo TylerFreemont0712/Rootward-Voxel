@@ -1,0 +1,34 @@
+{
+  "asset": "lane-cypress",
+  "source": "art/source/world/lane-cypress/v1/model.blend",
+  "backup": "art/source/world/lane-cypress/v1/model.pre-plant-style.blend",
+  "before_sha256": "ce3d2e7e01af5af024b7ce72a56146dc4a62adbb4afe3d2f77c05abf287c7880",
+  "after_sha256": "3c672570b2f5fb521390e9b76dd246472e27dd3a9acbe39c40e517af826375cc",
+  "objects": [
+    {
+      "object": "lane_cypress.001",
+      "replaced_components": {
+        "cypress": 27
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_cypress_light",
+      "replaced_components": {
+        "cypress_light": 86
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_leaf_dark",
+      "replaced_components": {
+        "leaf_dark": 18
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

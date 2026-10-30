@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "asset": "town-garden-wall",
+  "version": "v1",
+  "source": "art/source/world/town-garden-wall/v1/model.blend",
+  "source_sha256": "c8f8cbf6138651f4683938f6e721eb65b9a93db482e82996eabcee2b29df5557",
+  "runtime": "assets/world/town-garden-wall/model.glb",
+  "runtime_sha256": "0e4b265dea88fe010dc53f4c9ee32a7de323cdf2f3c5b4e74bc0d6d78d783d85",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      0.230000019073486,
+      0.0,
+      -0.259245216846466,
+      2.76999998092651,
+      1.26479995250702,
+      0.219999998807907
+    ],
+    "geometry_sha256": "8ab76d1303def8b2f544a9c63a65b0fa76bbb7fb97e2c3b619845b33ac41cf28",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "8bf51a9eb0a9c4d1398077ea697d5956854d2961d070159e7f7da5fb2fc472e4"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      }
+    },
+    "materials": [
+      "house_paint",
+      "seaside_stone"
+    ],
+    "meshes": 2,
+    "triangles": 3832
+  }
+}

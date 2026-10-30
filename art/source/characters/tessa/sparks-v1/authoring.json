@@ -1,0 +1,39 @@
+{
+  "blink_crop": [
+    90,
+    35,
+    250,
+    250
+  ],
+  "eye_rectangles": [
+    [
+      102.0,
+      77.0,
+      43.0,
+      42.0
+    ],
+    [
+      157.0,
+      70.0,
+      30.0,
+      42.0
+    ]
+  ],
+  "inputs": {
+    "NE.png": "da2d44173f1cdb4b15406bed327be83c028e0c4cb9f1e02c3daab43282808374",
+    "NW.png": "4f02fb5c3f8e0ab620260875dd5354a3299ecbd1e46a0bacd8a1abe7a2a95cc1",
+    "SE.png": "2e642c04ab0a96165149067a60e3f902b75e7077fad0e49720e09a7afde863f6",
+    "SW.png": "e4fc11784431b09d7fdf26de76018320c15ef538ea7ccdf4b835af21f0e8104d",
+    "blink-assembly.json": "23fb79d945acb4653ba01fa86eafb100b0fb02b098599c6c87b11c864052108f",
+    "blink-generated.png": "6176c7ee542845e8795d8b01ad6964a98c3962621547067f62d0ce200b33a87b",
+    "blink-reference.png": "ff212781decfb8a48cbff1953261c286ec9356f27ca0cb64ee61bb6e462b33b9",
+    "blink-se.png": "6ac70481c8a9bd326eb653c38d76c83200ee9579509192602e504d8d66241f73",
+    "blink-sw.png": "09e41f85e092e6f704cfd9a44c81d19ea9042c3a23976f075bdecac1968cd167",
+    "idle-se.png": "dc18c669d2955a644990600a10871fda4914bbc5b40eb93fc5b37d0884b49320"
+  },
+  "method": "Original 1254-square paintings; exact per-cell left mirrors; only two feathered eye ellipses composited from generated blink, original alpha and other neutral pixels preserved. Use existing integer-registration packer next.",
+  "model": "not exposed",
+  "source_adapter": "pipeline/prepare_cast_source.gd",
+  "source_adapter_sha256": "0569e3443ff903a723c87c4d6bd4b8a9964c1a951b8b150bb3b3b0d6b7966ebd",
+  "tool": "built-in image_gen.imagegen"
+}

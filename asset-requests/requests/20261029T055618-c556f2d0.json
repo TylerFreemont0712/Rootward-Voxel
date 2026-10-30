@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "id": "20261029T055618-c556f2d0",
+  "kind": "delete",
+  "title": "Delete Log Cabin Large Teal",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "log-cabin-large-teal",
+    "label": "Log Cabin Large Teal",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/log-cabin-large-teal/v1/model.blend",
+    "runtime": "assets/world/log-cabin-large-teal/model.glb",
+    "manifest": "assets/world/log-cabin-large-teal/manifest.json",
+    "catalog_notes": "The same 5-cell house with a teal roof, to tie a home to the mill. Same footprint as log-cabin-large. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+    "related_files": [
+      "art/source/world/log-cabin-large-teal/v1/brief.md",
+      "art/source/world/log-cabin-large-teal/v1/building-polish.json",
+      "art/source/world/log-cabin-large-teal/v1/doorways.json",
+      "art/source/world/log-cabin-large-teal/v1/provenance.json",
+      "art/source/world/log-cabin-large-teal/v1/retexture.json",
+      "art/source/world/log-cabin-large-teal/v1/seed.glb.audit.json"
+    ],
+    "usage_files": [
+      "content/areas/archive/kindle-hollow-v1.json",
+      "content/areas/kindle-hollow.json",
+      "content/build/catalog.json",
+      "content/interiors/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "pivot": "ground origin; preserve imported root; door and gable face +Z",
+      "logical_footprint": [
+        -2.35,
+        -2.35,
+        4.7,
+        4.7
+      ],
+      "behavior": "visual_only; gameplay rules remain in core",
+      "source": "art/source/world/log-cabin-large-teal/v1/model.blend",
+      "runtime": "assets/world/log-cabin-large-teal/model.glb",
+      "notes": "The same 5-cell house with a teal roof, to tie a home to the mill. Same footprint as log-cabin-large. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "oak",
+          "oak_light"
+        ],
+        "roof": [
+          "teal",
+          "teal_dark",
+          "teal_light"
+        ],
+        "timber": [
+          "wood",
+          "wood_dark",
+          "wood_light",
+          "entrance_oak"
+        ],
+        "masonry": [
+          "stone_dark",
+          "stone_light",
+          "stone_warm",
+          "entrance_stone"
+        ],
+        "metal": [
+          "gold",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 2.43,
+        "width": 1.1,
+        "height": 2.2,
+        "bottom": 0.17,
+        "steps": [
+          [
+            3.2,
+            2.65,
+            1.75,
+            0.09620000000000001
+          ],
+          [
+            2.77,
+            1.7000000000000002,
+            1.5,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:56:18+00:00",
+  "updated": "2026-10-29T05:56:18+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:56:18+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/interiors/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/kindle-hollow.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/archive/kindle-hollow-v1.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "pipeline/world_seed.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/building_review.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_building_refresh.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

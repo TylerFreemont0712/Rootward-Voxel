@@ -1,0 +1,240 @@
+{
+  "schema": 1,
+  "id": "20261029T055713-e43c0a76",
+  "kind": "delete",
+  "title": "Delete Tree",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "tree",
+    "label": "Tree",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/tree/v1/model.blend",
+    "runtime": "assets/world/tree/model.glb",
+    "manifest": "assets/world/tree/manifest.json",
+    "catalog_notes": "Editable reference seed; existing per-placement procedural crown variants stay selected until reviewed.",
+    "related_files": [
+      "art/source/world/tree/v1/provenance.json",
+      "art/source/world/tree/v1/seed.glb.audit.json"
+    ],
+    "usage_files": [
+      "content/areas/haverlund-square.json",
+      "content/build/catalog.json",
+      "content/levels/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "procedural_test",
+      "source": "art/source/world/tree/v1/model.blend",
+      "runtime": "assets/world/tree/model.glb",
+      "pivot": "ground origin; preserve imported root",
+      "logical_footprint": {
+        "trunk_radius": 0.18
+      },
+      "behavior": "visual_only; gameplay rules remain in core",
+      "notes": "Editable reference seed; existing per-placement procedural crown variants stay selected until reviewed.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:57:13+00:00",
+  "updated": "2026-10-29T05:57:13+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:57:13+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: hearth-oak"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: ridge-cedar"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: river-willow"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: painted-oak"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: lane-tree"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: square-tree-planter"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "An area presentation selects this asset."
+    },
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/levels/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/haverlund-square.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "app/build_mode.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "core/build_ledger.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "core/area_def.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "core/area_build.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "core/api_reference.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "core/code_build.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "core/lab_world.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "scenes/build_overlay.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "scenes/thumbnail_studio.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "scenes/clearing_view.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "scenes/zone_terminal_display.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "ui/build_hud.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "ui/build_card.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "ui/glyph.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "ui/world_view.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "art/town_hall_room.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "art/village_boundary.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "art/rootward_presence.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "art/rootward_cutaway.gdshader",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "art/sprite_actor.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "pipeline/blender_retexture.py",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "pipeline/world_seed.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/build_details_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/build_overlay_shot.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_code_build.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_landmarks.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_terrain.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_area.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_illustrated_village.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_world_art.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build_assets.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_finishes.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_app.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build_mode.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "sandbox/world_harness.py",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

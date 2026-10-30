@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "id": "20261029T033222-26c0acb5",
+  "kind": "delete",
+  "title": "Delete Cottage Bed",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "cottage-bed",
+    "label": "Cottage Bed",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/cottage-bed/v1/model.blend",
+    "runtime": "assets/world/cottage-bed/model.glb",
+    "manifest": "assets/world/cottage-bed/manifest.json",
+    "catalog_notes": "Low timber cot, 1.1 m by 0.7 m, with a 0.5 m headboard at -X, a cream blanket and a folded pillow at the head. The footprint covers the whole cot; nothing overhangs it.",
+    "related_files": [
+      "art/source/world/cottage-bed/v1/brief.md",
+      "art/source/world/cottage-bed/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Cottage Bed",
+      "source": "art/source/world/cottage-bed/v1/model.blend",
+      "runtime": "assets/world/cottage-bed/model.glb",
+      "pivot": "ground origin at the footprint centre; base on z = 0",
+      "logical_footprint": [
+        -0.55,
+        -0.35,
+        1.1,
+        0.7
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Low timber cot, 1.1 m by 0.7 m, with a 0.5 m headboard at -X, a cream blanket and a folded pillow at the head. The footprint covers the whole cot; nothing overhangs it.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T03:32:22+00:00",
+  "updated": "2026-10-29T06:28:50+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T03:32:22+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:50+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/cottage-bed/v1/brief.md",
+    "art/source/world/cottage-bed/v1/model.blend",
+    "art/source/world/cottage-bed/v1/provenance.json",
+    "assets/world/cottage-bed/manifest.json",
+    "assets/world/cottage-bed/model.glb",
+    "assets/world/cottage-bed/model.glb.import"
+  ]
+}

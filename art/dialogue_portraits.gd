@@ -13,7 +13,14 @@ static func texture_for(id: String) -> Texture2D:
 			push_error("The portrait library is missing or invalid. Run scripts/art.sh.")
 			return null
 		_library = parsed.portraits
+		var catalog: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://pipeline/art-catalog.json"))
+		for spec: Dictionary in catalog.get("portrait_libraries", []):
+			var extra: Variant = JSON.parse_string(FileAccess.get_file_as_string(str(spec.manifest)))
+			if extra is Dictionary and extra.get("portraits") is Dictionary: _library.merge(extra.portraits)
 	var path: String = str((_library.get(id, {}) as Dictionary).get("runtime", ""))
+	if path=="":
+		var catalog: Variant=JSON.parse_string(FileAccess.get_file_as_string("res://pipeline/art-catalog.json"))
+		if catalog is Dictionary:path=str(catalog.get("companions",{}).get(id,{}).get("portrait_runtime",""))
 	if path == "" or not ResourceLoader.exists(path):
 		push_error("Selected dialogue portrait is missing: " + id + ". Run scripts/art.sh.")
 		return null

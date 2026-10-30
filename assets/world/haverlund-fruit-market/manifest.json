@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "haverlund-fruit-market",
+  "version": "v1",
+  "source": "art/source/world/haverlund-fruit-market/v1/model.blend",
+  "source_sha256": "98f32365164d24ee12b4ffa6d573398015f19b2b98c2cad9e54021888b4720c7",
+  "runtime": "assets/world/haverlund-fruit-market/model.glb",
+  "runtime_sha256": "46f633835e1d66fb86e54e56197e16b1f63d26223ff9f71fc2a117c7317c5d17",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -6.49440002441406,
+      -0.00499999523162842,
+      -4.46023178100586,
+      6.50540733337402,
+      7.77587747573853,
+      5.0055193901062
+    ],
+    "geometry_sha256": "e898eceffb6c68234695f7226b8550e6ceb226286428a966be3fb9e84436c0aa",
+    "material_records": {
+      "house_lamp_glass": {
+        "albedo": [
+          10000,
+          8510,
+          6275,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "house_window_pane": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3500,
+        "texture_rgba_sha256": "0521fe9168475a9da488e23ca89b12bdfdc600fcde1d4eb37051e2cec2478c37"
+      },
+      "seaside_ridge": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "ded5a294cd42a02ed6d2b8bb815cbb0b45fd4cf6ae6066ce5c7674d079ff0e61"
+      },
+      "seaside_roof": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "ded5a294cd42a02ed6d2b8bb815cbb0b45fd4cf6ae6066ce5c7674d079ff0e61"
+      },
+      "seaside_shutter": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "c4e7a24a15a5ec12722f3b0247221d7e62e925da54c6b585a45d69716ff3e8d3"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "3f62de89bb50790fc9fa341897ab939bfcbc42f141e298bd11d1311b20b4a08a"
+      },
+      "seaside_timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "house_lamp_glass",
+      "house_paint",
+      "house_window_pane",
+      "seaside_ridge",
+      "seaside_roof",
+      "seaside_shutter",
+      "seaside_stone",
+      "seaside_timber"
+    ],
+    "meshes": 9,
+    "triangles": 77231
+  }
+}

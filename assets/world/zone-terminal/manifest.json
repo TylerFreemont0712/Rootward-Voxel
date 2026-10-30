@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "asset": "zone-terminal",
+  "version": "v1",
+  "source": "art/source/world/zone-terminal/v1/model.blend",
+  "source_sha256": "cde61501c1c3d2cdd143e589c61ee2773d890fea1d4721f5dedc18dad1ec5a31",
+  "runtime": "assets/world/zone-terminal/model.glb",
+  "runtime_sha256": "194e5a283c3ffc667f8b928162dc6b299d7871e81da754493ccdd1d034aeeaaa",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.430000007152557,
+      0.0,
+      -0.411946088075638,
+      0.430000007152557,
+      0.720000028610229,
+      0.391000002622604
+    ],
+    "geometry_sha256": "f24762146925ddeee6f4a590801401d2dc48432d2ef77ea7bb18172801a648dc",
+    "material_records": {
+      "loft_brass": {
+        "albedo": [
+          7686,
+          6039,
+          3255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_cable": {
+        "albedo": [
+          2039,
+          2314,
+          2314,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_cream": {
+        "albedo": [
+          9373,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_ink": {
+        "albedo": [
+          3294,
+          2314,
+          1686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_ochre": {
+        "albedo": [
+          7725,
+          6118,
+          3451,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_rubber": {
+        "albedo": [
+          2353,
+          2549,
+          2510,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_screen_glass": {
+        "albedo": [
+          902,
+          2392,
+          2353,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_teal_dark": {
+        "albedo": [
+          1922,
+          3608,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_teal_light": {
+        "albedo": [
+          4549,
+          6510,
+          6078,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_terminal_cream": {
+        "albedo": [
+          9098,
+          8667,
+          7608,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_terminal_shadow": {
+        "albedo": [
+          7137,
+          6902,
+          6078,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_terminal_teal": {
+        "albedo": [
+          2392,
+          4667,
+          4510,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_brass",
+      "loft_cable",
+      "loft_cream",
+      "loft_ink",
+      "loft_ochre",
+      "loft_rubber",
+      "loft_screen_glass",
+      "loft_teal_dark",
+      "loft_teal_light",
+      "loft_terminal_cream",
+      "loft_terminal_shadow",
+      "loft_terminal_teal"
+    ],
+    "meshes": 50,
+    "triangles": 6828
+  }
+}

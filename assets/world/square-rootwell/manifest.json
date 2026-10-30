@@ -1,0 +1,193 @@
+{
+  "schema": 1,
+  "asset": "square-rootwell",
+  "version": "v1",
+  "source": "art/source/world/square-rootwell/v1/model.blend",
+  "source_sha256": "0925a6451584a0e52de3efabb569d7259f3d65fc1610200901bc4ac161568fce",
+  "runtime": "assets/world/square-rootwell/model.glb",
+  "runtime_sha256": "cb36aac8ed53a75b1afd26e389b7f69f5dde0eef3b439a5faf16157030f0d344",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.9650000333786,
+      0.0,
+      -1.9650000333786,
+      1.9650000333786,
+      2.05999994277954,
+      1.9650000333786
+    ],
+    "geometry_sha256": "13e32c7f03959bfd02d0d7aa2f0e058c74d86e6b2b7805351b1e4baa44d59f87",
+    "material_records": {
+      "loft_root": {
+        "albedo": [
+          5961,
+          4039,
+          2471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_root_light": {
+        "albedo": [
+          7451,
+          5569,
+          3333,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_spark": {
+        "albedo": [
+          10000,
+          6872,
+          3035,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_window_dome": {
+        "albedo": [
+          7882,
+          8863,
+          8824,
+          2500
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_cream": {
+        "albedo": [
+          9098,
+          8745,
+          7922,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_ink": {
+        "albedo": [
+          3137,
+          2392,
+          1882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf": {
+        "albedo": [
+          3569,
+          5412,
+          2706,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_pale": {
+        "albedo": [
+          9333,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_shade": {
+        "albedo": [
+          7686,
+          6980,
+          5569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_warm": {
+        "albedo": [
+          8471,
+          7647,
+          6118,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_red": {
+        "albedo": [
+          7098,
+          2745,
+          2275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_teal": {
+        "albedo": [
+          2471,
+          4824,
+          4549,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_window_reflection": {
+        "albedo": [
+          8824,
+          9529,
+          9294,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_root",
+      "loft_root_light",
+      "loft_spark",
+      "loft_window_dome",
+      "square_brass",
+      "square_cream",
+      "square_ink",
+      "square_leaf",
+      "square_limestone",
+      "square_limestone_pale",
+      "square_limestone_shade",
+      "square_limestone_warm",
+      "square_red",
+      "square_teal",
+      "square_window_reflection"
+    ],
+    "meshes": 19,
+    "triangles": 17196
+  }
+}

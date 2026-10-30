@@ -1,0 +1,8 @@
+{
+  "asset": "zone-terminal",
+  "date": "2026-10-27",
+  "authoring_record": "art/source/world/zone-terminal/v1/author.py",
+  "authoring_record_sha256": "aa46eb09d68f061ddeb83c6f0c352bd9f67b317e3e56ae805b57cfb86783062d",
+  "style_reference": "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png",
+  "note": "New source; no adopted master overwritten. Native geometry and existing palette. Blender source is now authority."
+}

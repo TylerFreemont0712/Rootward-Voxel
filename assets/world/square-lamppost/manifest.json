@@ -1,0 +1,193 @@
+{
+  "schema": 1,
+  "asset": "square-lamppost",
+  "version": "v1",
+  "source": "art/source/world/square-lamppost/v1/model.blend",
+  "source_sha256": "028d288129135dac1f7388ceeadd7a7002ac6e43be82dac2861c7cb4b94906ba",
+  "runtime": "assets/world/square-lamppost/model.glb",
+  "runtime_sha256": "702aaa1a20caf215ad8bd65e2985f7d54bb642457b26b959eee4be76607ecdc2",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.449999988079071,
+      0.0200000107288361,
+      -0.449999988079071,
+      0.449999988079071,
+      2.81900000572205,
+      0.769999980926514
+    ],
+    "geometry_sha256": "d4ab96e37b105e9dbf77f3e5eb58facfb4074d2d084c2c639d811783420f10f6",
+    "material_records": {
+      "lamp_glass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": "508db50428629d64850f768afa96c233d4349a7ebb395b93a8fd1a5eb0e18812"
+      },
+      "square_brass": {
+        "albedo": [
+          6824,
+          5216,
+          2784,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_bud": {
+        "albedo": [
+          8667,
+          7137,
+          3686,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_iron": {
+        "albedo": [
+          2039,
+          2118,
+          2235,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_iron_edge": {
+        "albedo": [
+          3255,
+          3333,
+          3529,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf": {
+        "albedo": [
+          2824,
+          4471,
+          2784,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf_dark": {
+        "albedo": [
+          1569,
+          3294,
+          2706,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf_light": {
+        "albedo": [
+          4902,
+          6000,
+          3137,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone": {
+        "albedo": [
+          7922,
+          7412,
+          5961,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_mortar": {
+        "albedo": [
+          5059,
+          4863,
+          3922,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_oak": {
+        "albedo": [
+          4392,
+          3137,
+          2275,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_oak_light": {
+        "albedo": [
+          5961,
+          4510,
+          2941,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_soil": {
+        "albedo": [
+          3333,
+          2667,
+          1961,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_stone_light": {
+        "albedo": [
+          8824,
+          8275,
+          6941,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "square_stone_shade": {
+        "albedo": [
+          6745,
+          6667,
+          5529,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lamp_glass",
+      "square_brass",
+      "square_bud",
+      "square_iron",
+      "square_iron_edge",
+      "square_leaf",
+      "square_leaf_dark",
+      "square_leaf_light",
+      "square_limestone",
+      "square_mortar",
+      "square_oak",
+      "square_oak_light",
+      "square_soil",
+      "square_stone_light",
+      "square_stone_shade"
+    ],
+    "meshes": 74,
+    "triangles": 2536
+  }
+}

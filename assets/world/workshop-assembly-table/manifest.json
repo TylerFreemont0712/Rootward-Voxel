@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "asset": "workshop-assembly-table",
+  "version": "v1",
+  "source": "art/source/world/workshop-assembly-table/v1/model.blend",
+  "source_sha256": "3b116adaa495345440abea2a7187b254dc22f63286382487e5dcf8975db5e827",
+  "runtime": "assets/world/workshop-assembly-table/model.glb",
+  "runtime_sha256": "a35f705cc5c9eaf56a3a5536acdff45127b1d42683744779f93fa497c6418fdd",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -2.20000004768372,
+      0.0,
+      -0.824999988079071,
+      2.20000004768372,
+      1.88000011444092,
+      0.84125554561615
+    ],
+    "geometry_sha256": "712a6247a0083479ee80f02faf74611874211a6817fac3fe100181316acc034b",
+    "material_records": {
+      "workshop_bench": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "178f9ee3238028fc8820492710423f62b17c5e2211153c5c0648b0c92aa25f4b"
+      },
+      "workshop_blue_light": {
+        "albedo": [
+          5961,
+          6588,
+          6588,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_cream": {
+        "albedo": [
+          9098,
+          8745,
+          7922,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_linen_shade": {
+        "albedo": [
+          7373,
+          6980,
+          6039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+      },
+      "workshop_steel": {
+        "albedo": [
+          3451,
+          3882,
+          4157,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_steel_dark": {
+        "albedo": [
+          2039,
+          2431,
+          2667,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_steel_light": {
+        "albedo": [
+          5373,
+          5647,
+          5490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "workshop_bench",
+      "workshop_blue_light",
+      "workshop_brass",
+      "workshop_cream",
+      "workshop_linen_shade",
+      "workshop_oak",
+      "workshop_steel",
+      "workshop_steel_dark",
+      "workshop_steel_light",
+      "workshop_wood",
+      "workshop_wood_dark"
+    ],
+    "meshes": 11,
+    "triangles": 10072
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "asset": "lane-workshop",
+  "date": "2026-10-30",
+  "record": "art/source/world/square-hub/v1/doorway_dark_revision.py",
+  "backup": "model.pre-doorway-dark.blend",
+  "result": "doorway quad is flat black",
+  "note": "Only the doorway_beyond quad changed; geometry and the transom glass are untouched."
+}

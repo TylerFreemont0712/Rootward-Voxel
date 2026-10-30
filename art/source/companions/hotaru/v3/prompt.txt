@@ -1,0 +1,5 @@
+Use case: robot companion dialogue portrait, painted over a Blender render. Tool: local ComfyUI img2img (paint-workflow.json), checkpoint novaAnimeXL_ilV190.safetensors, seed 71028, 30 steps, CFG 5.5, dpmpp_2m karras, denoise 0.42, 896x1152.
+Input: concept/renders/portrait-base.png (from concept/render_turnaround.py and art/source/world/hotaru-robot/v1/model.blend) flattened onto #E9DFCB.
+Positive: masterpiece, best quality, painterly illustration, hand-painted, soft brush strokes, warm afternoon light, gentle rim light, no humans, solo, cute small robot shaped like a lantern, cream enamel body, teal domed cap with brim, teal stripes, brass trim, round brass porthole window glowing warm amber, empty glowing window, small brass propeller on top, red knob, stubby arms with round teal hands, floating, storybook, simple background
+Negative: lowres, worst quality, low quality, text, watermark, signature, human, face, mouth, nose, eyes, 3d render, cgi, plastic, glossy, photo, extra arms, extra propellers
+Post: compose_portrait.py restores the render's silhouette as alpha and draws the spark eyes from portrait-base.json; sprite.png is the Neutral expression.

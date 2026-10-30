@@ -98,7 +98,11 @@ static func panel(kind: String = "panel") -> FantasyBox:
 		"scrim":
 			return FantasyBox.make({"fill_top": Color(0.04, 0.03, 0.02, 0.92), "fill_bottom": Color(0.06, 0.045, 0.03, 0.95), "border": Pal.BRASS, "border_width": 2.0, "chamfer": 14.0, "inner_line": Color(0.95, 0.8, 0.45, 0.22), "studs": true, "stud_color": Pal.BRASS, "shadow": 6.0, "bevel": 0.1}, Vector2(26, 22))
 		"drawer":
-			return FantasyBox.make({"fill_top": Color(0.1, 0.075, 0.05, 0.96), "fill_bottom": Color(0.075, 0.055, 0.04, 0.97), "border": Pal.BRASS, "border_width": 2.0, "chamfer": 16.0, "inner_line": Color(0.95, 0.8, 0.45, 0.2), "studs": true, "stud_color": Pal.BRASS, "shadow": 0.0, "bevel": 0.1}, Vector2(20, 18))
+			return FantasyBox.make({"fill_top": Color(0.065, 0.085, 0.085, 0.94), "fill_bottom": Color(0.05, 0.06, 0.065, 0.96), "border": Pal.BRASS_LO, "border_width": 1.0, "chamfer": 5.0, "inner_line": Color(Pal.PARCHMENT,0.08), "studs": false, "shadow": 0.0, "bevel": 0.0}, Vector2(14, 10))
+		"quest":
+			return FantasyBox.make({"fill_top":Color(0.04,0.065,0.065,0.58),"fill_bottom":Color(0.04,0.055,0.06,0.40),"border":Color(Pal.PARCHMENT,.18),"border_width":1.0,"chamfer":3.0,"inner_line":Color.TRANSPARENT,"shadow":0.0,"bevel":0.0},Vector2(16,14))
+		"test":
+			return FantasyBox.make({"fill_top":Color(Pal.PANEL_LO,.98),"fill_bottom":Color(Pal.INK,.98),"border":Pal.TEAL,"border_width":1.0,"chamfer":5.0,"inner_line":Color(Pal.TEAL,.10),"shadow":3.0,"bevel":0.0},Vector2(12,10))
 		_:
 			return FantasyBox.make({"fill_top": Pal.PANEL_HI, "fill_bottom": Pal.PANEL, "border": Pal.BRASS, "border_width": 2.0, "chamfer": 14.0, "inner_line": Color(0.95, 0.8, 0.45, 0.2), "studs": true, "shadow": 4.0}, Vector2(22, 18))
 
@@ -106,7 +110,7 @@ static func panel(kind: String = "panel") -> FantasyBox:
 static func _build() -> Theme:
 	var t := Theme.new()
 	t.default_font = body_font(500)
-	t.default_font_size = 18
+	t.default_font_size = 16
 	# Labels
 	t.set_color("font_color", "Label", Pal.PARCHMENT)
 	t.set_color("font_shadow_color", "Label", Color(0, 0, 0, 0))
@@ -115,14 +119,14 @@ static func _build() -> Theme:
 	t.set_type_variation("LabelHeading", "Label")
 	t.set_font("font", "LabelHeading", display_font(700, 1))
 	t.set_color("font_color", "LabelHeading", Pal.BRASS_HI)
-	t.set_font_size("font_size", "LabelHeading", 22)
+	t.set_font_size("font_size", "LabelHeading", 20)
 	t.set_type_variation("LabelCaps", "Label")
 	t.set_font("font", "LabelCaps", display_font(600, 2))
 	t.set_color("font_color", "LabelCaps", Pal.BRASS)
-	t.set_font_size("font_size", "LabelCaps", 14)
+	t.set_font_size("font_size", "LabelCaps", 12)
 	# Buttons
 	t.set_font("font", "Button", display_font(700, 1))
-	t.set_font_size("font_size", "Button", 17)
+	t.set_font_size("font_size", "Button", 14)
 	t.set_color("font_color", "Button", Pal.PARCHMENT)
 	t.set_color("font_hover_color", "Button", Color.WHITE)
 	t.set_color("font_pressed_color", "Button", Pal.BRASS_HI)
@@ -135,13 +139,13 @@ static func _build() -> Theme:
 		var type_name: String = "Button" if variation == "" else "Button" + variation
 		if variation != "":
 			t.set_type_variation(type_name, "Button")
-		var pad := Vector2(22, 11)
+		var pad := Vector2(14, 6)
 		if variation == "Tab":
-			pad = Vector2(16, 7)
+			pad = Vector2(10, 4)
 		elif variation == "Icon":
-			pad = Vector2(9, 9)
+			pad = Vector2(6, 5)
 		elif variation == "Quiet":
-			pad = Vector2(12, 6)
+			pad = Vector2(8, 4)
 		var base_variation: String = "" if variation == "Icon" else variation
 		for state: StringName in [&"normal", &"hover", &"pressed", &"disabled", &"focus"]:
 			t.set_stylebox(state, type_name, plaque(state, base_variation, pad))
@@ -152,17 +156,17 @@ static func _build() -> Theme:
 			t.set_color("font_outline_color", type_name, Color(1, 1, 1, 0.0))
 			t.set_color("font_focus_color", type_name, Color("2b1d0c"))
 		elif variation == "Tab":
-			t.set_font_size("font_size", type_name, 15)
+			t.set_font_size("font_size", type_name, 14)
 			t.set_color("font_color", type_name, Pal.PARCH_DIM)
 			t.set_color("font_pressed_color", type_name, Pal.BRASS_HI)
 			t.set_color("font_hover_color", type_name, Pal.PARCHMENT)
 		elif variation == "Quiet":
 			t.set_color("font_color", type_name, Pal.PARCH_DIM)
-			t.set_font_size("font_size", type_name, 15)
+			t.set_font_size("font_size", type_name, 14)
 	# Panels
 	t.set_stylebox("panel", "PanelContainer", panel("panel"))
 	t.set_stylebox("panel", "Panel", panel("panel"))
-	for kind: String in ["inset", "pill", "card", "scrim", "drawer"]:
+	for kind: String in ["inset", "pill", "card", "scrim", "drawer", "quest", "test"]:
 		var type_name: String = "Panel" + kind.capitalize()
 		t.set_type_variation(type_name, "PanelContainer")
 		t.set_stylebox("panel", type_name, panel(kind))
@@ -177,7 +181,7 @@ static func _build() -> Theme:
 	t.set_color("caret_color", "LineEdit", Pal.BRASS_HI)
 	t.set_color("selection_color", "LineEdit", Color(0.84, 0.65, 0.29, 0.35))
 	t.set_font("font", "LineEdit", body_font(600))
-	t.set_font_size("font_size", "LineEdit", 20)
+	t.set_font_size("font_size", "LineEdit", 16)
 	t.set_stylebox("normal", "TextEdit", panel("inset"))
 	t.set_stylebox("focus", "TextEdit", focused)
 	t.set_stylebox("read_only", "TextEdit", panel("inset"))
@@ -226,9 +230,9 @@ static func _build() -> Theme:
 	t.set_font("normal_font", "RichTextLabel", body_font(500))
 	t.set_font("bold_font", "RichTextLabel", body_font(800))
 	t.set_font("mono_font", "RichTextLabel", MONO)
-	t.set_font_size("normal_font_size", "RichTextLabel", 19)
-	t.set_font_size("bold_font_size", "RichTextLabel", 19)
-	t.set_font_size("mono_font_size", "RichTextLabel", 17)
+	t.set_font_size("normal_font_size", "RichTextLabel", 16)
+	t.set_font_size("bold_font_size", "RichTextLabel", 16)
+	t.set_font_size("mono_font_size", "RichTextLabel", 15)
 	return t
 
 

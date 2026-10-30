@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "lane-lamp",
+  "version": "v1",
+  "source": "art/source/world/lane-lamp/v1/model.blend",
+  "source_sha256": "433a9a723e3130ec91186664ce9c6d7633087c76de5cad9a2b4a3acddad355c0",
+  "runtime": "assets/world/lane-lamp/model.glb",
+  "runtime_sha256": "ee8e33658b7776f0ea3be855897e94d765c2364ac2301332a879c894ead64d97",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.259999990463257,
+      0.0,
+      -0.259999990463257,
+      0.259999990463257,
+      2.79999995231628,
+      0.259999990463257
+    ],
+    "geometry_sha256": "2c5650f3e6dd3e31c4fb97299ff5d3043e870fc52efb5a467e20afd6a0f3a17c",
+    "material_records": {
+      "lane_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_lamp_glass": {
+        "albedo": [
+          10000,
+          8784,
+          6275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone_pale": {
+        "albedo": [
+          9333,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone_warm": {
+        "albedo": [
+          8471,
+          7647,
+          6118,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_brass",
+      "lane_iron",
+      "lane_lamp_glass",
+      "lane_limestone",
+      "lane_limestone_pale",
+      "lane_limestone_warm"
+    ],
+    "meshes": 6,
+    "triangles": 1524
+  }
+}

@@ -57,7 +57,91 @@
       "sacks",
       "scattered small props"
     ],
-    "catalog": "res://pipeline/world-catalog.json"
+    "catalog": "res://pipeline/world-catalog.json",
+    "source_packs": {
+      "sparks_loft": {
+        "source": "res://art/source/world/sparks-loft/v1/",
+        "prompts": "res://art/source/world/sparks-loft/v1/prompts.json",
+        "reference": "res://docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png",
+        "assets": [
+          "loft-bed",
+          "loft-desk",
+          "loft-chair",
+          "loft-shelf",
+          "loft-luggage",
+          "loft-cabinet",
+          "loft-wall-life",
+          "loft-rug",
+          "loft-travel-stacks",
+          "loft-window-life",
+          "loft-postcard",
+          "loft-tape-machine",
+          "loft-hotaru",
+          "loft-cable",
+          "loft-note-slip",
+          "loft-hand-terminal",
+          "field-tablet"
+        ],
+        "build": "scripts/world-art.sh build <id>",
+        "note": "Bespoke painted surface images are packed into editable Blender masters and embedded in audited runtime GLBs. No image service is needed to play."
+      },
+      "sparks_workshop": {
+        "source": "res://art/source/world/sparks-workshop/v1/",
+        "prompts": "res://art/source/world/sparks-workshop/v1/prompts.json",
+        "reference": "res://docs/concept/v0.7/art/4-opening/T7b-workshop-floor.png",
+        "assets": [
+          "workshop-shell",
+          "workshop-staircase",
+          "workshop-repair-bench",
+          "workshop-tool-wall",
+          "workshop-parts-drawers",
+          "workshop-assembly-table",
+          "workshop-parts-crate",
+          "workshop-stove",
+          "workshop-armchair",
+          "workshop-tea-table",
+          "workshop-job-board",
+          "workshop-shop-doors",
+          "workshop-hanging-lamp",
+          "workshop-stool",
+          "workshop-rug",
+          "workshop-wall-shelf",
+          "workshop-umbrella-stand",
+          "workshop-bread-cupboard",
+          "workshop-service-trolley",
+          "workshop-wall-clock",
+          "workshop-stair-lamp",
+          "workshop-wall-screen"
+        ],
+        "build": "scripts/world-art.sh build <id>",
+        "note": "Twenty-one adopted workshop models; two new painted materials plus four unchanged loft paintings. The stair lantern and two pendants are connected to real lamp state. No authoring services at runtime."
+      },
+      "zone_terminal": {
+        "source": "res://art/source/world/zone-terminal/v1/",
+        "assets": [
+          "zone-terminal"
+        ],
+        "build": "scripts/world-art.sh build zone-terminal",
+        "note": "Native Blender geometry using existing loft palette; reusable screen computer with separate semantic glass and indicator."
+      },
+      "sparks_square": {
+        "source": "res://art/source/world/sparks-square/v1/",
+        "reference": "res://docs/concept/v0.7/art/5-town/T3-rootward-square-day.wheels.png",
+        "assets": [
+          "haverlund-square-set",
+          "square-rootwell",
+          "square-town-hall",
+          "square-bakery",
+          "square-bookshop",
+          "square-grocer",
+          "square-market-stall",
+          "square-cafe-table",
+          "square-node"
+        ],
+        "build": "scripts/world-art.sh build <id>",
+        "note": "Native Blender geometry, packed shared lane paintings. New downhill square, no new quests or tram travel."
+      }
+    }
   },
   "portraits": {
     "version": "v1",
@@ -103,5 +187,59 @@
     "library": "res://art/source/world/concept-cottage/v1/textures/library.json",
     "provenance": "res://art/source/world/concept-cottage/v1/textures/generation.json",
     "manifest": "res://assets/world/textures/concept-cottage-manifest.json"
-  }
+  },
+  "companions": {
+    "hotaru": {
+      "source": "res://art/source/companions/hotaru/v2/sprite.png",
+      "runtime": "res://assets/companions/hotaru.png",
+      "prompt": "art/source/companions/hotaru/v2/prompt.txt",
+      "provenance": "art/source/companions/hotaru/v2/provenance.json",
+      "height": 256,
+      "portrait_runtime": "res://assets/companions/hotaru-portrait.png"
+    }
+  },
+  "building_texture_libraries": [
+    {
+      "version": "v1-reference-cottage",
+      "library": "res://art/source/world/reference-cottage/v1/textures/library.json",
+      "provenance": "res://art/source/world/reference-cottage/v1/textures/generation.json",
+      "manifest": "res://assets/world/textures/reference-cottage-manifest.json"
+    },
+    {
+      "version": "seaside-houses-v1",
+      "library": "res://art/source/world/seaside-background-houses/v1/textures/library.json",
+      "provenance": "res://art/source/world/seaside-background-houses/v1/textures/generation.json",
+      "manifest": "res://assets/world/textures/seaside-houses/manifest.json",
+      "output_root": "res://assets/world/textures/seaside-houses",
+      "detail_size": 512
+    }
+  ],
+  "portrait_libraries": [
+    {
+      "version": "v1",
+      "prompt": "res://art/source/portraits/sparks/v1/prompts.json",
+      "provenance": "res://art/source/portraits/sparks/v1/provenance.json",
+      "manifest": "res://assets/portraits/sparks/library.json",
+      "items": {
+        "hotaru-robot": {
+          "source": "res://art/source/portraits/sparks/v1/hotaru-robot.png",
+          "source_sha256": "4fca154096bc72a53a38d92428636fd13de76ece28cc17e0329639260af68a95",
+          "runtime": "res://assets/portraits/sparks/hotaru-robot.png"
+        }
+      }
+    },
+    {
+      "version": "v1-traveller",
+      "prompt": "res://art/source/portraits/sparks/v1/traveller-prompt.json",
+      "provenance": "res://art/source/portraits/sparks/v1/traveller-provenance.json",
+      "manifest": "res://assets/portraits/sparks/traveller-library.json",
+      "items": {
+        "traveller": {
+          "source": "res://art/source/portraits/sparks/v1/traveller.png",
+          "source_sha256": "425e8681b79c835958d2e3f7d9cd660fcc1ed5b0d3a8ddd45811bc09fa94fc87",
+          "runtime": "res://assets/portraits/sparks/traveller.png"
+        }
+      }
+    }
+  ]
 }

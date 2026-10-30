@@ -18,7 +18,7 @@ func _run() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	game.session.set_physics_process(false)
 	game.session.state.player = [35,5,0]
 	game.view.sync_player(game.session.state)
@@ -58,7 +58,7 @@ func _run() -> void:
 	game.save_now()
 	_check(SaveStore.read().state.props.get(id,false),"Autosave stores the working state beside build edits")
 	await game._return_to_title()
-	await game.continue_game()
+	await game.continue_game("kindle-hollow")
 	_check(game.area.prop(id).facing=="E" and game.session.state.props.get(id,false) and (game.view._prop_visuals[id] as PropVisual).active,"Continue restores the moved object, facing and active visual")
 	game.session.reset_world()
 	_check(not game.session.state.props.get(id,false) and not (game.view._prop_visuals[id] as PropVisual).active,"Reset restores all working objects to their inactive state")

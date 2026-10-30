@@ -1,0 +1,336 @@
+{
+  "schema": 1,
+  "asset": "reference-cottage",
+  "version": "v1",
+  "source": "art/source/world/reference-cottage/v1/model.blend",
+  "source_sha256": "212b569e95736b1bd20e2500045b2ebd316118da98cce11c5509b6efeaa854d9",
+  "runtime": "assets/world/reference-cottage/model.glb",
+  "runtime_sha256": "911575bccc42feae5637bbfdf6480743655284958b020e279bec0b1ea9c17e66",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -2.49797558784485,
+      0.0,
+      -2.39499998092651,
+      2.39913749694824,
+      5.33500003814697,
+      3.15000009536743
+    ],
+    "geometry_sha256": "f85b8f94cb076a8399e898a35d8e42b91c20a59570b7c1699e3e83b2710355a8",
+    "material_records": {
+      "study_brass": {
+        "albedo": [
+          7490,
+          5765,
+          2588,
+          10000
+        ],
+        "roughness": 4200,
+        "texture_rgba_sha256": ""
+      },
+      "study_clay_under": {
+        "albedo": [
+          3176,
+          2588,
+          3961,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "study_door_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": "b17c15fc5034331e7894eab9ae389ca46d5fb6e2258cfb6d1658db2cf1a39f15"
+      },
+      "study_endgrain": {
+        "albedo": [
+          6667,
+          4510,
+          2118,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "study_endgrain_dark": {
+        "albedo": [
+          4431,
+          2784,
+          1294,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "study_flower": {
+        "albedo": [
+          9569,
+          9373,
+          8471,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "study_glass": {
+        "albedo": [
+          2510,
+          3176,
+          4392,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": ""
+      },
+      "study_glass_light": {
+        "albedo": [
+          3490,
+          4196,
+          5412,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": ""
+      },
+      "study_iron": {
+        "albedo": [
+          2039,
+          2510,
+          2314,
+          10000
+        ],
+        "roughness": 6500,
+        "texture_rgba_sha256": ""
+      },
+      "study_leaf": {
+        "albedo": [
+          2980,
+          4745,
+          2314,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "study_leaf_dark": {
+        "albedo": [
+          2118,
+          3333,
+          2118,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "study_leaf_light": {
+        "albedo": [
+          4980,
+          6157,
+          2706,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "study_mortar": {
+        "albedo": [
+          4588,
+          4314,
+          3686,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "study_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": "b17c15fc5034331e7894eab9ae389ca46d5fb6e2258cfb6d1658db2cf1a39f15"
+      },
+      "study_oak_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": "b17c15fc5034331e7894eab9ae389ca46d5fb6e2258cfb6d1658db2cf1a39f15"
+      },
+      "study_oak_warm": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": "b17c15fc5034331e7894eab9ae389ca46d5fb6e2258cfb6d1658db2cf1a39f15"
+      },
+      "study_pollen": {
+        "albedo": [
+          8902,
+          7059,
+          2784,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "study_recess": {
+        "albedo": [
+          1294,
+          1059,
+          941,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "study_soil": {
+        "albedo": [
+          2627,
+          2196,
+          1647,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "study_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": "fef441283f765d605f3c1395fe3ccffb7c17cfae9b6699092bd661b0132f8ccd"
+      },
+      "study_stone_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": "fef441283f765d605f3c1395fe3ccffb7c17cfae9b6699092bd661b0132f8ccd"
+      },
+      "study_stone_warm": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": "fef441283f765d605f3c1395fe3ccffb7c17cfae9b6699092bd661b0132f8ccd"
+      },
+      "study_tile_edge": {
+        "albedo": [
+          6667,
+          6275,
+          7451,
+          10000
+        ],
+        "roughness": 6400,
+        "texture_rgba_sha256": ""
+      },
+      "study_timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": "b17c15fc5034331e7894eab9ae389ca46d5fb6e2258cfb6d1658db2cf1a39f15"
+      },
+      "study_violet": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5200,
+        "texture_rgba_sha256": "ec638630442f0d7259afd26936ce40132289d5396d6af5013ab84efbadea5dfe"
+      },
+      "study_violet_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5200,
+        "texture_rgba_sha256": "ec638630442f0d7259afd26936ce40132289d5396d6af5013ab84efbadea5dfe"
+      },
+      "study_violet_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 5200,
+        "texture_rgba_sha256": "ec638630442f0d7259afd26936ce40132289d5396d6af5013ab84efbadea5dfe"
+      },
+      "study_window": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": "d58bbcde21fb59bb393bf5dc52af09c38158fc1a3a6db86e38086af5f9a17de4"
+      }
+    },
+    "materials": [
+      "study_brass",
+      "study_clay_under",
+      "study_door_oak",
+      "study_endgrain",
+      "study_endgrain_dark",
+      "study_flower",
+      "study_glass",
+      "study_glass_light",
+      "study_iron",
+      "study_leaf",
+      "study_leaf_dark",
+      "study_leaf_light",
+      "study_mortar",
+      "study_oak",
+      "study_oak_light",
+      "study_oak_warm",
+      "study_pollen",
+      "study_recess",
+      "study_soil",
+      "study_stone",
+      "study_stone_light",
+      "study_stone_warm",
+      "study_tile_edge",
+      "study_timber",
+      "study_violet",
+      "study_violet_dark",
+      "study_violet_light",
+      "study_window"
+    ],
+    "meshes": 54,
+    "triangles": 69188
+  }
+}

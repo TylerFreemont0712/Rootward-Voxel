@@ -1,0 +1,281 @@
+{
+  "schema": 1,
+  "asset": "square-town-hall",
+  "version": "v1",
+  "source": "art/source/world/square-town-hall/v1/model.blend",
+  "source_sha256": "18ba5b6683ea6150fceca88ff20b88e822e1ad2b54969a809ae23f5256c82326",
+  "runtime": "assets/world/square-town-hall/model.glb",
+  "runtime_sha256": "a544a224106c28fefbe5b18feb5fde5a2048feb886c879328f15d2b4ed337189",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -4.5,
+      0.0,
+      -3.07223844528198,
+      4.5,
+      8.34000015258789,
+      3.82500004768372
+    ],
+    "geometry_sha256": "2e33643ee0f4c74c94c154434140f337f050af982b8ebfacf044e162bb665222",
+    "material_records": {
+      "loft_roof_blue": {
+        "albedo": [
+          3059,
+          5059,
+          5922,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_roof_blue_dark": {
+        "albedo": [
+          2314,
+          3961,
+          4902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_roof_blue_light": {
+        "albedo": [
+          3961,
+          5922,
+          6510,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_pink": {
+        "albedo": [
+          8980,
+          6039,
+          6588,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_red": {
+        "albedo": [
+          8118,
+          3098,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_white": {
+        "albedo": [
+          9647,
+          9412,
+          8863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_ink": {
+        "albedo": [
+          3137,
+          2392,
+          1882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf": {
+        "albedo": [
+          3569,
+          5412,
+          2706,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf_light": {
+        "albedo": [
+          5255,
+          6784,
+          3608,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_pale": {
+        "albedo": [
+          9333,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_shade": {
+        "albedo": [
+          7686,
+          6980,
+          5569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_warm": {
+        "albedo": [
+          8471,
+          7647,
+          6118,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+      },
+      "square_plaster": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "23d3a02cd880e8d5e554bdf397a7adcc8c19c2c04dd26469ef68620edd32c6ff"
+      },
+      "square_terracotta": {
+        "albedo": [
+          7843,
+          3922,
+          2471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_terracotta_dark": {
+        "albedo": [
+          6627,
+          3176,
+          2275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_timber": {
+        "albedo": [
+          4196,
+          2902,
+          2000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_white": {
+        "albedo": [
+          9490,
+          9176,
+          8471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_window_pane": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "0521fe9168475a9da488e23ca89b12bdfdc600fcde1d4eb37051e2cec2478c37"
+      },
+      "square_window_shop": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "562da4319f4a639aa398d7bf75d75910ac2dff2624196407f75f455a8ce283b4"
+      },
+      "square_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_roof_blue",
+      "loft_roof_blue_dark",
+      "loft_roof_blue_light",
+      "square_brass",
+      "square_flower_pink",
+      "square_flower_red",
+      "square_flower_white",
+      "square_ink",
+      "square_leaf",
+      "square_leaf_light",
+      "square_limestone",
+      "square_limestone_pale",
+      "square_limestone_shade",
+      "square_limestone_warm",
+      "square_oak",
+      "square_plaster",
+      "square_terracotta",
+      "square_terracotta_dark",
+      "square_timber",
+      "square_white",
+      "square_window_pane",
+      "square_window_shop",
+      "square_wood_dark"
+    ],
+    "meshes": 23,
+    "triangles": 50136
+  }
+}

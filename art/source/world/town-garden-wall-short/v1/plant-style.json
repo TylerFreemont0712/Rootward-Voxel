@@ -1,0 +1,20 @@
+{
+  "asset": "town-garden-wall-short",
+  "source": "art/source/world/town-garden-wall-short/v1/model.blend",
+  "backup": "art/source/world/town-garden-wall-short/v1/model.pre-plant-style.blend",
+  "before_sha256": "b7e85bb296e9e55dde3afc5378f9a69efc1c7f7b364fcf06f2b9518077aa1336",
+  "after_sha256": "da91b2e4db32aaa6cb7744bc1fa87c83466af94590c5a95ba4172b0c110a1987",
+  "objects": [
+    {
+      "object": "house_paint",
+      "replaced_components": {
+        "leaf": 4,
+        "leaf_dark": 3,
+        "leaf_light": 3
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

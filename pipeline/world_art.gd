@@ -58,7 +58,7 @@ func _run() -> void:
 			var audit: Dictionary = Geometry.audit(asset)
 			asset.free()
 			if int(audit.triangles) <= 0 or not _valid_bounds(audit.bounds):
-				_fail("Candidate is empty, nonfinite, or exceeds the 64-unit prototype asset limit.")
+				_fail("Candidate is empty, nonfinite, or exceeds the 128-unit asset limit.")
 				return
 			_write(args[2], audit)
 			print("Candidate audited: ", audit.meshes, " meshes, ", audit.triangles, " triangles.")
@@ -85,7 +85,7 @@ func _run() -> void:
 
 func _valid_bounds(bounds: Array) -> bool:
 	for value: Variant in bounds:
-		if not is_finite(float(value)) or absf(float(value)) > 64.0:
+		if not is_finite(float(value)) or absf(float(value)) > 128.0:
 			return false
 	return true
 

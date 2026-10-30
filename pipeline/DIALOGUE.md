@@ -1,6 +1,6 @@
 # Village conversations and portraits
 
-F beside Mira, Rowan, Bram, Tessa or Nell opens a single-speaker visual novel conversation over the current village or house. A newly painted, high-definition portrait appears at the left, with a wide dark wood/brass dialogue box along the bottom. The boy remains the player and has no second conversation portrait.
+F beside Mira, Rowan, Bram, Tessa or Nell, or with Hotaru following when no resident/working object takes priority, opens a single-speaker visual novel conversation over the current village or house. A newly painted, high-definition portrait appears at the left, with a wide dark wood/brass dialogue box along the bottom. The boy remains the player and has no second conversation portrait.
 
 Portraits retain the smaller scale, at most half the canvas height. Following the user's height correction, they are lifted **125 px on the standard 1000 px canvas**, proportionally at other sizes. Large interface settings raise them further when necessary to keep shoulders visible. The nameplate sits beside the portrait, clear of its face. The actual world and approved camera stay behind the scene; the play HUD steps aside and walking/resident motion pause.
 
@@ -94,3 +94,16 @@ VOXEL_LAB_FRESH=1 scripts/play.sh --resolution 1280x720 -s res://tools/dialogue_
 ```
 
 Add a final `1.5` argument to review enlarged UI. The tour uses isolated scratch saves, exercises all five actual F conversations, and captures greetings, replies, code and controls. Selected captures and actual check results are in [the review](reviews/2026-10-24-village-dialogue.md).
+
+
+## Hotaru and guided explanations
+
+Hotaru reuses `VillageConversation` and `VillageDialogue` for the painted portrait, bottom dialogue box and progressive text. That visual/writing style is a guideline. Each scene chooses whether a topic menu, linear explanation or notebook handoff suits the moment; the full visual novel interaction is not imposed on the whole game.
+
+The tutorial opening has no spoken reply choices because the player has not learned to speak. `content/companions/hotaru.json` authors `introductions.hello` and `introductions.movement`; `app/hotaru_dialogue.gd` selects these as guided sequences. Guided pages show only History, Settings and Continue. Completing the final page closes the dialogue and automatically opens the relevant Field Notes. There is no separate notebook selection. Test previews the greeting; Speak commits it. A correct greeting automatically starts the First Steps introduction, whose last page opens /01. An incorrect greeting stays in /00. Optional conversation replies are available after the voice lesson, with learned progress preserved through Undo.
+
+The pure dialogue model supports optional `sequence` (one to nine distinct greeting/topic ids) and `on_finish` (empty or `notebook`, only for a guided sequence). Guided traversal cannot enter the response menu or record a fabricated player reply. Its history still records Hotaru’s actual pages. Ordinary conversations retain the existing topic navigation and controls. F and the speech bubble reopen Hotaru’s conversation; resident and working-object targets retain priority. `dialogue_read.hotaru` follows the existing saved-read filtering.
+
+In the world, Hotaru is a small luminous sphere with four fluttering wings, built in `art/hotaru.gd`; she has no collision. Her detailed black-haired fairy portrait is separate. The `companions.hotaru` entry in `pipeline/art-catalog.json` selects the v2 source, exact prompt and provenance. The existing `scripts/art.sh` verifies source/prompt hashes and builds both a compact avatar and a full-resolution, lossless UI portrait. `DialoguePortraits` reads that registered companion portrait. The five residents' portrait sources and frame skins are unchanged.
+
+[Guided tutorial review](reviews/2026-10-26-guided-tutorial.md) · [portrait and first voice review](reviews/2026-10-26-hotaru-first-voice.md).

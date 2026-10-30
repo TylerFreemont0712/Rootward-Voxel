@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "tool": "local ComfyUI img2img (novaAnimeXL_ilV190) over a Blender render, then compose_portrait.py (Pillow)",
+  "source": "art/source/companions/hotaru/v3/sprite.png",
+  "sha256": "82933df7f7367ae5c4f8fc0416ee4909422b67a2db66010364467927dab6a401",
+  "prompt_sha256": "2ee861854deba80598f19b1b351d0cf29ccae64cfd1c0b4fc0f6c7d4fa751cef",
+  "painted": "art/source/companions/hotaru/v3/painted.png",
+  "painted_sha256": "04fa285a31a2a89468d3e9e76dd972b94134a328b7dfd5db3b0d4bb59fa2df85",
+  "workflow": "art/source/companions/hotaru/v3/paint-workflow.json",
+  "base_render": "art/source/companions/hotaru/v3/concept/renders/portrait-base.png",
+  "base_render_sha256": "21dea46019694c23a7205d6daf18d0ec13b85e69c3f5311f552974b8b6c2b2f9",
+  "model_source": "art/source/world/hotaru-robot/v1/model.blend",
+  "model_source_sha256": "72944f7bccbb3a033ac7684c25aefd101bcf7a319be4008047ac0eb1be3f0ca9",
+  "compose_script": "art/source/companions/hotaru/v3/compose_portrait.py",
+  "compose_script_sha256": "29f1b2a53ee1e6359f8748403db516b012df644bc218390831c36bf3f956026d",
+  "expressions": {
+    "happy": "e923b1324af085623aac6db5b1665e3d9d8c3d6d804ae80b23f3e4c3200da16c",
+    "neutral": "82933df7f7367ae5c4f8fc0416ee4909422b67a2db66010364467927dab6a401",
+    "off": "3a693f5fb69bf584513abc9ef2b753a2e712b643094a82691754b4749d59957c",
+    "stopped": "fa8f65df7edf5af2069270c4bd0046423790d758c8894f5cb55b3b0a33285e64",
+    "surprised": "41084bdc88fa50bf8f5d1f99ff612ad779afa585d50beb67d13dc4da6c06d8e0",
+    "thinking": "62a6c6c446aa959a528aa59415d8b67b4281acf8d0e1886d3b6a28e05b7ae562"
+  },
+  "date": "2026-10-26",
+  "role": "Unselected study for the proposed v0.7 Sparks & Machines scenario (docs/concept/v0.7/). The game still selects the v2 fairy; nothing here is a runtime asset."
+}

@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "id": "20261029T055110-a8b70b1c",
+  "kind": "delete",
+  "title": "Delete Hearth Stool",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "hearth-stool",
+    "label": "Hearth Stool",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hearth-stool/v1/model.blend",
+    "runtime": "assets/world/hearth-stool/model.glb",
+    "manifest": "assets/world/hearth-stool/manifest.json",
+    "catalog_notes": "Round three-legged stool, 0.35 m across and 0.45 m high, with a timber seat and a pale cushion. The footprint is the seat; the legs sit inside it, so nothing overhangs.",
+    "related_files": [
+      "art/source/world/hearth-stool/v1/brief.md",
+      "art/source/world/hearth-stool/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/areas/morning-bedroom.json",
+      "content/areas/morning-town-hall-room.json",
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Hearth Stool",
+      "source": "art/source/world/hearth-stool/v1/model.blend",
+      "runtime": "assets/world/hearth-stool/model.glb",
+      "pivot": "ground origin at the seat centre; base on z = 0",
+      "logical_footprint": [
+        -0.175,
+        -0.175,
+        0.35,
+        0.35
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Round three-legged stool, 0.35 m across and 0.45 m high, with a timber seat and a pale cushion. The footprint is the seat; the legs sit inside it, so nothing overhangs.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:51:10+00:00",
+  "updated": "2026-10-29T05:51:10+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:51:10+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/morning-town-hall-room.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/morning-bedroom.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

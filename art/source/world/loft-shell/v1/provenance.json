@@ -1,0 +1,10 @@
+{
+  "asset": "loft-shell",
+  "version": "v1",
+  "date": "2026-10-27",
+  "derived_from": null,
+  "reference": "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png",
+  "authoring_record": "author.py",
+  "authoring_record_sha256": "a8d3ae7d7ad5f2016e42b4d065f496e02dd3f83efaec1ae8e6d9c9af5c2500a4",
+  "note": "New room shell for the Sparks & Machines loft. model.blend is now authority."
+}

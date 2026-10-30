@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "asset": "workshop-stool",
+  "version": "v1",
+  "source": "art/source/world/workshop-stool/v1/model.blend",
+  "source_sha256": "b2f3d4f91f008df9d09cd4c0e8dd22d411855fb6e9788fa0acdf8b24f8a3276c",
+  "runtime": "assets/world/workshop-stool/model.glb",
+  "runtime_sha256": "861b58d7dbcb58e0990b75f799b8240bd7e0ff00e951ff0715cf868c43cb699f",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.289968430995941,
+      0.0146958231925964,
+      -0.276193857192993,
+      0.289968401193619,
+      0.680000007152557,
+      0.276193827390671
+    ],
+    "geometry_sha256": "49470646f0666433655343db2bcbd475609d5f3b1694b94d52c2246445e303d5",
+    "material_records": {
+      "workshop_bench": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "178f9ee3238028fc8820492710423f62b17c5e2211153c5c0648b0c92aa25f4b"
+      },
+      "workshop_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "workshop_bench",
+      "workshop_wood",
+      "workshop_wood_dark"
+    ],
+    "meshes": 3,
+    "triangles": 324
+  }
+}

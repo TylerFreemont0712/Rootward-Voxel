@@ -1,0 +1,226 @@
+{
+  "schema": 1,
+  "asset": "rootward-tree",
+  "version": "v1",
+  "source": "art/source/world/rootward-tree/v1/model.blend",
+  "source_sha256": "2a25779c70cbf4f2683487ec5c2a99353e04e86e98e35771612a9a969b008cbe",
+  "runtime": "assets/world/rootward-tree/model.glb",
+  "runtime_sha256": "a51212a8d7a303f8948011c7e02c1b0b8102625fb6985e544ba19bac533038aa",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -10.5818223953247,
+      -0.875890672206879,
+      -12.0523986816406,
+      11.7878131866455,
+      23.8453845977783,
+      11.0490579605103
+    ],
+    "geometry_sha256": "44c6baaf95d4799eec870fb89ba67bf9d60a6d669583adad4489dbfa101ca48d",
+    "material_records": {
+      "leaf_deep": {
+        "albedo": [
+          2039,
+          3098,
+          2235,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "leaf_fern": {
+        "albedo": [
+          3961,
+          5098,
+          2706,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "leaf_green": {
+        "albedo": [
+          5020,
+          6314,
+          3255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "leaf_light": {
+        "albedo": [
+          6588,
+          7373,
+          3961,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "leaf_shadow": {
+        "albedo": [
+          2863,
+          3843,
+          2314,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "leaf_tip": {
+        "albedo": [
+          7725,
+          7961,
+          4863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "root_bark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "40e0dbb61ca7b2b1b22bbea7b9482dc707d8f13fa787410324e7c100f32700f7"
+      },
+      "root_bark_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "40e0dbb61ca7b2b1b22bbea7b9482dc707d8f13fa787410324e7c100f32700f7"
+      },
+      "root_bark_shadow": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "40e0dbb61ca7b2b1b22bbea7b9482dc707d8f13fa787410324e7c100f32700f7"
+      },
+      "root_gold": {
+        "albedo": [
+          8471,
+          7137,
+          3882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "root_moss": {
+        "albedo": [
+          3373,
+          4549,
+          2784,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "rootward_amber_glass": {
+        "albedo": [
+          10000,
+          8379,
+          5271,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "rootward_chain": {
+        "albedo": [
+          3811,
+          4845,
+          4492,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "rootward_jade_glass": {
+        "albedo": [
+          5657,
+          10000,
+          8962,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "rootward_lantern_gold": {
+        "albedo": [
+          8434,
+          6500,
+          3318,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "rootward_lilac_glass": {
+        "albedo": [
+          8650,
+          7484,
+          10000,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "rootward_living_gold": {
+        "albedo": [
+          8267,
+          6500,
+          3133,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "rootward_moonstone": {
+        "albedo": [
+          2934,
+          3959,
+          3492,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "leaf_deep",
+      "leaf_fern",
+      "leaf_green",
+      "leaf_light",
+      "leaf_shadow",
+      "leaf_tip",
+      "root_bark",
+      "root_bark_light",
+      "root_bark_shadow",
+      "root_gold",
+      "root_moss",
+      "rootward_amber_glass",
+      "rootward_chain",
+      "rootward_jade_glass",
+      "rootward_lantern_gold",
+      "rootward_lilac_glass",
+      "rootward_living_gold",
+      "rootward_moonstone"
+    ],
+    "meshes": 23,
+    "triangles": 25574
+  }
+}

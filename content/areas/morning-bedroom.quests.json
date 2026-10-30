@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "area": "morning-bedroom",
+  "quests": [
+    {
+      "id": "say-hello",
+      "title": "Saying Hello",
+      "concept": "Your first voice",
+      "summary": "Hotaru is waiting to hear you. Make a print block or write Python to say \"Hello, Hotaru!\". Test, then Speak. Your first steps follow naturally.",
+      "goal": {
+        "type": "hotaru_greeted"
+      },
+      "requires": [],
+      "lesson": [
+        "Your first program gives you a voice. Hotaru says: \"Try saying hello to me!\"",
+        "print sends text out of your program. Quotation marks tell Python these are words to say.",
+        "```python",
+        "def program(world):",
+        "    print(\"Hello, Hotaru!\")",
+        "```",
+        "Blocks make the same real Python. Test watches it run; Speak makes your words part of the room. Once Hotaru hears your greeting, she introduces Field Notes / 01 and opens the page for your first steps."
+      ],
+      "starter": [
+        "def program(world):",
+        "    print(\"Hello, Hotaru!\")"
+      ],
+      "hints": [
+        "Put your words between quotation marks: print(\"Hello, Hotaru!\").",
+        "Say hello and use Hotaru’s name, then Test and Speak."
+      ],
+      "done": "Hotaru: \"I can hear you! Now let’s give those feet a little direction.\""
+    },
+    {
+      "id": "first-steps",
+      "title": "Make the keys your own",
+      "concept": "Events & movement",
+      "summary": "Write one step for each key. Test the movement in your notebook, Apply, then try all four directions in your room.",
+      "goal": {
+        "type": "movement_ready"
+      },
+      "requires": [
+        "say-hello"
+      ],
+      "lesson": [
+        "A key press is an event. Each event starts with x = y = 0; your arithmetic adds a movement.",
+        "In Blocks, choose an axis and += or -=, then change the amount. Try 0, 1 and 3 and compare the little room. See Python shows the real program the blocks produce.",
+        "```python",
+        "def program(world):",
+        "    x = y = 0",
+        "    y += 1",
+        "    world.controls.bind_move(\"W\", x, y)",
+        "```",
+        "x += 1 goes east ↘; x -= 1 goes west ↖. y += 1 goes north ↗; y -= 1 goes south ↙.",
+        "Test runs the real Python in a copy of your room. Green marks one step; red shows a stationary character, an overshoot or an invalid move. The test does not count as practice.",
+        "Apply connects the tested keys. Close the notebook, then try each direction once in your real room."
+      ],
+      "starter": [
+        "# One key press adds one step. Test, then Apply.",
+        "",
+        "def program(world):",
+        "    x = y = 0",
+        "    y += 1",
+        "    world.controls.bind_move(\"W\", x, y)",
+        "    # Add A: x -= 1, S: y -= 1, D: x += 1.",
+        "    # Start each key's x and y at zero."
+      ],
+      "hints": [
+        "Each event begins at x = y = 0. An amount of 0 stays still; 3 overshoots. Test them to see why.",
+        "Try W: y += 1, A: x -= 1, S: y -= 1, D: x += 1. See Python shows the generated code.",
+        "After Test and Apply, close the notebook and take a successful step in every direction. The mini-room and clicks do not count as practice."
+      ],
+      "done": "Your keys are connected, and you have tried every direction. Hotaru is ready to follow you into the lane."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "asset": "town-tree-grate",
+  "version": "v1",
+  "source": "art/source/world/town-tree-grate/v1/model.blend",
+  "source_sha256": "fa08efd177bf1bf0e23dc69b4a011cadac006cddd3365168cd3a975dcc24d176",
+  "runtime": "assets/world/town-tree-grate/model.glb",
+  "runtime_sha256": "d2257e7d51e9332b32ba071d7ba536287961248dbb0255fee2edb72569c20134",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.75,
+      0.0,
+      -0.75,
+      0.75,
+      1.20000004768372,
+      0.75
+    ],
+    "geometry_sha256": "fd9dc52f90d3fc794672551bc87575a4fc00925b638ee447f400318a8b733510",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      }
+    },
+    "materials": [
+      "house_paint",
+      "seaside_stone"
+    ],
+    "meshes": 2,
+    "triangles": 1024
+  }
+}

@@ -1,0 +1,1953 @@
+{
+  "schema": 1,
+  "id": "20261030T011223-8d5180d8",
+  "kind": "update",
+  "title": "Update Loft floor plant",
+  "asset_type": "world model",
+  "status": "finished",
+  "notes": "User request: improve the rudimentary random ovals / bubbles used as plant life throughout Sparks & Machines. Keep it simple. Coordinated foliage-only revision across the selected room plants, street planters, trees, window boxes and vines: tapered folded leaves, connected sprigs and small five-petal flower heads. Preserve pots, buildings, supports, authored finishes, fruit/vegetable displays, robot models, placement/collision, the approved boy and camera. Deliver all revised model IDs together for review.",
+  "asset": {
+    "id": "loft-floor-plant",
+    "label": "Loft floor plant",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/loft-floor-plant/v1/model.blend",
+    "runtime": "assets/world/loft-floor-plant/model.glb",
+    "manifest": "assets/world/loft-floor-plant/manifest.json",
+    "catalog_notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority.",
+    "related_files": [
+      "art/source/world/loft-floor-plant/v1/provenance.json",
+      "art/source/world/sparks-loft/v1/flipped_loft_props.py"
+    ],
+    "usage_files": [
+      "content/areas/workshop-loft.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft floor plant",
+      "source": "art/source/world/loft-floor-plant/v1/model.blend",
+      "runtime": "assets/world/loft-floor-plant/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority."
+    }
+  },
+  "references": [],
+  "created": "2026-10-30T01:12:23+00:00",
+  "updated": "2026-10-30T01:36:17+00:00",
+  "history": [
+    {
+      "at": "2026-10-30T01:12:23+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-30T01:12:23+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-10-30T01:36:17+00:00",
+      "action": "finish"
+    }
+  ],
+  "result": {
+    "assets": [
+      "haverlund-bakery",
+      "haverlund-bank",
+      "haverlund-bookshop",
+      "haverlund-cafe",
+      "haverlund-fruit-market",
+      "haverlund-greengrocer",
+      "haverlund-lane-set",
+      "haverlund-post-office",
+      "lane-cottage",
+      "lane-cypress",
+      "lane-nell-house",
+      "lane-planter",
+      "lane-tram-shelter",
+      "lane-tree",
+      "lane-workshop",
+      "loft-floor-plant",
+      "loft-shelf",
+      "loft-travel-stacks",
+      "loft-wall-life",
+      "rootwell-beacon",
+      "seaside-eaveside-terrace",
+      "seaside-lantern-row-house",
+      "seaside-rosewash-house",
+      "seaside-saltwind-house",
+      "seaside-shingle-court-cottage",
+      "square-flower-stall",
+      "square-guildhall",
+      "town-garden-wall",
+      "town-garden-wall-short",
+      "town-lawn",
+      "town-planter-bench",
+      "workshop-shell",
+      "workshop-shop-doors",
+      "workshop-tool-wall",
+      "workshop-wall-shelf"
+    ],
+    "summary": "Revised foliage in 35 adopted Sparks & Machines models: tapered folded leaves, branching sprigs, evergreen foliage and petalled flowers across rooms, lane, square and house window boxes. Preserved originals and passed all 35 source audits. Reviewed in Godot at gameplay size. All checks in scripts/test.sh passed in sections after the user-requested house/Rootwell budget adjustments; models retained without simplification for user play review. See review for exact budgets, performance samples and test execution.",
+    "review": "pipeline/reviews/2026-10-30-plant-style.md",
+    "contexts": [
+      {
+        "id": "haverlund-bakery",
+        "label": "Morning Loaf, the bakery",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-bakery/v1/model.blend",
+        "runtime": "assets/world/haverlund-bakery/model.glb",
+        "manifest": "assets/world/haverlund-bakery/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/haverlund-bakery/v1/coplanar.json",
+          "art/source/world/haverlund-bakery/v1/plant-style.json",
+          "art/source/world/haverlund-bakery/v1/provenance.json",
+          "art/source/world/square-hub/v1/author_shops.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Morning Loaf, the bakery",
+          "source": "art/source/world/haverlund-bakery/v1/model.blend",
+          "runtime": "assets/world/haverlund-bakery/model.glb",
+          "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
+          "logical_footprint": [
+            -2.5,
+            -3.2,
+            5.0,
+            6.4
+          ],
+          "illustrated_edges": true,
+          "behavior": "Static square building. The area document owns its blocks, inspections and the wares' blocks; the door is not enterable.",
+          "notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "haverlund-bank",
+        "label": "Haverlund Savings, the bank",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-bank/v1/model.blend",
+        "runtime": "assets/world/haverlund-bank/model.glb",
+        "manifest": "assets/world/haverlund-bank/manifest.json",
+        "catalog_notes": "New on Rootward Square v3. art/source/world/square-hub/v1/author_buildings.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/haverlund-bank/v1/plant-style.json",
+          "art/source/world/haverlund-bank/v1/provenance.json",
+          "art/source/world/square-hub/v1/author_buildings.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Haverlund Savings, the bank",
+          "source": "art/source/world/haverlund-bank/v1/model.blend",
+          "runtime": "assets/world/haverlund-bank/model.glb",
+          "pivot": "Footprint centre at ground; the portico toward Blender -Y (Godot +Z). Walls 10 x 8; the steps reach 1.3 in front.",
+          "logical_footprint": [
+            -5.0,
+            -4.0,
+            10.0,
+            8.0
+          ],
+          "illustrated_edges": true,
+          "behavior": "Static square building. Placement, blocks and inspections belong to the area document; the doors are not enterable.",
+          "notes": "New on Rootward Square v3. art/source/world/square-hub/v1/author_buildings.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "haverlund-bookshop",
+        "label": "Finch & Sons, books",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-bookshop/v1/model.blend",
+        "runtime": "assets/world/haverlund-bookshop/model.glb",
+        "manifest": "assets/world/haverlund-bookshop/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/haverlund-bookshop/v1/coplanar.json",
+          "art/source/world/haverlund-bookshop/v1/plant-style.json",
+          "art/source/world/haverlund-bookshop/v1/provenance.json",
+          "art/source/world/square-hub/v1/author_shops.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Finch & Sons, books",
+          "source": "art/source/world/haverlund-bookshop/v1/model.blend",
+          "runtime": "assets/world/haverlund-bookshop/model.glb",
+          "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
+          "logical_footprint": [
+            -2.5,
+            -3.2,
+            5.0,
+            6.4
+          ],
+          "illustrated_edges": true,
+          "behavior": "Static square building. The area document owns its blocks, inspections and the wares' blocks; the door is not enterable.",
+          "notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "haverlund-cafe",
+        "label": "The Harbour Cup café",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-cafe/v1/model.blend",
+        "runtime": "assets/world/haverlund-cafe/model.glb",
+        "manifest": "assets/world/haverlund-cafe/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/haverlund-cafe/v1/coplanar.json",
+          "art/source/world/haverlund-cafe/v1/plant-style.json",
+          "art/source/world/haverlund-cafe/v1/provenance.json",
+          "art/source/world/square-hub/v1/author_shops.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "The Harbour Cup café",
+          "source": "art/source/world/haverlund-cafe/v1/model.blend",
+          "runtime": "assets/world/haverlund-cafe/model.glb",
+          "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
+          "logical_footprint": [
+            -3.5,
+            -3.0,
+            7.0,
+            6.0
+          ],
+          "illustrated_edges": true,
+          "behavior": "Static square building. The area document owns its blocks, inspections and the wares' blocks; the door is not enterable.",
+          "notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "haverlund-fruit-market",
+        "label": "The fruit market hall",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-fruit-market/v1/model.blend",
+        "runtime": "assets/world/haverlund-fruit-market/model.glb",
+        "manifest": "assets/world/haverlund-fruit-market/manifest.json",
+        "catalog_notes": "New on Rootward Square v3. art/source/world/square-hub/v1/author_buildings.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/haverlund-fruit-market/v1/plant-style.json",
+          "art/source/world/haverlund-fruit-market/v1/provenance.json",
+          "art/source/world/square-hub/v1/author_buildings.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "The fruit market hall",
+          "source": "art/source/world/haverlund-fruit-market/v1/model.blend",
+          "runtime": "assets/world/haverlund-fruit-market/model.glb",
+          "pivot": "Footprint centre at ground; the open arcade toward Blender -Y (Godot +Z). 12 x 8; the awnings reach 1.0 in front.",
+          "logical_footprint": [
+            -6.0,
+            -4.0,
+            12.0,
+            8.0
+          ],
+          "illustrated_edges": true,
+          "behavior": "Static square building, open-fronted. Placement and blocks belong to the area document; its stalls are scenery.",
+          "notes": "New on Rootward Square v3. art/source/world/square-hub/v1/author_buildings.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "haverlund-greengrocer",
+        "label": "The greengrocer",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-greengrocer/v1/model.blend",
+        "runtime": "assets/world/haverlund-greengrocer/model.glb",
+        "manifest": "assets/world/haverlund-greengrocer/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/haverlund-greengrocer/v1/coplanar.json",
+          "art/source/world/haverlund-greengrocer/v1/plant-style.json",
+          "art/source/world/haverlund-greengrocer/v1/provenance.json",
+          "art/source/world/square-hub/v1/author_shops.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "The greengrocer",
+          "source": "art/source/world/haverlund-greengrocer/v1/model.blend",
+          "runtime": "assets/world/haverlund-greengrocer/model.glb",
+          "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
+          "logical_footprint": [
+            -2.3,
+            -3.2,
+            4.6,
+            6.4
+          ],
+          "illustrated_edges": true,
+          "behavior": "Static square building. The area document owns its blocks, inspections and the wares' blocks; the door is not enterable.",
+          "notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "haverlund-lane-set",
+        "label": "Haverlund lane set",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-lane-set/v1/model.blend",
+        "runtime": "assets/world/haverlund-lane-set/model.glb",
+        "manifest": "assets/world/haverlund-lane-set/manifest.json",
+        "catalog_notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator.",
+        "related_files": [
+          "art/source/world/city-power-grid/v2/README.md",
+          "art/source/world/haverlund-lane-set/v1/grid-inlay-audit.json",
+          "art/source/world/haverlund-lane-set/v1/plant-style.json",
+          "art/source/world/haverlund-lane-set/v1/provenance.json",
+          "art/source/world/haverlund-lane-set/v1/square-gate-revision.json",
+          "art/source/world/sparks-lane/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-lane-v3.json",
+          "content/areas/haverlund-lane.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_lane",
+          "label": "Haverlund lane set",
+          "source": "art/source/world/haverlund-lane-set/v1/model.blend",
+          "runtime": "assets/world/haverlund-lane-set/model.glb",
+          "pivot": "Area coordinates; Blender +X is logical +x, +Y logical +y, Z up. Level 0 (the tram halt) at z 0, level 1 (the lane) at z 1.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Spindle Lane terraces, paving, tram track and halt, stairs, walls, garden and fences. Framed power inlays run through the centered stairs and door thresholds and along the tram platform. Overhead power wires and poles have been removed. Cosmetic presentation only; placements and traversal belong to the area document.",
+          "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator."
+        }
+      },
+      {
+        "id": "haverlund-post-office",
+        "label": "Haverlund post office",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-post-office/v1/model.blend",
+        "runtime": "assets/world/haverlund-post-office/model.glb",
+        "manifest": "assets/world/haverlund-post-office/manifest.json",
+        "catalog_notes": "Replaces square-post-office on Rootward Square v3. art/source/world/square-hub/v1/author_buildings.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/haverlund-post-office/v1/coplanar.json",
+          "art/source/world/haverlund-post-office/v1/plant-style.json",
+          "art/source/world/haverlund-post-office/v1/provenance.json",
+          "art/source/world/square-hub/v1/author_buildings.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Haverlund post office",
+          "source": "art/source/world/haverlund-post-office/v1/model.blend",
+          "runtime": "assets/world/haverlund-post-office/model.glb",
+          "pivot": "Footprint centre at ground; front toward Blender -Y (Godot +Z). Walls 9.0 x 6.8; the parcel bench and sign reach 1.0 in front.",
+          "logical_footprint": [
+            -4.5,
+            -3.4,
+            9.0,
+            6.8
+          ],
+          "illustrated_edges": true,
+          "behavior": "Static square building. Placement, blocks and inspections belong to the area document; the door is not enterable.",
+          "notes": "Replaces square-post-office on Rootward Square v3. art/source/world/square-hub/v1/author_buildings.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "lane-cottage",
+        "label": "Bram's cottage",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/lane-cottage/v1/model.blend",
+        "runtime": "assets/world/lane-cottage/model.glb",
+        "manifest": "assets/world/lane-cottage/manifest.json",
+        "catalog_notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/.",
+        "related_files": [
+          "art/source/world/lane-cottage/v1/plant-style.json",
+          "art/source/world/lane-cottage/v1/provenance.json",
+          "art/source/world/sparks-lane/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-lane-v3.json",
+          "content/areas/haverlund-lane.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_lane",
+          "label": "Bram's cottage",
+          "source": "art/source/world/lane-cottage/v1/model.blend",
+          "runtime": "assets/world/lane-cottage/model.glb",
+          "pivot": "Footprint centre at ground height; the door faces +X.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Salmon plaster cottage with limestone quoins, green shutters and a striped awning. The area document owns its footprint.",
+          "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+        }
+      },
+      {
+        "id": "lane-cypress",
+        "label": "Cypress",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/lane-cypress/v1/model.blend",
+        "runtime": "assets/world/lane-cypress/model.glb",
+        "manifest": "assets/world/lane-cypress/manifest.json",
+        "catalog_notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/.",
+        "related_files": [
+          "art/source/world/lane-cypress/v1/plant-style.json",
+          "art/source/world/lane-cypress/v1/provenance.json",
+          "art/source/world/sparks-lane/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-lane-v3.json",
+          "content/areas/archive/haverlund-square-v1.json",
+          "content/areas/haverlund-lane.json",
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_lane",
+          "label": "Cypress",
+          "source": "art/source/world/lane-cypress/v1/model.blend",
+          "runtime": "assets/world/lane-cypress/model.glb",
+          "pivot": "Trunk base.",
+          "logical_footprint": null,
+          "illustrated_edges": false,
+          "behavior": "Narrow dark cypress; presentation only.",
+          "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+        }
+      },
+      {
+        "id": "lane-nell-house",
+        "label": "Nell's house",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/lane-nell-house/v1/model.blend",
+        "runtime": "assets/world/lane-nell-house/model.glb",
+        "manifest": "assets/world/lane-nell-house/manifest.json",
+        "catalog_notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/.",
+        "related_files": [
+          "art/source/world/lane-nell-house/v1/plant-style.json",
+          "art/source/world/lane-nell-house/v1/provenance.json",
+          "art/source/world/sparks-lane/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-lane-v3.json",
+          "content/areas/haverlund-lane.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_lane",
+          "label": "Nell's house",
+          "source": "art/source/world/lane-nell-house/v1/model.blend",
+          "runtime": "assets/world/lane-nell-house/model.glb",
+          "pivot": "Footprint centre at ground height; the front door faces +X; its south wall is the workshop's party wall.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "The landlady's narrow dressed-stone house next to the workshop, gable to the lane: a plum panelled door under a stone hood, fanlight, teal shutters, lavender in the window boxes, a climbing rose and a stone chimney. The area document owns its footprint.",
+          "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+        }
+      },
+      {
+        "id": "lane-planter",
+        "label": "Planter",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/lane-planter/v1/model.blend",
+        "runtime": "assets/world/lane-planter/model.glb",
+        "manifest": "assets/world/lane-planter/manifest.json",
+        "catalog_notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/.",
+        "related_files": [
+          "art/source/world/lane-planter/v1/plant-style.json",
+          "art/source/world/lane-planter/v1/provenance.json",
+          "art/source/world/sparks-lane/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-lane-v3.json",
+          "content/areas/archive/haverlund-square-v1.json",
+          "content/areas/archive/haverlund-square-v2.json",
+          "content/areas/haverlund-lane.json",
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_lane",
+          "label": "Planter",
+          "source": "art/source/world/lane-planter/v1/model.blend",
+          "runtime": "assets/world/lane-planter/model.glb",
+          "pivot": "Box centre; runs along X.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Wooden planter with flowers and trailing ivy.",
+          "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+        }
+      },
+      {
+        "id": "lane-tram-shelter",
+        "label": "Tram shelter",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/lane-tram-shelter/v1/model.blend",
+        "runtime": "assets/world/lane-tram-shelter/model.glb",
+        "manifest": "assets/world/lane-tram-shelter/manifest.json",
+        "catalog_notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/.",
+        "related_files": [
+          "art/source/world/lane-tram-shelter/v1/plant-style.json",
+          "art/source/world/lane-tram-shelter/v1/provenance.json",
+          "art/source/world/sparks-lane/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-lane-v3.json",
+          "content/areas/haverlund-lane.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_lane",
+          "label": "Tram shelter",
+          "source": "art/source/world/lane-tram-shelter/v1/model.blend",
+          "runtime": "assets/world/lane-tram-shelter/model.glb",
+          "pivot": "Floor centre; open side faces -Y.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Tiled tram shelter with a bench, lantern, pots, the stop disc and a timetable.",
+          "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+        }
+      },
+      {
+        "id": "lane-tree",
+        "label": "Blossom tree",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/lane-tree/v1/model.blend",
+        "runtime": "assets/world/lane-tree/model.glb",
+        "manifest": "assets/world/lane-tree/manifest.json",
+        "catalog_notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/.",
+        "related_files": [
+          "art/source/world/lane-tree/v1/plant-style.json",
+          "art/source/world/lane-tree/v1/provenance.json",
+          "art/source/world/sparks-lane/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-lane-v3.json",
+          "content/areas/archive/haverlund-square-v1.json",
+          "content/areas/haverlund-lane.json",
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_lane",
+          "label": "Blossom tree",
+          "source": "art/source/world/lane-tree/v1/model.blend",
+          "runtime": "assets/world/lane-tree/model.glb",
+          "pivot": "Trunk base.",
+          "logical_footprint": null,
+          "illustrated_edges": false,
+          "behavior": "Broadleaf tree with clumped crown and white blossom; presentation only.",
+          "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+        }
+      },
+      {
+        "id": "lane-workshop",
+        "label": "Workshop front",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/lane-workshop/v1/model.blend",
+        "runtime": "assets/world/lane-workshop/model.glb",
+        "manifest": "assets/world/lane-workshop/manifest.json",
+        "catalog_notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/.",
+        "related_files": [
+          "art/source/world/lane-workshop/v1/door-leaves.json",
+          "art/source/world/lane-workshop/v1/doorway-dark.json",
+          "art/source/world/lane-workshop/v1/plant-style.json",
+          "art/source/world/lane-workshop/v1/provenance.json",
+          "art/source/world/sparks-lane/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-lane-v3.json",
+          "content/areas/haverlund-lane.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_lane",
+          "label": "Workshop front",
+          "source": "art/source/world/lane-workshop/v1/model.blend",
+          "runtime": "assets/world/lane-workshop/model.glb",
+          "pivot": "Footprint centre at ground height; the street doors face +X (logical east).",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Nell's workshop from the lane, matching the rooms inside: a plastered workshop floor with the green street doors a third of the way along from the south corner, the shop window and gear sign; the loft as a jettied, half-timbered upper floor with its round gable window, under a clay roof whose ridge runs north-south; woodshed, chimney and water butt. Glass sits inside real wall openings. The area document owns its footprint and the doorway link.",
+          "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/."
+        }
+      },
+      {
+        "id": "loft-floor-plant",
+        "label": "Loft floor plant",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/loft-floor-plant/v1/model.blend",
+        "runtime": "assets/world/loft-floor-plant/model.glb",
+        "manifest": "assets/world/loft-floor-plant/manifest.json",
+        "catalog_notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/loft-floor-plant/v1/plant-style.json",
+          "art/source/world/loft-floor-plant/v1/provenance.json",
+          "art/source/world/sparks-loft/v1/flipped_loft_props.py"
+        ],
+        "usage_files": [
+          "content/areas/workshop-loft.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_loft",
+          "label": "Loft floor plant",
+          "source": "art/source/world/loft-floor-plant/v1/model.blend",
+          "runtime": "assets/world/loft-floor-plant/model.glb",
+          "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+          "notes": "Furnishing for the loft grown to 14 by 12 (2026-10-28). Authored with art/source/world/sparks-loft/v1/flipped_loft_props.py; model.blend is the editable authority."
+        }
+      },
+      {
+        "id": "loft-shelf",
+        "label": "Loft filled bookcase",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/loft-shelf/v1/model.blend",
+        "runtime": "assets/world/loft-shelf/model.glb",
+        "manifest": "assets/world/loft-shelf/manifest.json",
+        "catalog_notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/loft-shelf/v1/brief.md",
+          "art/source/world/loft-shelf/v1/plant-style.json",
+          "art/source/world/loft-shelf/v1/provenance.json",
+          "art/source/world/sparks-loft/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/workshop-loft.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_loft",
+          "label": "Loft filled bookcase",
+          "source": "art/source/world/loft-shelf/v1/model.blend",
+          "runtime": "assets/world/loft-shelf/model.glb",
+          "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+          "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+        }
+      },
+      {
+        "id": "loft-travel-stacks",
+        "label": "Loft moving-in belongings",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/loft-travel-stacks/v1/model.blend",
+        "runtime": "assets/world/loft-travel-stacks/model.glb",
+        "manifest": "assets/world/loft-travel-stacks/manifest.json",
+        "catalog_notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/loft-travel-stacks/v1/brief.md",
+          "art/source/world/loft-travel-stacks/v1/plant-style.json",
+          "art/source/world/loft-travel-stacks/v1/provenance.json",
+          "art/source/world/sparks-loft/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/workshop-loft.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_loft",
+          "label": "Loft moving-in belongings",
+          "source": "art/source/world/loft-travel-stacks/v1/model.blend",
+          "runtime": "assets/world/loft-travel-stacks/model.glb",
+          "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+          "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+        }
+      },
+      {
+        "id": "loft-wall-life",
+        "label": "Loft coat pegs and wall shelf",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/loft-wall-life/v1/model.blend",
+        "runtime": "assets/world/loft-wall-life/model.glb",
+        "manifest": "assets/world/loft-wall-life/manifest.json",
+        "catalog_notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/loft-wall-life/v1/brief.md",
+          "art/source/world/loft-wall-life/v1/plant-style.json",
+          "art/source/world/loft-wall-life/v1/provenance.json",
+          "art/source/world/sparks-loft/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/workshop-loft.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_loft",
+          "label": "Loft coat pegs and wall shelf",
+          "source": "art/source/world/loft-wall-life/v1/model.blend",
+          "runtime": "assets/world/loft-wall-life/model.glb",
+          "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+          "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+        }
+      },
+      {
+        "id": "rootwell-beacon",
+        "label": "The Rootwell, the town's power beacon",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/rootwell-beacon/v1/model.blend",
+        "runtime": "assets/world/rootwell-beacon/model.glb",
+        "manifest": "assets/world/rootwell-beacon/manifest.json",
+        "catalog_notes": "After the approved v0.72 paintings docs/concept/v0.72/art/rootwell/. art/source/world/rootwell/v1/author_rootwell.py (with the seaside house kit) is initial authoring only; edit the adopted model.blend. Replaces square-beacon in a later square layout pass.",
+        "related_files": [
+          "art/source/world/rootwell-beacon/v1/conduits-revision.json",
+          "art/source/world/rootwell-beacon/v1/plant-style.json",
+          "art/source/world/rootwell-beacon/v1/provenance.json",
+          "art/source/world/rootwell/v1/author_rootwell.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "The Rootwell, the town's power beacon",
+          "source": "art/source/world/rootwell-beacon/v1/model.blend",
+          "runtime": "assets/world/rootwell-beacon/model.glb",
+          "pivot": "Ground centre. The octagon has a face toward each compass point and diagonal; the pressure gauge faces south-east, toward the game camera (notice board south, maintenance door east, service panel north-west). Steps 7.5 across the flats, 8.1 across the corners; the finial stands 9.5 high.",
+          "logical_footprint": [
+            -3.75,
+            -3.75,
+            7.5,
+            7.5
+          ],
+          "illustrated_edges": true,
+          "story_parts": [
+            "gauge_needle",
+            "maintenance_door",
+            "valve_wheel_e",
+            "valve_wheel_n",
+            "valve_wheel_w",
+            "valve_wheel_s",
+            "valve_wheel_service_w",
+            "valve_wheel_service_n",
+            "root",
+            "root_light"
+          ],
+          "behavior": "The centrepiece of Rootward Square v3 at (42, 24); the area document owns its blocks, inspections and lamps. Parts that story may move later are separate nodes with their pivots (story_parts): the needle turns about its local Z (-27 degrees per unit of pressure in Godot, authored at 1.3), the door swings about its hinge (local Y), the valve wheels spin about their axles. Model geometry grants no capability; placements, collision and interactions belong to the area document.",
+          "notes": "After the approved v0.72 paintings docs/concept/v0.72/art/rootwell/. art/source/world/rootwell/v1/author_rootwell.py (with the seaside house kit) is initial authoring only; edit the adopted model.blend. Replaces square-beacon in a later square layout pass."
+        }
+      },
+      {
+        "id": "seaside-eaveside-terrace",
+        "label": "Eaveside terrace pair",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/seaside-eaveside-terrace/v1/model.blend",
+        "runtime": "assets/world/seaside-eaveside-terrace/model.glb",
+        "manifest": "assets/world/seaside-eaveside-terrace/manifest.json",
+        "catalog_notes": "H in the concept plates: joined three- and two-storey homes with a stepped roofline, for dense rows. Slots ending _2 paint the east home. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses_dgh.py (with house_kit.py) is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/seaside-eaveside-terrace/v1/coplanar.json",
+          "art/source/world/seaside-eaveside-terrace/v1/plant-style.json",
+          "art/source/world/seaside-eaveside-terrace/v1/provenance.json",
+          "art/source/world/seaside-houses/v1/author_houses_dgh.py",
+          "docs/concept/v0.72/background-houses.md"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-lane.json",
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "showcase_only",
+          "illustrated_edges": true,
+          "behavior": "Static background house, not placed in any area yet. A placement would own collision and support; doors are not enterable. HouseVariants presents per-placement paintings and dressing.",
+          "label": "Eaveside terrace pair",
+          "source": "art/source/world/seaside-eaveside-terrace/v1/model.blend",
+          "runtime": "assets/world/seaside-eaveside-terrace/model.glb",
+          "pivot": "Ground pivot 0.1 east of the pair's footprint centre; front doors toward Blender -Y (Godot +Z). West home 4.0 x 5.2 (eave 8.2, ridge 10.6), east home 4.6 x 4.4 (eave 5.5), joined at x = -0.4; the rear wash house and washing line reach 2.1 north of the east home. No paving.",
+          "logical_footprint": [
+            -4.4,
+            -2.6,
+            8.6,
+            5.2
+          ],
+          "variants": {
+            "textures": "res://assets/world/textures/seaside-houses/manifest.json",
+            "surfaces": {
+              "plaster": {
+                "materials": [
+                  "seaside_plaster"
+                ],
+                "authored": "seaside_plaster_cream",
+                "choices": [
+                  "seaside_plaster_cream",
+                  "seaside_plaster_rose",
+                  "seaside_plaster_ochre"
+                ]
+              },
+              "roof": {
+                "materials": [
+                  "seaside_roof"
+                ],
+                "authored": "seaside_roof_terracotta",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ]
+              },
+              "ridge": {
+                "materials": [
+                  "seaside_ridge"
+                ],
+                "authored": "seaside_roof_terracotta",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ],
+                "follows": "roof"
+              },
+              "stone": {
+                "materials": [
+                  "seaside_stone"
+                ],
+                "authored": "seaside_stone_limestone",
+                "choices": [
+                  "seaside_stone_limestone",
+                  "seaside_stone_honey",
+                  "seaside_stone_grey"
+                ]
+              },
+              "timber": {
+                "materials": [
+                  "seaside_timber"
+                ],
+                "authored": "seaside_timber_oak",
+                "choices": [
+                  "seaside_timber_oak",
+                  "seaside_timber_dark",
+                  "seaside_timber_driftwood"
+                ]
+              },
+              "shutter": {
+                "materials": [
+                  "seaside_shutter"
+                ],
+                "authored": "seaside_shutter_teal",
+                "choices": [
+                  "seaside_shutter_teal",
+                  "seaside_shutter_sage",
+                  "seaside_shutter_blue"
+                ]
+              },
+              "plaster_2": {
+                "materials": [
+                  "seaside_plaster_2"
+                ],
+                "authored": "seaside_plaster_ochre",
+                "choices": [
+                  "seaside_plaster_cream",
+                  "seaside_plaster_rose",
+                  "seaside_plaster_ochre"
+                ]
+              },
+              "roof_2": {
+                "materials": [
+                  "seaside_roof_2"
+                ],
+                "authored": "seaside_roof_teal",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ]
+              },
+              "ridge_2": {
+                "materials": [
+                  "seaside_ridge_2"
+                ],
+                "authored": "seaside_roof_terracotta",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ],
+                "follows": "roof_2"
+              },
+              "shutter_2": {
+                "materials": [
+                  "seaside_shutter_2"
+                ],
+                "authored": "seaside_shutter_teal",
+                "choices": [
+                  "seaside_shutter_teal",
+                  "seaside_shutter_sage",
+                  "seaside_shutter_blue"
+                ]
+              }
+            },
+            "details": {
+              "window_boxes": 0.85,
+              "planters": 0.85,
+              "vines": 0.6,
+              "yard": 0.8,
+              "laundry": 0.55
+            },
+            "alternates": {
+              "chimney": [
+                "stone",
+                "brick"
+              ],
+              "shutters": [
+                "open",
+                "drawn"
+              ]
+            }
+          },
+          "notes": "H in the concept plates: joined three- and two-storey homes with a stepped roofline, for dense rows. Slots ending _2 paint the east home. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses_dgh.py (with house_kit.py) is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "seaside-lantern-row-house",
+        "label": "Lantern Row lodging house",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/seaside-lantern-row-house/v1/model.blend",
+        "runtime": "assets/world/seaside-lantern-row-house/model.glb",
+        "manifest": "assets/world/seaside-lantern-row-house/manifest.json",
+        "catalog_notes": "D in the concept plates: tall and narrow, four storeys plus attic, for thin gaps and taller roof accents. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses_dgh.py (with house_kit.py) is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/seaside-houses/v1/author_houses_dgh.py",
+          "art/source/world/seaside-lantern-row-house/v1/coplanar.json",
+          "art/source/world/seaside-lantern-row-house/v1/plant-style.json",
+          "art/source/world/seaside-lantern-row-house/v1/provenance.json",
+          "docs/concept/v0.72/background-houses.md"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-lane.json",
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "showcase_only",
+          "illustrated_edges": true,
+          "behavior": "Static background house, not placed in any area yet. A placement would own collision and support; doors are not enterable. HouseVariants presents per-placement paintings and dressing.",
+          "label": "Lantern Row lodging house",
+          "source": "art/source/world/seaside-lantern-row-house/v1/model.blend",
+          "runtime": "assets/world/seaside-lantern-row-house/model.glb",
+          "pivot": "Footprint centre at ground; front door and street gable toward Blender -Y (Godot +Z). Walls 4.0 x 5.6, eave 11.0, ridge 13.6; the rear pantry reaches 1.4 north. No paving.",
+          "logical_footprint": [
+            -2.0,
+            -2.8,
+            4.0,
+            5.6
+          ],
+          "variants": {
+            "textures": "res://assets/world/textures/seaside-houses/manifest.json",
+            "surfaces": {
+              "plaster": {
+                "materials": [
+                  "seaside_plaster"
+                ],
+                "authored": "seaside_plaster_cream",
+                "choices": [
+                  "seaside_plaster_cream",
+                  "seaside_plaster_rose",
+                  "seaside_plaster_ochre"
+                ]
+              },
+              "roof": {
+                "materials": [
+                  "seaside_roof"
+                ],
+                "authored": "seaside_roof_terracotta",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ]
+              },
+              "ridge": {
+                "materials": [
+                  "seaside_ridge"
+                ],
+                "authored": "seaside_roof_terracotta",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ],
+                "follows": "roof"
+              },
+              "stone": {
+                "materials": [
+                  "seaside_stone"
+                ],
+                "authored": "seaside_stone_limestone",
+                "choices": [
+                  "seaside_stone_limestone",
+                  "seaside_stone_honey",
+                  "seaside_stone_grey"
+                ]
+              },
+              "timber": {
+                "materials": [
+                  "seaside_timber"
+                ],
+                "authored": "seaside_timber_oak",
+                "choices": [
+                  "seaside_timber_oak",
+                  "seaside_timber_dark",
+                  "seaside_timber_driftwood"
+                ]
+              },
+              "shutter": {
+                "materials": [
+                  "seaside_shutter"
+                ],
+                "authored": "seaside_shutter_teal",
+                "choices": [
+                  "seaside_shutter_teal",
+                  "seaside_shutter_sage",
+                  "seaside_shutter_blue"
+                ]
+              }
+            },
+            "details": {
+              "window_boxes": 0.85,
+              "planters": 0.85,
+              "vines": 0.6,
+              "yard": 0.8,
+              "laundry": 0.55
+            },
+            "alternates": {
+              "chimney": [
+                "brick",
+                "stone"
+              ],
+              "shutters": [
+                "open",
+                "drawn"
+              ]
+            }
+          },
+          "notes": "D in the concept plates: tall and narrow, four storeys plus attic, for thin gaps and taller roof accents. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses_dgh.py (with house_kit.py) is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "seaside-rosewash-house",
+        "label": "Rosewash lane house",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/seaside-rosewash-house/v1/model.blend",
+        "runtime": "assets/world/seaside-rosewash-house/model.glb",
+        "manifest": "assets/world/seaside-rosewash-house/manifest.json",
+        "catalog_notes": "F in the concept plates: compact two storeys plus loft. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses.py (with house_kit.py) is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/seaside-houses/v1/author_houses.py",
+          "art/source/world/seaside-rosewash-house/v1/coplanar.json",
+          "art/source/world/seaside-rosewash-house/v1/plant-style.json",
+          "art/source/world/seaside-rosewash-house/v1/provenance.json",
+          "docs/concept/v0.72/background-houses.md"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-lane.json",
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "showcase_only",
+          "label": "Rosewash lane house",
+          "source": "art/source/world/seaside-rosewash-house/v1/model.blend",
+          "runtime": "assets/world/seaside-rosewash-house/model.glb",
+          "pivot": "Footprint centre at ground; front door toward Blender -Y (Godot +Z). Walls 5.4 x 4.6 (the upper floor oversails the front by 0.16); the rear porch, log store and laundry pole reach 2.2 north. No paving: streets and yards are separate pieces.",
+          "logical_footprint": [
+            -2.7,
+            -2.46,
+            5.4,
+            4.76
+          ],
+          "illustrated_edges": true,
+          "behavior": "Static background house, not placed in any area yet. A placement would own collision and support; doors are not enterable. HouseVariants presents per-placement paintings and dressing.",
+          "variants": {
+            "textures": "res://assets/world/textures/seaside-houses/manifest.json",
+            "surfaces": {
+              "plaster": {
+                "materials": [
+                  "seaside_plaster"
+                ],
+                "authored": "seaside_plaster_rose",
+                "choices": [
+                  "seaside_plaster_cream",
+                  "seaside_plaster_rose",
+                  "seaside_plaster_ochre"
+                ]
+              },
+              "roof": {
+                "materials": [
+                  "seaside_roof"
+                ],
+                "authored": "seaside_roof_terracotta",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ]
+              },
+              "ridge": {
+                "materials": [
+                  "seaside_ridge"
+                ],
+                "authored": "seaside_roof_terracotta",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ],
+                "follows": "roof"
+              },
+              "stone": {
+                "materials": [
+                  "seaside_stone"
+                ],
+                "authored": "seaside_stone_limestone",
+                "choices": [
+                  "seaside_stone_limestone",
+                  "seaside_stone_honey",
+                  "seaside_stone_grey"
+                ]
+              },
+              "timber": {
+                "materials": [
+                  "seaside_timber"
+                ],
+                "authored": "seaside_timber_oak",
+                "choices": [
+                  "seaside_timber_oak",
+                  "seaside_timber_dark",
+                  "seaside_timber_driftwood"
+                ]
+              },
+              "shutter": {
+                "materials": [
+                  "seaside_shutter"
+                ],
+                "authored": "seaside_shutter_teal",
+                "choices": [
+                  "seaside_shutter_teal",
+                  "seaside_shutter_sage",
+                  "seaside_shutter_blue"
+                ]
+              }
+            },
+            "details": {
+              "window_boxes": 0.85,
+              "planters": 0.85,
+              "vines": 0.6,
+              "yard": 0.8,
+              "wood_store": 0.7,
+              "laundry": 0.55
+            },
+            "alternates": {
+              "chimney": [
+                "brick",
+                "stone"
+              ],
+              "shutters": [
+                "open",
+                "drawn"
+              ]
+            }
+          },
+          "notes": "F in the concept plates: compact two storeys plus loft. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses.py (with house_kit.py) is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "seaside-saltwind-house",
+        "label": "Saltwind apartment house",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/seaside-saltwind-house/v1/model.blend",
+        "runtime": "assets/world/seaside-saltwind-house/model.glb",
+        "manifest": "assets/world/seaside-saltwind-house/manifest.json",
+        "catalog_notes": "E in the concept plates: broad, three storeys under a low hipped roof. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses.py (with house_kit.py) is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/seaside-houses/v1/author_houses.py",
+          "art/source/world/seaside-saltwind-house/v1/coplanar.json",
+          "art/source/world/seaside-saltwind-house/v1/plant-style.json",
+          "art/source/world/seaside-saltwind-house/v1/provenance.json",
+          "docs/concept/v0.72/background-houses.md"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-lane.json",
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "showcase_only",
+          "label": "Saltwind apartment house",
+          "source": "art/source/world/seaside-saltwind-house/v1/model.blend",
+          "runtime": "assets/world/seaside-saltwind-house/model.glb",
+          "pivot": "Footprint centre at ground; front door toward Blender -Y (Godot +Z). Walls 8.6 x 6.0; the rear laundry alcove reaches 1.6 north. No paving: streets and yards are separate pieces.",
+          "logical_footprint": [
+            -4.3,
+            -3.0,
+            8.6,
+            6.0
+          ],
+          "illustrated_edges": true,
+          "behavior": "Static background house, not placed in any area yet. A placement would own collision and support; doors are not enterable. HouseVariants presents per-placement paintings and dressing.",
+          "variants": {
+            "textures": "res://assets/world/textures/seaside-houses/manifest.json",
+            "surfaces": {
+              "plaster": {
+                "materials": [
+                  "seaside_plaster"
+                ],
+                "authored": "seaside_plaster_ochre",
+                "choices": [
+                  "seaside_plaster_cream",
+                  "seaside_plaster_rose",
+                  "seaside_plaster_ochre"
+                ]
+              },
+              "roof": {
+                "materials": [
+                  "seaside_roof"
+                ],
+                "authored": "seaside_roof_teal",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ]
+              },
+              "ridge": {
+                "materials": [
+                  "seaside_ridge"
+                ],
+                "authored": "seaside_roof_terracotta",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ],
+                "follows": "roof"
+              },
+              "stone": {
+                "materials": [
+                  "seaside_stone"
+                ],
+                "authored": "seaside_stone_limestone",
+                "choices": [
+                  "seaside_stone_limestone",
+                  "seaside_stone_honey",
+                  "seaside_stone_grey"
+                ]
+              },
+              "timber": {
+                "materials": [
+                  "seaside_timber"
+                ],
+                "authored": "seaside_timber_oak",
+                "choices": [
+                  "seaside_timber_oak",
+                  "seaside_timber_dark",
+                  "seaside_timber_driftwood"
+                ]
+              },
+              "shutter": {
+                "materials": [
+                  "seaside_shutter"
+                ],
+                "authored": "seaside_shutter_teal",
+                "choices": [
+                  "seaside_shutter_teal",
+                  "seaside_shutter_sage",
+                  "seaside_shutter_blue"
+                ]
+              }
+            },
+            "details": {
+              "window_boxes": 0.85,
+              "planters": 0.85,
+              "vines": 0.5,
+              "yard": 0.8,
+              "laundry": 0.6
+            },
+            "alternates": {
+              "chimney": [
+                "brick",
+                "stone"
+              ],
+              "shutters": [
+                "open",
+                "drawn"
+              ],
+              "front_door": [
+                "oak",
+                "painted"
+              ]
+            }
+          },
+          "notes": "E in the concept plates: broad, three storeys under a low hipped roof. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses.py (with house_kit.py) is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "seaside-shingle-court-cottage",
+        "label": "Shingle Court cottage",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/seaside-shingle-court-cottage/v1/model.blend",
+        "runtime": "assets/world/seaside-shingle-court-cottage/model.glb",
+        "manifest": "assets/world/seaside-shingle-court-cottage/manifest.json",
+        "catalog_notes": "G in the concept plates: low and wide, one storey plus loft, for courtyards and lower roof gaps. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses_dgh.py (with house_kit.py) is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/seaside-houses/v1/author_houses_dgh.py",
+          "art/source/world/seaside-shingle-court-cottage/v1/coplanar.json",
+          "art/source/world/seaside-shingle-court-cottage/v1/plant-style.json",
+          "art/source/world/seaside-shingle-court-cottage/v1/provenance.json",
+          "docs/concept/v0.72/background-houses.md"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-lane.json",
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "showcase_only",
+          "illustrated_edges": true,
+          "behavior": "Static background house, not placed in any area yet. A placement would own collision and support; doors are not enterable. HouseVariants presents per-placement paintings and dressing.",
+          "label": "Shingle Court cottage",
+          "source": "art/source/world/seaside-shingle-court-cottage/v1/model.blend",
+          "runtime": "assets/world/seaside-shingle-court-cottage/model.glb",
+          "pivot": "Footprint centre at ground; front door toward Blender -Y (Godot +Z). Walls 8.0 x 5.0, eave 2.8, ridge 5.3; the rear stoop reaches 1.7 north and the optional courtyard gate 2.3 east. No paving.",
+          "logical_footprint": [
+            -4.0,
+            -2.5,
+            8.0,
+            5.0
+          ],
+          "variants": {
+            "textures": "res://assets/world/textures/seaside-houses/manifest.json",
+            "surfaces": {
+              "plaster": {
+                "materials": [
+                  "seaside_plaster"
+                ],
+                "authored": "seaside_plaster_cream",
+                "choices": [
+                  "seaside_plaster_cream",
+                  "seaside_plaster_rose",
+                  "seaside_plaster_ochre"
+                ]
+              },
+              "roof": {
+                "materials": [
+                  "seaside_roof"
+                ],
+                "authored": "seaside_roof_terracotta",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ]
+              },
+              "ridge": {
+                "materials": [
+                  "seaside_ridge"
+                ],
+                "authored": "seaside_roof_terracotta",
+                "choices": [
+                  "seaside_roof_terracotta",
+                  "seaside_roof_teal",
+                  "seaside_roof_slate"
+                ],
+                "follows": "roof"
+              },
+              "stone": {
+                "materials": [
+                  "seaside_stone"
+                ],
+                "authored": "seaside_stone_limestone",
+                "choices": [
+                  "seaside_stone_limestone",
+                  "seaside_stone_honey",
+                  "seaside_stone_grey"
+                ]
+              },
+              "timber": {
+                "materials": [
+                  "seaside_timber"
+                ],
+                "authored": "seaside_timber_oak",
+                "choices": [
+                  "seaside_timber_oak",
+                  "seaside_timber_dark",
+                  "seaside_timber_driftwood"
+                ]
+              },
+              "shutter": {
+                "materials": [
+                  "seaside_shutter"
+                ],
+                "authored": "seaside_shutter_teal",
+                "choices": [
+                  "seaside_shutter_teal",
+                  "seaside_shutter_sage",
+                  "seaside_shutter_blue"
+                ]
+              }
+            },
+            "details": {
+              "window_boxes": 0.85,
+              "planters": 0.85,
+              "vines": 0.6,
+              "yard": 0.8,
+              "laundry": 0.5,
+              "garden_gate": 0.6
+            },
+            "alternates": {
+              "chimney": [
+                "stone",
+                "brick"
+              ],
+              "shutters": [
+                "open",
+                "drawn"
+              ]
+            }
+          },
+          "notes": "G in the concept plates: low and wide, one storey plus loft, for courtyards and lower roof gaps. Modular background house after docs/concept/v0.72/background-houses.md, painted with the seaside house texture pack. art/source/world/seaside-houses/v1/author_houses_dgh.py (with house_kit.py) is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "square-flower-stall",
+        "label": "Flower stall under a canvas roof",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/square-flower-stall/v1/model.blend",
+        "runtime": "assets/world/square-flower-stall/model.glb",
+        "manifest": "assets/world/square-flower-stall/manifest.json",
+        "catalog_notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_props.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/sparks-square/v2/author_props.py",
+          "art/source/world/square-flower-stall/v1/plant-style.json",
+          "art/source/world/square-flower-stall/v1/provenance.json",
+          "docs/concept/v0.72/art/guildhall-square.png"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-square-v2.json",
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Flower stall under a canvas roof",
+          "source": "art/source/world/square-flower-stall/v1/model.blend",
+          "runtime": "assets/world/square-flower-stall/model.glb",
+          "pivot": "Ground centre; front toward Blender -Y (south)",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+          "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_props.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "square-guildhall",
+        "label": "Haverlund guild hall",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/square-guildhall/v1/model.blend",
+        "runtime": "assets/world/square-guildhall/model.glb",
+        "manifest": "assets/world/square-guildhall/manifest.json",
+        "catalog_notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_landmarks.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/sparks-square/v2/author_landmarks.py",
+          "art/source/world/square-guildhall/v1/plant-style.json",
+          "art/source/world/square-guildhall/v1/provenance.json",
+          "docs/concept/v0.72/art/guildhall-square.png"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-square-v2.json",
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Haverlund guild hall",
+          "source": "art/source/world/square-guildhall/v1/model.blend",
+          "runtime": "assets/world/square-guildhall/model.glb",
+          "pivot": "Footprint centre at ground; front toward Blender -Y (south)",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+          "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_landmarks.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-garden-wall",
+        "label": "Garden wall bay, 3 m",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-garden-wall/v1/model.blend",
+        "runtime": "assets/world/town-garden-wall/model.glb",
+        "manifest": "assets/world/town-garden-wall/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-garden-wall/v1/plant-style.json",
+          "art/source/world/town-garden-wall/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Garden wall bay, 3 m",
+          "source": "art/source/world/town-garden-wall/v1/model.blend",
+          "runtime": "assets/world/town-garden-wall/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-garden-wall-short",
+        "label": "Garden wall bay, 1.5 m",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-garden-wall-short/v1/model.blend",
+        "runtime": "assets/world/town-garden-wall-short/model.glb",
+        "manifest": "assets/world/town-garden-wall-short/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-garden-wall-short/v1/plant-style.json",
+          "art/source/world/town-garden-wall-short/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Garden wall bay, 1.5 m",
+          "source": "art/source/world/town-garden-wall-short/v1/model.blend",
+          "runtime": "assets/world/town-garden-wall-short/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-lawn",
+        "label": "Lawn panel 5 x 5",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-lawn/v1/model.blend",
+        "runtime": "assets/world/town-lawn/model.glb",
+        "manifest": "assets/world/town-lawn/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_street.py",
+          "art/source/world/town-lawn/v1/plant-style.json",
+          "art/source/world/town-lawn/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Lawn panel 5 x 5",
+          "source": "art/source/world/town-lawn/v1/model.blend",
+          "runtime": "assets/world/town-lawn/model.glb",
+          "pivot": "Centre at ground.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+          "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-planter-bench",
+        "label": "Planter bench",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-planter-bench/v1/model.blend",
+        "runtime": "assets/world/town-planter-bench/model.glb",
+        "manifest": "assets/world/town-planter-bench/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_square_life.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_square_life.py",
+          "art/source/world/town-planter-bench/v1/plant-style.json",
+          "art/source/world/town-planter-bench/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Planter bench",
+          "source": "art/source/world/town-planter-bench/v1/model.blend",
+          "runtime": "assets/world/town-planter-bench/model.glb",
+          "pivot": "Centre at ground; the bench faces Blender -Y.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Street furniture placed by an area document, which owns its block if any. Presentation only.",
+          "notes": "art/source/world/square-hub/v1/author_square_life.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "workshop-shell",
+        "label": "Workshop shell",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/workshop-shell/v1/model.blend",
+        "runtime": "assets/world/workshop-shell/model.glb",
+        "manifest": "assets/world/workshop-shell/manifest.json",
+        "catalog_notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/. Party-wall revision 2026-10-28 (sparks-workshop/v1/party_wall_revision.py): the north window removed; the north wall is shared with Nell's house.",
+        "related_files": [
+          "art/source/world/sparks-workshop/v1/README.md",
+          "art/source/world/workshop-shell/v1/brief.md",
+          "art/source/world/workshop-shell/v1/party-wall-revision.json",
+          "art/source/world/workshop-shell/v1/plant-style.json",
+          "art/source/world/workshop-shell/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/workshop-floor.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_workshop",
+          "label": "Workshop shell",
+          "source": "art/source/world/workshop-shell/v1/model.blend",
+          "runtime": "assets/world/workshop-shell/model.glb",
+          "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+          "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/. Party-wall revision 2026-10-28 (sparks-workshop/v1/party_wall_revision.py): the north window removed; the north wall is shared with Nell's house."
+        }
+      },
+      {
+        "id": "workshop-shop-doors",
+        "label": "Workshop shop doors",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/workshop-shop-doors/v1/model.blend",
+        "runtime": "assets/world/workshop-shop-doors/model.glb",
+        "manifest": "assets/world/workshop-shop-doors/manifest.json",
+        "catalog_notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/.",
+        "related_files": [
+          "art/source/world/sparks-workshop/v1/README.md",
+          "art/source/world/workshop-shop-doors/v1/brief.md",
+          "art/source/world/workshop-shop-doors/v1/door-leaves.json",
+          "art/source/world/workshop-shop-doors/v1/doorway-dark.json",
+          "art/source/world/workshop-shop-doors/v1/plant-style.json",
+          "art/source/world/workshop-shop-doors/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/workshop-floor.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_workshop",
+          "label": "Workshop shop doors",
+          "source": "art/source/world/workshop-shop-doors/v1/model.blend",
+          "runtime": "assets/world/workshop-shop-doors/model.glb",
+          "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+          "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+        }
+      },
+      {
+        "id": "workshop-tool-wall",
+        "label": "Workshop tool wall",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/workshop-tool-wall/v1/model.blend",
+        "runtime": "assets/world/workshop-tool-wall/model.glb",
+        "manifest": "assets/world/workshop-tool-wall/manifest.json",
+        "catalog_notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/.",
+        "related_files": [
+          "art/source/world/sparks-workshop/v1/README.md",
+          "art/source/world/workshop-tool-wall/v1/brief.md",
+          "art/source/world/workshop-tool-wall/v1/plant-style.json",
+          "art/source/world/workshop-tool-wall/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/workshop-floor.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_workshop",
+          "label": "Workshop tool wall",
+          "source": "art/source/world/workshop-tool-wall/v1/model.blend",
+          "runtime": "assets/world/workshop-tool-wall/model.glb",
+          "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+          "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+        }
+      },
+      {
+        "id": "workshop-wall-shelf",
+        "label": "Workshop wall shelf",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/workshop-wall-shelf/v1/model.blend",
+        "runtime": "assets/world/workshop-wall-shelf/model.glb",
+        "manifest": "assets/world/workshop-wall-shelf/manifest.json",
+        "catalog_notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/.",
+        "related_files": [
+          "art/source/world/sparks-workshop/v1/README.md",
+          "art/source/world/workshop-wall-shelf/v1/brief.md",
+          "art/source/world/workshop-wall-shelf/v1/plant-style.json",
+          "art/source/world/workshop-wall-shelf/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/workshop-floor.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_workshop",
+          "label": "Workshop wall shelf",
+          "source": "art/source/world/workshop-wall-shelf/v1/model.blend",
+          "runtime": "assets/world/workshop-wall-shelf/model.glb",
+          "pivot": "Metres; Blender +Y is logical +y (Godot -Z). Most furniture faces -y. Shell and stairs use room coordinates.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Authored room art. Placement, traversal, inspections and collision belong to content/areas/workshop-floor.json.",
+          "notes": "T7b/P3 reference; editable model.blend is authority. Source pack: art/source/world/sparks-workshop/v1/."
+        }
+      }
+    ],
+    "fingerprints": {
+      "haverlund-bakery": {
+        "source": "0414657f88db5a0793c3146b4ed90f9af24b68700957b1c33e4dfb995bbfee6e",
+        "runtime": "50ea66853ba395be379428ae815f70d71a8911799e324b8de5520130170966ec",
+        "entry": "68cd25ee1290111794b10b4b7b8a65b97ffc50679d0a539f415add3375489e0d"
+      },
+      "haverlund-bank": {
+        "source": "2415bed4c0b98df1513e9567199db9c79ea073814a59846914d105316362da6c",
+        "runtime": "b15d8fda7c3e1da7316c7e93531fec4dda6d3a412830bf409bce4dffb2bbcb6e",
+        "entry": "ef0fb58fbe3b5272a6f46c68c210e14dee2fe658325a611d832b6130db305147"
+      },
+      "haverlund-bookshop": {
+        "source": "ff2db86eea588c0bfbd1e272300a2546fc00bf0018c07d743e236ca0c842113a",
+        "runtime": "e34b33a0e39a7407ae99b8995f23fcbc723a48e96c1143a8ae1319e4130a87b5",
+        "entry": "58262d1d9a5560223714935936710092ba9322bbb212645f78def37c5f6facd5"
+      },
+      "haverlund-cafe": {
+        "source": "6081acf1cf7d6bd7a31f5978e971cc5dbcad0916a57ff46096f4d5fbb6470f4e",
+        "runtime": "6483ded52ed35716bfe6595d4e6fc0bb7c8a198cbccf3bffb875c27ba7b7c5c7",
+        "entry": "7821da941a9d3a3e0cbd21d55c8c6b41ffdcde23fd6ec4f928b02419cdda80d8"
+      },
+      "haverlund-fruit-market": {
+        "source": "98f32365164d24ee12b4ffa6d573398015f19b2b98c2cad9e54021888b4720c7",
+        "runtime": "46f633835e1d66fb86e54e56197e16b1f63d26223ff9f71fc2a117c7317c5d17",
+        "entry": "fda21685ffe888b7774d5578c4bbaa78a5a004a6a3fe8430ffe1fbf1d394a924"
+      },
+      "haverlund-greengrocer": {
+        "source": "ef647435bcc44001cc74f2a52b46f1d002be78764aa295da27066ada18b5c568",
+        "runtime": "db398f2e668690dcf0719106f4e145113de411b0f42b47084264aa54318a92d3",
+        "entry": "83999f08959b5bb3a6d6b7f233f7005be5eafc381391ef95d0c457974d7de0c2"
+      },
+      "haverlund-lane-set": {
+        "source": "4ef25674f1974c97305938495f7c6a370079131cdec5c548d9f83a7d14279dc5",
+        "runtime": "9d3d03ec44b1a5de93e94a041cb7fa0f81b785c20cc09f972e796434dd75ea8d",
+        "entry": "a0be74475fed3449d585558352d39228e8f5902f01cfe894a6ddd06c694c857b"
+      },
+      "haverlund-post-office": {
+        "source": "9b2b09b69b7e4495b188847e53434a7b831f743e4d7191a98dd5ab48f35ea585",
+        "runtime": "0f61cffc7d4fb70db749c736e83e411cc24d4d123aa446d420b56e472e41d028",
+        "entry": "e113b8b6770b2b0fa11a7c3e6a5dffb2609f4a4e05b81d62a5709d75ecd06c07"
+      },
+      "lane-cottage": {
+        "source": "3de85cb16f0bd205f3dfce623c72a6e8f61985d80d2d898fd810210195649a04",
+        "runtime": "69bb3587934829fe6472ae41d38289e2c6b240fb8dd0c3727c2fc2401597756e",
+        "entry": "0db2e4b491b07b12d9f9981a276635424955957b36146e8aecd7558acdb24ac9"
+      },
+      "lane-cypress": {
+        "source": "3c672570b2f5fb521390e9b76dd246472e27dd3a9acbe39c40e517af826375cc",
+        "runtime": "844232fc2edfb1177c26a0ec4d9031365b3ae8abed25c84532e82c11384ceeeb",
+        "entry": "dd1d9fbaaa5d4701b7fca293df8140a2a8bd3fa9dd35f0944975323bcb4a9128"
+      },
+      "lane-nell-house": {
+        "source": "a5a2460d86ab831e833a87d3130f4fbd9d2cf33238a21959281f827939636f19",
+        "runtime": "b365585c3c4db24119ea27681eff28a15224109cbf618b8b53743176e2f0e8bf",
+        "entry": "4bfb82a3aa4a38562e8422e0a65f8068105a7581e8f4d8cb631e3c31861a5eba"
+      },
+      "lane-planter": {
+        "source": "2aa6fc580f4685ec3fe4a8173db7502897b18ccf9e5bea1e0bd1016652c99668",
+        "runtime": "5d6883f463ae2d63682723307c28944a4652cfcd339035efa4b41aa1f20c9631",
+        "entry": "26ea036fff3da88cb2cb9f5d46b401e55226181817535268bbda7972a87a7e95"
+      },
+      "lane-tram-shelter": {
+        "source": "44d5d8900de6fe88dcdcfa1153c2005652e4211d64ae2c014d012ef573a7dfc2",
+        "runtime": "6135e243c31bde9518fdbe8e5030d08d225cc41fa50dd7d1da4e0612433aa42b",
+        "entry": "c415538f384f6aaab034ed6157bc53ae0c5ef480befc114f6c530848196222c3"
+      },
+      "lane-tree": {
+        "source": "b4d388ea3ef661438bbe9af2bb18dd850ac9cd3c4c61fec0a787a08e3f147350",
+        "runtime": "daedae1aeffd48d68e5168d43f99f2b60c96d0878e400930d4229166af881330",
+        "entry": "bdc3784d9e1e483476353d8ad65e0281f310cd88e8ff38b7f760cb0f205bdccd"
+      },
+      "lane-workshop": {
+        "source": "55891338307b7b363ecb7c7f47cb18ec034ef65bcff9965544759d8553a3ebe4",
+        "runtime": "ab70ea41200263799b93ab0e3381a5d6c12d3c07ab58c5339f3abb831a2b4d25",
+        "entry": "a9a87c640a9756ac1fe88aaf6e3cbc43c33b472d50d59f7cd4750789ced2075d"
+      },
+      "loft-floor-plant": {
+        "source": "e34d41446d562df52d5c2895128351ed4bf8e6b2372bf17d6d97376ea320320b",
+        "runtime": "ffd4538b079f21f67cc5103eeedb8e56aa90d50dc607e4ddad95b0157c75e127",
+        "entry": "1aec96cff0e068d3f45750b7b5082e4510764eb304c79ea611449992a9ed2305"
+      },
+      "loft-shelf": {
+        "source": "82bbd3c9278a33b9ae1e9d73ca17e5740d32e25fb545ee6174d6d553ffe555eb",
+        "runtime": "51f077b15d7a9b7657aaa0104626ab7207b4f0c4d3bbab8547b5332b18f11804",
+        "entry": "217295cdd89bf5d27a3cb13852a30eaea3f2ac9171014edcb657e1e44dacb743"
+      },
+      "loft-travel-stacks": {
+        "source": "9a3f5954327711fb10aaca98b6384c7408bbb1387145121f194df6bda3d76e3b",
+        "runtime": "bf31914c49fdf3437474b4b6d5becee683b9280122b94200348af63af200f4d2",
+        "entry": "9a8fc590412183625d65f7c5f14f8afaa64b7ab4e05cc94fb74e64b44d20ce4a"
+      },
+      "loft-wall-life": {
+        "source": "6275b6ade4ce910d8253b0ab759aa433d2f5de9ccf643a5f6b1515e6224c6989",
+        "runtime": "3b34ffe7e0f537193b289f69a565f5e08acff75bcaaf7424767a9d34a59ea59b",
+        "entry": "c4e1cdd65b5beb9c4558dcdb9a10d9d76846b5127d10d2076a2347564b505570"
+      },
+      "rootwell-beacon": {
+        "source": "b9767cd34d288297a77fd3d143a83bc0e629b9e3fce98c51f33894c4783e6682",
+        "runtime": "ba2a997e5308b014714ca1e2d4ab1f33769e61a91b9f95b4cd5c3ac08df0042c",
+        "entry": "dded6f9abdbbb281714063fc5c78170b678a120e5c5caeb8fbfa468bef0b10d4"
+      },
+      "seaside-eaveside-terrace": {
+        "source": "b53d8162fc67f6dc831a2238244a85560462f748b7a9c5f810ceafcb0a4db7e6",
+        "runtime": "d13be8b812c128d311031f5cc243a1ba6d52943c4326677a344f956a8cf44eec",
+        "entry": "e55d2f3e494bfce8eaa23bc894bdb2719ecaea352cae8d29a8b58de984f747cb"
+      },
+      "seaside-lantern-row-house": {
+        "source": "b657e8d4f344ed8ef5d3d028f076e40015e9e629359252fae21d6a188905727c",
+        "runtime": "f6be0016c7b0d689538fde3c6f6638bed0e5338df298a0d30111141dde87965e",
+        "entry": "86e6035f2dc0d306ee5d8d340b4dece6b5ec04983ad56943b2de091e6a78af15"
+      },
+      "seaside-rosewash-house": {
+        "source": "c94f7197d9e0c457d49db294385a48ac9250c50a546a6380016c4a727297f18d",
+        "runtime": "cebd3a971a79a2ff8f0d921079bc26cdd6db7d493c11c82d7601eb3898e00641",
+        "entry": "3a363b37f3758c90f22dbec84a73b6bda3f3187cb1ab9437518bbaaf6395ace1"
+      },
+      "seaside-saltwind-house": {
+        "source": "1348381559ec0097a182977a0e49fb3ccd20a2c92119970103be1d72000fb8b5",
+        "runtime": "2dc9bf080f1cdd7ca2cf9d498530d5a679b6bb07fc0bdac6ab8c41a5987ba5c9",
+        "entry": "b433447633cf7d6393dced339a11fa64fe0dae4ac5918af5acc22f96bfcacc8e"
+      },
+      "seaside-shingle-court-cottage": {
+        "source": "f4d562d9f86a157cb9423bb5a1eeb1889a2e37f6f57efbda1539b76de6fb8b25",
+        "runtime": "4080ac60fd3b20bd7c4e58a18c2eedf1abf8ce05d0a267d619919794d95466aa",
+        "entry": "6fa01605444c886556f2114be7ea5904027b4b97446128d159f1b1590dcbcc7b"
+      },
+      "square-flower-stall": {
+        "source": "0652ccd907029876b9d70f138584385a28d84d3ee60bd3a27547a5fcc9be0549",
+        "runtime": "10ef0eca267a934a4a482a5a2ce7596e28c6581e84004a1976c8a63aba00cfe7",
+        "entry": "1886d74965220c8bc8efefed8170418f6972b9c50448654073774cb32ebf53b7"
+      },
+      "square-guildhall": {
+        "source": "6569aac553c9e8498bbf6f96c6fab349f92b5eb029f4f0d295c72e6b7dcdf33b",
+        "runtime": "1c8174e8ecb0b5c644fe467e93f52fb0082d85ef47d5beea64a9ce83993e1a6e",
+        "entry": "008c97bc3169b090421c1184402248393b3ec0e91f84fe5e32d66ccd4014805f"
+      },
+      "town-garden-wall": {
+        "source": "c8f8cbf6138651f4683938f6e721eb65b9a93db482e82996eabcee2b29df5557",
+        "runtime": "0e4b265dea88fe010dc53f4c9ee32a7de323cdf2f3c5b4e74bc0d6d78d783d85",
+        "entry": "4955cea73cf0e181671128bd2d5dae60382bb61647fc397cbea92b7b4c730679"
+      },
+      "town-garden-wall-short": {
+        "source": "da91b2e4db32aaa6cb7744bc1fa87c83466af94590c5a95ba4172b0c110a1987",
+        "runtime": "fe51a9eec99874c2fa2c2ba2b4b686be3493949a6fcc135af3b562dab9a9c400",
+        "entry": "b6ab892cb12890d0c9d222d4758798e1439cee50e2597d678b7de7fbae55e61d"
+      },
+      "town-lawn": {
+        "source": "acee2f3b006b3db2720c2cc489dc8b24674e11b0feb5581d6907dac2f491cbb2",
+        "runtime": "51644c119b590c281b076a778c8cdc48a01e9f19dfbbc4be447e8e4ed6765c3c",
+        "entry": "34f7c8d65e86bfc2726b2ee78e6f70393323fdcfad310fe8e71b3956ac9e2eca"
+      },
+      "town-planter-bench": {
+        "source": "d252343a95bfa272b5b407957bacaafc84b52e3682019177120301fd29f405c8",
+        "runtime": "123f0477fd968e45b28115d77ed21cffce4a5b0dd64fd6f420f29434e717be4c",
+        "entry": "79eb5c7ae53364f331b9378294a8f8b978d8e80b7444c8c096691afd2b147aa7"
+      },
+      "workshop-shell": {
+        "source": "4ac8fdecee0e7a290cd21c9d86b46296bdeb3645f48bb0ebdb6d79d8bc104fcd",
+        "runtime": "7d594c9cb26fa5db8626d02d6dd746ebb153e96e483eefa1cd489d0790b77036",
+        "entry": "17e53477ca32723172fb3f11ad1ed31f19048517c1f8728028ed954992b14dd1"
+      },
+      "workshop-shop-doors": {
+        "source": "188a208bf3ac9cf221e8465495c52bd104786131878dc4a9159b29e601d0cad3",
+        "runtime": "63a8bdb829a411a771fba41988f0579397c979d81be077c8ab04bb25f5889433",
+        "entry": "c31be32866daf93503111646dc5f5c96b560a616e91c655e22bad697908004a2"
+      },
+      "workshop-tool-wall": {
+        "source": "180313994c5be400fc9dddf9d90d0beb4abec8f4e8115f0db4f039b9bad6b1ad",
+        "runtime": "a91eb79463421ebc69993a7c2be824508297c1b42ef1cc58fe20d96996eca786",
+        "entry": "a453b502f150146f022130ffcf9186be7a8d28a6a21b4bf0ecc627347e4ad499"
+      },
+      "workshop-wall-shelf": {
+        "source": "68da9b348932ea5fb62629b6c73cd3cc2dd1ddd56389a50a13916a2f570d7e0f",
+        "runtime": "75324dc3001439843fe51f1a75790cb042f2d359e1921eb1ca96cf4ae7aee221",
+        "entry": "bb3698a3276c62fe4b1c7a7b0d2a64a959e3b76a3435d912d20478c37ebb9719"
+      }
+    }
+  }
+}

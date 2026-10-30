@@ -63,7 +63,7 @@ func _run() -> void:
 		quit(1)
 		return
 	game._pop_all_modals()
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	await _frames(20)
 	await _shot("gameplay")
 	root.grab_focus()

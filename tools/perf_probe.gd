@@ -41,7 +41,7 @@ func _run() -> void:
 	RenderingServer.viewport_set_measure_render_time(_world_rid, true)
 	print("PERF adapter=%s window=%s world=%s msaa=%d" % [RenderingServer.get_video_adapter_name(), str(root.size), str(game.world_viewport.size), game.world_viewport.msaa_3d])
 	await _measure("title (as shipped)")
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	game._hint_timer.stop()
 	await _frames(60)
 	await _measure("standing (as shipped)")

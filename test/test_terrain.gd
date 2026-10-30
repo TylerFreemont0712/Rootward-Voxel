@@ -157,7 +157,7 @@ func _ledger_tests() -> void:
 	_check(not ledger.check_stairs(Vector2i(32, 5), "W", state).ok, "Stairs refuse to climb away from the cliff")
 	_check(not ledger.check_stairs(Vector2i(30, 5), "E", state).ok, "Stairs refuse open ground with no cliff")
 	_check(not ledger.check_stairs(Vector2i(32, 5), "E", _state(ledger, Vector2i(32, 5))).ok, "Stairs are not built where the player stands")
-	for crate: String in ["crate-stack", "wooden-barrel", "hay-bale"]:
+	for crate: String in ["wooden-chair", "wooden-barrel", "woodpile"]:
 		var entry: Dictionary = AreaBuild.item(_catalog, crate)
 		if entry.is_empty() or not AreaBuild.prop_is_solid(_assets, str(entry.asset)):
 			continue

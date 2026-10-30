@@ -18,6 +18,7 @@ func _run() -> void:
 		return
 	var rules := World.new(area)
 	var initial: Dictionary = rules.initial_state()
+	_check(is_equal_approx(World.STEP_SECONDS * 60.0, 13.0), "A faster step takes exactly thirteen 60 Hz physics ticks")
 	var moved: Dictionary = rules.move(initial, Vector2i.RIGHT)
 	_check(moved.ok and moved.state.player == [5, 5, 0], "A step lands on the neighboring cell center")
 	_check(initial.player == [4, 5, 0], "Moving leaves the original state untouched")

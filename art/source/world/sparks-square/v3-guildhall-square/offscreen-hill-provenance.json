@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed by built-in tool",
+  "role": "Precise concept edit: workshop removed, uphill street continues beyond the upper-left frame",
+  "prompt_file": "offscreen-hill-prompt.json",
+  "prompt_file_sha256": "bb2c9fd94efaa9b9fe9c94970e310e0a635018a44509571c89a403d9e7da35fe",
+  "prompt_sha256": "7fdb32303d446f20ea4aa8924881ea127af20a1e0f256e8aa7e0b61d5812cb28",
+  "input": {
+    "path": "art/source/world/sparks-square/v3-guildhall-square/E-guildhall-square.png",
+    "role": "Edit target; preserve the concept except the upper-left workshop and uphill route",
+    "sha256": "53fe10c8ff47f1468e474d2166a2d197b892c3043f36d795c30f9e6f92c9817b"
+  },
+  "output": {
+    "path": "art/source/world/sparks-square/v3-guildhall-square/E-guildhall-square-v2-offscreen-hill.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "a7f41ee0be0deaf827247aae17ce3f038b7c6e4af24f082763f4601d60980866",
+    "original_generated_path": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-57ac93e9-5f4a-4d49-9a83-5b1b09fe2af9.png"
+  },
+  "runtime_status": "Concept reference only; previous concept, adopted models and playable area preserved."
+}

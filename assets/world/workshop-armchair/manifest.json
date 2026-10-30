@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "workshop-armchair",
+  "version": "v1",
+  "source": "art/source/world/workshop-armchair/v1/model.blend",
+  "source_sha256": "e93e8981f3d8e4b6c06ca228cf83d45b7cd5b121e15e75dd521646a1651e9482",
+  "runtime": "assets/world/workshop-armchair/model.glb",
+  "runtime_sha256": "650fc2b9e69b4f758d514c73d071ccf8b3c24bd3d3230a6282807d016cf00594",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.680000007152557,
+      0.0,
+      -0.679970622062683,
+      0.680000007152557,
+      1.73299956321716,
+      0.685939729213715
+    ],
+    "geometry_sha256": "ee37518fa5185c5adff80336fa0e1f54dc05febb9cb27ace02c3373aed0a73f2",
+    "material_records": {
+      "workshop_leather_dark": {
+        "albedo": [
+          4039,
+          2745,
+          2000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_ochre": {
+        "albedo": [
+          7020,
+          6078,
+          3804,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_plaid": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "e5659c8da9184ee310f559d52ee45232fc5730c980555a63b43f26c396bf108c"
+      },
+      "workshop_teal_dark": {
+        "albedo": [
+          2078,
+          3725,
+          3569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_upholstery": {
+        "albedo": [
+          6627,
+          3647,
+          2863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_upholstery_light": {
+        "albedo": [
+          7686,
+          4824,
+          3765,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "workshop_leather_dark",
+      "workshop_ochre",
+      "workshop_plaid",
+      "workshop_teal_dark",
+      "workshop_upholstery",
+      "workshop_upholstery_light",
+      "workshop_wood_dark"
+    ],
+    "meshes": 7,
+    "triangles": 12536
+  }
+}

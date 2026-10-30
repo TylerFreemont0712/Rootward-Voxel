@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "id": "20261029T055404-82115833",
+  "kind": "delete",
+  "title": "Delete Lantern loft",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "lantern-loft",
+    "label": "Lantern loft",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/lantern-loft/v1/model.blend",
+    "runtime": "assets/world/lantern-loft/model.glb",
+    "manifest": "assets/world/lantern-loft/manifest.json",
+    "catalog_notes": "Placed in Kindle Hollow version 2 and offered on the studio build shelf. Existing Blender source and runtime model preserved; decorative overhangs are not additional collision. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+    "related_files": [
+      "art/source/world/lantern-loft/v1/brief.md",
+      "art/source/world/lantern-loft/v1/building-polish.json",
+      "art/source/world/lantern-loft/v1/doorways.json",
+      "art/source/world/lantern-loft/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/areas/kindle-hollow.json",
+      "content/build/catalog.json",
+      "content/interiors/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_and_builder",
+      "label": "Lantern loft",
+      "source": "art/source/world/lantern-loft/v1/model.blend",
+      "runtime": "assets/world/lantern-loft/model.glb",
+      "pivot": "ground origin; front +Z; one unit per tile",
+      "logical_footprint": [
+        -3.5,
+        -3.5,
+        7,
+        7
+      ],
+      "behavior": "static building with catalog footprint and instanced room",
+      "notes": "Placed in Kindle Hollow version 2 and offered on the studio build shelf. Existing Blender source and runtime model preserved; decorative overhangs are not additional collision. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster_warm"
+        ],
+        "roof": [
+          "roof_teal",
+          "roof_teal_dark",
+          "roof_teal_hi"
+        ],
+        "timber": [
+          "dark",
+          "oak",
+          "oak_edge",
+          "timber"
+        ],
+        "masonry": [
+          "mortar",
+          "stone",
+          "stone_edge",
+          "entrance_stone"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "planked oak",
+        "threshold": "pale stone",
+        "plane": 3.31,
+        "width": 1.3,
+        "height": 2.28,
+        "bottom": 0.15,
+        "steps": [
+          [
+            4.35,
+            3.8,
+            1.9500000000000002,
+            0.09620000000000001
+          ],
+          [
+            3.92,
+            2.85,
+            1.7000000000000002,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:54:04+00:00",
+  "updated": "2026-10-29T05:54:04+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:54:04+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/interiors/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/kindle-hollow.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/expansion_kit_review.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/building_review.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_building_refresh.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build_assets.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "key": "robot-motion-tender-se-corrected",
+  "id": "tender",
+  "dest": "art/source/robots/v0.72/tender/movement-v1/SE-generated.png",
+  "refs": [
+    "art/source/robots/v0.72/tender/movement-v1/SE-first-attempt.png",
+    "art/source/adventurer/v9-directional-walk/SE.png"
+  ],
+  "prompt": "Use case: precise-object-edit, correcting the direction of a four-key robot movement sheet.\nImage 1 is the detailed Tender sprite design to preserve. It is incorrectly facing the LEFT. Image 2 demonstrates the game's front-RIGHT / SOUTHEAST camera direction.\nRepaint the same four complete Tender rolling poses as physically rotated to face the lower-RIGHT, at the same elevated orthographic 31-degree camera as image 2. The brass spark FACE WINDOW must be on the RIGHT portion of the body, pointing diagonally DOWN-RIGHT, the rear of the shell extending back toward the upper-LEFT. Do not retain the left-facing pose.\nPreserve Tender's cream enamel, teal chassis and top plate, brass handle, rounded mittens, detailed rubber wheels and painterly outlines. Four wheels on two axles, not legs. The small moss-and-blossom patch is fixed on Tender's OWN REAR-RIGHT seam: in this front-right view it shows on the NEAR rear flank toward the upper-left of the shell. The opposite left flank stays plain cream. This is a newly drawn ROTATED VIEW, not an x-flip: physical shell seams, arm hinges, moss location and service coupling must remain on the same anatomical sides of the same robot.\nFour sequential wheel hub index phases (up, right, down, left); restrained travel only, arms tucked, fixed body scale, consistent wheel contacts and anatomy. Keep all four poses in a strict 2x2 grid, 1536x1536 transparent RGBA canvas. Full silhouettes and 8% alpha margins; no shadows, ground, labels, border or extra props. High-detail painted style matching image 1, only correct its physical orientation and side visibility.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-653edad2-c540-42c9-8544-df5f2f174f46.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "c1095761da4b2921af76dad8249253a7410e23a06ec7f4d89f5dac2a9b30f3b5",
+  "reference_sha256": {
+    "art/source/robots/v0.72/tender/movement-v1/SE-first-attempt.png": "8b7cc1cb502985b351693f01aece824ba5a8aaa6bebc9973384695eb0ef60c4a",
+    "art/source/adventurer/v9-directional-walk/SE.png": "0c2067d8dcfe105d42e747487c87527544db78d38bd4afc775fa493744dee6e4"
+  }
+}

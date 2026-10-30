@@ -1,0 +1,9 @@
+{
+  "asset": "loft-wardrobe",
+  "date": "2026-10-28",
+  "reference": "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png",
+  "authoring_record": "art/source/world/sparks-loft/v1/flipped_loft_props.py",
+  "authoring_record_sha256": "7c16b193ba060f563d334e380c41fafc5e49f3641182acbfe47d870c9fb7bef4",
+  "textures": "art/source/world/sparks-loft/v1/prompts.json",
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh."
+}

@@ -1,0 +1,9 @@
+{
+  "asset": "rootward-tree",
+  "version": "v1",
+  "authoring_record": "art/source/world/village-landmarks/v1/author.py",
+  "authoring_sha256": "bf1841fb83dcf2fec1318d7fa92d42bcf337dee3ef84d58798a8ad4e0b6e3253",
+  "source_sha256": "bf1df62369f8243d3a37f2f3beb1c97f377ac39dbd4beadc031042520e308cc5",
+  "textures": "Existing painted library in assets/world/textures/lush; packed into source and GLB.",
+  "note": "Original geometry. No prior models overwritten. Edit the saved Blender source after handoff."
+}

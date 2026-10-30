@@ -1,0 +1,369 @@
+{
+  "schema": 1,
+  "asset": "painted-cottage",
+  "version": "v1",
+  "source": "art/source/world/painted-cottage/v1/model.blend",
+  "source_sha256": "b7b9bbbd7428a139cc1f0314e4956dcfa3291e17905afc7d2450b32ecce8e856",
+  "runtime": "assets/world/painted-cottage/model.glb",
+  "runtime_sha256": "522f603f0bff093d591971c384dd64522d14279c9f1399d6ebedcfeed91afa42",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -2.49797558784485,
+      0.0,
+      -2.39499998092651,
+      2.39913749694824,
+      5.33500003814697,
+      3.15000009536743
+    ],
+    "geometry_sha256": "cb3429b2d5d08f1f3c5e9bb6e88c5b3ae14bb495cb1bc8fcd591dde72a875f11",
+    "material_records": {
+      "Painted honey grain": {
+        "albedo": [
+          5451,
+          3686,
+          2078,
+          10000
+        ],
+        "roughness": 5000,
+        "texture_rgba_sha256": ""
+      },
+      "Painted violet tile 0": {
+        "albedo": [
+          4588,
+          3922,
+          6275,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "Painted violet tile 1": {
+        "albedo": [
+          4863,
+          4157,
+          6627,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "Painted violet tile 2": {
+        "albedo": [
+          4353,
+          3725,
+          5961,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "Painted violet tile 3": {
+        "albedo": [
+          5373,
+          4588,
+          6902,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "Painted violet tile 4": {
+        "albedo": [
+          5020,
+          4235,
+          6588,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "Painted violet tile 5": {
+        "albedo": [
+          4196,
+          3569,
+          5725,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_brass": {
+        "albedo": [
+          7569,
+          5843,
+          3020,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_door_oak": {
+        "albedo": [
+          6824,
+          4667,
+          2196,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_endgrain": {
+        "albedo": [
+          7412,
+          5451,
+          2902,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_endgrain_dark": {
+        "albedo": [
+          4588,
+          3137,
+          1882,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_flower": {
+        "albedo": [
+          9765,
+          9373,
+          8314,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_glass": {
+        "albedo": [
+          2627,
+          3333,
+          4275,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_glass_light": {
+        "albedo": [
+          4000,
+          4706,
+          5569,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_iron": {
+        "albedo": [
+          2118,
+          2314,
+          2314,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_leaf": {
+        "albedo": [
+          3647,
+          5059,
+          2392,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_leaf_dark": {
+        "albedo": [
+          2078,
+          3255,
+          2314,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_leaf_light": {
+        "albedo": [
+          5725,
+          6627,
+          3059,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_mortar": {
+        "albedo": [
+          5216,
+          4627,
+          3686,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_oak": {
+        "albedo": [
+          7020,
+          4824,
+          2392,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_oak_light": {
+        "albedo": [
+          7725,
+          5529,
+          2941,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_oak_warm": {
+        "albedo": [
+          6510,
+          4275,
+          2118,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_pollen": {
+        "albedo": [
+          9059,
+          7098,
+          3020,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_recess": {
+        "albedo": [
+          2118,
+          1608,
+          1176,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_soil": {
+        "albedo": [
+          3451,
+          2706,
+          1804,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_stone": {
+        "albedo": [
+          8196,
+          7608,
+          6275,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_stone_light": {
+        "albedo": [
+          8980,
+          8353,
+          6902,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_stone_warm": {
+        "albedo": [
+          7569,
+          6941,
+          5529,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_timber": {
+        "albedo": [
+          4471,
+          3137,
+          2000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_violet_light": {
+        "albedo": [
+          5882,
+          5137,
+          7176,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "study_window": {
+        "albedo": [
+          10000,
+          7961,
+          4588,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "Painted honey grain",
+      "Painted violet tile 0",
+      "Painted violet tile 1",
+      "Painted violet tile 2",
+      "Painted violet tile 3",
+      "Painted violet tile 4",
+      "Painted violet tile 5",
+      "study_brass",
+      "study_door_oak",
+      "study_endgrain",
+      "study_endgrain_dark",
+      "study_flower",
+      "study_glass",
+      "study_glass_light",
+      "study_iron",
+      "study_leaf",
+      "study_leaf_dark",
+      "study_leaf_light",
+      "study_mortar",
+      "study_oak",
+      "study_oak_light",
+      "study_oak_warm",
+      "study_pollen",
+      "study_recess",
+      "study_soil",
+      "study_stone",
+      "study_stone_light",
+      "study_stone_warm",
+      "study_timber",
+      "study_violet_light",
+      "study_window"
+    ],
+    "meshes": 74,
+    "triangles": 69308
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "asset": "town-railing-short",
+  "version": "v1",
+  "source": "art/source/world/town-railing-short/v1/model.blend",
+  "source_sha256": "dabe2529355e5e986388f153d34551e626b82e7b63b4443890f13455665c14fd",
+  "runtime": "assets/world/town-railing-short/model.glb",
+  "runtime_sha256": "7571dd80e8ab7b918c38a21f90f53a3853207efab860de35f460d45acb5ec0ec",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      0.0319999977946281,
+      0.0,
+      -0.0274999998509884,
+      0.967999994754791,
+      1.04500007629395,
+      0.0274999998509884
+    ],
+    "geometry_sha256": "60f07fcce21f107982b9c0450584a60b2a92da705d210b4f6707bed5e6563fda",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "8bf51a9eb0a9c4d1398077ea697d5956854d2961d070159e7f7da5fb2fc472e4"
+      }
+    },
+    "materials": [
+      "house_paint"
+    ],
+    "meshes": 1,
+    "triangles": 932
+  }
+}

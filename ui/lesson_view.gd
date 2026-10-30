@@ -17,7 +17,7 @@ func _init() -> void:
 	horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	size_flags_vertical = Control.SIZE_EXPAND_FILL
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_body = UI.vbox(12)
+	_body = UI.vbox(8)
 	_body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	add_child(_body)
 
@@ -35,7 +35,7 @@ func show_quest(quest: Dictionary, finished: bool, progress: Dictionary, interac
 	if str(quest.get("chapter", "")) != "":
 		_body.add_child(UI.caps(str(quest.chapter), Pal.BRASS))
 	_body.add_child(UI.caps(str(quest.concept), Pal.VIOLET))
-	_body.add_child(UI.heading(str(quest.title), 26))
+	_body.add_child(UI.heading(str(quest.title), 22))
 	if finished:
 		var done_row := UI.hbox(8)
 		var tick := Glyph.new()
@@ -45,7 +45,7 @@ func show_quest(quest: Dictionary, finished: bool, progress: Dictionary, interac
 		done_row.add_child(UI.label("Complete", &"", 17, Pal.GREEN))
 		_body.add_child(done_row)
 	else:
-		_body.add_child(UI.dim(str(quest.summary), 19))
+		_body.add_child(UI.dim(str(quest.summary), 16))
 		_progress_row = UI.hbox(8)
 		_body.add_child(_progress_row)
 		update_progress(progress)
@@ -109,13 +109,13 @@ func _code_block(code: String) -> Control:
 	var text := Label.new()
 	text.text = code
 	text.add_theme_font_override("font", UITheme.mono_font())
-	text.add_theme_font_size_override("font_size", 17)
+	text.add_theme_font_size_override("font_size", 15)
 	text.add_theme_color_override("font_color", Color("e0cfa3"))
 	text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(text)
 	if _interactive:
 		var insert := UI.icon_button(&"plus", "Add this code to your notebook at the cursor", func() -> void: insert_requested.emit(code))
-		insert.custom_minimum_size = Vector2(38, 38)
+		insert.custom_minimum_size = Vector2(28, 28)
 		insert.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 		row.add_child(insert)
 	return panel

@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "loft-tape-machine",
+  "version": "v1",
+  "source": "art/source/world/loft-tape-machine/v1/model.blend",
+  "source_sha256": "632d9603fce028837b3e41dcb422b40566a1da12834a55cbe2f4e48a6827b61b",
+  "runtime": "assets/world/loft-tape-machine/model.glb",
+  "runtime_sha256": "dea7913f5ad1a32930c45c2056d07a5d10777499bbb0c82c06c64905ae38ccb3",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.365000009536743,
+      0.0,
+      -0.294999957084656,
+      0.379999995231628,
+      0.714999973773956,
+      0.310000002384186
+    ],
+    "geometry_sha256": "dee25e38c7fb892357edd14eee106d7fe6adb6c58bfe5e4074403ccab9ae5e20",
+    "material_records": {
+      "loft_brass": {
+        "albedo": [
+          7686,
+          6039,
+          3255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_cream": {
+        "albedo": [
+          9373,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leather_dark": {
+        "albedo": [
+          3569,
+          2353,
+          1725,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_paper": {
+        "albedo": [
+          9608,
+          9137,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_teal_dark": {
+        "albedo": [
+          1922,
+          3608,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_wood_dark": {
+        "albedo": [
+          4745,
+          3137,
+          2000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_brass",
+      "loft_cream",
+      "loft_leather_dark",
+      "loft_paper",
+      "loft_teal_dark",
+      "loft_wood_dark"
+    ],
+    "meshes": 8,
+    "triangles": 2500
+  }
+}

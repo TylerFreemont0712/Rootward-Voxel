@@ -4,9 +4,15 @@ These instructions are tool- and model-neutral. Use them when working anywhere i
 
 ## Project purpose
 
-This is the approved Godot foundation for a game in which the player substantially controls a slightly fantastical world by writing real programs. The user has accepted the current clearing's size, camera scale, style and painted character as the main-project baseline. Preserve the approved camera, boy artwork and style while developing its systems. The user subsequently requested the 96×80 village expansion, saved house interiors and five village NPCs; these are now part of the playable foundation. Read `docs/PROJECT_HANDOFF.md` for setup, ownership and remaining feature work (the playable level is Kindle Hollow, `content/areas/kindle-hollow.json`); the [concept image](reference/voxel-isometric.png) remains an art reference.
+This is the approved Godot foundation for a game in which the player substantially controls a slightly fantastical world by writing real programs. The user has accepted the current clearing's size, camera scale, style and painted character as the main-project baseline. Preserve the approved camera, boy artwork and style while developing its systems. The user subsequently requested the 96×80 village expansion, saved house interiors and five village NPCs; these are now part of the playable foundation. Read `docs/PROJECT_HANDOFF.md` for setup, ownership and remaining feature work (the selected main game is Sparks & Machines, starting in `content/areas/workshop-loft.json`; Kindle Hollow and Village Morning are archived for rework with their code and saves retained); the [concept image](reference/voxel-isometric.png) remains an art reference.
 
 The main Rootward game is a separate project. Do not make it depend on this project, add a main-menu link, or edit a sibling repository as part of work here. Keep changes, saves, runtime configuration, content and tests in `Voxel-Rootward/` unless the user explicitly asks otherwise. Do not add a second engine or AI provider dependency without a clear reason.
+
+## Asset requests and review queue
+
+For asset creation, updates or removals, read `asset-requests/README.md` and the relevant request brief/JSON under `asset-requests/requests/`. `scripts/asset-requests.sh list` shows the local queue. Notes, selected style references, editable/runtime paths, manifests, usage files and source-pack links are attached. Work on requests relevant to the current user task; do not silently start unrelated queued work. Reference assets are design inputs, not additional edit targets.
+
+Use the existing art/world builds, run the applicable checks and full `scripts/test.sh`, inspect the result in Godot, and write a review. `scripts/asset-requests.sh finish` puts audited world models into the dev menu’s **Finished** queue; leave acceptance to the user. A deletion request is asset-specific authorization to resolve its dependencies and remove that asset through the workflow’s current deletion plan, preserving other authored work and saves. Never force deletion past live references or shared ownership. See the queue README for the exact lifecycle and commands.
 
 ## Current art decision — 2026-10-23
 

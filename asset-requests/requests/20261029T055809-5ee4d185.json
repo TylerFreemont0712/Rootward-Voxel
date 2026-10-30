@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "id": "20261029T055809-5ee4d185",
+  "kind": "delete",
+  "title": "Delete Rolling postal worker",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "square-delivery-robot",
+    "label": "Rolling postal worker",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/square-delivery-robot/v1/model.blend",
+    "runtime": "assets/world/square-delivery-robot/model.glb",
+    "manifest": "assets/world/square-delivery-robot/manifest.json",
+    "catalog_notes": "T3 and T5 concept references. Native shared lane materials. art/source/world/sparks-square/v1/author.py is initial authoring only; edit the adopted model.blend.",
+    "related_files": [
+      "art/source/world/sparks-square/v1/author.py",
+      "art/source/world/square-delivery-robot/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/areas/archive/haverlund-square-v1.json",
+      "content/areas/haverlund-square.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Rolling postal worker",
+      "source": "art/source/world/square-delivery-robot/v1/model.blend",
+      "runtime": "assets/world/square-delivery-robot/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "T3 and T5 concept references. Native shared lane materials. art/source/world/sparks-square/v1/author.py is initial authoring only; edit the adopted model.blend."
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:58:09+00:00",
+  "updated": "2026-10-29T06:14:42+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:58:09+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:14:42+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/areas/haverlund-square.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/archive/haverlund-square-v1.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "pipeline/art-catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_square.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/square-delivery-robot/v1/model.blend",
+    "art/source/world/square-delivery-robot/v1/provenance.json",
+    "assets/world/square-delivery-robot/manifest.json",
+    "assets/world/square-delivery-robot/model.glb",
+    "assets/world/square-delivery-robot/model.glb.import"
+  ]
+}

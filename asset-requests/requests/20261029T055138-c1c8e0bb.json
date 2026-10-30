@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "id": "20261029T055138-c1c8e0bb",
+  "kind": "delete",
+  "title": "Delete Blacksmith’s Anvil",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "hollow-blacksmiths-anvil",
+    "label": "Blacksmith’s Anvil",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hollow-blacksmiths-anvil/v1/model.blend",
+    "runtime": "assets/world/hollow-blacksmiths-anvil/model.glb",
+    "manifest": "assets/world/hollow-blacksmiths-anvil/manifest.json",
+    "catalog_notes": "A faceted iron anvil, tapering horn and hammer on a banded oak stump.",
+    "related_files": [
+      "art/source/world/hollow-blacksmiths-anvil/v1/brief.md",
+      "art/source/world/hollow-blacksmiths-anvil/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Blacksmith’s Anvil",
+      "source": "art/source/world/hollow-blacksmiths-anvil/v1/model.blend",
+      "runtime": "assets/world/hollow-blacksmiths-anvil/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.5,
+        -0.325,
+        1.0,
+        0.65
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A faceted iron anvil, tapering horn and hammer on a banded oak stump.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:51:38+00:00",
+  "updated": "2026-10-29T06:28:20+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:51:38+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:20+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/hollow-blacksmiths-anvil/v1/brief.md",
+    "art/source/world/hollow-blacksmiths-anvil/v1/model.blend",
+    "art/source/world/hollow-blacksmiths-anvil/v1/provenance.json",
+    "assets/world/hollow-blacksmiths-anvil/manifest.json",
+    "assets/world/hollow-blacksmiths-anvil/model.glb",
+    "assets/world/hollow-blacksmiths-anvil/model.glb.import",
+    "assets/world/hollow-blacksmiths-anvil/model_iron.png",
+    "assets/world/hollow-blacksmiths-anvil/model_iron.png.import",
+    "assets/world/hollow-blacksmiths-anvil/model_log_wood.png",
+    "assets/world/hollow-blacksmiths-anvil/model_log_wood.png.import",
+    "assets/world/hollow-blacksmiths-anvil/model_plank_wood.png",
+    "assets/world/hollow-blacksmiths-anvil/model_plank_wood.png.import"
+  ]
+}

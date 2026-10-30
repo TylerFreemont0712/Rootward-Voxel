@@ -1,0 +1,32 @@
+{
+  "asset": "haverlund-cafe",
+  "source": "art/source/world/haverlund-cafe/v1/model.blend",
+  "backup": "art/source/world/haverlund-cafe/v1/model.pre-plant-style.blend",
+  "before_sha256": "70327aadd992940f73c0e9cf4ea858cca5184b9aa3598f481ae8ae3782172113",
+  "after_sha256": "6081acf1cf7d6bd7a31f5978e971cc5dbcad0916a57ff46096f4d5fbb6470f4e",
+  "objects": [
+    {
+      "object": "detail_planters",
+      "replaced_components": {
+        "cypress_light": 26,
+        "cypress": 54
+      },
+      "protected_faces": 132,
+      "protected_sha256": "33030c717beb8b9e23f294e64eba7b75441cf56b18bbf488b2bf28d14d2f1ce1"
+    },
+    {
+      "object": "detail_window_boxes",
+      "replaced_components": {
+        "leaf": 17,
+        "flower_white": 10,
+        "leaf_light": 9,
+        "leaf_dark": 17,
+        "flower_red": 6,
+        "flower_orange": 2
+      },
+      "protected_faces": 132,
+      "protected_sha256": "1f5b89e9ba5f4d6404ad3f0f36ab5ec1f9194a47b57fa8de45f4e5421a533b1a"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

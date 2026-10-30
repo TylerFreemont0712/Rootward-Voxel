@@ -1,0 +1,32 @@
+{
+  "asset": "haverlund-bakery",
+  "source": "art/source/world/haverlund-bakery/v1/model.blend",
+  "backup": "art/source/world/haverlund-bakery/v1/model.pre-plant-style.blend",
+  "before_sha256": "5d121b325b338a92ff9ae65ec73a1af7fe063514d51770c4eaed94e6b6aa4c4e",
+  "after_sha256": "0414657f88db5a0793c3146b4ed90f9af24b68700957b1c33e4dfb995bbfee6e",
+  "objects": [
+    {
+      "object": "detail_planters",
+      "replaced_components": {
+        "cypress_light": 13,
+        "cypress": 27
+      },
+      "protected_faces": 40,
+      "protected_sha256": "38490885e80ce5ba642329f8c6c9e133b7451a22035561b2fb48d3370ed0ec3b"
+    },
+    {
+      "object": "detail_window_boxes",
+      "replaced_components": {
+        "leaf": 27,
+        "flower_red": 7,
+        "leaf_light": 15,
+        "flower_pink": 12,
+        "leaf_dark": 27,
+        "flower_white": 14
+      },
+      "protected_faces": 220,
+      "protected_sha256": "f334f9eafedf79d323fce65e22a054cc6d3d71f5c4d46a2bb4bd28eda5bb023f"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

@@ -13,7 +13,7 @@ static var _halo_texture: GradientTexture2D
 ## A lamp is a Node3D with metadata the view reads: `glass` (the MeshInstance3D to light), `unlit` (its material
 ## when dark, or null to keep the model's own) and a "Halo" glow card. The `post` style is the adopted Blender
 ## lamppost when the world catalog selects it; a missing selected model is an error, never a silent substitute.
-static func lamp(parent: Node3D, box: Callable, style: String) -> Node3D:
+static func lamp(parent: Node3D, box: Callable, style: String, post_asset: String = "lamppost") -> Node3D:
 	var root := Node3D.new()
 	parent.add_child(root)
 	if style == "sconce":
@@ -26,8 +26,8 @@ static func lamp(parent: Node3D, box: Callable, style: String) -> Node3D:
 	if style == "beacon":
 		_beacon(root, box)
 		return root
-	if WorldAssets.is_blender("lamppost"):
-		_adopted_post(root)
+	if WorldAssets.is_blender(post_asset):
+		_adopted_post(root, post_asset)
 		return root
 	box.call(root, Vector3(0, 0.1, 0), Vector3(0.5, 0.2, 0.5), "stone_light")
 	box.call(root, Vector3(0, 0.24, 0), Vector3(0.38, 0.08, 0.38), "stone")
@@ -40,8 +40,8 @@ static func lamp(parent: Node3D, box: Callable, style: String) -> Node3D:
 	return root
 
 
-static func _adopted_post(root: Node3D) -> void:
-	var model: Node3D = WorldAssets.instantiate("lamppost")
+static func _adopted_post(root: Node3D, asset: String) -> void:
+	var model: Node3D = WorldAssets.instantiate(asset)
 	if model == null:
 		return
 	root.add_child(model)
@@ -56,6 +56,14 @@ static func _adopted_post(root: Node3D) -> void:
 		to_root = (node as Node3D).transform * to_root
 		node = node.get_parent()
 	_register_glass(root, glass, to_root * glass.get_aabb().get_center(), 1.7)
+	if WorldAssets.entry(asset).get("painted_glow", false):
+		var lit := glass.get_active_material(0).duplicate() as StandardMaterial3D
+		lit.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		lit.emission_enabled = true
+		lit.emission = Color("ffd58a")
+		lit.emission_texture = lit.albedo_texture
+		lit.emission_energy_multiplier = 0.65
+		root.set_meta("lit", lit)
 
 
 static func _find_glass(node: Node) -> MeshInstance3D:
@@ -63,13 +71,52 @@ static func _find_glass(node: Node) -> MeshInstance3D:
 		var instance := node as MeshInstance3D
 		if instance.mesh != null and instance.mesh.get_surface_count() > 0:
 			var material: Material = instance.get_active_material(0)
-			if material != null and material.resource_name == "lamp_glass":
+			if material != null and material.resource_name.ends_with("lamp_glass"):
 				return instance
 	for child: Node in node.get_children():
 		var found: MeshInstance3D = _find_glass(child)
 		if found != null:
 			return found
 	return null
+
+
+## Connect an existing authored room fixture to logical lamp state, without a second model.
+static func bind_fixture(root: Node3D, spec: Dictionary) -> bool:
+	var glass: MeshInstance3D = _find_glass(root)
+	if glass == null:
+		push_error("The room fixture '%s' has no separate lamp_glass mesh." % root.name)
+		return false
+	var original := glass.get_active_material(0) as StandardMaterial3D
+	if original == null: return false
+	var dark := original.duplicate() as StandardMaterial3D
+	dark.emission_enabled = false
+	dark.albedo_color = Color("898675")
+	var lit := original.duplicate() as StandardMaterial3D
+	lit.emission_enabled = true
+	lit.emission = Color("ffe2a4")
+	lit.emission_energy_multiplier = 1.1
+	lit.albedo_color = Color("fff1cf")
+	glass.material_override = dark
+	var local: Transform3D = Transform3D.IDENTITY
+	var node: Node3D = glass
+	while node != root:
+		local = node.transform * local
+		node = node.get_parent() as Node3D
+	var center: Vector3 = local * glass.get_aabb().get_center()
+	_register_glass(root, glass, center, .65)
+	root.set_meta("unlit", dark)
+	root.set_meta("lit", lit)
+	var light := OmniLight3D.new()
+	light.name = "FixtureLight"
+	light.position = center
+	light.light_color = Color("ffe1a0")
+	light.omni_range = float(spec.range)
+	light.light_energy = float(spec.energy)
+	light.set_meta("committed_energy", float(spec.energy))
+	light.shadow_enabled = false
+	light.visible = false
+	root.add_child(light)
+	return true
 
 
 static func _register_glass(root: Node3D, glass: MeshInstance3D, center: Vector3, halo_diameter: float) -> void:

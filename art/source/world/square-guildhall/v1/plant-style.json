@@ -1,0 +1,74 @@
+{
+  "asset": "square-guildhall",
+  "source": "art/source/world/square-guildhall/v1/model.blend",
+  "backup": "art/source/world/square-guildhall/v1/model.pre-plant-style.blend",
+  "before_sha256": "07aa1289064a00119632e9dba2b653fe61778fcdc9a9cd5391d17562af6d17cd",
+  "after_sha256": "6569aac553c9e8498bbf6f96c6fab349f92b5eb029f4f0d295c72e6b7dcdf33b",
+  "objects": [
+    {
+      "object": "square_leaf_light",
+      "replaced_components": {
+        "leaf_light": 70
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "square_flower_red",
+      "replaced_components": {
+        "flower_red": 21
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "square_leaf",
+      "replaced_components": {
+        "leaf": 113
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "square_flower_pink",
+      "replaced_components": {
+        "flower_pink": 21
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "square_flower_white",
+      "replaced_components": {
+        "flower_white": 19
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "square_leaf_dark",
+      "replaced_components": {
+        "leaf_dark": 52
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "square_cypress_light",
+      "replaced_components": {
+        "cypress_light": 24
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "square_cypress",
+      "replaced_components": {
+        "cypress": 46
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "asset": "town-parasol-table",
+  "version": "v1",
+  "source": "art/source/world/town-parasol-table/v1/model.blend",
+  "source_sha256": "50bcf4d11a77cfe8613864d104626a8611ac3a169c3960057f5235403e39762c",
+  "runtime": "assets/world/town-parasol-table/model.glb",
+  "runtime_sha256": "26d066c76bcdb0d3d1d03d65dc7f1bb274178b62390f7769dc6e9c314af2d211",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.17089712619781,
+      0.0,
+      -1.16783213615417,
+      1.17089712619781,
+      2.42000007629395,
+      1.16783213615417
+    ],
+    "geometry_sha256": "4e9c45e663a1526908cf63efecc49b13d50a783d899d988c19a4cdd04e5554ef",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      }
+    },
+    "materials": [
+      "house_paint"
+    ],
+    "meshes": 1,
+    "triangles": 1360
+  }
+}

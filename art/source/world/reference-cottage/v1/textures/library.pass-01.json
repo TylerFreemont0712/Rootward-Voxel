@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed",
+  "seed": "Not exposed",
+  "materials": [
+    {
+      "id": "reference_violet_clay",
+      "title": "Reference violet clay",
+      "prompt": "Use case: stylized-concept\nAsset type: production seamless albedo texture for a new detailed 3D voxel cottage matched to an existing storybook concept.\nPrimary request: one flat square swatch of rich blue-violet, hand-glazed clay. Muted indigo-purple midtones, subtle lavender scumbling, tiny warm terracotta pinholes, a few broad irregular brush strokes and smooth pooled glaze. The surface of ONE ceramic shingle, without drawing a shingle shape or a grid. This will wrap individual physically modeled chunky roof tiles with separate curved bevels; all shape, tile joints, edge highlights and cast shadows come from 3D geometry.\nStyle: beautifully hand-painted fantasy game material, bold simple painterly detail that remains legible at 128 pixels, restrained low contrast, richer and darker than pale lavender. Medium value, not black.\nComposition: material fills the whole square. Perfectly straight-on orthographic material scan, uniform diffuse neutral lighting, no lighting gradients, no vignette, no perspective, no objects, no tile grid, no border, no text, no watermark.\nConstraints: seamless left/right and top/bottom edges, opaque. Do not add any decorative pattern, cracks, scratches, grout or baked bevel shading.",
+      "usage": "Original concept cottage reconstruction; per-mesh UVs."
+    },
+    {
+      "id": "reference_honey_oak",
+      "title": "Reference honey oak",
+      "prompt": "Use case: stylized-concept\nAsset type: production seamless albedo texture for the thick honey-oak log courses of a detailed 3D cottage in a cozy voxel fantasy village.\nPrimary request: a flat square swatch of warm, old golden chestnut oak, with long hand-painted flowing wood grain moving HORIZONTALLY from left to right. Caramel and amber midtones, softly darker ochre grain, a few elongated restrained knots, subtle golden brush marks. Crafted weathered wood that feels cared for, not damaged. No planks or seams: the actual 3D building supplies separate broad log courses, bevels, corner joints and shadows.\nStyle: beautifully painted storybook gouache game material, broad legible organic grain with sparse finer marks, restrained contrast and moderate saturation; warm toasted honey, never pale tan or orange stripes.\nComposition: uninterrupted material filling the entire square, perfectly orthographic straight-on, flat diffuse neutral illumination. No perspective, no directional light, no cast shadows or painted edge shadows, no bevels, vignette, border, text or watermark.\nConstraints: truly seamless in both axes. Opaque. No wood planks, log ends, checkerboard, tile grid, gashes or photorealistic photographic grain.",
+      "usage": "Original concept cottage reconstruction; per-mesh UVs."
+    }
+  ]
+}

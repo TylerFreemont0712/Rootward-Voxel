@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "library_sha256": "fdf268334dc6d687e450454cbacc492b3dbcfa1461e6b6279f31ead96dbadf92",
+  "reference_sha256": {
+    "reference/voxel-isometric.png": "f4754b8d166594e87eb1ecfc2ac408cbaf560fdf6ad67684ffb3e34168921760"
+  },
+  "materials": [
+    {
+      "id": "reference_violet_clay",
+      "source": "art/source/world/reference-cottage/v1/textures/violet_clay.png",
+      "sha256": "c0c6753ad1de27f5ea02fc909e67a4cec2984cbe6f9f1cc4c1508cd8cc829aa0"
+    },
+    {
+      "id": "reference_honey_oak",
+      "source": "art/source/world/reference-cottage/v1/textures/honey_oak.png",
+      "sha256": "e98e6f2a1b92027229ad537c22fcf37eac1738caf5bb35f071d946f013123c59"
+    }
+  ]
+}

@@ -93,11 +93,13 @@ func _run() -> void:
 	_check(library.skins.has("mira") and library.skins.mira.atlas != library.template.atlas, "Mira is a separately authored appearance, not a tint")
 	_check(Builder._check_atlas(library.skins.mira.atlas, metadata), "Every Mira walk, neutral and blink frame fits the common footprint and height")
 	_check(Builder._verified_source(catalog.skins.mira), "Mira's registered source and every directional painting match their provenance")
-	for id: String in ["rowan", "bram", "tessa", "nell"]:
+	for id: String in ["rowan", "bram", "tessa", "nell", "sparks_nell", "sparks_mira", "sparks_rowan", "sparks_bram", "sparks_tessa"]:
 		_check(library.skins.has(id) and not library.skins[id].selectable, id + " is a village resident, not a player replacement")
 		_check(Builder._verified_source(catalog.skins[id]), id + " has intact authored source provenance")
 		_check(Builder._check_atlas(library.skins[id].atlas, metadata), id + " fits all shared poses, anchors and scale")
-		var directory: String = "res://art/source/characters/" + id + "/v1/"
+		var directory: String = "res://art/source/characters/" + id.trim_prefix("sparks_") + ("/sparks-v2/" if id.begins_with("sparks_") else "/v1/")
+		if id.begins_with("sparks_"):
+			_check_cast_registration(directory,id)
 		for pair: Array in [["SE", "SW"], ["NE", "NW"]]:
 			var source: Image = Image.load_from_file(ProjectSettings.globalize_path(directory + pair[0] + ".png"))
 			var mirror: Image = Image.load_from_file(ProjectSettings.globalize_path(directory + pair[1] + ".png"))
@@ -197,6 +199,30 @@ func _check_mira_mirrors() -> void:
 	_check(eyes_changed and outside_eyes_unchanged, "Mira's blink changes only the eyes, preserving every body and hair pixel")
 	blink.flip_x()
 	_check(blink.get_data() == blink_mirror.get_data(), "Mira's front-left blink is an exact mirror of front-right")
+
+
+func _check_cast_registration(directory: String,id: String)->void:
+	var record: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(directory+"authoring.json"))
+	var hashes_ok: bool=FileAccess.get_sha256("res://"+record.source_adapter)==record.source_adapter_sha256
+	for path: String in record.inputs:
+		hashes_ok=hashes_ok and FileAccess.get_sha256(path)==record.inputs[path]
+	for name: String in record.outputs:
+		hashes_ok=hashes_ok and FileAccess.get_sha256(directory+name)==record.outputs[name]
+	_check(hashes_ok,id+" retains original generated masters and registered-output provenance")
+	var unchanged: bool=true
+	for direction: String in ["SE","NE"]:
+		var original:=Image.load_from_file(ProjectSettings.globalize_path(str(record.source_version)+direction+".png"))
+		var registered:=Image.load_from_file(ProjectSettings.globalize_path(directory+direction+".png"))
+		for pose: Dictionary in record.registrations[direction]:
+			var crop: Array=pose.source_rect
+			var at: Array=pose.destination
+			var expected:=original.get_region(Rect2i(int(crop[0]),int(crop[1]),int(crop[2]),int(crop[3])))
+			var actual:=registered.get_region(Rect2i(int(at[0]),int(at[1]),int(crop[2]),int(crop[3])))
+			unchanged=unchanged and actual.get_data()==expected.get_data()
+	_check(unchanged,id+" recovers every complete painted pose using integer translation without resampling")
+	var front:=Image.load_from_file(ProjectSettings.globalize_path(directory+"SE.png"))
+	var neutral:=Image.load_from_file(ProjectSettings.globalize_path(directory+"idle-se.png"))
+	_check(neutral.get_data()==front.get_region(Rect2i(836,836,418,418)).get_data(),id+" uses the recovered full-body neutral for blinking")
 
 
 func _check(value: bool, message: String) -> void:

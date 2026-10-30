@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-27",
+  "assets": [
+    "loft-shell",
+    "loft-bed",
+    "loft-desk",
+    "loft-chair",
+    "loft-shelf",
+    "loft-luggage",
+    "loft-cabinet",
+    "loft-wall-life",
+    "loft-rug",
+    "loft-travel-stacks",
+    "loft-window-life",
+    "loft-postcard",
+    "loft-tape-machine",
+    "loft-hotaru",
+    "loft-cable"
+  ],
+  "record": "refine_surfaces.py",
+  "reason": "Gameplay review showed yellow wood, flat plaster and clipped whites. The second oak is calmer; new cream plaster and lower quilt/pillow values retain texture under the actual room light. Geometry of existing furniture preserved."
+}

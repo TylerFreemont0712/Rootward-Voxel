@@ -1,6 +1,6 @@
 class_name SaveStore
 extends RefCounted
-## The one save slot, plus the player's name. Everything is plain JSON in this project's own user
+## One save slot per journey, plus the player's name. Everything is plain JSON in this project's own user
 ## directory (RootwardVoxelLab); nothing is shared with the main Rootward game.
 
 const SAVE_PATH: String = "user://kindle_hollow.save.json"
@@ -13,35 +13,60 @@ static var profile_path: String = PROFILE_PATH
 static var force_enabled: bool = false
 
 
-static func has_save() -> bool:
-	return not read().is_empty()
+static func has_save(level: String = "kindle-hollow") -> bool:
+	return not read(level).is_empty()
+
+
+static func level_path(level: String) -> String:
+	return save_path if level == "kindle-hollow" else save_path.get_basename() + "." + level.validate_filename() + ".json"
 
 
 ## The parsed save, or {} when there is none or it cannot be read.
-static func read() -> Dictionary:
-	if _fresh() or not FileAccess.file_exists(save_path):
+static func read(level: String = "kindle-hollow") -> Dictionary:
+	var path: String = level_path(level)
+	if _fresh() or not FileAccess.file_exists(path):
 		return {}
-	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(save_path))
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
 	if not parsed is Dictionary or int((parsed as Dictionary).get("version", 0)) != GameSession.SAVE_VERSION:
 		return {}
 	return parsed
 
 
-static func write(data: Dictionary) -> bool:
+static func write(data: Dictionary, level: String = "kindle-hollow") -> bool:
 	if _fresh():
 		return false
-	var temporary: String = save_path + ".tmp"
+	var path: String = level_path(level)
+	var temporary: String = path + ".tmp"
 	var file := FileAccess.open(temporary, FileAccess.WRITE)
 	if file == null:
 		return false
 	file.store_string(JSON.stringify(data, "  "))
 	file.close()
-	return DirAccess.rename_absolute(ProjectSettings.globalize_path(temporary), ProjectSettings.globalize_path(save_path)) == OK
+	return DirAccess.rename_absolute(ProjectSettings.globalize_path(temporary), ProjectSettings.globalize_path(path)) == OK
 
 
-static func delete() -> void:
-	if FileAccess.file_exists(save_path):
-		DirAccess.remove_absolute(ProjectSettings.globalize_path(save_path))
+static func delete(level: String = "kindle-hollow") -> void:
+	if not _fresh() and FileAccess.file_exists(level_path(level)):
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(level_path(level)))
+
+
+static func _profile() -> Dictionary:
+	if not _fresh() and FileAccess.file_exists(profile_path):
+		var value: Variant = JSON.parse_string(FileAccess.get_file_as_string(profile_path))
+		if value is Dictionary:return value
+	return {}
+
+
+static func last_level() -> String:
+	return str(_profile().get("last_level", "kindle-hollow"))
+
+
+static func set_last_level(level: String) -> void:
+	if _fresh():return
+	var data: Dictionary = _profile()
+	data["last_level"] = level
+	var file := FileAccess.open(profile_path, FileAccess.WRITE)
+	if file != null:file.store_string(JSON.stringify(data))
 
 
 static func player_name() -> String:
@@ -57,9 +82,11 @@ static func set_player_name(value: String) -> String:
 	if clean == "":
 		clean = DEFAULT_NAME
 	if not _fresh():
+		var data: Dictionary = _profile()
+		data["name"] = clean
 		var file := FileAccess.open(profile_path, FileAccess.WRITE)
 		if file != null:
-			file.store_string(JSON.stringify({"name": clean}))
+			file.store_string(JSON.stringify(data))
 	return clean
 
 

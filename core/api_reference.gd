@@ -9,6 +9,7 @@ const TYPES: Dictionary = {
 	"World": {
 		"summary": "The village as Python sees it. It is the one value passed to program(world).",
 		"members": [
+			{"name":"controls","kind":"attribute","sig":"world.controls","doc":"Village Morning: connect movement keys to the character. Other levels keep their existing controls.","returns":"Controls"},
 			{"name": "lamp", "kind": "method", "sig": "world.lamp(name)", "doc": "The lamp with that id. Ids are in the World tab.", "returns": "Lamp"},
 			{"name": "lamps", "kind": "attribute", "sig": "world.lamps", "doc": "A list of every lamp in the places you have visited.", "returns": "Lamp[]"},
 			{"name": "gate", "kind": "method", "sig": "world.gate(name)", "doc": "The gate with that id.", "returns": "Gate"},
@@ -28,6 +29,14 @@ const TYPES: Dictionary = {
 			{"name": "here", "kind": "attribute", "sig": "world.here", "doc": "The zone you are standing in right now.", "returns": "Zone"},
 			{"name": "player", "kind": "attribute", "sig": "world.player", "doc": "Your cell as [x, y, 0].", "returns": "list"},
 			{"name": "memory", "kind": "attribute", "sig": "world.memory", "doc": "A dictionary that keeps small notes between runs once you Apply.", "returns": "dict"},
+		],
+	},
+	"Controls": {
+		"summary":"Village Morning's movement keys. A binding records a direction; Preview and Apply install it.",
+		"members":[
+			{"name":"bind_move","kind":"method","sig":"world.controls.bind_move(\"W\", x, y)","doc":"Bind the result of x/y arithmetic to a key. Start at x = y = 0; y += 1 moves north. Test shows zero movement, overshoots and blocked paths; only one cardinal cell can be applied.","returns":""},
+			{"name":"bind","kind":"method","sig":"world.controls.bind(\"W\", \"north\")","doc":"Connect W/A/S/D or UP/LEFT/DOWN/RIGHT to north, west, south or east. Only successful steps with these keys count toward the first lesson.","returns":""},
+			{"name":"bindings","kind":"attribute","sig":"world.controls.bindings","doc":"Your applied key-to-direction map, as a Python dictionary.","returns":"dict"},
 		],
 	},
 	"Zone": {

@@ -40,7 +40,7 @@ func _flow() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await _frames(8)
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	await _frames(6)
 	builder = game.builder
 	var session: GameSession = game.session
@@ -168,7 +168,7 @@ func _flow() -> void:
 	_check((SaveStore.read().get("edits", []) as Array).size() == 1, "Leaving build mode saves the edits")
 	await game._return_to_title()
 	await _frames(4)
-	await game.continue_game()
+	await game.continue_game("kindle-hollow")
 	await _frames(4)
 	_check(game.area.buildings.size() == base_buildings + 1 and game.area.trees.size() == base_trees and game.view.building_node("build-1") != null, "Continue restores the built valley")
 	await _painting()
@@ -195,7 +195,7 @@ func _doodads() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await _frames(8)
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	await _frames(6)
 	builder = game.builder
 	var session: GameSession = game.session
@@ -247,7 +247,7 @@ func _doodads() -> void:
 	_check((SaveStore.read().get("edits", []) as Array).size() == 4, "Leaving build mode saves the prop edits")
 	await game._return_to_title()
 	await _frames(4)
-	await game.continue_game()
+	await game.continue_game("kindle-hollow")
 	await _frames(4)
 	_check(game.area.props.size() == 1 and game.area.prop("prop-1").at == Vector2(39, 8) and game.view.building_node("prop-1") != null, "Continue restores the props")
 	game._pop_all_modals()
@@ -262,7 +262,7 @@ func _policy() -> void:
 	root.add_child(game)
 	await _frames(8)
 	OS.set_environment("VOXEL_BUILD_POLICY", "")
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	await _frames(6)
 	builder = game.builder
 	await _tap(KEY_B)
@@ -391,7 +391,7 @@ func _shaping() -> void:
 	await create_timer(0.45).timeout
 	await game._return_to_title()
 	await _frames(4)
-	await game.continue_game()
+	await game.continue_game("kindle-hollow")
 	await _frames(4)
 	_check(game.ledger.edits.size() == edits and game.area.level_at(middle) == 1 and not game.area.stair_at(foot).is_empty() and game.area.terrain_at(Vector2i(stream, corner.y + 4)) == AreaDef.Terrain.WATER, "Continue restores the terrace, its stairs and the stream")
 	_check(is_equal_approx(game.view.ground_y(Vector2(middle)), TerrainBuilder.LEVEL_RISE) and game.view._terrain_root != null, "Continue draws the reshaped land")
@@ -494,7 +494,7 @@ func _layout_and_turning() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await _frames(8)
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	await _frames(6)
 	builder = game.builder
 	var session: GameSession = game.session
@@ -580,7 +580,7 @@ func _drag_and_code() -> void:
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await _frames(8)
-	await game.start_new_game()
+	await game.start_new_game("kindle-hollow")
 	await _frames(6)
 	builder = game.builder
 	var session: GameSession = game.session

@@ -1,0 +1,10 @@
+{
+  "asset": "square-lamppost",
+  "version": "v1",
+  "date": "2026-10-26",
+  "derived_from": "art/source/world/lamppost/v1/model.blend",
+  "original_sha256": "3386d38e03318d696ddadbfd48e8ba0e375a635ec8886df072bd6006d915afa0",
+  "reference": "reference/voxel-isometric.png",
+  "authoring_record": "author.py",
+  "note": "Deliberate new design from the earlier post; original untouched. model.blend is now authority."
+}

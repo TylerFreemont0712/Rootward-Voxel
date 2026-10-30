@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "id": "20261029T055722-9ba096af",
+  "kind": "delete",
+  "title": "Delete Stepping Stones",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "stepping-stones",
+    "label": "Stepping Stones",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/stepping-stones/v1/model.blend",
+    "runtime": "assets/world/stepping-stones/model.glb",
+    "manifest": "assets/world/stepping-stones/manifest.json",
+    "catalog_notes": "Three flat grey stones in a gravel bed, with moss on the back rim. The stones are walkable, so no blocking footprint is proposed.",
+    "related_files": [
+      "art/source/world/stepping-stones/v1/brief.md",
+      "art/source/world/stepping-stones/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Stepping Stones",
+      "source": "art/source/world/stepping-stones/v1/model.blend",
+      "runtime": "assets/world/stepping-stones/model.glb",
+      "pivot": "ground origin at the middle of the stone row",
+      "logical_footprint": null,
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
+      "notes": "Three flat grey stones in a gravel bed, with moss on the back rim. The stones are walkable, so no blocking footprint is proposed.",
+      "finish_slots": {
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:57:22+00:00",
+  "updated": "2026-10-29T06:28:00+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:57:22+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:00+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/stepping-stones/v1/brief.md",
+    "art/source/world/stepping-stones/v1/model.blend",
+    "art/source/world/stepping-stones/v1/provenance.json",
+    "assets/world/stepping-stones/manifest.json",
+    "assets/world/stepping-stones/model.glb",
+    "assets/world/stepping-stones/model.glb.import"
+  ]
+}

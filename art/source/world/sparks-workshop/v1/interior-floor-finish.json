@@ -1,0 +1,7 @@
+{
+  "asset": "workshop-umbrella-stand",
+  "before": "96a69c22fbe910fe09677d2649165d0b50bcadb66ff6e16d83fd40136bf9f95c",
+  "after": "2b8c93835b56ae032a892c6b779d63e3b31f424a4f5861304655a35a636aabc8",
+  "backup": "art/source/world/workshop-umbrella-stand/v1/model.pre-interior-floor.blend",
+  "change": "Face the recessed interior floor upwards into the opening."
+}

@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "asset": "square-tree-planter",
+  "version": "v1",
+  "source": "art/source/world/square-tree-planter/v1/model.blend",
+  "source_sha256": "8886b4226df46e6759cf90d90a7a8d55aec7447c8be3d2b7f1b7028585a8eafc",
+  "runtime": "assets/world/square-tree-planter/model.glb",
+  "runtime_sha256": "b8e8d559bf9be8fd4e78cd2ec36f94df27d66a6f0068ade074317473f848da0b",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -2.37466192245483,
+      0.0,
+      -2.27691793441772,
+      2.44351744651794,
+      4.9284610748291,
+      2.66228270530701
+    ],
+    "geometry_sha256": "eae74761a05236083248280d0274f1cac524001b6008bd3b74cf33c36ac94c9e",
+    "material_records": {
+      "square_bark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "40e0dbb61ca7b2b1b22bbea7b9482dc707d8f13fa787410324e7c100f32700f7"
+      },
+      "square_flower_pink": {
+        "albedo": [
+          8980,
+          6039,
+          6588,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_violet": {
+        "albedo": [
+          6078,
+          5176,
+          7686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_white": {
+        "albedo": [
+          9647,
+          9412,
+          8863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_yellow": {
+        "albedo": [
+          9216,
+          7725,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf": {
+        "albedo": [
+          3569,
+          5412,
+          2706,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf_dark": {
+        "albedo": [
+          2471,
+          4157,
+          2353,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf_light": {
+        "albedo": [
+          5255,
+          6784,
+          3608,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_pale": {
+        "albedo": [
+          9333,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_soil": {
+        "albedo": [
+          4196,
+          3216,
+          2510,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_wood_light": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "square_bark",
+      "square_flower_pink",
+      "square_flower_violet",
+      "square_flower_white",
+      "square_flower_yellow",
+      "square_iron",
+      "square_leaf",
+      "square_leaf_dark",
+      "square_leaf_light",
+      "square_limestone",
+      "square_limestone_pale",
+      "square_soil",
+      "square_wood",
+      "square_wood_light"
+    ],
+    "meshes": 14,
+    "triangles": 9100
+  }
+}

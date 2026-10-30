@@ -23,7 +23,7 @@ The approved raw directional sheets are 1254×1254, with nine 418×418 cells rea
 
 The packed atlas is 1536×5376, containing four columns and twelve rows of 384×448 cells. Each direction occupies three rows, in SE/SW/NE/NW order. Indices 0–7 are walking, index 8 is neutral, and index 9 is the front-facing blink. Rear views have one idle drawing. Remaining slots are unused.
 
-Every frame uses foot origin `[192,420]`. Eight walk poses at 16 FPS form a half-second cycle across two 0.25-second grid steps. World height is 1.45. Source packing uses integer translation only: head silhouettes register horizontally and the lowest opaque boot pixel meets the foot origin. Approved pixels remain unchanged.
+Every frame uses foot origin `[192,420]`. Eight walk poses at 240/13 FPS form a cycle across two 13/60-second grid steps. Each step takes exactly thirteen physics ticks. World height is 1.45. Source packing uses integer translation only: head silhouettes register horizontally and the lowest opaque boot pixel meets the foot origin. Approved pixels remain unchanged.
 
 Turns and held movement preserve phase. Starting from idle begins at walk frame zero; stopping displays neutral pose 9 immediately. Idle breathes on a 3.6-second cycle, with at most 0.6% vertical change in front views and 0.4% in rear views, anchored at the feet. Front views blink for 120 ms with starts 6–7 idle seconds apart. Rear views only breathe. Walking cancels idle effects.
 
@@ -96,6 +96,10 @@ scripts/test.sh
 The packer refuses existing `sheet.png` or `provenance.json`. Source variations require a new version, not regeneration over accepted paintings.
 
 ## Scope and source history
+
+The [Wick/Tender movement study](../docs/concept/v0.72/wick-tender-movement.md) is a separate robot source family with four rolling keys per direction. Their carried item and asymmetric shell fittings require independently painted SE/SW/NE/NW views; never derive their left views with the human template’s mirroring convention. The guarded `prepare_robot_movement.gd` registers source candidates without resampling. Existing human template settings and the square’s adopted robot models remain unchanged.
+
+The [v0.72 Sparks cast pack](../docs/concept/v0.72/cast-and-robots.md) adds five separate `sparks_*` skins using the selected concept wardrobes. Existing resident IDs and the boy retain their art. Selected registered sources live under `art/source/characters/<id>/sparks-v2/`, with the original generated paintings preserved in `sparks-v1/`; [source notes](../art/source/characters/sparks-v072.md) document the guarded `prepare_cast_source.gd` neutral/eye-patch adapter, followed by the existing directional packer and `scripts/art.sh`. Its cropped blink references are authoring inputs; complete neutral/blink frames retain the whole body. Six wheeled robot sheets accompany the pack as concepts, pending runtime atlas registration.
 
 A frame skin is a complete appearance using common painted poses. It does not automatically recover bones, hidden anatomy, separable clothes or hand-item slots from a flattened PNG. Those would need a deliberate layered-art feature and another visual acceptance pass. Different body proportions, animation actions or genuinely asymmetric equipment require an explicit template revision/family rather than per-skin patches.
 

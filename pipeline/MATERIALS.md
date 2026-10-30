@@ -14,6 +14,8 @@ Finish controls appear after placement on supported standing objects. Trees and 
 
 ## Library
 
+The additional [seaside house pack](../docs/concept/v0.72/house-textures.md) provides fifteen albedo paintings, three colours per surface, under `art/source/world/seaside-background-houses/v1/textures/`. Its selected building-library entry uses the existing `scripts/art.sh` build with an optional `output_root`, restricted to `assets/world/textures/`; this pack lives in `assets/world/textures/seaside-houses/{lush,solid}/`. Existing libraries keep their original paths and pixels. The library also sets `detail_size: 512`, so the same build writes a sharper `detail/` tier and copies the library's three palette presets into the manifest; the [modular seaside houses](../art/source/world/seaside-houses/v1/README.md) are painted with these and swap them per placement through `HouseVariants`. Procedural recipes and finish-menu capabilities are not added by this pack. Source prompts, palette presets and the manifest are linked from the gallery.
+
 Recipes live in `pipeline/texture-catalog.json`. Tile widths are world units. The same ids are available to procedural material builders and deliberate Blender material authoring.
 
 | ID | Picture / use | Tile | Supported parts |

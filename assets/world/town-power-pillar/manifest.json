@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "asset": "town-power-pillar",
+  "version": "v1",
+  "source": "art/source/world/town-power-pillar/v1/model.blend",
+  "source_sha256": "6e9f8c4947720f4d32c1710359526936ca29ed5acc6d5c2fcf2f7d876b60edaa",
+  "runtime": "assets/world/town-power-pillar/model.glb",
+  "runtime_sha256": "9f45b8e0753794ea99c9d925a4ce33fe5324f599c3dd089f447d4007c2edd47e",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.699999988079071,
+      -14.0,
+      -0.0199999809265137,
+      0.699999988079071,
+      -0.219999983906746,
+      0.649999976158142
+    ],
+    "geometry_sha256": "b157edec69d6125378f231ead47de695999b1464b50c01cb39c585698e863bfd",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "pillar_glass": {
+        "albedo": [
+          9137,
+          6392,
+          2902,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      }
+    },
+    "materials": [
+      "house_paint",
+      "pillar_glass",
+      "seaside_stone"
+    ],
+    "meshes": 3,
+    "triangles": 722
+  }
+}

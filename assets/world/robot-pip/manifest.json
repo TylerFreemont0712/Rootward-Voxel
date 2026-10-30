@@ -1,0 +1,193 @@
+{
+  "schema": 1,
+  "asset": "robot-pip",
+  "version": "v2",
+  "source": "art/source/world/robot-pip/v2/model.blend",
+  "source_sha256": "30f38927a7f2ef4830f8cbfe7d531c72d58b142a1681dbf803543b11a179f2ca",
+  "runtime": "assets/world/robot-pip/model.glb",
+  "runtime_sha256": "058498927e1a37eb4b17e72f2096864466cf2224950870229b8be3d81a0b9b75",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.406999945640564,
+      0.0,
+      -0.270000010728836,
+      0.406999975442886,
+      1.21099996566772,
+      0.303000003099442
+    ],
+    "geometry_sha256": "14c166ed9f11546f8a68494a0893cc514cc49c9a21859e217aea9324d859b5f6",
+    "material_records": {
+      "robot_amber": {
+        "albedo": [
+          9647,
+          6745,
+          1569,
+          10000
+        ],
+        "roughness": 2400,
+        "texture_rgba_sha256": ""
+      },
+      "robot_brass": {
+        "albedo": [
+          7686,
+          5412,
+          1765,
+          10000
+        ],
+        "roughness": 3100,
+        "texture_rgba_sha256": ""
+      },
+      "robot_cream": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4200,
+        "texture_rgba_sha256": "501280e82c84b8fde631a9a7eb73b27a5830db948713e979f760f7bd3249a2ee"
+      },
+      "robot_eyes": {
+        "albedo": [
+          10000,
+          9412,
+          7059,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "robot_gold": {
+        "albedo": [
+          9098,
+          6863,
+          2471,
+          10000
+        ],
+        "roughness": 2600,
+        "texture_rgba_sha256": ""
+      },
+      "robot_ink": {
+        "albedo": [
+          1412,
+          1686,
+          1686,
+          10000
+        ],
+        "roughness": 6500,
+        "texture_rgba_sha256": ""
+      },
+      "robot_paper": {
+        "albedo": [
+          9529,
+          9059,
+          7765,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "robot_paper_edge": {
+        "albedo": [
+          6157,
+          4706,
+          2824,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "robot_parcel": {
+        "albedo": [
+          7333,
+          5765,
+          3765,
+          10000
+        ],
+        "roughness": 8700,
+        "texture_rgba_sha256": ""
+      },
+      "robot_parcel_green": {
+        "albedo": [
+          4588,
+          5255,
+          2980,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "robot_red": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "79610714620008fbb0602dbcd29caf7c3e2a9b437af50dfe7b17e3070ac7c6cf"
+      },
+      "robot_red_dark": {
+        "albedo": [
+          6118,
+          1569,
+          1216,
+          10000
+        ],
+        "roughness": 4200,
+        "texture_rgba_sha256": ""
+      },
+      "robot_rubber": {
+        "albedo": [
+          1882,
+          2118,
+          2196,
+          10000
+        ],
+        "roughness": 8200,
+        "texture_rgba_sha256": ""
+      },
+      "robot_rubber_edge": {
+        "albedo": [
+          3137,
+          3255,
+          3294,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "robot_teal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "b03e3c61409a3b8ec528af25c9cdfbc2dd82ad1e5853cde383e89ec9cc8ee50e"
+      }
+    },
+    "materials": [
+      "robot_amber",
+      "robot_brass",
+      "robot_cream",
+      "robot_eyes",
+      "robot_gold",
+      "robot_ink",
+      "robot_paper",
+      "robot_paper_edge",
+      "robot_parcel",
+      "robot_parcel_green",
+      "robot_red",
+      "robot_red_dark",
+      "robot_rubber",
+      "robot_rubber_edge",
+      "robot_teal"
+    ],
+    "meshes": 29,
+    "triangles": 36404
+  }
+}

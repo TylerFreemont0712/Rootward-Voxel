@@ -1,0 +1,9 @@
+{
+  "asset": "town-fountain",
+  "date": "2026-10-30",
+  "record": "art/source/world/square-hub/v1/coplanar_revision.py",
+  "backup": "model.pre-coplanar.blend",
+  "step_metres": 0.004,
+  "water_lift_metres": 0.006,
+  "water_vertices_lifted": 38
+}

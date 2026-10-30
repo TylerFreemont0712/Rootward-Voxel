@@ -21,7 +21,7 @@ func _ready() -> void:
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	add_child(scroll)
-	var column := UI.vbox(14)
+	var column := UI.vbox(9)
 	column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	scroll.add_child(column)
 	for type_name: String in ["World", "Zone", "Lamp", "Gate", "Bridge", "Prop", "House", "Doodad", "Tree"]:
@@ -54,12 +54,12 @@ func _member_row(member: Dictionary) -> Control:
 	var column := UI.vbox(2)
 	column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(column)
-	var signature := UI.label(str(member.sig), &"", 17, Pal.TEAL)
+	var signature := UI.label(str(member.sig), &"", 15, Pal.TEAL)
 	signature.add_theme_font_override("font", UITheme.mono_font())
 	column.add_child(signature)
 	column.add_child(UI.dim(str(member.doc), 16))
 	var insert := UI.icon_button(&"plus", "Add %s to your notebook" % member.sig, func() -> void: insert_requested.emit(str(member.sig)))
-	insert.custom_minimum_size = Vector2(36, 36)
+	insert.custom_minimum_size = Vector2(28, 28)
 	insert.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	row.add_child(insert)
 	panel.set_meta("search", ("%s %s %s" % [member.sig, member.doc, member.name]).to_lower())
@@ -81,12 +81,12 @@ func _note_row(note: Dictionary) -> Control:
 	var code := Label.new()
 	code.text = str(note.example)
 	code.add_theme_font_override("font", UITheme.mono_font())
-	code.add_theme_font_size_override("font_size", 16)
+	code.add_theme_font_size_override("font_size", 15)
 	code.add_theme_color_override("font_color", Color("e0cfa3"))
 	code.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	example.add_child(code)
 	var insert := UI.icon_button(&"plus", "Add this example to your notebook", func() -> void: insert_requested.emit(str(note.example)))
-	insert.custom_minimum_size = Vector2(36, 36)
+	insert.custom_minimum_size = Vector2(28, 28)
 	insert.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	example.add_child(insert)
 	panel.set_meta("search", ("%s %s %s %s" % [note.title, note.sig, note.doc, note.example]).to_lower())

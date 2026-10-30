@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "20261029T060006-028c9be9",
+  "kind": "delete",
+  "title": "Delete River willow",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "river-willow",
+    "label": "River willow",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/river-willow/v1/model.blend",
+    "runtime": "assets/world/river-willow/model.glb",
+    "manifest": "assets/world/river-willow/manifest.json",
+    "catalog_notes": "Placed in Kindle Hollow version 2 and offered on the studio build shelf. Existing Blender source and runtime model preserved; decorative overhangs are not additional collision.",
+    "related_files": [
+      "art/source/world/river-willow/v1/brief.md",
+      "art/source/world/river-willow/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/areas/kindle-hollow.json",
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_village_and_builder",
+      "label": "River willow",
+      "source": "art/source/world/river-willow/v1/model.blend",
+      "runtime": "assets/world/river-willow/model.glb",
+      "pivot": "ground origin; front +Z; one unit per tile",
+      "logical_footprint": {
+        "trunk_radius": 0.5
+      },
+      "behavior": "static tree; only the catalog trunk radius blocks movement",
+      "notes": "Placed in Kindle Hollow version 2 and offered on the studio build shelf. Existing Blender source and runtime model preserved; decorative overhangs are not additional collision."
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T06:00:06+00:00",
+  "updated": "2026-10-29T06:00:06+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T06:00:06+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/kindle-hollow.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/expansion_kit_review.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build_assets.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

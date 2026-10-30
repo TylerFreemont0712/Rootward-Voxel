@@ -1,0 +1,8 @@
+{
+  "asset": "field-tablet",
+  "date": "2026-10-27",
+  "authoring_record": "art/source/world/sparks-loft/v1/field_tablet.py",
+  "authoring_record_sha256": "82266de382834cc67cacc5013625f8b53bca710c392be6b957a7d578f183cf87",
+  "style_reference": "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png",
+  "note": "New source; no adopted master overwritten. Native geometry and the existing loft palette. Blender source is now authority."
+}

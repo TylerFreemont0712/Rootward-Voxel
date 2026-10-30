@@ -1,0 +1,7 @@
+{
+  "before_sha256": "7e561909f5c827d5172ebd939c254cb16feecb64a2415fc4da97f2dd10505022",
+  "after_sha256": "b7b9bbbd7428a139cc1f0314e4956dcfa3291e17905afc7d2450b32ecce8e856",
+  "backup": "model.pass-01.blend",
+  "note": "Retained the reviewed geometry and added sparse drawn timber grain strokes. Quiet warm masonry palette; no old bitmap sources altered.",
+  "source_edit": "art/source/world/illustrated-village/v1/refine_pass02.py"
+}

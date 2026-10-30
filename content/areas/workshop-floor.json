@@ -1,0 +1,782 @@
+{
+  "schema": 1,
+  "id": "workshop-floor",
+  "title": "Nell's workshop",
+  "version": 11,
+  "size": [
+    14,
+    12
+  ],
+  "spawn": [
+    6,
+    8
+  ],
+  "voice_lesson": true,
+  "terrain": [
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    ".............."
+  ],
+  "buildings": [],
+  "trees": [],
+  "zones": [
+    {
+      "id": "workshop",
+      "title": "The workshop floor",
+      "rect": [
+        0,
+        0,
+        14,
+        12
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "id": "landing-lamp",
+      "at": [
+        4.95,
+        11.0
+      ],
+      "zone": "workshop",
+      "style": "fixture",
+      "title": "Stair lantern",
+      "stand": [
+        5,
+        11
+      ],
+      "requires": "field-tablet"
+    },
+    {
+      "id": "repair-light",
+      "at": [
+        2,
+        5.3
+      ],
+      "zone": "workshop",
+      "style": "fixture",
+      "title": "Repair light",
+      "stand": [
+        2,
+        5
+      ],
+      "requires": "field-tablet"
+    },
+    {
+      "id": "assembly-light",
+      "at": [
+        5.2,
+        3.6
+      ],
+      "zone": "workshop",
+      "style": "fixture",
+      "title": "Assembly light",
+      "stand": [
+        5,
+        5
+      ],
+      "requires": "field-tablet"
+    }
+  ],
+  "props": [],
+  "interior": {
+    "style": "workshop-floor",
+    "shell": "workshop-shell",
+    "exit": [
+      13,
+      4
+    ],
+    "exit_posts": [],
+    "zoom": 15.5,
+    "camera_floor_lock": true,
+    "furniture": [
+      {
+        "kind": "table",
+        "at": [
+          0.55,
+          5.3
+        ],
+        "size": [
+          1.1,
+          4.335
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          0.3,
+          9.55
+        ],
+        "size": [
+          0.6,
+          2.023
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          5.0,
+          3.6
+        ],
+        "size": [
+          3.825,
+          1.4875
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          2.8,
+          2.3
+        ],
+        "size": [
+          1.53,
+          1.19
+        ]
+      },
+      {
+        "kind": "hearth",
+        "at": [
+          9.15,
+          10.1
+        ],
+        "size": [
+          1.19,
+          1.02
+        ]
+      },
+      {
+        "kind": "chair",
+        "at": [
+          11.15,
+          10.0
+        ],
+        "size": [
+          1.19,
+          1.4025
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          10.2,
+          9.7
+        ],
+        "size": [
+          0.85,
+          0.85
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          12.7,
+          6.8
+        ],
+        "size": [
+          0.5525,
+          0.5525
+        ]
+      },
+      {
+        "kind": "chair",
+        "at": [
+          1.45,
+          4.4
+        ],
+        "size": [
+          0.51,
+          0.51
+        ]
+      },
+      {
+        "kind": "chair",
+        "at": [
+          5.8,
+          2.48
+        ],
+        "size": [
+          0.51,
+          0.51
+        ]
+      },
+      {
+        "kind": "chair",
+        "at": [
+          7.25,
+          3.3
+        ],
+        "size": [
+          0.5525,
+          0.5525
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          5.23,
+          8.775
+        ],
+        "size": [
+          0.16,
+          2.65
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          6.77,
+          8.775
+        ],
+        "size": [
+          0.16,
+          2.65
+        ]
+      },
+      {
+        "kind": "rug",
+        "at": [
+          9.4,
+          5.0
+        ],
+        "size": [
+          4.4,
+          3.2
+        ]
+      },
+      {
+        "kind": "rug",
+        "at": [
+          10.7,
+          9.8
+        ],
+        "size": [
+          2.376,
+          1.728
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          2.7,
+          11.08
+        ],
+        "size": [
+          1.95,
+          0.8
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          0.75,
+          8.0
+        ],
+        "size": [
+          0.84,
+          1.15
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "stairs",
+        "asset": "workshop-staircase",
+        "at": [
+          12.0,
+          15.85
+        ],
+        "turn": 180,
+        "height": 0,
+        "scale": 1
+      },
+      {
+        "id": "repair-bench",
+        "asset": "workshop-repair-bench",
+        "at": [
+          0.255,
+          5.3
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 0.85
+      },
+      {
+        "id": "tool-wall",
+        "asset": "workshop-tool-wall",
+        "at": [
+          -0.4,
+          4.7
+        ],
+        "turn": 90,
+        "height": 1.18,
+        "scale": 0.75
+      },
+      {
+        "id": "parts-drawers",
+        "asset": "workshop-parts-drawers",
+        "at": [
+          -0.11,
+          9.55
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 0.85
+      },
+      {
+        "id": "assembly",
+        "asset": "workshop-assembly-table",
+        "at": [
+          5.0,
+          3.6
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 0.85
+      },
+      {
+        "id": "spare-parts",
+        "asset": "workshop-parts-crate",
+        "at": [
+          2.8,
+          2.3
+        ],
+        "turn": 8,
+        "height": 0,
+        "scale": 0.85
+      },
+      {
+        "id": "stove",
+        "asset": "workshop-stove",
+        "at": [
+          9.15,
+          10.1
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 0.85
+      },
+      {
+        "id": "armchair",
+        "asset": "workshop-armchair",
+        "at": [
+          11.15,
+          10.0
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 0.85
+      },
+      {
+        "id": "tea-table",
+        "asset": "workshop-tea-table",
+        "at": [
+          10.2,
+          9.7
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 0.85
+      },
+      {
+        "id": "job-board",
+        "asset": "workshop-job-board",
+        "at": [
+          12.4,
+          11.33
+        ],
+        "turn": 0,
+        "height": 1.98,
+        "scale": 0.9
+      },
+      {
+        "id": "shop-doors",
+        "asset": "workshop-shop-doors",
+        "at": [
+          13.4,
+          4.2
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 1
+      },
+      {
+        "id": "pendant-bench",
+        "asset": "workshop-hanging-lamp",
+        "at": [
+          2.0,
+          5.3
+        ],
+        "turn": 0,
+        "height": 2.3,
+        "scale": 0.85
+      },
+      {
+        "id": "pendant-table",
+        "asset": "workshop-hanging-lamp",
+        "at": [
+          5.2,
+          3.6
+        ],
+        "turn": 0,
+        "height": 2.3,
+        "scale": 0.85
+      },
+      {
+        "id": "bench-stool",
+        "asset": "workshop-stool",
+        "at": [
+          1.45,
+          4.4
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 0.85
+      },
+      {
+        "id": "assembly-stool",
+        "asset": "workshop-stool",
+        "at": [
+          5.8,
+          2.48
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 0.85
+      },
+      {
+        "id": "spare-stool",
+        "asset": "workshop-stool",
+        "at": [
+          7.25,
+          3.3
+        ],
+        "turn": 12,
+        "height": 0,
+        "scale": 0.85
+      },
+      {
+        "id": "floor-rug",
+        "asset": "workshop-rug",
+        "at": [
+          9.4,
+          5.0
+        ],
+        "turn": 0,
+        "height": 0.02,
+        "scale": 1
+      },
+      {
+        "id": "chair-rug",
+        "asset": "workshop-rug",
+        "at": [
+          10.7,
+          9.8
+        ],
+        "turn": 0,
+        "height": 0.02,
+        "scale": 0.54
+      },
+      {
+        "id": "wall-shelf",
+        "asset": "workshop-wall-shelf",
+        "at": [
+          9.55,
+          11.21
+        ],
+        "turn": 0,
+        "height": 1.9,
+        "scale": 0.85
+      },
+      {
+        "id": "umbrellas",
+        "asset": "workshop-umbrella-stand",
+        "at": [
+          12.7,
+          6.8
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 0.85
+      },
+      {
+        "id": "harbour-picture",
+        "asset": "loft-postcard",
+        "at": [
+          3.7,
+          11.34
+        ],
+        "turn": 0,
+        "height": 2.4,
+        "scale": 1
+      },
+      {
+        "id": "dormant-hotaru",
+        "asset": "loft-hotaru",
+        "at": [
+          6.55,
+          3.35
+        ],
+        "turn": 0,
+        "height": 1.08,
+        "scale": 1
+      },
+      {
+        "id": "bread-cupboard",
+        "asset": "workshop-bread-cupboard",
+        "at": [
+          2.7,
+          11.08
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1
+      },
+      {
+        "id": "service-trolley",
+        "asset": "workshop-service-trolley",
+        "at": [
+          0.75,
+          8.0
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 1
+      },
+      {
+        "id": "wall-clock",
+        "asset": "workshop-wall-clock",
+        "at": [
+          2.7,
+          11.33
+        ],
+        "turn": 0,
+        "height": 2.22,
+        "scale": 1
+      },
+      {
+        "id": "stair-lamp",
+        "asset": "workshop-stair-lamp",
+        "at": [
+          4.95,
+          11.32
+        ],
+        "turn": 0,
+        "height": 2.7,
+        "scale": 1
+      },
+      {
+        "id": "wall-screen",
+        "asset": "workshop-wall-screen",
+        "at": [
+          -0.355,
+          1.95
+        ],
+        "turn": 90,
+        "height": 1.05,
+        "scale": 1
+      },
+      {
+        "id": "jar-shelf",
+        "asset": "workshop-jar-shelf",
+        "at": [
+          7.0,
+          11.42
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1
+      }
+    ],
+    "stair_flights": [
+      {
+        "rect": [
+          5.4,
+          7.4,
+          1.2,
+          2.8
+        ],
+        "up": "S",
+        "treads": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0,
+          1.2,
+          1.4,
+          1.6
+        ]
+      }
+    ],
+    "links": [
+      {
+        "id": "upstairs",
+        "at": [
+          6,
+          8
+        ],
+        "approach": [
+          6,
+          11
+        ],
+        "direction": "S",
+        "to": "workshop-loft",
+        "arrival": [
+          7,
+          5
+        ],
+        "facing": "N",
+        "label": "Go up to the loft"
+      },
+      {
+        "id": "street",
+        "at": [
+          13,
+          4
+        ],
+        "approach": [
+          12,
+          4
+        ],
+        "direction": "E",
+        "to": "haverlund-lane",
+        "arrival": [
+          10,
+          12
+        ],
+        "facing": "E",
+        "label": "Go out to the lane",
+        "walk_through": true,
+        "enter": 1,
+        "doors": "shop-doors"
+      }
+    ],
+    "inspections": [
+      {
+        "id": "job-board",
+        "at": [
+          12.3,
+          11.0
+        ],
+        "title": "Nell's work ticket",
+        "text": "STAIR LIGHT\nRelay replaced. Fitting checked.\nReturn to service before evening.\n— N.\n\nIn smaller writing: landing-lamp."
+      },
+      {
+        "id": "repair-bench",
+        "at": [
+          1.8,
+          6.3
+        ],
+        "title": "On the repair bench",
+        "text": "A cream enamel housing rests on the worn worktop. Its hands have been laid beside it, with every screw kept in a separate tray. A pencilled sketch marks the joint Nell has been checking."
+      },
+      {
+        "id": "parts-drawers",
+        "at": [
+          1.5,
+          9.5
+        ],
+        "title": "The small-parts drawers",
+        "text": "Washers, collars, springs. The brass label frames are polished where fingers have caught them. Two drawers have newer paper labels than the rest."
+      },
+      {
+        "id": "stove",
+        "at": [
+          9.15,
+          9.0
+        ],
+        "title": "By the stove",
+        "text": "A low fire keeps the corner warm. The kettle is still warm, and someone has left a mug on the little table. The plaid throw has slipped down the chair."
+      },
+      {
+        "id": "bread-cupboard",
+        "at": [
+          2.7,
+          10.0
+        ],
+        "title": "The bread tin",
+        "text": "A loaf sits under the raised lid, one end cut unevenly. The knife lies where it was put down; crumbs have gathered along the edge of the board."
+      }
+    ],
+    "lighting": [
+      {
+        "at": [
+          -0.1,
+          6.9
+        ],
+        "height": 2.3,
+        "target": [
+          6,
+          6
+        ],
+        "range": 11,
+        "angle": 55,
+        "energy": 0.28,
+        "color": "ffe7bf"
+      },
+      {
+        "at": [
+          11,
+          1.4
+        ],
+        "height": 2.65,
+        "target": [
+          8,
+          6
+        ],
+        "range": 9,
+        "angle": 47,
+        "energy": 0.2,
+        "color": "ffe6bc"
+      }
+    ],
+    "exit_direction": "E",
+    "walk_front": 1,
+    "lamp_fixtures": [
+      {
+        "id": "landing-lamp",
+        "asset": "stair-lamp",
+        "range": 4.5,
+        "energy": 0.72
+      },
+      {
+        "id": "repair-light",
+        "asset": "pendant-bench",
+        "range": 4,
+        "energy": 0.55
+      },
+      {
+        "id": "assembly-light",
+        "asset": "pendant-table",
+        "range": 4,
+        "energy": 0.55
+      }
+    ]
+  },
+  "terminals": [
+    {
+      "id": "workshop-terminal",
+      "title": "Workshop screen",
+      "object": "wall-screen",
+      "zone": "workshop",
+      "at": [
+        1,
+        2
+      ],
+      "prompt": "Jack in to the workshop screen",
+      "idle": "AWAITING SLATE",
+      "requires": "field-tablet",
+      "locked": "A dark glass panel, and a brass-collared socket below it. Nothing you’re carrying fits."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "passed": true,
+  "models": [
+    {
+      "asset": "haverlund-bakery",
+      "unchanged_objects": 14,
+      "foliage_objects_checked": 2,
+      "materials_preserved": 12
+    },
+    {
+      "asset": "haverlund-bank",
+      "unchanged_objects": 9,
+      "foliage_objects_checked": 1,
+      "materials_preserved": 8
+    },
+    {
+      "asset": "haverlund-bookshop",
+      "unchanged_objects": 12,
+      "foliage_objects_checked": 2,
+      "materials_preserved": 10
+    },
+    {
+      "asset": "haverlund-cafe",
+      "unchanged_objects": 12,
+      "foliage_objects_checked": 2,
+      "materials_preserved": 10
+    },
+    {
+      "asset": "haverlund-fruit-market",
+      "unchanged_objects": 9,
+      "foliage_objects_checked": 1,
+      "materials_preserved": 8
+    },
+    {
+      "asset": "haverlund-greengrocer",
+      "unchanged_objects": 12,
+      "foliage_objects_checked": 1,
+      "materials_preserved": 10
+    },
+    {
+      "asset": "haverlund-lane-set",
+      "unchanged_objects": 34,
+      "foliage_objects_checked": 8,
+      "materials_preserved": 40
+    },
+    {
+      "asset": "haverlund-post-office",
+      "unchanged_objects": 11,
+      "foliage_objects_checked": 4,
+      "materials_preserved": 10
+    },
+    {
+      "asset": "lane-cottage",
+      "unchanged_objects": 25,
+      "foliage_objects_checked": 8,
+      "materials_preserved": 32
+    },
+    {
+      "asset": "lane-cypress",
+      "unchanged_objects": 2,
+      "foliage_objects_checked": 3,
+      "materials_preserved": 4
+    },
+    {
+      "asset": "lane-nell-house",
+      "unchanged_objects": 22,
+      "foliage_objects_checked": 7,
+      "materials_preserved": 28
+    },
+    {
+      "asset": "lane-planter",
+      "unchanged_objects": 5,
+      "foliage_objects_checked": 6,
+      "materials_preserved": 10
+    },
+    {
+      "asset": "lane-tram-shelter",
+      "unchanged_objects": 20,
+      "foliage_objects_checked": 3,
+      "materials_preserved": 22
+    },
+    {
+      "asset": "lane-tree",
+      "unchanged_objects": 3,
+      "foliage_objects_checked": 5,
+      "materials_preserved": 7
+    },
+    {
+      "asset": "lane-workshop",
+      "unchanged_objects": 30,
+      "foliage_objects_checked": 8,
+      "materials_preserved": 35
+    },
+    {
+      "asset": "loft-floor-plant",
+      "unchanged_objects": 5,
+      "foliage_objects_checked": 2,
+      "materials_preserved": 6
+    },
+    {
+      "asset": "loft-shelf",
+      "unchanged_objects": 15,
+      "foliage_objects_checked": 3,
+      "materials_preserved": 17
+    },
+    {
+      "asset": "loft-travel-stacks",
+      "unchanged_objects": 13,
+      "foliage_objects_checked": 2,
+      "materials_preserved": 14
+    },
+    {
+      "asset": "loft-wall-life",
+      "unchanged_objects": 14,
+      "foliage_objects_checked": 3,
+      "materials_preserved": 16
+    },
+    {
+      "asset": "rootwell-beacon",
+      "unchanged_objects": 24,
+      "foliage_objects_checked": 1,
+      "materials_preserved": 17
+    },
+    {
+      "asset": "seaside-eaveside-terrace",
+      "unchanged_objects": 19,
+      "foliage_objects_checked": 4,
+      "materials_preserved": 14
+    },
+    {
+      "asset": "seaside-lantern-row-house",
+      "unchanged_objects": 15,
+      "foliage_objects_checked": 4,
+      "materials_preserved": 10
+    },
+    {
+      "asset": "seaside-rosewash-house",
+      "unchanged_objects": 16,
+      "foliage_objects_checked": 4,
+      "materials_preserved": 10
+    },
+    {
+      "asset": "seaside-saltwind-house",
+      "unchanged_objects": 20,
+      "foliage_objects_checked": 4,
+      "materials_preserved": 10
+    },
+    {
+      "asset": "seaside-shingle-court-cottage",
+      "unchanged_objects": 15,
+      "foliage_objects_checked": 5,
+      "materials_preserved": 10
+    },
+    {
+      "asset": "square-flower-stall",
+      "unchanged_objects": 15,
+      "foliage_objects_checked": 8,
+      "materials_preserved": 22
+    },
+    {
+      "asset": "square-guildhall",
+      "unchanged_objects": 28,
+      "foliage_objects_checked": 8,
+      "materials_preserved": 35
+    },
+    {
+      "asset": "town-garden-wall",
+      "unchanged_objects": 2,
+      "foliage_objects_checked": 1,
+      "materials_preserved": 2
+    },
+    {
+      "asset": "town-garden-wall-short",
+      "unchanged_objects": 2,
+      "foliage_objects_checked": 1,
+      "materials_preserved": 2
+    },
+    {
+      "asset": "town-lawn",
+      "unchanged_objects": 3,
+      "foliage_objects_checked": 1,
+      "materials_preserved": 3
+    },
+    {
+      "asset": "town-planter-bench",
+      "unchanged_objects": 3,
+      "foliage_objects_checked": 1,
+      "materials_preserved": 3
+    },
+    {
+      "asset": "workshop-shell",
+      "unchanged_objects": 13,
+      "foliage_objects_checked": 2,
+      "materials_preserved": 14
+    },
+    {
+      "asset": "workshop-shop-doors",
+      "unchanged_objects": 15,
+      "foliage_objects_checked": 2,
+      "materials_preserved": 14
+    },
+    {
+      "asset": "workshop-tool-wall",
+      "unchanged_objects": 16,
+      "foliage_objects_checked": 3,
+      "materials_preserved": 18
+    },
+    {
+      "asset": "workshop-wall-shelf",
+      "unchanged_objects": 13,
+      "foliage_objects_checked": 3,
+      "materials_preserved": 15
+    }
+  ]
+}

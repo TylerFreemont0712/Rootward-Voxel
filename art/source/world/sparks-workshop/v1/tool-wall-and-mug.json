@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-27",
+  "record": "art/source/world/sparks-workshop/v1/tool_wall_and_mug.py",
+  "sources": [
+    {
+      "asset": "workshop-tool-wall",
+      "before": "70b6f0ada06f5a25444c7b8c7e702166b5265039a4926a0fb4785de4c1ccbe3b",
+      "backup": "art/source/world/workshop-tool-wall/v1/model.pre-tool-wall-and-mug.blend",
+      "after": "32faa246b8cabb26f1f68a6226cfeaac81982cd2f5f4c60e90b115ef9388802f"
+    },
+    {
+      "asset": "workshop-tea-table",
+      "before": "c3ee7797f4df699b206d345297f2046e691cb229739494e9c785df5b30c7dbd3",
+      "backup": "art/source/world/workshop-tea-table/v1/model.pre-tool-wall-and-mug.blend",
+      "after": "743ea0304d07a07bd6542cef3e21d6b71405e7b09307b47559faced2e4c93437"
+    }
+  ]
+}

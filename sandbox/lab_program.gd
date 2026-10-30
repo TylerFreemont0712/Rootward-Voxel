@@ -54,18 +54,49 @@ static func _decode(stdout_text: String, wall_ms: int) -> Dictionary:
 	if parser.parse(payload) != OK or not parser.data is Dictionary:
 		return _failure("Program result must be a JSON object.", stdout_text.left(marker_at), wall_ms)
 	var value: Dictionary = parser.data
-	if value.size() != 2 or not value.get("commands") is Array or not value.get("memory") is Dictionary:
+	if value.size() != (3 if value.has("trace") else 2) or not value.get("commands") is Array or not value.get("memory") is Dictionary:
 		return _failure("Return commands as a list and memory as a dictionary.", stdout_text.left(marker_at), wall_ms)
 	return {
 		"ok": true,
 		"reason": "",
 		"commands": value.commands.duplicate(true),
 		"memory": value.memory.duplicate(true),
+		"trace": safe_trace(value.get("trace", [])),
 		"stdout": stdout_text.left(marker_at).strip_edges(),
 		"wall_ms": wall_ms,
 	}
 
 
 static func _failure(reason: String, stdout_text: String = "", wall_ms: int = 0, stderr_text: String = "") -> Dictionary:
-	return {"ok": false, "reason": reason, "commands": [], "memory": {}, "stdout": stdout_text, "wall_ms": wall_ms,
+	var trace: Array[Dictionary]=[]
+	var at: int=stdout_text.rfind("__VOXEL_TRACE__")
+	if at>=0:
+		var encoded: String=stdout_text.substr(at+15).strip_edges()
+		if encoded.to_utf8_buffer().size()<=16384:trace=safe_trace(JSON.parse_string(encoded))
+		stdout_text=stdout_text.left(at).strip_edges()
+	return {"ok": false, "reason": reason, "trace":trace, "commands": [], "memory": {}, "stdout": stdout_text, "wall_ms": wall_ms,
 		"error": ErrorAdvice.parse(stderr_text), "stderr": stderr_text.left(2000)}
+
+
+## Evidence is untrusted metadata, never a source of world commands or engine objects.
+static func safe_trace(raw: Variant) -> Array[Dictionary]:
+	var result: Array[Dictionary]=[]
+	if not raw is Array or raw.size()>96:return result
+	for item: Variant in raw:
+		if not item is Dictionary or not LabWorld._whole_number(item.get("line")) or int(item.line)<1 or int(item.line)>16384:return []
+		var event: Dictionary={"line":int(item.line)}
+		if item.has("command"):
+			if not LabWorld._whole_number(item.command) or int(item.command)<0 or int(item.command)>=LabWorld.MAX_COMMANDS:return []
+			event["command"]=int(item.command)
+		if item.has("values"):
+			if not item.values is Dictionary or item.values.size()>4:return []
+			var values: Dictionary={}
+			for key: Variant in item.values:
+				if not key is String or not ["x","y","key","message"].has(key):return []
+				var value: Variant=item.values[key]
+				if value is String and value.length()<=60:values[key]=value
+				elif LabWorld._whole_number(value) and absf(float(value))<=1000000:values[key]=int(value)
+				else:return []
+			event["values"]=values
+		result.append(event)
+	return result

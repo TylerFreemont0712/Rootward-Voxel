@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "asset": "rootwell-beacon",
+  "version": "v1",
+  "source": "art/source/world/rootwell-beacon/v1/model.blend",
+  "source_sha256": "b9767cd34d288297a77fd3d143a83bc0e629b9e3fce98c51f33894c4783e6682",
+  "runtime": "assets/world/rootwell-beacon/model.glb",
+  "runtime_sha256": "ba2a997e5308b014714ca1e2d4ab1f33769e61a91b9f95b4cd5c3ac08df0042c",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -3.77999997138977,
+      -0.00600000005215406,
+      -3.77999997138977,
+      3.77999997138977,
+      9.51186943054199,
+      3.77999997138977
+    ],
+    "geometry_sha256": "1f63a321fb6444e19ba3695051aa1094ac572441cebf839470b03d663eebadbc",
+    "material_records": {
+      "grid_bed": {
+        "albedo": [
+          5821,
+          6125,
+          6026,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "grid_bronze": {
+        "albedo": [
+          8024,
+          7469,
+          6254,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "grid_glass": {
+        "albedo": [
+          8490,
+          7619,
+          5606,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "8bf51a9eb0a9c4d1398077ea697d5956854d2961d070159e7f7da5fb2fc472e4"
+      },
+      "lamp_glass": {
+        "albedo": [
+          9490,
+          6353,
+          2353,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "rootwell_bell_glass": {
+        "albedo": [
+          10000,
+          7059,
+          2784,
+          3000
+        ],
+        "roughness": 800,
+        "texture_rgba_sha256": ""
+      },
+      "rootwell_brass": {
+        "albedo": [
+          7882,
+          6157,
+          3333,
+          10000
+        ],
+        "roughness": 3600,
+        "texture_rgba_sha256": ""
+      },
+      "rootwell_enamel": {
+        "albedo": [
+          9529,
+          9176,
+          8314,
+          10000
+        ],
+        "roughness": 5000,
+        "texture_rgba_sha256": ""
+      },
+      "rootwell_ink": {
+        "albedo": [
+          1804,
+          1490,
+          1294,
+          10000
+        ],
+        "roughness": 6000,
+        "texture_rgba_sha256": ""
+      },
+      "rootwell_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6000,
+        "texture_rgba_sha256": "3a6a819a220762a8dfc975732de4ecfb1bab53195a21305b3bdce7e41e1445d7"
+      },
+      "rootwell_red": {
+        "albedo": [
+          7608,
+          2275,
+          1804,
+          10000
+        ],
+        "roughness": 5000,
+        "texture_rgba_sha256": ""
+      },
+      "rootwell_root": {
+        "albedo": [
+          6902,
+          4157,
+          1725,
+          10000
+        ],
+        "roughness": 7200,
+        "texture_rgba_sha256": ""
+      },
+      "rootwell_verdigris": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "b05183083327813c11316d8dc98c3b2b1a54cf079ec4d4a76e7c789e76ac4a67"
+      },
+      "seaside_roof": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "ded5a294cd42a02ed6d2b8bb815cbb0b45fd4cf6ae6066ce5c7674d079ff0e61"
+      },
+      "seaside_shutter": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "10b2bf7b785b437a8bde5ee2533b912c3d998c74964b0627fab8fda9dee65cb7"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      },
+      "seaside_timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "grid_bed",
+      "grid_bronze",
+      "grid_glass",
+      "house_paint",
+      "lamp_glass",
+      "rootwell_bell_glass",
+      "rootwell_brass",
+      "rootwell_enamel",
+      "rootwell_ink",
+      "rootwell_light",
+      "rootwell_red",
+      "rootwell_root",
+      "rootwell_verdigris",
+      "seaside_roof",
+      "seaside_shutter",
+      "seaside_stone",
+      "seaside_timber"
+    ],
+    "meshes": 24,
+    "triangles": 354525
+  }
+}

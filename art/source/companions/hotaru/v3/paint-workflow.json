@@ -1,0 +1,97 @@
+{
+ "1": {
+  "class_type": "CheckpointLoaderSimple",
+  "inputs": {
+   "ckpt_name": "novaAnimeXL_ilV190.safetensors"
+  }
+ },
+ "2": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "hotaru_portrait_base_rgb.png"
+  }
+ },
+ "3": {
+  "class_type": "VAEEncode",
+  "inputs": {
+   "pixels": [
+    "2",
+    0
+   ],
+   "vae": [
+    "1",
+    2
+   ]
+  }
+ },
+ "4": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "clip": [
+    "1",
+    1
+   ],
+   "text": "masterpiece, best quality, painterly illustration, hand-painted, soft brush strokes, warm afternoon light, gentle rim light, no humans, solo, cute small robot shaped like a lantern, cream enamel body, teal domed cap with brim, teal stripes, brass trim, round brass porthole window glowing warm amber, empty glowing window, small brass propeller on top, red knob, stubby arms with round teal hands, floating, storybook, simple background"
+  }
+ },
+ "5": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "clip": [
+    "1",
+    1
+   ],
+   "text": "lowres, worst quality, low quality, text, watermark, signature, human, face, mouth, nose, eyes, 3d render, cgi, plastic, glossy, photo, extra arms, extra propellers"
+  }
+ },
+ "6": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "positive": [
+    "4",
+    0
+   ],
+   "negative": [
+    "5",
+    0
+   ],
+   "latent_image": [
+    "3",
+    0
+   ],
+   "seed": 71028,
+   "steps": 30,
+   "cfg": 5.5,
+   "sampler_name": "dpmpp_2m",
+   "scheduler": "karras",
+   "denoise": 0.42
+  }
+ },
+ "7": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "6",
+    0
+   ],
+   "vae": [
+    "1",
+    2
+   ]
+  }
+ },
+ "8": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "7",
+    0
+   ],
+   "filename_prefix": "hotaru_paint_d42"
+  }
+ }
+}

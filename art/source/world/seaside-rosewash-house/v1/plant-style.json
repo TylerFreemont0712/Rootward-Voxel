@@ -1,0 +1,67 @@
+{
+  "asset": "seaside-rosewash-house",
+  "source": "art/source/world/seaside-rosewash-house/v1/model.blend",
+  "backup": "art/source/world/seaside-rosewash-house/v1/model.pre-plant-style.blend",
+  "before_sha256": "d0de366c279a7e738d067b99db5e71c2f90bb56283da08d5c18c19a9d9ee90dd",
+  "after_sha256": "c94f7197d9e0c457d49db294385a48ac9250c50a546a6380016c4a727297f18d",
+  "objects": [
+    {
+      "object": "detail_planters",
+      "replaced_components": {
+        "leaf": 21,
+        "leaf_light": 21,
+        "leaf_dark": 12,
+        "flower_red": 10,
+        "flower_pink": 9,
+        "flower_orange": 13,
+        "flower_white": 4,
+        "cypress_light": 13,
+        "cypress": 27,
+        "olive": 3
+      },
+      "protected_faces": 328,
+      "protected_sha256": "a88b74e5db7e50e5ee31b900c10a1fe846113ce811f89c4347aa67e5d466ef6d"
+    },
+    {
+      "object": "detail_vines",
+      "replaced_components": {
+        "leaf_light": 27,
+        "leaf": 61,
+        "flower_white": 31,
+        "leaf_dark": 37,
+        "flower_pink": 11
+      },
+      "protected_faces": 196,
+      "protected_sha256": "8572ce41cc25529dd5d9e95f87c5e2ab7d2577fe4458d16ac93f59d8ab0b019e"
+    },
+    {
+      "object": "detail_window_boxes",
+      "replaced_components": {
+        "leaf": 29,
+        "flower_white": 17,
+        "leaf_light": 15,
+        "leaf_dark": 29,
+        "flower_orange": 7,
+        "flower_pink": 5,
+        "flower_red": 3
+      },
+      "protected_faces": 220,
+      "protected_sha256": "c7e93bca241da8b399d5d30cc742ff9fe8541c5410768b3ebe187cf6b3b4922d"
+    },
+    {
+      "object": "detail_yard",
+      "replaced_components": {
+        "leaf": 9,
+        "leaf_light": 9,
+        "leaf_dark": 4,
+        "flower_white": 6,
+        "flower_red": 1,
+        "olive": 3,
+        "flower_orange": 5
+      },
+      "protected_faces": 738,
+      "protected_sha256": "e14e32ae5fe697206bfa9116ff92f871c955dd52e73f61745025ee52e876ebca"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

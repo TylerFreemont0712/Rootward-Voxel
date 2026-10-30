@@ -1,0 +1,34 @@
+{
+  "asset": "loft-wall-life",
+  "source": "art/source/world/loft-wall-life/v1/model.blend",
+  "backup": "art/source/world/loft-wall-life/v1/model.pre-plant-style.blend",
+  "before_sha256": "dfecc3dfb7360eec44d24588033566d6772957fa781cb4ed02e0af794972c426",
+  "after_sha256": "6275b6ade4ce910d8253b0ab759aa433d2f5de9ccf643a5f6b1515e6224c6989",
+  "objects": [
+    {
+      "object": "loft_leaf_dark",
+      "replaced_components": {
+        "leaf_dark": 4
+      },
+      "protected_faces": 240,
+      "protected_sha256": "aadd84959b6d39b53c8f251fbdc3195079e5fb0e0a98289f6097039cc12ce36b"
+    },
+    {
+      "object": "loft_leaf",
+      "replaced_components": {
+        "leaf": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "loft_leaf_light",
+      "replaced_components": {
+        "leaf_light": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

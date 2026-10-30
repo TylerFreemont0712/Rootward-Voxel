@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "tool": "built-in image_gen.imagegen",
+  "mode": "new concepts with two approved exterior references",
+  "model": "Not exposed by built-in tool",
+  "prompt_set": "prompts.json",
+  "prompt_set_sha256": "e680e04ddaacc0ac264ed77f6dc6c80781b933a189e7686a4c97dc8efc4c1581",
+  "prompt_assembly": "common_prompt + newline newline + THIS IMAGE'S DISTINCT CONCEPT: <id> — <name> + newline + design",
+  "references": [
+    {
+      "path": "evidence/sparks-workshop/spindle-lane/1600/01-arrival.png",
+      "role": "Primary style, architecture, material, detailing, character-scale and adjoining-neighbourhood reference. Disregard its HUD.",
+      "sha256": "f86164ad1fcf567831e6c0cd1933b57a6775a74d88e886c85be1a75247e03b6d"
+    },
+    {
+      "path": "evidence/sparks-workshop/spindle-lane/1600/04-houses.png",
+      "role": "Secondary reference for Nell's workshop, neighbouring houses and the upper lane. Disregard its HUD.",
+      "sha256": "745334429a2dca1d1f300f0b47cb28a288ecbcf465aaa1ef95cfe3ed3ec6a510"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "A",
+      "name": "Founders' Court",
+      "path": "art/source/world/sparks-square/v2-city-concepts/A-founders-court.png",
+      "sha256": "1d76f9a54c07a951edb4d6b5e31fe1d1539f61997f6e5095ad1e5a1dc674d3a7",
+      "size": [
+        1536,
+        1024
+      ],
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-44243ccd-8199-4ddd-ac21-c88b7ce7e724.png",
+      "prompt_sha256": "a1bcdc06578062e32eb52f92cef9585f7161d49cef195dc7c4193426c0bb453f",
+      "selection": "pending user choice; concept reference only"
+    },
+    {
+      "id": "B",
+      "name": "Market Cross",
+      "path": "art/source/world/sparks-square/v2-city-concepts/B-market-cross.png",
+      "sha256": "197e7b9a7162891bb1dbefca43243e1be9e2b99a67b583781dcfd1350b4c4c22",
+      "size": [
+        1536,
+        1024
+      ],
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-1eeedaa5-9036-4b36-9d06-2345be0ef93a.png",
+      "prompt_sha256": "d67a484d51c26b6f69e07c5e64dacee3f4e29a32e9c1b6e3321ebe5a2f638ebd",
+      "selection": "pending user choice; concept reference only"
+    },
+    {
+      "id": "C",
+      "name": "Terraced Exchange",
+      "path": "art/source/world/sparks-square/v2-city-concepts/C-terraced-exchange.png",
+      "sha256": "2a601336ac2252f5ea47a9307dd4faa08faaa744c230192011000e3cb51a66d6",
+      "size": [
+        1536,
+        1024
+      ],
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-2796d74b-3189-4c17-95c8-1af45f8a1148.png",
+      "prompt_sha256": "818be16ce283b3dca5da76415e8cb4d34d07c8a87101f22afa0f11ff22d6b5ae",
+      "selection": "pending user choice; concept reference only"
+    },
+    {
+      "id": "D",
+      "name": "Lantern Exchange",
+      "path": "art/source/world/sparks-square/v2-city-concepts/D-lantern-exchange.png",
+      "sha256": "8b327bb25c9e3f49e3197f41eabff4778e1062275a9c5f70093440d5ef370b5a",
+      "size": [
+        1536,
+        1024
+      ],
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-8819bac3-498a-478e-befc-5a1c54e0a48f.png",
+      "prompt_sha256": "ebdc834a2bbed3535fdd17f657e1d197ccaa2277bce9664fa2756a4b7f09d1a8",
+      "selection": "pending user choice; concept reference only"
+    }
+  ],
+  "runtime_status": "Unselected concept references. Existing maps, adopted models and runtime selection are unchanged."
+}

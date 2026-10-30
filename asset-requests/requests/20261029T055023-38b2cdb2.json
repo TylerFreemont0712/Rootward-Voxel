@@ -1,0 +1,252 @@
+{
+  "schema": 1,
+  "id": "20261029T055023-38b2cdb2",
+  "kind": "delete",
+  "title": "Delete Cottage",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "cottage",
+    "label": "Cottage",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/cottage/v1/model.blend",
+    "runtime": "assets/world/cottage/model.glb",
+    "manifest": "assets/world/cottage/manifest.json",
+    "catalog_notes": "Building shell; mill wheel and other mechanisms remain in Godot. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+    "related_files": [
+      "art/source/world/cottage/v1/building-polish.json",
+      "art/source/world/cottage/v1/doorways.json",
+      "art/source/world/cottage/v1/provenance.json",
+      "art/source/world/cottage/v1/retexture.json",
+      "art/source/world/cottage/v1/seed.glb.audit.json"
+    ],
+    "usage_files": [
+      "content/areas/kindle-hollow.json",
+      "content/areas/rune-mill.json",
+      "content/areas/village-cottage.json",
+      "content/build/catalog.json",
+      "content/interiors/catalog.json",
+      "content/villagers.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "source": "art/source/world/cottage/v1/model.blend",
+      "runtime": "assets/world/cottage/model.glb",
+      "pivot": "ground origin; preserve imported root",
+      "logical_footprint": [
+        -1.275,
+        -1.225,
+        2.55,
+        2.45
+      ],
+      "behavior": "visual_only; gameplay rules remain in core",
+      "notes": "Building shell; mill wheel and other mechanisms remain in Godot. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "plaster"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark",
+          "roof_light"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "entrance_oak"
+        ],
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light",
+          "entrance_stone"
+        ],
+        "metal": [
+          "gold",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 1.5,
+        "width": 0.86,
+        "height": 1.82,
+        "bottom": 0.17,
+        "steps": [
+          [
+            2.075,
+            1.5250000000000001,
+            1.51,
+            0.09620000000000001
+          ],
+          [
+            1.645,
+            0.5750000000000001,
+            1.26,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:50:23+00:00",
+  "updated": "2026-10-29T05:50:23+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:50:23+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: log-cabin"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: hollow-kitchen-dresser"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: hollow-patchwork-bed"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: concept-cottage"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: painted-cottage"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: lane-cottage"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "Another asset references or shares these files: seaside-shingle-court-cottage"
+    },
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "An area presentation selects this asset."
+    },
+    {
+      "path": "content/villagers.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/interiors/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/village-cottage.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/rune-mill.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/kindle-hollow.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "core/lab_world.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "art/town_hall_room.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "pipeline/world_seed.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/art_study.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/building_review.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_authoring_guards.py",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_reference_cottage.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_building_refresh.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_terrain.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_area.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_illustrated_village.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_world_art.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build_assets.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_finishes.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_doorway_boundaries.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_lane.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_house_flow.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_morning.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_walk_surfaces.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build_mode.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "asset": "seaside-lantern-row-house",
+  "source": "art/source/world/seaside-lantern-row-house/v1/model.blend",
+  "backup": "art/source/world/seaside-lantern-row-house/v1/model.pre-plant-style.blend",
+  "before_sha256": "60c59f70fcc95adf3875751204b2bca7371a3d642ea2ed3298709da0a2b8bb39",
+  "after_sha256": "b657e8d4f344ed8ef5d3d028f076e40015e9e629359252fae21d6a188905727c",
+  "objects": [
+    {
+      "object": "detail_planters",
+      "replaced_components": {
+        "cypress_light": 13,
+        "cypress": 27,
+        "leaf": 10,
+        "leaf_light": 9,
+        "leaf_dark": 4,
+        "flower_pink": 1,
+        "flower_white": 8,
+        "flower_red": 3,
+        "flower_orange": 7
+      },
+      "protected_faces": 146,
+      "protected_sha256": "faeba77403b585e2fa9b471b5c90618d6fe2da7a473ba3a36192731dee0919a4"
+    },
+    {
+      "object": "detail_vines",
+      "replaced_components": {
+        "leaf": 71,
+        "flower_white": 37,
+        "leaf_dark": 40,
+        "leaf_light": 25,
+        "flower_pink": 9
+      },
+      "protected_faces": 217,
+      "protected_sha256": "5163798331bf86d28b831a33dd93d6f509b002d4a384b3df14774c5fcbe49249"
+    },
+    {
+      "object": "detail_window_boxes",
+      "replaced_components": {
+        "leaf": 79,
+        "flower_pink": 26,
+        "leaf_light": 39,
+        "leaf_dark": 79,
+        "flower_red": 15,
+        "flower_white": 35,
+        "flower_orange": 8
+      },
+      "protected_faces": 572,
+      "protected_sha256": "59547aeec8734217eb3c992b561cec846f757dd8a701d25e845aabdbf98576a2"
+    },
+    {
+      "object": "detail_yard",
+      "replaced_components": {
+        "leaf": 6,
+        "leaf_light": 6,
+        "leaf_dark": 2,
+        "flower_white": 4,
+        "flower_red": 2,
+        "olive": 3
+      },
+      "protected_faces": 874,
+      "protected_sha256": "cd3afee7e11a950332f937f31d5a8319b4f5581e510688b6fc0af59c69bc16e8"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

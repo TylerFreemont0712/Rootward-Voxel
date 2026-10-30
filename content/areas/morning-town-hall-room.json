@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "id": "morning-town-hall-room",
+  "title": "Town Hall",
+  "version": 1,
+  "size": [
+    16,
+    15
+  ],
+  "spawn": [
+    8,
+    3
+  ],
+  "movement_lesson": true,
+  "terrain": [
+    "................",
+    "................",
+    "................",
+    "................",
+    "................",
+    "................",
+    "................",
+    "................",
+    "................",
+    "................",
+    "................",
+    "................",
+    "................",
+    "................",
+    "................"
+  ],
+  "buildings": [],
+  "trees": [],
+  "zones": [
+    {
+      "id": "council-room",
+      "title": "The council room",
+      "rect": [
+        0,
+        0,
+        16,
+        15
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "id": "hearth-lamp",
+      "at": [
+        0.2,
+        4
+      ],
+      "zone": "council-room",
+      "style": "sconce"
+    }
+  ],
+  "props": [
+    {
+      "id": "council-table",
+      "asset": "hollow-trestle-table",
+      "at": [
+        8,
+        10.4
+      ],
+      "facing": "S",
+      "scale": 1.65
+    },
+    {
+      "id": "council-chair-0",
+      "asset": "hollow-highback-armchair",
+      "at": [
+        6.4,
+        12.0
+      ],
+      "facing": "S",
+      "scale": 0.95
+    },
+    {
+      "id": "council-chair-1",
+      "asset": "hollow-highback-armchair",
+      "at": [
+        8,
+        12.0
+      ],
+      "facing": "S",
+      "scale": 0.95
+    },
+    {
+      "id": "council-chair-2",
+      "asset": "hollow-highback-armchair",
+      "at": [
+        9.6,
+        12.0
+      ],
+      "facing": "S",
+      "scale": 0.95
+    },
+    {
+      "id": "clerk-desk",
+      "asset": "hollow-writing-desk",
+      "at": [
+        0.6,
+        7.8
+      ],
+      "facing": "E",
+      "scale": 1.4
+    },
+    {
+      "id": "clerk-chair",
+      "asset": "hearth-stool",
+      "at": [
+        2.4,
+        7.8
+      ],
+      "facing": "W",
+      "scale": 1.15
+    },
+    {
+      "id": "archives-west",
+      "asset": "bookshelf",
+      "at": [
+        2.5,
+        14.0
+      ],
+      "facing": "S",
+      "scale": 2.5
+    },
+    {
+      "id": "archives-east",
+      "asset": "bookshelf",
+      "at": [
+        12.5,
+        14.0
+      ],
+      "facing": "S",
+      "scale": 2.5
+    },
+    {
+      "id": "public-bench-0",
+      "asset": "morning-civic-bench",
+      "at": [
+        4,
+        5.1
+      ],
+      "facing": "N",
+      "scale": 1.0
+    },
+    {
+      "id": "public-bench-1",
+      "asset": "morning-civic-bench",
+      "at": [
+        12,
+        5.1
+      ],
+      "facing": "N",
+      "scale": 1.0
+    },
+    {
+      "id": "public-bench-2",
+      "asset": "morning-civic-bench",
+      "at": [
+        4,
+        7.1
+      ],
+      "facing": "N",
+      "scale": 1.0
+    },
+    {
+      "id": "public-bench-3",
+      "asset": "morning-civic-bench",
+      "at": [
+        12,
+        7.1
+      ],
+      "facing": "N",
+      "scale": 1.0
+    },
+    {
+      "id": "reading-table",
+      "asset": "hollow-mapmakers-table",
+      "at": [
+        13.7,
+        10.3
+      ],
+      "facing": "W",
+      "scale": 1.1
+    }
+  ],
+  "interior": {
+    "style": "town-hall",
+    "exit": [
+      8,
+      1
+    ],
+    "materials": {
+      "floor": "limestone_flags",
+      "walls": "limewash",
+      "timber": "timber_panels",
+      "rug": "woven_linen",
+      "cloth": "woven_linen",
+      "hearth": "riverstone"
+    },
+    "furniture": [
+      {
+        "kind": "rug",
+        "at": [
+          8,
+          5.5
+        ],
+        "size": [
+          2.2,
+          7.6
+        ]
+      }
+    ]
+  }
+}

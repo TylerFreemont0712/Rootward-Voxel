@@ -17,7 +17,7 @@ Logical `[x, y, height]` becomes Godot `(x, height, -y)`. Cell centers are integ
 | Field | Meaning |
 |---|---|
 | `schema`, `id`, `title`, `version` | Identity. Bump `version` for a deliberate redesign and keep the old file. |
-| `size`, `spawn` | Width/height in cells (4–96) and the starting cell. |
+| `size`, `spawn` | Width/height in cells (4–160) and the starting cell. |
 | `terrain` | `height` strings of `width` glyphs, north-up: `.` grass, `,` dirt path, `=` cobble, `~` water, `#` rock. Water blocks unless a bridge deck is built on it; rock always blocks. |
 | `ground` | `{}` for terrain generated from the cells, or `{asset, water_rects}` to use a Blender land model (as `rune-mill` does with `clearing-ground`). |
 | `levels` | Optional land levels: `height` strings of `width` digits `0`–`2`, north-up like `terrain`. Omitted means all valley floor. Water keeps the level of its cell. Buildings and props must stand on one level, off stairs. |
@@ -28,6 +28,8 @@ Logical `[x, y, height]` becomes Godot `(x, height, -y)`. Cell centers are integ
 | `segments` | Axis-aligned `fence` (thin) and `wall` (0.5 thick) lines. They block the cells and edges they cross, so place them between cells or run a wall along a row and leave a gate cell. |
 | `lamps`, `gates`, `bridges`, `wheels` | Mechanisms. Each names a `zone`. Lamps have `style` `post` (the adopted `lamppost` model, lantern toward +z) , `beacon` (procedural) or indoor `sconce`; gates have an `axis` (the direction the leaf spans); bridges list their sockets in build order, each on a water cell and neighboring the last. |
 | `interior` | Optional `{exit: [x,y], furniture: [{kind, at, size}], host: {at, route}}`. Furniture blocks except rugs; the renderer makes a cutaway room. `host` supplies the owner's indoor positions when this template belongs to a resident. See [Village](VILLAGE.md). |
+| `interior.outdoor` | Optional, for an outdoor room drawn like a room (Spindle Lane): `{sun: {rotation, color, energy}, ambient: {color, energy}, haze, backdrop, parallax}`. The view uses this daylight instead of the valley's warmth, `haze` fills behind everything, and `backdrop` (a PNG under `res://assets/`) hangs on the camera's far plane, drifting by `parallax` (0–0.6) and fading into the haze toward its foot. Presentation only. |
+| `interior.life` | Optional street motions, presentation only: `smoke` `[{at, height}]` chimneys, `sway` (placed assets whose `cloth*` children move in the breeze), `tram` `{asset, out, stop, edge, fade, period, offset, travel}` (a placed asset's round trip along x: up from `out` to `stop` in `travel` seconds (default 7), a fifteen-second wait, back down, fading past `edge`), `gulls` `{at, height, count}`, `robots` `[{asset, path, speed, pause, loop}]` (a placed robot rolls along 2–16 points at up to 3 units a second, turning its `wheel*` nodes, waiting `pause` seconds at the ends of its round or at every lap with `loop`, and while the apprentice stands in its way; it never blocks a cell). Positions are map data, so they live here. |
 | `boundary` | Optional `{apron, forest, mist}` scenic strips outside the logical bounds; apron is 16–64 units. |
 | `villagers` | Optional unique `{id, at: [x,y], route: [[x,y], ...], home}` residents; identity comes from `content/villagers.json`. |
 | `zones` | `{id, title, rect}` cell rectangles. A zone is **discovered** when the player first steps into it; only discovered zones are visible to the player's code. Overlaps resolve to the first listed. |
@@ -78,3 +80,32 @@ Run `scripts/test.sh`, then `scripts/play.sh`. Hold directions around new obstac
 ## Status of the second-area milestone
 
 The earlier plan asked for a document extracted from the clearing, loaded by both rules and view, then a second area. That is **done**: `rune-mill` is the extraction (behavior preserved; its tests now run on the loader), `kindle-hollow` is the second area, and the view builds either through `ClearingView.setup`. Still open: **general outdoor-region transitions** (house instances now swap the single active session/view and retain the outdoor snapshot; see [Village](VILLAGE.md)), **an authored-map editor** and **adopting generated land into Blender**. Player saves exist (`app/save_store.gd`) and keep authored maps and player state distinct: a save stores state, quests and code, never the map.
+
+
+## Sparks: downhill square
+
+`haverlund-square.json` (version 3, Rootward Square, the hub) is a 72×64 saved exterior using `interior.style: workshop-square`. It is written once from [the square-hub plan](../art/source/world/square-hub/v1/README.md) and is the master from then on.
+
+- **Arrival:** either cell of the lane's `town-steps` link arrives on its own side of a five-wide street in the south-west corner at level 2, at (1,7) or (1,9). The apprentice walks on two cells. Walking west from any of the street's five cells (0,6–10) climbs back. Two five-cell flights (x 6 and 11, rising west) carry it down.
+- **Open exits:** three are left for later areas: Hill Street (x 12–17, out of the north edge, with its own flight at y 56), Lantern Row (y 43–48 at the east edge) and the Harbour Steps (x 57–64, beyond the south balustrade).
+- **What the area document places:** the base ground `haverlund-square-ground` is the shell; on it stand the buildings, every railing bay and pier, the lamps, props and robots, and 56 background houses with per-placement looks.
+- **Room asset `look`:** a seed, a palette name or `{seed, palette, plain}` dresses a modular house (`HouseVariants.look`). `AreaDef` checks its shape only.
+- **Blocks:** only the blocks and the area's cells decide walking.
+- **Earlier versions:** v1 and v2 are archived in `content/areas/archive/`.
+- **Spindle Lane:** version 4 adds `haverlund-lane-surround` and its town round the old set, the same way.
+- **Layout:** the square is laid out as a working town centre: active shop and civic edges, seats that face the Rootwell or a view with something at their backs, clear walks along the conduits, and light at two heights. The [square-hub README](../art/source/world/square-hub/v1/README.md) lists the choices.
+- **Tests:** `test/test_square.gd` checks the traversable graph and all three exits, real travel, local program memory, tablet scope, WASI preview/Apply, arrival read flags and Continue. It also checks that the shops replaced the old terrace, that the Rootwell is placed 35 % larger, that every planter-bench faces it, and that the power pillars glow across their full width.
+
+### Walking through a scene change
+
+A room link can be wider than one cell, and the walk can carry on through the change:
+
+| Field | Meaning |
+|---|---|
+| `cells` | 1–8 cells, including `at`, all in the area. A step in the link's `direction` from any of them crosses. |
+| `arrivals` | One arrival cell per entry in `cells`, so each side of a wide stair lands on the matching side beyond. `arrival` stays as the default. |
+| `walk_through` | The apprentice walks into the doorway, the clockwork veil ([UI](UI.md#scene-change-veil)) grows out of it, and in the next room the veil opens on the arrival cell while the apprentice walks in from 0.9 cell behind it, on to the cell `enter` leaves them on. Every cell of that walk is inside the map; what lies beyond a room's edge is hidden by the veil. |
+| `enter` | 0–4 more cells to walk on from the arrival, if they are walkable. The player's saved cell is that last cell, and the walk to it is drawn under the veil. |
+| `doors` | A placed room asset, or `"shell"`, whose hinged `door_leaf*` parts (each with a `swing` extra in degrees) swing open as the apprentice goes through. The link back in the next room opens its own doors, which close behind. |
+
+Click-to-walk to a wide link heads for its nearest cell. Interior inspections are capped at 64 per room; other room lists stay at 24.

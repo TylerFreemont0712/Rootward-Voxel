@@ -24,8 +24,9 @@ func _document() -> Dictionary:
 func _run() -> void:
 	assets = JSON.parse_string(FileAccess.get_file_as_string("res://pipeline/world-catalog.json")).assets
 	catalog = AreaStore.read_build_catalog()
-	specs = JSON.parse_string(FileAccess.get_file_as_string("res://art/source/world/village-library/v1/library.json")).assets
-	_check(specs.size() == 50, "The library adds fifty distinct new objects")
+	var historical: Array = JSON.parse_string(FileAccess.get_file_as_string("res://art/source/world/village-library/v1/library.json")).assets
+	specs = historical.filter(func(spec: Dictionary) -> bool: return not AreaBuild.item(catalog, str(spec.id)).is_empty())
+	_check(specs.size() == 42, "The retained library offers 42 distinct objects")
 	var names: Dictionary = {}
 	var interactive: int = 0
 	for spec: Dictionary in specs:
@@ -65,11 +66,11 @@ func _run() -> void:
 			visual.set_active(false, true)
 			_check(not visual.active and (visual._light == null or not visual._light.visible), "It can be deactivated: " + id)
 		model.free()
-	_check(interactive == 16, "Sixteen objects have declared working interactions")
+	_check(interactive == 14, "Fourteen retained objects have declared working interactions")
 	_pure_interactions()
 	_sandbox()
 	if failures.is_empty():
-		print("Builder library: %d checks passed (50 new models, ledger, state, interaction, discovery and real WASI)." % checks)
+		print("Builder library: %d checks passed (42 retained models, ledger, state, interaction, discovery and real WASI)." % checks)
 	else:
 		for failure: String in failures:
 			printerr("FAIL: ", failure)

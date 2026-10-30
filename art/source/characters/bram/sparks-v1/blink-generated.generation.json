@@ -1,0 +1,14 @@
+{
+  "key": "sparks-bram-blink",
+  "dest": "art/source/characters/bram/sparks-v1/blink-generated.png",
+  "refs": [
+    "art/source/characters/bram/sparks-v1/blink-reference.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Edit this exact transparent cropped painted character image. Change ONLY the two open eyes to a relaxed natural blink: closed eyelids following the original eye angles, warm dark-brown curved lid strokes, skin where the eye whites/pupils were. Keep the head position, scale, face outline, hair, eyebrows, smile, nose, clothes, accessories and canvas exactly as supplied, no shift/zoom or new head pose. Preserve any spectacles and their rims; closed eyelids sit behind the glasses. Both eyes fully closed, no remaining pupils, no exaggerated smiling squint. The result is a blink key for this same character. Truly transparent background, original square crop framing, no added text or props.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-9b8ddb00-2b65-4130-a104-1ea05f814f8f.png",
+  "tool": "built-in image_gen.imagegen",
+  "output_sha256": "10ec7268ac1f22f9352ab6dd724832c6a8f2b9b274b90bcf92c250f175353b0a",
+  "reference_sha256": {
+    "art/source/characters/bram/sparks-v1/blink-reference.png": "fde16e8bf4efb582e136bc201a06f4cfef954914e7714045960b5045dd5f51d6"
+  }
+}

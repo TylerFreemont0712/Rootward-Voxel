@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "asset": "morning-town-hall",
+  "version": "v1",
+  "source": "art/source/world/morning-town-hall/v1/model.blend",
+  "source_sha256": "7ea29354a27ccccfc5c630e1517bb94e94abf73a36bd764f1e7800d5334e7fba",
+  "runtime": "assets/world/morning-town-hall/model.glb",
+  "runtime_sha256": "38477d0a38a46aba7baeece307847431c8c6dccb2dfd1276c4ca8cf07ad80e29",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -4.79083967208862,
+      0.0,
+      -3.96500015258789,
+      4.79083967208862,
+      11.260046005249,
+      4.55000019073486
+    ],
+    "geometry_sha256": "78ca59f2ea3c2f24c9e4f0fe6e1702b8350e9b226a9612cfe637aa579e366d8e",
+    "material_records": {
+      "hall_banner": {
+        "albedo": [
+          2627,
+          4314,
+          3882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "hall_brass": {
+        "albedo": [
+          8392,
+          6667,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "hall_iron": {
+        "albedo": [
+          2078,
+          2667,
+          2667,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "hall_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "94fc020ffb05f39f85dc4afad50b8c38fe342ecfb52ee4bc07c0e05a2f97ff4a"
+      },
+      "hall_paper": {
+        "albedo": [
+          9176,
+          8627,
+          7098,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "hall_plaster": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "7e39c012eba9e2b2c9fe8e7603742c8adb106a7440620c83278976f44b7a0a6b"
+      },
+      "hall_recess": {
+        "albedo": [
+          1451,
+          1686,
+          1569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "hall_roof": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "fd332dea0e69d4f580561c989fd5c37c3c758d148292d65c822dfd3f4ab2d632"
+      },
+      "hall_roof_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "fd332dea0e69d4f580561c989fd5c37c3c758d148292d65c822dfd3f4ab2d632"
+      },
+      "hall_roof_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "fd332dea0e69d4f580561c989fd5c37c3c758d148292d65c822dfd3f4ab2d632"
+      },
+      "hall_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "a4c740ef95322fab6b4ac67a310027e5410621625d11d1583972f3f3de6a7c18"
+      },
+      "hall_stone_light": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "a4c740ef95322fab6b4ac67a310027e5410621625d11d1583972f3f3de6a7c18"
+      },
+      "hall_timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "6855d65f49a5e6c8d9ca461927d70cba9cd157e5b241e797dd7e1dd23275b8fc"
+      },
+      "hall_window": {
+        "albedo": [
+          10000,
+          8118,
+          4941,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "hall_banner",
+      "hall_brass",
+      "hall_iron",
+      "hall_oak",
+      "hall_paper",
+      "hall_plaster",
+      "hall_recess",
+      "hall_roof",
+      "hall_roof_dark",
+      "hall_roof_light",
+      "hall_stone",
+      "hall_stone_light",
+      "hall_timber",
+      "hall_window"
+    ],
+    "meshes": 46,
+    "triangles": 35796
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "asset": "workshop-wall-shelf",
+  "source": "art/source/world/workshop-wall-shelf/v1/model.blend",
+  "backup": "art/source/world/workshop-wall-shelf/v1/model.pre-plant-style.blend",
+  "before_sha256": "b7afd6dbfdf5942a6a6603a978bbb83c784cbaae844f406880a6351949ad0a5f",
+  "after_sha256": "68da9b348932ea5fb62629b6c73cd3cc2dd1ddd56389a50a13916a2f570d7e0f",
+  "objects": [
+    {
+      "object": "workshop_leaf_dark",
+      "replaced_components": {
+        "leaf_dark": 4
+      },
+      "protected_faces": 240,
+      "protected_sha256": "54273a641a39c1c0bb5bea6eef47e8b17cef0eaaf5012effbd528cb8e9f7f158"
+    },
+    {
+      "object": "workshop_leaf",
+      "replaced_components": {
+        "leaf": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "workshop_leaf_light",
+      "replaced_components": {
+        "leaf_light": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

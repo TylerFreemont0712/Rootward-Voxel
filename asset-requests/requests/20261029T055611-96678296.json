@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "id": "20261029T055611-96678296",
+  "kind": "delete",
+  "title": "Delete Log Cabin",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "log-cabin",
+    "label": "Log Cabin",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/log-cabin/v1/model.blend",
+    "runtime": "assets/world/log-cabin/model.glb",
+    "manifest": "assets/world/log-cabin/manifest.json",
+    "catalog_notes": "Violet-roofed log cabin recreated from reference/voxel-isometric.png: limestone foundation, log courses, arched stone door, round gable window, stone chimney. Occupies three cells like the cottage; the roof overhang and doorstep are decoration, not blocking. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+    "related_files": [
+      "art/source/world/log-cabin/v1/brief.md",
+      "art/source/world/log-cabin/v1/building-polish.json",
+      "art/source/world/log-cabin/v1/doorways.json",
+      "art/source/world/log-cabin/v1/provenance.json",
+      "art/source/world/log-cabin/v1/retexture.json",
+      "art/source/world/log-cabin/v1/seed.glb.audit.json"
+    ],
+    "usage_files": [
+      "content/areas/archive/kindle-hollow-v1.json",
+      "content/areas/kindle-hollow.json",
+      "content/build/catalog.json",
+      "content/interiors/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "source": "art/source/world/log-cabin/v1/model.blend",
+      "runtime": "assets/world/log-cabin/model.glb",
+      "pivot": "ground origin; preserve imported root; door and gable face +Z",
+      "logical_footprint": [
+        -1.45,
+        -1.43,
+        2.9,
+        2.86
+      ],
+      "behavior": "visual_only; gameplay rules remain in core",
+      "notes": "Violet-roofed log cabin recreated from reference/voxel-isometric.png: limestone foundation, log courses, arched stone door, round gable window, stone chimney. Occupies three cells like the cottage; the roof overhang and doorstep are decoration, not blocking. Updated 2026-10-24: common painted roof scale, legible entrance and thresholds; saved finish roles retained.",
+      "finish_slots": {
+        "walls": [
+          "oak",
+          "oak_light"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark",
+          "roof_light"
+        ],
+        "timber": [
+          "wood",
+          "wood_dark",
+          "wood_light",
+          "entrance_oak"
+        ],
+        "masonry": [
+          "stone_dark",
+          "stone_light",
+          "stone_warm",
+          "entrance_stone"
+        ],
+        "metal": [
+          "gold",
+          "iron"
+        ]
+      },
+      "building_revision": "2026-10-24-buildings-v1",
+      "entrance": {
+        "front": "+Z",
+        "center_x": 0,
+        "kind": "arched oak",
+        "threshold": "pale stone",
+        "plane": 1.53,
+        "width": 0.86,
+        "height": 1.82,
+        "bottom": 0.17,
+        "steps": [
+          [
+            2.28,
+            1.73,
+            1.51,
+            0.09620000000000001
+          ],
+          [
+            1.8499999999999999,
+            0.7799999999999999,
+            1.26,
+            0.185
+          ]
+        ],
+        "hinge": "DoorHinge"
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:56:11+00:00",
+  "updated": "2026-10-29T05:56:11+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:56:11+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/interiors/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/kindle-hollow.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/archive/kindle-hollow-v1.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "pipeline/world_recipes.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "pipeline/world_seed.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/building_review.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_authoring_guards.py",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_building_refresh.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_area.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_world_art.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "test/test_build.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

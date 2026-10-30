@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "id": "20261029T055243-a2daa33a",
+  "kind": "delete",
+  "title": "Delete Field Scarecrow",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "hollow-field-scarecrow",
+    "label": "Field Scarecrow",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hollow-field-scarecrow/v1/model.blend",
+    "runtime": "assets/world/hollow-field-scarecrow/model.glb",
+    "manifest": "assets/world/hollow-field-scarecrow/manifest.json",
+    "catalog_notes": "A straw hat, russet coat and teal scarf on a forked timber field marker.",
+    "related_files": [
+      "art/source/world/hollow-field-scarecrow/v1/brief.md",
+      "art/source/world/hollow-field-scarecrow/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Field Scarecrow",
+      "source": "art/source/world/hollow-field-scarecrow/v1/model.blend",
+      "runtime": "assets/world/hollow-field-scarecrow/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.5,
+        -0.3,
+        1.0,
+        0.6
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A straw hat, russet coat and teal scarf on a forked timber field marker.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "timber": [
+          "wood",
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone_dark"
+        ],
+        "fabric": [
+          "cloth_plum",
+          "cloth_teal",
+          "linen"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:52:43+00:00",
+  "updated": "2026-10-29T06:28:23+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:52:43+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:23+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/hollow-field-scarecrow/v1/brief.md",
+    "art/source/world/hollow-field-scarecrow/v1/model.blend",
+    "art/source/world/hollow-field-scarecrow/v1/provenance.json",
+    "assets/world/hollow-field-scarecrow/manifest.json",
+    "assets/world/hollow-field-scarecrow/model.glb",
+    "assets/world/hollow-field-scarecrow/model.glb.import",
+    "assets/world/hollow-field-scarecrow/model_log_wood.png",
+    "assets/world/hollow-field-scarecrow/model_log_wood.png.import",
+    "assets/world/hollow-field-scarecrow/model_stone_block_grey.png",
+    "assets/world/hollow-field-scarecrow/model_stone_block_grey.png.import",
+    "assets/world/hollow-field-scarecrow/model_timber_dark.png",
+    "assets/world/hollow-field-scarecrow/model_timber_dark.png.import"
+  ]
+}

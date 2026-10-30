@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "rootwell-plaza",
+  "version": "v1",
+  "source": "art/source/world/rootwell-plaza/v1/model.blend",
+  "source_sha256": "f1ad2d6ab4d40ffe0e5c9ab9382ff264d09eb191ac7a0a8e927ca84bc4578dd2",
+  "runtime": "assets/world/rootwell-plaza/model.glb",
+  "runtime_sha256": "782f352a2f2b90f9219446b6a1bc4f1e5b0f86a4cb84a8f44b669a5781b7cb01",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -8.88927936553955,
+      -0.0199999995529652,
+      -8.88927936553955,
+      8.88927936553955,
+      0.0200000014156103,
+      8.88927936553955
+    ],
+    "geometry_sha256": "8847ef02ef1bd43c901f716a6663073cd82c7917ca8285b28967a8a9d39a40ed",
+    "material_records": {
+      "grid_bed": {
+        "albedo": [
+          2980,
+          3333,
+          3216,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "grid_bronze": {
+        "albedo": [
+          6078,
+          5176,
+          3490,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "grid_glass": {
+        "albedo": [
+          6902,
+          5412,
+          2745,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      }
+    },
+    "materials": [
+      "grid_bed",
+      "grid_bronze",
+      "grid_glass",
+      "house_paint",
+      "seaside_stone"
+    ],
+    "meshes": 5,
+    "triangles": 2576
+  }
+}

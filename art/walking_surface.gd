@@ -37,6 +37,12 @@ static func height(area: AreaDef, point: Vector2, entrances: Array[Dictionary]) 
 	if not area.socket(cell).is_empty():
 		result = maxf(result, float(area.level_at(cell)) * TerrainBuilder.LEVEL_RISE + 0.065)
 	if not area.interior.is_empty():
+		for flight: Dictionary in area.interior.get("stair_flights", []):
+			var flight_height: Variant = rising_room_stairs(flight, point)
+			if flight_height != null: return float(flight_height) + CLEARANCE
+		var stair_height: Variant = room_stair_height(area.interior.get("stairwell", {}), point)
+		if stair_height != null:
+			return float(stair_height) + CLEARANCE
 		# The room's floor, rugs and exit mat are above the logical zero plane.
 		result = maxf(result, 0.04)
 		for item: Dictionary in area.interior.furniture:
@@ -45,3 +51,43 @@ static func height(area: AreaDef, point: Vector2, entrances: Array[Dictionary]) 
 		if point.distance_to(Vector2(float(area.interior.exit[0]), float(area.interior.exit[1]))) < 0.85:
 			result = maxf(result, 0.11)
 	return result + CLEARANCE
+
+
+## A room's descending hatch replaces its floor support, including the old exit
+## mat lift. Heights and footprint are area data matching the adopted shell.
+static func room_stair_height(well: Dictionary, point: Vector2) -> Variant:
+	if well.is_empty(): return null
+	var raw: Array = well.rect
+	var rect := Rect2(float(raw[0]), float(raw[1]), float(raw[2]), float(raw[3]))
+	if not rect.has_point(point): return null
+	var forward := Vector2(AreaDef.STEPS[well.up])
+	var along: float = (point - rect.get_center()).dot(forward)
+	var length: float = rect.size.y if forward.y != 0 else rect.size.x
+	var depth: float = length / float(well.treads.size())
+	var result: float = float(well.treads[0])
+	for index: int in range(1, well.treads.size() + 1):
+		var edge: float = -length * .5 + index * depth
+		var previous: float = float(well.treads[index - 1])
+		var top: float = float(well.treads[index]) if index < well.treads.size() else float(well.floor)
+		result += (top - previous) * smoothstep(edge - minf(FOOT_LEAD, depth * .8), edge - .005, along)
+	return result
+
+
+static func rising_room_stairs(flight: Dictionary, point: Vector2) -> Variant:
+	var r: Array = flight.rect
+	var rect := Rect2(float(r[0]), float(r[1]), float(r[2]), float(r[3]))
+	var forward := Vector2(AreaDef.STEPS[flight.up])
+	var relative: Vector2 = point - rect.get_center()
+	var length: float = rect.size.y if forward.y != 0 else rect.size.x
+	var width: float = rect.size.x if forward.y != 0 else rect.size.y
+	var along: float = relative.dot(forward)
+	if absf(relative.cross(forward)) > width * .5 or along < -length * .5 - FOOT_LEAD or along > length * .5: return null
+	var depth: float = length / float(flight.treads.size())
+	var result: float = .04
+	var previous: float = .04
+	for index: int in range(flight.treads.size()):
+		var edge: float = -length * .5 + index * depth
+		var top: float = float(flight.treads[index])
+		result += (top - previous) * smoothstep(edge - minf(FOOT_LEAD, depth * .8), edge - .005, along)
+		previous = top
+	return result

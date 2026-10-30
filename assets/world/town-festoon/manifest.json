@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "asset": "town-festoon",
+  "version": "v1",
+  "source": "art/source/world/town-festoon/v1/model.blend",
+  "source_sha256": "54346a1fe2aafd1f8a5dc30c43eaf8e78609f603775e5d6b0452680ea4903004",
+  "runtime": "assets/world/town-festoon/model.glb",
+  "runtime_sha256": "2a1c9a88bd0f5b919aad64aaa7916d236bc77f6460024b705a961bc87effc8c4",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -4.1399998664856,
+      0.0,
+      -0.140000000596046,
+      4.1399998664856,
+      3.65000009536743,
+      0.140000000596046
+    ],
+    "geometry_sha256": "890eb22f42a18bebd8d6d32dd3ebd0d1c3491fa9d5dc2b0bb9eff745e8612525",
+    "material_records": {
+      "festoon_glass": {
+        "albedo": [
+          10000,
+          8353,
+          5412,
+          10000
+        ],
+        "roughness": 2500,
+        "texture_rgba_sha256": ""
+      },
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      }
+    },
+    "materials": [
+      "festoon_glass",
+      "house_paint"
+    ],
+    "meshes": 2,
+    "triangles": 1544
+  }
+}

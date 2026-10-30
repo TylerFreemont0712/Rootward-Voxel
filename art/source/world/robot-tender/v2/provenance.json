@@ -1,0 +1,13 @@
+{
+  "asset": "robot-tender",
+  "date": "2026-10-29",
+  "previous_source": "art/source/world/robot-tender/v1/model.blend",
+  "previous_source_sha256": "4beeb8518e59cb5caeace351cd320ea3ce880a2097b7186bb5769363ce3edf95",
+  "source": "art/source/world/robot-tender/v2/model.blend",
+  "source_sha256": "e82e375e0bfdf0b029e62828724453d52b306e223280beb5c2f0aa6947ab96ad",
+  "edit_record": "art/source/world/sparks-robot-refinement/v1/refine_other_sources.py",
+  "edit_record_sha256": "bd835cfde30c9947c5fc1440f84c72bb2de9bce21271eac79b932d62ba29d7ba",
+  "helper": "art/source/world/sparks-robot-refinement/v1/refine_sources.py",
+  "helper_sha256": "d5adcb1492650674a7c5dab251a3f8f2f77807b23d7eecf0e4ce9abc01b99cac",
+  "note": "Deliberate native geometry refinement preserving adopted root/wheel objects; further edits use the saved source."
+}

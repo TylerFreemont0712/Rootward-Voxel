@@ -14,9 +14,9 @@ signal quit_requested
 var _first: FButton
 
 
-func setup(player_name: String, place: String, indoors: bool = false) -> void:
+func setup(player_name: String, place: String, indoors: bool = false, journey: String = "Kindle Hollow") -> void:
 	card.custom_minimum_size = Vector2(440, 0)
-	body.add_child(UI.caps("Kindle Hollow", Pal.BRASS))
+	body.add_child(UI.caps(journey, Pal.BRASS))
 	body.add_child(UI.heading("Paused", 36))
 	body.add_child(UI.dim("%s · %s" % [player_name, place], 18))
 	body.add_child(UI.rule())
@@ -26,7 +26,7 @@ func setup(player_name: String, place: String, indoors: bool = false) -> void:
 	_add("Character", &"person", &"", character_requested)
 	_add("Settings", &"gear", &"", settings_requested)
 	body.add_child(UI.spacer(4))
-	_add("Reset this room" if indoors else "Start the hollow over", &"reset", &"", reset_requested)
+	_add("Reset this room" if indoors else ("Start the hollow over" if journey=="Kindle Hollow" else "Reset this area"), &"reset", &"", reset_requested)
 	_add("Save and return to title", &"door", &"", title_requested)
 	_add("Quit game", &"cross", &"ButtonDanger", quit_requested)
 

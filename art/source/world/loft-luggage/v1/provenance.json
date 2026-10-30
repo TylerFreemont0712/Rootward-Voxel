@@ -1,0 +1,9 @@
+{
+  "asset": "loft-luggage",
+  "date": "2026-10-27",
+  "reference": "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png",
+  "authoring_record": "art/source/world/sparks-loft/v1/author.py",
+  "authoring_record_sha256": "72d5ce405ed8f7e3e47a7a520ac57b9466f87715a520b76b5c80c2b8760d29f6",
+  "textures": "art/source/world/sparks-loft/v1/prompts.json",
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh."
+}

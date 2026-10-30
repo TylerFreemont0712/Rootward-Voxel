@@ -1,0 +1,10 @@
+{
+  "asset": "lane-crates",
+  "date": "2026-10-28",
+  "reference": "docs/concept/v0.7/art/4-opening/T7c-workshop-lane.wheels.png",
+  "authoring_record": "art/source/world/sparks-lane/v1/author_props.py",
+  "authoring_record_sha256": "a97159ee23ded782b24b830459dea3391a1e117eb7d18b58c481c3382741800a",
+  "kit_sha256": "26267046a1dc1a943f8d91d12e36863bdd670edc41951c7b46d51683c24d7aec",
+  "textures": "art/source/world/sparks-lane/v1/textures.py",
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh."
+}

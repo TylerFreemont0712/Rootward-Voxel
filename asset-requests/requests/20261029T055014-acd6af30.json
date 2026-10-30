@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "id": "20261029T055014-acd6af30",
+  "kind": "delete",
+  "title": "Delete Clearing Ground",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "",
+  "asset": {
+    "id": "clearing-ground",
+    "label": "Clearing Ground",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/clearing-ground/v1/model.blend",
+    "runtime": "assets/world/clearing-ground/model.glb",
+    "manifest": "assets/world/clearing-ground/manifest.json",
+    "catalog_notes": "Static land, banks, paving and boundary fences; animated water remains in Godot.",
+    "related_files": [
+      "art/source/world/clearing-ground/v1/provenance.json",
+      "art/source/world/clearing-ground/v1/retexture.json",
+      "art/source/world/clearing-ground/v1/seed.glb.audit.json"
+    ],
+    "usage_files": [
+      "content/areas/rune-mill.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "source": "art/source/world/clearing-ground/v1/model.blend",
+      "runtime": "assets/world/clearing-ground/model.glb",
+      "pivot": "ground origin; preserve imported root",
+      "logical_footprint": null,
+      "behavior": "visual_only; gameplay rules remain in core",
+      "notes": "Static land, banks, paving and boundary fences; animated water remains in Godot.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood_dark"
+        ],
+        "masonry": [
+          "stone",
+          "stone_dark",
+          "stone_light"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:50:14+00:00",
+  "updated": "2026-10-29T05:50:14+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:50:14+00:00",
+      "action": "Requested in development showcase"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "pipeline/world-catalog.json",
+      "reason": "An area presentation selects this asset."
+    },
+    {
+      "path": "content/areas/rune-mill.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "pipeline/world_seed.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ]
+}

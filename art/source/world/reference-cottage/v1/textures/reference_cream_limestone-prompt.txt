@@ -1,0 +1,6 @@
+Use case: stylized-concept
+Asset type: seamless opaque albedo texture for small hand-dressed limestone blocks in a detailed cozy voxel fantasy cottage.
+Primary request: ONE flat square material swatch of warm pale cream limestone. Ivory and oatmeal midtones with gentle pale honey variation, small broad cloudy brush patches, sparse tiny ochre pores and a few very subtle irregular mineral flecks. The actual 3D model supplies separate beveled stones, joints, a rounded doorway arch and steps; this image is only the surface of one stone, not masonry.
+Style: careful hand-painted storybook gouache, calm and clean, stylized fantasy game material. Warm luminous cream, not white plastic or cold gray concrete. Broad restrained marks legible after reduction to 128 pixels. Low contrast with no prominent isolated blotch.
+Composition: material fills entire square, perfectly straight-on flat orthographic swatch, neutral even diffuse illumination. No directional light, no cast shadows, no vignette, no edge highlights or fake ambient occlusion.
+Constraints: truly seamless in both axes; no blocks, bricks, stone outlines, mortar, cracks, veins, borders, labels, text, grid, spheres, perspective or watermark. No photographic surface noise.

@@ -1,0 +1,42 @@
+{
+  "asset": "rootwell-beacon",
+  "date": "2026-10-29",
+  "record": "art/source/world/rootwell/v1/conduits_revision.py",
+  "backup": "model.pre-conduits.blend",
+  "profile": [
+    [
+      3.78,
+      0.0
+    ],
+    [
+      3.75,
+      0.0
+    ],
+    [
+      3.75,
+      0.16
+    ],
+    [
+      3.4,
+      0.16
+    ],
+    [
+      3.4,
+      0.32
+    ],
+    [
+      3.05,
+      0.32
+    ],
+    [
+      3.05,
+      0.48
+    ],
+    [
+      2.36,
+      0.48
+    ]
+  ],
+  "scale": 0.7407407407407407,
+  "note": "Conduits up the four cardinal steps to the drum; geometry otherwise unchanged."
+}

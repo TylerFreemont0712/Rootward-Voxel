@@ -1,0 +1,21 @@
+{
+  "id": "seaside_timber_driftwood",
+  "title": "Weathered driftwood",
+  "color": "weathered grey-brown coastal timber with a soft silvery cast, still cared for, no rotten splinters",
+  "family": "timber",
+  "tile": 1,
+  "roughness": 0.94,
+  "key": "house-texture-seaside_timber_driftwood",
+  "dest": "art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_driftwood.png",
+  "refs": [
+    "art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_oak.png"
+  ],
+  "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling timber ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to weathered grey-brown coastal timber with a soft silvery cast, still cared for, no rotten splinters. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nPreserve fine surface texture and tonal shading while making the new palette clearly distinct.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-39c4b833-ae39-4364-989a-8dd919e8ed4c.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "3592f0879212f22fa281086ef8682c31e120cff585d45ae8b39107226483c7c4",
+  "reference_sha256": {
+    "art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_oak.png": "f0532292e084a669f9b4b485a4205e0b53e13f042cd7ccc655b3e7cc657fcfbe"
+  }
+}

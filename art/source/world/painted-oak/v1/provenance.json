@@ -1,0 +1,10 @@
+{
+  "asset": "painted-oak",
+  "version": "v1",
+  "date": "2026-10-26",
+  "reference": "reference/voxel-isometric.png",
+  "authoring_record": "art/source/world/illustrated-village/v1/author.py",
+  "geometry": "New bent nine-sided trunk and forked boughs; exposed-face voxel union of eight unequal crown lobes.",
+  "footprint": "Root geometry within original 0.5 m oak radius; canopy never determines collision.",
+  "palette": "Six broad leaf values, honey bark and drawn bark creases; no runtime texture generation."
+}

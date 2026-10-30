@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed by built-in tool",
+  "prompts": "prompts.json",
+  "prompts_sha256": "4acd92e3f224bbc143e0a9fbf44f2c1e7a776f401f0b40f6405f00cfa9e1e041",
+  "selected": [
+    "rootwell-front-threequarter.png",
+    "rootwell-rear-threequarter.png"
+  ],
+  "runtime_status": "Approved concept references only. Existing adopted model and playable square retained.",
+  "records": [
+    {
+      "file": "rootwell-hero-initial.png",
+      "role": "Initial square close-up, superseded by user’s isolated-asset requirement",
+      "sha256": "1ce91fbfd44f58e009552136188c568d00b0e2161a0efc03a61e94cc1d8e3f5e",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "prompt_sha256": "a60d36b78a86dc73028b19053413eb959bfd2b88096fa56583dc291ed7947260",
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-9dea23d6-da7e-46a9-92b0-ddd8139f0caf.png",
+      "references": [
+        {
+          "path": "docs/concept/v0.72/art/guildhall-square.png",
+          "sha256": "a7f41ee0be0deaf827247aae17ce3f038b7c6e4af24f082763f4601d60980866"
+        },
+        {
+          "path": "evidence/sparks-square/1600/04b-beacon-detail.png",
+          "sha256": "df78137a62d27e6b1ffdee55af179c0beb6187065c3a3ea3663cfb25209938e1"
+        }
+      ]
+    },
+    {
+      "file": "rootwell-hero-refined.png",
+      "role": "Pressure-gauge and framing correction; supporting reference for isolated views",
+      "sha256": "d9eefec851595eef3d4a635ce357df9469c3c6f897073f107a07fc87c032d7ad",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "prompt_sha256": "d4b85764207e19812b1fd81d0dfb4eebf7cfe0a16012d9f00fdc121a4c68aa44",
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-938ac7ec-ab09-4242-98e2-f371359dc6c9.png",
+      "references": [
+        {
+          "path": "art/source/world/square-beacon/concept-v1/rootwell-hero-initial.png",
+          "sha256": "1ce91fbfd44f58e009552136188c568d00b0e2161a0efc03a61e94cc1d8e3f5e"
+        }
+      ]
+    },
+    {
+      "file": "rootwell-turnaround-initial.png",
+      "role": "Unselected sheet: repeated front angle and insufficient framing gutters",
+      "sha256": "ccfa3120adecef10d8d87412a6360828e8f9a0da86e06ba910df65bc9ab21c29",
+      "size": [
+        1920,
+        819
+      ],
+      "mode": "RGBA",
+      "prompt_sha256": "d8f1486b041f1d88f55d6a9c785e0692454a93ef082942e93b65809c3080694f",
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-3913b345-1eb7-418f-a5f6-a28e16d01d62.png",
+      "references": [
+        {
+          "path": "art/source/world/square-beacon/concept-v1/rootwell-hero-refined.png",
+          "sha256": "d9eefec851595eef3d4a635ce357df9469c3c6f897073f107a07fc87c032d7ad"
+        }
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "rootwell-front-threequarter.png",
+      "role": "Selected isolated front three-quarter concept; user approved and requested v0.72",
+      "sha256": "e1919cf42213c86b5881968366981c3db60fbcedbeff08f45a2295564c08722d",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "prompt_sha256": "7e32beade74ca24e919275184a9b6bd5598ed217802d194792282ec8765659dc",
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-9300de2b-c4a5-40c9-b075-2796fd4c02e0.png",
+      "references": [
+        {
+          "path": "art/source/world/square-beacon/concept-v1/rootwell-hero-refined.png",
+          "sha256": "d9eefec851595eef3d4a635ce357df9469c3c6f897073f107a07fc87c032d7ad"
+        }
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "file": "rootwell-rear-threequarter.png",
+      "role": "Selected isolated opposite rear three-quarter concept; user approved and requested v0.72",
+      "sha256": "645f6cde8bb3b4181b684e7218e3ef30a166e6b4cf9e3320362df50195a3b682",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "prompt_sha256": "3dad3359c15a55a60f4baad22af94517b51bfd55f71a5b52fa1cd3e92e35e19d",
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-afb18054-96d9-4fa1-8e08-6e8d8f0948f1.png",
+      "references": [
+        {
+          "path": "art/source/world/square-beacon/concept-v1/rootwell-hero-refined.png",
+          "sha256": "d9eefec851595eef3d4a635ce357df9469c3c6f897073f107a07fc87c032d7ad"
+        }
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "asset": "town-planter-bench",
+  "version": "v1",
+  "source": "art/source/world/town-planter-bench/v1/model.blend",
+  "source_sha256": "d252343a95bfa272b5b407957bacaafc84b52e3682019177120301fd29f405c8",
+  "runtime": "assets/world/town-planter-bench/model.glb",
+  "runtime_sha256": "123f0477fd968e45b28115d77ed21cffce4a5b0dd64fd6f420f29434e717be4c",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.75,
+      0.0,
+      -0.5,
+      1.75,
+      1.95120000839233,
+      0.892500042915344
+    ],
+    "geometry_sha256": "0774dfe9c8d20048cfd94884cb87e1b146ce2e62cfd1f6c986da5f71f630cf86",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      },
+      "seaside_timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "house_paint",
+      "seaside_stone",
+      "seaside_timber"
+    ],
+    "meshes": 3,
+    "triangles": 6452
+  }
+}

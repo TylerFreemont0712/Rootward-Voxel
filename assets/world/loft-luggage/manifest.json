@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "loft-luggage",
+  "version": "v1",
+  "source": "art/source/world/loft-luggage/v1/model.blend",
+  "source_sha256": "59f94f1c7695ccaaf088240cfbca5c468da9a2fe329f5c2e5c2ee7405b6dc350",
+  "runtime": "assets/world/loft-luggage/model.glb",
+  "runtime_sha256": "4f20901df7be3ce4c06b06608b7dfffeef5981f95f99e2fa665abf67a46245be",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.680000007152557,
+      0.0350000262260437,
+      -0.518734872341156,
+      0.679999947547913,
+      1.39527559280396,
+      0.580499112606049
+    ],
+    "geometry_sha256": "f978cebcd155320895f75d0919d34b26f874f26b1ad768084d46b94f887c2e11",
+    "material_records": {
+      "loft_blue": {
+        "albedo": [
+          3255,
+          4196,
+          5373,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_blue_light": {
+        "albedo": [
+          5176,
+          5804,
+          6667,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_brass": {
+        "albedo": [
+          7686,
+          6039,
+          3255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_ceramic": {
+        "albedo": [
+          7922,
+          7176,
+          5961,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leather": {
+        "albedo": [
+          5020,
+          3373,
+          2314,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leather_dark": {
+        "albedo": [
+          3569,
+          2353,
+          1725,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_linen": {
+        "albedo": [
+          9333,
+          8980,
+          8275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_ochre": {
+        "albedo": [
+          7725,
+          6118,
+          3451,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_blue",
+      "loft_blue_light",
+      "loft_brass",
+      "loft_ceramic",
+      "loft_leather",
+      "loft_leather_dark",
+      "loft_linen",
+      "loft_ochre"
+    ],
+    "meshes": 8,
+    "triangles": 2832
+  }
+}

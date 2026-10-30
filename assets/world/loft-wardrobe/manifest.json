@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "asset": "loft-wardrobe",
+  "version": "v1",
+  "source": "art/source/world/loft-wardrobe/v1/model.blend",
+  "source_sha256": "8f9014ec0e5e36cba1df85fbb3d0a9b68c54abf5505b927e8ec27859532822ff",
+  "runtime": "assets/world/loft-wardrobe/model.glb",
+  "runtime_sha256": "6d0c33ca1d481dcfe9174352c2d8ab7650f67848425f68654240f1d2906f2991",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.629999995231628,
+      0.0,
+      -0.329999983310699,
+      0.629999995231628,
+      2.36500000953674,
+      0.507214903831482
+    ],
+    "geometry_sha256": "5435816c432f5d5682be884f0df5b572f9b7d1112a23e03d15815bb555b0c363",
+    "material_records": {
+      "loft_blue": {
+        "albedo": [
+          3255,
+          4196,
+          5373,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_brass": {
+        "albedo": [
+          7686,
+          6039,
+          3255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_cream": {
+        "albedo": [
+          9373,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_ink": {
+        "albedo": [
+          3294,
+          2314,
+          1686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leather": {
+        "albedo": [
+          5020,
+          3373,
+          2314,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_leather_dark": {
+        "albedo": [
+          3569,
+          2353,
+          1725,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "1fe3f6ef2ef729478d94996c56daffe94347f614708c46d7e4d1fddc6f98ebd0"
+      },
+      "loft_red": {
+        "albedo": [
+          7098,
+          3686,
+          3020,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_teal": {
+        "albedo": [
+          2235,
+          4863,
+          4863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_teal_dark": {
+        "albedo": [
+          1922,
+          3608,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_wood": {
+        "albedo": [
+          6784,
+          4745,
+          2902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_wood_dark": {
+        "albedo": [
+          4745,
+          3137,
+          2000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_wood_edge": {
+        "albedo": [
+          7647,
+          5882,
+          3882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "poster_ink_blue": {
+        "albedo": [
+          4236,
+          6012,
+          6652,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "poster_ink_gold": {
+        "albedo": [
+          9309,
+          7797,
+          5271,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "poster_ink_rust": {
+        "albedo": [
+          8267,
+          5371,
+          4366,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "poster_paper": {
+        "albedo": [
+          9500,
+          9013,
+          7977,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_blue",
+      "loft_brass",
+      "loft_cream",
+      "loft_ink",
+      "loft_leather",
+      "loft_leather_dark",
+      "loft_oak",
+      "loft_red",
+      "loft_teal",
+      "loft_teal_dark",
+      "loft_wood",
+      "loft_wood_dark",
+      "loft_wood_edge",
+      "poster_ink_blue",
+      "poster_ink_gold",
+      "poster_ink_rust",
+      "poster_paper"
+    ],
+    "meshes": 26,
+    "triangles": 2949
+  }
+}

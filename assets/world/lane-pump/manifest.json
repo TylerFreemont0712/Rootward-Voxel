@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "lane-pump",
+  "version": "v1",
+  "source": "art/source/world/lane-pump/v1/model.blend",
+  "source_sha256": "cd0d964952396577c1c33c27b69347cdce4c3256a77775f3e870f92bb70e9480",
+  "runtime": "assets/world/lane-pump/model.glb",
+  "runtime_sha256": "8c0f09991df912d0dd0b0ad2d47a6f6d1d77e901689326096eee9842f7e56d7c",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.400000005960464,
+      0.0,
+      -0.534025609493256,
+      0.700000047683716,
+      1.33999991416931,
+      0.590000033378601
+    ],
+    "geometry_sha256": "1a98a79ce615de461b1392e86684f5c8f91fb9fb72979ffa19be9e02fe9668cb",
+    "material_records": {
+      "lane_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone_pale": {
+        "albedo": [
+          9333,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone_shade": {
+        "albedo": [
+          7686,
+          6980,
+          5569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_shutter_dark": {
+        "albedo": [
+          2275,
+          4235,
+          3333,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_water": {
+        "albedo": [
+          3686,
+          5961,
+          6275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_brass",
+      "lane_iron",
+      "lane_limestone",
+      "lane_limestone_pale",
+      "lane_limestone_shade",
+      "lane_shutter_dark",
+      "lane_water"
+    ],
+    "meshes": 7,
+    "triangles": 624
+  }
+}

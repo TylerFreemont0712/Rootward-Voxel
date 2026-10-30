@@ -1,0 +1,9 @@
+{
+  "asset": "workshop-jar-shelf",
+  "date": "2026-10-28",
+  "reference": "docs/concept/v0.7/art/4-opening/T7b-workshop-floor.png",
+  "record": "art/source/world/sparks-workshop/v1/jar_shelf.py",
+  "record_sha256": "5b727a0008a4a8a5fa7dee352bbc3800a4907ded8f0ad06a024b20e402c51be2",
+  "painted_sources": "art/source/world/sparks-workshop/v1/prompts.json",
+  "purpose": "Jars and parts on the party wall with Nell's house, where the north window was."
+}

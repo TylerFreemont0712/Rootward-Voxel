@@ -1,0 +1,64 @@
+{
+  "asset": "seaside-eaveside-terrace",
+  "source": "art/source/world/seaside-eaveside-terrace/v1/model.blend",
+  "backup": "art/source/world/seaside-eaveside-terrace/v1/model.pre-plant-style.blend",
+  "before_sha256": "30152c61eea462c01fac62b7b5909f8bf566207c89804b20c0604bd9768a23a2",
+  "after_sha256": "b53d8162fc67f6dc831a2238244a85560462f748b7a9c5f810ceafcb0a4db7e6",
+  "objects": [
+    {
+      "object": "detail_planters",
+      "replaced_components": {
+        "olive": 6,
+        "leaf": 15,
+        "leaf_light": 15,
+        "leaf_dark": 6,
+        "flower_white": 10,
+        "flower_pink": 2,
+        "flower_red": 4,
+        "flower_orange": 2
+      },
+      "protected_faces": 730,
+      "protected_sha256": "b337b69cacf655cba3e9de313ca24bd75c5bc089350afb5d195fe0154894b766"
+    },
+    {
+      "object": "detail_vines",
+      "replaced_components": {
+        "leaf": 123,
+        "leaf_light": 63,
+        "flower_white": 55,
+        "leaf_dark": 73,
+        "flower_pink": 39
+      },
+      "protected_faces": 406,
+      "protected_sha256": "63441a50ee12779f118655b0035144c93605677e70a67afd24393ac853041bc8"
+    },
+    {
+      "object": "detail_window_boxes",
+      "replaced_components": {
+        "leaf": 87,
+        "flower_pink": 34,
+        "leaf_light": 45,
+        "flower_white": 35,
+        "leaf_dark": 87,
+        "flower_red": 28,
+        "flower_orange": 1
+      },
+      "protected_faces": 660,
+      "protected_sha256": "125997ebb5de8c298e77eaf4a718f23e316a30da92a3d96e9fa4671db1b7cf95"
+    },
+    {
+      "object": "detail_yard",
+      "replaced_components": {
+        "leaf": 6,
+        "leaf_light": 6,
+        "leaf_dark": 2,
+        "flower_red": 3,
+        "flower_white": 3,
+        "olive": 3
+      },
+      "protected_faces": 540,
+      "protected_sha256": "e7d84cfa76d52ff36ac5157af359da6d3bb0cbd23a72ef8a4a74e382b5a2ffc9"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "loft-window-life",
+  "version": "v1",
+  "source": "art/source/world/loft-window-life/v1/model.blend",
+  "source_sha256": "6a614080e634271c87579e5754d6ae85be89db0c015c8d3a5108b77b6fd87a81",
+  "runtime": "assets/world/loft-window-life/model.glb",
+  "runtime_sha256": "dfe521628771ede91bad37692d87e854d69be0065809923ec2b4eaf98768b42d",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      0.0331909656524658,
+      0.00999999046325684,
+      -0.170755460858345,
+      0.486234903335571,
+      0.307500004768372,
+      0.129820868372917
+    ],
+    "geometry_sha256": "a81a6a4f180fee76bb3a0551bdaa223f9408a8dfad73f38a054b046bc286e2d3",
+    "material_records": {
+      "loft_ochre": {
+        "albedo": [
+          7725,
+          6118,
+          3451,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_pages": {
+        "albedo": [
+          8392,
+          7686,
+          6275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_teal": {
+        "albedo": [
+          2235,
+          4863,
+          4863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_teal_dark": {
+        "albedo": [
+          1922,
+          3608,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_ochre",
+      "loft_pages",
+      "loft_teal",
+      "loft_teal_dark"
+    ],
+    "meshes": 4,
+    "triangles": 648
+  }
+}
