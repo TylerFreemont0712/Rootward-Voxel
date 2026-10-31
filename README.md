@@ -4,6 +4,30 @@ A standalone Godot game about learning to program by changing a fantasy world wi
 
 The current asset cleanup has removed 29 retired props from the build shelf and legacy village placements; 16 deletion requests remain open. The original 50-model village library is now a 42-model active shelf; the historical index and project saves are retained. See the [deletion review](pipeline/reviews/2026-10-29-asset-deletion-pass.md).
 
+## Showcase: Sparks & Machines
+
+You are a new lodger above Nell's automaton workshop in Haverlund. Your first code goes to the loft's tape machine, then the town opens up: Spindle Lane, a tram halt, Nell's workshop and Rootward Square, all walkable and full of working robots and townspeople.
+
+![The loft, with the first program running](docs/showcase/sparks-first-code.png)
+*The loft. Field Notes /00 runs real Python: **Test code** ghost-types the output above the traveller, and **Speak** sends it to Hotaru.*
+
+![Nell's workshop floor](docs/showcase/sparks-workshop-floor.png)
+*Nell's workshop floor, with the first job, a waiting ticket, pinned by the window. Inspections use **F**.*
+
+![Spindle Lane](docs/showcase/sparks-spindle-lane.png)
+*Spindle Lane above the harbour. The grey figures are anonymous townspeople going about their own routes.*
+
+![The tram halt](docs/showcase/sparks-tram-halt.png)
+*Tram No. 7 at the halt below the lane, arriving about once every minute and a half.*
+
+![Rootward Square](docs/showcase/sparks-rootward-square.png)
+*Rootward Square, the town hub, with the Rootwell at its centre, shops, market stalls and café tables.*
+
+![The Rootwell](docs/showcase/sparks-square-rootwell.png)
+*The Rootwell from its ring of setts, with planter-benches and banner lamps.*
+
+The originals and their review notes are in [`evidence/`](evidence/) and [`pipeline/reviews/`](pipeline/reviews/). The journey's full scope is described under *Sparks & Machines — the workshop and the town* below.
+
 ## Run
 
 ```sh
