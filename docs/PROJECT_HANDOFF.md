@@ -112,6 +112,8 @@ The project plays without Blender, AI tooling, sibling repositories or services.
 
 ## Remaining product work
 
+**Painted anonymous crowd and tram service, 2026-10-31:** Nell and the reused named-avatar duplicates are removed from active placements. Spindle Lane has no named characters: two anonymous children live there, and each docked tram delivers two or three adults with varied delays/routes to the town gate, where they disappear. The square has eighteen anonymous villagers plus one Mira and one Rowan. The three anonymous profiles reuse the existing painted sheets and exact shared gait, rendered almost opaque gray; the child is slightly smaller. Phantoms pass through the player while avoiding one another and robots. Eleven robots retain local work circuits. See [behavior and source ownership](../pipeline/VILLAGE.md#sparks-ambient-inhabitants) and [the review](../pipeline/reviews/2026-10-31-painted-crowd-and-tram.md). Earlier population notes describe superseded passes.
+
 Village Morning now includes the [illustrated village study](../pipeline/reviews/2026-10-26-illustrated-village.md): four adopted Blender assets, fine sepia edges, catalog-selected cottage/oak/lamp presentations and two solid garden fences. The reference cottage’s doors/room identity and the oak’s trunk radius are preserved; earlier masters remain editable and untouched. The studio shelf has 101 entries. This is a first matching art set; ground, cedars and the other buildings retain their existing surfaces.
 
 This foundation is ready for main-project development. These are separate features or release tasks, rather than reasons to replace the approved presentation:

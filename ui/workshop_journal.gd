@@ -12,14 +12,13 @@ var _loading: bool = true
 var mode: String = "blocks"
 var message: LineEdit
 var _blocks: VBoxContainer
-var _blocks_tab: FButton
-var _python_tab: FButton
+var _tablet: TabletScreen
 var _python_custom: bool = false
 var _last_generated_python: String = ""
 var _directions: Label
 signal introduction_finished
 signal waking_requested
-var _writing: ScrollContainer
+var _writing: Control
 var _conversation: VBoxContainer
 var _choices: VBoxContainer
 var _continue: FButton
@@ -48,11 +47,15 @@ func setup(value: GameSession, settings: GameSettings) -> void:
 	row.add_child(UI.fill(titles))
 	row.add_child(UI.icon_button(&"cross", "Back to the loft", close))
 	body.add_child(row)
+	# Nell's paper scrolls; the terminal's glass stays whole beneath it.
+	var writing := UI.vbox(9)
+	writing.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_writing = writing
+	body.add_child(writing)
 	var scroll := ScrollContainer.new()
-	_writing = scroll
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	body.add_child(scroll)
+	writing.add_child(scroll)
 	var page := UI.vbox(9)
 	page.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	scroll.add_child(page)
@@ -64,22 +67,26 @@ func setup(value: GameSession, settings: GameSettings) -> void:
 	page.add_child(note)
 	_directions = UI.dim("", 18)
 	page.add_child(_directions)
-	var tabs := UI.hbox(6)
-	_blocks_tab = UI.button("Blocks", &"cube", &"ButtonTab", func() -> void: select_mode("blocks"))
-	_python_tab = UI.button("Python", &"code", &"ButtonTab", func() -> void: select_mode("python"))
-	for tab: FButton in [_blocks_tab, _python_tab]:
-		tab.toggle_mode = true
-		tabs.add_child(tab)
-	page.add_child(tabs)
+	# The greeting is written on the loft desk's terminal: instructions above on paper, code on its glass.
+	_tablet = TabletScreen.new(TabletScreen.Look.TERMINAL)
+	_tablet.link = ZoneTerminals.caption(session.area, session.state)
+	_tablet.link_kind = TabletScreen.Link.WIRED
+	_tablet.set_tabs(["message.blocks", "hello_hotaru.py"], 0, func(index: int) -> void: select_mode("python" if index == 1 else "blocks"))
+	_tablet.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_tablet.size_flags_stretch_ratio = 2.0
+	writing.add_child(_tablet)
 	_blocks = UI.vbox(8)
-	page.add_child(_blocks)
-	var block := UI.panel(&"PanelInset")
+	_tablet.content.add_child(_blocks)
+	var block := PanelContainer.new()
+	block.add_theme_stylebox_override("panel", CodePalette.glass(CodePalette.BG_RAISED))
 	_blocks.add_child(block)
 	var block_body := UI.vbox(6)
 	block.add_child(block_body)
-	block_body.add_child(UI.label("01 · PRINT A MESSAGE", &"LabelCaps", 13, PaperPal.TEAL_DEEP))
-	var expression := UI.hbox(4)
-	expression.add_child(UI.label('print("', &"", 19, PaperPal.TEAL_DEEP))
+	block_body.add_child(UI.label("01 · PRINT A MESSAGE", &"LabelCaps", 13))
+	var expression := UI.hbox(0)
+	expression.add_child(UI.label("print", &"", 19, CodePalette.FUNCTION))
+	expression.add_child(UI.label("(", &"", 19, CodePalette.TEXT))
+	expression.add_child(UI.label('"', &"", 19, CodePalette.STRING))
 	message = LineEdit.new()
 	message.max_length = 160
 	message.placeholder_text = "Type your message here"
@@ -87,11 +94,15 @@ func setup(value: GameSession, settings: GameSettings) -> void:
 	message.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	message.add_theme_font_override("font", UITheme.mono_font())
 	expression.add_child(message)
-	expression.add_child(UI.label('")', &"", 19, PaperPal.TEAL_DEEP))
+	expression.add_child(UI.label('"', &"", 19, CodePalette.STRING))
+	expression.add_child(UI.label(")", &"", 19, CodePalette.TEXT))
 	block_body.add_child(expression)
-	_blocks.add_child(UI.dim("The quotation marks hold the words. Change the words inside them and the terminal shows something new.", 16))
+	var comment: Label = UI.label("# The quotation marks hold the words. Change the words inside them and the terminal shows something new.", &"", 15, CodePalette.COMMENT)
+	comment.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_blocks.add_child(comment)
 	editor = CodeEditor.new()
-	editor.custom_minimum_size.y = 225
+	editor.custom_minimum_size.y = 170
+	editor.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	editor.apply_settings(settings)
 	var starter: String = str(session.area.quest("say-hello").get("starter", 'def program(world):\n    print("Hello")'))
 	var existing: String = session.source if session.source != CompanionLesson.STARTER else starter
@@ -99,27 +110,16 @@ func setup(value: GameSession, settings: GameSettings) -> void:
 	_python_custom = bool(session.greeting_editor.get("python_custom", session.greeting_editor.has("python") or session.source != CompanionLesson.STARTER))
 	_last_generated_python = editor.text
 	editor.tooltip_text = 'On line 2, change the words between the quotation marks. Keep the spaces before print.'
-	_paper_code(editor)
-	page.add_child(editor)
+	CodePalette.style(editor)
+	_tablet.content.add_child(editor)
 	editor.run_requested.connect(preview)
 	playback = ProgramPlayback.new()
 	playback.replay_started.connect(func() -> void:
 		if session.has_preview() and is_instance_valid(_stage): _stage.play_speech(_test_lines, true))
 	playback.code.apply_settings(settings)
-	_paper_code(playback.code)
-	page.add_child(playback)
-	page.add_child(UI.label("TERMINAL OUTPUT", &"LabelCaps", 13, PaperPal.TEAL_DEEP))
-	var output_panel := UI.panel(&"PanelInset")
-	_output = RichTextLabel.new()
-	_output.fit_content = true
-	_output.scroll_active = false
-	_output.custom_minimum_size.y = 48
-	_output.add_theme_font_override("normal_font", UITheme.MONO)
-	_output.add_theme_font_size_override("normal_font_size", 17)
-	_output.add_theme_color_override("default_color", PaperPal.INK)
-	_output.text = "No output yet."
-	output_panel.add_child(_output)
-	page.add_child(output_panel)
+	playback.use_screen_look()
+	_tablet.content.add_child(playback)
+	_output = _tablet.output
 	_status = UI.dim("Try a greeting with her name. Test code shows your words; Send message delivers them.", 17)
 	_status.custom_minimum_size.y = 58
 	body.add_child(_status)
@@ -184,29 +184,6 @@ static func _printed_lines(result: Dictionary) -> Array[Dictionary]:
 	return lines
 
 
-static func _paper_code(code: CodeEditor) -> void:
-	for style: String in ["normal", "focus", "read_only"]:
-		code.add_theme_stylebox_override(style, PaperTheme.panel("inset"))
-	for property: String in ["font_color", "font_readonly_color", "caret_color"]:
-		code.add_theme_color_override(property, PaperPal.INK)
-	code.add_theme_color_override("line_number_color", PaperPal.PENCIL)
-	code.add_theme_color_override("current_line_color", Color(PaperPal.TEAL, .08))
-	code.add_theme_color_override("selection_color", Color(PaperPal.TEAL, .22))
-	code.add_theme_color_override("completion_background_color", PaperPal.PAPER_HI)
-	code.add_theme_color_override("completion_existing_color", PaperPal.PAPER_DIM)
-	var syntax := CodeHighlighter.new()
-	syntax.number_color = Color("8e442b")
-	syntax.symbol_color = PaperPal.INK_SOFT
-	syntax.function_color = PaperPal.TEAL_DEEP
-	syntax.member_variable_color = PaperPal.INK
-	for word: String in ApiReference.KEYWORDS: syntax.add_keyword_color(word, Color("79516c"))
-	for word: String in ApiReference.BUILTINS: syntax.add_keyword_color(word, PaperPal.TEAL_DEEP)
-	syntax.add_color_region('"', '"', Color("3c7047"))
-	syntax.add_color_region("'", "'", Color("3c7047"))
-	syntax.add_color_region("#", "", PaperPal.PENCIL, true)
-	code.syntax_highlighter = syntax
-
-
 func _selected_source() -> String:
 	return 'def program(world):\n    print(%s)\n' % JSON.stringify(message.text) if mode == "blocks" else editor.text
 
@@ -222,8 +199,7 @@ func select_mode(next: String, invalidate: bool = true) -> void:
 	_blocks.visible = mode == "blocks"
 	editor.visible = mode == "python"
 	_directions.text = "1 · In the message box, change Hello to Hello, Hotaru!\n2 · Test code shows your words in the room.\n3 · Send message delivers the greeting to Hotaru." if mode == "blocks" else "1 · On line 2, put Hello, Hotaru! between the quotation marks.\n2 · Leave the spaces before print in place.\n3 · Test your words, then Send message to deliver the greeting."
-	_blocks_tab.button_pressed = mode == "blocks"
-	_python_tab.button_pressed = mode == "python"
+	_tablet.select_tab(0 if mode == "blocks" else 1)
 	if invalidate: _edited()
 
 
@@ -240,7 +216,8 @@ func _edited() -> void:
 	session.discard_preview()
 	playback.clear()
 	_test_lines.clear()
-	_output.text = "Changed · test again for a fresh output."
+	_tablet.set_output("Changed · test again for a fresh output.")
+	_tablet.set_state(&"edited")
 	_status.text = "Your edit is saved. Test it before sending."
 	_status.add_theme_color_override("font_color", PaperPal.INK_SOFT)
 
@@ -268,8 +245,12 @@ func _tested(result: Dictionary) -> void:
 		_status.text = str(result.get("reason", "Check this line.")) if bool(result.get("rejected", false)) or str(error.get("kind", "")) == "" else str(advice.title) + "\n" + str(advice.body)
 		_status.add_theme_color_override("font_color", PaperPal.RED_DEEP)
 		if _output.text == "": _output.text = "The program stopped before it displayed anything."
+		_tablet.set_output(_output.text, &"error")
+		_tablet.set_state(&"error")
 		return
 	if _output.text == "": _output.text = "Nothing printed. Try print(\"Hello, Hotaru!\")."
+	_tablet.set_output(_output.text)
+	_tablet.set_state(&"ghost")
 	_status.text = "Test ready. Send message delivers these words to Hotaru." if CompanionLesson.has_voice(session.state, session.completed) else "Test ready. Send message delivers it; a greeting with Hotaru’s name rings her bell."
 	_status.add_theme_color_override("font_color", PaperPal.TEAL_DEEP)
 	if is_instance_valid(_stage):
@@ -286,6 +267,7 @@ func speak() -> void:
 	var was_awake: bool = CompanionLesson.has_voice(session.state, session.completed)
 	if not session.apply_preview(): return
 	playback.clear()
+	_tablet.set_state(&"sent")
 	if is_instance_valid(_stage): _stage.show_output(str(session.last_run.get("stdout", "")), false)
 	if CompanionLesson.has_voice(session.state, session.completed):
 		_status.text = "Hotaru: “I heard that. Send me another message whenever you like.”" if was_awake else "Hotaru: “Oh. Morning. You’re the one in the loft, then? I’m Hotaru.”"

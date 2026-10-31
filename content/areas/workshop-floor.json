@@ -595,6 +595,15 @@
         "turn": 0,
         "height": 0,
         "scale": 1
+      },
+      {
+        "id": "workshop-tender-model",
+        "asset": "robot-tender",
+        "at": [
+          9,
+          7
+        ],
+        "scale": 0.85
       }
     ],
     "stair_flights": [
@@ -777,6 +786,40 @@
       "idle": "AWAITING SLATE",
       "requires": "field-tablet",
       "locked": "A dark glass panel, and a brass-collared socket below it. Nothing you’re carrying fits."
+    }
+  ],
+  "villagers": [
+    {
+      "id": "workshop-tender",
+      "object": "workshop-tender-model",
+      "at": [
+        9,
+        7
+      ],
+      "route": [
+        [
+          9,
+          6
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          9,
+          7
+        ]
+      ],
+      "speed": 0.65,
+      "pause": 3
     }
   ]
 }

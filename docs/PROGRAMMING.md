@@ -134,7 +134,7 @@ A failed run reports the **line**, marks it in the editor, explains the mistake 
 
 ## Limits
 
-The Python sandbox has a 2-second runtime timeout, a 7-second wall-clock backstop, a 96 MiB memory cap and a 32 KiB combined output cap. Source is limited to 16 KiB, returned results to 16 KiB, memory to 2 KiB of small JSON at most four levels deep. Player code receives its job files and a read-only standard library; it cannot reach the host filesystem or network, and it never runs in host Python.
+The Python sandbox has a 2-second runtime timeout, a 7-second wall-clock backstop, a 96 MiB memory cap and a 128 KiB combined output cap. Source is limited to 64 KiB, returned results to 64 KiB (raised from 16 KiB on 2026-10-30 so longer programs and debugger evidence fit), memory to 2 KiB of small JSON at most four levels deep. The output cap stays above the result cap because the framed result travels in the same stdout as the program's printing. Execution evidence also carries the program's own variables: each traced line records the names that changed (short, Python-shaped text such as `Lamp('landing-lamp')`), and the names `program` held when it returned come back as `locals`; both are text only, bounded and validated (`LabProgram.safe_trace`, `safe_names`). Player code receives its job files and a read-only standard library; it cannot reach the host filesystem or network, and it never runs in host Python.
 
 ## Where to look
 

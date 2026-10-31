@@ -21,7 +21,7 @@ signal doorway_requested(house: String)
 signal room_link_requested(id: String)
 
 const SAVE_VERSION: int = 1
-const MAX_SOURCE: int = 16384
+const MAX_SOURCE: int = LabProgram.MAX_SOURCE_BYTES
 const MAX_HISTORY: int = 20
 
 var area: AreaDef
@@ -73,6 +73,8 @@ var _step_binding: String = ""
 var movement_editor: Dictionary = {}
 var greeting_editor: Dictionary = {}
 var workshop_pages: Dictionary = {}
+## Field Notes put away on the field slate stay put away for the rest of the play session (not saved).
+var notes_put_away: bool = false
 ## How long a planned route has waited on a resident standing in the next cell.
 var _route_wait: float = 0.0
 ## Where to turn at the end of a route: the resident walked up to, so the character ends up facing them.
@@ -315,7 +317,7 @@ func run_preview(test_only: bool = false) -> bool:
 	if not proposal.get("ok", false) or not building.ok:
 		var why: String = str(proposal.get("reason", "Unknown command")) if not proposal.get("ok", false) else str(building.reason)
 		var rejected := {"ok": false, "reason": why, "rejected": true,
-			"error": {"kind": "", "message": "", "line": 0}, "stdout": answer.get("stdout", ""), "trials":trials, "trace":answer.get("trace", []), "commands":commands}
+			"error": {"kind": "", "message": "", "line": 0}, "stdout": answer.get("stdout", ""), "trials":trials, "trace":answer.get("trace", []), "locals":answer.get("locals", {}), "commands":commands}
 		report("The world rejected this change.", rejected.reason, true)
 		run_finished.emit(rejected)
 		return false
@@ -333,7 +335,7 @@ func run_preview(test_only: bool = false) -> bool:
 	changes.append_array(building.changes)
 	report("Preview ready · %d changes · %d ms" % [changes.size(), int(answer.get("wall_ms", 0))], "\n".join(PackedStringArray(changes)))
 	preview_changed.emit(true)
-	run_finished.emit({"ok": true, "changes": changes, "stdout": str(answer.get("stdout", "")).strip_edges(), "wall_ms": int(answer.get("wall_ms", 0)), "trials":trials, "trace":answer.get("trace", []), "commands":commands})
+	run_finished.emit({"ok": true, "changes": changes, "stdout": str(answer.get("stdout", "")).strip_edges(), "wall_ms": int(answer.get("wall_ms", 0)), "trials":trials, "trace":answer.get("trace", []), "locals":answer.get("locals", {}), "commands":commands})
 	return true
 
 

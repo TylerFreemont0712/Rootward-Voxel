@@ -26,3 +26,8 @@ const GREEN: Color = Color("3f7a4a")
 const DISABLED: Color = Color("cfc6b4")
 const GRID: Color = Color(0.184, 0.549, 0.549, 0.12)
 const SHADOW: Color = Color(0.17, 0.18, 0.32, 0.26)
+## A proposal is blue, a fact is warm: everything Test shows (speech, lamps, gates, routes) is drawn in these.
+const GHOST: Color = Color("4aa8ff")
+const GHOST_DEEP: Color = Color("2a6fb8")
+const GHOST_FILL: Color = Color("e2efff")
+const GHOST_INK: Color = Color("16395f")

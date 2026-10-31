@@ -25,10 +25,12 @@ var _finish_label: String = "Back to the workshop"
 var _narrator: String = "The workshop"
 var _paper: StyleBox
 
-## The one window every story page uses, drawn at the same size and place for every page: about 69% of the
-## screen wide and 22% high, resting near the bottom. Name and text sit on the left, the choices (or Continue)
-## on the right, and nothing in it changes size with the words. Portraits stand behind its top corners.
-const WINDOW_WIDTH: float = 0.69
+## The one window every story page uses, drawn at the same size and place for every page: from just right of the
+## HUD buttons to the screen's right margin, 22% of the screen high, resting near the bottom. Name and text sit on
+## the left, the choices (or Continue) on the right, and nothing in it changes size with the words. Portraits
+## stand behind its top corners.
+const HUD_CLEAR_LEFT: float = 0.145
+const EDGE_MARGIN: float = 22.0
 const WINDOW_HEIGHT: float = 0.225
 
 var _frame: Control
@@ -117,11 +119,14 @@ func open() -> void:
 
 func _layout() -> void:
 	if size.x <= 0 or _frame == null: return
-	var width: float = minf(clampf(size.x * WINDOW_WIDTH, 620.0, 1560.0), size.x - 32.0)
+	var left: float = clampf(size.x * HUD_CLEAR_LEFT, 190.0, 260.0)
+	var right: float = size.x - EDGE_MARGIN
+	if right - left < 620.0: left = maxf(16.0, right - 620.0)
+	var width: float = right - left
 	var height: float = clampf(size.y * WINDOW_HEIGHT, 188.0, 300.0)
 	card.custom_minimum_size = Vector2(width, height)
 	card.size = Vector2(width, height)
-	card.position = Vector2(roundf((size.x - width) * .5), roundf(size.y - height - maxf(18.0, size.y * .03)))
+	card.position = Vector2(roundf(left), roundf(size.y - height - maxf(18.0, size.y * .03)))
 	var pad: float = clampf(width * .022, 20.0, 34.0)
 	var side: float = clampf(width * .34, 250.0, 480.0)
 	var column: float = width - side - pad * 3.0
@@ -148,7 +153,7 @@ func _layout() -> void:
 	_portrait.size = portrait_size
 	_player_portrait.size = portrait_size
 	_portrait.position = Vector2(card.position.x - portrait_size.x * .25, card.position.y - portrait_size.y + 28.0)
-	_player_portrait.position = Vector2(card.position.x + width - portrait_size.x * .75, card.position.y - portrait_size.y + 28.0)
+	_player_portrait.position = Vector2(minf(card.position.x + width - portrait_size.x * .75, size.x - portrait_size.x - 6.0), card.position.y - portrait_size.y + 28.0)
 
 func _show_page(page: Dictionary) -> void:
 	_page = page

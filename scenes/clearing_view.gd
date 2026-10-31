@@ -66,8 +66,10 @@ var _quest_marker: Node3D
 var _committed: Dictionary = {}
 var _art_transform: Transform3D = Transform3D.IDENTITY
 var _elapsed: float = 0.0
-var _ghost_material: StandardMaterial3D
-var _removed_material: StandardMaterial3D
+var _ghost_material: ShaderMaterial
+var _ghost_edge_material: ShaderMaterial
+var _removed_material: ShaderMaterial
+var _removed_edge_material: ShaderMaterial
 var _sun: DirectionalLight3D
 var _environment: Environment
 var _lamp_lights: Array[OmniLight3D] = []
@@ -115,13 +117,19 @@ func _make_materials() -> void:
 	_materials["lit"] = glow
 	_part_materials = _materials.duplicate()
 	_part_materials.merge(SurfaceMaterials.build(PALETTE, false), true)
-	_ghost_material = StandardMaterial3D.new()
-	_ghost_material.albedo_color = Color(0.47, 0.9, 0.85, 0.55)
-	_ghost_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	_ghost_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	_ghost_material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	_removed_material = _ghost_material.duplicate() as StandardMaterial3D
-	_removed_material.albedo_color = Color(0.96, 0.56, 0.45, 0.6)
+	# A proposal is a pulsing blue ghost; what a program would take away is the same ghost in coral.
+	_ghost_material = _ghost_shader_material(PaperPal.GHOST, false)
+	_ghost_edge_material = _ghost_shader_material(PaperPal.GHOST, true)
+	_removed_material = _ghost_shader_material(Color(0.96, 0.56, 0.45), false)
+	_removed_edge_material = _ghost_shader_material(Color(0.96, 0.56, 0.45), true)
+
+
+func _ghost_shader_material(tint: Color, edges: bool) -> ShaderMaterial:
+	var material := ShaderMaterial.new()
+	material.shader = preload("res://art/ghost.gdshader")
+	material.set_shader_parameter("tint", tint)
+	material.set_shader_parameter("edges", edges)
+	return material
 
 
 func _make_lighting() -> void:
@@ -1204,7 +1212,7 @@ func player_cells() -> Dictionary:
 
 ## The cells residents take up, where the player may not step (none where nobody lives).
 func resident_cells() -> Dictionary:
-	return VillageLife.occupied(villagers.life) if villagers != null else {}
+	return VillageLife.occupied(villagers.life, true) if villagers != null else {}
 
 
 ## The player's current screen position in the viewport, for placing speech and markers.
@@ -1331,9 +1339,13 @@ func _set_fixture_preview(root: Node3D, lit: bool, provisional: bool) -> void:
 	if provisional:
 		var key: String = "preview_lit" if lit else "preview_dark"
 		if not root.has_meta(key):
+			# The glass turns into a blue ghost of itself: a proposal, not yet a lamp that is really on.
 			var preview := material.duplicate() as StandardMaterial3D
 			preview.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-			preview.albedo_color.a = .65
+			preview.albedo_color = preview.albedo_color.lerp(PaperPal.GHOST, .55)
+			preview.albedo_color.a = .7
+			if preview.emission_enabled:
+				preview.emission = PaperPal.GHOST
 			root.set_meta(key, preview)
 		material = root.get_meta(key) as Material
 	(root.get_meta("glass") as MeshInstance3D).material_override = material
@@ -1435,6 +1447,32 @@ func _ghost_box(at: Vector3, size: Vector3, removing: bool = false) -> void:
 	var mesh := _mesh_box(_ghost, at, size, "cream")
 	mesh.material_override = _removed_material if removing else _ghost_material
 	mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	var outline := MeshInstance3D.new()
+	outline.mesh = _box_edges(size)
+	outline.material_override = _removed_edge_material if removing else _ghost_edge_material
+	outline.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	mesh.add_child(outline)
+
+
+## The twelve edges of a box, as lines, so a proposed shape has an outline as well as a fill.
+func _box_edges(size: Vector3) -> ArrayMesh:
+	var h: Vector3 = size * 0.5
+	var corners: Array[Vector3] = []
+	for z: float in [-h.z, h.z]:
+		for y: float in [-h.y, h.y]:
+			for x: float in [-h.x, h.x]:
+				corners.append(Vector3(x, y, z))
+	var pairs: Array[Vector2i] = [Vector2i(0, 1), Vector2i(2, 3), Vector2i(4, 5), Vector2i(6, 7), Vector2i(0, 2), Vector2i(1, 3), Vector2i(4, 6), Vector2i(5, 7), Vector2i(0, 4), Vector2i(1, 5), Vector2i(2, 6), Vector2i(3, 7)]
+	var points := PackedVector3Array()
+	for pair: Vector2i in pairs:
+		points.append(corners[pair.x])
+		points.append(corners[pair.y])
+	var arrays: Array = []
+	arrays.resize(Mesh.ARRAY_MAX)
+	arrays[Mesh.ARRAY_VERTEX] = points
+	var mesh := ArrayMesh.new()
+	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_LINES, arrays)
+	return mesh
 
 
 func set_selection(cell: Vector2i) -> void:

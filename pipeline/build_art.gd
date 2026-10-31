@@ -1,11 +1,13 @@
 extends SceneTree
-## The selected character and application-icon build. Authored source stays unchanged.
+## The selected character, application-icon and interface-frame build. Authored source stays unchanged.
 
 const CATALOG: String = "res://pipeline/art-catalog.json"
 const Contract := preload("res://pipeline/character_contract.gd")
 const SkinBuilder := preload("res://pipeline/frame_skin_builder.gd")
 const PortraitBuilder := preload("res://pipeline/portrait_builder.gd")
 const DetailTextures := preload("res://pipeline/detail_texture_builder.gd")
+const InterfaceFrames := preload("res://pipeline/interface_frame_builder.gd")
+const Phantoms := preload("res://pipeline/phantom_builder.gd")
 
 
 func _initialize() -> void:
@@ -31,6 +33,7 @@ func _run() -> void:
 	var destination: String = spec.runtime_sheet
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(destination.get_base_dir()))
 	if "--prepare" in OS.get_cmdline_user_args():
+		if not Phantoms.prepare(catalog.get("phantoms", {})): quit(1); return
 		for companion: Dictionary in catalog.get("companions",{}).values():
 			var origin: Variant=JSON.parse_string(FileAccess.get_file_as_string("res://"+str(companion.provenance)))
 			if not origin is Dictionary or FileAccess.get_sha256(companion.source)!=str(origin.get("sha256","")):
@@ -56,7 +59,7 @@ func _run() -> void:
 		if not DetailTextures.prepare(catalog.get("detail_textures", {})):
 			quit(1)
 			return
-		if not _prepare_icon(catalog) or not PortraitBuilder.prepare(catalog.get("portraits", {})):
+		if not _prepare_icon(catalog) or not InterfaceFrames.prepare(catalog.get("interface_frames", {})) or not PortraitBuilder.prepare(catalog.get("portraits", {})):
 			quit(1)
 			return
 		for portraits: Dictionary in catalog.get("portrait_libraries", []):
@@ -73,6 +76,7 @@ func _run() -> void:
 		quit()
 		return
 	if "--configure-import" in OS.get_cmdline_user_args():
+		if not Phantoms.configure(catalog.get("phantoms", {})): quit(1); return
 		if not DetailTextures.configure(catalog.get("building_textures", {})):
 			quit(1)
 			return
@@ -83,7 +87,7 @@ func _run() -> void:
 		if not DetailTextures.configure(catalog.get("detail_textures", {})):
 			quit(1)
 			return
-		if not PortraitBuilder.configure(catalog.get("portraits", {})):
+		if not PortraitBuilder.configure(catalog.get("portraits", {})) or not InterfaceFrames.configure(catalog.get("interface_frames", {})):
 			quit(1)
 			return
 		for portraits: Dictionary in catalog.get("portrait_libraries", []):
@@ -199,6 +203,7 @@ func _run() -> void:
 		return
 	var file := FileAccess.open(spec.manifest, FileAccess.WRITE)
 	file.store_string(JSON.stringify(metadata, "  ") + "\n")
+	if not Phantoms.build(catalog.get("phantoms", {}), metadata, frames): quit(1); return
 	print("Built ", spec.id, ": four diagonal walks, ", spec.walk_columns.size(), " poses each; anchored idle. Source SHA-256 ", metadata.source_sha256)
 	quit()
 

@@ -1,0 +1,137 @@
+extends RefCounted
+## Three simple, anonymous silhouette masks, built only by scripts/art.sh. Source geometry stays editable JSON.
+
+const BUILDER := "res://pipeline/phantom_builder.gd"
+
+static func prepare(spec: Dictionary) -> bool:
+	if spec.is_empty(): return true
+	var source: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(spec.source))
+	var motion: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://pipeline/character-template.json")).settings
+	var directory: String = str(spec.runtime)
+	if not directory.begins_with("res://assets/characters/phantoms") or ".." in directory: return false
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(directory))
+	var manifest: Dictionary = {"schema":1, "family":source.family, "source":spec.source,
+		"source_sha256":FileAccess.get_sha256(spec.source), "builder_sha256":FileAccess.get_sha256(BUILDER),
+		"motion_sha256":FileAccess.get_sha256("res://pipeline/character-template.json"),
+		"opacity":source.opacity, "gray":source.gray, "profiles":{}}
+	for id: String in source.profiles:
+		var sheet := Image.create(128 * 9, 160 * 4, false, Image.FORMAT_RGBA8)
+		for row: int in range(4):
+			for pose: int in range(9):
+				var frame: Image = _figure(source.profiles[id], pose, row)
+				sheet.blit_rect(frame, Rect2i(0,0,128,160), Vector2i(pose * 128, row * 160))
+		var path: String = directory.path_join(id + ".png")
+		if sheet.save_png(ProjectSettings.globalize_path(path)) != OK: return false
+		manifest.profiles[id] = {"atlas":path, "atlas_sha256":FileAccess.get_sha256(path),
+			"frames":directory.path_join(id + ".tres"), "pixel_size":float(source.profiles[id].height) / (137.0 if id == "woman" else 138.0),
+			"idle":motion.idle.duplicate(true), "fps":motion.fps, "animations":{}}
+		manifest.profiles[id].idle.blink_directions = []
+	var file := FileAccess.open(spec.manifest, FileAccess.WRITE)
+	if file == null: return false
+	file.store_string(JSON.stringify(manifest, "  ") + "\n")
+	print("Prepared three anonymous phantom silhouette atlases.")
+	return true
+
+
+static func configure(spec: Dictionary) -> bool:
+	if spec.is_empty(): return true
+	for id: String in ["man", "woman", "child"]:
+		var path: String = str(spec.runtime).path_join(id + ".png.import")
+		var config := ConfigFile.new()
+		if config.load(path) != OK: return false
+		config.set_value("params", "compress/mode", 0)
+		config.set_value("params", "mipmaps/generate", true)
+		config.set_value("params", "process/fix_alpha_border", true)
+		config.set_value("params", "detect_3d/compress_to", 0)
+		if config.save(path) != OK: return false
+	return true
+
+
+static func build(spec: Dictionary) -> bool:
+	if spec.is_empty(): return true
+	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(spec.manifest))
+	if manifest.source_sha256 != FileAccess.get_sha256(spec.source) or manifest.builder_sha256 != FileAccess.get_sha256(BUILDER): return false
+	for id: String in manifest.profiles:
+		var profile: Dictionary = manifest.profiles[id]
+		var atlas := load(profile.atlas) as Texture2D
+		if atlas == null or profile.atlas_sha256 != FileAccess.get_sha256(profile.atlas): return false
+		var frames := SpriteFrames.new()
+		frames.remove_animation("default")
+		for row: int in range(4):
+			var direction: String = ["se", "sw", "ne", "nw"][row]
+			for state: String in ["walk", "idle"]:
+				var animation: String = state + "_" + direction
+				frames.add_animation(animation)
+				frames.set_animation_speed(animation, float(profile.fps) if state == "walk" else 1.0)
+				frames.set_animation_loop(animation, state == "walk")
+				profile.animations[animation] = []
+				for pose: int in (range(8) if state == "walk" else [8]):
+					var texture := AtlasTexture.new()
+					texture.atlas = atlas
+					texture.region = Rect2(pose * 128, row * 160, 128, 160)
+					texture.filter_clip = true
+					frames.add_frame(animation, texture)
+					profile.animations[animation].append({"region":[pose * 128,row * 160,128,160], "anchor":[64,150]})
+		if ResourceSaver.save(frames, profile.frames) != OK: return false
+	var file := FileAccess.open(spec.manifest, FileAccess.WRITE)
+	if file == null: return false
+	file.store_string(JSON.stringify(manifest, "  ") + "\n")
+	print("Built phantom man, woman and child: four views and eight walking keys, shared gait timing.")
+	return true
+
+
+static func _figure(shape: Dictionary, pose: int, direction: int) -> Image:
+	var image := Image.create(256, 320, false, Image.FORMAT_RGBA8)
+	var stride: float = 0.0 if pose == 8 else sin(float(pose) * TAU / 8.0)
+	var rear: bool = direction >= 2
+	var lean: float = -2.0 if rear else 2.0
+	# Rounded legs/arms and a continuous torso. Everything is a single flat mask, with no facial or outfit detail.
+	for side: int in range(2):
+		var sign_: float = -1.0 if side == 0 else 1.0
+		var hip := Vector2(float(shape.hips[side][0]), float(shape.hips[side][1]))
+		var swing: float = stride * sign_
+		var knee := Vector2(hip.x + swing * 7.0, 123.0 - absf(swing) * 2.0)
+		var foot := Vector2(hip.x + swing * 13.0 + lean, 146.0 - maxf(0.0, -swing) * 5.0)
+		_capsule(image, hip, knee, float(shape.leg_width))
+		_capsule(image, knee, foot, float(shape.leg_width) - 1.0)
+		_ellipse(image, foot + Vector2(2.0,0.0), Vector2(7.0,4.0))
+		var shoulder := Vector2(float(shape.shoulders[side][0]), float(shape.shoulders[side][1]))
+		var elbow := shoulder + Vector2(sign_ * 4.0 - swing * 5.0, 17.0)
+		var hand := shoulder + Vector2(sign_ * 4.0 - swing * 9.0, 32.0)
+		_capsule(image, shoulder, elbow, float(shape.arm_width))
+		_capsule(image, elbow, hand, float(shape.arm_width) - 1.0)
+	_polygon(image, shape.body)
+	if shape.has("hair"): _polygon(image, shape.hair)
+	var head: Array = shape.head
+	_ellipse(image, Vector2(float(head[0]) + lean, float(head[1])), Vector2(float(head[2]), float(head[3])))
+	_capsule(image, Vector2(64,47), Vector2(64,67), 11.0)
+	image.resize(128, 160, Image.INTERPOLATE_LANCZOS)
+	if direction in [1,3]: image.flip_x()
+	return image
+
+
+static func _ellipse(image: Image, centre: Vector2, radius: Vector2) -> void:
+	var c: Vector2 = centre * 2.0
+	var r: Vector2 = radius * 2.0
+	for y: int in range(maxi(0, floori(c.y-r.y)), mini(320, ceili(c.y+r.y)+1)):
+		for x: int in range(maxi(0, floori(c.x-r.x)), mini(256, ceili(c.x+r.x)+1)):
+			if ((Vector2(x,y)-c)/r).length_squared() <= 1.0: image.set_pixel(x,y,Color.WHITE)
+
+
+static func _capsule(image: Image, from: Vector2, to: Vector2, width: float) -> void:
+	var count: int = maxi(1, ceili(from.distance_to(to) / 2.0))
+	for step: int in range(count+1): _ellipse(image, from.lerp(to,float(step)/count), Vector2.ONE * width * 0.5)
+
+
+static func _polygon(image: Image, raw: Array) -> void:
+	var points := PackedVector2Array()
+	for at: Array in raw: points.append(Vector2(float(at[0]),float(at[1])) * 2.0)
+	for y: int in range(320):
+		var crossings: Array[float] = []
+		for edge: int in range(points.size()):
+			var a: Vector2 = points[edge]
+			var b: Vector2 = points[(edge+1)%points.size()]
+			if (a.y <= y and b.y > y) or (b.y <= y and a.y > y): crossings.append(a.x + (float(y)-a.y)*(b.x-a.x)/(b.y-a.y))
+		crossings.sort()
+		for index: int in range(0, crossings.size()-1, 2):
+			for x: int in range(maxi(0,ceili(crossings[index])), mini(256,floori(crossings[index+1])+1)): image.set_pixel(x,y,Color.WHITE)

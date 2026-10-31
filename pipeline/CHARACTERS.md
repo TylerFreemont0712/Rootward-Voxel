@@ -106,3 +106,7 @@ A frame skin is a complete appearance using common painted poses. It does not au
 Rejected cutout tools, rig resources and runtime samples are archived under `art/source/archive/rejected-cutout/`; superseded interpolation tooling is under `art/source/archive/painted-interpolation/`. They are excluded from import and absent from active build commands. Earlier accepted painted source versions remain provenance history.
 
 Normal builds and play do not need imagegen, ComfyUI, Blender or a network service. Review [the project handoff](../docs/PROJECT_HANDOFF.md) and [review guide](REVIEW.md) before expanding content.
+
+## Anonymous painted crowd
+
+The current Sparks crowd has three gray appearances derived from existing complete atlases, selected by `art/source/characters/phantoms/v2/appearances.json` in the art catalog. The man uses `sparks_bram`, the woman `sparks_mira`, and the child the approved boy at 96% width / 88% height. The offline `phantom_builder.gd` preserves exact source alpha and inherits all SpriteFrames, timing, anchors and idle metadata from this template. Only RGB is flattened; the runtime presenter applies gray at 96% opacity. `scripts/art.sh` builds these artifacts as part of the existing pipeline. They are ambient presentation profiles, not selectable player skins. No original paintings or skin settings change. The rejected geometric v1 study stays in source history and is never selected. See [the crowd and tram behavior](VILLAGE.md#sparks-ambient-inhabitants).

@@ -14,8 +14,12 @@ func _init() -> void:
 func _ready() -> void:
 	get_viewport().size_changed.connect(fit_drawer)
 
+## How wide the drawer opens; a drawer that holds something larger (the field slate) asks for more.
+func _wanted_width() -> float:
+	return clampf(get_viewport_rect().size.x * .38, 520.0, 620.0)
+
 func fit_drawer() -> void:
-	drawer_width = clampf(get_viewport_rect().size.x * .38, 520.0, 620.0)
+	drawer_width = _wanted_width()
 	set_anchors_and_offsets_preset(Control.PRESET_RIGHT_WIDE)
 	offset_top = MARGIN
 	offset_bottom = -MARGIN

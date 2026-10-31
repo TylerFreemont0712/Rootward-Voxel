@@ -129,7 +129,9 @@ func _refusals() -> void:
 	var plain: Dictionary = source.document.duplicate(true)
 	plain.interior.erase("outdoor")
 	plain.interior.erase("life")
-	_check(AreaDef.parse(plain, source.assets, source.quests).ok, "Outdoor light and street life are optional")
+	_check(not AreaDef.parse(plain, source.assets, source.quests).ok, "Passenger service cannot silently lose its tram")
+	plain.villagers = (plain.villagers as Array).filter(func(person: Dictionary) -> bool: return not person.has("arrival"))
+	_check(AreaDef.parse(plain, source.assets, source.quests).ok, "Outdoor light and street life are optional when no passengers depend on the tram")
 
 
 func _art() -> void:

@@ -21,6 +21,15 @@ def resource_exists(value):
 art = json.loads((root / "pipeline/art-catalog.json").read_text())
 for key in ("template", "source", "provenance", "prompt", "runtime_sheet", "frames", "manifest"):
     check(resource_exists(art["character"][key]), f"Missing selected character {key}")
+# Painted interface frames: the authored source is unchanged and the built frame and manifest match it.
+for frame_id, frame in art.get("interface_frames", {}).items():
+    frame_source = root / frame["source"].removeprefix("res://")
+    check(frame_source.is_file() and hashlib.sha256(frame_source.read_bytes()).hexdigest() == frame["source_sha256"], f"Interface frame source changed: {frame_id}")
+    check(resource_exists(frame["provenance"]), f"Missing interface frame provenance: {frame_id}")
+    check(resource_exists(frame["runtime"]) and resource_exists(frame["manifest"]), f"Interface frame not built: {frame_id}. Run scripts/art.sh.")
+    built = json.loads((root / frame["manifest"].removeprefix("res://")).read_text())
+    runtime_bytes = (root / frame["runtime"].removeprefix("res://")).read_bytes()
+    check(built["source_sha256"] == frame["source_sha256"] and built["runtime_sha256"] == hashlib.sha256(runtime_bytes).hexdigest(), f"Interface frame build is stale: {frame_id}. Run scripts/art.sh.")
 skins = json.loads((root / "pipeline/character-catalog.json").read_text())
 check(skins["mode"] == "shared_frame_skins", "Inactive pipeline selected")
 check(resource_exists(skins["runtime_library"]), "Compiled skin library missing")

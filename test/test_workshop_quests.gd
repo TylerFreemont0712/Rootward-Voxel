@@ -166,6 +166,11 @@ func _play() -> void:
 	game._process(0)
 	_check(game.session.player_cell() == Vector2i(5,11) and game.movement_lesson is WorkshopJobsJournal and game.movement_lesson._page == "landing-light" and game.session.state.terminal_links.is_empty(), "Walking to the lantern opens its job page without linking the zone's screen")
 	_check((game.movement_lesson as WorkshopJobsJournal)._pages.item_count == 1, "Beside the lantern only the lantern's page is offered")
+	var slate := game.movement_lesson as WorkshopJobsJournal
+	_check(slate._tablet.link_kind == TabletScreen.Link.WIRELESS and is_instance_valid(game._slate_link) and not game._slate_link.wired, "Beside a single fitting the slate pairs over the air, and the room shows the signal")
+	var pad: Rect2 = slate._notepad.get_global_rect()
+	var dock: Rect2 = Rect2(Vector2(game.size.x - slate.drawer_width - SideDrawer.MARGIN, 0), Vector2(slate.drawer_width, game.size.y))
+	_check(pad.position.x < dock.position.x and pad.end.x > dock.position.x and pad.end.y > game.size.y * .9 and slate._notepad.current() == &"job", "The notepad is clipped to the slate's lower end, open at the job")
 	await shot("03c-connected-terminal")
 	var notes:=game.movement_lesson as WorkshopJobsJournal
 	await notes.preview()
@@ -194,6 +199,7 @@ func _play() -> void:
 	notes.apply_routine()
 	_check(game.session.completed.has("landing-light") and game.session.state.lamps["landing-lamp"] and _lamp_light("landing-lamp").visible,"Applying the tested routine lights the real fixture and completes the job")
 	_check(game._modals.is_empty(),"The completion conversation waits until the player leaves the editor")
+	_check(notes._done.visible and not notes._run.visible and not notes._apply.visible, "A finished job offers one plain key: put the slate away and carry on")
 	game.close_notebook(true)
 	game._refresh_interaction()
 	var lit:=game._modals[0] as WorkshopScene
@@ -211,6 +217,15 @@ func _play() -> void:
 	_check(game.session.state.terminal_links.has("workshop-terminal") and game.session.player_cell() == Vector2i(1,2), "Standing at the wall screen with the tablet links the room's zone")
 	notes=game.movement_lesson as WorkshopJobsJournal
 	_check(notes._page=="morning-round" and notes.editor.text.contains("lamps[0]"),"The screen opens the distinct round starter")
+	_check(notes._tablet.link_kind == TabletScreen.Link.WIRED and is_instance_valid(game._slate_link) and game._slate_link.wired, "At a zone's screen the slate is plugged in, and its cord runs to the socket")
+	var reserve: float = notes.extra_reserve()
+	notes._tuck(true)
+	_check(notes.extra_reserve() == 0.0 and not notes._notepad.put_away.visible and reserve > 0.0, "Put away tucks the notes down and gives the room their space")
+	notes._notepad.select(&"hints")
+	_check(not notes._tucked and not game.session.notes_put_away and notes._notepad.put_away.visible, "Any sticky brings the notes back")
+	notes._notepad.select(&"job")
+	_check(notes.go_to_definition("lamps") and notes.editor.get_caret_line() == int(CodeLookup.definition(notes.editor.text, "lamps").line) and notes.editor.get_selected_text() == "lamps", "Going to a variable's definition selects it where the program sets it")
+	_check(notes._devices.get_child_count() == 4 and notes._tablet._tabs.get_child_count() == 2, "The slate lists the zone's three devices and a file tab for each reached page")
 	_check(_has_text(notes, "temporary name") and _has_text(notes, "for lamp in lamps:"), "The loop guide explains the name and shows a concrete worked example")
 	await shot("05b-loop-guide")
 	await notes.preview()
@@ -224,6 +239,7 @@ func _play() -> void:
 	_check(Quests.main_arc_done(game.area,game.session.completed) and game.session.state.lamps.values().all(func(value: bool) -> bool:return value),"Applying the loop completes the connected chapter against actual light state")
 	_check(game.session.workshop_pages["landing-light"]==LIGHT and game.session.workshop_pages["morning-round"]==ROUND and game.session.greeting_editor.python==CompanionLesson.STARTER,"The greeting and both job drafts retain their separate sources")
 	game.close_notebook(true);game._refresh_interaction()
+	_check(game._slate_link == null and is_equal_approx(game.view.zoom(), game._indoor_zoom(0.0)), "Putting the slate down unplugs it and returns the room's zoom")
 	var ending:=game._modals[0] as WorkshopScene
 	_drain(ending,1)
 	_check(game._dialogue_read["workshop-scenes"].has("round-ready"),"The final reaction and the next complaint have a saved reading boundary")
@@ -319,6 +335,7 @@ func _check(ok: bool, message: String) -> void:
 
 func _has_text(node: Node, value: String) -> bool:
 	if node is Label and (node as Label).text.contains(value): return true
+	if node is TextEdit and (node as TextEdit).text.contains(value): return true
 	for child: Node in node.get_children():
 		if _has_text(child, value): return true
 	return false

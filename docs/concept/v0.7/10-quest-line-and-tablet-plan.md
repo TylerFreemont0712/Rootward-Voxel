@@ -79,6 +79,8 @@ Each slice is small and reviewable, runs in Godot at gameplay camera scale, and 
 
 ### Slice 1 — Tablet screen, VS Code editor, ghost style
 
+**Status: built 2026-10-30, awaiting the user's review** ([review](../../../pipeline/reviews/2026-10-30-tablet-screen-and-ghost-text.md)). One difference from the text below: a previewed lamp still lights its fixture at reduced strength; "does not light the room" lands with slice 3. The user also asked, mid-slice, for the lower-right controls hint to go and for the portrait chat window to run to the right edge; both are done.
+
 **What the user sees.** The code surface becomes a device. Instructions stay on paper, because paper is Nell's voice. Code is on glass, because glass is the machine.
 
 - **Two skins of one component** (`ui/tablet_screen.gd`, new). *Desk terminal* for /00: cream-and-teal casing with a recessed screen, matching the loft computer. *Field slate* for job pages: dark enamel bezel, brass cord and plug at the top edge, a link lamp reading `CONNECTED · workshop`. Before the slate is picked up, /00 uses the desk terminal; after, jobs use the slate.

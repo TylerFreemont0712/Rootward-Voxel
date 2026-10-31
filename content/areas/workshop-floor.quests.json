@@ -72,16 +72,21 @@
         "Stand beside the stair lantern with your tablet and press F to open its code. Code reaches only what you are standing beside.",
         "The ticket gives the lantern’s address: landing-lamp. The relay is sound; this routine decides whether it is on.",
         "world.lamp(\"landing-lamp\") finds that lamp. set_lit(True) switches it on; False switches it off.",
-        "Test shows the proposed light in the workshop. Apply routine keeps the tested change."
+        "Debug runs the routine as a ghost in the workshop. Apply routine keeps what you debugged."
       ],
       "starter": [
+        "# landing_light.py",
+        "# The stair lantern. New relay, old routine.",
+        "",
         "def program(world):",
         "    lamp = world.lamp(\"landing-lamp\")",
+        "",
+        "    # TODO: it still asks for the lantern off.",
         "    lamp.set_lit(False)"
       ],
       "hints": [
         "The starter tells the lamp to stay off. Look at the value inside set_lit(...).",
-        "Use True to request light, then Test and Apply routine."
+        "Use True to request light, then Debug and Apply routine."
       ],
       "focus": {
         "at": [
@@ -114,8 +119,14 @@
         "Replace the single-item instruction with a loop over the list. Your earlier stair-light work stays saved on its own page."
       ],
       "starter": [
+        "# morning_round.py",
+        "# Nell's opening round, from her card.",
+        "",
         "def program(world):",
-        "    lamps = world.zone(\"workshop\").lamps",
+        "    workshop = world.zone(\"workshop\")",
+        "    lamps = workshop.lamps    # three on the card",
+        "",
+        "    # TODO: only the first lamp gets lit.",
         "    lamps[0].set_lit(True)"
       ],
       "hints": [

@@ -46,7 +46,7 @@ func setup(game_session: GameSession, game_settings: GameSettings) -> void:
 	session.quest_completed.connect(_on_quest_completed)
 	session.toast.connect(show_toast)
 	settings.changed.connect(func(key: String) -> void:
-		if key == "show_controls":
+		if key == "show_controls" and _controls != null:
 			_controls.visible = bool(settings.get_value("show_controls")))
 	_refresh()
 
@@ -57,12 +57,19 @@ func set_right_inset(pixels: float) -> void:
 	tween.tween_method(func(value: float) -> void:
 		_right_inset = value
 		_stage.offset_right = -value
-		_controls.offset_right = -22.0 - value, _right_inset, pixels, 0.28)
+		_move_controls(value), _right_inset, pixels, 0.28)
+
+
+## A journey whose HUD has no controls hint (Sparks) leaves `_controls` unset.
+func _move_controls(inset: float) -> void:
+	if _controls != null:
+		_controls.offset_right = -22.0 - inset
 
 
 func set_notebook_open(open: bool) -> void:
 	_notebook_button.button_pressed = open
-	_controls.visible = bool(settings.get_value("show_controls")) and not open
+	if _controls != null:
+		_controls.visible = bool(settings.get_value("show_controls")) and not open
 
 
 func show_toast(text: String) -> void:
