@@ -1,0 +1,226 @@
+{
+  "schema": 1,
+  "family": "phantom_silhouettes_v1",
+  "cell": [
+    128,
+    160
+  ],
+  "anchor": [
+    64,
+    150
+  ],
+  "opacity": 0.74,
+  "gray": 0.24,
+  "description": "Three deliberately anonymous code-drawn silhouette placeholders: broad-shouldered man, bob-haired woman in a plain skirt, smaller round-headed child. No face, clothing detail, hats or character identity.",
+  "profiles": {
+    "man": {
+      "height": 1.45,
+      "head": [
+        66,
+        32,
+        16,
+        20
+      ],
+      "body": [
+        [
+          49,
+          53
+        ],
+        [
+          73,
+          51
+        ],
+        [
+          80,
+          63
+        ],
+        [
+          77,
+          95
+        ],
+        [
+          53,
+          99
+        ],
+        [
+          46,
+          83
+        ]
+      ],
+      "hips": [
+        [
+          57,
+          94
+        ],
+        [
+          69,
+          94
+        ]
+      ],
+      "shoulders": [
+        [
+          49,
+          59
+        ],
+        [
+          76,
+          57
+        ]
+      ],
+      "leg_width": 11,
+      "arm_width": 9
+    },
+    "woman": {
+      "height": 1.43,
+      "head": [
+        66,
+        34,
+        15,
+        19
+      ],
+      "hair": [
+        [
+          49,
+          29
+        ],
+        [
+          53,
+          18
+        ],
+        [
+          65,
+          13
+        ],
+        [
+          76,
+          19
+        ],
+        [
+          82,
+          34
+        ],
+        [
+          80,
+          56
+        ],
+        [
+          69,
+          54
+        ],
+        [
+          55,
+          52
+        ],
+        [
+          48,
+          42
+        ]
+      ],
+      "body": [
+        [
+          54,
+          54
+        ],
+        [
+          73,
+          54
+        ],
+        [
+          73,
+          77
+        ],
+        [
+          85,
+          111
+        ],
+        [
+          47,
+          111
+        ],
+        [
+          54,
+          79
+        ]
+      ],
+      "hips": [
+        [
+          57,
+          104
+        ],
+        [
+          69,
+          104
+        ]
+      ],
+      "shoulders": [
+        [
+          52,
+          59
+        ],
+        [
+          75,
+          58
+        ]
+      ],
+      "leg_width": 9,
+      "arm_width": 8
+    },
+    "child": {
+      "height": 0.98,
+      "head": [
+        65,
+        40,
+        20,
+        23
+      ],
+      "body": [
+        [
+          51,
+          64
+        ],
+        [
+          75,
+          63
+        ],
+        [
+          79,
+          77
+        ],
+        [
+          76,
+          103
+        ],
+        [
+          52,
+          104
+        ],
+        [
+          47,
+          87
+        ]
+      ],
+      "hips": [
+        [
+          57,
+          100
+        ],
+        [
+          69,
+          100
+        ]
+      ],
+      "shoulders": [
+        [
+          50,
+          70
+        ],
+        [
+          76,
+          69
+        ]
+      ],
+      "leg_width": 11,
+      "arm_width": 9
+    }
+  }
+}

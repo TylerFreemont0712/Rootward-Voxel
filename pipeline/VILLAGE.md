@@ -1,5 +1,38 @@
 # Village, homes and water
 
+## Sparks ambient inhabitants
+
+The active cast uses the Sparks & Machines paintings. Nell is absent for quest reasons. Spindle Lane has no named characters; the square has one Mira and one Rowan. Original character sources and the archived village's identities remain intact.
+
+| Area | Named sprites | Anonymous painted crowd | Robot work rounds |
+| --- | --- | --- | --- |
+| Loft | Player and existing Hotaru scene | None | Existing companion only |
+| Workshop floor | None | None | One small Tender, checking the work area |
+| Spindle Lane | None | Two children; two or three arriving adults per tram | Pip visits house frontages, Wick checks gate lights, Trowel tends the green |
+| Rootward Square | Mira and Rowan | Eighteen mixed adults and children | Postal deliveries from the post office, a café porter, east-garden Trowel, lamplighter Wick, Rootwell Tender, a Heron by the harbour stores and market Tally |
+
+### Appearance
+
+The three anonymous profiles are made from the **existing complete paintings**: `sparks_bram` for the man, `sparks_mira` for the woman and the approved `adventurer` for the child. The build preserves every source alpha pixel, frame region, anchor and animation duration, flattening only RGB to a mask. Rendering applies a neutral charcoal gray at 96% opacity. The child keeps the boy's poses with a modest width/height adjustment (96%/88%); the source paintings and player are unchanged. The crowd has no glowing material or ghost motion.
+
+`art/source/characters/phantoms/v2/appearances.json` selects the sources and presentation. `pipeline/art-catalog.json` registers it; `pipeline/phantom_builder.gd` runs inside **`scripts/art.sh`** and writes the selected masks, inherited SpriteFrames and hash manifest under `assets/characters/phantoms/`. `PhantomActor` uses the existing sprite actor's facing, phase preservation, anchoring, breathing and idle. The rejected geometric silhouette study remains unselected under `art/source/characters/phantoms/v1/`.
+
+### Movement, collision and tram passengers
+
+Area `villagers` entries choose one appearance: `skin` (painted named sprite), `object` (a placed robot) or `phantom` (`man`, `woman`, `child`). Explicit appearances are ambient, without archived dialogue or quest marks. Robots have one movement owner and cannot also appear in `interior.life.robots`.
+
+`VillageLife` advances at 60 Hz. All active inhabitants reserve both cells of a step against each other. **Phantoms do not reserve cells against the player and ignore the player's cells when routing**. Robots and named villagers keep their existing player collision. Paths use the same world, furniture, stair and support rules as player movement. Cached paths are checked before each step and replanned when obstructed. Doorways, ordinary walk-through arrivals and code-access approaches remain clear.
+
+Crowd `wander: true` chooses varied nonrepeating stops from small, authored local routes, with deterministic changes of pause. Different walking speeds and initial waits break up the crowd's timing. Starts and stops remain area data; no renderer coordinates enter the simulation.
+
+An adult phantom's `arrival` declares a delay, a service interval/offset and a real exit link. `TramSchedule` is the common pure timetable for the visible tram and spawning. Two adults arrive on every trip; the third arrives on alternate trips. Their disembark delays are 0.9, 4.8 and 8.5 seconds after docking. They use different platform starts, stairs, pauses, speeds and street stops before reaching either side of the square gate. Departure passengers alone may use that link's normally reserved corridor. They fade in over 0.45 seconds and out over 0.7 seconds, releasing occupancy after departure; the three-person pool is reused without population growth. The existing 90-second service and initial offset are retained.
+
+Notebook, modal, title and builder pause crowd and tram clocks together. Each area visit restarts local rounds. Continue keeps player progress and position; a solid resident at a saved arrival moves aside, while a phantom may share the player's cell. No daily schedules, cross-area crowd persistence, dialogue or new quests are added.
+
+`test/test_town_life.gd` verifies source-alpha identity, shared frames, cast uniqueness, crowd coverage, all route stops, deterministic separation, player pass-through and four services of arrivals/departures. `tools/phantom_crowd_review.gd` checks actual input, tram groups and the square at gameplay size with isolated progress. See the [current review](reviews/2026-10-31-painted-crowd-and-tram.md).
+
+## Archived village foundation
+
 The separately selectable [Village Morning](MORNING.md) concept reuses saved house travel but starts in a bespoke bedroom, before entering a minimal exterior. `content/interiors/catalog.json` can override a template for an exact `area-id/house-id`; its existing asset defaults still choose the ordinary rooms everywhere else. The following describes Kindle Hollow's established village.
 
 Kindle Hollow version 2 is 96×80 cells (2.5 times the original area), with 23 buildings, 224 playable trees, fourteen zones and five residents. The lesson lamps, gate and bridge retain their coordinates. The quest mill wheel now sits in the river with a solid axle/bearing connection; the five-quest arc is preserved. Connecting roads change thirty existing walkable cells at the north/east edges; the original river, gate and bridge locks remain intact. North Common and Cedar Rise extend past the old gate; the Eastbank and Brookside districts extend beyond the mill crossing. Version 1 is preserved under `content/areas/archive/`.

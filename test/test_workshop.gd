@@ -30,7 +30,7 @@ func _rules() -> void:
 	var area: AreaDef = parsed.area
 	var rules := LabWorld.new(area)
 	var state: Dictionary = rules.initial_state()
-	_check(area.width == 14 and area.height == 12 and area.interior.assets.size() == 28, "The workshop has its authored 14 by 12 layout and 28 placements")
+	_check(area.width == 14 and area.height == 12 and area.interior.assets.size() == 29, "The workshop has its authored 14 by 12 layout, 28 furnishings and Tender")
 	for target: Vector2i in [Vector2i(6,5),Vector2i(8,5),Vector2i(12,10),Vector2i(13,4),Vector2i(2,7),Vector2i(3,10),Vector2i(6,11)]:
 		_check(not rules.find_path(state,target,area.spawn).is_empty(), "The stairs reach the workshop approach " + str(target))
 	state.player = [6,9,0]

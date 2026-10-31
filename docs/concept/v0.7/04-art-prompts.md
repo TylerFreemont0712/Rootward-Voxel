@@ -78,7 +78,7 @@ Avoid: fairies, wings, pointed ears, runes, sigils, crystals, magic circles, pur
 | 5. The town | `T3`, `T4`, `T5`, `T2`, `P2` | The square, the Rootwell and the outskirts | Slices 2–3 |
 | 6. Automatons | `A1`–`A4` | The machine family | Slices 2–3 |
 | 7. The rest of the cast | `C3`–`C7` | Mira, Rowan, Bram, Tessa and the lineup | Slices 2–3 |
-| 8. Interface | `U1`, `U2` | Paper and enamel; the journey card | Slice 1 polish |
+| 8. Interface | `U1`, `U2`, `U3` | Paper and enamel; the journey card; the field slate's frame | Slice 1 polish |
 | 9. Future places | `F1`–`F3` | The harbour, the Rootworks and the festival | Later acts |
 
 ---
@@ -370,6 +370,23 @@ Asset type: a consistency lineup. The six sprites from the inputs standing side 
 Asset type: a flat 2D game-interface style sheet that restyles the current interface in Inputs 1 and 2 from dark navy and gold into warm "paper and enamel", like mid-century tickets, labels and enamel signs. Show, neatly arranged: (1) a job board panel with three stamped paper job tickets (small icon, short title line, a red rubber stamp mark); (2) the objective tracker as a single pinned ticket; (3) the Field Notes notebook frame on cream graph paper, with its code area kept HIGH-CONTRAST, dark monospace code on a pale background with a few placeholder lines starting "def program(world):"; (4) a strip of ticker tape showing printed output "Hello, Hotaru!"; (5) rounded enamel-sign buttons in teal, cream and red, each in default, hover, pressed and disabled states, with short labels such as "Test", "Speak", "Apply"; (6) small enamel badges: "!", "?", a speech bubble with three dots, and a hand "use" icon; (7) the bottom dialogue box with a nameplate tab and room for a portrait on the left. Calm, legible, friendly; the code must stay perfectly readable.
 ```
 **Check:** the code area is plainly readable; the buttons have clear states; nothing is dark navy with gold.
+
+### U3 · Nell's field slate (frame)
+Added 2026-10-30: the drawn slate's dark bezel blends into the game's dark navy surround, and the user asked for a more solid replacement in the journey's style. The result is meant to become the in-game frame around the live code screen, stretched as a nine-slice, so its shape rules matter more than usual.
+- **Output:** `art/8-interface/U3-field-slate.png`, 1024×1536, **transparent**
+- **Inputs:** 1 = approved U1 (the interface look), 2 = `.cache/tablet/09-round-ghost.png` or a fresh capture of the current slate (where it sits and what it frames)
+- **Blocks:** PALETTE, AVOID. The AVOID block's "screens" does not apply to the slate's own blank glass; everything else in it does.
+
+```text
+Asset type: one game-interface frame, transparent PNG 1024x1536 (portrait): a flat, straight-on front view of a hand-held instrument. It will be stretched as a nine-slice frame around a live screen, so: no perspective, tilt or cast shadow; the casing border is the same thickness on the left, right and top (about 7% of the width) and deeper at the bottom (about 12% of the height) to make a plain ledge where buttons will sit; the four corners carry the detail, and the long edges stay plain and even so they can stretch without visible repeats.
+
+The object: "Nell's field slate", a sturdy hand-held service instrument from a mid-century workshop, used to talk to the town's working machines. A thick rounded-rectangle body of warm cream enamel #EFE3C6 over pressed steel, with a teal enamel band #2F8C8C running around its outer rim and a slim brass bead #C99A3E framing the glass. Four rounded brass corner guards, each held by two small domed rivets. In the top-left corner, a round brass jack socket with a knurled collar and a dark hole, where a cord plugs in; beside it a small round glass indicator lamp, unlit. The lower ledge is plain cream enamel with one faint pressed groove line: no keys, no labels. Honest, gentle signs of use: soft wear on the enamel at the corners and one tiny chip near a guard, but no rust or grime.
+
+The screen: one large recessed window filling the middle, its edge bevelled down into the casing. The window is a flat, perfectly uniform pure black #000000 rectangle with slightly rounded corners and crisp edges, with no reflection, gloss, glare, text, icons or picture on it, because the game draws the live screen there.
+
+Style: painterly and hand-painted, matching an interface of cream paper, enamel signs and brass; soft warm light from the upper left; a fine warm-brown outline around the outside so the slate stands out clearly on a dark navy background (#1E2A33). It must not look like a modern tablet or phone: no glossy plastic, no thin metal edges, no camera, no logo. Truly transparent background outside the casing, with no glow or halo.
+```
+**Check:** front-on with parallel edges; the window is pure flat black, rectangular, with no reflections; left, right and top borders match and the bottom ledge is deeper; the edges between corners are plain enough to stretch; it reads clearly when placed on #1E2A33; no lettering anywhere.
 
 ### U2 · Journey card
 - **Output:** `art/8-interface/U2-journey-card.png`, 1536×1024, opaque

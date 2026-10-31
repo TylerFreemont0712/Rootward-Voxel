@@ -88,24 +88,17 @@ func _rules() -> void:
 		descending = descending and height <= previous+.0001 and (previous==INF or previous-height < .1)
 		previous = height
 	_check(descending and previous < .1 and WalkingSurface.height(area, Vector2(1, 8), []) > 1.9, "Both flights descend continuously east with a level landing between them")
-	# Robots on their rounds never touch anything that blocks, so they read as going round things.
-	var robots: Array = area.interior.life.get("robots", [])
-	_check(robots.size() == 3, "Three robots go about their rounds")
+	# The seven placed robots now share logical routes with the residents.
+	var robots: Array = area.villagers.filter(func(person: Dictionary) -> bool: return person.has("object"))
+	_check(robots.size() == 7, "All seven square robots go about their rounds")
 	for robot: Dictionary in robots:
-		var points: Array[Vector2] = []
-		for point: Array in robot.path: points.append(Vector2(float(point[0]), float(point[1])))
-		if bool(robot.get("loop", false)): points.append(points[0])
+		var from: Vector2i = robot.at
 		var clear: bool = true
-		for index: int in range(points.size() - 1):
-			var a: Vector2 = points[index]
-			var b: Vector2 = points[index + 1]
-			for k: int in range(int(a.distance_to(b) / .1) + 1):
-				var p: Vector2 = a.lerp(b, minf(1.0, float(k) * .1 / maxf(.001, a.distance_to(b))))
-				for block: Dictionary in area.interior.furniture:
-					var rect: Rect2 = block.rect
-					var gap := Vector2(maxf(maxf(rect.position.x - p.x, 0.0), p.x - rect.end.x), maxf(maxf(rect.position.y - p.y, 0.0), p.y - rect.end.y))
-					if block.kind != "rug" and gap.length() < .3: clear = false
-		_check(clear, "Robot " + str(robot.asset) + "'s round keeps clear of every blocking footprint")
+		for target: Vector2i in robot.route:
+			var path: Array[Vector2i] = rules.find_path(state, target, from, VillageLife.reserved(area))
+			clear = clear and (from == target or not path.is_empty())
+			from = target
+		_check(clear, "Robot " + str(robot.object) + " has a collision-checked round")
 	for bad: Dictionary in [{"asset": "nobody", "path": [[1, 1], [2, 2]], "speed": 1}, {"asset": "pip", "path": [[1, 1]], "speed": 1},
 			{"asset": "pip", "path": [[1, 1], [2, 2]], "speed": 9}, {"asset": "pip", "path": [[1, 1], [2, 2]], "speed": 1, "pause": 99}]:
 		var room: Dictionary = area.interior.duplicate(true)
@@ -229,24 +222,27 @@ func _play() -> void:
 	_check(game.session.player_cell()==Vector2i(12,7) and game.view.player_node().position.y<.2,"The feet reach the square floor from two flights")
 	# Robots on their rounds move, turn their wheels, and wait for someone standing in their way.
 	if stage != null:
-		_check(stage._rounds.size() == 3, "The three rounds are running")
-		var pip: Dictionary = stage._rounds[0]
+		_check(stage._rounds.is_empty() and game.view.villagers.robots.size() == 7, "Seven robot rounds have one logical controller each")
+		var residents: VillagerView = game.view.villagers
+		residents.set_physics_process(false)
+		residents.set_process(false)
+		var pip: Dictionary = residents.robots["square-pip"]
 		var robot: Node3D = pip.node
 		var start: Vector3 = robot.position
 		var wheel: Node3D = (pip.wheels as Array)[0] if not (pip.wheels as Array).is_empty() else null
 		var spin: float = wheel.rotation.x if wheel != null else 0.0
-		for n: int in range(80): stage._roll(pip, .1)
+		for n: int in range(600):
+			residents._physics_process(1.0 / 60.0)
+			residents._process(1.0 / 60.0)
 		_check(robot.position.distance_to(start) > 1.0 and wheel != null and not is_equal_approx(wheel.rotation.x, spin), "Pip rolls away from the post office on turning wheels")
-		var heading: Vector3 = ((pip.points as Array)[int(pip.next)] as Vector3) - robot.position
-		heading.y = 0.0
-		var player: Node3D = game.view.player_node()
-		var kept: Vector3 = player.position
-		player.position = robot.position + heading.normalized() * .8
-		var held: Vector3 = robot.position
-		pip.wait = 0.0
-		for n: int in range(10): stage._roll(pip, .1)
-		_check(robot.position.distance_to(held) < .001, "A robot waits while the apprentice stands in its way")
-		player.position = kept
+		var paused_state: Dictionary = residents.life.duplicate(true)
+		residents.paused = true
+		residents._physics_process(1.0)
+		residents._process(1.0)
+		_check(residents.life == paused_state, "Opening a modal pauses the shared robot and resident simulation")
+		residents.paused = false
+		residents.set_physics_process(true)
+		residents.set_process(true)
 	await walk(Vector2i(47,19))
 	game._refresh_interaction()
 	_check(game._interaction.get("id")=="beacon-dial", "F inspects the beacon's dial from the plaza")

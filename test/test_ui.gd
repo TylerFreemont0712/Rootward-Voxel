@@ -170,6 +170,75 @@ func _widgets() -> void:
 		glyph.queue_free()
 	await process_frame
 	_check(true, "Every icon draws without error")
+	await _tablet()
+
+
+## The field slate's glass: VS Code colours, names coloured as variables, file tabs, a status line and the blue ghost.
+func _tablet() -> void:
+	_lookups()
+	var program: String = 'def program(world):\n    lamps = world.zone("workshop").lamps\n    for lamp in lamps:\n        lamp.set_lit(True)\n'
+	var names: Array[String] = CodePalette.names_in(program)
+	_check(names.has("world") and names.has("lamps") and names.has("lamp") and not names.has("print") and not names.has("for"), "Names a program makes up are found, keywords and builtins are not: %s" % str(names))
+	_check(CodePalette.names_in('print("a = b")\nx = 1\nx += 2\nif x == 3:\n    pass').has("x") and CodePalette.names_in('if x == 3:\n    pass').is_empty(), "An assignment names a variable, a comparison does not")
+	var code := CodeEdit.new()
+	code.text = program
+	CodePalette.style(code)
+	var syntax := code.syntax_highlighter as CodeHighlighter
+	_check(syntax.keyword_colors.get("for") == CodePalette.CONTROL and syntax.keyword_colors.get("def") == CodePalette.KEYWORD and syntax.keyword_colors.get("lamp") == CodePalette.VARIABLE, "The editor uses Dark+ colours for control flow, definitions and variables")
+	code.free()
+	var picked: Array[int] = []
+	var tablet := TabletScreen.new(TabletScreen.Look.SLATE)
+	root.add_child(tablet)
+	tablet.set_tabs(["message.blocks", "hello_hotaru.py"], 0, func(index: int) -> void: picked.append(index))
+	await process_frame
+	_check(tablet._tabs.get_child_count() == 2 and (tablet._tabs.get_child(0) as FButton).button_pressed and not (tablet._tabs.get_child(1) as FButton).button_pressed, "The slate shows its file tabs with the first chosen")
+	(tablet._tabs.get_child(1) as FButton).pressed.emit()
+	_check(picked == [1] and (tablet._tabs.get_child(1) as FButton).button_pressed and not (tablet._tabs.get_child(0) as FButton).button_pressed, "Choosing a tab reports it and moves the highlight")
+	tablet.set_output("Hello, Hotaru!")
+	tablet.set_state(&"ghost")
+	_check(tablet.output.text == "Hello, Hotaru!" and tablet._status_right.text == "Test ready", "The output strip and status bar show a Test")
+	var painted: Dictionary = TabletScreen.painted_frame()
+	_check(not painted.is_empty() and tablet.framed() and tablet._title_bar != null and tablet._title_bar.get_parent() == tablet._glass, "The slate is drawn from the selected painted frame, its link words in a title bar on the glass")
+	tablet.size = Vector2(760, 1000)
+	await process_frame
+	await process_frame
+	var window := Rect2(float(painted.window[0]), float(painted.window[1]), tablet.size.x - float(painted.size[0]) + float(painted.window[2]), tablet.size.y - TabletScreen.SHADOW - float(painted.size[1]) + float(painted.window[3]))
+	var glass := Rect2(tablet._column.position + tablet._glass.position, tablet._glass.size)
+	_check(window.grow(0.5).encloses(glass), "The glass sits inside the painted window however far the frame stretches")
+	var jack := Vector2(float(painted.jack[0]), float(painted.jack[1]))
+	var lamp := Vector2(float(painted.lamp[0]), float(painted.lamp[1]))
+	_check(jack.x + float(painted.jack[2]) <= float(painted.slice[0]) and lamp.x + float(painted.lamp[2]) <= float(painted.slice[0]) and lamp.y + float(painted.lamp[2]) <= float(painted.slice[1]), "The painted jack and lamp sit in the frame's fixed corner, so stretching never moves them")
+	tablet.size = Vector2(540, 400)
+	tablet.skin = TabletScreen.Look.TERMINAL
+	await process_frame
+	_check(tablet.get_theme_stylebox("panel").get_margin(SIDE_BOTTOM) > TabletScreen.SHADOW + 14.0, "The desk terminal leaves room below the glass for its keys")
+	tablet.queue_free()
+	await process_frame
+	var ghost := GhostBox.make()
+	var ring: PackedVector2Array = ghost._resample(ghost._rounded(Rect2(0, 0, 100, 40), 8.0), 2.0)
+	_check(ring.size() > 40 and ghost.get_margin(SIDE_LEFT) > 0.0, "The ghost frame samples its outline into dashes and keeps room for its words")
+
+
+## What the editor says a name is: the expression under the pointer, where a name is set, its type, its value and
+## the items of a list, from the program text and a picture of the link alone.
+func _lookups() -> void:
+	var program: String = '# round.py\ndef program(world):\n    workshop = world.zone("workshop")\n    lamps = workshop.lamps    # three\n    for lamp in lamps:\n        lamp.set_lit(True)\n    lamps[0].set_lit(False)\n'
+	var link: Dictionary = {"zones": {"workshop": ["landing-lamp", "repair-light", "assembly-light"]}, "lamps": {"landing-lamp": {"title": "Stair lantern", "lit": true}, "repair-light": {"title": "Repair light", "lit": false}, "assembly-light": {"title": "Assembly light", "lit": false}}, "values": {}}
+	var line: String = '    lamps = workshop.lamps    # three'
+	_check(CodeLookup.expression_at(line, line.find("lamps", 10) + 2) == "workshop.lamps" and CodeLookup.expression_at(line, 5) == "lamps" and CodeLookup.expression_at(line, line.find("three")) == "", "The pointer finds the dotted name under it, and nothing inside a comment")
+	_check(CodeLookup.expression_at('    world.zone("workshop").lamps', 30) == 'world.zone("workshop").lamps' and CodeLookup.expression_at('    lamps[0].set_lit(False)', 15) == "lamps[0].set_lit", "Chains through calls and indexes are followed back to their start")
+	var where: Dictionary = CodeLookup.definition(program, "lamps")
+	_check(int(where.get("line", -1)) == 3 and int(where.column) == 4 and str(where.value) == "workshop.lamps", "A variable's definition is the line that first sets it, without its comment")
+	_check(int(CodeLookup.definition(program, "lamp").get("line", -1)) == 4 and CodeLookup.definition(program, "world").has("parameter"), "Loop names and parameters are definitions too")
+	var lamps: Dictionary = CodeLookup.describe(program, "lamps", link)
+	_check(lamps.kind == "variable" and lamps.type == "list[Lamp]" and (lamps.items as Array).size() == 3 and str(lamps.items[0]).contains("landing-lamp") and int(lamps.line) == 3, "A list variable says its type, where it is set and its items from the link")
+	var member: Dictionary = CodeLookup.describe(program, "workshop.lamps", link)
+	_check(member.kind == "attribute" and str(member.title).begins_with("zone.lamps") and str(member.doc) != "" and (member.items as Array).size() == 3, "An API member shows its signature, its explanation and what it holds here")
+	_check(CodeLookup.describe(program, "lamps[0].set_lit", link).kind == "method" and CodeLookup.describe(program, "for", link).kind == "keyword" and CodeLookup.describe(program, "nowhere", link).is_empty(), "Methods through an index, keywords, and unknown names")
+	_check(CodeLookup.describe(program, "lamp", link).type == "Lamp" and CodeLookup.resolve(program, "lamps[0]", link).value == "Lamp('landing-lamp', lit=True)", "A loop name is one item; an index picks the item")
+	link.values = {"lamps": "[Lamp('a'), Lamp('b')]"}
+	_check((CodeLookup.describe(program, "lamps", link).items as Array).size() == 2, "Values a debug run saw win over what the link suggests")
+	_check(CodeLookup.list_items("[Lamp('a, b'), (1, 2), 'x']") == ["Lamp('a, b')", "(1, 2)", "'x'"] and CodeLookup.list_items("World").is_empty(), "List items are split at the top level only")
 
 
 func _gear_veil() -> void:

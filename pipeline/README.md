@@ -36,6 +36,7 @@ The [illustrated village study](reviews/2026-10-26-illustrated-village.md) adds 
 | `art/source/adventurer/` | Versioned painted design/keyframes and prompts; v9 contains the selected direction sheets, blink and registered atlas/provenance. |
 | `pipeline/art-catalog.json` | Selects approved template artwork/source and derived output locations; links the shared template, world catalog and area folder. |
 | `art/source/brand/v1-lantern-roots/`, `assets/brand/` | Application-icon master and exact imagegen prompt; `application_icon` in the art catalog pins its hash and 256/512 px runtime PNGs. `scripts/art.sh` rebuilds them. |
+| `art/source/ui/nells-field-slate/v1/`, `assets/ui/nells-field-slate/` | Nell's field slate, the painted interface frame around the live code screen. `interface_frames` in the art catalog pins the source hash and its measured crop, nine-slice margins, window, jack and lamp; `scripts/art.sh` (`pipeline/interface_frame_builder.gd`) crops it, clears the transparent matte, fills the screen with exact black, scales it to 50% and writes `frame.png` and a manifest the game reads (`TabletScreen.painted_frame`). |
 | `art/source/portraits/v1/`, `assets/portraits/` | Five high-definition dialogue portraits, exact prompts/reference hashes and lossless runtime outputs, built by `scripts/art.sh`. |
 | `pipeline/character-template.json` | Owns the common frame layout, timing, anchor, scale and idle behavior for all skins. |
 | `pipeline/character-catalog.json` | Registers appearance skins and selects the default. |

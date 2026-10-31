@@ -21,6 +21,7 @@ godot_bin="${GODOT_BIN:-godot}"
 "$godot_bin" --headless --path "$project_root" -s res://test/test_illustrated_village.gd < /dev/null
 "$godot_bin" --headless --path "$project_root" -s res://test/test_reference_cottage.gd < /dev/null
 "$godot_bin" --headless --path "$project_root" -s res://test/test_places.gd < /dev/null
+"$godot_bin" --headless --path "$project_root" -s res://test/test_town_life.gd < /dev/null
 "$godot_bin" --headless --path "$project_root" -s res://test/test_house_flow.gd < /dev/null
 "$godot_bin" --headless --path "$project_root" -s res://test/test_doorway_boundaries.gd < /dev/null
 "$godot_bin" --headless --path "$project_root" -s res://test/test_dialogue.gd < /dev/null

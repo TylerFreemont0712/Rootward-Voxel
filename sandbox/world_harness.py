@@ -336,6 +336,36 @@ with open("player.py", encoding="utf-8") as source_file:
 # WASI isolation. The harness provides data, never engine objects or host callbacks.
 # Execution evidence is collected inside WASI, bounded independently of the time/fuel limit.
 _trace = []
+# The framed result's budget; LabProgram.MAX_RESULT_BYTES keeps the same number.
+RESULT_LIMIT = 65536
+# A debugger's view of the player's own names: each line records the variables that changed since the last line in
+# its frame ("vars"), and the program's names are kept as it returns ("locals"). Values are short, Python-shaped
+# text (Lamp('landing-lamp'), [1, 2, 3]) and bounded; the result budget below trims the trace further if needed.
+_seen = {}
+_final_locals = {}
+
+def _short(value, depth=0):
+    if value is None or isinstance(value, (bool, int, float)):
+        return repr(value)
+    if isinstance(value, str):
+        return repr(value[:40])
+    if isinstance(value, (list, tuple)) and depth == 0:
+        inner = ", ".join(_short(item, 1) for item in value[:6])
+        return ("[%s%s]" if isinstance(value, list) else "(%s%s)") % (inner, ", ..." if len(value) > 6 else "")
+    ident = getattr(value, "id", None)
+    if isinstance(ident, str):
+        if depth == 0 and isinstance(getattr(value, "lit", None), bool):
+            return "%s(%r, lit=%s)" % (type(value).__name__, ident, value.lit)
+        return "%s(%r)" % (type(value).__name__, ident)
+    return type(value).__name__
+
+def _frame_names(frame):
+    found = {}
+    for name, value in list(frame.f_locals.items())[:24]:
+        if name.startswith("_") or callable(value) or type(value).__name__ == "module":
+            continue
+        found[name] = _short(value)[:80]
+    return found
 
 def _event(frame, command=None):
     if len(_trace) >= 96:
@@ -350,13 +380,24 @@ def _event(frame, command=None):
     event = {"line": frame.f_lineno}
     if values:
         event["values"] = values
+    changed = {}
+    for name, text in _frame_names(frame).items():
+        key = (id(frame), name)
+        if _seen.get(key) != text and len(changed) < 4:
+            _seen[key] = text
+            changed[name] = text
+    if changed:
+        event["vars"] = changed
     if command is not None:
         event["command"] = command
     _trace.append(event)
 
 def _on_line(frame, event, arg):
-    if event == "line" and frame.f_code.co_filename == "player.py":
-        _event(frame)
+    if frame.f_code.co_filename == "player.py":
+        if event == "line":
+            _event(frame)
+        elif event == "return" and frame.f_code.co_name == "program":
+            _final_locals.update(_frame_names(frame))
     return _on_line
 
 def _voice_print(*args, **kwargs):
@@ -401,13 +442,18 @@ if not isinstance(commands, list) or not isinstance(memory, dict):
     raise TypeError("commands must be a list; memory must be a dictionary.")
 payload_data = {"commands": commands, "memory": memory}
 payload = json.dumps(payload_data, allow_nan=False, separators=(",", ":"))
-if len(payload.encode("utf-8")) > 16384:
-    raise ValueError("Returned commands exceed the 16 KiB result limit.")
+if len(payload.encode("utf-8")) > RESULT_LIMIT:
+    raise ValueError("Returned commands exceed the %d KiB result limit." % (RESULT_LIMIT // 1024))
 # Evidence must never make an otherwise valid command batch exceed the result budget.
+if _final_locals:
+    candidate = dict(payload_data, locals=dict(list(_final_locals.items())[:16]))
+    if len(json.dumps(candidate, allow_nan=False, separators=(",", ":")).encode("utf-8")) <= RESULT_LIMIT:
+        payload_data = candidate
+        payload = json.dumps(payload_data, allow_nan=False, separators=(",", ":"))
 while _trace:
     payload_data["trace"] = _trace
     candidate = json.dumps(payload_data, allow_nan=False, separators=(",", ":"))
-    if len(candidate.encode("utf-8")) <= 16384:
+    if len(candidate.encode("utf-8")) <= RESULT_LIMIT:
         payload = candidate
         break
     _trace.pop()

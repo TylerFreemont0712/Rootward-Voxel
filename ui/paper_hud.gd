@@ -70,17 +70,7 @@ func _build() -> void:
 	_build_button = UI.icon_button(&"hammer", "", Callable())
 	_build_button.visible = false
 	add_child(_build_button)
-	_controls = UI.panel(&"PanelCard")
-	_controls.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
-	_controls.grow_horizontal = Control.GROW_DIRECTION_BEGIN
-	_controls.grow_vertical = Control.GROW_DIRECTION_BEGIN
-	_controls.offset_right = -22
-	_controls.offset_bottom = -22
-	_controls.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_controls_label = UI.label("WASD walk  ·  Click to travel  ·  F talk  ·  E field notes  ·  Esc menu", &"LabelDim", 15)
-	_controls.add_child(_controls_label)
-	_controls.visible = bool(settings.get_value("show_controls"))
-	add_child(_controls)
+	# No controls hint here: the buttons carry their own tooltips and the lower right stays clear for dialogue.
 	_stage = Control.new()
 	_stage.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	UI.full_rect(_stage)

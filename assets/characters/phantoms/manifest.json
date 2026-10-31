@@ -1,0 +1,1632 @@
+{
+  "builder_sha256": "5e7979c153c573184249fae65c82ee062a8818cce10b26d517d2d79c87e097f3",
+  "family": "painted_crowd_v2",
+  "gray": 0.46,
+  "motion_sha256": "b84741d46f4de4548648268d30ddcf823cd30b1ec5255cacdeaedec23da720d2",
+  "opacity": 0.96,
+  "profiles": {
+    "child": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/child.png",
+      "atlas_sha256": "dc8e8582bd1644908d78211bc1eff474a91e925cd079e32a64d5e4ab3c742c82",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/child.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/adventurer/v9-directional-walk/sheet.png",
+      "painted_source_sha256": "6e7db11c4c1403efc3af748014cbe06b600779319117bf29ab30f3fe9abd471d",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        0.96,
+        0.88
+      ],
+      "skin": "adventurer"
+    },
+    "man": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/man.png",
+      "atlas_sha256": "e4e0aaa7562c452608f42e577b91da2fd08d8bf972c1ee66cf0cc933d3a633e9",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/man.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/bram/sparks-v2/sheet.png",
+      "painted_source_sha256": "172d69af5a2d10c0af86aa11fc199aee53ecb2ed64b443ab805fb246c6c21e9a",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        1.0,
+        1.0
+      ],
+      "skin": "sparks_bram"
+    },
+    "woman": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/woman.png",
+      "atlas_sha256": "e9fbdba8e668c0b7e30fc535996fab88181a440f6f1711907fd9f0c90815f330",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/woman.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/mira/sparks-v2/sheet.png",
+      "painted_source_sha256": "e7142190a862a08f62e89741f5a7db96f7a476fb96b8cea65213e92c2df263f9",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        1.0,
+        1.0
+      ],
+      "skin": "sparks_mira"
+    }
+  },
+  "schema": 2.0,
+  "source": "res://art/source/characters/phantoms/v2/appearances.json",
+  "source_sha256": "11af8fea9d57efc217d0f341d655ec5e1ab88c1bc9194dd43015132195504fe0"
+}

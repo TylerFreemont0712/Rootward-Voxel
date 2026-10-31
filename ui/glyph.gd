@@ -31,6 +31,14 @@ static func paint(canvas: CanvasItem, kind_name: StringName, rect: Rect2, tint: 
 	match kind_name:
 		&"play":
 			canvas.draw_colored_polygon(PackedVector2Array([p.call(0.26, 0.16), p.call(0.8, 0.5), p.call(0.26, 0.84)]), tint)
+		&"debug":
+			# Run and debug: an open play triangle with a small bug at its lower left.
+			canvas.draw_polyline(PackedVector2Array([p.call(0.42, 0.12), p.call(0.92, 0.44), p.call(0.42, 0.76), p.call(0.42, 0.12)]), tint, stroke, true)
+			canvas.draw_circle(p.call(0.27, 0.69), side * 0.15, tint)
+			canvas.draw_circle(p.call(0.27, 0.49), side * 0.07, tint)
+			for leg: float in [0.6, 0.7, 0.8]:
+				canvas.draw_line(p.call(0.14, leg), p.call(0.04, leg - 0.05 + (leg - 0.7) * 0.6), tint, stroke * 0.7, true)
+				canvas.draw_line(p.call(0.40, leg), p.call(0.50, leg - 0.05 + (leg - 0.7) * 0.6), tint, stroke * 0.7, true)
 		&"check":
 			canvas.draw_polyline(PackedVector2Array([p.call(0.18, 0.54), p.call(0.4, 0.76), p.call(0.82, 0.26)]), tint, stroke * 1.2, true)
 		&"cross":

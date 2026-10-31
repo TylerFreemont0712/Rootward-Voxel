@@ -61,6 +61,7 @@ var _banter_index: int = 0
 var _interaction: Dictionary = {}
 var _interaction_clock: float = 0.0
 var _pending_room_target: String = ""
+var _slate_link: SlateLink
 var _level_id: String = LevelStore.MAIN_LEVEL
 var _root_area_id: String = "workshop-loft"
 var _pending_level_id: String = LevelStore.MAIN_LEVEL
@@ -75,6 +76,8 @@ var _room_zoom_scale: float = 1.0
 
 const ROOM_ZOOM_RANGE: Vector2 = Vector2(0.55, 1.4)
 const ROOM_ZOOM_NOTCH: float = 0.92
+## While the field slate is up the room draws back a little, so it fits between the notepad and the slate.
+const SLATE_PULL_BACK: float = 1.24
 ## How far, in cells, Hotaru can be from the traveller and still be spoken to. She sits on furniture.
 const COMPANION_REACH: float = 1.6
 ## The clockwork veil between places: how long it takes to grow over the scene, to sit there while the next one is
@@ -553,7 +556,7 @@ func _resident_marks() -> Dictionary:
 	if view.villagers == null or session == null:
 		return marks
 	var quest: String = str(session.current_quest().get("id", ""))
-	for id: String in view.villagers.actors:
+	for id: String in view.villagers.speakers:
 		if _people.has(id):
 			var mark: String = VillageDialogue.marker(_people[id], _dialogue_read.get(id, []), _met_villagers.has(id), quest)
 			if mark != "":
@@ -653,7 +656,7 @@ func _activate_terminal(id: String) -> void:
 	if not session.connect_terminal(id): return
 	if id == "desk-terminal": session.read_inspection(id)
 	save_now()
-	_open_workshop_journal(area.id == "workshop-loft", {"kind":"zone", "id":str(terminal.zone), "title":str(terminal.title)})
+	_open_workshop_journal(area.id == "workshop-loft", {"kind":"zone", "id":str(terminal.zone), "title":str(terminal.title), "terminal":id})
 
 
 ## Nell's tablet lies on the bed from the first moment, but it is Hotaru's waking conversation that sends the
@@ -1235,7 +1238,33 @@ func _open_workshop_journal(greeting_page: bool = false, context: Dictionary = {
 	movement_lesson.show_drawer(true)
 	if not jobs: (movement_lesson as WorkshopJournal).restore_story(introduction_seen)
 	hud.set_notebook_open(true)
+	if jobs:
+		if _authored_zoom() > 0.0: view.set_zoom(_indoor_zoom(0.0) * SLATE_PULL_BACK)
+		_show_slate_link(context)
 	_update_input_gate()
+
+
+## While the slate's code is open the room shows how it reaches what it works on: its cord running to a zone
+## screen's socket, or signal sparks hopping over the air to the single fitting beside it.
+func _show_slate_link(context: Dictionary) -> void:
+	_clear_slate_link()
+	if context.is_empty() or view.player_node() == null: return
+	var target: Node3D = null
+	var wired: bool = str(context.get("kind", "")) == "zone"
+	if wired:
+		var terminal: Dictionary = ZoneTerminals.find(area, str(context.get("terminal", "")))
+		if not terminal.is_empty(): target = view.building_node(str(terminal.object))
+	elif view._lamps.has(str(context.get("id", ""))):
+		target = (view._lamps[str(context.id)] as Node3D).get_node_or_null("Halo") as Node3D
+	if target == null: return
+	_slate_link = SlateLink.new()
+	view.add_child(_slate_link)
+	_slate_link.setup(view.player_node(), target, wired)
+
+
+func _clear_slate_link() -> void:
+	if is_instance_valid(_slate_link): _slate_link.queue_free()
+	_slate_link = null
 
 
 func _hotaru_next_lesson() -> void:
@@ -1336,6 +1365,8 @@ func close_notebook(instant: bool = false) -> void:
 		else:get_tree().create_timer(.26).timeout.connect(panel.queue_free)
 	notebook.drop_focus()
 	notebook.show_drawer(false,instant)
+	if is_instance_valid(_slate_link) and playing: _apply_room_zoom()
+	_clear_slate_link()
 	if hud!=null:hud.set_notebook_open(false)
 	_drawer_extent_changed(0.0)
 	_update_input_gate()
@@ -1350,7 +1381,9 @@ func _drawer_extent_changed(pixels: float) -> void:
 	var inset: float=pixels if notebook_open else 0.0
 	if workshop_speech != null: workshop_speech.right_inset = inset
 	if hud!=null:hud.set_right_inset(inset)
-	view.set_view_shift(inset/maxf(1.0,size.x)*.5)
+	# The field slate's notepad reaches further into the room than the slate, so the room is framed left of both.
+	var extra: float=(movement_lesson as WorkshopJobsJournal).extra_reserve() if notebook_open and movement_lesson is WorkshopJobsJournal else 0.0
+	view.set_view_shift((inset+extra)/maxf(1.0,size.x)*.5)
 
 
 func _first_run_hint() -> void:

@@ -1,0 +1,33 @@
+{
+  "schema": 2,
+  "family": "painted_crowd_v2",
+  "opacity": 0.96,
+  "gray": 0.46,
+  "description": "Anonymous gray appearances derived from the selected Sparks paintings. Preserve exact source alpha, frame regions, motion and anchors. The child is the approved boy with a small reduction in height and width. No invented shapes or ghost effects.",
+  "profiles": {
+    "man": {
+      "skin": "sparks_bram",
+      "source": "res://art/source/characters/bram/sparks-v2/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "woman": {
+      "skin": "sparks_mira",
+      "source": "res://art/source/characters/mira/sparks-v2/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "child": {
+      "skin": "adventurer",
+      "source": "res://art/source/adventurer/v9-directional-walk/sheet.png",
+      "scale": [
+        0.96,
+        0.88
+      ]
+    }
+  }
+}

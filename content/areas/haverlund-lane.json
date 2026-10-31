@@ -1992,6 +1992,33 @@
         "turn": 90,
         "height": 1.0,
         "scale": 1.0
+      },
+      {
+        "id": "lane-pip-model",
+        "asset": "robot-pip",
+        "at": [
+          11,
+          15
+        ],
+        "scale": 1
+      },
+      {
+        "id": "lane-wick-model",
+        "asset": "robot-wick",
+        "at": [
+          14,
+          25
+        ],
+        "scale": 1
+      },
+      {
+        "id": "lane-trowel-model",
+        "asset": "robot-trowel",
+        "at": [
+          20,
+          8
+        ],
+        "scale": 1
       }
     ],
     "lamp_fixtures": [
@@ -2204,5 +2231,286 @@
         "text": "Asleep on the warm coping with one paw over her nose. An ear turns toward you. The rest of her doesn't."
       }
     ]
-  }
+  },
+  "villagers": [
+    {
+      "id": "lane-pip",
+      "object": "lane-pip-model",
+      "at": [
+        11,
+        15
+      ],
+      "route": [
+        [
+          11,
+          13
+        ],
+        [
+          11,
+          19
+        ],
+        [
+          11,
+          23
+        ],
+        [
+          14,
+          23
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          11,
+          15
+        ]
+      ],
+      "speed": 0.9,
+      "pause": 2
+    },
+    {
+      "id": "lane-wick",
+      "object": "lane-wick-model",
+      "at": [
+        14,
+        25
+      ],
+      "route": [
+        [
+          15,
+          25
+        ],
+        [
+          15,
+          21
+        ],
+        [
+          14,
+          21
+        ],
+        [
+          14,
+          25
+        ]
+      ],
+      "speed": 0.65,
+      "pause": 3
+    },
+    {
+      "id": "lane-trowel",
+      "object": "lane-trowel-model",
+      "at": [
+        20,
+        8
+      ],
+      "route": [
+        [
+          20,
+          10
+        ],
+        [
+          19,
+          12
+        ],
+        [
+          18,
+          10
+        ],
+        [
+          20,
+          8
+        ]
+      ],
+      "speed": 0.55,
+      "pause": 4
+    },
+    {
+      "id": "lane-child-a",
+      "phantom": "child",
+      "at": [
+        17,
+        9
+      ],
+      "route": [
+        [
+          16,
+          8
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          17,
+          9
+        ]
+      ],
+      "speed": 1.85,
+      "pause": 0.6,
+      "wander": true
+    },
+    {
+      "id": "lane-child-b",
+      "phantom": "child",
+      "at": [
+        20,
+        12
+      ],
+      "route": [
+        [
+          20,
+          10
+        ],
+        [
+          19,
+          11
+        ],
+        [
+          20,
+          12
+        ],
+        [
+          21,
+          10
+        ]
+      ],
+      "speed": 1.65,
+      "pause": 1.0,
+      "wander": true
+    },
+    {
+      "id": "tram-passenger-a",
+      "phantom": "woman",
+      "at": [
+        20,
+        2
+      ],
+      "route": [
+        [
+          17,
+          2
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          14,
+          19
+        ],
+        [
+          13,
+          26
+        ]
+      ],
+      "speed": 1.55,
+      "pause": 0.5,
+      "wander": false,
+      "arrival": {
+        "delay": 0.9,
+        "every": 1,
+        "offset": 0,
+        "exit": "town-steps"
+      }
+    },
+    {
+      "id": "tram-passenger-b",
+      "phantom": "man",
+      "at": [
+        19,
+        2
+      ],
+      "route": [
+        [
+          16,
+          2
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          12,
+          26
+        ]
+      ],
+      "speed": 1.35,
+      "pause": 0.7,
+      "wander": false,
+      "arrival": {
+        "delay": 4.8,
+        "every": 1,
+        "offset": 0,
+        "exit": "town-steps"
+      }
+    },
+    {
+      "id": "tram-passenger-c",
+      "phantom": "man",
+      "at": [
+        21,
+        2
+      ],
+      "route": [
+        [
+          18,
+          2
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          16,
+          12
+        ],
+        [
+          16,
+          20
+        ],
+        [
+          13,
+          26
+        ]
+      ],
+      "speed": 1.75,
+      "pause": 0.5,
+      "wander": false,
+      "arrival": {
+        "delay": 8.5,
+        "every": 2,
+        "offset": 0,
+        "exit": "town-steps"
+      }
+    }
+  ]
 }

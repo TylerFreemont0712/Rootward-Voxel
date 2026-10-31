@@ -1,0 +1,11 @@
+Make one portrait 1024x1536 transparent PNG game UI asset, "Nell's field slate". This is a FLAT hand-painted nine-slice FRAME, not a physical product rendering.
+
+CRITICAL SHAPE: An extremely large plain black rounded rectangle occupies the center, extending from x=88 to x=936 and from y=88 to y=1336. This black rectangle therefore occupies 83% of the canvas width and 81% of the canvas height. All pixels within it are identical RGB 0,0,0, alpha255, perfectly flat with NO gradient or texture. Its straight edges are parallel to the canvas and only its corners are slightly rounded.
+
+A casing surrounds it: warm cream enamel #EFE3C6, teal #2F8C8C outer rim and slender brass #C99A3E inner bead. Outer body nearly fills the canvas from x16 to x1008 and y16 to y1520, with rounded corners. Top, left, and right border are equally narrow, about72 pixels wide. THE TOP STRIP IS AS THIN AS EITHER SIDE STRIP, NOT A TALL HEADER. Bottom border is a blank cream ledge about184 pixels tall, NOT an oversized control panel. Very plain evenly coloured straight borders suitable for stretching. No buttons or text.
+
+Four compact rounded brass corner guards each have two little domed rivets. In the narrow top strip, just to the right of the top-left guard, place one very small brass jack socket with knurled collar and a dark hole, and one very small unlit round indicator lamp. Their small sizes fit within the narrow top strip: don't widen the strip for them. The bottom cream ledge has just one faint straight horizontal pressed groove. Corners have gentle enamel wear and one tiny chip near a guard; no wear on the central lengths of stretchable edges.
+
+Style: tasteful hand-painted game art with soft warm upper-left light on matte enamel and brass; a fine warm-brown exterior outline. Mid-century workshop service instrument, thick sturdy steel construction expressed through the painted casing. No perspective or visible side wall, no tilt, no glossy plastic, camera, logo or modern phone styling.
+
+Outside the casing: real alpha0 transparency, no shadow, glow, halo, background colour or checkerboard. Casing and screen opaque. No reflections, gloss, sheen, highlights, pictures, texture or noise inside the black screen. No keys, writing, labels, logos or extra objects. ONE perfectly straight-on front-view frame.

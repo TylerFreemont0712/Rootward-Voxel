@@ -241,5 +241,50 @@
         }
       }
     }
-  ]
+  ],
+  "interface_frames": {
+    "nells-field-slate": {
+      "version": "v1",
+      "source": "res://art/source/ui/nells-field-slate/v1/nells-field-slate-frame.png",
+      "source_sha256": "d541f3bcf782f611d80c17ed25664a5c9b1b7efda721a08645322bae44739ff5",
+      "provenance": "res://art/source/ui/nells-field-slate/v1/generation.json",
+      "crop": [
+        22,
+        23,
+        980,
+        1476
+      ],
+      "slice": [
+        220,
+        110,
+        110,
+        259
+      ],
+      "window": [
+        78,
+        92,
+        824,
+        1144
+      ],
+      "jack": [
+        136.5,
+        52,
+        15
+      ],
+      "lamp": [
+        201.5,
+        50.5,
+        12.5
+      ],
+      "scale": 0.5,
+      "runtime": "res://assets/ui/nells-field-slate/frame.png",
+      "manifest": "res://assets/ui/nells-field-slate/manifest.json"
+    }
+  },
+  "phantoms": {
+    "version": "v2",
+    "source": "res://art/source/characters/phantoms/v2/appearances.json",
+    "runtime": "res://assets/characters/phantoms",
+    "manifest": "res://assets/characters/phantoms/manifest.json"
+  }
 }

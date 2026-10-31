@@ -28,6 +28,8 @@ Pending deletion marks an asset name with a red tint and **X** at the right; pen
 
 ## Sparks & Machines — the workshop and the town
 
+Spindle Lane has two anonymous children and receives two or three adult passengers from each tram. They leave the platform at different times, walk toward the town gate and fade away there. Rootward Square has eighteen anonymous townspeople, with Mira and Rowan as its two unique named villagers. The anonymous crowd uses gray versions of the existing painted character sheets and their exact animations; the child is slightly smaller. The player can pass through them, while they avoid each other and the eleven robots on local postal, gardening, lighting, maintenance and market rounds. Nell stays absent for later story work, and the lane has no named characters. [Crowd and tram review](pipeline/reviews/2026-10-31-painted-crowd-and-tram.md).
+
 Plants now use pointed, gently folded leaves, branching sprigs and simple flower petals throughout the loft, workshop, lane and square, including window boxes and street trees. Thirty-five existing Blender models were revised through the normal asset pipeline; see the [plant review and comparisons](pipeline/reviews/2026-10-30-plant-style.md).
 
 Choose **New game → Begin new journey**. Start beside the bed, walk to the desk and read Nell’s note under the mug. The note is put away when read. Use or click the loft terminal to open **Field Notes /00 · Hello, Hotaru**. The loft has bespoke outlined Blender furniture, painted oak and plaster, a slept-in teal patchwork bed, rag rug, desk and screen terminal, filled bookcase, a loose coat over the chair, a lower bag on taut straps, luggage, books and plants. The approved player and the two other journeys retain their art and lessons.

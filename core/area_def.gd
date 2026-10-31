@@ -402,6 +402,7 @@ func _read_places(document: Dictionary, errors: Array[String]) -> void:
 		errors.append("villagers must be a list.")
 		return
 	var seen: Dictionary = {}
+	var moving_objects: Array[String] = []
 	for raw: Variant in residents:
 		if not raw is Dictionary or not _id(raw.get("id")) or not _cell_value(raw.get("at")) or not raw.get("route", []) is Array or seen.has(raw.id):
 			errors.append("Each villager needs a unique id, at [x,y] and a route list.")
@@ -416,8 +417,53 @@ func _read_places(document: Dictionary, errors: Array[String]) -> void:
 				errors.append("Villager '%s' has an invalid route point." % raw.id)
 				return
 			route.append(Vector2i(int(point[0]), int(point[1])))
+		# An explicit skin or placed robot is ambient: no legacy identity/dialogue is implied.
+		for field: String in ["skin", "object"]:
+			if raw.has(field) and not _id(raw[field]):
+				errors.append("A resident's %s must be an appearance id." % field)
+				return
+		var appearances: int = int(raw.has("skin")) + int(raw.has("object")) + int(raw.has("phantom"))
+		if appearances > 1 or raw.has("phantom") and raw.phantom not in ["man", "woman", "child"]:
+			errors.append("Choose one resident appearance: a sprite skin, placed robot or man/woman/child phantom.")
+			return
+		if raw.has("object"):
+			var placed: Array = interior.get("assets", [])
+			var found: bool = placed.any(func(item: Dictionary) -> bool: return item.id == raw.object and str(item.asset).begins_with("robot-"))
+			var old_rounds: Array = interior.get("life", {}).get("robots", [])
+			if not found or moving_objects.has(str(raw.object)) or old_rounds.any(func(item: Dictionary) -> bool: return item.asset == raw.object):
+				errors.append("A resident robot needs its own placed robot asset, with only one movement controller.")
+				return
+			moving_objects.append(str(raw.object))
+		if raw.has("speed") and (not raw.has("object") and not raw.has("phantom") or not _number(raw.speed) or float(raw.speed) < 0.3 or float(raw.speed) > 3.0):
+			errors.append("Robot/phantom speed must be from 0.3 to 3 cells per second; painted sprite timing is shared.")
+			return
+		if raw.has("pause") and (not _number(raw.pause) or float(raw.pause) < 0.5 or float(raw.pause) > 15.0):
+			errors.append("A resident's pause must be from 0.5 to 15 seconds.")
+			return
+		if raw.has("wander") and (not raw.has("phantom") or not raw.wander is bool):
+			errors.append("Only a phantom can choose varied wander stops (true or false).")
+			return
+		if raw.has("arrival"):
+			var arrival: Variant = raw.arrival
+			var links: Array = interior.get("links", [])
+			if not raw.has("phantom") or raw.phantom == "child" or not arrival is Dictionary or interior.get("life", {}).get("tram", {}).is_empty():
+				errors.append("Tram arrivals need an adult phantom and the area's tram service.")
+				return
+			if not _number(arrival.get("delay")) or float(arrival.delay) < 0.0 or float(arrival.delay) > 12.0 or not _whole(arrival.get("every", 1)) or int(arrival.get("every", 1)) < 1 or int(arrival.get("every", 1)) > 3 or not _whole(arrival.get("offset", 0)) or int(arrival.get("offset", 0)) < 0 or int(arrival.get("offset", 0)) >= int(arrival.get("every", 1)):
+				errors.append("A tram passenger needs a delay of 0–12 seconds and a valid 1–3 trip interval.")
+				return
+			if not links.any(func(link: Dictionary) -> bool: return link.id == arrival.get("exit")) or route.is_empty():
+				errors.append("A tram passenger needs a route and a real departure link.")
+				return
+			var exit: Dictionary = links.filter(func(link: Dictionary) -> bool: return link.id == arrival.exit)[0]
+			if raw.get("wander", false) or not (exit.get("cells", [exit.at]) as Array).any(func(point: Array) -> bool: return route[-1] == Vector2i(int(point[0]), int(point[1]))):
+				errors.append("A passenger follows ordered stops ending at their departure gate.")
+				return
 		seen[raw.id] = true
-		villagers.append({"id": raw.id, "at": at, "route": route, "home": str(raw.get("home", ""))})
+		var resident: Dictionary = {"id": raw.id, "at": at, "route": route, "home": str(raw.get("home", ""))}
+		for field: String in ["skin", "object", "phantom", "speed", "pause", "wander", "arrival"]:
+			if raw.has(field): resident[field] = raw[field]
+		villagers.append(resident)
 
 
 func _read_terrain(value: Variant, errors: Array[String]) -> void:

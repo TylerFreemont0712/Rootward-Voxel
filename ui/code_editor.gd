@@ -104,7 +104,7 @@ func replace_program(program: String) -> void:
 
 
 func _on_gui_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo and (event.keycode == KEY_ENTER or event.keycode == KEY_KP_ENTER) and event.ctrl_pressed:
+	if event is InputEventKey and event.pressed and not event.echo and (((event.keycode == KEY_ENTER or event.keycode == KEY_KP_ENTER) and event.ctrl_pressed) or event.keycode == KEY_F5):
 		accept_event()
 		run_requested.emit()
 

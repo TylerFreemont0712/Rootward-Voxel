@@ -76,25 +76,19 @@ func _process(delta: float) -> void:
 	for index: int in range(_cloths.size()):
 		var cloth: Node3D = _cloths[index]
 		cloth.rotation.x = 0.16 + sin(_clock * 1.7 + index * 1.3) * 0.09 + sin(_clock * 3.1 + index) * 0.03
-	if _tram != null: _place_tram(_clock)
+	if _tram != null:
+		var service_time: float = VillageLife.clock(view.villagers.life) if view.villagers != null else _clock
+		_place_tram(service_time)
 	for gull: Dictionary in _gulls: _fly(gull)
 	for trip: Dictionary in _rounds: _roll(trip, delta)
 
 
 ## The tram's round trip: up out of the cutting, a fifteen-second wait at the halt, back down, then a long gap.
 func _place_tram(time: float) -> void:
-	var period: float = float(_tram_spec.get("period", 84.0))
-	var t: float = fmod(time + float(_tram_spec.get("offset", 0.0)), period)
-	var travel: float = float(_tram_spec.get("travel", 7.0))
-	var gone: float = float(_tram_spec.out)
-	var stop: float = float(_tram_spec.stop)
-	var x: float = gone
-	if t < travel: x = lerpf(gone, stop, ease(t / travel, 0.4))
-	elif t < travel + 15.0: x = stop
-	elif t < travel * 2.0 + 15.0: x = lerpf(stop, gone, ease((t - travel - 15.0) / travel, 2.4))
-	_tram.position.x = x
+	var schedule: Dictionary = TramSchedule.sample(_tram_spec, time)
+	_tram.position.x = float(schedule.x)
 	# Past the cutting the car fades into its shade; the room has no ground beyond the edge.
-	var shade: float = clampf((float(_tram_spec.edge) - x) / float(_tram_spec.get("fade", 2.6)), 0.0, 1.0)
+	var shade: float = clampf((float(_tram_spec.edge) - float(schedule.x)) / float(_tram_spec.get("fade", 2.6)), 0.0, 1.0)
 	_tram.visible = shade < 0.99
 	for mesh: GeometryInstance3D in _tram_meshes:
 		mesh.transparency = shade

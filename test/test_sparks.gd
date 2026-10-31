@@ -382,6 +382,7 @@ func _window_steady() -> void:
 			scene._layout()
 			total += 1
 			seen[str([scene.card.position, scene.card.size])] = true
+			_check(absf(scene.card.position.x + scene.card.size.x - (scene.size.x - WorkshopScene.EDGE_MARGIN)) < 1.0, "The story window runs to the right margin: " + id)
 			_check(scene.card.get_global_rect().encloses(Rect2(scene._text_box.global_position, scene._text_box.size)), "The words sit inside the window: " + id)
 			if scene._choices.visible:
 				var inside: Rect2 = Rect2(scene._choices.global_position, scene._choices.size)
@@ -393,6 +394,7 @@ func _window_steady() -> void:
 		await process_frame
 		_check(game._modals.is_empty(), "The scene closes cleanly: " + id)
 	_check(total > 30 and seen.size() == 1, "All %d story pages are drawn in one window of one size and place (%d found)" % [total, seen.size()])
+	_check(game.hud._controls == null, "The Sparks HUD keeps the lower right clear: no controls hint under the story window")
 
 ## The paper journey draws its route and destinations with round outlined marks, and its job mark from sparks.
 func _markers() -> void:

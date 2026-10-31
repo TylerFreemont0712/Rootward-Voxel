@@ -1,0 +1,264 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "tool": "built-in image_gen.imagegen",
+  "transparent_background": true,
+  "model": "Not exposed by built-in tool",
+  "seed": "Not exposed by built-in tool",
+  "selected": "nells-field-slate-frame.png",
+  "concept_copy": "docs/concept/v0.73/art/nells-field-slate-frame.png",
+  "status": "Concept artwork only, awaiting user review. Runtime files/catalogs were not changed.",
+  "limitations": [
+    "The generator approximates the requested nine-slice measurements; measure/normalize before runtime use.",
+    "The screen has RGB variation and alpha from near-transparent to 254. It is not an exact solid #000000 / alpha255 production fill.",
+    "Transparency is real: selected exterior canvas corners are alpha0. RGB values in fully transparent pixels remain the generated matte colours. No pixels were edited after generation."
+  ],
+  "records": [
+    {
+      "file": "initial.png",
+      "role": "Initial material/style study; top and bottom bands too deep.",
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a18a57-3d9e-7aa1-be01-ea8e1c7c3235/exec-917855ee-46fb-4af7-855a-646da2e18ea1.png",
+      "sha256": "7385e61c5515aefc026d3162843205eb0119116c178cfbfa1377610ab2a974f6",
+      "prompt": "prompt.txt",
+      "prompt_sha256": "6fb5cf2ac6a6c61779a3f159df2985238901b6b2379c9791ac4de898f7907183",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bounds": [
+        0,
+        14,
+        1011,
+        1510
+      ],
+      "canvas_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "screen_core_exact_opaque_black_fraction": 0.0,
+      "screen_core_rgb_black_fraction": 0.8264943761595547,
+      "screen_core_top_pixels": [
+        [
+          [
+            0,
+            0,
+            0,
+            251
+          ],
+          134499
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            252
+          ],
+          133832
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            250
+          ],
+          53312
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            249
+          ],
+          24658
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            252
+          ],
+          18057
+        ]
+      ],
+      "screen_core_alpha_extrema": [
+        5,
+        253
+      ]
+    },
+    {
+      "file": "refinement.png",
+      "role": "Targeted edit; cleaned straight edges and reduced top band.",
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a18a57-3d9e-7aa1-be01-ea8e1c7c3235/exec-de395784-2be2-42d9-9bbe-d0bf3f0ec76a.png",
+      "sha256": "287e807ad445ee1e677b5775fd80229c3f2e3a0c77005a995f18d59d980ec4bd",
+      "prompt": "refinement-prompt.txt",
+      "prompt_sha256": "441a4fe97739ceb3b9efe7c373d177293485b95f7acebf0d0e0afa61a8fbb1e1",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bounds": [
+        0,
+        1,
+        1024,
+        1536
+      ],
+      "canvas_corner_alpha": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "screen_core_exact_opaque_black_fraction": 0.0,
+      "screen_core_rgb_black_fraction": 0.7493651437847867,
+      "screen_core_top_pixels": [
+        [
+          [
+            0,
+            0,
+            0,
+            3
+          ],
+          42297
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          28408
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            4
+          ],
+          26450
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            246
+          ],
+          22617
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            247
+          ],
+          21820
+        ]
+      ],
+      "screen_core_alpha_extrema": [
+        1,
+        250
+      ]
+    },
+    {
+      "file": "nells-field-slate-frame.png",
+      "role": "Selected concept: narrower top band, fuller screen, plain bottom ledge.",
+      "original_generated_path": "/home/joejin/.codex/generated_images/01a18a57-3d9e-7aa1-be01-ea8e1c7c3235/exec-3e8c53f2-19a6-4c91-b7e3-18a407aa0420.png",
+      "sha256": "d541f3bcf782f611d80c17ed25664a5c9b1b7efda721a08645322bae44739ff5",
+      "prompt": "layout-prompt.txt",
+      "prompt_sha256": "c1dd8e63c9e8a650f10a269b9c5e016c5f3a50e988384d61cbd70e0d08c5bf78",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bounds": [
+        0,
+        9,
+        1024,
+        1536
+      ],
+      "canvas_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "screen_core_exact_opaque_black_fraction": 0.0,
+      "screen_core_rgb_black_fraction": 0.6007769016697588,
+      "screen_core_top_pixels": [
+        [
+          [
+            0,
+            0,
+            0,
+            250
+          ],
+          71019
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            249
+          ],
+          39474
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            3
+          ],
+          35966
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            4
+          ],
+          31829
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            251
+          ],
+          29706
+        ]
+      ],
+      "screen_core_alpha_extrema": [
+        1,
+        252
+      ]
+    }
+  ]
+}
