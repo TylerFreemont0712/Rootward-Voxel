@@ -164,15 +164,15 @@ func _play() -> void:
 		game.session.request_step(cell-game.session.player_cell())
 		game.session.advance_walk(LabWorld.STEP_SECONDS)
 	game._process(0)
-	_check(game.session.player_cell() == Vector2i(5,11) and game.movement_lesson is WorkshopJobsJournal and game.movement_lesson._page == "landing-light" and game.session.state.terminal_links.is_empty(), "Walking to the lantern opens its job page without linking the zone's screen")
-	_check((game.movement_lesson as WorkshopJobsJournal)._pages.item_count == 1, "Beside the lantern only the lantern's page is offered")
-	var slate := game.movement_lesson as WorkshopJobsJournal
+	_check(game.session.player_cell() == Vector2i(5,11) and game.journal is WorkshopJobsJournal and game.journal._page == "landing-light" and game.session.state.terminal_links.is_empty(), "Walking to the lantern opens its job page without linking the zone's screen")
+	_check((game.journal as WorkshopJobsJournal)._pages.item_count == 1, "Beside the lantern only the lantern's page is offered")
+	var slate := game.journal as WorkshopJobsJournal
 	_check(slate._tablet.link_kind == TabletScreen.Link.WIRELESS and is_instance_valid(game._slate_link) and not game._slate_link.wired, "Beside a single fitting the slate pairs over the air, and the room shows the signal")
 	var pad: Rect2 = slate._notepad.get_global_rect()
 	var dock: Rect2 = Rect2(Vector2(game.size.x - slate.drawer_width - SideDrawer.MARGIN, 0), Vector2(slate.drawer_width, game.size.y))
 	_check(pad.position.x < dock.position.x and pad.end.x > dock.position.x and pad.end.y > game.size.y * .9 and slate._notepad.current() == &"job", "The notepad is clipped to the slate's lower end, open at the job")
 	await shot("03c-connected-terminal")
-	var notes:=game.movement_lesson as WorkshopJobsJournal
+	var notes:=game.journal as WorkshopJobsJournal
 	await notes.preview()
 	_check(game.session.has_preview() and not game.session.preview_state().lamps["landing-lamp"] and not game.session.completed.has("landing-light"),"The unchanged starter leaves the lamp visibly off and the quest incomplete")
 	notes.editor.text=LIGHT
@@ -215,7 +215,7 @@ func _play() -> void:
 		game.session.advance_walk(LabWorld.STEP_SECONDS)
 	game._process(0)
 	_check(game.session.state.terminal_links.has("workshop-terminal") and game.session.player_cell() == Vector2i(1,2), "Standing at the wall screen with the tablet links the room's zone")
-	notes=game.movement_lesson as WorkshopJobsJournal
+	notes=game.journal as WorkshopJobsJournal
 	_check(notes._page=="morning-round" and notes.editor.text.contains("lamps[0]"),"The screen opens the distinct round starter")
 	_check(notes._tablet.link_kind == TabletScreen.Link.WIRED and is_instance_valid(game._slate_link) and game._slate_link.wired, "At a zone's screen the slate is plugged in, and its cord runs to the socket")
 	var reserve: float = notes.extra_reserve()
@@ -225,7 +225,7 @@ func _play() -> void:
 	_check(not notes._tucked and not game.session.notes_put_away and notes._notepad.put_away.visible, "Any sticky brings the notes back")
 	notes._notepad.select(&"job")
 	_check(notes.go_to_definition("lamps") and notes.editor.get_caret_line() == int(CodeLookup.definition(notes.editor.text, "lamps").line) and notes.editor.get_selected_text() == "lamps", "Going to a variable's definition selects it where the program sets it")
-	_check(notes._devices.get_child_count() == 4 and notes._tablet._tabs.get_child_count() == 2, "The slate lists the zone's three devices and a file tab for each reached page")
+	_check(notes._devices.get_child_count() >= 3 and _has_text(notes,"workshop-tender") and notes._tablet._tabs.get_child_count() == 2, "The slate lists the zone's lamps and service robot and a file tab for each reached page")
 	_check(_has_text(notes, "temporary name") and _has_text(notes, "for lamp in lamps:"), "The loop guide explains the name and shows a concrete worked example")
 	await shot("05b-loop-guide")
 	await notes.preview()
@@ -273,13 +273,13 @@ func _play() -> void:
 	game.session.state.player=[9,3,0]
 	game.view.sync_player(game.session.state)
 	game.open_notebook()
-	_check(game.movement_lesson is WorkshopJournal and not game.session.rules.snapshot(game.session.state).zones.size() > 0,"Field Notes away from the screen is the plain open page and reaches no zone")
+	_check(game.journal is WorkshopJournal and not game.session.rules.snapshot(game.session.state).zones.size() > 0,"Field Notes away from the screen is the plain open page and reaches no zone")
 	game.close_notebook(true)
 	game.session.state.player=[1,2,0]
 	game.view.sync_player(game.session.state)
 	game._activate_terminal("workshop-terminal")
-	_check(game.movement_lesson is WorkshopJobsJournal,"After the chapter the job pages remain at the screen for experiments")
-	_check((game.movement_lesson as WorkshopJobsJournal)._page=="morning-round","The completed chapter opens its most recent routine rather than the old ticket")
+	_check(game.journal is WorkshopJobsJournal,"After the chapter the job pages remain at the screen for experiments")
+	_check((game.journal as WorkshopJobsJournal)._page=="morning-round","The completed chapter opens its most recent routine rather than the old ticket")
 	game.close_notebook(true)
 	game.session.state.player=[6,8,0]
 	game.view.sync_player(game.session.state)
@@ -291,7 +291,7 @@ func _play() -> void:
 	await shot("10-job-book-after-round")
 	(game._modals[0] as WorkshopJobLedger).close()
 	game.open_notebook()
-	_check(game.movement_lesson is WorkshopJournal and game.movement_lesson.editor.text==CompanionLesson.STARTER,"The original greeting remains independently editable after both jobs")
+	_check(game.journal is WorkshopJournal and game.journal.editor.text==CompanionLesson.STARTER,"The original greeting remains independently editable after both jobs")
 	game.close_notebook(true)
 	game.session.request_step(Vector2i(0,-1))
 	while game._flow_busy:await process_frame

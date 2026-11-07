@@ -1,7 +1,7 @@
 class_name WorkshopLog
 extends Modal
 ## A deliberate, saved transcript drawer. World inspections never enter it.
-func setup(tokens: Array, scenes: Dictionary, note: Dictionary = {}, note_read: bool = false) -> void:
+func setup(tokens: Array, scenes: Dictionary, note: Dictionary = {}, note_read: bool = false, player_name: String="Lodger") -> void:
 	theme = PaperTheme.theme()
 	var center: Node = card.get_parent()
 	card.reparent(self)
@@ -35,9 +35,9 @@ func setup(tokens: Array, scenes: Dictionary, note: Dictionary = {}, note_read: 
 			entries.add_child(UI.rule())
 			entries.add_child(UI.heading(str(scenes[token.scene].title), 23))
 			previous = token.scene
-		var speaker: String = {"hotaru":"HOTARU", "player":"YOU", "ticket":"NELL’S TICKET", "narration":""}.get(line.speaker, "")
+		var speaker: String = {"hotaru":"HOTARU", "player":"YOU", "ticket":"NELL’S TICKET", "note":"A NOTE", "narration":"", "braum":"BRAUM", "iona":"IONA VENN", "nell":"NELL", "mira":"MIRA", "tessa":"TESSA", "ada":"ADA KETTERING", "gret":"GRET FINCH"}.get(line.speaker, "")
 		if speaker != "": entries.add_child(UI.label(speaker, &"LabelCaps", 12, PaperPal.TEAL_DEEP))
-		entries.add_child(UI.dim(str(line.text), 19))
+		entries.add_child(UI.dim(str(line.text).replace("{player_name}",player_name), 19))
 	resized.connect(_layout)
 	_layout.call_deferred()
 

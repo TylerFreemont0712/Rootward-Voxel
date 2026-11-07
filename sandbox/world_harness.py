@@ -158,6 +158,16 @@ class _Standing:
         _recorder.record({"op": "rotate", "entity_id": self.id, "facing": _FACINGS[direction]})
         self.facing = direction
 
+    def move_to(self, x, y):
+        """Move this doodad to [x, y] (it snaps to quarter cells). The builder's rules decide if it fits."""
+        _need("move", "move doodads")
+        for value in (x, y):
+            if isinstance(value, bool) or not isinstance(value, (int, float)):
+                raise TypeError("move_to needs two numbers, x and y, not " + repr(value))
+        _recorder.record({"op": "relocate", "entity_id": self.id, "at": [x, y]})
+        self.at = [round(x * 4) / 4, round(y * 4) / 4]
+        self.cell = [int(round(self.at[0])), int(round(self.at[1])), 0]
+
 
 class House(_Standing):
     def __init__(self, data):
@@ -172,6 +182,8 @@ class Doodad(_Standing):
     def __init__(self, data):
         _Standing.__init__(self, data)
         self.solid = data["solid"]
+        # Lamp standards and other lit scenery name the lamps they carry: world.lamp(doodad.lamps[0]).
+        self.lamps = list(data.get("lamps", []))
 
     def __repr__(self):
         return "<Doodad %r facing=%s>" % (self.id, self.facing)
@@ -220,34 +232,50 @@ class Zone:
         return "<Zone %r: %d lamps>" % (self.id, len(self.lamps))
 
 
-class Controls:
-    """A small declarative key map, recorded for validation by the game."""
-    def __init__(self, raw):
-        self.enabled = raw.get("enabled", False)
-        self.bindings = dict(raw.get("bindings", {}))
+class WorldTime:
+    def __init__(self, data):
+        self.hour = data.get("hour", 9.0)
+        self.phase = data.get("phase", "Morning")
+        self.is_dark = data.get("is_dark", False)
+        self.day = data.get("day", 1)
 
-    def bind(self, key, direction):
-        if not self.enabled:
-            raise WorldError("Movement bindings are available in Village Morning.")
-        if not isinstance(key, str) or not isinstance(direction, str):
-            raise TypeError('Use text, for example world.controls.bind("W", "north").')
-        _recorder.record({"op": "bind_key", "target": "player", "key": key, "direction": direction})
-        self.bindings[key] = direction
 
-    def bind_move(self, key, x, y):
-        if not self.enabled:
-            raise WorldError("Movement bindings are available in Village Morning.")
-        if not isinstance(key, str) or type(x) is not int or type(y) is not int:
-            raise TypeError('Use a key and whole x/y amounts, for example bind_move("W", 0, 1).')
-        _recorder.record({"op": "bind_key", "target": "player", "key": key, "delta": [x, y]})
-        name = {(0, 1): "north", (-1, 0): "west", (0, -1): "south", (1, 0): "east"}.get((x, y))
-        if name:
-            self.bindings[key] = name
+class Robot:
+    def __init__(self, data):
+        self.id = data["id"]
+        self.running = data["running"]
+        self.speed = data["speed"]
+        self.stops = list(data["stops"])
+        self.route = list(data["route"])
+
+    def _set(self, field, value):
+        _recorder.record({"op": "set_robot", "id": self.id, "field": field, "value": value})
+
+    def pause(self):
+        self._set("running", False)
+
+    def resume(self):
+        self._set("running", True)
+
+    def set_speed(self, speed):
+        if isinstance(speed, bool) or not isinstance(speed, (int, float)):
+            raise TypeError("Robot speed needs a number, from 0.5 to 3.")
+        self._set("speed", speed)
+
+    def set_route(self, stops):
+        if not isinstance(stops, list):
+            raise TypeError("set_route needs a list of names from robot.stops.")
+        self._set("route", stops)
+
+    def __repr__(self):
+        return "<Robot %r>" % self.id
 
 
 class World:
     def __init__(self, raw):
         self._raw = raw
+        self.time = WorldTime(raw.get("time", {}))
+        self.robots = [Robot(item) for item in raw.get("robots", [])]
         self.lamps = [Lamp(item) for item in raw.get("lamps", [])]
         self.gates = [Gate(item) for item in raw.get("gates", [])]
         self.bridges = [Bridge(item) for item in raw.get("bridges", [])]
@@ -260,13 +288,15 @@ class World:
         self.zones = [Zone(item, self.lamps, self.gates, self.bridges, self.props, self._houses, self._trees, self._doodads) for item in raw.get("zones", [])]
         self.player = raw["player"]
         self.memory = raw["memory"]
-        self.controls = Controls(raw.get("controls", {}))
 
     def _find(self, items, wanted, kind):
         for item in items:
             if item.id == wanted:
                 return item
         raise WorldError("There is no %s called %r that you can reach. Known: %s." % (kind, wanted, _names(items)))
+
+    def robot(self, name):
+        return self._find(self.robots, name, "robot")
 
     def lamp(self, name):
         return self._find(self.lamps, name, "lamp")
@@ -409,8 +439,25 @@ def _voice_print(*args, **kwargs):
     if text.strip():
         _recorder.record({"op": "say", "target": "hotaru", "text": text})
 
+_display_text = ""
+def _display_print(*args, **kwargs):
+    global _display_text
+    import io
+    buffer = io.StringIO()
+    kwargs = dict(kwargs)
+    if kwargs.get("file") is not None:
+        raise ValueError("Sign print writes to the connected display, not a file.")
+    kwargs.pop("file", None)
+    builtins.print(*args, file=buffer, **kwargs)
+    _display_text += buffer.getvalue()
+    if len(_display_text) > 512:
+        raise ValueError("The sign holds three short messages. Print each once; the sign repeats the card.")
+    builtins.print(*args, **kwargs)
+
 namespace = {"__name__": "player", "__file__": "player.py"}
-if raw_world.get("companion", {}).get("enabled", False):
+if raw_world.get("display_sink"):
+    namespace["print"] = _display_print
+elif raw_world.get("companion", {}).get("enabled", False):
     namespace["print"] = _voice_print
 try:
     sys.settrace(_on_line)
@@ -426,6 +473,9 @@ finally:
     if sys.exc_info()[0] is not None:
         builtins.print("\n__VOXEL_TRACE__" + json.dumps(_trace, separators=(",", ":")))
 commands = list(_recorder.commands)
+if raw_world.get("display_sink"):
+    text = _display_text[:-1] if _display_text.endswith("\n") else _display_text
+    commands.append({"op": "set_sign_messages", "target": raw_world["display_sink"]["target"], "messages": text.split("\n")})
 memory = world.memory
 if answer is None:
     pass

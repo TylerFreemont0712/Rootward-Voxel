@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "compatible_bake_catalog": "art/source/world/ground/v1/texture-catalog-before.json",
+  "compatible_bake_catalog": "art/source/world/town-ground/v1/texture-catalog-before.json",
   "note": "Shared painted texture recipes for procedural surfaces and saved instance finishes. `scripts/world-art.sh retexture <id>` deliberately bakes recipes into an adopted Blender source. Runtime pictures: assets/world/textures/<set>/<name>.png. Sources, prompts and hashes: art/source/world/textures/v1/ and v2-detail/. Existing recipes remain bake-compatible; v2-detail adds fifteen materials through scripts/art.sh. See pipeline/MATERIALS.md.",
   "set": "lush",
   "sets": {
@@ -341,6 +341,73 @@
       "roughness": 0.94,
       "metallic": 0.0,
       "library": "v2-detail"
+    },
+    "town_flags": {
+      "texture": "town_flags",
+      "title": "Town Flags",
+      "tile": 3.0,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "town-ground-v1",
+      "ground": true,
+      "edge": "crisp"
+    },
+    "town_cobbles": {
+      "texture": "town_cobbles",
+      "title": "Town Cobbles",
+      "tile": 2.0,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "town-ground-v1",
+      "ground": true,
+      "edge": "crisp"
+    },
+    "town_setts": {
+      "texture": "town_setts",
+      "title": "Granite Setts",
+      "tile": 3.0,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "town-ground-v1",
+      "ground": true,
+      "edge": "crisp"
+    },
+    "town_brick": {
+      "texture": "town_brick",
+      "title": "Brick Paving",
+      "tile": 2.0,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "town-ground-v1",
+      "ground": true,
+      "edge": "crisp"
+    },
+    "town_gravel": {
+      "texture": "town_gravel",
+      "title": "Garden Gravel",
+      "tile": 2.0,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "town-ground-v1",
+      "ground": true,
+      "edge": "kerbed"
+    },
+    "town_bed": {
+      "texture": "town_bed",
+      "title": "Planting Bed",
+      "tile": 2.0,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "town-ground-v1",
+      "ground": true,
+      "edge": "kerbed"
+    },
+    "town_lawn": {
+      "texture": "grass",
+      "title": "Town Lawn",
+      "tile": 1.0,
+      "ground": true,
+      "edge": "kerbed"
     }
   }
 }

@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "area": "shop-greengrocer",
+  "quests": [
+    {
+      "id": "todays-prices",
+      "title": "Today's prices",
+      "after": [
+        "own-corner"
+      ],
+      "concept": "Dictionaries: names that look up values",
+      "summary": "The Pantry's board has said APPLES 4P since Tuesday. Teo Vasko's prices are on his slate: apples 4, lemons 3, and plums, which came down from 6 to 5 this morning. Work payment: 18 p.",
+      "goal": {
+        "type": "all",
+        "goals": [
+          {
+            "type": "inspection_read",
+            "id": "price-order"
+          },
+          {
+            "type": "display_lines",
+            "id": "price-board",
+            "noun": "prices on the board",
+            "lines": [
+              "APPLES 4P",
+              "LEMONS 3P",
+              "PLUMS 5P"
+            ]
+          }
+        ]
+      },
+      "access": {
+        "kind": "display",
+        "id": "price-board"
+      },
+      "focus": {
+        "at": [
+          8,
+          10
+        ]
+      },
+      "lesson": [
+        "Read the note under the price board, then jack the slate in below it.",
+        "A dictionary pairs names with values, inside curly brackets: {\"APPLES\": 4}. prices[\"APPLES\"] looks up the 4.",
+        "prices[\"PLUMS\"] = 5 changes one value and leaves the others alone. That's the line Teo will change tomorrow.",
+        "for name in prices: visits each name in the dictionary, in the order they were written.",
+        "Each page should read like APPLES 4P: the name, a space, the price and a P."
+      ],
+      "guide": {
+        "title": "Looking things up by name",
+        "text": "A dictionary keeps each value under its name. Change one entry; read any of them back.",
+        "code": "stock = {\"PEARS\": 9, \"FIGS\": 2}\nstock[\"FIGS\"] = 3\nfor name in stock:\n    print(name + \" \" + str(stock[name]))"
+      },
+      "starter": [
+        "# todays_prices.py",
+        "# Teo's slate, copied out.",
+        "",
+        "def program(world):",
+        "    prices = {\"APPLES\": 4, \"LEMONS\": 3, \"PLUMS\": 6}",
+        "",
+        "    # TODO: the Kerrigans' cart came up full. Plums are 5 today.",
+        "",
+        "    print(\"APPLES \" + str(prices[\"APPLES\"]) + \"P\")",
+        "    # TODO: a page for every fruit, not only apples"
+      ],
+      "hints": [
+        "Change the plum price with prices[\"PLUMS\"] = 5 before printing anything.",
+        "for name in prices:  then, indented, print(name + \" \" + str(prices[name]) + \"P\")."
+      ],
+      "done": "Apples, lemons and plums, each at today's price. Tomorrow Teo only has to change one line."
+    }
+  ]
+}

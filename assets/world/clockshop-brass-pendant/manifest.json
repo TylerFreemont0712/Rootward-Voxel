@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "asset": "clockshop-brass-pendant",
+  "version": 1,
+  "source": "art/source/world/clockshop-brass-pendant/v1/model.blend",
+  "source_sha256": "ead89fcdf25af8d92869deb31b94585655102bd3513b5f6cc99e929ecde5f8b9",
+  "runtime": "assets/world/clockshop-brass-pendant/model.glb",
+  "runtime_sha256": "af6b01d770d940a83e0e65979fd27034d0ac7274769fa699b29390d73630315d",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.340000003576279,
+      -0.980000078678131,
+      -0.340000003576279,
+      0.340000003576279,
+      1.57360990904465e-09,
+      0.340000003576279
+    ],
+    "geometry_sha256": "90b85055478240c649f5ae8d6a497f51f5537cb4cd8ec85365afe85712c91dca",
+    "material_records": {
+      "clockshop_brass": {
+        "albedo": [
+          7098,
+          5412,
+          2588,
+          10000
+        ],
+        "roughness": 4300,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_lamp_glass": {
+        "albedo": [
+          10000,
+          8824,
+          6275,
+          10000
+        ],
+        "roughness": 2800,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "clockshop_brass",
+      "clockshop_lamp_glass"
+    ],
+    "meshes": 2,
+    "triangles": 832
+  }
+}

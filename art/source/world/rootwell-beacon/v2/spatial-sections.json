@@ -1,0 +1,39 @@
+{
+  "source_sha256": "b1963ac92821bc541438eb46d458bcf337bcebd62f6f243e2b41be74de484e53",
+  "followup_source_sha256": "3a77b9dab8b471645b67c179dbedfb755b9f0bcadb8c4fcfcb8192ccf5205720",
+  "chunks": [
+    [
+      "house_paint",
+      10
+    ],
+    [
+      "seaside_stone",
+      12
+    ],
+    [
+      "seaside_timber",
+      4
+    ],
+    [
+      "rootwell_conduit_frame_grid_bed",
+      12
+    ],
+    [
+      "rootwell_conduit_frame_grid_bronze",
+      12
+    ],
+    [
+      "rootwell_conduit_glass",
+      12
+    ],
+    [
+      "rootwell_brass",
+      4
+    ],
+    [
+      "rootwell_verdigris",
+      4
+    ]
+  ],
+  "metres": 3
+}

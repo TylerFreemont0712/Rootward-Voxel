@@ -62,6 +62,9 @@ var land_tool: String = ""
 var brush_size: int = 1
 var eyedropper: bool = false
 var stroke_active: bool = false
+## The corner a wall being drawn starts from, or null. A drag draws it; a click starts it and a second click ends it.
+var _wall_start: Variant = null
+var _wall_end: Vector2 = Vector2.ZERO
 var _stroke: Dictionary = {}
 var _last_sub: Vector2i = Vector2i(-999, -999)
 var _brush_sub: Vector2i = Vector2i.ZERO
@@ -118,6 +121,9 @@ func describe_item(entry: Dictionary) -> Dictionary:
 		var across: int = maxi(1, ceili(rect.size.x - 0.2))
 		var deep: int = maxi(1, ceili(rect.size.y - 0.2))
 		return {"chip": "%d × %d cells" % [across, deep], "spec": "Footprint %d × %d cells  ·  door on the front\n%s" % [across, deep, who]}
+	if entry.kind == "wall":
+		var style: Dictionary = AreaBuild.WALL_STYLES.get(str(entry.get("style", "")), {})
+		return {"chip": "Drag to draw", "spec": "Drawn along the grid's edges; corners and ends get piers on their own\n%s bays, %.0f m long  ·  %s" % [str(style.get("title", "Wall")), float(style.get("bay_length", 0.0)), who]}
 	if entry.kind == "prop":
 		var body: Rect2 = AreaBuild.prop_rect(ledger.assets, str(entry.asset), Vector2.ZERO, "S", 1.0)
 		if AreaBuild.prop_is_solid(ledger.assets, str(entry.asset)):
@@ -136,6 +142,9 @@ func enter() -> void:
 	if active:
 		return
 	active = true
+	var layout: Dictionary = ledger.area.interior.get("layout", {})
+	hud.configure_layout(layout)
+	if not layout.is_empty() and not (layout.items as Array).has(item_id): item_id = str(layout.items[0])
 	carrying = {}
 	selected = {}
 	facing = "S"
@@ -174,6 +183,7 @@ func leave() -> void:
 
 # -------------------------------------------------------------------- state
 func set_tool(new_tool: int) -> void:
+	_cancel_wall()
 	_cancel_stroke()
 	_cancel_carry()
 	_full_timer.stop()
@@ -192,6 +202,7 @@ func set_tool(new_tool: int) -> void:
 
 
 func choose_item(id: String) -> void:
+	_cancel_wall()
 	item_id = id
 	if tool != Tool.PLACE:
 		set_tool(Tool.PLACE)
@@ -217,11 +228,13 @@ func set_facing(new_facing: String) -> void:
 
 
 func _turn_selected(new_facing: String) -> void:
-	if selected.is_empty() or not selected.kind in ["building", "prop"]:
+	if selected.is_empty() or not selected.kind in ["building", "prop", "scenery"]:
 		return
 	var result: Dictionary
 	if selected.kind == "building":
 		result = ledger.turn_building(str(selected.id), new_facing, session.state)
+	elif selected.kind == "scenery":
+		result = ledger.turn_scenery(str(selected.id), float(AreaDef.FACINGS[new_facing]), session.state)
 	else:
 		result = ledger.turn_prop(str(selected.id), new_facing, session.state)
 	if not result.ok:
@@ -411,6 +424,9 @@ func _left_released() -> void:
 	_press_object = {}
 	if stroke_active:
 		_finish_stroke()
+	if was_down and _wall_start != null and _pointer.distance_to(_press_point) > DRAG_PIXELS:
+		_refresh_hover()
+		_finish_wall()
 	if was_down and _drag_lift and not carrying.is_empty() and _pointer_in and not hud.covers(_pointer) and _pointer.distance_to(_press_point) > DRAG_PIXELS:
 		_refresh_hover()
 		_set_down(session.state)
@@ -471,6 +487,9 @@ func choose_paint(material: String) -> void:
 
 ## Chooses a land-shaping tool from Land's Terrain or Water: raise, lower, stairs, water or land (fill in).
 func choose_shape(shape: String) -> void:
+	if not (ledger.area.interior.get("layout", {}) as Dictionary).is_empty():
+		_deny("This terrace stays flat. Use Land to paint its paths and lawn.")
+		return
 	_cancel_stroke()
 	land_tool = shape
 	eyedropper = false
@@ -510,9 +529,13 @@ func _hover_paint() -> void:
 	overlay.set_cursor(ground)
 	var color: Color = preload("res://art/world_palette.gd").COLORS.get(paint_material, Color("dfd2ab"))
 	overlay.show_brush(_brush_cells(_brush_sub), color)
-	var valid: bool = GroundPaint.is_ground(ledger.area, _brush_sub) and view.ground_skin != null
+	var valid: bool = _paintable(_brush_sub) and view.ground_skin != null
 	var label: String = "Pick a ground material" if eyedropper or Input.is_key_pressed(KEY_ALT) else ("Restore natural ground" if paint_material == "" else "Paint " + paint_material.replace("_", " "))
-	hud.set_bubble(label if valid else "Paint only generated grass, paths or cobble", valid, _pointer)
+	hud.set_bubble(label if valid else "Paint the flat upper terrace", valid, _pointer)
+
+
+func _paintable(sub: Vector2i) -> bool:
+	return GroundPaint.is_ground(ledger.area, sub) and AreaBuild.layout_contains(ledger.area, Rect2(Vector2(sub) * .5 - Vector2(.5, .5), Vector2(.5, .5))) and ledger.area.stair_at(Vector2i(sub.x / 2, sub.y / 2)).is_empty()
 
 
 func _start_stroke() -> void:
@@ -546,7 +569,7 @@ func _extend_stroke() -> void:
 	for step: int in range(steps + 1):
 		var sub := Vector2i(Vector2(start).lerp(Vector2(_brush_sub), float(step) / float(maxi(steps, 1))).round())
 		for cell: Vector2i in _brush_cells(sub):
-			if GroundPaint.is_ground(ledger.area, cell) and not _stroke.has(cell):
+			if _paintable(cell) and not _stroke.has(cell):
 				_stroke[cell] = true
 				fresh.append(cell)
 	_last_sub = _brush_sub
@@ -731,9 +754,54 @@ func _hover_place() -> void:
 		hud.hide_bubble()
 		return
 	var entry: Dictionary = AreaBuild.item(ledger.build_catalog, item_id)
+	if entry.get("kind") == "wall":
+		_hover_wall(entry, ground)
+		return
 	_snapped = _snap(entry, ground)
 	overlay.set_cursor(_snapped)
 	_show_candidate(entry, ledger.check_item(item_id, _snapped, facing, session.state), "place|%s" % item_id, str(entry.title))
+
+
+## Drawing a wall: the corner under the pointer, or the run from where it started, with its pieces as a proposal.
+func _hover_wall(entry: Dictionary, ground: Vector2) -> void:
+	var style: String = str(entry.style)
+	overlay.hide_ghost()
+	if _wall_start == null:
+		var corner: Vector2 = AreaBuild.snap_corner(ground)
+		overlay.set_cursor(corner)
+		overlay.show_wall(AreaBuild.wall_pieces([{"from": corner, "to": corner + Vector2(0.001, 0), "style": style}]), true)
+		hud.set_bubble("Press on a corner and drag along the grid to draw a %s" % str(entry.title).to_lower(), true, _pointer)
+		return
+	_wall_end = AreaBuild.wall_end(_wall_start, ground)
+	overlay.set_cursor(_wall_end)
+	var checked: Dictionary = ledger.check_wall(_wall_start, _wall_end, style, session.state)
+	var length: float = (_wall_start as Vector2).distance_to(_wall_end)
+	overlay.show_wall(AreaBuild.wall_pieces([{"from": _wall_start, "to": _wall_end, "style": style}]) if length >= 0.99 else AreaBuild.wall_pieces([{"from": _wall_start, "to": (_wall_start as Vector2) + Vector2(0.001, 0), "style": style}]), checked.ok)
+	hud.set_bubble(("%s, %d m" % [str(entry.title), roundi(length)]) if checked.ok else str(checked.reason), checked.ok, _pointer)
+
+
+func _finish_wall() -> void:
+	if _wall_start == null:
+		return
+	var entry: Dictionary = AreaBuild.item(ledger.build_catalog, item_id)
+	var start: Vector2 = _wall_start
+	_wall_start = null
+	overlay.hide_wall()
+	var result: Dictionary = ledger.add_wall(start, _wall_end, str(entry.get("style", "")), session.state)
+	if result.ok:
+		_after_edit(ledger.describe(result.edit))
+	else:
+		_deny(str(result.reason))
+	_hover_dirty = true
+
+
+func _cancel_wall() -> void:
+	if _wall_start == null and overlay == null:
+		return
+	_wall_start = null
+	if overlay != null:
+		overlay.hide_wall()
+	_hover_dirty = true
 
 
 func _hover_carry() -> void:
@@ -753,6 +821,11 @@ func _hover_carry() -> void:
 		overlay.set_cursor(_snapped)
 		var prop_checked: Dictionary = ledger.check_move_prop(str(carrying.id), _snapped, facing, state)
 		_show_candidate({"kind": "prop", "asset": carrying.asset}, prop_checked, "move|%s" % carrying.id, ledger.title_for_asset(str(carrying.asset)))
+	elif carrying.kind == "scenery":
+		_snapped = AreaBuild.snap_prop(ground)
+		overlay.set_cursor(_snapped)
+		var scenery_checked: Dictionary = ledger.check_move_scenery(str(carrying.id), _snapped, _carried_turn(), state)
+		_show_candidate({"kind": "scenery", "asset": carrying.asset}, scenery_checked, "move|%s" % carrying.id, ledger.title_for_asset(str(carrying.asset)))
 	else:
 		_snapped = AreaBuild.snap_tree(ground)
 		overlay.set_cursor(_snapped)
@@ -773,6 +846,10 @@ func _hover_pick(mode: String) -> void:
 		thing = ledger.title_for_asset(str(ledger.area.building(str(_hover_object.get("id", ""))).get("asset", "")))
 	elif _hover_object.kind == "prop":
 		thing = ledger.title_for_asset(str(ledger.area.prop(str(_hover_object.get("id", ""))).get("asset", "")))
+	elif _hover_object.kind == "wall":
+		thing = str(_wall_title(str(_hover_object.get("id", ""))))
+	elif _hover_object.kind == "scenery":
+		thing = ledger.title_for_asset(str(ledger.area.scenery_item(str(_hover_object.get("id", ""))).get("asset", "")))
 	elif CODE_TYPES.has(_hover_object.kind) or _hover_object.kind == "stairs":
 		thing = str(_hover_object.kind)
 	if _hover_object.locked:
@@ -807,7 +884,7 @@ func _show_candidate(entry: Dictionary, checked: Dictionary, key: String, label:
 		var rect: Rect2 = checked.get("rect", Rect2())
 		spec["cells"] = AreaBuild.footprint_cells(rect) if rect.size != Vector2.ZERO else []
 		spec["door"] = checked.get("door", Vector2i(-1, -1))
-	elif entry.kind == "prop":
+	elif entry.kind == "prop" or entry.kind == "scenery":
 		spec["asset"] = entry.asset
 		var body: Rect2 = checked.get("rect", Rect2())
 		spec["cells"] = AreaBuild.footprint_cells(body) if body.size != Vector2.ZERO else []
@@ -833,6 +910,8 @@ func _run_full_check() -> void:
 		result = ledger.move_building(str(carrying.id), _snapped, facing, state, false)
 	elif carrying.get("kind") == "prop":
 		result = ledger.move_prop(str(carrying.id), _snapped, facing, state, false)
+	elif carrying.get("kind") == "scenery":
+		result = ledger.move_scenery(str(carrying.id), _snapped, _carried_turn(), state, false)
 	else:
 		result = ledger.move_tree(carrying.from, _snapped, state, false)
 	_full_key = key
@@ -849,6 +928,18 @@ func _snap(entry: Dictionary, ground: Vector2) -> Vector2:
 	return AreaBuild.snap_tree(ground)
 
 
+## The nearest compass facing for a turn in degrees (authored scenery may stand at any angle).
+static func _facing_for(turn: float) -> String:
+	return ["S", "E", "N", "W"][posmod(roundi(turn / 90.0), 4)]
+
+
+## The turn to set carried scenery down at: its own exact angle until the player turns it, then the chosen facing.
+func _carried_turn() -> float:
+	if facing == str(carrying.get("facing", "")):
+		return float(carrying.get("turn", AreaDef.FACINGS.get(facing, 0.0)))
+	return float(AreaDef.FACINGS[facing])
+
+
 # ------------------------------------------------------------------- acting
 func _click() -> void:
 	if not _pointer_in or hud.covers(_pointer):
@@ -860,6 +951,15 @@ func _click() -> void:
 		Tool.PLACE:
 			if item_id == "":
 				hud.toast("Choose something from the tray first")
+				return
+			if AreaBuild.item(ledger.build_catalog, item_id).get("kind") == "wall":
+				var ground: Variant = overlay.ground_point(_viewport_point())
+				if _wall_start != null:
+					_finish_wall()
+				elif ground != null:
+					_wall_start = AreaBuild.snap_corner(ground)
+					_wall_end = _wall_start
+					_hover_dirty = true
 				return
 			var result: Dictionary = ledger.place(item_id, _snapped, facing, state)
 			if result.ok:
@@ -884,6 +984,9 @@ func _click() -> void:
 func _pick_up(object: Dictionary) -> void:
 	if object.is_empty():
 		return
+	if object.kind == "wall":
+		_deny("Walls are drawn, not carried. Delete this one and draw it again where you want it.")
+		return
 	if object.locked:
 		_deny("This building is part of the lessons and cannot be moved or removed.")
 		return
@@ -897,6 +1000,12 @@ func _pick_up(object: Dictionary) -> void:
 		var prop: Dictionary = ledger.area.prop(str(object.id))
 		carrying = {"kind": "prop", "id": prop.id, "asset": prop.asset, "scale": prop.scale, "node": view.building_node(prop.id), "facing": prop.facing, "from": prop.at}
 		facing = prop.facing
+		if carrying.node != null:
+			(carrying.node as Node3D).visible = false
+	elif object.kind == "scenery":
+		var item: Dictionary = ledger.area.scenery_item(str(object.id))
+		facing = _facing_for(float(item.turn))
+		carrying = {"kind": "scenery", "id": item.id, "asset": item.asset, "scale": item.scale, "node": view.building_node(item.id), "facing": facing, "turn": item.turn, "from": item.at}
 		if carrying.node != null:
 			(carrying.node as Node3D).visible = false
 	else:
@@ -916,6 +1025,8 @@ func _set_down(state: Dictionary) -> void:
 		result = ledger.move_building(str(carrying.id), _snapped, facing, state)
 	elif carrying.kind == "prop":
 		result = ledger.move_prop(str(carrying.id), _snapped, facing, state)
+	elif carrying.kind == "scenery":
+		result = ledger.move_scenery(str(carrying.id), _snapped, _carried_turn(), state)
 	else:
 		result = ledger.move_tree(carrying.from, _snapped, state)
 	if not result.ok:
@@ -932,7 +1043,9 @@ func _set_down(state: Dictionary) -> void:
 
 
 func _cancel() -> void:
-	if stroke_active:
+	if _wall_start != null:
+		_cancel_wall()
+	elif stroke_active:
 		_cancel_stroke()
 	elif not carrying.is_empty():
 		_cancel_carry()
@@ -961,7 +1074,7 @@ func _cancel_carry() -> void:
 	overlay.hide_ghost()
 	if not selected.is_empty():
 		var standing: Dictionary = _resolve(selected)
-		if selected.kind in ["building", "prop"] and not standing.is_empty():
+		if selected.kind in ["building", "prop", "scenery"] and not standing.is_empty():
 			facing = str(standing.facing)
 		overlay.show_selection(selected)
 		_refresh_details()
@@ -1022,7 +1135,7 @@ func _same_object(a: Dictionary, b: Dictionary) -> bool:
 func _select(object: Dictionary) -> void:
 	selected = object.duplicate()
 	var standing: Dictionary = _resolve(selected)
-	if selected.kind in ["building", "prop"] and not standing.is_empty():
+	if selected.kind in ["building", "prop", "scenery"] and not standing.is_empty():
 		facing = str(standing.facing)
 	overlay.show_selection(selected)
 	_refresh_details()
@@ -1046,6 +1159,13 @@ func _resolve(object: Dictionary) -> Dictionary:
 		"prop":
 			var prop: Dictionary = ledger.area.prop(str(object.id))
 			return {"kind": "prop", "id": prop.id, "locked": false, "at": prop.at, "facing": prop.facing} if not prop.is_empty() else {}
+		"wall":
+			for wall: Dictionary in ledger.area.walls:
+				if wall.id == str(object.id): return {"kind": "wall", "id": wall.id, "locked": false, "at": ((wall.from as Vector2) + (wall.to as Vector2)) * 0.5}
+			return {}
+		"scenery":
+			var item: Dictionary = ledger.area.scenery_item(str(object.id))
+			return {"kind": "scenery", "id": item.id, "locked": false, "at": item.at, "facing": _facing_for(float(item.turn))} if not item.is_empty() else {}
 		"tree":
 			for tree: Dictionary in ledger.area.trees:
 				if AreaBuild.tree_key(tree.at) == AreaBuild.tree_key(object.at):
@@ -1063,7 +1183,7 @@ func _refresh_selection() -> void:
 		_clear_selection()
 		return
 	selected = fresh
-	if selected.kind in ["building", "prop"]:
+	if selected.kind in ["building", "prop", "scenery"]:
 		facing = str(selected.facing)
 	if carrying.is_empty():
 		overlay.show_selection(selected)
@@ -1084,6 +1204,11 @@ func _delete_object(object: Dictionary) -> void:
 		removal = ledger.remove_building(str(object.id), state)
 	elif object.kind == "prop":
 		removal = ledger.remove_prop(str(object.id), state)
+	elif object.kind == "scenery":
+		_deny("The town's own scenery can be moved and turned, but it stays in the town.")
+		return
+	elif object.kind == "wall":
+		removal = ledger.remove_wall(str(object.id), state)
 	else:
 		removal = ledger.remove_tree(object.at, state)
 	if removal.ok:
@@ -1230,6 +1355,17 @@ func _object_subject(object: Dictionary) -> Dictionary:
 			"note": "A tree has no front, so it cannot be turned.",
 			"code": _structure_code("tree", object.at, "tree = world.tree(%s, %s)" % [_plain_number(object.at.x), _plain_number(object.at.y)]),
 		}
+	if kind == "scenery":
+		return _scenery_subject(object)
+	if kind == "wall":
+		var wall: Dictionary = {}
+		for entry: Dictionary in ledger.area.walls:
+			if entry.id == str(object.id): wall = entry
+		var style: Dictionary = AreaBuild.WALL_STYLES.get(str(wall.get("style", "")), {})
+		return {"key": "wall:%s" % object.id, "kicker": "In the town", "title": str(style.get("title", "Wall")),
+			"blurb": "", "spec": "%d m along the grid  ·  blocks the way" % roundi((wall.get("from", Vector2.ZERO) as Vector2).distance_to(wall.get("to", Vector2.ZERO))),
+			"model": _model_maker(str(style.get("bay", "")), 1.0, false), "icon": &"cube", "turns": false, "removable": true,
+			"note": "Walls are drawn with the wall cards on the tray. Delete one to redraw it."}
 	var body: Dictionary = ledger.area.building(str(object.id)) if kind == "building" else ledger.area.prop(str(object.id))
 	var asset_id: String = str(body.get("asset", ""))
 	var item: Dictionary = _entry_for_asset(asset_id)
@@ -1261,6 +1397,35 @@ func _object_subject(object: Dictionary) -> Dictionary:
 	else:
 		subject["code"] = _structure_code("doodad", body.at, "doodad = world.doodad(\"%s\")" % body.id)
 	return subject
+
+
+## Authored scenery: a lamp standard shows its lamp's code (it keeps its name and program wherever it stands);
+## anything else says what it is and how to move it.
+func _scenery_subject(object: Dictionary) -> Dictionary:
+	var item: Dictionary = ledger.area.scenery_item(str(object.id))
+	var asset_id: String = str(item.get("asset", ""))
+	var subject: Dictionary
+	if not (item.get("lamps", []) as Array).is_empty():
+		subject = _code_subject({"kind": "lamp", "id": str(item.lamps[0])})
+		subject.title = ledger.title_for_asset(asset_id)
+		subject.spec = "%s\nIts program and name move with it." % str(subject.spec)
+	else:
+		subject = {"blurb": "", "spec": "Part of the town's scenery; it carries its own collision when it moves.", "icon": &"sparkle"}
+		subject.title = ledger.title_for_asset(asset_id)
+	subject.key = "scenery:%s" % object.id
+	subject.kicker = "In the town"
+	subject.model = _model_maker(asset_id, 1.0, false)
+	subject.turns = true
+	subject.facing = _facing_for(float(item.get("turn", 0.0)))
+	subject.removable = false
+	subject.note = "Click it again to pick it up, or drag it. Turn it with R or the compass."
+	return subject
+
+
+func _wall_title(id: String) -> String:
+	for wall: Dictionary in ledger.area.walls:
+		if wall.id == id: return str((AreaBuild.WALL_STYLES.get(str(wall.style), {}) as Dictionary).get("title", "wall"))
+	return "wall"
 
 
 ## A coordinate as a person would write it: 39.5, not 39.5000001, and 6, not 6.0.
@@ -1322,6 +1487,8 @@ func _code_subject(object: Dictionary) -> Dictionary:
 ## A picture for every card, drawn one at a time so the dock fills in as they finish.
 func _make_pictures() -> void:
 	var pending: Array[Dictionary] = _entries.duplicate()
+	var layout: Dictionary = ledger.area.interior.get("layout", {})
+	if not layout.is_empty(): pending = pending.filter(func(entry: Dictionary) -> bool: return (layout.items as Array).has(entry.id))
 	while not pending.is_empty():
 		var shown: Array[Dictionary] = hud.visible_items()
 		var next: int = pending.find(shown.filter(func(entry: Dictionary) -> bool: return pending.has(entry))[0]) if shown.any(func(entry: Dictionary) -> bool: return pending.has(entry)) else 0
@@ -1345,7 +1512,7 @@ func _make_pictures() -> void:
 		hud.set_picture(str(entry.id), picture)
 		pictures_done += 1
 		await get_tree().process_frame
-	for land_entry: Dictionary in hud.land_tools:
+	for land_entry: Dictionary in ([] if not layout.is_empty() else hud.land_tools):
 		var land: Texture2D = await studio.render(view.build_land_model(land_entry.area))
 		hud.set_land_picture(str(land_entry.id), land)
 		await get_tree().process_frame

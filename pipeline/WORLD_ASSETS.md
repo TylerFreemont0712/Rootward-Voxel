@@ -16,15 +16,17 @@ The six square robots now select individual `robot-<name>/v2/model.blend` master
 
 The [Sparks loft furniture pack](../art/source/world/sparks-loft/v1/README.md) supplies fourteen bespoke room models with packed painted surfaces and fine sepia outlines. They are selected only by `workshop-loft.json`; its furniture rectangles own collision. The existing shell is deliberately refined with its prior master preserved. Reader and Hotaru keep their semantic moving/window parts. Edit the saved masters and use the regular world build; generic retexturing would replace their bespoke finish.
 
-The [illustrated village study](reviews/2026-10-26-illustrated-village.md) adds `square-lamppost`, `painted-cottage`, `painted-oak` and `painted-garden-fence`, each with its own adopted Blender source and audited GLB. The cottage is a deliberate finish edit of the existing reference reconstruction; the original master is preserved. The oak and fence are new geometry. Guarded authoring/review records live under `art/source/world/illustrated-village/v1/`; future edits use each asset’s saved `model.blend`.
 
-`world-catalog.json` may select area-specific presentation variants through `areas.<id>.presentation.assets`, and a `post_lamp`. `ClearingView` resolves these for normal models and proposal ghosts; core data continues to use the original asset’s collision and door contract. A variant must therefore keep those contracts compatible. The current cottage shares the exact footprint, collision rectangles and entrance; both oak variants use the same 0.5 m trunk radius. The new standalone models are also available on the studio shelf with their own catalog entries.
+
+`world-catalog.json` may select area-specific presentation variants through `areas.<id>.presentation.assets`, and a `post_lamp`. `ClearingView` resolves these for normal models and proposal ghosts; core data continues to use the original asset’s collision and door contract. A variant must therefore keep those contracts compatible. The new standalone models are also available on the studio shelf with their own catalog entries.
 
 `illustrated_edges` adds a rendering-only back-face hull with welded-position normals and a thin sepia shader. It leaves original mesh/material resources intact, follows each mesh’s own transform, scales line width with the viewport, and casts no shadow. Light panes and transparent/emissive effects are excluded. The retained Rootward cutaway is separate. `painted_glow` preserves the square lamp’s authored amber gradient when lit; the ordinary lamp metadata still controls Preview/Apply/Undo, halos and pooled lights.
 
-The [building pass](BUILDINGS.md) deliberately edits the eight current shells and lamp, preserving source backups. It adds two adopted shop masters. Use their saved Blender sources and the normal build; historical source-edit scripts are not replacement seeders.
+Outline and house-material caches hold weak references, so shared resources survive while live instances need them and release after leaving a district. Incremental area preparation holds strong resources only through construction; `WorldAssets.finish_area()` releases preparation references and prunes expired cache entries. Static authored placements apply their house appearance before outlining and discard hidden `detail_*` / `alt_*` branches, preserving semantic lamp emitters. The showcase and editable buildings retain complete variants for later changes. This changes runtime instances only; adopted GLBs/Blender sources, visible geometry, light bindings and area collision remain authoritative. [Memory/desktop review](reviews/2026-11-05-memory-and-desktop-graphics.md).
 
-The selected house shells and static clearing land now come from editable Blender sources. Open [the Blender guide](BLENDER.md) for exact paths, visual editing steps and the protected export commands. The initial cottage, mill-house, clearing-ground and tree have completed an unedited export/reimport check, and so have the concept-matched **log-cabin** and **lamppost** ([review](reviews/2026-10-23-log-cabin-and-lamppost.md)). Test trees and the beacon, gate, bridge and wheel mechanisms remain procedural until their own handoff is reviewed.
+The building pass deliberately edits the eight current shells and lamp, preserving source backups. It adds two adopted shop masters. Use their saved Blender sources and the normal build; historical source-edit scripts are not replacement seeders.
+
+
 
 `pipeline/world-catalog.json` records per-asset authority. Use procedural Godot geometry for a changing prototype test; once adopted, edit the `.blend` and export its GLB. The old maker remains a seed/reference, not a second master to regenerate over human changes. The game uses selected GLBs without Blender running or installed.
 
@@ -40,7 +42,7 @@ The selected house shells and static clearing land now come from editable Blende
 
 A model that the game must change keeps that part as its own mesh with its own material, found by **material name**, never by node path. The lamppost's lantern glass is `lamp_glass`: `MechanismBuilder` finds it, swaps in the lit material when the lamp is lit (and back to the model's own when it is dark), and puts the halo and light where the glass is, so the lantern may move in Blender without a code change. A model without that mesh is reported, not silently replaced.
 
-The fifty-object [builder library](BUILDER_LIBRARY.md) extends this contract. Its moving pieces parent their animated geometry to a semantic `mechanism` pivot; `state_glow` and `state_flame` identify emissive and flame meshes. `PropVisual` presents a validated Boolean state without supplying collision rules. Each instance duplicates changing materials so toggling one does not recolor its neighbor. Edit the existing `hollow-*/v1/model.blend` and use the same `scripts/world-art.sh build <id>` command.
+
 
 ## Shape, collision and behavior are separate
 
@@ -61,7 +63,7 @@ Blender changes to a footprint, entrance, bank, path or connection require a mat
 | Lamppost | Post, arm, lantern with its own glass, pedestal; the arm points +Z | A chain and hook, a planter and shrub if requested. |
 | Flowers, if later requested | One readable clump | Compare small meshes or planes at gameplay size before adding detail. |
 
-Five painted village residents are implemented through the shared character pipeline. The builder offers the original 32 [doodads](reviews/2026-10-23-voxel-doodads.md) plus the 50-object [village library](BUILDER_LIBRARY.md), organized into five additional categories. These 82 props are studio shelf items; none is auto-placed in the shipped valley.
+
 
 ## Materials and textures
 
@@ -88,18 +90,9 @@ Use [review](REVIEW.md) and [area authoring](AREAS.md). Keep the prototype stand
 
 ## Explicit building collision envelopes
 
-A building asset may define `collision_rects`, up to sixteen `[min_x, min_y, width, height]` rectangles in its local S-facing **logical** frame (front is negative y). `AreaDef` validates and rotates/scales them into plain rectangles; `LabWorld` uses them instead of the default whole placement rectangle for standing and passages. They are separate from roofs/visual overhangs and do not come from runtime mesh bounds. The Concept Cottage uses three rectangles to cover its low log/foundation edges while preserving a central entry recess and its existing placement footprint/doorstep. See [the doorway review](reviews/2026-10-25-doorway-and-test-window.md) and `test/test_doorway_boundaries.gd`.
+A building asset may define `collision_rects`, up to sixteen `[min_x, min_y, width, height]` rectangles in its local S-facing **logical** frame (front is negative y). `AreaDef` validates and rotates/scales them into plain rectangles; `LabWorld` uses them instead of the default whole placement rectangle for standing and passages. They are separate from roofs/visual overhangs and do not come from runtime mesh bounds. The Concept Cottage uses three rectangles to cover its low log/foundation edges while preserving a central entry recess and its existing placement footprint/doorstep. See the doorway review and `test/test_doorway_boundaries.gd`.
 
 
-The Concept Cottage entrance now sets `approach_cells: 1` in the world catalog. `AreaDef` records the derived door offset and closed-leaf collision; `AreaBuild` uses the same landing for ghosts, ground protection and reachability. Rotation/scale and grid rounding can also require an extra clearance cell for another model. The selected GLBs and source geometry are unchanged. [Landing review](reviews/2026-10-26-compact-desktop-and-room.md).
-
-## Village Morning landmarks
-
-The [Rootward Square review](reviews/2026-10-26-rootward-square.md) records the new adopted `rootward-tree` and `morning-town-hall` masters. Their initial authorship and deliberate saved-source revisions are under `art/source/world/village-landmarks/v1/`; subsequent edits use each asset’s `model.blend` and `scripts/world-art.sh build <id>`. The wide civic bench derives from the existing park bench with its human height retained; the original master is untouched. The tree’s catalog radius includes exposed roots; its canopy does not block walking. Its named light/wisp anchors supply only cosmetic rendering. The town hall’s doors and stairs use the common entrance contract, and its interior is a separately saved authored room. All pictures reuse the existing painted library and are packed in the GLBs.
-
-Rootward’s [trunk cutaway](reviews/2026-10-26-rootward-trunk-cutaway.md) is rendering-only. `RootwardPresence` reads each imported node’s Blender `extras.part` role, hides `Crown`/`Boughs` and fades affected upper surfaces in tree-local coordinates. It creates per-instance overrides without changing the saved `.blend`, GLB, source materials, map or collision. Lower lantern anchors keep their halos/local lights; hidden upper lanterns do not get independent halos.
-
-The reusable `zone-terminal` computer is selected in the loft. The workshop’s zone node is the wall-mounted `workshop-wall-screen`, and `field-tablet` is the carried slate it accepts ([review](reviews/2026-10-27-tablet-and-wall-screen.md)). Both terminal models keep a `terminal_screen` glass and a `connection_lamp` as independent presentation parts; native lettering and status are presentation, while `AreaDef.terminals` owns gameplay scope and `AreaDef.pickups` owns where an item can be taken. The previous typewriter source is retained ([zone terminal review](reviews/2026-10-27-zone-terminals.md)). A catalog entry may set `casts_shadow: false`, which `WorldAssets.instantiate` applies to every mesh of the model (the workshop rug).
 
 
 ## Rootward Square as a town centre — 2026-10-29
@@ -156,8 +149,34 @@ The old `square-delivery-robot` was deleted at the user's request; the square po
 
 Robot names such as Pip identify reusable models; multiple instances can appear in the world. A distinctive named robot can have its own modified appearance.
 
-A later [asset deletion pass](reviews/2026-10-29-asset-deletion-pass.md) removes 29 requested legacy props from the builder shelf and retired Village Morning placements. The historical village library retains its original index as an authorship record; 42 of its models remain on the current shelf. Earlier counts in this document describe the original handoff.
+
 
 The [city power grid](reviews/2026-10-29-city-power-grid.md) updates `haverlund-square-ground` and `haverlund-lane-set` in their adopted Blender masters. Tagged strips use `art/power_grid.gdshader` for a cosmetic moving amber pulse; they do not add power gameplay or collision. Lower-town paving replaces scattered grass patches, and Spindle Lane uses ground strips in place of its overhead wire and poles.
 
 The [integrated conduit revision](reviews/2026-10-29-integrated-power-conduits.md) supersedes the flat strips: the square, lane and lane surround use recessed framed panes, surveyed stairs and threshold feeds. Existing pilasters receive a stone-based glowing carving; separate wall stripes are removed. The editable source record is under `art/source/world/city-power-grid/v2/`.
+
+## City clock and public lobby — 2026-11-02
+
+The adopted `square-guildhall` master has deliberate, preserved-source revisions in `art/source/world/civic-cycle/v1/`: the obstructing outside counter/contents and static open leaves are removed, two panelled oak leaves have common `door_leaf` / `swing` metadata, and the two original clock hands are separated on the dial centre. `CityInstruments` rotates those hands from the saved shared clock. The façade, arch, stairs, paint, lanterns and windows remain authored geometry.
+
+The same source pack creates three new saved masters: `city-hall-shell`, `city-hall-help-desk` and `city-hall-job-desk`. These use the existing painted limestone/oak civic palette, with a 28×22 cutaway lobby, tall windows, inlaid runner and separate enquiries/public-works counters. Approved shelf, bench, plant, pendant, board and door assets furnish the room through area placements. Subsequent edits use their saved masters and `scripts/world-art.sh build`, not initial authoring.
+
+`rootwell-beacon` retains its original moving needle at the original pivot/calibration (1.3). Its old low-side red patch is moved to 9–10 and additional green (0–8) and amber (8–9) sectors sit behind the needle. The game displays actual pressure through 15 on the loading instrument, while the physical face ends at 10 and flutters above that stop. Backups and source hashes are beside both revised masters. The review records native resolution checks and full pipeline validation.
+
+The square’s `town-festoon` / `town-bollard-light` bulbs now participate in mapped fixtures through their existing `festoon_glass`, superseding the earlier always-lit presentation. All placed banner/lane street lamps, the hall’s built-in entrance lanterns, loft desk/bedside lamps, shop and Rootwell lanterns, surrounding house lanterns and civic pendants likewise have logical state and slate access. The 148 logical fittings use local approaches or district service screens; hidden optional lantern geometry does not emit detached halos. `lamp_glass` and `festoon_glass` remain authored material names; no mesh path determines gameplay. Conduit and power-column shaders use a shared presentation supply multiplier fed by the trusted city state.
+
+## Square renewal — 2026-11-03
+
+The [source record](../art/source/world/square-renewal/v1/README.md) describes preserved-version storefront revisions, the new clockmaker/apothecary, reusable shop shell, clock display and retaining-wall module. The bakery, food shop and clothier keep their original IDs for compatibility; `haverlund-bookshop` now presents Finch & Thread. Existing modular town barriers now have catalog footprints and studio shelf entries. One straight retaining-wall bay is modular; specialized terrain walls and stair cheeks remain part of the spatially sectioned ground source.
+
+Square ground sections use local bounds (4 m near the playable town, 16 m far away), preserving existing UVs and finishes. Repeated immutable railing/wall bays share local 8 m MultiMeshes in the view; placement roots and pure collision remain independent. Flat painted ground tops skip redundant silhouette hulls. The renderer caches the world catalog until its modification time changes instead of reparsing it for every placement.
+
+Every ordinary lamp now owns a fixed `FixtureLight`; mapped fittings retain theirs and no longer receive duplicate camera-selected lights. Main square lamps use 7 m range/1.65 energy. The square has 66 logical fittings, down from 115; small path-light models and their fittings are removed. Actual light, glass and halos follow committed state and supply loss. Most local lights remain shadowless to bound rendering cost; the authored directional shadow system remains. Day/night relays remain editable through the existing slate. New shop lamps ship with dusk relays. See the [measured review](reviews/2026-11-03-square-lighting-and-shops.md).
+
+## Spindle Walk layout and concept-only replacements — 2026-11-03
+
+The user rejected the temporary clockmaker/apothecary reskins. They are now unplaced retained concepts; two original imagegen design sheets and exact prompts live in [spindle-strip/v1](../art/source/world/spindle-strip/v1/README.md). These PNGs are references, with no runtime selection. New building models and interior furniture will be authored after review. The five existing shop rooms are cleared of loose furniture/stock.
+
+`haverlund-square-ground/v3/model.blend` deliberately revises the landing, park and promenade from preserved v2, with local 4 m sections and the existing packed materials. Its normal audited build remains authoritative. Source records in the same pack describe the terrain cut, masonry finish and frontage alignment. Existing market buildings, Rootwell and the fixed real-light system retain their preceding asset versions.
+
+For tightly nested authored details, a mesh may set Blender custom property **`illustrated_edges = false`**. The imported extras suppress the expanded ink hull on that mesh only; modeled rims and the rest of the asset retain their appearance. Use this for fine clockwork or roof plates where an extra silhouette would overlap adjacent surfaces. Lamp glass, ordinary glazing and opaque backing panes must remain separate meshes when a fixture uses a material override.

@@ -14,8 +14,9 @@ func _initialize() -> void:
 
 
 func _run() -> void:
+	AreaStore.use_fixtures()
 	var area: AreaDef = AreaStore.load_area("rune-mill")
-	_check(area != null, "The Rune Mill area document loads and validates")
+	_check(area != null, "The Rune Mill fixture document loads and validates")
 	if area == null:
 		quit(1)
 		return

@@ -13,6 +13,8 @@ var quest_document: Variant
 var build_catalog: Dictionary
 var policy_id: String = "studio"
 var edits: Array[Dictionary] = []
+## A deliberately replaced authored layout keeps the player's previous sketch in the save.
+var archived_layouts: Array = []
 var area: AreaDef
 var rules: LabWorld
 ## Saved edits that no longer fit the document (it changed since the save), for a quiet note to the player.
@@ -23,6 +25,8 @@ var paint_materials: Array = GroundPaint.DEFAULT_PALETTE.duplicate()
 var _building_serial: int = 0
 ## Props get fresh ids too, so an undone or removed prop's id is never given to a new one.
 var _prop_serial: int = 0
+## Walls get fresh ids the same way.
+var _wall_serial: int = 0
 ## Why each cell's ground must stay as it is (AreaBuild.land_blockers), for `_blockers_area`; worked out again
 ## when the world changes, since a drag asks about every cell it crosses.
 var _blockers: Dictionary = {}
@@ -36,13 +40,33 @@ func _init(document: Dictionary, world_assets: Dictionary, quests: Variant, cata
 	build_catalog = catalog
 	policy_id = policy_name
 	paint_materials = ground_materials.duplicate()
+	var epoch: int = int(document.get("interior", {}).get("layout_epoch", 0))
+	var previous_epoch: int = 0
+	var active: Array = []
+	for entry: Variant in saved:
+		if entry is Dictionary and entry.get("op") == "layout_metadata":
+			var raw_epoch: Variant = entry.get("epoch", 0)
+			previous_epoch = maxi(0, int(raw_epoch)) if raw_epoch is int or raw_epoch is float else 0
+			var archives: Variant = entry.get("archives", [])
+			if archives is Array: archived_layouts = archives.duplicate(true)
+		else:
+			active.append(entry)
+	if epoch > previous_epoch and not active.is_empty():
+		archived_layouts.append({"epoch":previous_epoch, "edits":active.duplicate(true)})
+		active.clear()
+	saved = active
 	_building_serial = AreaBuild.next_building_id(base_document).substr(6).to_int() - 1
 	_prop_serial = AreaBuild.next_prop_id(base_document).substr(5).to_int() - 1
+	_wall_serial = AreaBuild.next_wall_id(base_document).substr(5).to_int() - 1
 	for edit: Variant in saved:
 		if edit is Dictionary and edit.get("kind") == "building":
 			var id: String = str(edit.get("id", ""))
 			if id.begins_with("build-") and id.substr(6).is_valid_int():
 				_building_serial = maxi(_building_serial, id.substr(6).to_int())
+		elif edit is Dictionary and edit.get("kind") == "wall":
+			var wall_id: String = str(edit.get("id", ""))
+			if wall_id.begins_with("wall-") and wall_id.substr(5).is_valid_int():
+				_wall_serial = maxi(_wall_serial, wall_id.substr(5).to_int())
 		elif edit is Dictionary and edit.get("kind") == "prop":
 			var prop_id: String = str(edit.get("id", ""))
 			if prop_id.begins_with("prop-") and prop_id.substr(5).is_valid_int():
@@ -60,6 +84,14 @@ func _init(document: Dictionary, world_assets: Dictionary, quests: Variant, cata
 		parsed = AreaDef.parse(base_document, assets, quest_document, paint_materials)
 	area = parsed.area
 	rules = LabWorld.new(area)
+
+
+func saved_edits() -> Array:
+	var result: Array = edits.duplicate(true)
+	var epoch: int = int(base_document.get("interior", {}).get("layout_epoch", 0))
+	if epoch > 0 or not archived_layouts.is_empty():
+		result.push_front({"op":"layout_metadata", "epoch":epoch, "archives":archived_layouts.duplicate(true)})
+	return result
 
 
 func context(state: Dictionary) -> Dictionary:
@@ -99,6 +131,9 @@ func check_item(item_id: String, at: Vector2, facing: String, state: Dictionary)
 	var entry: Dictionary = AreaBuild.item(build_catalog, item_id)
 	if entry.is_empty():
 		return {"ok": false, "reason": "That is not on offer."}
+	var layout: Dictionary = area.interior.get("layout", {})
+	if not layout.is_empty() and not (layout.get("items", []) as Array).has(item_id):
+		return {"ok": false, "reason": "Choose a park object or barrier from this area's shelf."}
 	if not AreaBuild.allowed_items(build_catalog, policy_id).has(entry):
 		return {"ok": false, "reason": "That is not open to you yet."}
 	var limit: String = AreaBuild.limit_reason(build_catalog, policy_id, edits, str(entry.kind))
@@ -125,6 +160,11 @@ func check_move_prop(id: String, at: Vector2, facing: String, state: Dictionary)
 	if not removable.ok:
 		return removable
 	return AreaBuild.check_prop(context(state), str(prop.asset), at, facing, float(prop.scale), id)
+
+
+## May this authored scenery (a lamp, a bench, a stall) stand at `at`, turned to `turn` degrees? {ok, reason, rect}.
+func check_move_scenery(id: String, at: Vector2, turn: float, state: Dictionary) -> Dictionary:
+	return AreaBuild.check_scenery(context(state), id, at, turn)
 
 
 func check_move_tree(from: Vector2, at: Vector2, state: Dictionary) -> Dictionary:
@@ -176,6 +216,52 @@ func move_prop(id: String, at: Vector2, facing: String, state: Dictionary, commi
 	if not checked.ok:
 		return checked
 	return _commit({"op": "move", "kind": "prop", "id": id, "at": [at.x, at.y], "facing": facing}, state, id, commit)
+
+
+## Moves authored scenery. A lamp keeps its id, its program and its light; its collision moves with it.
+func move_scenery(id: String, at: Vector2, turn: float, state: Dictionary, commit: bool = true) -> Dictionary:
+	var checked: Dictionary = check_move_scenery(id, at, turn, state)
+	if not checked.ok:
+		return checked
+	return _commit({"op": "move", "kind": "scenery", "id": id, "asset": str(area.scenery_item(id).asset), "at": [at.x, at.y], "turn": turn}, state, "", commit)
+
+
+func turn_scenery(id: String, turn: float, state: Dictionary, commit: bool = true) -> Dictionary:
+	var item: Dictionary = area.scenery_item(id)
+	var at: Vector2 = item.get("at", Vector2.ZERO)
+	var checked: Dictionary = check_move_scenery(id, at, turn, state)
+	if not checked.ok:
+		return checked
+	return _commit({"op": "move", "kind": "scenery", "id": id, "asset": str(item.get("asset", "")), "at": [at.x, at.y], "turn": turn, "turned": true}, state, "", commit)
+
+
+## May a wall of `style` run from corner `a` to corner `b`? {ok, reason, rect}.
+func check_wall(a: Vector2, b: Vector2, style: String, state: Dictionary) -> Dictionary:
+	var layout: Dictionary = area.interior.get("layout", {})
+	if not layout.is_empty() and not (layout.get("items", []) as Array).has("wall-" + style):
+		return {"ok": false, "reason": "This area's shelf has no %s." % str((AreaBuild.WALL_STYLES.get(style, {}) as Dictionary).get("title", "wall")).to_lower(), "rect": Rect2()}
+	return AreaBuild.check_wall(context(state), a, b, style)
+
+
+## Draws a wall along cell edges. It blocks the edges it runs along and is drawn from the town's wall kit.
+func add_wall(a: Vector2, b: Vector2, style: String, state: Dictionary, commit: bool = true) -> Dictionary:
+	var checked: Dictionary = check_wall(a, b, style, state)
+	if not checked.ok:
+		return checked
+	var id: String = "wall-%d" % (_wall_serial + 1)
+	var result: Dictionary = _commit({"op": "add", "kind": "wall", "id": id, "from": [a.x, a.y], "to": [b.x, b.y], "style": style}, state, "", commit)
+	if result.ok and commit:
+		_wall_serial += 1
+	return result
+
+
+func remove_wall(id: String, state: Dictionary) -> Dictionary:
+	var wall: Dictionary = {}
+	for entry: Dictionary in area.walls:
+		if entry.id == id: wall = entry
+	if wall.is_empty():
+		return {"ok": false, "reason": "That wall is not there."}
+	return _commit({"op": "remove", "kind": "wall", "id": id, "style": str(wall.style)}, state, "")
 
 
 ## Turns a standing building on the spot: a move to where it already is, with a new facing. The same rules
@@ -250,7 +336,7 @@ func remove_tree(at: Vector2, state: Dictionary) -> Dictionary:
 
 
 func paint(material: String, cells: Array, state: Dictionary) -> Dictionary:
-	if not area.ground.is_empty():
+	if not area.ground.is_empty() and area.interior.get("layout", {}).is_empty():
 		return {"ok": false, "reason": "This area's ground is an authored model. Paint generated ground instead."}
 	if material != "" and not paint_materials.has(material):
 		return {"ok": false, "reason": "Choose a ground material from the palette."}
@@ -262,7 +348,7 @@ func paint(material: String, cells: Array, state: Dictionary) -> Dictionary:
 		var sub := Vector2i(int(cell[0]), int(cell[1]))
 		if sub.x < 0 or sub.y < 0 or sub.x >= area.width * 2 or sub.y >= area.height * 2:
 			return {"ok": false, "reason": "Keep paint inside the valley."}
-		if GroundPaint.is_ground(area, sub) and not unique.has(sub):
+		if GroundPaint.is_ground(area, sub) and AreaBuild.layout_contains(area, Rect2(Vector2(sub) * .5 - Vector2(.5, .5), Vector2(.5, .5))) and area.stair_at(Vector2i(sub.x / 2, sub.y / 2)).is_empty() and not unique.has(sub):
 			unique[sub] = true
 			kept.append([sub.x, sub.y])
 	if kept.is_empty():
@@ -388,6 +474,11 @@ func describe(edit: Dictionary) -> String:
 	var verb: String = {"add": "Placed", "move": "Turned" if edit.get("turned", false) else "Moved", "remove": "Removed"}.get(str(edit.get("op")), "Changed")
 	if edit.kind == "tree":
 		return "%s a tree" % verb
+	if edit.kind == "wall":
+		var built: String = {"add": "Built", "remove": "Took down"}.get(str(edit.op), verb)
+		return "%s a %s" % [built, str((AreaBuild.WALL_STYLES.get(str(edit.get("style", "")), {}) as Dictionary).get("title", "wall")).to_lower()]
+	if edit.kind == "scenery":
+		return "%s %s" % [verb, title_for_asset(str(edit.get("asset", "")))]
 	var asset: String = str(edit.get("asset", ""))
 	if asset == "":
 		var id: String = str(edit.get("id", ""))

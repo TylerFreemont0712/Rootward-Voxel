@@ -2,6 +2,24 @@
 
 **Status: greeting, ticket discovery, stair-light and workshop-round jobs playable, 2026-10-27; the wider catalog below remains proposed.** The current continuation is [The waiting ticket → The landing light → The morning round](../../../pipeline/reviews/2026-10-27-workshop-first-jobs.md). It uses the existing two rooms and lamp API, with saved job pages and original scenes between committed outcomes. The traveller walks normally; movement-key mapping is not a prerequisite. The outdoor gate lamp and later jobs below are future design. Code is real Python in the style of today's API ([docs/PROGRAMMING.md](../../PROGRAMMING.md)); **new API** marks objects that do not exist yet.
 
+## Chapter 05 · Public Works (2026-11-06)
+
+Five jobs in Rootward Square, in `content/areas/haverlund-square.quests.json`. They open once *After the light* is done; `after` names jobs finished in other rooms of the journey. The theme is changing the town itself: every job rearranges real square furniture through the same rules as the layout studio's mouse, and the result stays as layout edits. Each job is reached from the square's service screen. Review: [2026-11-06 Public Works](../../../pipeline/reviews/2026-11-06-public-works-quests.md).
+
+| No. | Quest | Concept | Goal |
+|---|---|---|---|
+| 6 | Seats for the band | Reading objects (`world.doodads`, `.kind`, `.at`), comparing numbers, `if`/`elif` | Seven promenade and east-edge benches face the Rootwell. Unlocks `read` and `turn`. |
+| 7 | Room on the walk | `range` and arithmetic | Spindle Walk's four benches stand six metres apart from y 21. Unlocks `move` (`doodad.move_to`). |
+| 8 | Two parks, one plan | Functions with parameters | Four delivered planters flank the two pocket-park trees, one recipe called twice. |
+| 9 | Market day | Building a list, `append`, `len`, `in` on text | The three west market stalls are evenly spaced from y 33.5. |
+| 10 | A corner of your own | Putting it together | At least three garden pieces stand on the arrival lawn, in any design. |
+
+Goal types: `doodads_face_point`, `doodads_at`, `doodads_row` and `doodads_in_rect` (`core/quests.gd`). Reference solutions run as real Python in `test/test_area.gd`. `test_development` finishes all five in the running game through preview and Apply.
+
+## Chapter 06 · Market Street (2026-11-06)
+
+One job in each furnished shop, each opening once Public Works is done (`after: ["own-corner"]`). Each one writes the shop's chalk board (a display with its own commission note) and is checked with `display_lines`. They introduce `while` and counting (*The next batch*, Ada Kettering), dictionaries (*Today's prices*, Tessa for her cousin Teo Vasko) and functions that `return` with text methods (*Ready for collection*, Gret Finch). Each has a scene on entering and one on finishing, and a notebook `guide` panel with a worked example. Review: [2026-11-06 shops, story and lighting](../../../pipeline/reviews/2026-11-06-shops-story-and-lighting.md).
+
 ## Current workshop chapter
 
 | Quest | Want and consequence | Goal |

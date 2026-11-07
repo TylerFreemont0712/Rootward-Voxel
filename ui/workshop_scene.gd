@@ -18,6 +18,8 @@ var _settings: GameSettings
 var _clock: float = 0.0
 var _replying: bool = false
 var _response_kind: String = ""
+var _reply_speaker: String = "hotaru"
+var _left_speaker: String = "hotaru"
 var _choice_index: int = -1
 var _page_logged: bool = false
 var _page: Dictionary = {}
@@ -25,13 +27,13 @@ var _finish_label: String = "Back to the workshop"
 var _narrator: String = "The workshop"
 var _paper: StyleBox
 
-## The one window every story page uses, drawn at the same size and place for every page: from just right of the
-## HUD buttons to the screen's right margin, 22% of the screen high, resting near the bottom. Name and text sit on
-## the left, the choices (or Continue) on the right, and nothing in it changes size with the words. Portraits
-## stand behind its top corners.
-const HUD_CLEAR_LEFT: float = 0.145
-const EDGE_MARGIN: float = 22.0
-const WINDOW_HEIGHT: float = 0.225
+## One raised, inset window for every story page, leaving the bottom HUD clear.
+## Name and scrolling text sit on the left, choices (or Continue) on the right;
+## portraits stand behind its top corners, with the whole traveller facing the other speaker.
+const WINDOW_LEFT: float = 0.085
+const WINDOW_RIGHT: float = 0.885
+const WINDOW_HEIGHT: float = 0.195
+const WINDOW_BOTTOM: float = 0.07
 
 var _frame: Control
 var _text_box: Control
@@ -59,6 +61,8 @@ func setup(scene: Dictionary, stage: WorkshopLoftStage, settings: GameSettings) 
 	_stage = stage
 	_settings = settings
 	pages = scene.pages.duplicate(true)
+	for page: Dictionary in pages:
+		page.text=str(page.text).replace("{player_name}",str(scene.get("player_name","Lodger")))
 	var upstairs: bool = str(scene.get("area", "")) == "workshop-loft"
 	_finish_label = str(scene.get("finish_label", "Back to the loft" if upstairs else "Back to the workshop"))
 	_narrator = str(scene.get("narrator", "The loft" if upstairs else "The workshop"))
@@ -71,13 +75,16 @@ func setup(scene: Dictionary, stage: WorkshopLoftStage, settings: GameSettings) 
 	_count = UI.label("", &"LabelCaps", 13, PaperPal.PENCIL)
 	_count.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	_frame.add_child(_count)
-	_text_box = Control.new()
+	var text_scroll := ScrollContainer.new()
+	text_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_text_box = text_scroll
 	_text_box.clip_contents = true
 	_text_box.mouse_filter = Control.MOUSE_FILTER_STOP
 	_text_box.gui_input.connect(_text_input)
 	_frame.add_child(_text_box)
 	_text = UI.label("", &"", 26, PaperPal.INK)
 	_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_text.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_text_box.add_child(_text)
 	_log = UI.button("Story log", &"book", &"Button", func() -> void: log_requested.emit())
@@ -119,16 +126,16 @@ func open() -> void:
 
 func _layout() -> void:
 	if size.x <= 0 or _frame == null: return
-	var left: float = clampf(size.x * HUD_CLEAR_LEFT, 190.0, 260.0)
-	var right: float = size.x - EDGE_MARGIN
+	var left: float = size.x * WINDOW_LEFT
+	var right: float = size.x * WINDOW_RIGHT
 	if right - left < 620.0: left = maxf(16.0, right - 620.0)
 	var width: float = right - left
-	var height: float = clampf(size.y * WINDOW_HEIGHT, 188.0, 300.0)
+	var height: float = clampf(size.y * WINDOW_HEIGHT, 200.0, 260.0)
 	card.custom_minimum_size = Vector2(width, height)
 	card.size = Vector2(width, height)
-	card.position = Vector2(roundf(left), roundf(size.y - height - maxf(18.0, size.y * .03)))
+	card.position = Vector2(roundf(left), roundf(size.y - height - maxf(64.0, size.y * WINDOW_BOTTOM)))
 	var pad: float = clampf(width * .022, 20.0, 34.0)
-	var side: float = clampf(width * .34, 250.0, 480.0)
+	var side: float = clampf(width * .25, 280.0, 400.0)
 	var column: float = width - side - pad * 3.0
 	_speaker.position = Vector2(pad, 12)
 	_speaker.size = Vector2(column - 70.0, 36)
@@ -137,23 +144,23 @@ func _layout() -> void:
 	_text_box.position = Vector2(pad, 56)
 	_text_box.size = Vector2(column, height - 56.0 - 52.0)
 	_text.position = Vector2.ZERO
-	_text.size = _text_box.size
-	_text.add_theme_font_size_override("font_size", clampi(roundi(height * .105), 19, 26))
+	_text.custom_minimum_size.x = column - 18.0
+	_text.size = Vector2(column - 18.0, 0)
+	_text.add_theme_font_size_override("font_size", clampi(roundi(height * .105), 20, 25))
 	_log.size = Vector2(maxf(124.0, _log.get_combined_minimum_size().x), 34)
 	_log.position = Vector2(pad, height - 46.0)
 	_close.size = Vector2(30, 30)
 	_close.position = Vector2(width - 42.0, 10)
-	_side.position = Vector2(width - side - pad, 52)
-	_side.size = Vector2(side, height - 52.0 - 16.0)
+	_side.position = Vector2(width - side - pad, 42)
+	_side.size = Vector2(side, height - 42.0 - 12.0)
 	_next.size = Vector2(side, 46)
 	_next.position = Vector2(0, _side.size.y - 46.0)
 	_choices.position = Vector2.ZERO
 	_choices.size = _side.size
-	var portrait_size := Vector2(minf(size.x * .17, 270.0), minf(size.y * .38, 390.0))
-	_portrait.size = portrait_size
-	_player_portrait.size = portrait_size
-	_portrait.position = Vector2(card.position.x - portrait_size.x * .25, card.position.y - portrait_size.y + 28.0)
-	_player_portrait.position = Vector2(minf(card.position.x + width - portrait_size.x * .75, size.x - portrait_size.x - 6.0), card.position.y - portrait_size.y + 28.0)
+	_portrait.size = Vector2(minf(size.x * .23, 400.0), minf(size.y * .51, 560.0))
+	_player_portrait.size = Vector2(minf(size.x * .18, 320.0), minf(size.y * .46, 500.0))
+	_portrait.position = Vector2(maxf(12.0, card.position.x - _portrait.size.x * .22), card.position.y - _portrait.size.y + 72.0)
+	_player_portrait.position = Vector2(minf(card.position.x + width - _player_portrait.size.x * .65, size.x - _player_portrait.size.x - 12.0), card.position.y - _player_portrait.size.y + 28.0)
 
 func _show_page(page: Dictionary) -> void:
 	_page = page
@@ -161,12 +168,18 @@ func _show_page(page: Dictionary) -> void:
 	_page_logged = false
 	_count.text = "%d / %d" % [index+1, pages.size()]
 	var speaker: String = str(page.speaker)
-	_speaker.text = {"hotaru":"Hotaru", "player":"You", "ticket":"Nell’s ticket", "narration":_narrator}.get(speaker, "")
-	_portrait.visible = speaker in ["hotaru", "player"]
+	_speaker.text = {"hotaru":"Hotaru", "player":"You", "ticket":"Nell’s ticket", "note":"A note", "narration":_narrator, "braum":"Braum", "iona":"Iona Venn", "nell":"Nell", "mira":"Mira", "tessa":"Tessa", "ada":"Ada Kettering", "gret":"Gret Finch"}.get(speaker, "")
+	if speaker in ["hotaru","braum","iona","nell"]:
+		_left_speaker=speaker
+		_portrait.texture=DialoguePortraits.texture_for({"hotaru":"hotaru-robot","braum":"braum","iona":"iona","nell":"nell"}[speaker])
+		_portrait.flip_h=speaker=="hotaru"
+	# People without a painted portrait yet speak with their name only; the traveller's portrait stays dimmed.
+	_portrait.visible = speaker in ["hotaru", "player", "braum", "iona", "nell"]
 	_player_portrait.visible = _portrait.visible
 	_portrait.modulate = Color(.52, .52, .52, 1) if speaker == "player" else Color.WHITE
 	_player_portrait.modulate = Color.WHITE if speaker == "player" else Color(.52, .52, .52, 1)
 	_text.text = str(page.text)
+	(_text_box as ScrollContainer).scroll_vertical = 0
 	_text.visible_characters = -1 if float(_settings.get_value("dialogue_speed")) == 0 else 0
 	for child: Node in _choices.get_children():
 		_choices.remove_child(child)
@@ -215,6 +228,7 @@ func _choose(choice: Dictionary) -> void:
 	_record_current()
 	_choice_index = (pages[index].get("choices", []) as Array).find(choice)
 	if _choice_index < 0: return
+	_reply_speaker=str(pages[index].speaker)
 	_replying = true
 	_response_kind = "choice"
 	_show_page({"speaker":"player", "text":choice.text})
@@ -229,7 +243,7 @@ func advance() -> void:
 	if not _replying and not (_page.get("choices", []) as Array).is_empty(): return
 	if _replying and _response_kind == "choice":
 		_response_kind = "reply"
-		_show_page({"speaker":"hotaru", "text":pages[index].choices[_choice_index].reply})
+		_show_page({"speaker":_reply_speaker, "text":pages[index].choices[_choice_index].reply})
 		return
 	_replying = false
 	_response_kind = ""

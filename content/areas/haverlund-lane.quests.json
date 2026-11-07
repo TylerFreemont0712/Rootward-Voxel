@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "area": "haverlund-lane",
+  "quests": [
+    {
+      "id": "proper-welcome",
+      "title": "A proper welcome",
+      "concept": "Words, lists and repetition",
+      "summary": "Iona needs two or three messages for the new sign beside the tram steps. Work payment: 25 p.",
+      "requires": [],
+      "goal": {
+        "type": "all",
+        "goals": [
+          {
+            "type": "inspection_read",
+            "id": "sign-commission"
+          },
+          {
+            "type": "display_messages",
+            "id": "tram-welcome"
+          }
+        ]
+      },
+      "access": {
+        "kind": "display",
+        "id": "tram-welcome"
+      },
+      "focus": {
+        "at": [
+          9,
+          6
+        ]
+      },
+      "starter": [
+        "def program(world):",
+        "    print(\"Welcome to Spindle Lane\")"
+      ],
+      "lesson": [
+        "Each printed line becomes a message. Debug previews the card; Apply routine installs it.",
+        "Your program runs once. The sign repeats the installed card every four seconds.",
+        "Use two or three different messages, each at most 32 Latin letters, numbers or punctuation.",
+        "You can use ordinary print calls, or collect strings in a list and use the same for loop as the workshop."
+      ],
+      "hints": [
+        "What happens if you print a second line?",
+        "Each printed line adds a page. A list and for loop also work."
+      ],
+      "done": "The welcome sign is running. Work payment: 25 p."
+    },
+    {
+      "id": "after-the-light",
+      "title": "After the light",
+      "concept": "if, else and a Boolean condition",
+      "summary": "Nell is home. The shop’s dusk relays have their condition backwards. Repair both daylight routines. Work payment: 18 p.",
+      "requires": [
+        "proper-welcome"
+      ],
+      "goal": {
+        "type": "all",
+        "goals": [
+          {
+            "type": "inspection_read",
+            "id": "nell-evening"
+          },
+          {
+            "type": "lamp_program",
+            "id": "shop-door-lamp"
+          },
+          {
+            "type": "lamp_program",
+            "id": "shop-sign-lamp"
+          }
+        ]
+      },
+      "access": {
+        "kind": "device",
+        "id": "shop-door-lamp"
+      },
+      "focus": {
+        "at": [
+          11,
+          14
+        ]
+      },
+      "starter": [
+        "# closing_round.py",
+        "# The lamps passed Nell’s bench test. Read the condition.",
+        "",
+        "def program(world):",
+        "    lamps = [world.lamp(\"shop-door-lamp\"),",
+        "             world.lamp(\"shop-sign-lamp\")]",
+        "",
+        "    for lamp in lamps:",
+        "        if world.time.is_dark:",
+        "            lamp.set_lit(False)  # the evening instruction",
+        "        else:",
+        "            lamp.set_lit(True)   # the daylight instruction"
+      ],
+      "lesson": [
+        "Nell checked the bulbs and relays. The bug is in the decision: the dark branch asks for no light.",
+        "world.time.is_dark is a Boolean: True after dusk, False in daylight. An if condition ends with a colon.",
+        "Python runs the indented lines below if only when the condition is True. Otherwise it runs the indented else branch. Keep the for loop: both lamps need the same rule.",
+        "The slate tests this page once in daylight and once in darkness. Apply routine installs both instructions. The clock chooses between them from then on.",
+        "Make the lamps off in daylight and on in darkness. An always-on routine passes an evening glance, but fails the daylight check."
+      ],
+      "hints": [
+        "Follow one lamp through the starter: when is_dark is True, which set_lit call runs?",
+        "Switch the values in the two branches: True below if; False below else. Keep their indentation."
+      ],
+      "done": "Both lamps follow the shared clock. Nell has recorded 18 p for the closing round."
+    }
+  ]
+}

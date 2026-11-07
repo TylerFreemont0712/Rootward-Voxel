@@ -23,17 +23,25 @@ signal room_link_requested(id: String)
 const SAVE_VERSION: int = 1
 const MAX_SOURCE: int = LabProgram.MAX_SOURCE_BYTES
 const MAX_HISTORY: int = 20
+const MAX_WORKSHOP_PAGES: int = 256
 
 var area: AreaDef
 var rules: LabWorld
 ## Abilities granted whatever the lessons say, for trying the API out (the game reads VOXEL_CODE_ABILITIES).
 var extra_abilities: Array[String] = []
+## Jobs finished anywhere on the journey (Game supplies its rooms' list), for quests that wait on another room.
+var journey_source: Callable = Callable()
 ## The player's building edits (the game's ledger). A program's building commands are checked against it and,
 ## once applied, kept in it, so they save, undo and show exactly like the builder's own edits.
 var ledger: BuildLedger
 var view: ClearingView
 var state: Dictionary = {}
 var completed: Array = []
+var accounts: Dictionary = PlayerAccounts.fresh()
+var output_display: String = ""
+var cycle: Dictionary = CityCycle.fresh()
+var daylight_program: bool = false
+var robot_link: bool = false
 var source: String = ""
 var stats: Dictionary = {"runs": 0, "applies": 0}
 var player_name: String = "Wren"
@@ -50,7 +58,6 @@ var _waiting_for_stop: bool = false
 var _input_priority := Vector2i.ZERO
 ## One fresh tap during interpolation is remembered until the current step ends.
 var _buffered_direction := Vector2i.ZERO
-var _buffered_binding: String = ""
 var _route: Array[Vector2i] = []
 var _pending: Dictionary = {}
 var _pending_tokens: Dictionary = {}
@@ -66,15 +73,14 @@ var door_catalog: Dictionary = {}
 var _route_door: String = ""
 var _route_exit: bool = false
 var _route_link: String = ""
-const BINDING_CODES: Dictionary = {"W": KEY_W, "A": KEY_A, "S": KEY_S, "D": KEY_D, "UP": KEY_UP, "LEFT": KEY_LEFT, "DOWN": KEY_DOWN, "RIGHT": KEY_RIGHT}
-var _binding_priority: String = ""
-var _active_binding: String = ""
-var _step_binding: String = ""
-var movement_editor: Dictionary = {}
 var greeting_editor: Dictionary = {}
 var workshop_pages: Dictionary = {}
 ## Field Notes put away on the field slate stay put away for the rest of the play session (not saved).
 var notes_put_away: bool = false
+## Shared field-slate layout preferences for this play session, across jobs and rooms.
+var slate_sidebar_visible: bool = true
+var slate_sidebar_width: int = 196
+var slate_sections: Dictionary = {"files":true,"devices":true,"variables":true}
 ## How long a planned route has waited on a resident standing in the next cell.
 var _route_wait: float = 0.0
 ## Where to turn at the end of a route: the resident walked up to, so the character ends up facing them.
@@ -90,25 +96,28 @@ func begin(definition: AreaDef, scene_view: ClearingView, save: Dictionary = {})
 	view = scene_view
 	state = rules.initial_state()
 	completed = []
+	accounts = PlayerAccounts.restore(save.get("accounts",{}))
+	cycle = CityCycle.restore(save.get("city_cycle",{}))
+	daylight_program = false
+	robot_link = false
+	output_display = ""
 	source = LabProgram.starter_source()
-	if area.movement_lesson or area.voice_lesson:
+	if area.voice_lesson:
 		source = CompanionLesson.STARTER
 	stats = {"runs": 0, "applies": 0}
-	movement_editor = {}
 	greeting_editor = {}
 	workshop_pages = {}
 	_history.clear()
 	_pending.clear()
 	_selection = Vector2i(-1, -1)
 	if not save.is_empty():
-		if save.get("movement_editor") is Dictionary and JSON.stringify(save.movement_editor).length() <= MAX_SOURCE * 2:
-			movement_editor = save.movement_editor.duplicate(true)
 		if save.get("greeting_editor") is Dictionary and JSON.stringify(save.greeting_editor).length() <= MAX_SOURCE * 2:
 			greeting_editor = save.greeting_editor.duplicate(true)
 		var pages: Variant = save.get("workshop_pages", {})
-		if pages is Dictionary and pages.size() <= 16:
+		if pages is Dictionary:
 			for id: Variant in pages:
-				if id is String and AreaDef._id(id) and pages[id] is String and str(pages[id]).length() <= MAX_SOURCE: workshop_pages[id] = pages[id]
+				if workshop_pages.size()>=MAX_WORKSHOP_PAGES:break
+				if id is String and AreaDef._id(id) and pages[id] is String and str(pages[id]).to_utf8_buffer().size() <= MAX_SOURCE: workshop_pages[id] = pages[id]
 		var restored: Dictionary = rules.normalize_state(save.get("state"))
 		if not restored.is_empty():
 			state = restored
@@ -131,6 +140,7 @@ func begin(definition: AreaDef, scene_view: ClearingView, save: Dictionary = {})
 		if saved_stats is Dictionary:
 			stats.runs = int((saved_stats as Dictionary).get("runs", 0))
 			stats.applies = int((saved_stats as Dictionary).get("applies", 0))
+	sync_cycle()
 	view.apply_state(state)
 	view.focus_on(Vector2(float(state.player[0]), float(state.player[1])), true)
 	current_zone = area.zone_at(Vector2i(int(state.player[0]), int(state.player[1])))
@@ -138,12 +148,10 @@ func begin(definition: AreaDef, scene_view: ClearingView, save: Dictionary = {})
 	state_changed.emit()
 	quest_changed.emit()
 	if save.is_empty():
-		if area.movement_lesson:
-			report("A new morning.", "Hotaru is waiting to hear your voice. Open your notebook with E to say hello.")
-		elif area.voice_lesson:
+		if area.voice_lesson:
 			report("A first morning.", "Open your Field Notes with E.")
 		else:
-			report("The hollow is dark.", "Walk with WASD or click a place. Open your notebook with E when you are ready to write code.")
+			report("A quiet room.", "Walk with WASD or click a place. Open your Field Notes with E when you are ready to write code.")
 	else:
 		report("Welcome back.", "Your world and your notebook are as you left them.")
 
@@ -190,6 +198,21 @@ func use_prop(id: String) -> bool:
 	return true
 
 
+func sync_cycle() -> void:
+	if not area.interior.get("city_network",false):
+		view.set_city_cycle({},{})
+		return
+	var previous: bool = bool(state.get("time",{}).get("is_dark",false))
+	state["time"] = CityCycle.time(cycle)
+	state["city_power"] = CityCycle.power(cycle)
+	var changed: bool = LampPrograms.refresh(area,state,bool(state.time.is_dark))
+	if changed or previous!=bool(state.time.is_dark):
+		_session_generation += 1
+		_invalidate_preview()
+	view.set_city_cycle(state.time,state.city_power)
+	if changed: view.refresh_lamps(state)
+
+
 func to_save() -> Dictionary:
 	return {
 		"version": SAVE_VERSION,
@@ -200,9 +223,10 @@ func to_save() -> Dictionary:
 		"completed": completed.duplicate(),
 		"source": source,
 		"stats": stats.duplicate(),
-		"movement_editor": movement_editor.duplicate(true),
 		"greeting_editor": greeting_editor.duplicate(true),
 		"workshop_pages": workshop_pages.duplicate(true),
+		"accounts": accounts.duplicate(true),
+		"city_cycle": cycle.duplicate(true),
 	}
 
 
@@ -284,7 +308,14 @@ func run_preview(test_only: bool = false) -> bool:
 	var snapshot: Dictionary = world_snapshot()
 	report("Running your program…", "You can still explore. Moving or editing will make this run's preview out of date.")
 	_thread = Thread.new()
-	var started := _thread.start(func() -> Dictionary: return LabProgram.run(program_text, snapshot))
+	var controller: bool = daylight_program
+	var started := _thread.start(func() -> Dictionary:
+		if not controller:return LabProgram.run(program_text,snapshot)
+		var daylight: Dictionary = snapshot.duplicate(true)
+		daylight.time={"hour":12.0,"phase":"Day","is_dark":false,"day":snapshot.time.day}
+		var darkness: Dictionary = snapshot.duplicate(true)
+		darkness.time={"hour":20.0,"phase":"Evening","is_dark":true,"day":snapshot.time.day}
+		return LampPrograms.compile_trials(LabProgram.run(program_text,daylight),LabProgram.run(program_text,darkness)))
 	if started != OK:
 		_thread = null
 		busy = false
@@ -308,7 +339,6 @@ func run_preview(test_only: bool = false) -> bool:
 		_fail_run(answer)
 		return false
 	var commands: Variant = answer.get("commands")
-	var trials: Array[Dictionary]=MovementBindings.demonstrations(area,state,commands)
 	var external: Array[String] = []
 	if ledger != null:
 		external = CodeBuild.BUILD_OPS
@@ -317,13 +347,13 @@ func run_preview(test_only: bool = false) -> bool:
 	if not proposal.get("ok", false) or not building.ok:
 		var why: String = str(proposal.get("reason", "Unknown command")) if not proposal.get("ok", false) else str(building.reason)
 		var rejected := {"ok": false, "reason": why, "rejected": true,
-			"error": {"kind": "", "message": "", "line": 0}, "stdout": answer.get("stdout", ""), "trials":trials, "trace":answer.get("trace", []), "locals":answer.get("locals", {}), "commands":commands}
+			"error": {"kind": "", "message": "", "line": 0}, "stdout": answer.get("stdout", ""), "trace":answer.get("trace", []), "locals":answer.get("locals", {}), "commands":commands}
 		report("The world rejected this change.", rejected.reason, true)
 		run_finished.emit(rejected)
 		return false
 	if test_only:
 		report("Section tested.", "This tested one event. Test code checks the whole program before Apply.")
-		run_finished.emit({"ok":true,"section":true,"trials":trials,"trace":answer.get("trace",[]),"commands":commands,"stdout":answer.get("stdout","")})
+		run_finished.emit({"ok":true,"section":true,"trace":answer.get("trace",[]),"commands":commands,"stdout":answer.get("stdout","")})
 		return true
 	_pending = proposal
 	_pending["build"] = building
@@ -335,14 +365,19 @@ func run_preview(test_only: bool = false) -> bool:
 	changes.append_array(building.changes)
 	report("Preview ready · %d changes · %d ms" % [changes.size(), int(answer.get("wall_ms", 0))], "\n".join(PackedStringArray(changes)))
 	preview_changed.emit(true)
-	run_finished.emit({"ok": true, "changes": changes, "stdout": str(answer.get("stdout", "")).strip_edges(), "wall_ms": int(answer.get("wall_ms", 0)), "trials":trials, "trace":answer.get("trace", []), "locals":answer.get("locals", {}), "commands":commands})
+	run_finished.emit({"ok": true, "changes": changes, "stdout": str(answer.get("stdout", "")).strip_edges(), "wall_ms": int(answer.get("wall_ms", 0)), "trace":answer.get("trace", []), "locals":answer.get("locals", {}), "commands":commands})
 	return true
 
 
 ## What the player's code may do to houses, trees and doodads: what the finished lessons unlock, plus any granted for trying.
 func abilities() -> Array[String]:
-	var result: Array[String] = Quests.capabilities(area, completed)
-	for ability: String in extra_abilities:
+	var result: Array[String] = Quests.capabilities(area, completed, journey_done())
+	var granted: Array[String] = extra_abilities.duplicate()
+	# Designer first: in a district whose layout is open to the studio, code may read, turn and move what the
+	# builder can. Players earn these through lessons instead.
+	if ledger != null and ledger.policy_id == "studio" and not (area.interior.get("layout", {}) as Dictionary).is_empty():
+		granted.append_array(AreaDef.CAPABILITIES)
+	for ability: String in granted:
 		if not result.has(ability):
 			result.append(ability)
 	return result
@@ -352,6 +387,12 @@ func abilities() -> Array[String]:
 ## and (once the lessons have taught it) the houses, trees and doodads within reach.
 func world_snapshot() -> Dictionary:
 	var snapshot: Dictionary = rules.snapshot(state)
+	if daylight_program or robot_link:snapshot.companion.enabled=false
+	if output_display!="":
+		var display: Dictionary = DisplayCards.find(area,output_display)
+		if DisplayCards.in_reach(area,state,display):
+			snapshot["display_sink"]={"target":output_display}
+			snapshot.companion.enabled=false
 	if ledger != null:
 		snapshot["build"] = CodeBuild.snapshot(ledger, state, abilities())
 	return snapshot
@@ -387,10 +428,7 @@ func apply_preview() -> bool:
 	_after_change()
 	if built:
 		build_changed.emit("Your program changed the village")
-	if area.movement_lesson:
-		report("Your program is part of the room.", "Continue in the notebook when you are ready.")
-	else:
-		report("Your changes are part of the world.", "Walk over the timber you placed. Edit again to try a different result.")
+	report("Your changes are part of the world.", "Walk around and see what they did. Edit again to try a different result.")
 	return true
 
 
@@ -448,15 +486,11 @@ func reset_world() -> void:
 	fresh.inspections_read = (state.get("inspections_read", []) as Array).duplicate()
 	fresh.terminal_links = (state.get("terminal_links", []) as Array).duplicate()
 	fresh.items = (state.get("items", []) as Array).duplicate()
-	if area.movement_lesson:
-		fresh.spoken = state.get("spoken", "")
-		fresh.hotaru_greeted = state.get("hotaru_greeted", false)
-		fresh.controls = state.controls.duplicate(true)
-		fresh.movement_used = state.movement_used.duplicate()
-	elif area.voice_lesson:
+	if area.voice_lesson:
 		fresh.spoken = state.get("spoken", "")
 		fresh.hotaru_greeted = state.get("hotaru_greeted", false)
 	state = fresh
+	sync_cycle()
 	_history.clear()
 	_session_generation += 1
 	_invalidate_preview()
@@ -474,7 +508,7 @@ func is_walking() -> bool:
 	return not _step_candidate.is_empty()
 
 
-func request_step(direction: Vector2i, binding: String = "") -> bool:
+func request_step(direction: Vector2i) -> bool:
 	if is_walking() or _waiting_for_stop:
 		return false
 	var link: Dictionary = RoomLinks.crossing(area, state, direction)
@@ -494,7 +528,7 @@ func request_step(direction: Vector2i, binding: String = "") -> bool:
 	if view != null and view.resident_cells().has(player_cell() + direction):
 		turn_toward(direction)  # Someone stands there: face them rather than walk through them.
 		return false
-	var proposal: Dictionary = rules.move(state, direction, binding)
+	var proposal: Dictionary = rules.move(state, direction)
 	if not proposal.ok:
 		turn_toward(direction)  # A building, water, a wall or the map's edge: face it rather than do nothing.
 		return false
@@ -502,7 +536,6 @@ func request_step(direction: Vector2i, binding: String = "") -> bool:
 	_step_from = Vector2i(int(state.player[0]), int(state.player[1]))
 	_step_to = _step_from + direction
 	_step_candidate = proposal.state
-	_step_binding = binding
 	_step_progress = 0.0
 	_session_generation += 1
 	_invalidate_preview()
@@ -526,19 +559,13 @@ func advance_walk(seconds: float) -> void:
 			if not before.has(zone_id):
 				toast.emit("Discovered %s" % area.zone(zone_id).title)
 		_after_change(false)
-		if _step_binding != "":progress_saved.emit()
-		_step_binding = ""
 
 
 func walk_to(goal: Vector2i) -> bool:
 	_buffered_direction = Vector2i.ZERO
-	_buffered_binding = ""
 	_cancel_route()
 	for link: Dictionary in area.interior.get("links", []):
 		if RoomLinks.cells(link).has(goal): return walk_to_link(str(link.id), goal)
-	if area.movement_lesson and not MovementBindings.finished(state):
-		toast.emit("First try your movement keys. Press E to connect them in your notebook.")
-		return false
 	var house: String = HouseInstances.at_destination(area, goal, door_catalog)
 	if house != "":
 		return walk_to_door(house)
@@ -586,9 +613,6 @@ func walk_to_link(id: String, goal: Vector2i = Vector2i(-1, -1)) -> bool:
 
 func walk_to_door(house: String) -> bool:
 	_cancel_route()
-	if area.movement_lesson and not MovementBindings.finished(state):
-		toast.emit("Try all four movement directions before stepping outside. E opens the lesson.")
-		return false
 	var target: Vector2i
 	if house == "" and not area.interior.is_empty():
 		target = Vector2i(int(area.interior.exit[0]), int(area.interior.exit[1]))
@@ -654,9 +678,6 @@ func _cancel_route() -> void:
 func _cancel_walk(stop_visual: bool=true) -> void:
 	_cancel_route()
 	_buffered_direction = Vector2i.ZERO
-	_buffered_binding = ""
-	_step_binding = ""
-	_binding_priority = ""
 	_step_candidate = {}
 	_step_progress = 0.0
 	if view != null:
@@ -670,18 +691,7 @@ func _text_has_focus() -> bool:
 
 
 func _held_direction() -> Vector2i:
-	_active_binding = ""
 	if not input_enabled or _text_has_focus() or not DisplayServer.window_is_focused():
-		return Vector2i.ZERO
-	if area.movement_lesson:
-		var keys: Array = state.controls.keys()
-		if keys.has(_binding_priority):
-			keys.erase(_binding_priority)
-			keys.push_front(_binding_priority)
-		for key: String in keys:
-			if Input.is_physical_key_pressed(BINDING_CODES[key]):
-				_active_binding = key
-				return MovementBindings.direction(state.controls, key)
 		return Vector2i.ZERO
 	var input: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if input.is_zero_approx():
@@ -702,7 +712,6 @@ func _physics_process(delta: float) -> void:
 		return
 	if _waiting_for_stop or not input_enabled or _text_has_focus() or not DisplayServer.window_is_focused():
 		_buffered_direction = Vector2i.ZERO
-		_buffered_binding = ""
 		_cancel_route()
 		view.set_player_motion(Vector2.ZERO)
 		return
@@ -710,7 +719,7 @@ func _physics_process(delta: float) -> void:
 	var held: Vector2i = _held_direction()
 	if held != Vector2i.ZERO:
 		_cancel_route()
-		if request_step(held, _active_binding):
+		if request_step(held):
 			return
 	elif not _route.is_empty():
 		if view.resident_cells().has(_route[0]):
@@ -742,11 +751,9 @@ func _physics_process(delta: float) -> void:
 func _take_buffered_step() -> bool:
 	if _buffered_direction == Vector2i.ZERO: return false
 	var direction: Vector2i = _buffered_direction
-	var binding: String = _buffered_binding
 	_buffered_direction = Vector2i.ZERO
-	_buffered_binding = ""
 	_cancel_route()
-	return request_step(direction, binding)
+	return request_step(direction)
 
 
 ## A resident stands in the next cell of the route. Wait a moment for them to move on; then look for a way round;
@@ -770,17 +777,6 @@ func _input(event: InputEvent) -> void:
 	if not event is InputEventKey or not event.pressed or event.echo or not input_enabled or _text_has_focus():
 		return
 	var key: Key = (event as InputEventKey).keycode
-	if area.movement_lesson:
-		var physical: Key = event.physical_keycode if event.physical_keycode != 0 else key
-		for name: String in BINDING_CODES:
-			if BINDING_CODES[name] == physical and state.controls.has(name):
-				_binding_priority = name
-				if is_walking():
-					_buffered_direction = MovementBindings.direction(state.controls, name)
-					_buffered_binding = name
-				_cancel_route()
-				return
-		return
 	match key:
 		KEY_D, KEY_RIGHT: _input_priority = Vector2i.RIGHT
 		KEY_A, KEY_LEFT: _input_priority = Vector2i.LEFT
@@ -790,13 +786,16 @@ func _input(event: InputEvent) -> void:
 			return
 	if is_walking():
 		_buffered_direction = _input_priority
-		_buffered_binding = ""
 	_cancel_route()
 
 
 # ----------------------------------------------------------------- quests
 func current_quest() -> Dictionary:
-	return Quests.current(area, completed)
+	return Quests.current(area, completed, journey_done())
+
+
+func journey_done() -> Array:
+	return journey_source.call() if journey_source.is_valid() else completed
 
 
 ## {done, total, noun} for the current quest's goal, for the objective readout.
@@ -819,7 +818,7 @@ func _after_change(sync_view: bool = true) -> void:
 	if zone_id != current_zone:
 		current_zone = zone_id
 		zone_changed.emit(area.zone(zone_id) if zone_id != "" else {})
-	var finished: Array[String] = Quests.newly_completed(area, state, completed)
+	var finished: Array[String] = Quests.newly_completed(area, state, completed, journey_done())
 	for quest_id: String in finished:
 		completed.append(quest_id)
 		quest_completed.emit(area.quest(quest_id))
@@ -865,7 +864,7 @@ func _invalidate_preview() -> void:
 
 
 func _tokens() -> Dictionary:
-	return {"world_revision": state.revision, "program_revision": _program_revision, "session_generation": _session_generation, "run_id": _run_serial}
+	return {"world_revision": state.revision, "program_revision": _program_revision, "session_generation": _session_generation, "run_id": _run_serial,"daylight_program":daylight_program,"robot_link":robot_link}
 
 
 func _exit_tree() -> void:

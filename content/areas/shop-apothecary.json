@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "id": "shop-apothecary",
+  "title": "Thyme & Tonic",
+  "version": 2,
+  "size": [
+    12,
+    12
+  ],
+  "spawn": [
+    6,
+    3
+  ],
+  "voice_lesson": true,
+  "terrain": [
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............"
+  ],
+  "buildings": [],
+  "trees": [],
+  "zones": [
+    {
+      "id": "shop-floor",
+      "title": "Thyme & Tonic",
+      "rect": [
+        0,
+        0,
+        12,
+        12
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "id": "shop-pendant-1",
+      "zone": "shop-floor",
+      "at": [
+        6,
+        3
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    },
+    {
+      "id": "shop-pendant-2",
+      "zone": "shop-floor",
+      "at": [
+        6,
+        3
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    }
+  ],
+  "props": [],
+  "interior": {
+    "style": "workshop-square",
+    "shell": "town-shop-shell",
+    "zoom": 12,
+    "exit": [
+      6,
+      0
+    ],
+    "exit_direction": "S",
+    "walk_front": 0,
+    "furniture": [],
+    "assets": [
+      {
+        "id": "shop-pendant-1-model",
+        "asset": "workshop-hanging-lamp",
+        "at": [
+          3,
+          5
+        ],
+        "height": 3.0,
+        "turn": 0,
+        "scale": 1
+      },
+      {
+        "id": "shop-pendant-2-model",
+        "asset": "workshop-hanging-lamp",
+        "at": [
+          9,
+          8
+        ],
+        "height": 3.0,
+        "turn": 0,
+        "scale": 1
+      },
+      {
+        "id": "shop-door",
+        "asset": "workshop-shop-doors",
+        "at": [
+          6,
+          0
+        ],
+        "turn": 0,
+        "scale": 0.65
+      }
+    ],
+    "lamp_fixtures": [
+      {
+        "id": "shop-pendant-1",
+        "asset": "shop-pendant-1-model",
+        "range": 7,
+        "energy": 1.25
+      },
+      {
+        "id": "shop-pendant-2",
+        "asset": "shop-pendant-2-model",
+        "range": 7,
+        "energy": 1.25
+      }
+    ],
+    "links": [
+      {
+        "id": "square",
+        "at": [
+          6,
+          0
+        ],
+        "approach": [
+          6,
+          1
+        ],
+        "direction": "S",
+        "to": "haverlund-square",
+        "arrival": [
+          16,
+          30
+        ],
+        "facing": "E",
+        "label": "Return to Spindle Walk",
+        "walk_through": true,
+        "enter": 1,
+        "doors": "shop-door"
+      }
+    ],
+    "inspections": [],
+    "city_network": true
+  }
+}

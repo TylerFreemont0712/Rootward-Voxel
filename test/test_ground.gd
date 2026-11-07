@@ -108,6 +108,7 @@ func _defaults() -> void:
 
 
 func _geometry() -> void:
+	AreaStore.use_fixtures()
 	var source: Dictionary = AreaStore.read_source("kindle-hollow")
 	var area: AreaDef = AreaDef.parse(source.document, source.assets, source.quests).area
 	var legacy: Array = []
@@ -118,7 +119,6 @@ func _geometry() -> void:
 	TerrainBuilder.build(area, func(at: Vector3, size: Vector3, id: String, rotation: Vector3 = Vector3.ZERO) -> void:
 		current.append([at, size, id, rotation]), true)
 	_check(current == legacy, "Soil sides, banks, water, rocks, walls and fences exactly preserve their previous geometry/materials")
-	_check(not AreaStore.load_area("rune-mill").ground.is_empty(), "Rune Mill retains its authored ground model")
 
 
 func _history() -> void:

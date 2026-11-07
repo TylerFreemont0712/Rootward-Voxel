@@ -1,0 +1,18 @@
+{
+  "previous": "v1",
+  "previous_sha256": "120a084fab3f2446da1b0ab1384dc577adf853369b48b1126ea916c075d79dc7",
+  "record": "art/source/world/square-texture-pass/v1/lane_surround_v2.py",
+  "removed": [
+    "stair_handrail_east"
+  ],
+  "added": "stair_parapet_east",
+  "segments": 22,
+  "x": [
+    13.47,
+    13.77
+  ],
+  "y": [
+    30.75,
+    41.75
+  ]
+}

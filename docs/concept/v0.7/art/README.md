@@ -14,7 +14,7 @@ Outputs of [the art prompt pack](../04-art-prompts.md) go here, one folder per p
 | `8-interface/` | Interface | `U1`, `U2` |
 | `9-future/` | Future places | `F1`–`F3` |
 
-**The full pack is complete:** [browse the visual gallery](gallery.html), [open the 38-image index](INDEX.md), or read [current design decisions](DESIGN_DECISIONS.md).
+**The full pack is complete:** browse the visual gallery, [open the 38-image index](INDEX.md), or read [current design decisions](DESIGN_DECISIONS.md).
 
 ## Naming
 
@@ -58,10 +58,10 @@ All **38 requested concept images across nine phases** have current selections. 
 | 6 · Automatons | [Review](6-automatons/REVIEW.md) | 4 |
 | 7 · The village cast | [Review](7-cast/REVIEW.md) | 9 |
 | 8 · Interface | [Review](8-interface/REVIEW.md) | 2 |
-| 9 · Future places | [Review](9-future/REVIEW.md) | 3 |
+| 9 · Future places | Review | 3 |
 
 The six directly approved original images remain preserved with their approval records. Later wheel revisions and the remaining selections use the user's delegated art judgment; their individual statuses remain draft. The gallery uses the current selection map rather than treating historical approval as a newer locomotion decision.
 
 Native pixels are preserved. Landscapes are 1536×1024, portraits 1024×1536, and square sprites/model studies may be the tool's native 1254×1254 despite a 1024×1024 request. Exact dimensions and alpha details are recorded per image. A few transparent images need low-alpha edge cleanup before adoption.
 
-The pack has been visually reviewed and checked for PNG decoding, dimensions, transparency, image/reference hashes, prompt blocks, complete coverage and local links. [Validation results](validation.json) record the final inventory. The full game suite passed during Phase 1; it was not repeated for these concept-image and documentation changes. Gameplay-scale Godot review, source modelling and runtime adoption remain separate work through the existing project pipelines.
+The pack has been visually reviewed and checked for PNG decoding, dimensions, transparency, image/reference hashes, prompt blocks, complete coverage and local links. Validation results record the final inventory. The full game suite passed during Phase 1; it was not repeated for these concept-image and documentation changes. Gameplay-scale Godot review, source modelling and runtime adoption remain separate work through the existing project pipelines.

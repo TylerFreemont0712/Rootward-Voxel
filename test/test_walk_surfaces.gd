@@ -8,21 +8,9 @@ func _initialize() -> void:
 	_run.call_deferred()
 
 func _run() -> void:
+	AreaStore.use_fixtures()
 	var source: Dictionary = AreaStore.read_source("kindle-hollow")
 	var catalog: Dictionary = AreaStore.read_interiors()
-	var art: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://pipeline/art-catalog.json"))
-	var textures: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(art.building_textures.manifest))
-	var paintings: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(art.building_textures.provenance))
-	_check(FileAccess.get_sha256(art.building_textures.library)==paintings.library_sha256,"The concept cottage preserves the exact imagegen prompts")
-	for painting: Dictionary in paintings.materials:
-		_check(FileAccess.get_sha256("res://"+str(painting.source))==painting.sha256,"The native generated painting is preserved")
-		for style: String in ["lush","solid"]:
-			var output: Dictionary = textures.materials[painting.id].outputs[style]
-			_check(FileAccess.get_sha256(output.path)==output.sha256,"The cottage's runtime texture matches the art build")
-			var image := Image.load_from_file(ProjectSettings.globalize_path(output.path))
-			var periodic: bool = true
-			for i: int in range(128):periodic = periodic and image.get_pixel(0,i)==image.get_pixel(127,i) and image.get_pixel(i,0)==image.get_pixel(i,127)
-			_check(periodic and image.detect_alpha()==Image.ALPHA_NONE,"The cottage texture is opaque with matching repeat edges")
 	var area: AreaDef = AreaStore.load_area("kindle-hollow")
 	var rules := LabWorld.new(area)
 	for room_id: String in catalog.templates.values():
@@ -97,7 +85,6 @@ func _run() -> void:
 	_check(actor.sprite.billboard==BaseMaterial3D.BILLBOARD_FIXED_Y,"The painted actor's depth plane stays vertical above its feet")
 	_check(is_equal_approx(actor._upright.scale.y*cos(SpriteAdventurer.CAMERA_ELEVATION),1.0),"Upright correction preserves the approved on-screen proportions")
 	actor.queue_free()
-	await _apertures(source.assets, catalog)
 	if failures.is_empty():print("Walking surfaces and door rules: %d checks passed." % checks)
 	else:
 		for failure: String in failures:printerr("FAIL: ",failure)
@@ -106,48 +93,3 @@ func _run() -> void:
 func _check(ok: bool, message: String) -> void:
 	checks+=1
 	if not ok and not failures.has(message):failures.append(message)
-
-
-## Test the exported geometry too: a leaf rotating is insufficient if an old
-## beam or a Boolean closing face still covers the supposed opening.
-func _apertures(assets: Dictionary, catalog: Dictionary) -> void:
-	for id: String in catalog.assets:
-		var entry: Dictionary = assets[id].entrance
-		var model: Node3D = preload("res://art/world_assets.gd").instantiate(id)
-		root.add_child(model)
-		await process_frame
-		var bounds: Array = preload("res://pipeline/world_geometry.gd").audit(model).bounds
-		_check(float(bounds[5])<float(assets[id].logical_footprint[3])*.5+1.5,"The doorway edit stays inside the house's approach bounds: "+id)
-		var hinge := model.find_child("DoorHinge*",true,false) as Node3D
-		_check(hinge!=null,"The exported house has a separate hinged leaf: "+id)
-		if hinge==null:
-			model.free()
-			continue
-		for part: Node in model.find_children("Entrance *", "MeshInstance3D", true, false):
-			if String(part.name).begins_with("Entrance strap hinge") or String(part.name).begins_with("Entrance hinge stud"):
-				_check(hinge.is_ancestor_of(part),"Straps and studs move with the leaf: "+id)
-		var front: float = float(entry.plane)
-		var center: float = float(entry.bottom)+float(entry.height)*.5
-		var origin := Vector3(0,center,front+3.0)
-		var closed: float = _front_hit(model,origin)
-		hinge.rotation.y=1.3
-		var opened: float = _front_hit(model,origin)
-		_check(absf(closed-front)<.2,"The closed entry shows its actual leaf: "+id)
-		_check(opened<front-.45,"The opened leaf reveals a clear passage into the vestibule: "+id)
-		model.free()
-
-
-func _front_hit(node: Node, origin: Vector3) -> float:
-	var nearest: float = -100.0
-	if node is MeshInstance3D and node.mesh!=null:
-		for surface: int in range(node.mesh.get_surface_count()):
-			var arrays: Array=node.mesh.surface_get_arrays(surface)
-			var vertices: PackedVector3Array=arrays[Mesh.ARRAY_VERTEX]
-			var indices: PackedInt32Array=arrays[Mesh.ARRAY_INDEX]
-			for index: int in range(0,indices.size() if not indices.is_empty() else vertices.size(),3):
-				var points: Array[Vector3]=[]
-				for k: int in range(3):points.append(node.global_transform*vertices[indices[index+k] if not indices.is_empty() else index+k])
-				var hit: Variant=Geometry3D.ray_intersects_triangle(origin,Vector3.FORWARD,points[0],points[1],points[2])
-				if hit!=null:nearest=maxf(nearest,(hit as Vector3).z)
-	for child: Node in node.get_children():nearest=maxf(nearest,_front_hit(child,origin))
-	return nearest

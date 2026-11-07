@@ -9,7 +9,12 @@ const SHADER: Shader = preload("res://ui/gear_veil.gdshader")
 var _material: ShaderMaterial
 ## How many times the veil has drawn itself while a scene was being built.
 var pumped: int = 0
-var _clock_start: int = Time.get_ticks_msec()
+var _clock_last: int = Time.get_ticks_msec()
+var _clock: float = 0.0
+var _front: float = 0.0
+var _opening: bool = false
+var clockwork: ClockworkGears
+var rendered_frames: int = 0
 
 
 func _init() -> void:
@@ -21,6 +26,9 @@ func _init() -> void:
 	_material.shader = SHADER
 	material = _material
 	resized.connect(_fit_aspect)
+	clockwork = ClockworkGears.new()
+	UI.full_rect(clockwork)
+	add_child(clockwork)
 
 
 func _ready() -> void:
@@ -32,13 +40,20 @@ func _process(_delta: float) -> void:
 		_turn()
 
 
-## The gears follow the clock rather than the frame time, so a stalled frame never makes them jump or stop and start.
+## Scene construction yields real frames. Bound a missed frame's phase increment so the
+## train resumes cleanly instead of jumping through several teeth after an OS/GPU stall.
 func _turn() -> void:
-	_material.set_shader_parameter("spin", float(Time.get_ticks_msec() - _clock_start) / 1000.0)
+	var now: int = Time.get_ticks_msec()
+	var delta: float = minf(.05, maxf(0.0, float(now - _clock_last) / 1000.0))
+	_clock_last = now
+	_clock += delta
+	rendered_frames += 1
+	_material.set_shader_parameter("spin", _clock)
+	clockwork.advance(delta)
 
 
-## Called while a scene is being built (see BuildPump): the main thread is busy, so the veil draws itself, with the
-## gears turned to the time it is now.
+## Compatibility redraw for older synchronous builders. Natural Sparks travel yields
+## real frames instead; both paths share the train's bounded phase clock.
 func keep_turning() -> void:
 	if not visible:
 		return
@@ -71,7 +86,9 @@ func open(origin: Vector2, seconds: float, during: Callable = Callable()) -> voi
 func _begin(origin: Vector2, opening: bool) -> void:
 	_material.set_shader_parameter("origin", origin)
 	_material.set_shader_parameter("opening", 1.0 if opening else 0.0)
-	_material.set_shader_parameter("front", 0.0)
+	_clock_last = Time.get_ticks_msec()
+	_opening = opening
+	set_front(0.0)
 	_fit_aspect()
 	visible = true
 	mouse_filter = Control.MOUSE_FILTER_STOP
@@ -92,7 +109,20 @@ func _sweep(seconds: float, during: Callable) -> void:
 
 
 func set_front(value: float) -> void:
+	_front = value
 	_material.set_shader_parameter("front", value)
+	clockwork.modulate.a = 1.0 - smoothstep(0.0, .25, value) if _opening else smoothstep(.80, 1.0, value)
+
+
+## Presentation of the saved city supply. Ordinary states without
+## city_power keep the neutral appearance; this never grants or saves progression.
+func set_world_state(state: Dictionary) -> void:
+	var raw: Variant = state.get("city_power", {})
+	clockwork.set_power(raw if raw is Dictionary else {})
+
+
+func set_status(text: String) -> void:
+	clockwork.set_status(text)
 
 
 func _fit_aspect() -> void:

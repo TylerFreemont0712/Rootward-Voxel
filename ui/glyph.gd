@@ -32,13 +32,16 @@ static func paint(canvas: CanvasItem, kind_name: StringName, rect: Rect2, tint: 
 		&"play":
 			canvas.draw_colored_polygon(PackedVector2Array([p.call(0.26, 0.16), p.call(0.8, 0.5), p.call(0.26, 0.84)]), tint)
 		&"debug":
-			# Run and debug: an open play triangle with a small bug at its lower left.
-			canvas.draw_polyline(PackedVector2Array([p.call(0.42, 0.12), p.call(0.92, 0.44), p.call(0.42, 0.76), p.call(0.42, 0.12)]), tint, stroke, true)
-			canvas.draw_circle(p.call(0.27, 0.69), side * 0.15, tint)
-			canvas.draw_circle(p.call(0.27, 0.49), side * 0.07, tint)
-			for leg: float in [0.6, 0.7, 0.8]:
-				canvas.draw_line(p.call(0.14, leg), p.call(0.04, leg - 0.05 + (leg - 0.7) * 0.6), tint, stroke * 0.7, true)
-				canvas.draw_line(p.call(0.40, leg), p.call(0.50, leg - 0.05 + (leg - 0.7) * 0.6), tint, stroke * 0.7, true)
+			# Separate outlines keep the bug readable beside the play symbol at small sizes.
+			canvas.draw_polyline(PackedVector2Array([p.call(.63,.17),p.call(.92,.43),p.call(.63,.69),p.call(.63,.17)]),tint,stroke*.8,true)
+			canvas.draw_arc(p.call(.26,.67),side*.12,0,TAU,16,tint,stroke*.75,true)
+			canvas.draw_arc(p.call(.26,.48),side*.065,PI,TAU,10,tint,stroke*.75,true)
+			for leg: float in [.58,.68,.78]:
+				canvas.draw_line(p.call(.14,leg),p.call(.055,leg-.035),tint,stroke*.65,true)
+				canvas.draw_line(p.call(.38,leg),p.call(.465,leg-.035),tint,stroke*.65,true)
+		&"sidebar":
+			canvas.draw_rect(Rect2(p.call(.1,.16),Vector2(side*.8,side*.68)),tint,false,stroke)
+			canvas.draw_line(p.call(.37,.16),p.call(.37,.84),tint,stroke,true)
 		&"check":
 			canvas.draw_polyline(PackedVector2Array([p.call(0.18, 0.54), p.call(0.4, 0.76), p.call(0.82, 0.26)]), tint, stroke * 1.2, true)
 		&"cross":

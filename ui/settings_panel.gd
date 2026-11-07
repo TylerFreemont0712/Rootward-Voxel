@@ -10,6 +10,9 @@ func setup(game_settings: GameSettings) -> void:
 	card.custom_minimum_size = Vector2(660, 0)
 	title_row("Settings", "Changes apply right away and are remembered.")
 	body.add_child(UI.caps("Display"))
+	var adapter := RenderingServer.get_video_adapter_name()
+	if not adapter.is_empty():
+		body.add_child(UI.dim("Graphics: " + adapter, 14))
 	var fullscreen := Toggle.make("Fullscreen", bool(settings.get_value("fullscreen")))
 	fullscreen.toggled.connect(func(on: bool) -> void: settings.set_value("fullscreen", on))
 	body.add_child(fullscreen)

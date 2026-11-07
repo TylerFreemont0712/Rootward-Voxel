@@ -152,12 +152,40 @@ static func _shown(name: String, block: Dictionary, look: Dictionary) -> Variant
 
 static func _swapped(original: BaseMaterial3D, choice: String) -> BaseMaterial3D:
 	var key: String = "%d|%s" % [original.get_instance_id(), choice]
-	if not _materials.has(key):
-		var material := original.duplicate() as BaseMaterial3D
-		material.albedo_texture = texture(choice)
-		material.resource_name = original.resource_name
-		_materials[key] = material
-	return _materials[key]
+	if _materials.has(key):
+		var cached := (_materials[key] as WeakRef).get_ref() as BaseMaterial3D
+		if cached != null: return cached
+	var material := original.duplicate() as BaseMaterial3D
+	material.albedo_texture = texture(choice)
+	material.resource_name = original.resource_name
+	_materials[key] = weakref(material)
+	return material
+
+
+static func prune_cache() -> void:
+	for key: String in _materials.keys():
+		if (_materials[key] as WeakRef).get_ref() == null: _materials.erase(key)
+
+
+## Immutable authored scenery needs only its selected look. Keep complete models
+## for the showcase and editable buildings, and preserve semantic lamp emitters.
+static func discard_hidden(node: Node) -> void:
+	for child: Node in node.get_children():
+		if child is Node3D and not (child as Node3D).visible and (str(child.name).begins_with("detail_") or str(child.name).begins_with("alt_")) and not _has_emitter(child):
+			child.free()
+		else:
+			discard_hidden(child)
+
+
+static func _has_emitter(node: Node) -> bool:
+	if node is MeshInstance3D and (node as MeshInstance3D).mesh != null:
+		var mesh := node as MeshInstance3D
+		for index: int in range(mesh.mesh.get_surface_count()):
+			var material := mesh.get_active_material(index)
+			if material != null and "lamp_glass" in material.resource_name: return true
+	for child: Node in node.get_children():
+		if _has_emitter(child): return true
+	return false
 
 
 ## The sharp runtime painting for a library id (assets/world/textures/seaside-houses/detail/).

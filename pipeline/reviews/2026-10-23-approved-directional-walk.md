@@ -35,6 +35,6 @@ Reviewed the actual gameplay image and the eight-frame playback strips: correcte
 
 ## Evidence and limits
 
-[Gameplay](../../evidence/voxel-clearing.png) · [Walk recording](../../evidence/painted-walk.gif) · [Idle recording](../../evidence/painted-idle.gif) · [Blink still](../../evidence/painted-idle.png) · [Direction study](../../evidence/painted-directions.png)
+Gameplay · [Walk recording](../../evidence/painted-walk.gif) · [Idle recording](../../evidence/painted-idle.gif) · [Blink still](../../evidence/painted-idle.png) · [Direction study](../../evidence/painted-directions.png)
 
 The approved paintings still have small drawing differences between poses; integer registration preserves them. This is a reviewed prototype animation, rather than a claim of production polish or a general character system. Clothing/held-item layers, another character and additional areas remain deferred. No world rules, sandbox boundaries or Blender assets changed.

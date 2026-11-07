@@ -3,6 +3,8 @@ extends RefCounted
 ## One save slot per journey, plus the player's name. Everything is plain JSON in this project's own user
 ## directory (RootwardVoxelLab); nothing is shared with the main Rootward game.
 
+## The first journey's filename is kept as the base, so a journey's slot is "<base>.<level id>.json" and saves
+## written before the other journeys were removed still load.
 const SAVE_PATH: String = "user://kindle_hollow.save.json"
 const PROFILE_PATH: String = "user://profile.json"
 const DEFAULT_NAME: String = "Wren"
@@ -11,18 +13,20 @@ const DEFAULT_NAME: String = "Wren"
 static var save_path: String = SAVE_PATH
 static var profile_path: String = PROFILE_PATH
 static var force_enabled: bool = false
+static var development: bool = false
 
 
-static func has_save(level: String = "kindle-hollow") -> bool:
+static func has_save(level: String = LevelStore.MAIN_LEVEL) -> bool:
 	return not read(level).is_empty()
 
 
 static func level_path(level: String) -> String:
-	return save_path if level == "kindle-hollow" else save_path.get_basename() + "." + level.validate_filename() + ".json"
+	var base: String = save_path.get_basename() + ".dev.json" if development else save_path
+	return base.get_basename() + "." + level.validate_filename() + ".json"
 
 
 ## The parsed save, or {} when there is none or it cannot be read.
-static func read(level: String = "kindle-hollow") -> Dictionary:
+static func read(level: String = LevelStore.MAIN_LEVEL) -> Dictionary:
 	var path: String = level_path(level)
 	if _fresh() or not FileAccess.file_exists(path):
 		return {}
@@ -32,7 +36,7 @@ static func read(level: String = "kindle-hollow") -> Dictionary:
 	return parsed
 
 
-static func write(data: Dictionary, level: String = "kindle-hollow") -> bool:
+static func write(data: Dictionary, level: String = LevelStore.MAIN_LEVEL) -> bool:
 	if _fresh():
 		return false
 	var path: String = level_path(level)
@@ -45,7 +49,7 @@ static func write(data: Dictionary, level: String = "kindle-hollow") -> bool:
 	return DirAccess.rename_absolute(ProjectSettings.globalize_path(temporary), ProjectSettings.globalize_path(path)) == OK
 
 
-static func delete(level: String = "kindle-hollow") -> void:
+static func delete(level: String = LevelStore.MAIN_LEVEL) -> void:
 	if not _fresh() and FileAccess.file_exists(level_path(level)):
 		DirAccess.remove_absolute(ProjectSettings.globalize_path(level_path(level)))
 
@@ -58,11 +62,11 @@ static func _profile() -> Dictionary:
 
 
 static func last_level() -> String:
-	return str(_profile().get("last_level", "kindle-hollow"))
+	return str(_profile().get("last_level", LevelStore.MAIN_LEVEL))
 
 
 static func set_last_level(level: String) -> void:
-	if _fresh():return
+	if _fresh() or development:return
 	var data: Dictionary = _profile()
 	data["last_level"] = level
 	var file := FileAccess.open(profile_path, FileAccess.WRITE)

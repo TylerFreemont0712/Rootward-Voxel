@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "clockshop-orrery",
+  "version": 1,
+  "source": "art/source/world/clockshop-orrery/v1/model.blend",
+  "source_sha256": "6065ed8d123411df3250c93530a65c226ae9782b2c0cf65d36213b845bc0b052",
+  "runtime": "assets/world/clockshop-orrery/model.glb",
+  "runtime_sha256": "c77582fd90577205d3ab17b9ac642f976aaa1fd4238bd665d61438a8cefbb0dc",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.497044652700424,
+      0.0250000022351742,
+      -0.416793465614319,
+      0.497044652700424,
+      0.946528851985931,
+      0.416793465614319
+    ],
+    "geometry_sha256": "aa0a02b2abf212c7cc416d6073e04bb1e0ead7c6f3cc8f924cb8d096895948d5",
+    "material_records": {
+      "clockshop_brass": {
+        "albedo": [
+          7098,
+          5412,
+          2588,
+          10000
+        ],
+        "roughness": 4300,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_steel": {
+        "albedo": [
+          3490,
+          4078,
+          4196,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_teal": {
+        "albedo": [
+          1608,
+          3020,
+          2980,
+          10000
+        ],
+        "roughness": 7400,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_walnut": {
+        "albedo": [
+          6872,
+          6012,
+          5064,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "clockshop_brass",
+      "clockshop_steel",
+      "clockshop_teal",
+      "clockshop_walnut"
+    ],
+    "meshes": 4,
+    "triangles": 6048
+  }
+}

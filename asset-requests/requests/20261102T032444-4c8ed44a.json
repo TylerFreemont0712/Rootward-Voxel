@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "id": "20261102T032444-4c8ed44a",
+  "kind": "update",
+  "title": "Update The town's land round Spindle Lane",
+  "asset_type": "world model",
+  "status": "finished",
+  "notes": "Direct user request, 2026-11-02: the surrounding background looks too fake. Use fewer houses and more believable gardens and connecting streets. Continue the stair railings and guard visible drops. Deliberately edit the adopted master, retain its heights, tread and power-channel geometry, and update the area-owned scenery placements.",
+  "asset": {
+    "id": "haverlund-lane-surround",
+    "label": "The town's land round Spindle Lane",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/haverlund-lane-surround/v1/model.blend",
+    "runtime": "assets/world/haverlund-lane-surround/model.glb",
+    "manifest": "assets/world/haverlund-lane-surround/manifest.json",
+    "catalog_notes": "Built from art/source/world/square-hub/v1/lane_plan.py by author_lane_ground.py (initial authoring only); edit the adopted model.blend. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Garden revision: art/source/world/lane-believability/v1/. Existing top faces are divided into coherent gardens and connected streets; outer stairs retain their levels and gain continuous handrails. Area placements now leave 18 background houses with more planted yards.",
+    "related_files": [
+      "art/source/world/city-power-grid/v2/README.md",
+      "art/source/world/haverlund-lane-surround/v1/grid-inlay-audit.json",
+      "art/source/world/haverlund-lane-surround/v1/lane-believability.json",
+      "art/source/world/haverlund-lane-surround/v1/pillars-revision.json",
+      "art/source/world/haverlund-lane-surround/v1/provenance.json",
+      "art/source/world/square-hub/v1/lane_plan.py"
+    ],
+    "usage_files": [
+      "content/areas/haverlund-lane.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "The town's land round Spindle Lane",
+      "source": "art/source/world/haverlund-lane-surround/v1/model.blend",
+      "runtime": "assets/world/haverlund-lane-surround/model.glb",
+      "pivot": "Lane area coordinates; Blender +X is logical +x, +Y logical +y, Z up. The lower town at z -8.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Land only, round the haverlund-lane-set: the lower town south and east, the hill west, the town steps north, and dressed walls over the set's cut faces. It never draws the lane's own cells; nothing here is walkable. Houses are separate placed models.",
+      "notes": "Built from art/source/world/square-hub/v1/lane_plan.py by author_lane_ground.py (initial authoring only); edit the adopted model.blend. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Garden revision: art/source/world/lane-believability/v1/. Existing top faces are divided into coherent gardens and connected streets; outer stairs retain their levels and gain continuous handrails. Area placements now leave 18 background houses with more planted yards."
+    }
+  },
+  "references": [],
+  "created": "2026-11-02T03:24:44+00:00",
+  "updated": "2026-11-02T03:55:35+00:00",
+  "history": [
+    {
+      "at": "2026-11-02T03:24:44+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-02T03:24:59+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-02T03:55:35+00:00",
+      "action": "finish"
+    }
+  ],
+  "result": {
+    "assets": [
+      "haverlund-lane-surround"
+    ],
+    "summary": "Reworked existing top faces into coherent garden plots and connected streets; reduced background houses from 31 to 18 and added orchard/yard dressing. Continued both stair handrails and guarded visible terrace edges. Original levels, walls, power inlays and source backups retained. Normal audited build, full scripts/test.sh and native 1600x1000/1280x720 review passed. Background remains scenery.",
+    "review": "pipeline/reviews/2026-11-02-lane-errands-and-development.md",
+    "contexts": [
+      {
+        "id": "haverlund-lane-surround",
+        "label": "The town's land round Spindle Lane",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-lane-surround/v1/model.blend",
+        "runtime": "assets/world/haverlund-lane-surround/model.glb",
+        "manifest": "assets/world/haverlund-lane-surround/manifest.json",
+        "catalog_notes": "Built from art/source/world/square-hub/v1/lane_plan.py by author_lane_ground.py (initial authoring only); edit the adopted model.blend. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Garden revision: art/source/world/lane-believability/v1/. Existing top faces are divided into coherent gardens and connected streets; outer stairs retain their levels and gain continuous handrails. Area placements now leave 18 background houses with more planted yards.",
+        "related_files": [
+          "art/source/world/city-power-grid/v2/README.md",
+          "art/source/world/haverlund-lane-surround/v1/grid-inlay-audit.json",
+          "art/source/world/haverlund-lane-surround/v1/lane-believability.json",
+          "art/source/world/haverlund-lane-surround/v1/pillars-revision.json",
+          "art/source/world/haverlund-lane-surround/v1/provenance.json",
+          "art/source/world/lane-believability/v1/README.md",
+          "art/source/world/square-hub/v1/lane_plan.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-lane.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_lane",
+          "label": "The town's land round Spindle Lane",
+          "source": "art/source/world/haverlund-lane-surround/v1/model.blend",
+          "runtime": "assets/world/haverlund-lane-surround/model.glb",
+          "pivot": "Lane area coordinates; Blender +X is logical +x, +Y logical +y, Z up. The lower town at z -8.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Land only, round the haverlund-lane-set: the lower town south and east, the hill west, the town steps north, and dressed walls over the set's cut faces. It never draws the lane's own cells; nothing here is walkable. Houses are separate placed models.",
+          "notes": "Built from art/source/world/square-hub/v1/lane_plan.py by author_lane_ground.py (initial authoring only); edit the adopted model.blend. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Garden revision: art/source/world/lane-believability/v1/. Existing top faces are divided into coherent gardens and connected streets; outer stairs retain their levels and gain continuous handrails. Area placements now leave 18 background houses with more planted yards."
+        }
+      }
+    ],
+    "fingerprints": {
+      "haverlund-lane-surround": {
+        "source": "120a084fab3f2446da1b0ab1384dc577adf853369b48b1126ea916c075d79dc7",
+        "runtime": "6b27059436a599285239dda85895d3c6140ce37e5ffac9dce41999664abeb077",
+        "entry": "718f684903a26b489361863179dd76e95103d9812a6234ce17ba5736f9cd444a"
+      }
+    }
+  }
+}

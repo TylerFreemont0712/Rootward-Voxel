@@ -1,11 +1,11 @@
 {
   "schema": 1,
   "asset": "rootwell-plaza",
-  "version": "v1",
-  "source": "art/source/world/rootwell-plaza/v1/model.blend",
-  "source_sha256": "f1ad2d6ab4d40ffe0e5c9ab9382ff264d09eb191ac7a0a8e927ca84bc4578dd2",
+  "version": "v3",
+  "source": "art/source/world/rootwell-plaza/v3/model.blend",
+  "source_sha256": "acfe08ddd4532deb79ec3cf51de7011813cf2f28d0fe204c8430754580becfff",
   "runtime": "assets/world/rootwell-plaza/model.glb",
-  "runtime_sha256": "782f352a2f2b90f9219446b6a1bc4f1e5b0f86a4cb84a8f44b669a5781b7cb01",
+  "runtime_sha256": "162eccf60c96576ac4ac4ab88f26b6bf8f313da12d7fa15c0c2fb76199d494cd",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
@@ -17,7 +17,7 @@
       0.0200000014156103,
       8.88927936553955
     ],
-    "geometry_sha256": "8847ef02ef1bd43c901f716a6663073cd82c7917ca8285b28967a8a9d39a40ed",
+    "geometry_sha256": "57dc3bd838c84a1debc2e915a35ae7f0ad0deeabba9ab65a9c3a4b752aeae741",
     "material_records": {
       "grid_bed": {
         "albedo": [
@@ -77,7 +77,7 @@
       "house_paint",
       "seaside_stone"
     ],
-    "meshes": 5,
-    "triangles": 2576
+    "meshes": 100,
+    "triangles": 3464
   }
 }

@@ -1,5 +1,7 @@
 # Characters and character style — 2026-10-26
 
+**Current voice/backstory draft, 2026-11-02:** [v0.8 characters](../v0.8/characters.md) develops the recurring cast and Iona the signmaker for the proposed outdoor quest. The appearance/history proposals below remain historical; approved current sprites, full-body dialogue portraits and the shared character pipeline take precedence.
+
 **Status: proposal, not implemented.** The cast of the [Sparks & Machines journey](05-scenario.md), how each person and machine looks, and the rules every character picture follows. How they **talk** is in [the dialogue guide](07-dialogue.md#4-voices). The existing journeys keep their current art; everything here is for the new journey. Prompt ids (`C1`, `H1` and so on) refer to [the prompt pack](04-art-prompts.md).
 
 ## Character style rules

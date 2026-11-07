@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "workshop-loft",
   "title": "The loft",
-  "version": 9,
+  "version": 10,
   "size": [
     14,
     12
@@ -40,7 +40,40 @@
       ]
     }
   ],
-  "lamps": [],
+  "lamps": [
+    {
+      "id": "desk-lamp",
+      "at": [
+        0.05,
+        8.85
+      ],
+      "zone": "loft",
+      "style": "fixture",
+      "title": "Desk lamp",
+      "stand": [
+        1,
+        8
+      ],
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "bedside-lamp",
+      "at": [
+        8.45,
+        10.8
+      ],
+      "zone": "loft",
+      "style": "fixture",
+      "title": "Bedside lamp",
+      "requires": "field-tablet",
+      "automatic": true,
+      "stand": [
+        8,
+        10
+      ]
+    }
+  ],
   "props": [],
   "interior": {
     "style": "workshop-loft",
@@ -651,7 +684,22 @@
         "title": "Loft terminal",
         "text": ""
       }
-    ]
+    ],
+    "lamp_fixtures": [
+      {
+        "id": "desk-lamp",
+        "asset": "desk",
+        "range": 5,
+        "energy": 0.8
+      },
+      {
+        "id": "bedside-lamp",
+        "asset": "bedside",
+        "range": 3.5,
+        "energy": 0.3
+      }
+    ],
+    "city_network": true
   },
   "terminals": [
     {

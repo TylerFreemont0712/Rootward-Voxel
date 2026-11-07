@@ -75,11 +75,8 @@
           "loft-travel-stacks",
           "loft-window-life",
           "loft-postcard",
-          "loft-tape-machine",
           "loft-hotaru",
-          "loft-cable",
           "loft-note-slip",
-          "loft-hand-terminal",
           "field-tablet"
         ],
         "build": "scripts/world-art.sh build <id>",
@@ -128,18 +125,34 @@
         "source": "res://art/source/world/sparks-square/v1/",
         "reference": "res://docs/concept/v0.7/art/5-town/T3-rootward-square-day.wheels.png",
         "assets": [
-          "haverlund-square-set",
-          "square-rootwell",
-          "square-town-hall",
-          "square-bakery",
-          "square-bookshop",
-          "square-grocer",
           "square-market-stall",
-          "square-cafe-table",
           "square-node"
         ],
         "build": "scripts/world-art.sh build <id>",
         "note": "Native Blender geometry, packed shared lane paintings. New downhill square, no new quests or tram travel."
+      },
+      "spindle_strip": {
+        "source": "res://art/source/world/spindle-strip/v1/",
+        "prompts": "res://art/source/world/spindle-strip/v1/concept-prompts.json",
+        "assets": [
+          "haverlund-square-ground"
+        ],
+        "concepts": {
+          "clockmaker": {
+            "path": "res://art/source/world/spindle-strip/v1/clockmaker-concept.png",
+            "sha256": "8e655a870aad6531a1de680c84f75487af02b71a118f4626329461b990d82102",
+            "status": "concept_for_user_review",
+            "runtime": false
+          },
+          "apothecary": {
+            "path": "res://art/source/world/spindle-strip/v1/apothecary-concept.png",
+            "sha256": "c1a1ff16ba81b150bb9458023317e57be55de1bc1fa9e7ea747b47ad4f331629",
+            "status": "concept_for_user_review",
+            "runtime": false
+          }
+        },
+        "build": "scripts/world-art.sh build haverlund-square-ground",
+        "note": "Revised landing, promenade, left-hand park and four future frontages. Concepts are new original architectural directions only; the rejected temporary shop twins are unplaced. Five shop interiors are cleared for a later rebuild."
       }
     }
   },
@@ -149,26 +162,6 @@
     "prompt": "res://art/source/portraits/v1/prompts.json",
     "manifest": "res://assets/portraits/library.json",
     "items": {
-      "mira": {
-        "source": "res://art/source/portraits/v1/mira.png",
-        "source_sha256": "3361513f4644ed933ed49cdc04fd3adbd385aa21577a041f525d05519f71f512",
-        "runtime": "res://assets/portraits/mira.png"
-      },
-      "rowan": {
-        "source": "res://art/source/portraits/v1/rowan.png",
-        "source_sha256": "f7d1c7b52a992c2901c0591b6e669f5965e099a5fdf7769b32b4a3b21e382ee5",
-        "runtime": "res://assets/portraits/rowan.png"
-      },
-      "bram": {
-        "source": "res://art/source/portraits/v1/bram.png",
-        "source_sha256": "751a32148299acceb66afb25d84a819b88e9470f434518d75677dafc55723baf",
-        "runtime": "res://assets/portraits/bram.png"
-      },
-      "tessa": {
-        "source": "res://art/source/portraits/v1/tessa.png",
-        "source_sha256": "73dfce8d4a257e3b8d4ab7ad8c8a6794537448af3bdb48d19fecb9796dcbf8b1",
-        "runtime": "res://assets/portraits/tessa.png"
-      },
       "nell": {
         "source": "res://art/source/portraits/v1/nell.png",
         "source_sha256": "e0effea7c32cc87d383723fe72434baf6b805b122938d51cfbddd4c22ebc411b",
@@ -182,29 +175,7 @@
     "provenance": "res://art/source/world/textures/v2-detail/generation.json",
     "manifest": "res://assets/world/textures/detail-library.json"
   },
-  "building_textures": {
-    "version": "v1-concept-cottage",
-    "library": "res://art/source/world/concept-cottage/v1/textures/library.json",
-    "provenance": "res://art/source/world/concept-cottage/v1/textures/generation.json",
-    "manifest": "res://assets/world/textures/concept-cottage-manifest.json"
-  },
-  "companions": {
-    "hotaru": {
-      "source": "res://art/source/companions/hotaru/v2/sprite.png",
-      "runtime": "res://assets/companions/hotaru.png",
-      "prompt": "art/source/companions/hotaru/v2/prompt.txt",
-      "provenance": "art/source/companions/hotaru/v2/provenance.json",
-      "height": 256,
-      "portrait_runtime": "res://assets/companions/hotaru-portrait.png"
-    }
-  },
   "building_texture_libraries": [
-    {
-      "version": "v1-reference-cottage",
-      "library": "res://art/source/world/reference-cottage/v1/textures/library.json",
-      "provenance": "res://art/source/world/reference-cottage/v1/textures/generation.json",
-      "manifest": "res://assets/world/textures/reference-cottage-manifest.json"
-    },
     {
       "version": "seaside-houses-v1",
       "library": "res://art/source/world/seaside-background-houses/v1/textures/library.json",
@@ -212,6 +183,21 @@
       "manifest": "res://assets/world/textures/seaside-houses/manifest.json",
       "output_root": "res://assets/world/textures/seaside-houses",
       "detail_size": 512
+    },
+    {
+      "version": "clockshop-v1",
+      "library": "res://art/source/world/clockshop-interior/v1/textures/library.json",
+      "provenance": "res://art/source/world/clockshop-interior/v1/textures/generation.json",
+      "manifest": "res://assets/world/textures/clockshop/manifest.json",
+      "output_root": "res://assets/world/textures/clockshop",
+      "detail_size": 512
+    },
+    {
+      "version": "town-ground-v1",
+      "library": "res://art/source/world/town-ground/v1/library.json",
+      "provenance": "res://art/source/world/town-ground/v1/generation.json",
+      "manifest": "res://assets/world/textures/town-ground-manifest.json",
+      "output_root": "res://assets/world/textures"
     }
   ],
   "portrait_libraries": [
@@ -229,15 +215,33 @@
       }
     },
     {
-      "version": "v1-traveller",
-      "prompt": "res://art/source/portraits/sparks/v1/traveller-prompt.json",
-      "provenance": "res://art/source/portraits/sparks/v1/traveller-provenance.json",
+      "version": "v2-traveller-full-body",
+      "prompt": "res://art/source/portraits/sparks/v2/traveller-prompt.json",
+      "provenance": "res://art/source/portraits/sparks/v2/traveller-provenance.json",
       "manifest": "res://assets/portraits/sparks/traveller-library.json",
       "items": {
         "traveller": {
-          "source": "res://art/source/portraits/sparks/v1/traveller.png",
-          "source_sha256": "425e8681b79c835958d2e3f7d9cd660fcc1ed5b0d3a8ddd45811bc09fa94fc87",
+          "source": "res://art/source/portraits/sparks/v2/traveller.png",
+          "source_sha256": "adc85a74c276543d3d97b38c54c94d4f503f7bb69241b05722d1f54c2b90c1a1",
           "runtime": "res://assets/portraits/sparks/traveller.png"
+        }
+      }
+    },
+    {
+      "version": "v3-welcome-iona",
+      "prompt": "res://art/source/portraits/sparks/v3/prompt.json",
+      "provenance": "res://art/source/portraits/sparks/v3/provenance.json",
+      "manifest": "res://assets/portraits/sparks/welcome-library.json",
+      "items": {
+        "iona": {
+          "source": "res://art/source/portraits/sparks/v3/iona.png",
+          "runtime": "res://assets/portraits/sparks/iona.png",
+          "source_sha256": "ffdd29cce9383e49341b8a32da2daf348a9bf8dcde6b74e1d848faa2e518bd18"
+        },
+        "braum": {
+          "source": "res://art/source/portraits/sparks/v3/braum.png",
+          "source_sha256": "7a4487f2ea1dd176007bee2fba90a4a34946a7f9798e185b79834a1ad160ef46",
+          "runtime": "res://assets/portraits/sparks/braum.png"
         }
       }
     }
@@ -282,9 +286,10 @@
     }
   },
   "phantoms": {
-    "version": "v2",
-    "source": "res://art/source/characters/phantoms/v2/appearances.json",
+    "version": "v3",
+    "source": "res://art/source/characters/phantoms/v3/appearances.json",
     "runtime": "res://assets/characters/phantoms",
-    "manifest": "res://assets/characters/phantoms/manifest.json"
+    "manifest": "res://assets/characters/phantoms/manifest.json",
+    "texture_compression": "vram"
   }
 }

@@ -16,12 +16,12 @@ commands = [
     [os.environ.get('GODOT_BIN', 'godot'), '--headless', '--path', str(root), '-s', 'res://pipeline/prepare_cast_source.gd', '--', '--source', 'res://art/source/characters/nell/sparks-v1', '--stage', 'references'],
     [os.environ.get('GODOT_BIN', 'godot'), '--headless', '--path', str(root), '-s', 'res://pipeline/prepare_cast_source.gd', '--', '--source', 'res://art/source/characters/mira/sparks-v1', '--stage', 'assemble'],
     [os.environ.get('GODOT_BIN', 'godot'), '--headless', '--path', str(root), '-s', 'res://pipeline/prepare_directional_walk.gd', '--', '--source', 'res://art/source/adventurer/v9-directional-walk'],
-    ['scripts/world-art.sh', 'init', 'cottage'],
-    ['scripts/world-art.sh', 'seed', 'cottage'],
-    ['scripts/world-art.sh', 'init', 'log-cabin'],
-    ['scripts/world-art.sh', 'seed', 'log-cabin'],
-    ['scripts/world-art.sh', 'init', 'lamppost'],
-    ['scripts/world-art.sh', 'seed', 'lamppost'],
+    ['scripts/world-art.sh', 'init', 'workshop-shell'],
+    ['scripts/world-art.sh', 'seed', 'workshop-shell'],
+    ['scripts/world-art.sh', 'init', 'haverlund-bakery'],
+    ['scripts/world-art.sh', 'seed', 'haverlund-bakery'],
+    ['scripts/world-art.sh', 'init', 'loft-bed'],
+    ['scripts/world-art.sh', 'seed', 'loft-bed'],
 ]
 for command in commands:
     result = subprocess.run(command, cwd=root, capture_output=True, text=True)

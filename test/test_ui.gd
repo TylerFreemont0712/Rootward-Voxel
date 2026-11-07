@@ -41,11 +41,11 @@ func _lesson_text() -> void:
 	_check(blocks.size() == 3 and blocks[0].type == "p" and blocks[0].text == "First line second line.", "Paragraph lines are joined and blank lines split blocks")
 	_check(blocks[1].type == "code" and blocks[1].text == "lamp.set_lit(True)\n    indented", "Fenced code keeps its indentation")
 	_check(LessonText.to_bbcode("Use `x[0]` and **go**").contains("[b]") and LessonText.to_bbcode("a [b]b[/b]").begins_with("a [lb]"), "Inline markup converts and stray brackets are escaped")
-	var area: AreaDef = AreaStore.load_area("kindle-hollow")
 	var every_lesson: bool = true
-	for quest: Dictionary in area.quests:
-		every_lesson = every_lesson and not LessonText.blocks(str(quest.lesson)).is_empty() and quest.hints.size() == 3 and str(quest.starter).contains("def program(world):")
-	_check(every_lesson, "Every quest has a lesson, three hints and a starter that defines program(world)")
+	for id: String in LevelStore.entry(LevelStore.MAIN_LEVEL).room_areas:
+		for quest: Dictionary in AreaStore.load_area(id).quests:
+			every_lesson = every_lesson and not LessonText.blocks(str(quest.lesson)).is_empty() and quest.hints.size() >= 1 and str(quest.starter).contains("def program(world):")
+	_check(every_lesson, "Every quest has a lesson, hints and a starter that defines program(world)")
 
 
 func _error_advice() -> void:
@@ -265,7 +265,7 @@ func _gear_veil() -> void:
 	BuildPump.tick = Callable()
 	await veil.open(Vector2(0.3, 0.7), 0.05)
 	_check(not veil.covering() and veil.mouse_filter == Control.MOUSE_FILTER_IGNORE, "Opened, the veil leaves the screen and the mouse alone")
-	_check(veil.material.shader.code.contains("meshed("), "The gears of the veil mesh with one another instead of turning on their own")
+	_check(veil.clockwork.wheels.size() == 7 and GearGeometry.mesh_angle(.2,36,24,-.38) != .2, "The seven-wheel train derives follower rotation from meshing tooth counts")
 	veil.queue_free()
 
 

@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "asset": "tailor-sewing-table",
+  "version": 1,
+  "source": "art/source/world/tailor-sewing-table/v1/model.blend",
+  "source_sha256": "a03f69bf9d982b8e8a8290f9beeb616e3998145ae32c805e7413adeeb0d0293f",
+  "runtime": "assets/world/tailor-sewing-table/model.glb",
+  "runtime_sha256": "45545f0b741c6fee0dafff9e4b7dadca3bcc44bade106581e2159947ea91982c",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.649999976158142,
+      0.0,
+      -0.340000003576279,
+      1.1839827299118,
+      1.41999995708466,
+      0.300000011920929
+    ],
+    "geometry_sha256": "7dec2338a4ed46f779cc73173749a8bc26560b10319333cc08b6a244afd74fc4",
+    "material_records": {
+      "shop_brass": {
+        "albedo": [
+          7098,
+          5412,
+          2588,
+          10000
+        ],
+        "roughness": 4500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_cloth_0": {
+        "albedo": [
+          5412,
+          2314,
+          2745,
+          10000
+        ],
+        "roughness": 9500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_cloth_3": {
+        "albedo": [
+          3647,
+          4784,
+          3216,
+          10000
+        ],
+        "roughness": 9500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_cloth_6": {
+        "albedo": [
+          8471,
+          7804,
+          6275,
+          10000
+        ],
+        "roughness": 9500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_ink": {
+        "albedo": [
+          1451,
+          1647,
+          1569,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_iron": {
+        "albedo": [
+          2275,
+          2471,
+          2510,
+          10000
+        ],
+        "roughness": 4500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_lamp_glass": {
+        "albedo": [
+          10000,
+          8118,
+          5412,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shop_sack": {
+        "albedo": [
+          7882,
+          7059,
+          5412,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_steel": {
+        "albedo": [
+          4157,
+          4627,
+          4706,
+          10000
+        ],
+        "roughness": 4500,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "shop_brass",
+      "shop_cloth_0",
+      "shop_cloth_3",
+      "shop_cloth_6",
+      "shop_ink",
+      "shop_iron",
+      "shop_lamp_glass",
+      "shop_oak",
+      "shop_sack",
+      "shop_steel"
+    ],
+    "meshes": 10,
+    "triangles": 792
+  }
+}

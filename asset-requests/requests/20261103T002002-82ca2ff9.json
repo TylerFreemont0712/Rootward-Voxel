@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "id": "20261103T002002-82ca2ff9",
+  "kind": "update",
+  "title": "Update Thyme & Tonic · apothecary",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "User rejected the reused shop-house shell in annotated follow-up 2026-11-03. Temporary exterior is now unplaced; original apothecary concept is at art/source/world/spindle-strip/v1/apothecary-concept.png, exact prompts and provenance alongside. Current request delivered layout + concepts only. FUTURE MODELING IS DEFERRED by the user: do not copy another shop shell, do not build replacement/interior assets until the next authorized modeling pass. The new original building should fit the west-side frontage plan in content/development/spindle-strip-plan.json and face east toward the promenade/square. Preserve current source as rejected historical work.",
+  "asset": {
+    "id": "haverlund-apothecary",
+    "label": "Thyme & Tonic · apothecary",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/haverlund-apothecary/v1/model.blend",
+    "runtime": "assets/world/haverlund-apothecary/model.glb",
+    "manifest": "assets/world/haverlund-apothecary/manifest.json",
+    "catalog_notes": "Deliberate derived shop from preserved haverlund-greengrocer/v1 master. art/source/world/square-renewal/v1/revise_shops.py User rejected the temporary reused shell on 2026-11-03. Unplaced; unique concept at art/source/world/spindle-strip/v1/ pending future modeling.",
+    "related_files": [
+      "art/source/world/haverlund-apothecary/v1/square-renewal.json",
+      "art/source/world/spindle-strip/v1/README.md",
+      "art/source/world/square-renewal/v1/revise_shops.py"
+    ],
+    "usage_files": [
+      "content/areas/archive/haverlund-square-v5.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Thyme & Tonic · apothecary",
+      "source": "art/source/world/haverlund-apothecary/v1/model.blend",
+      "runtime": "assets/world/haverlund-apothecary/model.glb",
+      "pivot": "Footprint centre, front Blender -Y",
+      "logical_footprint": [
+        -2.3,
+        -3.2,
+        4.6,
+        6.4
+      ],
+      "illustrated_edges": true,
+      "notes": "Deliberate derived shop from preserved haverlund-greengrocer/v1 master. art/source/world/square-renewal/v1/revise_shops.py User rejected the temporary reused shell on 2026-11-03. Unplaced; unique concept at art/source/world/spindle-strip/v1/ pending future modeling.",
+      "behavior": "Hinged storefront. Area document owns entry and collision."
+    }
+  },
+  "references": [],
+  "created": "2026-11-03T00:20:02+00:00",
+  "updated": "2026-11-03T00:20:02+00:00",
+  "history": [
+    {
+      "at": "2026-11-03T00:20:02+00:00",
+      "action": "Requested in development showcase"
+    }
+  ]
+}

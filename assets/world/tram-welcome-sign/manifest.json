@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "tram-welcome-sign",
+  "version": "v1",
+  "source": "art/source/world/tram-welcome-sign/v1/model.blend",
+  "source_sha256": "f14856a6ff2d9f2146290a2cb1bd4f874ba7fdab7ae01880b38d4e5a1e26e88b",
+  "runtime": "assets/world/tram-welcome-sign/model.glb",
+  "runtime_sha256": "ef63219ff1938e217854d2ccaa2afb4d4050cb6d1d6593de56f09b9a6b6d06b9",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.52999997138977,
+      0.0,
+      -0.439999997615814,
+      1.52999997138977,
+      2.95500016212463,
+      0.427500009536743
+    ],
+    "geometry_sha256": "cdeeb82217710ae2c97ab362720f5ee9f9ccfe482ce16eddc80b02c5485f652f",
+    "material_records": {
+      "Deep teal enamel": {
+        "albedo": [
+          2717,
+          5371,
+          5564,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": ""
+      },
+      "Display glass": {
+        "albedo": [
+          1718,
+          2601,
+          2828,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": ""
+      },
+      "Dried cream paint": {
+        "albedo": [
+          9405,
+          9113,
+          8153,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": ""
+      },
+      "Oiled walnut": {
+        "albedo": [
+          5169,
+          3811,
+          2601,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": ""
+      },
+      "Warm cream enamel": {
+        "albedo": [
+          9013,
+          8808,
+          7918,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": ""
+      },
+      "Worked brass": {
+        "albedo": [
+          7858,
+          6500,
+          3959,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "Deep teal enamel",
+      "Display glass",
+      "Dried cream paint",
+      "Oiled walnut",
+      "Warm cream enamel",
+      "Worked brass"
+    ],
+    "meshes": 33,
+    "triangles": 6976
+  }
+}

@@ -17,7 +17,6 @@ const PALETTE: Dictionary = preload("res://art/world_palette.gd").COLORS
 ## Camera offset from its focus point: the diagonal heading and about 31 degrees of elevation.
 const CAMERA_OFFSET: Vector3 = Vector3(21.0, 17.8, 21.0)
 const CHUNK: int = 16
-const LIGHT_POOL: int = 6
 ## Flat ground never needs to cast shadows, and skipping it keeps the shadow pass cheap.
 const NO_SHADOW: Array[String] = ["grass", "grass_light", "grass_dark", "soil", "soil_dark", "dirt", "dirt_light", "dirt_dark", "water", "path_dark"]
 
@@ -49,14 +48,16 @@ var _terrain_nodes: Dictionary = {}
 var _chunk: int = 0
 var _content: Node3D
 var _area_presentation: Dictionary = {}
+var _authored_asset_ids: Dictionary = {}
 var _decks: Dictionary = {}
 var _lamps: Dictionary = {}
+var _city_time: Dictionary = {}
+var _city_power: Dictionary = {}
 var _gates: Dictionary = {}
 var _wheels: Array[Node3D] = []
 var _player: Node3D
 var _player_cells: Dictionary = {}
 var _body: Node3D
-var hotaru: HotaruFairy
 ## A room's own story presentation (RoomStage.for_area); null in every room that has none.
 var stage: RoomStage
 var _selection: Node3D
@@ -66,14 +67,27 @@ var _quest_marker: Node3D
 var _committed: Dictionary = {}
 var _art_transform: Transform3D = Transform3D.IDENTITY
 var _elapsed: float = 0.0
+var _building: bool = false
+var _message_signs: Array[MessageSign] = []
+var story_cells: Dictionary = {}
+var story_actors: Dictionary = {}
+var _incremental_build: bool = false
+var _travel_motion: Vector2 = Vector2.ZERO
 var _ghost_material: ShaderMaterial
 var _ghost_edge_material: ShaderMaterial
 var _removed_material: ShaderMaterial
 var _removed_edge_material: ShaderMaterial
 var _sun: DirectionalLight3D
 var _environment: Environment
+var _depth_fog_material: ShaderMaterial
+var _walls_root: Node3D
+var _walls_key: String = ""
 var _lamp_lights: Array[OmniLight3D] = []
 var _lit_positions: Array[Vector3] = []
+## A soft glow on the ground under every lit lamp (lamp id -> MeshInstance3D). The renderer draws only so many real
+## lights at once; the pools make sure every lamp that is on reads as on, near the player or across the square.
+var _light_pools: Dictionary = {}
+var _pool_material: StandardMaterial3D
 var _focus: Vector3 = Vector3.ZERO
 var _focus_target: Vector3 = Vector3.ZERO
 var _zoom_target: float = 13.0
@@ -85,7 +99,6 @@ var _backdrop: OutdoorBackdrop
 var _warmth: float = 0.3
 var _warmth_target: float = 0.3
 var _warmth_from_state: bool = true
-var _light_focus: Vector3 = Vector3(1e6, 0, 0)
 var _cinematic_time: float = 0.0
 var _marker_cell: Variant = null
 var _marker_hidden: bool = false
@@ -166,11 +179,43 @@ func set_warmth(value: float, follow_state: bool = false) -> void:
 	_warmth_from_state = follow_state
 
 
+func set_city_cycle(time: Dictionary, power: Dictionary) -> void:
+	var supply_changed: bool = _city_power.get("online",true)!=power.get("online",true)
+	_city_time = time.duplicate(true)
+	_city_power = power.duplicate(true)
+	RenderingServer.global_shader_parameter_set("city_supply",1.0 if power.get("online",true) else 0.0)
+	_apply_warmth(_warmth)
+	_update_pool_strength()
+	if supply_changed and not _committed.is_empty():refresh_lamps(_committed)
+	var beacon: Node3D = building_node("rootwell")
+	if beacon!=null:CityInstruments.update(beacon,power,Time.get_ticks_msec()/1000.0)
+	var hall: Node3D = building_node("guild-hall")
+	if hall!=null:CityInstruments.update_clock(hall,float(time.get("hour",9.0)))
+	var clockmaker: Node3D = building_node("clockmaker")
+	if clockmaker!=null:CityInstruments.update_clock(clockmaker,float(time.get("hour",9.0)))
+
+
 func _apply_warmth(w: float) -> void:
+	if _depth_fog_material != null:
+		_depth_fog_material.set_shader_parameter("daylight", float(_city_time.get("daylight", 1.0)))
 	if _environment == null:
 		return
+	if not _city_time.is_empty():
+		var daylight: float = float(_city_time.daylight)
+		var outdoor: bool = not _outdoor.is_empty()
+		var ambient: Color = Color(str(_outdoor.ambient.color)) if outdoor else Color("bbc9df")
+		var sun: Color = Color(str(_outdoor.sun.color)) if outdoor else Color("fff0d8")
+		var sunset: float = (1.0-smoothstep(18.0,20.0,float(_city_time.hour)))*smoothstep(16.0,18.0,float(_city_time.hour))
+		_environment.background_color = Color("172734").lerp(Color(str(_outdoor.haze)) if outdoor else Color("2a3a40"),daylight)
+		_environment.ambient_light_color = Color("5476ad").lerp(ambient,daylight)
+		_environment.ambient_light_energy = lerpf(.24,float(_outdoor.ambient.energy) if outdoor else .48,daylight)
+		_sun.light_color = Color("7396cc").lerp(sun,daylight).lerp(Color("f3b071"),sunset*.35)
+		_sun.shadow_enabled=daylight>.12
+		_sun.light_energy = lerpf(.08,float(_outdoor.sun.energy) if outdoor else .85,daylight)
+		return
+	_sun.shadow_enabled=true
 	if not _outdoor.is_empty():
-		# An outdoor room keeps its own daylight; warmth is a valley's evening and does not reach it.
+		# Authored daylight for standalone art reviews without a journey clock.
 		_environment.background_color = Color(str(_outdoor.haze))
 		_environment.ambient_light_color = Color(str(_outdoor.ambient.color))
 		_environment.ambient_light_energy = float(_outdoor.ambient.energy)
@@ -258,6 +303,34 @@ func _update_camera(delta: float) -> void:
 # ------------------------------------------------------------------ build
 ## Builds the whole area from its document. Call once, after the view has entered the tree.
 func setup(definition: AreaDef) -> void:
+	_start_setup(definition)
+	_build_geometry()
+	_finish_setup()
+
+
+## Only the main thread creates nodes. Background resource IO and bounded outline/placement
+## batches yield real frames so the loading scene keeps animating normally.
+func setup_async(definition: AreaDef) -> void:
+	await WorldAssets.prepare_area(definition, (_body as SpriteAdventurer).skin_id if _body is SpriteAdventurer else "")
+	_start_setup(definition)
+	_incremental_build = true
+	focus_on(Vector2(area.spawn), true)
+	if area.interior.get("style", "") in ["workshop-loft", "workshop-floor", "workshop-lane", "workshop-square"]:
+		await WorkshopLoftRoom.build_async(area, _try_world_asset_async)
+		_build_layout_skin()
+		for building: Dictionary in _built_things(): _place_building(building)
+		_flush_batches()
+	else:
+		_build_geometry()
+	await get_tree().process_frame
+	_finish_setup()
+	_incremental_build = false
+	WorldAssets.finish_area()
+
+
+func _start_setup(definition: AreaDef) -> void:
+	_depth_fog_material = null
+	_incremental_build = false
 	if _content != null:
 		remove_child(_content)
 		_content.queue_free()
@@ -272,22 +345,54 @@ func setup(definition: AreaDef) -> void:
 		_asset_tree_nodes.clear()
 		_tree_styles.clear()
 		_lamp_lights.clear()
+		_light_pools.clear()
 		_lit_positions.clear()
 		_terrain_nodes.clear()
+	story_cells.clear()
+	story_actors.clear()
+	_message_signs.clear()
+	_building = true
+	_travel_motion = Vector2.ZERO
+	_player = null
+	_body = null
+	stage = null
+	_highlighted = null
+	_quest_marker = null
+	_ghost = null
+	_route_visual = null
+	_selection = null
+	terminal_display = null
+	_committed.clear()
 	area = definition
+	_authored_asset_ids.clear()
+	for item: Dictionary in area.interior.get("assets", []): _authored_asset_ids[str(item.id)] = true
 	_set_outdoor(area.interior.get("outdoor", {}) as Dictionary if area.interior.get("outdoor") is Dictionary else {})
 	_area_presentation = WorldAssets.area_presentation(area.id)
 	_refresh_entrance_surfaces()
 	_chunk = CHUNK
 	_content = Node3D.new()
+	_content.process_mode = Node.PROCESS_MODE_DISABLED
 	_content.name = "Area_" + area.id.replace("-", "_")
 	add_child(_content)
 	ground_skin = null
 	water_surface = null
 	villagers = null
 	_terrain_root = null
+
+
+func _build_layout_skin() -> void:
+	if (area.interior.get("layout", {}) as Dictionary).is_empty(): return
+	var skin := GroundSkin.new()
+	if skin.build(area):
+		ground_skin = skin
+		_content.add_child(skin)
+	else: skin.free()
+
+
+func _build_geometry() -> void:
 	if not area.interior.is_empty():
 		InteriorBuilder.build(area, _block, _try_world_asset)
+		_build_layout_skin()
 	elif area.ground.is_empty():
 		var skin := GroundSkin.new()
 		if skin.build(area):
@@ -316,6 +421,41 @@ func setup(definition: AreaDef) -> void:
 			for cx: int in range(0, area.width, CHUNK):
 				_rebuild_terrain_chunk(Vector2i(cx / CHUNK, cy / CHUNK))
 				BuildPump.pump()
+
+
+func _finish_setup() -> void:
+	var fog: Dictionary = area.interior.get("depth_fog", {})
+	# Where a city light ends: the power columns and conduits stop glowing at the mist rather than shining into it.
+	RenderingServer.global_shader_parameter_set("light_floor", float(fog.get("light_floor", -1000.0)))
+	if not fog.is_empty():
+		var layer := MeshInstance3D.new()
+		layer.name = "LowerTownMist"
+		layer.layers = 2 # Unlit atmospheric layer; town fixtures illuminate layer 1.
+		var quad := QuadMesh.new()
+		quad.size = Vector2(2,2)
+		layer.mesh = quad
+		layer.extra_cull_margin = 16384.0
+		layer.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		_depth_fog_material = ShaderMaterial.new()
+		_depth_fog_material.shader = preload("res://art/depth_mist.gdshader")
+		_depth_fog_material.render_priority = 127
+		_depth_fog_material.set_shader_parameter("day_color", Color(str(fog.day)))
+		_depth_fog_material.set_shader_parameter("night_color", Color(str(fog.night)))
+		_depth_fog_material.set_shader_parameter("daylight", float(_city_time.get("daylight", 1.0)))
+		_depth_fog_material.set_shader_parameter("fade_top", float(fog.get("fade_top",-2.8)))
+		_depth_fog_material.set_shader_parameter("fade_bottom", float(fog.height))
+		_depth_fog_material.set_shader_parameter("solid_by", float(fog.get("solid_by", 0.7)))
+		# Optional edge haze: the dressed town beyond the area's rectangle thins into the same mist.
+		var edge: Dictionary = fog.get("edge", {})
+		_depth_fog_material.set_shader_parameter("area_rect", Vector4(-0.5, -float(area.height) + 0.5, float(area.width) - 0.5, 0.5))
+		_depth_fog_material.set_shader_parameter("edge_start", float(edge.get("start", 4.0)))
+		_depth_fog_material.set_shader_parameter("edge_end", float(edge.get("end", 24.0)))
+		_depth_fog_material.set_shader_parameter("edge_max", float(edge.get("max", 0.0)))
+		layer.material_override = _depth_fog_material
+		_content.add_child(layer)
+	_walls_key = ""
+	_walls_root = null
+	_sync_walls()
 	_tree_root = Node3D.new()
 	_tree_root.name = "Trees"
 	_content.add_child(_tree_root)
@@ -331,11 +471,6 @@ func setup(definition: AreaDef) -> void:
 	if stage != null:
 		_content.add_child(stage)
 		stage.setup(self)
-	hotaru = null
-	if stage == null or not stage.replaces_companion():
-		hotaru=HotaruFairy.new()
-		hotaru.target=_player
-		_content.add_child(hotaru)
 	_selection = Node3D.new()
 	_selection.name = "CellSelection"
 	_content.add_child(_selection)
@@ -347,12 +482,21 @@ func setup(definition: AreaDef) -> void:
 	_content.add_child(_ghost)
 	_make_quest_marker()
 	_make_light_pool()
+	preload("res://art/static_scenery.gd").batch_barriers(_content, area)
 	if not area.villagers.is_empty():
 		villagers = VillagerView.new()
 		_content.add_child(villagers)
 		villagers.setup(self)
 	focus_on(Vector2(area.spawn), true)
 	apply_state({"player": [area.spawn.x, area.spawn.y, 0], "lamps": {}, "gates": {}, "bridges": {}})
+
+	for spec: Dictionary in area.displays:
+		var sign:=MessageSign.new()
+		_content.add_child(sign)
+		sign.setup(self,spec)
+		_message_signs.append(sign)
+	_content.process_mode = Node.PROCESS_MODE_INHERIT
+	_building = false
 
 
 ## Daylight and the painted distance for an outdoor room, or the shared valley light everywhere else. The view
@@ -379,15 +523,13 @@ func _set_outdoor(outdoor: Dictionary) -> void:
 	_apply_warmth(_warmth)
 
 
-## Whether a companion is here to talk to: the fairy, or the room stage's own companion.
+## Whether a companion is here to talk to: the room stage's own companion.
 func companion_present() -> bool:
-	return is_instance_valid(hotaru) or (stage != null and is_instance_valid(stage.companion_node()))
+	return stage != null and is_instance_valid(stage.companion_node())
 
 
 ## Where a speech mark sits over the companion, in world space; null when there is none.
 func companion_anchor() -> Variant:
-	if is_instance_valid(hotaru):
-		return hotaru.global_position + Vector3(0, .1, 0)
 	if stage != null and is_instance_valid(stage.companion_node()):
 		return stage.companion_anchor()
 	return null
@@ -402,9 +544,11 @@ func player_node() -> Node3D:
 ## Brings what is drawn in line with a new area (after a placement, a move, an undo or a load), touching only
 ## what differs. A new or moved building pops into place and a removed one shrinks away when `animate` is set.
 func sync_edits(definition: AreaDef, animate: bool = true) -> void:
-	var appearance_only: bool = area.buildings == definition.buildings and area.trees == definition.trees and area.props == definition.props
+	var appearance_only: bool = area.buildings == definition.buildings and area.trees == definition.trees and area.props == definition.props and area.scenery == definition.scenery and area.walls == definition.walls
 	var reshaped: Dictionary = _reshaped_cells(area, definition)
 	area = definition
+	_seat_scenery()
+	_sync_walls()
 	_refresh_entrance_surfaces()
 	if not reshaped.is_empty():
 		_reshape(reshaped)
@@ -427,6 +571,43 @@ func sync_edits(definition: AreaDef, animate: bool = true) -> void:
 				_pop(node)
 	_sync_trees()
 	_update_props(_committed)
+
+
+## Drawn walls, assembled from the town's wall kit (AreaBuild.wall_pieces): bays stretched to fit each run and one
+## pier at every end, corner and junction. Redrawn whole when the walls change; a square holds a few dozen pieces.
+func _sync_walls() -> void:
+	var key: String = JSON.stringify(area.walls.map(func(wall: Dictionary) -> Array: return [wall.id, wall.from, wall.to, wall.style]))
+	if key == _walls_key: return
+	_walls_key = key
+	if _walls_root != null and is_instance_valid(_walls_root):
+		_walls_root.free()
+	_walls_root = null
+	if area.walls.is_empty(): return
+	_walls_root = Node3D.new()
+	_walls_root.name = "DrawnWalls"
+	_content.add_child(_walls_root)
+	for piece: Dictionary in AreaBuild.wall_pieces(area.walls):
+		var model: Node3D = WorldAssets.instantiate(_presented_asset(str(piece.asset)))
+		if model == null: continue
+		var at: Vector2 = piece.at
+		model.position = Vector3(at.x, ground_y(at + Vector2(0.01, 0.01)), -at.y)
+		model.rotation_degrees.y = float(piece.turn)
+		model.scale = Vector3(float(piece.stretch), 1.0, 1.0)
+		_walls_root.add_child(model)
+		if _area_presentation.get("illustrated_edges", false):
+			IllustratedEdges.apply(model)
+
+
+## Authored scenery stands where the area (with the layout's edits) says: a moved lamp standard, bench or stall is
+## the same model, carried with its light, so nothing is rebuilt.
+func _seat_scenery() -> void:
+	for item: Dictionary in area.scenery:
+		var node: Node3D = _content.get_node_or_null(NodePath(str(item.id))) as Node3D
+		if node == null: continue
+		var at := Vector3(item.at.x, float(item.height), -item.at.y)
+		if node.position.distance_to(at) > 0.001 or absf(node.rotation_degrees.y - float(item.turn)) > 0.01:
+			node.position = at
+			node.rotation_degrees.y = float(item.turn)
 
 
 ## The cells whose land changed between two versions of the area (terrain, level or stairs), as a set.
@@ -728,15 +909,34 @@ func _try_world_asset(id: String, at: Vector3, size: float = 1.0, facing: float 
 		return false
 	var presented: String = _presented_asset(id)
 	var variant: Dictionary = HouseVariants.look(WorldAssets.entry(presented), look) if look != null else {}
-	var asset: Node3D = WorldAssets.instantiate(presented, ResourceLoader.CACHE_MODE_REUSE, variant)
-	if asset != null:
-		asset.name = node_name if node_name != "" else id.replace("-", "_")
-		asset.position = at
-		asset.rotation_degrees.y = facing
-		asset.scale = Vector3.ONE * size
-		_content.add_child(asset)
+	var asset: Node3D = WorldAssets.instantiate(presented, ResourceLoader.CACHE_MODE_REUSE, variant, _authored_asset_ids.has(node_name))
+	_seat_world_asset(asset, id, at, size, facing, node_name)
 	BuildPump.pump()
-	return true  # A missing selected asset is an error; do not silently replace artist work.
+	return true  # A missing selected asset is an error; never substitute other artwork.
+
+
+func _try_world_asset_async(id: String, at: Vector3, size: float = 1.0, facing: float = 0.0, node_name: String = "", look: Variant = null) -> bool:
+	if not WorldAssets.is_blender(id):
+		push_error("Selected world asset is not adopted: " + id)
+		return false
+	var presented: String = _presented_asset(id)
+	var variant: Dictionary = HouseVariants.look(WorldAssets.entry(presented), look) if look != null else {}
+	var asset: Node3D = await WorldAssets.instantiate_async(presented, variant, _authored_asset_ids.has(node_name))
+	_seat_world_asset(asset, id, at, size, facing, node_name)
+	return asset != null
+
+
+func _seat_world_asset(asset: Node3D, id: String, at: Vector3, size: float, facing: float, node_name: String) -> void:
+	if asset == null: return
+	asset.name = node_name if node_name != "" else id.replace("-", "_")
+	asset.position = at
+	asset.rotation_degrees.y = facing
+	asset.scale = Vector3.ONE * size
+	_content.add_child(asset)
+	if _incremental_build and get_viewport() is SubViewport:
+		# Upload/register a few newly placed models per normal frame under the veil,
+		# rather than submitting the whole district's first draw in one stalled frame.
+		(get_viewport() as SubViewport).render_target_update_mode = SubViewport.UPDATE_ONCE
 
 
 func _place_building(building: Dictionary) -> Node3D:
@@ -764,10 +964,14 @@ static func _building_key(building: Dictionary) -> String:
 func _make_mechanisms() -> void:
 	var box := Callable(self, "_mesh_box")
 	var post_asset: String = _area_presentation.get("post_lamp", "lamppost")
+	var fittings: Dictionary = {}
+	for spec: Dictionary in area.interior.get("lamp_fixtures", []): fittings[spec.id]=spec
 	for lamp: Dictionary in area.lamps:
+		# Large districts still let the loading train present frames between fittings.
+		BuildPump.pump()
 		if lamp.style == "fixture":
-			for spec: Dictionary in area.interior.get("lamp_fixtures", []):
-				if spec.id != lamp.id: continue
+			var spec: Dictionary = fittings.get(lamp.id,{})
+			if not spec.is_empty():
 				var fixture := _content.get_node_or_null(NodePath(str(spec.asset))) as Node3D
 				if fixture != null and MechanismBuilder.bind_fixture(fixture, spec): _lamps[lamp.id] = fixture
 			continue
@@ -803,16 +1007,71 @@ func _make_mechanisms() -> void:
 
 
 func _make_light_pool() -> void:
-	for index: int in range(LIGHT_POOL):
+	_light_pools.clear()
+	var fittings: Dictionary = {}
+	for spec: Dictionary in area.interior.get("lamp_fixtures", []): fittings[spec.id] = spec
+	for id: String in _lamps:
+		var reach: float = float((fittings.get(id, {}) as Dictionary).get("range", 5.5))
+		var pool := MeshInstance3D.new()
+		pool.name = "LightPool_" + id.replace("-", "_")
+		var quad := QuadMesh.new()
+		quad.orientation = PlaneMesh.FACE_Y
+		quad.size = Vector2.ONE * clampf(reach * 0.62, 1.6, 4.6)
+		pool.mesh = quad
+		pool.material_override = _light_pool_material()
+		pool.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		pool.layers = 2
+		pool.visible = false
+		_content.add_child(pool)
+		_light_pools[id] = pool
+	# Each ordinary lamp owns its light. Fixtures already own FixtureLight; they
+	# must not also consume a second light selected by camera distance.
+	for id: String in _lamps:
+		var fitting: Node3D = _lamps[id]
+		if fitting.has_node("FixtureLight") or not fitting.has_meta("glass"): continue
 		var light := OmniLight3D.new()
-		light.name = "LampLight%d" % index
+		light.light_cull_mask = 1
+		light.name = "FixtureLight"
+		light.position = (fitting.get_node("Halo") as Node3D).position
 		light.light_color = Color("ffcf86")
-		light.light_energy = 0.0
-		light.omni_range = 3.4
+		light.light_energy = 1.25
+		light.omni_range = 5.5
 		light.shadow_enabled = false
 		light.visible = false
-		_content.add_child(light)
+		fitting.add_child(light)
 		_lamp_lights.append(light)
+
+
+func _light_pool_material() -> StandardMaterial3D:
+	if _pool_material != null: return _pool_material
+	var texture := GradientTexture2D.new()
+	texture.width = 64
+	texture.height = 64
+	texture.fill = GradientTexture2D.FILL_RADIAL
+	texture.fill_from = Vector2(0.5, 0.5)
+	texture.fill_to = Vector2(1.0, 0.5)
+	var gradient := Gradient.new()
+	gradient.set_color(0, Color(1.0, 0.78, 0.44, 0.5))
+	gradient.add_point(0.45, Color(1.0, 0.70, 0.36, 0.2))
+	gradient.set_color(gradient.get_point_count() - 1, Color(1.0, 0.62, 0.3, 0.0))
+	texture.gradient = gradient
+	_pool_material = StandardMaterial3D.new()
+	_pool_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	_pool_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	_pool_material.blend_mode = BaseMaterial3D.BLEND_MODE_ADD
+	_pool_material.albedo_texture = texture
+	_pool_material.disable_receive_shadows = true
+	_pool_material.render_priority = 1
+	_update_pool_strength()
+	return _pool_material
+
+
+## Pools glow at night and fade out by day, as the sun outshines them. Indoors they glow softly at any hour.
+func _update_pool_strength() -> void:
+	if _pool_material == null: return
+	var outdoors: bool = area != null and (area.interior.is_empty() or area.interior.get("outdoor") != null)
+	var dark: float = 1.0 - clampf(float(_city_time.get("daylight", 1.0)), 0.0, 1.0)
+	_pool_material.albedo_color = Color(1, 1, 1, dark if outdoors else 0.55)
 
 
 func _make_quest_marker() -> void:
@@ -1114,12 +1373,16 @@ func set_character_skin(id: String) -> bool:
 func apply_state(state: Dictionary, preview: bool = false) -> void:
 	if not is_node_ready() or area == null:
 		return
+	for sign: MessageSign in _message_signs:
+		sign.set_card(state.get("display_cards",{}).get(sign.definition.id,sign.definition.get("default",["Welcome"])),preview)
 	if preview:
 		_show_preview(state)
 		if terminal_display != null: terminal_display.sync(state, true)
 		return
 	clear_preview()
 	_committed = state.duplicate(true)
+	for sign: MessageSign in _message_signs:
+		sign.set_card(state.get("display_cards",{}).get(sign.definition.id,sign.definition.get("default",["Welcome"])))
 	if terminal_display != null: terminal_display.sync(state)
 	var bridges: Dictionary = state.get("bridges", {})
 	for bridge: Dictionary in area.bridges:
@@ -1127,30 +1390,12 @@ func apply_state(state: Dictionary, preview: bool = false) -> void:
 		var sockets: Array[Vector2i] = bridge.sockets
 		for index: int in range(sockets.size()):
 			(_decks[sockets[index]] as Node3D).visible = index < built
-	var lamps: Dictionary = state.get("lamps", {})
-	_lit_positions.clear()
-	for lamp_id: String in _lamps:
-		var root: Node3D = _lamps[lamp_id]
-		var lit: bool = bool(lamps.get(lamp_id, false))
-		if not root.has_meta("glass"):
-			continue  # The selected lamp model failed to load; MechanismBuilder already reported it.
-		# The lantern glass is found through the lamp's own metadata, so a lamp may be drawn by a procedural recipe or an adopted model.
-		(root.get_meta("glass") as MeshInstance3D).material_override = root.get_meta("lit", _materials["lit"]) as Material if lit else root.get_meta("unlit") as Material
-		var halo := root.get_node("Halo") as MeshInstance3D
-		halo.visible = lit
-		var fixture_light := root.get_node_or_null("FixtureLight") as OmniLight3D
-		if fixture_light != null: fixture_light.visible = lit
-		var embers := root.get_node_or_null("Embers") as CPUParticles3D
-		if embers != null:
-			embers.emitting = lit
-		if lit:
-			_lit_positions.append(halo.global_position)
+	refresh_lamps(state)
 	var gates: Dictionary = state.get("gates", {})
 	for gate_id: String in _gates:
 		(_gates[gate_id] as Node3D).rotation.y = -PI / 2.0 if bool(gates.get(gate_id, false)) else 0.0
 	if _warmth_from_state and not _lamps.is_empty():
 		_warmth_target = 0.28 + 0.72 * float(_lit_positions.size()) / float(_lamps.size())
-	_update_light_pool()
 	_update_props(state)
 	sync_player(state)
 	set_player_motion(Vector2.ZERO)
@@ -1162,21 +1407,18 @@ func _update_props(state: Dictionary) -> void:
 		(_prop_visuals[id] as PropVisual).set_active(bool(values.get(id, false)))
 
 
-func _update_light_pool() -> void:
-	_light_focus = _focus
-	var ordered: Array[Vector3] = _lit_positions.duplicate()
-	ordered.sort_custom(func(a: Vector3, b: Vector3) -> bool: return a.distance_squared_to(_focus) < b.distance_squared_to(_focus))
-	for index: int in range(_lamp_lights.size()):
-		var light: OmniLight3D = _lamp_lights[index]
-		light.visible = index < ordered.size()
-		if light.visible:
-			light.position = ordered[index]
-			light.light_energy = 0.9
 
 
 ## Where the player's feet go: on the ground (or up the stairs), a little higher on a bridge deck.
 func _deck_height(at: Vector2) -> float:
 	return WalkingSurface.height(area, at, _entrance_surfaces)
+
+
+## Keeps an actor's ContactShadow on top of the highest tread under it, so it never sinks into a step.
+func fit_contact_shadow(actor: Node3D, at: Vector2) -> void:
+	var shadow := actor.get_node_or_null("ContactShadow") as Node3D
+	if shadow != null:
+		shadow.position.y = 0.017 + WalkingSurface.contact_lift(area, at, _entrance_surfaces) / maxf(actor.scale.y, 0.01)
 
 
 func sync_player(state: Dictionary) -> void:
@@ -1186,6 +1428,7 @@ func sync_player(state: Dictionary) -> void:
 	_committed["player"] = cell.duplicate()
 	var at := Vector2(float(cell[0]), float(cell[1]))
 	_player.position = Vector3(at.x, _deck_height(at), -at.y)
+	fit_contact_shadow(_player, at)
 	_player_cells = {Vector2i(at.round()): true}
 
 
@@ -1197,11 +1440,13 @@ func walk_player_visual(from: Vector2, to: Vector2, fraction: float) -> void:
 	var at: Vector2 = from.lerp(to, fraction)
 	var inside: Vector2 = at.clamp(Vector2.ZERO, Vector2(area.width - 1, area.height - 1))
 	_player.position = Vector3(at.x, _deck_height(inside), -at.y)
+	fit_contact_shadow(_player, inside)
 
 
 func interpolate_player(from: Vector2, to: Vector2, fraction: float) -> void:
 	var at: Vector2 = from.lerp(to, fraction)
 	_player.position = Vector3(at.x, _deck_height(at), -at.y)
+	fit_contact_shadow(_player, at)
 	_player_cells = {Vector2i(from.round()): true, Vector2i(to.round()): true}
 
 
@@ -1212,7 +1457,9 @@ func player_cells() -> Dictionary:
 
 ## The cells residents take up, where the player may not step (none where nobody lives).
 func resident_cells() -> Dictionary:
-	return VillageLife.occupied(villagers.life, true) if villagers != null else {}
+	var occupied: Dictionary=VillageLife.occupied(villagers.life,true) if villagers!=null else {}
+	occupied.merge(story_cells)
+	return occupied
 
 
 ## The player's current screen position in the viewport, for placing speech and markers.
@@ -1302,11 +1549,21 @@ func _set_overlay(node: Node, material: Material) -> void:
 		_set_overlay(child, material)
 
 
+func begin_travel_walk(direction: Vector2) -> void:
+	_travel_motion = direction
+	set_player_motion(direction)
+
+
+func end_travel_walk() -> void:
+	_travel_motion = Vector2.ZERO
+	set_player_motion(Vector2.ZERO)
+
+
 func set_player_motion(velocity: Vector2) -> void:
 	if _body == null:
 		return
 	if _body is SpriteAdventurer:
-		(_body as SpriteAdventurer).set_screen_motion(_screen_direction(velocity))
+		(_body as SpriteAdventurer).set_screen_motion(_screen_direction(_travel_motion if _travel_motion != Vector2.ZERO else velocity))
 
 
 ## The character turns to face a logical direction (x east, y north) without taking a step.
@@ -1321,6 +1578,8 @@ func _screen_direction(logical: Vector2) -> Vector2:
 
 
 func clear_preview() -> void:
+	for sign: MessageSign in _message_signs:
+		if not _committed.is_empty(): sign.set_card(_committed.get("display_cards",{}).get(sign.definition.id,sign.definition.get("default",["Welcome"])))
 	if terminal_display != null:
 		terminal_display.clear_test_output()
 		terminal_display.sync(_committed)
@@ -1335,6 +1594,7 @@ func clear_preview() -> void:
 
 
 func _set_fixture_preview(root: Node3D, lit: bool, provisional: bool) -> void:
+	lit = lit and bool(_city_power.get("online",true))
 	var material: Material = root.get_meta("lit" if lit else "unlit") as Material
 	if provisional:
 		var key: String = "preview_lit" if lit else "preview_dark"
@@ -1349,9 +1609,10 @@ func _set_fixture_preview(root: Node3D, lit: bool, provisional: bool) -> void:
 			root.set_meta(key, preview)
 		material = root.get_meta(key) as Material
 	(root.get_meta("glass") as MeshInstance3D).material_override = material
-	(root.get_node("Halo") as Node3D).visible = lit
+	var glass_visible: bool = (root.get_meta("glass") as Node3D).is_visible_in_tree()
+	(root.get_node("Halo") as Node3D).visible = lit and glass_visible
 	var light := root.get_node("FixtureLight") as OmniLight3D
-	light.visible = lit
+	light.visible = lit and glass_visible
 	light.light_energy = float(light.get_meta("committed_energy")) * (.55 if provisional else 1.0)
 
 
@@ -1568,6 +1829,7 @@ func _pick_room_stairs(origin: Vector3, direction: Vector3) -> Variant:
 
 
 func _process(delta: float) -> void:
+	if _building: return
 	_elapsed += delta
 	for wheel: Node3D in _wheels:
 		wheel.rotation.x += delta * 0.22
@@ -1576,8 +1838,6 @@ func _process(delta: float) -> void:
 		_apply_warmth(_warmth)
 	if camera != null:
 		_update_camera(delta)
-		if not _lit_positions.is_empty() and _focus.distance_to(_light_focus) > 1.5:
-			_update_light_pool()
 	if _quest_marker != null and _quest_marker.visible and not _motes.is_empty():
 		_animate_spark_marker()
 	elif _quest_marker != null and _quest_marker.visible:
@@ -1640,3 +1900,31 @@ func _mesh_box(parent: Node3D, at: Vector3, size: Vector3, material_id: String) 
 	instance.position = at
 	parent.add_child(instance)
 	return instance
+
+
+func refresh_lamps(state: Dictionary) -> void:
+	if not _committed.is_empty():_committed["lamps"]=state.get("lamps",{}).duplicate(true)
+	var lamps: Dictionary = state.get("lamps", {})
+	_lit_positions.clear()
+	for lamp_id: String in _lamps:
+		var root: Node3D = _lamps[lamp_id]
+		var lit: bool = bool(lamps.get(lamp_id, false)) and bool(_city_power.get("online",true))
+		if not root.has_meta("glass"):
+			continue  # The selected lamp model failed to load; MechanismBuilder already reported it.
+		# The lantern glass is found through the lamp's own metadata, so a lamp may be drawn by a procedural recipe or an adopted model.
+		(root.get_meta("glass") as MeshInstance3D).material_override = root.get_meta("lit", _materials["lit"]) as Material if lit else root.get_meta("unlit") as Material
+		var halo := root.get_node("Halo") as MeshInstance3D
+		var glass_visible: bool = (root.get_meta("glass") as Node3D).is_visible_in_tree()
+		halo.visible = lit and glass_visible
+		var fixture_light := root.get_node_or_null("FixtureLight") as OmniLight3D
+		if fixture_light != null: fixture_light.visible = lit and glass_visible
+		var embers := root.get_node_or_null("Embers") as CPUParticles3D
+		if embers != null:
+			embers.emitting = lit
+		var pool := _light_pools.get(lamp_id) as MeshInstance3D
+		if pool != null:
+			var spot: Vector2 = area.lamp(lamp_id).get("at", Vector2.ZERO)
+			pool.global_position = Vector3(spot.x, ground_y(spot) + 0.035, -spot.y)
+			pool.visible = lit and glass_visible
+		if lit and glass_visible:
+			_lit_positions.append(halo.global_position)

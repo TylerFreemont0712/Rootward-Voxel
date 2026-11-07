@@ -39,7 +39,7 @@ const LAND_HINTS: Dictionary = {
 }
 const NAV_HINT: String = "   ·   WASD or middle-drag to pan  ·  wheel to zoom"
 ## The Land menu's groups: the ground paints, then shaping the land (content/build/land-tools.json).
-const LAND_GROUPS: Array[String] = ["Grass", "Dirt", "Stone", "Soil", "Floors", "Terrain", "Water"]
+const LAND_GROUPS: Array[String] = ["Town", "Grass", "Dirt", "Stone", "Soil", "Floors", "Terrain", "Water"]
 const SHAPE_GROUPS: Array[String] = ["Terrain", "Water"]
 ## Brush sizes, in sub-tiles for painting; the land tools use whole cells instead.
 const BRUSH_LABELS: Dictionary = {"paint": {1: "1/2", 2: "1", 4: "2"}, "shape": {1: "1", 2: "2", 4: "3"}}
@@ -50,6 +50,8 @@ const MARGIN: float = 16.0
 
 var _catalog: Dictionary = {}
 var _items: Array[Dictionary] = []
+var _layout_items: Array = []
+var _authored_land: bool = false
 var _describe: Callable
 var _rail: PanelContainer
 var _bubbles: Dictionary = {}
@@ -598,11 +600,23 @@ func _choose_category(category_id: String) -> void:
 		_category_scroll.ensure_control_visible.call_deferred(_tab_buttons[category_id])
 
 
+func configure_layout(layout: Dictionary) -> void:
+	_layout_items = layout.get("items", [])
+	_authored_land = not layout.is_empty()
+	if _authored_land: _category = "garden"
+	for id: String in _tab_buttons:
+		(_tab_buttons[id] as Control).visible = _layout_items.is_empty() or _items.any(func(e: Dictionary) -> bool: return e.category == id and _layout_items.has(e.id))
+	for id: String in _paint_tabs:
+		(_paint_tabs[id] as Control).visible = not _authored_land or not id in SHAPE_GROUPS
+	if _authored_land and _paint_family in SHAPE_GROUPS: _choose_paint_family("Grass")
+	_filter_cards()
+
+
 func _filter_cards() -> void:
 	var query: String = search.text.strip_edges().to_lower()
 	for entry: Dictionary in _items:
 		var matches: bool = query == "" or (str(entry.title) + " " + str(entry.get("blurb", "")) + " " + str(entry.category)).to_lower().contains(query)
-		(_cards[str(entry.id)] as BuildCard).visible = matches and (query != "" or str(entry.category) == _category)
+		(_cards[str(entry.id)] as BuildCard).visible = (_layout_items.is_empty() or _layout_items.has(entry.id)) and matches and (query != "" or str(entry.category) == _category)
 	for id: String in _tab_buttons:
 		(_tab_buttons[id] as FButton).set_pressed_no_signal(query == "" and id == _category)
 	_scroll.scroll_horizontal = 0
@@ -678,6 +692,8 @@ func family_for(id: String) -> String:
 			if "shape:" + str(tool.id) == id:
 				return str(tool.family)
 		return "Terrain"
+	if id.begins_with("town_"):
+		return "Town"
 	if id in SurfaceFinishes.OPTIONS.floor:
 		return "Floors"
 	if id.begins_with("grass"):

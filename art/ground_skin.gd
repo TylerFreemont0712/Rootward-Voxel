@@ -4,7 +4,8 @@ extends Node3D
 ## All chunks share one material and texture. Paint changes bytes, never meshes or world rules.
 
 const SHADER: Shader = preload("res://art/ground.gdshader")
-const PICTURES: Array[String] = ["grass", "dirt_path", "cobble", "soil", "pebbles", "rock", "herringbone_oak", "terracotta_tile", "encaustic_tile", "limestone_flags"]
+const PICTURES: Array[String] = ["grass", "dirt_path", "cobble", "soil", "pebbles", "rock", "herringbone_oak", "terracotta_tile", "encaustic_tile", "limestone_flags",
+	"town_flags", "town_cobbles", "town_setts", "town_brick", "town_gravel", "town_bed"]
 const CHUNK: int = 16
 const HEIGHT: float = 0.02
 static var _atlases: Dictionary = {}
@@ -18,10 +19,15 @@ var ids: Array[String] = []
 var changed_texels: int = 0
 var _set: String = ""
 var _previewing: bool = false
+var _authored_overlay: bool = false
+var _mask_image: Image
+var _mask_texture: ImageTexture
+var _overlay_chunks: Dictionary = {}
 
 
 func build(definition: AreaDef) -> bool:
 	area = definition
+	_authored_overlay = not (area.interior.get("layout", {}) as Dictionary).is_empty()
 	name = "GroundSkin"
 	material = ShaderMaterial.new()
 	material.shader = SHADER
@@ -32,6 +38,12 @@ func build(definition: AreaDef) -> bool:
 	control_texture = ImageTexture.create_from_image(control_image)
 	material.set_shader_parameter("control_map", control_texture)
 	material.set_shader_parameter("control_size", Vector2i(area.width * 2, area.height * 2))
+	material.set_shader_parameter("authored_overlay", _authored_overlay)
+	if _authored_overlay:
+		_mask_image = Image.create(area.width * 2, area.height * 2, false, Image.FORMAT_R8)
+		_mask_texture = ImageTexture.create_from_image(_mask_image)
+		material.set_shader_parameter("paint_mask", _mask_texture)
+		_write_mask()
 	_build_chunks()
 	_write_levels()
 	return true
@@ -41,6 +53,7 @@ func build(definition: AreaDef) -> bool:
 ## own, and new water none), and the control map follows the new terrain.
 func rebuild_mesh(definition: AreaDef) -> void:
 	area = definition
+	_overlay_chunks.clear()
 	for child: Node in get_children():
 		remove_child(child)
 		child.queue_free()
@@ -64,12 +77,32 @@ func _write_levels() -> void:
 
 ## One flat mesh per chunk, each cell's square at the height of its land level.
 func _build_chunks() -> void:
-	for cy: int in range(0, area.height, CHUNK):
-		for cx: int in range(0, area.width, CHUNK):
+	# Small authored terrace sections respect Compatibility's per-mesh local-light budget.
+	var chunk_size: int = 3 if _authored_overlay else CHUNK
+	var bounds := Rect2i(0, 0, area.width, area.height)
+	if _authored_overlay:
+		var r: Array = area.interior.layout.rect
+		bounds = Rect2i(int(r[0]), int(r[1]), int(r[2]), int(r[3]))
+	for cy: int in range(bounds.position.y / chunk_size * chunk_size, bounds.end.y, chunk_size):
+		for cx: int in range(bounds.position.x / chunk_size * chunk_size, bounds.end.x, chunk_size):
+			if _authored_overlay:
+				var key := Vector2i(cx, cy)
+				var painted: bool = false
+				for sy: int in range(cy * 2, mini((cy + chunk_size) * 2, area.height * 2)):
+					for sx: int in range(cx * 2, mini((cx + chunk_size) * 2, area.width * 2)):
+						if _mask_image.get_pixel(sx, sy).r > .5: painted = true; break
+					if painted: break
+				if not painted:
+					if _overlay_chunks.has(key):
+						var old: Node = _overlay_chunks[key]
+						remove_child(old); old.queue_free(); _overlay_chunks.erase(key)
+					continue
+				if _overlay_chunks.has(key): continue
 			var vertices := PackedVector3Array()
 			var normals := PackedVector3Array()
-			for y: int in range(cy, mini(cy + CHUNK, area.height)):
-				for x: int in range(cx, mini(cx + CHUNK, area.width)):
+			for y: int in range(cy, mini(cy + chunk_size, area.height)):
+				for x: int in range(cx, mini(cx + chunk_size, area.width)):
+					if _authored_overlay and not AreaBuild.layout_contains(area, Rect2(x - .5, y - .5, 1, 1)): continue
 					if not GroundPaint.is_ground(area, Vector2i(x * 2, y * 2)) or not area.stair_at(Vector2i(x, y)).is_empty():
 						continue
 					var a := Vector3(x - 0.5, HEIGHT + float(area.level_at(Vector2i(x, y))) * TerrainBuilder.LEVEL_RISE, -y + 0.5)
@@ -94,6 +127,7 @@ func _build_chunks() -> void:
 			chunk.material_override = material
 			chunk.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 			add_child(chunk)
+			if _authored_overlay: _overlay_chunks[Vector2i(cx, cy)] = chunk
 
 
 ## A committed edit, undo or cancel. Only different pixels are written; the image/texture and chunks live on.
@@ -108,6 +142,7 @@ func update_area(definition: AreaDef) -> void:
 ## Writes the control map for the current area, touching only the texels that differ.
 func _write_control() -> void:
 	_previewing = false
+	if _authored_overlay: _write_mask()
 	var wanted_ids: Array[String] = GroundPaint.palette(area)
 	if wanted_ids != ids or _set != WorldTextures.active_set():
 		if not _bind_pictures():
@@ -137,9 +172,23 @@ func preview(material_id: String, cells: Array) -> void:
 		if value < 0:
 			continue
 		control_image.set_pixel(cell.x, cell.y, Color(float(value) / 255.0, 0, 0))
+		if _authored_overlay:
+			_mask_image.set_pixel(cell.x, cell.y, Color(0 if material_id == "" else 1, 0, 0))
 		touched = true
 	if touched:
 		control_texture.update(control_image)
+		if _authored_overlay:
+			_mask_texture.update(_mask_image)
+			_build_chunks()
+
+
+## Erasing reveals the unchanged Blender surface, including its original flags and grass textures.
+func _write_mask() -> void:
+	for y: int in range(area.height * 2):
+		for x: int in range(area.width * 2):
+			_mask_image.set_pixel(x, y, Color(0 if GroundPaint.override_at(area, Vector2i(x, y)) == "" else 1, 0, 0))
+	_mask_texture.update(_mask_image)
+	_build_chunks()
 
 
 func _bind_pictures() -> bool:
@@ -152,9 +201,11 @@ func _bind_pictures() -> bool:
 	var layers := PackedInt32Array()
 	var tints := PackedColorArray()
 	var tiles := PackedFloat32Array()
+	var edges := PackedInt32Array()
 	layers.resize(64)
 	tints.resize(64)
 	tiles.resize(64)
+	edges.resize(64)
 	for index: int in range(ids.size()):
 		var entry: Dictionary = WorldTextures.entry(ids[index])
 		var layer: int = PICTURES.find(str(entry.get("texture", "")))
@@ -165,6 +216,11 @@ func _bind_pictures() -> bool:
 		var tint: float = float(entry.get("tint", 1.0))
 		tints[index] = Color(tint, tint, tint)
 		tiles[index] = float(entry.get("tile", 1.0))
+		# 0: a natural edge (warped into its neighbours); 1: laid paving, cut straight; 2: planted or loose ground
+		# that takes a kerb wherever it meets paving.
+		edges[index] = {"crisp": 1, "kerbed": 2}.get(str(entry.get("edge", "")), 0)
+	material.set_shader_parameter("edge_of", edges)
+	material.set_shader_parameter("kerb_layer", PICTURES.find("town_flags"))
 	material.set_shader_parameter("ground_albedo", atlas)
 	material.set_shader_parameter("layer_of", layers)
 	material.set_shader_parameter("tint_of", tints)

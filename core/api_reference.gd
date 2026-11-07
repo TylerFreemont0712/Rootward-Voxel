@@ -9,7 +9,9 @@ const TYPES: Dictionary = {
 	"World": {
 		"summary": "The village as Python sees it. It is the one value passed to program(world).",
 		"members": [
-			{"name":"controls","kind":"attribute","sig":"world.controls","doc":"Village Morning: connect movement keys to the character. Other levels keep their existing controls.","returns":"Controls"},
+			{"name":"time","kind":"attribute","sig":"world.time","doc":"The town’s shared clock. is_dark is True after dusk and before dawn.","returns":"WorldTime"},
+			{"name":"robot","kind":"method","sig":"world.robot(name)","doc":"A worker on the connected service screen. Visit its place first.","returns":"Robot"},
+			{"name":"robots","kind":"attribute","sig":"world.robots","doc":"The workers this service link can reach.","returns":"Robot[]"},
 			{"name": "lamp", "kind": "method", "sig": "world.lamp(name)", "doc": "The lamp with that id. Ids are in the World tab.", "returns": "Lamp"},
 			{"name": "lamps", "kind": "attribute", "sig": "world.lamps", "doc": "A list of every lamp in the places you have visited.", "returns": "Lamp[]"},
 			{"name": "gate", "kind": "method", "sig": "world.gate(name)", "doc": "The gate with that id.", "returns": "Gate"},
@@ -29,14 +31,6 @@ const TYPES: Dictionary = {
 			{"name": "here", "kind": "attribute", "sig": "world.here", "doc": "The zone you are standing in right now.", "returns": "Zone"},
 			{"name": "player", "kind": "attribute", "sig": "world.player", "doc": "Your cell as [x, y, 0].", "returns": "list"},
 			{"name": "memory", "kind": "attribute", "sig": "world.memory", "doc": "A dictionary that keeps small notes between runs once you Apply.", "returns": "dict"},
-		],
-	},
-	"Controls": {
-		"summary":"Village Morning's movement keys. A binding records a direction; Preview and Apply install it.",
-		"members":[
-			{"name":"bind_move","kind":"method","sig":"world.controls.bind_move(\"W\", x, y)","doc":"Bind the result of x/y arithmetic to a key. Start at x = y = 0; y += 1 moves north. Test shows zero movement, overshoots and blocked paths; only one cardinal cell can be applied.","returns":""},
-			{"name":"bind","kind":"method","sig":"world.controls.bind(\"W\", \"north\")","doc":"Connect W/A/S/D or UP/LEFT/DOWN/RIGHT to north, west, south or east. Only successful steps with these keys count toward the first lesson.","returns":""},
-			{"name":"bindings","kind":"attribute","sig":"world.controls.bindings","doc":"Your applied key-to-direction map, as a Python dictionary.","returns":"dict"},
 		],
 	},
 	"Zone": {
@@ -81,6 +75,8 @@ const TYPES: Dictionary = {
 			{"name": "solid", "kind": "attribute", "sig": "doodad.solid", "doc": "True if it blocks walking where it stands.", "returns": "bool"},
 			{"name": "zone", "kind": "attribute", "sig": "doodad.zone", "doc": "The id of the place it stands in, or an empty string between places.", "returns": "str"},
 			{"name": "face", "kind": "method", "sig": "doodad.face(\"east\")", "doc": "Turn it to face north, east, south or west. Refused if it would no longer fit.", "returns": "", "ability": "turn"},
+			{"name": "lamps", "kind": "attribute", "sig": "doodad.lamps", "doc": "The ids of the lamps it carries (a lamp standard has one): world.lamp(doodad.lamps[0]).", "returns": "list"},
+			{"name": "move_to", "kind": "method", "sig": "doodad.move_to(20, 8.5)", "doc": "Move it to [x, y], snapped to quarter cells. Refused, with the reason, wherever the builder would refuse it. A lamp keeps its name and program.", "returns": "", "ability": "move"},
 		],
 	},
 	"Tree": {
@@ -106,6 +102,26 @@ const TYPES: Dictionary = {
 			{"name": "set_active", "kind": "method", "sig": "prop.set_active(True)", "doc": "Use True to activate, False to stop or close. Run previews; Apply commits the same proposal.", "returns": ""},
 		],
 	},
+	"WorldTime": {
+		"summary":"One saved town clock, shared between rooms. Time rests while you read, write or talk.",
+		"members":[
+			{"name":"is_dark","kind":"attribute","sig":"world.time.is_dark","doc":"True after 18:00 or before 06:00; otherwise False.","returns":"bool"},
+			{"name":"hour","kind":"attribute","sig":"world.time.hour","doc":"Time as hours from 0 to just below 24, including fractions.","returns":"float"},
+			{"name":"phase","kind":"attribute","sig":"world.time.phase","doc":"Morning, Day, Evening or Night.","returns":"str"},
+			{"name":"day","kind":"attribute","sig":"world.time.day","doc":"The day number, beginning at 1.","returns":"int"}]},
+	"Robot": {
+		"summary":"A worker with an authored round. Code chooses stops, pace and whether the round runs.",
+		"members":[
+			{"name":"id","kind":"attribute","sig":"robot.id","doc":"The worker’s service address.","returns":"str"},
+			{"name":"stops","kind":"attribute","sig":"robot.stops","doc":"Names of this worker’s permitted service stops.","returns":"list"},
+			{"name":"route","kind":"attribute","sig":"robot.route","doc":"The current ordered service stops.","returns":"list"},
+			{"name":"speed","kind":"attribute","sig":"robot.speed","doc":"The current pace, in cells per second.","returns":"float"},
+			{"name":"running","kind":"attribute","sig":"robot.running","doc":"Whether the round is running.","returns":"bool"},
+			{"name":"set_speed","kind":"method","sig":"robot.set_speed(2)","doc":"Choose 0.5–3 cells per second.","returns":"None"},
+			{"name":"set_route","kind":"method","sig":"robot.set_route([robot.stops[0]])","doc":"Choose 1–12 of the worker’s own service stops, in order.","returns":"None"},
+			{"name":"pause","kind":"method","sig":"robot.pause()","doc":"Pause the work round.","returns":"None"},
+			{"name":"resume","kind":"method","sig":"robot.resume()","doc":"Resume the work round.","returns":"None"}]},
+
 	"Lamp": {
 		"summary": "A lantern you can light or put out.",
 		"members": [

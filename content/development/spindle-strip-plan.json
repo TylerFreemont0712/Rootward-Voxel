@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "area": "haverlund-square",
+  "status": "restored_pre_flat_terraces_clockshop_furnished",
+  "arrival": [
+    13,
+    12
+  ],
+  "promenade": [
+    16,
+    11,
+    12,
+    44
+  ],
+  "park": [
+    16,
+    0,
+    6,
+    6
+  ],
+  "frontages": [
+    {
+      "id": "clockmaker",
+      "label": "Pendulum & Pin",
+      "rect": [
+        10,
+        16,
+        6,
+        8
+      ],
+      "facing": "E",
+      "approach": [
+        17,
+        20
+      ],
+      "concept": "art/source/world/spindle-strip/v1/clockmaker-concept.png",
+      "status": "original_model_v2_for_review",
+      "asset": "haverlund-clockmaker",
+      "entrance": [
+        17,
+        17
+      ]
+    },
+    {
+      "id": "apothecary",
+      "label": "Thyme & Tonic",
+      "rect": [
+        10,
+        26,
+        6,
+        9
+      ],
+      "facing": "E",
+      "approach": [
+        17,
+        30
+      ],
+      "concept": "art/source/world/spindle-strip/v1/apothecary-concept.png"
+    },
+    {
+      "id": "future-shop-3",
+      "rect": [
+        10,
+        37,
+        6,
+        7
+      ],
+      "facing": "E",
+      "approach": [
+        17,
+        40
+      ]
+    },
+    {
+      "id": "future-shop-4",
+      "rect": [
+        10,
+        46,
+        6,
+        6
+      ],
+      "facing": "E",
+      "approach": [
+        17,
+        49
+      ]
+    }
+  ]
+}

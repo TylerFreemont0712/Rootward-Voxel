@@ -2,7 +2,7 @@ class_name WorldPrompts
 extends Control
 ## What F would do, shown in the world rather than as a button: a speech bubble over the resident you would talk to
 ## and a hand over the thing you would use, each with a small F key. Residents with something to say wear a mark
-## over their heads: "!" (something new) or "?" (they can help with the current lesson; see VillageDialogue.marker).
+## over their heads: "!" (something new) or "?" (they can help with the current job).
 ## Presentation only. The game decides the target and the marks; clicking the bubble does what F does.
 
 signal pressed
@@ -100,6 +100,8 @@ func _to_screen(world: Vector3) -> Vector2:
 func _head(id: String) -> Variant:
 	if id=="hotaru" and view!=null and view.companion_present():
 		return _to_screen(view.companion_anchor())
+	if view!=null and view.story_actors.has(id):
+		return _to_screen((view.story_actors[id] as Node3D).global_position+Vector3(0,1.5,0))
 	if view == null or view.villagers == null or not view.villagers.actors.has(id):
 		return null
 	var actor: SpriteAdventurer = view.villagers.actors[id]

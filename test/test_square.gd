@@ -38,16 +38,15 @@ func _rules() -> void:
 	var area: AreaDef = parsed.area
 	var rules := LabWorld.new(area)
 	var state: Dictionary = rules.initial_state()
-	_check(area.quests.is_empty() and area.spawn == Vector2i(1, 8) and area.version == 3 and area.width == 72 and area.height == 64, "The 72 by 64 hub arrives at the top of its south-west street and adds no quest")
+	_check(area.quests.size() == 5 and Quests.available(area, [], []).is_empty() and area.spawn == Vector2i(13, 12) and area.version >= 4 and area.width == 88 and area.height == 64, "The 88 by 64 hub arrives at the top of its south-west street; its Public Works jobs wait for the evening job")
 	_check(LevelStore.entry("sparks-and-machines").room_areas.has(area.id), "The fourth room belongs only to Sparks")
-	_check(not LevelStore.entry("village-morning").get("room_areas", []).has(area.id), "Village Morning has no square-room dependency")
 	var lane: AreaDef = AreaStore.load_area("haverlund-lane")
 	var outward: Dictionary = RoomLinks.find(lane, "town-steps")
 	var back: Dictionary = RoomLinks.find(area, "uphill")
 	_check(outward.to == area.id and Vector2i(int(outward.arrival[0]),int(outward.arrival[1])) == area.spawn and outward.facing == "E" and back.to == lane.id and Vector2i(int(back.arrival[0]),int(back.arrival[1])) == Vector2i(12,26), "The walking links are reciprocal; the tram has no link")
 	_check((lane.interior.links as Array).size() == 2, "The tram keeps its separate future destination")
 	# Downhill continues: the lane's steps lead on to the square's west edge, high up, and the square lies below to the east.
-	_check(back.direction == "W" and Vector2i(int(back.at[0]), int(back.at[1])).x == 0 and area.level_at(area.spawn) == 2 and area.level_at(Vector2i(12, 8)) == 0 and area.level_at(Vector2i(42, 24)) == 0,
+	_check(back.direction == "W" and Vector2i(int(back.at[0]), int(back.at[1])).x == 12 and area.level_at(area.spawn) == 2 and area.level_at(Vector2i(28, 8)) == 0 and area.level_at(Vector2i(58, 24)) == 0,
 		"The uphill street leaves by the west edge at the top; the square is two levels below")
 	for item: Dictionary in area.interior.inspections:
 		var at := Vector2i(int(item.at[0]), int(item.at[1]))
@@ -55,7 +54,11 @@ func _rules() -> void:
 	for terminal: Dictionary in area.terminals:
 		_check(not rules.find_path(state, Vector2i(int(terminal.at[0]),int(terminal.at[1])),area.spawn).is_empty(), "The square screen has a reachable approach")
 	for lamp: Dictionary in area.lamps:
-		_check(not rules.find_path(state, Vector2i(int(lamp.stand[0]),int(lamp.stand[1])),area.spawn).is_empty(), "The fitting " + str(lamp.id) + " is reachable")
+		var access: Array=lamp.get("stand",[])
+		if access.is_empty():
+			var screens: Array[Dictionary]=ZoneTerminals.for_zone(area,str(lamp.zone))
+			if not screens.is_empty():access=screens[0].at
+		_check(not access.is_empty() and not rules.find_path(state, Vector2i(int(access[0]),int(access[1])),area.spawn).is_empty(), "The fitting " + str(lamp.id) + " has a reachable local or district connection")
 	# Enumerate the actual traversable graph rather than relying on a few specially chosen destinations.
 	var reached: Dictionary = {area.spawn:true}
 	var queue: Array[Vector2i] = [area.spawn]
@@ -76,18 +79,18 @@ func _rules() -> void:
 			if rules.is_walkable(state,cell) and not reached.has(cell): isolated.append(cell)
 	_check(isolated.is_empty(), "No stranded walkable cells behind shops, railings or the hall: " + str(isolated))
 	_check(reached.size() > 2500, "The hub has room to grow: %d walkable cells" % reached.size())
-	_check(not reached.has(Vector2i(30, 55)) and not reached.has(Vector2i(5, 30)) and not reached.has(Vector2i(16, 20)), "The yards behind the hall, the hill and the shops stay closed")
+	_check(not reached.has(Vector2i(46, 55)) and reached.has(Vector2i(22, 30)) and not reached.has(Vector2i(32, 20)), "The hall and market bodies stay closed while Spindle Walk opens")
 	# The three ways out for later areas: Hill Street (north-west), Lantern Row (north-east) and the Harbour Steps
 	# (south-east) are open from the square to the area's edge.
-	for exit: Array in [[Vector2i(14, 63), "Hill Street reaches the north edge"], [Vector2i(71, 45), "Lantern Row reaches the east edge"], [Vector2i(60, 0), "The Harbour Steps reach the south edge"]]:
+	for exit: Array in [[Vector2i(30, 63), "Hill Street reaches the north edge"], [Vector2i(87, 45), "Lantern Row reaches the east edge"], [Vector2i(76, 0), "The Harbour Steps reach the south edge"]]:
 		_check(reached.has(exit[0]), exit[1])
 	var previous: float = INF
 	var descending: bool = true
 	for n: int in range(661):
-		var height: float = WalkingSurface.height(area,Vector2(1.0+float(n)/60,8.0),[])
+		var height: float = WalkingSurface.height(area,Vector2(17.0+float(n)/60,8.0),[])
 		descending = descending and height <= previous+.0001 and (previous==INF or previous-height < .1)
 		previous = height
-	_check(descending and previous < .1 and WalkingSurface.height(area, Vector2(1, 8), []) > 1.9, "Both flights descend continuously east with a level landing between them")
+	_check(descending and previous < .1 and WalkingSurface.height(area, Vector2(17, 8), []) > 1.9, "Both flights descend continuously east with a level landing between them")
 	# The seven placed robots now share logical routes with the residents.
 	var robots: Array = area.villagers.filter(func(person: Dictionary) -> bool: return person.has("object"))
 	_check(robots.size() == 7, "All seven square robots go about their rounds")
@@ -119,9 +122,9 @@ func _rules() -> void:
 	_check(seats.size() == 8 and seats.all(func(item: Dictionary) -> bool:
 		var at := Vector2(float(item.at[0]), float(item.at[1]))
 		return FACING.has(int(item.turn)) and (FACING[int(item.turn)] as Vector2).dot((centre - at).normalized()) > .85), "Eight sheltered seats face the Rootwell")
-	_check(placed.count("town-bollard-light") >= 12 and placed.count("town-festoon") == 2 and placed.has("town-signpost"), "Low path lights, two festoons and a fingerpost light and sign the ways across")
-	_check(houses.size() >= 50 and houses.any(func(item: Dictionary) -> bool: return float(item.at[1]) < 0) and houses.any(func(item: Dictionary) -> bool: return float(item.at[0]) > area.width)
-		and houses.any(func(item: Dictionary) -> bool: return float(item.at[1]) > area.height) and houses.any(func(item: Dictionary) -> bool: return float(item.at[0]) < 0), "Background houses stand beyond all four edges (%d)" % houses.size())
+	_check(placed.count("town-bollard-light") == 0 and placed.count("town-festoon") == 2 and placed.has("town-signpost"), "Main lamps, two festoons and a fingerpost light and sign the ways across")
+	_check(houses.size() >= 10 and houses.size() < 25 and houses.any(func(item: Dictionary) -> bool: return float(item.at[0]) > area.width)
+		and houses.any(func(item: Dictionary) -> bool: return float(item.at[1]) > area.height), "Background houses are thinned out beyond the reachable area (%d)" % houses.size())
 	var set_model := WorldAssets.instantiate("haverlund-square-ground")
 	_check(set_model != null, "The square ground loads")
 	if set_model != null:
@@ -138,8 +141,8 @@ func _rules() -> void:
 			box = transform * box
 			bounds = box if first else bounds.merge(box)
 			first = false
-		_check(bounds.position.x < -12.0 and bounds.end.x > area.width + 12.0 and -bounds.end.z < -12.0 and -bounds.position.z > area.height + 8.0 and bounds.position.y < -5.0,
-			"The town continues past all four edges, with the lower town below the balustrades: " + str(bounds))
+		_check(bounds.position.x < -12.0 and bounds.end.x > area.width + 12.0 and bounds.end.z > 8.0 and -bounds.position.z > area.height + 8.0 and float(area.interior.get("depth_fog",{}).get("height",0)) < -1.0,
+			"The upper town continues beyond the map and mist obscures the lower wall: " + str(bounds))
 		set_model.free()
 	# The retaining walls' power pillars glow along their whole width, not in a slit between stone stiles.
 	var pillar := WorldAssets.instantiate("town-power-pillar")
@@ -150,13 +153,13 @@ func _rules() -> void:
 	_check(column != null and column.get_aabb().size.x >= 1.0 and column.material_override is ShaderMaterial, "The power pillar is one glowing glass column a metre across")
 	if pillar != null: pillar.free()
 	state = rules.initial_state()
-	state.player = [35,17,0]
+	state.player = [51,17,0]
 	state.zones_seen = ["rootward-square"]
 	_check(not ZoneTerminals.connect_at(area,state,"square-terminal").ok, "The square screen requires the carried tablet")
 	state.items = ["field-tablet"]
 	var linked: Dictionary = ZoneTerminals.connect_at(area,state,"square-terminal")
-	_check(linked.ok and rules.snapshot(linked.state).lamps.size()==3, "The physical screen reaches its three declared lamps")
-	linked.state.player = [60,5,0]
+	_check(linked.ok and rules.snapshot(linked.state).lamps.size()==area.lamps_in_zone("rootward-square").size(), "The physical screen reaches every declared lamp in its zone")
+	linked.state.player = [76,5,0]
 	_check(rules.snapshot(linked.state).lamps.is_empty(), "Walking away from the screen revokes remote scope")
 	var batch: Dictionary = rules.propose(linked.state,[{"op":"set_field","entity_id":"well-west","field":"enabled","value":true}],{})
 	_check(not batch.ok, "Raw commands cannot bypass the screen's proximity")
@@ -197,7 +200,7 @@ func _play() -> void:
 	_check(game.session.request_step(Vector2i(0,1)), "The real outward step through the town gate starts travel")
 	while game._flow_busy: await process_frame
 	await settle()
-	_check(game.area.id=="haverlund-square" and game.session.player_cell()==Vector2i(3,7), "The downhill route walks on through the veil and down into the square's south-west street")
+	_check(game.area.id=="haverlund-square" and game.session.player_cell()==Vector2i(15,11), "The downhill route walks on through the veil and down into the square's south-west street")
 	if game.area.id!="haverlund-square":
 		game.queue_free();await process_frame;return
 	var stage := game.view.stage as WorkshopLaneStage
@@ -213,13 +216,14 @@ func _play() -> void:
 	_check(game._dialogue_read["workshop-scenes"].has("square-arrival"), "Finishing the arrival records it through the normal story flow")
 	game._refresh_interaction()
 	await shot("02b-street-top")
+	await walk(Vector2i(19,7))
 	# Follow actual steps at real interpolation cadence; collect a frame mid-flight and at the street's foot.
 	for n: int in range(9):
 		_check(game.session.request_step(Vector2i(1,0)), "A real step descends the street")
 		game.session.advance_walk(LabWorld.STEP_SECONDS*.5)
 		if n==4: await shot("03-descending-steps")
 		if game.session.is_walking():game.session.advance_walk(LabWorld.STEP_SECONDS)
-	_check(game.session.player_cell()==Vector2i(12,7) and game.view.player_node().position.y<.2,"The feet reach the square floor from two flights")
+	_check(game.session.player_cell()==Vector2i(28,7) and game.view.player_node().position.y<.2,"The feet reach the square floor from two flights")
 	# Robots on their rounds move, turn their wheels, and wait for someone standing in their way.
 	if stage != null:
 		_check(stage._rounds.is_empty() and game.view.villagers.robots.size() == 7, "Seven robot rounds have one logical controller each")
@@ -243,7 +247,7 @@ func _play() -> void:
 		residents.paused = false
 		residents.set_physics_process(true)
 		residents.set_process(true)
-	await walk(Vector2i(47,19))
+	await walk(Vector2i(63,19))
 	game._refresh_interaction()
 	_check(game._interaction.get("id")=="beacon-dial", "F inspects the beacon's dial from the plaza")
 	game.interact()
@@ -251,27 +255,27 @@ func _play() -> void:
 	game.workshop_speech.dismiss_inspection()
 	if not output.is_empty() and DisplayServer.get_name()!="headless":
 		game.view.set_camera_mode(ClearingView.CameraMode.FIXED)
-		game.view.focus_on(Vector2(42,24),true)
+		game.view.focus_on(Vector2(58,24),true)
 		game.view.set_zoom(10)
 		await shot("04b-beacon-detail")
-		game.view.focus_on(Vector2(36,30),true)
+		game.view.focus_on(Vector2(52,30),true)
 		game.view.set_zoom(24)
 		await shot("10-overview")
 		game.view.set_zoom(16)
 		game.view.set_camera_mode(ClearingView.CameraMode.FOLLOW)
-	await walk(Vector2i(19,22))
+	await walk(Vector2i(35,22))
 	await shot("05-shops")
-	await walk(Vector2i(22,39))
+	await walk(Vector2i(38,39))
 	await shot("06-market")
-	await walk(Vector2i(41,48))
+	await walk(Vector2i(57,48))
 	await shot("07-guild-hall")
-	await walk(Vector2i(50,6))
+	await walk(Vector2i(66,6))
 	await shot("07b-yard")
-	await walk(Vector2i(35,17))
+	await walk(Vector2i(51,17))
 	game._refresh_interaction()
 	_check(game._interaction.get("kind")=="terminal", "The service screen by the beacon offers its physical connection")
 	game.interact()
-	var page := game.movement_lesson as WorkshopJobsJournal
+	var page := game.journal as WorkshopJobsJournal
 	_check(page!=null and is_instance_valid(page.editor), "With no quest the screen opens a useful connected scratch page")
 	if page!=null and is_instance_valid(page.editor):
 		page.editor.text='def program(world):\n    for lamp in world.zone("rootward-square").lamps:\n        lamp.set_lit(True)\n    world.memory["square_only"] = 29\n'
@@ -289,7 +293,7 @@ func _play() -> void:
 	_check(str(game.session.workshop_pages.get("scratch-rootward-square", "")).contains("square_only"), "The connected scratch page survives Continue independently of lesson drafts")
 	_check(not game._modals.any(func(modal: Modal) -> bool: return modal is WorkshopScene), "The arrival stays read after Continue")
 	await shot("09-square-saved")
-	await walk(Vector2i(1,8))
+	await walk(Vector2i(13,12))
 	_check(game.session.request_step(Vector2i(-1,0)), "A normal step reaches the street's head without leaving the square")
 	game.session.advance_walk(LabWorld.STEP_SECONDS)
 	_check(game.session.request_step(Vector2i(-1,0)), "A real uphill departure starts the return")

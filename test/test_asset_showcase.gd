@@ -16,22 +16,17 @@ func _run()->void:
 	SaveStore.save_path="user://test_showcase_%d.json"%OS.get_process_id()
 	SaveStore.profile_path="user://test_showcase_profile_%d.json"%OS.get_process_id()
 	SaveStore.force_enabled=true
-	for id: String in ["kindle-hollow","village-morning",LevelStore.MAIN_LEVEL]:SaveStore.delete(id)
+	SaveStore.delete(LevelStore.MAIN_LEVEL)
 	_check(LevelStore.default_id()=="sparks-and-machines" and LevelStore.available_entries().map(func(item: Dictionary)->String:return item.id)==["sparks-and-machines"],"Sparks is the sole main journey")
-	var legacy: Dictionary={}
-	for id: String in ["kindle-hollow","village-morning"]:
-		_check(LevelStore.entry(id).archived,"Legacy definition retained: "+id)
-		SaveStore.write({"version":GameSession.SAVE_VERSION,"area":id,"level":id,"name":"Archived traveller"},id)
-		legacy[id]=FileAccess.get_file_as_bytes(SaveStore.level_path(id))
-	SaveStore.set_last_level("kindle-hollow")
-	_check(LevelStore.resumable()=="sparks-and-machines","An archived last journey cannot become the main Continue target")
+	SaveStore.set_last_level("a-journey-that-no-longer-ships")
+	_check(LevelStore.resumable()=="sparks-and-machines","A last journey that no longer exists cannot become the Continue target")
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	if args.size()>1:game.settings.values.ui_scale=float(args[1])
 	root.add_child(game)
 	await _frames(5)
 	await create_timer(.85).timeout
 	_check(game.area.id=="workshop-loft" and not game.playing,"Startup presents Sparks without entering play or another journey")
-	_check(_button(game.title,"New game")!=null and _button(game.title,"Continue")==null,"Archived-only saves do not offer Continue")
+	_check(_button(game.title,"New game")!=null and _button(game.title,"Continue")==null,"Without a save the title offers no Continue")
 	_check(_button(game.title,"Asset Showcase (Dev)")!=null,"The developer display is written directly into the title")
 	await _shot("01-title")
 	var setting: bool=AssetShowcase.enabled()
@@ -113,7 +108,7 @@ func _run()->void:
 	_check(game._modals.is_empty() and game.surface.visible and game.title.visible,"Escape returns to the same title")
 	_check(game.session.state==state and FileAccess.get_file_as_bytes(SaveStore.profile_path)==profile,"Displaying, turning and reloading assets cannot change progress or the profile")
 	await _click(_button(game.title,"New game"))
-	_check(game._modals[-1] is CharacterScreen and not (game._modals[-1] is LevelSelect),"New game enters Sparks naming directly, with no legacy journey selector")
+	_check(game._modals[-1] is CharacterScreen,"New game enters Sparks naming directly, with no legacy journey selector")
 	(game._modals[-1] as CharacterScreen).begin_requested.emit()
 	while game._flow_busy:await process_frame
 	await _frames(2)
@@ -121,19 +116,18 @@ func _run()->void:
 	game._pop_all_modals()
 	game.session.state.memory["showcase-test"]="preserved"
 	game.save_now()
-	SaveStore.set_last_level("village-morning")
+	SaveStore.set_last_level("a-journey-that-no-longer-ships")
 	await game._return_to_title()
 	await _frames(3)
-	_check(_button(game.title,"Continue")!=null and LevelStore.resumable()=="sparks-and-machines","Continue selects the Sparks save despite an archived last-level preference")
+	_check(_button(game.title,"Continue")!=null and LevelStore.resumable()=="sparks-and-machines","Continue selects the Sparks save despite a stale last-level preference")
 	await create_timer(.85).timeout
 	await _click(_button(game.title,"Continue"))
 	while game._flow_busy:await process_frame
 	await _frames(2)
 	_check(game._level_id=="sparks-and-machines" and game.session.state.memory.get("showcase-test")=="preserved","Continue restores the main journey’s progress")
-	for id: String in legacy:_check(FileAccess.get_file_as_bytes(SaveStore.level_path(id))==legacy[id],"Legacy save bytes remain untouched: "+id)
 	game.queue_free()
 	await process_frame
-	for id: String in ["kindle-hollow","village-morning",LevelStore.MAIN_LEVEL]:SaveStore.delete(id)
+	SaveStore.delete(LevelStore.MAIN_LEVEL)
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(SaveStore.profile_path))
 	if failures.is_empty():
 		print("Main title and asset showcase: %d checks passed."%checks)

@@ -13,7 +13,8 @@ static func prepare(spec: Dictionary) -> bool:
 	var manifest: Dictionary = {"schema":2, "family":source.family, "source":spec.source,
 		"source_sha256":FileAccess.get_sha256(spec.source), "builder_sha256":FileAccess.get_sha256(BUILDER),
 		"motion_sha256":FileAccess.get_sha256("res://pipeline/character-template.json"),
-		"opacity":source.opacity, "gray":source.gray, "profiles":{}}
+		"texture_compression":str(spec.get("texture_compression", "lossless")),
+		"opacity":source.opacity, "gray":source.gray, "groups":source.groups, "profiles":{}}
 	for id: String in source.profiles:
 		var appearance: Dictionary = source.profiles[id]
 		var image := Image.load_from_file(ProjectSettings.globalize_path(appearance.source))
@@ -39,11 +40,14 @@ static func prepare(spec: Dictionary) -> bool:
 
 static func configure(spec: Dictionary) -> bool:
 	if spec.is_empty(): return true
-	for id: String in ["man", "woman", "child"]:
+	var source: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(spec.source))
+	for id: String in source.profiles:
 		var path: String = str(spec.runtime).path_join(id + ".png.import")
 		var config := ConfigFile.new()
 		if config.load(path) != OK: return false
-		config.set_value("params", "compress/mode", 0)
+		# Anonymous silhouettes are flat white alpha masks, rather than the player's
+		# painted color art. BC3/S3TC keeps their large atlases on the GPU at 1/4 size.
+		config.set_value("params", "compress/mode", 2 if spec.get("texture_compression", "lossless") == "vram" else 0)
 		config.set_value("params", "mipmaps/generate", true)
 		config.set_value("params", "process/fix_alpha_border", true)
 		config.set_value("params", "detect_3d/compress_to", 0)
@@ -67,5 +71,5 @@ static func build(spec: Dictionary, metadata: Dictionary, template: SpriteFrames
 	file.store_string(JSON.stringify(manifest, "  ") + "\n")
 	file.close()
 	if DirAccess.rename_absolute(ProjectSettings.globalize_path(pending), ProjectSettings.globalize_path(spec.manifest)) != OK: return false
-	print("Built painted crowd: unchanged gait/anchors, gray Bram/Mira and a slightly smaller boy.")
+	print("Built painted crowd: %d silhouette profiles from the existing cast; shared gait and anchors." % manifest.profiles.size())
 	return true

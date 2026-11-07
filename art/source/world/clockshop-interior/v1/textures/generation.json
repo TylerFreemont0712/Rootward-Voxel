@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen",
+  "prompt": "art/source/world/clockshop-interior/v1/floor-prompt.txt",
+  "library_sha256": "83af5b74aaf53df7396eb3c5d8eec7b9de66aa1926a292e1cc491e60d9cb841f",
+  "reference_sha256": {},
+  "materials": [
+    {
+      "id": "clockshop_parquet",
+      "source": "art/source/world/clockshop-interior/v1/textures/clockshop_parquet.png",
+      "roughness": 0.78,
+      "tile": 2.4,
+      "sha256": "b4fd2827768afedddfedc43f68a1adc2b491cf75a220486d37acb6c7c6a95265"
+    }
+  ]
+}

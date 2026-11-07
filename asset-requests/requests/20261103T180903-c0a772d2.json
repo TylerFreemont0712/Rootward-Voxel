@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "id": "20261103T180903-c0a772d2",
+  "kind": "update",
+  "title": "Update Pendulum & Pin · cutaway room",
+  "asset_type": "world model",
+  "status": "finished",
+  "notes": "Enlarge the 12 by 12 clockshop to 14 by 14. Preserve the functional entrance, parquet, panelled style and door scale. Fill the larger room with custom original reusable clockmaking doodads and many distinct inspection points while retaining open aisles for a future quest.",
+  "asset": {
+    "id": "clockshop-shell",
+    "label": "Pendulum & Pin · cutaway room",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/clockshop-shell/v1/model.blend",
+    "runtime": "assets/world/clockshop-shell/model.glb",
+    "manifest": "assets/world/clockshop-shell/manifest.json",
+    "catalog_notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+    "related_files": [
+      "art/source/world/clockshop-interior/v1/author.py",
+      "art/source/world/clockshop-shell/v1/finish.json",
+      "art/source/world/clockshop-shell/v1/floor-support.json",
+      "art/source/world/clockshop-shell/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/areas/shop-clockmaker.json"
+    ],
+    "catalog_entry": {
+      "version": 1,
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Pendulum & Pin · cutaway room",
+      "source": "art/source/world/clockshop-shell/v1/model.blend",
+      "runtime": "assets/world/clockshop-shell/model.glb",
+      "pivot": "Ground centre; Blender -Y front, +Y logical north. Shell uses room origin; pendant suspension pivot.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+      "behavior": "Reusable visual; area document owns placements, collision and inspection. Clock dials are display stock, not timed quest mechanisms."
+    }
+  },
+  "references": [],
+  "created": "2026-11-03T18:09:03+00:00",
+  "updated": "2026-11-03T18:34:37+00:00",
+  "history": [
+    {
+      "at": "2026-11-03T18:09:03+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-03T18:09:03+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-03T18:34:37+00:00",
+      "action": "finish"
+    }
+  ],
+  "result": {
+    "assets": [
+      "clockshop-shell"
+    ],
+    "summary": "Expanded the retained shell to 14 by 14 while preserving door, floor scale and clearance. Room has 50 placements, fourteen inspections and three powered pendants; central 3 by 3 workspace stays open for a future quest. Full suite, 102 model/layout checks and 63 native walk/F-read/Continue/entry-return checks passed.",
+    "review": "pipeline/reviews/2026-11-04-clockshop-expansion-and-depth.md",
+    "contexts": [
+      {
+        "id": "clockshop-shell",
+        "label": "Pendulum & Pin · cutaway room",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-shell/v2/model.blend",
+        "runtime": "assets/world/clockshop-shell/model.glb",
+        "manifest": "assets/world/clockshop-shell/manifest.json",
+        "catalog_notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v1/author.py",
+          "art/source/world/clockshop-shell/v2/expansion.json"
+        ],
+        "usage_files": [
+          "content/areas/archive/shop-clockmaker-v3.json",
+          "content/areas/shop-clockmaker.json"
+        ],
+        "catalog_entry": {
+          "version": 2,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Pendulum & Pin · cutaway room",
+          "source": "art/source/world/clockshop-shell/v2/model.blend",
+          "runtime": "assets/world/clockshop-shell/model.glb",
+          "pivot": "Ground centre; Blender -Y front, +Y logical north. Shell uses room origin; pendant suspension pivot.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+          "behavior": "Reusable visual; area document owns placements, collision and inspection. Clock dials are display stock, not timed quest mechanisms."
+        }
+      }
+    ],
+    "fingerprints": {
+      "clockshop-shell": {
+        "source": "0f5d92ba8cfabb9972a56f4d55e15a227e3be2376e1c73b158cab384fb678ef7",
+        "runtime": "4e07c58e448faf3cb8062637099b0f13a32524b1f25e7f1565c1d8a0cd022bb9",
+        "entry": "5408ca336279fbc60ff280acba8943d60feb218948ab4916437afd45c1f6fe6f"
+      }
+    }
+  }
+}

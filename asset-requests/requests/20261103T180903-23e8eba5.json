@@ -1,0 +1,766 @@
+{
+  "schema": 1,
+  "id": "20261103T180903-23e8eba5",
+  "kind": "new",
+  "title": "Clockshop curios and repair collection",
+  "asset_type": "world model",
+  "status": "finished",
+  "notes": "Original reusable orrery, watch cabinet, display plinth, spring winder, pendulum rack, timing diagrams, service shelves, oil/tool set, repair ledgers, packing crates, stools and cuckoo clocks. Model them deliberately; do not reuse generic low-quality presets. Add extensive room dressing and inspection text.",
+  "asset": {},
+  "references": [],
+  "created": "2026-11-03T18:09:03+00:00",
+  "updated": "2026-11-03T18:34:37+00:00",
+  "history": [
+    {
+      "at": "2026-11-03T18:09:03+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-03T18:09:03+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-03T18:34:37+00:00",
+      "action": "finish"
+    }
+  ],
+  "existing_assets": [
+    "cottage",
+    "mill-house",
+    "clearing-ground",
+    "tree",
+    "log-cabin",
+    "lamppost",
+    "log-cabin-large",
+    "log-cabin-large-teal",
+    "hearth-oak",
+    "ridge-cedar",
+    "river-willow",
+    "hearth-house",
+    "lantern-loft",
+    "brook-mill",
+    "wooden-barrel",
+    "woodpile",
+    "window-planter",
+    "tree-stump",
+    "park-bench",
+    "wooden-chair",
+    "bookshelf",
+    "hearth-stool",
+    "watering-can",
+    "wooden-bucket",
+    "wheelbarrow",
+    "hollow-highback-armchair",
+    "hollow-trestle-table",
+    "hollow-writing-desk",
+    "hollow-mapmakers-table",
+    "hollow-apothecary-cabinet",
+    "hollow-kitchen-dresser",
+    "hollow-oak-wardrobe",
+    "hollow-washstand",
+    "hollow-woven-settee",
+    "hollow-patchwork-bed",
+    "hollow-carpenters-bench",
+    "hollow-bellows-forge",
+    "hollow-grinding-wheel",
+    "hollow-tool-rack",
+    "hollow-potters-wheel",
+    "hollow-weavers-loom",
+    "hollow-spinning-wheel",
+    "hollow-alchemy-bench",
+    "hollow-bakers-oven",
+    "hollow-bread-display",
+    "hollow-cheese-stand",
+    "hollow-fishmongers-counter",
+    "hollow-spice-cart",
+    "hollow-linen-rack",
+    "hollow-pottery-shelf",
+    "hollow-copper-wash-tub",
+    "hollow-straw-beehive",
+    "hollow-rabbit-hutch",
+    "hollow-seedling-tray",
+    "hollow-herb-drying-rack",
+    "hollow-vine-trellis",
+    "hollow-rain-barrel",
+    "hollow-butter-churn",
+    "hollow-shard-lantern",
+    "hollow-crystal-obelisk",
+    "hollow-rune-standing-stone",
+    "hollow-village-bell",
+    "hollow-brass-lever",
+    "hollow-water-pump",
+    "hollow-wayfarers-chest",
+    "hollow-little-shrine",
+    "hollow-weather-vane",
+    "hollow-bakery",
+    "hollow-smithy",
+    "concept-cottage",
+    "rootward-tree",
+    "morning-town-hall",
+    "morning-civic-bench",
+    "reference-cottage",
+    "square-lamppost",
+    "painted-cottage",
+    "painted-oak",
+    "painted-garden-fence",
+    "loft-shell",
+    "loft-bed",
+    "loft-desk",
+    "loft-chair",
+    "loft-shelf",
+    "loft-luggage",
+    "loft-cabinet",
+    "loft-wall-life",
+    "loft-rug",
+    "loft-travel-stacks",
+    "loft-window-life",
+    "loft-postcard",
+    "loft-wardrobe",
+    "loft-window-seat",
+    "loft-rocking-chair",
+    "loft-floor-plant",
+    "loft-tape-machine",
+    "loft-hotaru",
+    "loft-cable",
+    "workshop-shell",
+    "workshop-staircase",
+    "workshop-repair-bench",
+    "workshop-tool-wall",
+    "workshop-parts-drawers",
+    "workshop-assembly-table",
+    "workshop-parts-crate",
+    "workshop-stove",
+    "workshop-armchair",
+    "workshop-tea-table",
+    "workshop-job-board",
+    "workshop-shop-doors",
+    "workshop-hanging-lamp",
+    "workshop-stool",
+    "workshop-rug",
+    "workshop-wall-shelf",
+    "workshop-jar-shelf",
+    "workshop-umbrella-stand",
+    "workshop-bread-cupboard",
+    "workshop-service-trolley",
+    "workshop-wall-clock",
+    "workshop-stair-lamp",
+    "loft-note-slip",
+    "loft-hand-terminal",
+    "zone-terminal",
+    "field-tablet",
+    "workshop-wall-screen",
+    "haverlund-lane-set",
+    "lane-workshop",
+    "lane-nell-house",
+    "lane-cottage",
+    "lane-lamp",
+    "lane-post-box",
+    "lane-notice-board",
+    "lane-bench",
+    "lane-telescope",
+    "lane-tree",
+    "lane-cypress",
+    "lane-bicycle",
+    "lane-crates",
+    "lane-planter",
+    "lane-handcart",
+    "lane-laundry",
+    "lane-pump",
+    "lane-shed",
+    "lane-tram-shelter",
+    "lane-tram",
+    "haverlund-square-set",
+    "square-rootwell",
+    "square-town-hall",
+    "square-bakery",
+    "square-bookshop",
+    "square-grocer",
+    "square-market-stall",
+    "square-cafe-table",
+    "square-node",
+    "guildhall-square-set",
+    "square-beacon",
+    "square-guildhall",
+    "square-post-office",
+    "square-west-terrace",
+    "square-banner-lamp",
+    "square-flower-stall",
+    "square-fruit-stall",
+    "square-tree-planter",
+    "square-timber-store",
+    "robot-pip",
+    "robot-trowel",
+    "robot-wick",
+    "robot-heron",
+    "robot-tender",
+    "robot-tally",
+    "seaside-rosewash-house",
+    "seaside-saltwind-house",
+    "seaside-lantern-row-house",
+    "seaside-shingle-court-cottage",
+    "seaside-eaveside-terrace",
+    "rootwell-beacon",
+    "haverlund-square-ground",
+    "town-balustrade",
+    "town-balustrade-short",
+    "town-balustrade-pier",
+    "town-railing",
+    "town-railing-short",
+    "town-railing-stair",
+    "town-railing-post",
+    "town-garden-wall",
+    "town-garden-wall-short",
+    "town-garden-pier",
+    "town-garden-gate",
+    "haverlund-post-office",
+    "haverlund-fruit-market",
+    "haverlund-bank",
+    "haverlund-lane-surround",
+    "town-power-pillar",
+    "rootwell-plaza",
+    "town-kiosk",
+    "town-fountain",
+    "town-bollard",
+    "town-bin",
+    "town-parasol-table",
+    "town-lawn",
+    "town-tree-grate",
+    "haverlund-bakery",
+    "haverlund-greengrocer",
+    "haverlund-bookshop",
+    "haverlund-cafe",
+    "town-festoon",
+    "town-signpost",
+    "town-planter-bench",
+    "town-bollard-light",
+    "town-poster-column",
+    "town-coffee-cart",
+    "town-bike-rack",
+    "tram-welcome-sign",
+    "city-hall-shell",
+    "city-hall-help-desk",
+    "city-hall-job-desk",
+    "haverlund-clockmaker",
+    "haverlund-apothecary",
+    "town-shop-shell",
+    "town-retaining-wall",
+    "town-clock-stock",
+    "clockshop-shell",
+    "clockshop-longcase",
+    "clockshop-regulator",
+    "clockshop-display-counter",
+    "clockshop-repair-bench",
+    "clockshop-parts-cabinet",
+    "clockshop-clockwork-tray",
+    "clockshop-brass-pendant",
+    "clockshop-mantel-clock"
+  ],
+  "result": {
+    "assets": [
+      "clockshop-display-plinth",
+      "clockshop-orrery",
+      "clockshop-watch-cabinet",
+      "clockshop-spring-winder",
+      "clockshop-pendulum-rack",
+      "clockshop-blueprint-board",
+      "clockshop-service-shelf",
+      "clockshop-oil-and-tools",
+      "clockshop-ledger-set",
+      "clockshop-clock-crates",
+      "clockshop-stool",
+      "clockshop-wall-shelf",
+      "clockshop-cuckoo-clock"
+    ],
+    "summary": "Thirteen original reusable custom clockmaking models: orrery, watch cabinet, winding tool, rack, diagrams, ledgers, oils/tools, plinth, shelves, crates, stool and cuckoo clock. Normal world-art builds/audits and complete suite passed; native review reads all fourteen subjects and preserves them through Continue. Stock mechanisms are decorative until later quest rules.",
+    "review": "pipeline/reviews/2026-11-04-clockshop-expansion-and-depth.md",
+    "contexts": [
+      {
+        "id": "clockshop-display-plinth",
+        "label": "Brass-inlaid curio plinth",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-display-plinth/v1/model.blend",
+        "runtime": "assets/world/clockshop-display-plinth/model.glb",
+        "manifest": "assets/world/clockshop-display-plinth/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-display-plinth/v1/provenance.json",
+          "art/source/world/clockshop-interior/v2/author_curios.py"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Brass-inlaid curio plinth",
+          "source": "art/source/world/clockshop-display-plinth/v1/model.blend",
+          "runtime": "assets/world/clockshop-display-plinth/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": [
+            -0.55,
+            -0.55,
+            1.1,
+            1.1
+          ],
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-orrery",
+        "label": "Geared planetary orrery",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-orrery/v1/model.blend",
+        "runtime": "assets/world/clockshop-orrery/model.glb",
+        "manifest": "assets/world/clockshop-orrery/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v2/author_curios.py",
+          "art/source/world/clockshop-orrery/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Geared planetary orrery",
+          "source": "art/source/world/clockshop-orrery/v1/model.blend",
+          "runtime": "assets/world/clockshop-orrery/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-watch-cabinet",
+        "label": "Pocket-watch cabinet",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-watch-cabinet/v1/model.blend",
+        "runtime": "assets/world/clockshop-watch-cabinet/model.glb",
+        "manifest": "assets/world/clockshop-watch-cabinet/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v2/author_curios.py",
+          "art/source/world/clockshop-watch-cabinet/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Pocket-watch cabinet",
+          "source": "art/source/world/clockshop-watch-cabinet/v1/model.blend",
+          "runtime": "assets/world/clockshop-watch-cabinet/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": [
+            -0.98,
+            -0.32,
+            1.96,
+            0.64
+          ],
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-spring-winder",
+        "label": "Mainspring winding tool",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-spring-winder/v1/model.blend",
+        "runtime": "assets/world/clockshop-spring-winder/model.glb",
+        "manifest": "assets/world/clockshop-spring-winder/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v2/author_curios.py",
+          "art/source/world/clockshop-spring-winder/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Mainspring winding tool",
+          "source": "art/source/world/clockshop-spring-winder/v1/model.blend",
+          "runtime": "assets/world/clockshop-spring-winder/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-pendulum-rack",
+        "label": "Pendulum regulation rack",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-pendulum-rack/v1/model.blend",
+        "runtime": "assets/world/clockshop-pendulum-rack/model.glb",
+        "manifest": "assets/world/clockshop-pendulum-rack/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v2/author_curios.py",
+          "art/source/world/clockshop-pendulum-rack/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Pendulum regulation rack",
+          "source": "art/source/world/clockshop-pendulum-rack/v1/model.blend",
+          "runtime": "assets/world/clockshop-pendulum-rack/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": [
+            -1.1,
+            -0.38,
+            2.2,
+            0.76
+          ],
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-blueprint-board",
+        "label": "Escapement drawing board",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-blueprint-board/v1/model.blend",
+        "runtime": "assets/world/clockshop-blueprint-board/model.glb",
+        "manifest": "assets/world/clockshop-blueprint-board/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-blueprint-board/v1/provenance.json",
+          "art/source/world/clockshop-interior/v2/author_curios.py"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Escapement drawing board",
+          "source": "art/source/world/clockshop-blueprint-board/v1/model.blend",
+          "runtime": "assets/world/clockshop-blueprint-board/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-service-shelf",
+        "label": "Clockmaker service cabinet",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-service-shelf/v1/model.blend",
+        "runtime": "assets/world/clockshop-service-shelf/model.glb",
+        "manifest": "assets/world/clockshop-service-shelf/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v2/author_curios.py",
+          "art/source/world/clockshop-service-shelf/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Clockmaker service cabinet",
+          "source": "art/source/world/clockshop-service-shelf/v1/model.blend",
+          "runtime": "assets/world/clockshop-service-shelf/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": [
+            -1.26,
+            -0.31,
+            2.52,
+            0.62
+          ],
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-oil-and-tools",
+        "label": "Clock oils and cleaning brushes",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-oil-and-tools/v1/model.blend",
+        "runtime": "assets/world/clockshop-oil-and-tools/model.glb",
+        "manifest": "assets/world/clockshop-oil-and-tools/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v2/author_curios.py",
+          "art/source/world/clockshop-oil-and-tools/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Clock oils and cleaning brushes",
+          "source": "art/source/world/clockshop-oil-and-tools/v1/model.blend",
+          "runtime": "assets/world/clockshop-oil-and-tools/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-ledger-set",
+        "label": "Open repair ledger and manuals",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-ledger-set/v1/model.blend",
+        "runtime": "assets/world/clockshop-ledger-set/model.glb",
+        "manifest": "assets/world/clockshop-ledger-set/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v2/author_curios.py",
+          "art/source/world/clockshop-ledger-set/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Open repair ledger and manuals",
+          "source": "art/source/world/clockshop-ledger-set/v1/model.blend",
+          "runtime": "assets/world/clockshop-ledger-set/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-clock-crates",
+        "label": "Wrapped clock delivery crate",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-clock-crates/v1/model.blend",
+        "runtime": "assets/world/clockshop-clock-crates/model.glb",
+        "manifest": "assets/world/clockshop-clock-crates/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-clock-crates/v1/provenance.json",
+          "art/source/world/clockshop-interior/v2/author_curios.py"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Wrapped clock delivery crate",
+          "source": "art/source/world/clockshop-clock-crates/v1/model.blend",
+          "runtime": "assets/world/clockshop-clock-crates/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": [
+            -0.6,
+            -0.43,
+            1.2,
+            0.86
+          ],
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-stool",
+        "label": "Padded watchmaker stool",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-stool/v1/model.blend",
+        "runtime": "assets/world/clockshop-stool/model.glb",
+        "manifest": "assets/world/clockshop-stool/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v2/author_curios.py",
+          "art/source/world/clockshop-stool/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Padded watchmaker stool",
+          "source": "art/source/world/clockshop-stool/v1/model.blend",
+          "runtime": "assets/world/clockshop-stool/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": [
+            -0.34,
+            -0.34,
+            0.68,
+            0.68
+          ],
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-wall-shelf",
+        "label": "Brass-bracket display shelf",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-wall-shelf/v1/model.blend",
+        "runtime": "assets/world/clockshop-wall-shelf/model.glb",
+        "manifest": "assets/world/clockshop-wall-shelf/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v2/author_curios.py",
+          "art/source/world/clockshop-wall-shelf/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Brass-bracket display shelf",
+          "source": "art/source/world/clockshop-wall-shelf/v1/model.blend",
+          "runtime": "assets/world/clockshop-wall-shelf/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      },
+      {
+        "id": "clockshop-cuckoo-clock",
+        "label": "Carved cuckoo wall clock",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-cuckoo-clock/v1/model.blend",
+        "runtime": "assets/world/clockshop-cuckoo-clock/model.glb",
+        "manifest": "assets/world/clockshop-cuckoo-clock/manifest.json",
+        "catalog_notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-cuckoo-clock/v1/provenance.json",
+          "art/source/world/clockshop-interior/v2/author_curios.py"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Carved cuckoo wall clock",
+          "source": "art/source/world/clockshop-cuckoo-clock/v1/model.blend",
+          "runtime": "assets/world/clockshop-cuckoo-clock/model.glb",
+          "pivot": "Ground/tabletop centre. Blender -Y front; +Y logical north. Wall shelf pivot is shelf base.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "Original reusable clockmaker curio. art/source/world/clockshop-interior/v2/author_curios.py is the protected initial authoring record; model.blend is the editable authority.",
+          "behavior": "Area placements and collision are authoritative. Decorative stock, with authored inspection; no quest mechanism is claimed."
+        }
+      }
+    ],
+    "fingerprints": {
+      "clockshop-display-plinth": {
+        "source": "7d5089b0ebe04d70c90a00012e9aa9437964d365156f7fd4ab46eda9681dce63",
+        "runtime": "5f2807fd07bb7b3305311b89bd34a4c0ba113104dacaca135daa04025af65b5d",
+        "entry": "028e5297327bf9bc32f66e4339d94a1495702dd9dfa45e1ea3781c826292e6a2"
+      },
+      "clockshop-orrery": {
+        "source": "6065ed8d123411df3250c93530a65c226ae9782b2c0cf65d36213b845bc0b052",
+        "runtime": "c77582fd90577205d3ab17b9ac642f976aaa1fd4238bd665d61438a8cefbb0dc",
+        "entry": "3d75e7356ced565c592578be8088c7eb0573d28b6c42dcd4682546a84aea00a3"
+      },
+      "clockshop-watch-cabinet": {
+        "source": "7fda69d2312fd7c19d6dbb8e56f0ebd4e98c419acda57ff5b72205cda61952e6",
+        "runtime": "9c4da306f9a70299838e66f81944c01127ade09652a857819de1346ba9853051",
+        "entry": "cc99d7f68a4ff941fd202e3ce975cb5da1935f9b09c7a05ba2d11c8894b6d339"
+      },
+      "clockshop-spring-winder": {
+        "source": "029c9c7241c8e13c8d0f06599999e6d1802e573839b97c0beb3ea0da0b7c4e58",
+        "runtime": "03cab1a7df313c54b3d29802963af147776b41f1ac73fda7cbc5824d427e3da2",
+        "entry": "abc6e1c6a27314c5722a906969782aebfea8c2182876a7aebda5fa8e5056d2b0"
+      },
+      "clockshop-pendulum-rack": {
+        "source": "814fefa9c89ce7c65cfecab0496e4cee1e93037d5f262cff0641674b369c558a",
+        "runtime": "b9f6ca69db4cfc23fddc5793d029a31bafb584d3ef3911cecd3514d1e4f2c2a4",
+        "entry": "c4ed5a6a51a8a6efd1405c5ae8fc51818084191eb5becea0e30694ad29793d0f"
+      },
+      "clockshop-blueprint-board": {
+        "source": "bb182d23e128e513e0d620971792376cac6f7588e629ff3f4cf71da7d568715a",
+        "runtime": "855eb84c5ac2ec5144f720894cfefb69e7546ee4a8d50d3ebabab02729e54200",
+        "entry": "c7e92c14e3363779fffd269ddcd8a5e01377d1acaef8bd5fba8b37e147233471"
+      },
+      "clockshop-service-shelf": {
+        "source": "0a196759bc4e59f8e1a6a67594af7a18525078c5ddb53acdf3a3764e43868a56",
+        "runtime": "58b8ec7253cefa410d183dd45db5fd98e0713fda56205600ef5cb081e1e9ff25",
+        "entry": "9be9b8e6193d7f3bd9d80a8dfe0b63a8332c8138c4bc8b5ba9fb22c6cf98fd97"
+      },
+      "clockshop-oil-and-tools": {
+        "source": "801dad28b18e0bfc5d71676824cfed0ee2768de42a4d9146dfe9574c6f5b97d6",
+        "runtime": "972d8d432ce99c3efd60ccf2cadabd172a347eda985e37c4b5ddc4f68d943f5b",
+        "entry": "ddc1c4e334142f7c5759103be4a4b689cc415337afc1f062ec18625b3272fe3f"
+      },
+      "clockshop-ledger-set": {
+        "source": "69af346de04f3404125d641b4ae73bfba4ee78aa69f0c7ecb81c104e203b4afc",
+        "runtime": "7bd0a7aeaf20ee051009d4e10ebf79dbd43c08e569227c65ad2fbc8cd5a974b6",
+        "entry": "4bb759c8a53cd75af82d1130915b60d20bf8c347de496d5390ec77b3a9de31c6"
+      },
+      "clockshop-clock-crates": {
+        "source": "4fb84a374cca5af27a604e02d403b29e2d987697540395942f059a755182a3bf",
+        "runtime": "ae64ada652d0a7e82011030c58a1da280edfbe0d75568e0e5af4015c9e7f922a",
+        "entry": "d32536c4fd56a2c7ea4c307335d119f682b018bb88dbedbbda1b63439a587b1a"
+      },
+      "clockshop-stool": {
+        "source": "336aa48739bd5807de09ad768473689388d0422294e6ab3938f797c0c69a2c89",
+        "runtime": "9c808d1373d7176e3b3c8b27a026762d4f7bf8fc3f258be7e7c1ef6a14e072d6",
+        "entry": "17a224b6f643c7cce4711c2ba83318d1a284885893ea1a2b165ce2056d4029e1"
+      },
+      "clockshop-wall-shelf": {
+        "source": "2df15b5e932f96b7b29c0927e3354f12f95132ca8c2d697ccfa8f4a093b6ae8f",
+        "runtime": "defb68f22d70f34a0e464a0fb16238f8b7c2762c92b15beaaab5debddf61d792",
+        "entry": "0943fea858e06122e6f9e1dfcdee7cfe984c8406754205244cb53e4763309549"
+      },
+      "clockshop-cuckoo-clock": {
+        "source": "07a6f55141f45547e15ef7f75d5d32d58de2fae514414aaf04387a1e08bc7485",
+        "runtime": "3c06c27277bd05400c0fb5021818f05c5affdbc8455335c4bbb133f8fb95d4d2",
+        "entry": "9e29b304e170d6f0c94a4b9e8b93d0599562e8f7f7893053c73ecb0051bd2ab7"
+      }
+    }
+  }
+}

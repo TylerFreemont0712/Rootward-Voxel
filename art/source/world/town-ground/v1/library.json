@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "tool": "Blender numpy (art/source/world/town-ground/v1/paint.py)",
+  "model": "Procedural, deterministic",
+  "seed": "4101-4104 (flags/cobbles copied from sparks-lane v1)",
+  "materials": [
+    {
+      "id": "town_flags",
+      "title": "Town Flags",
+      "tile": 3.0,
+      "ground": true,
+      "edge": "crisp",
+      "description": "The square's own pale limestone flags, as laid on its terraces."
+    },
+    {
+      "id": "town_cobbles",
+      "title": "Town Cobbles",
+      "tile": 2.0,
+      "ground": true,
+      "edge": "crisp",
+      "description": "The square's own honey sandstone cobbles."
+    },
+    {
+      "id": "town_setts",
+      "title": "Granite Setts",
+      "tile": 3.0,
+      "ground": true,
+      "edge": "crisp",
+      "description": "Large blue-grey granite setts in tight courses, for carriageways and yards."
+    },
+    {
+      "id": "town_brick",
+      "title": "Brick Paving",
+      "tile": 2.0,
+      "ground": true,
+      "edge": "crisp",
+      "description": "Warm red brick paving in running bond."
+    },
+    {
+      "id": "town_gravel",
+      "title": "Garden Gravel",
+      "tile": 2.0,
+      "ground": true,
+      "edge": "crisp",
+      "description": "Warm hoggin gravel for garden walks."
+    },
+    {
+      "id": "town_bed",
+      "title": "Planting Bed",
+      "tile": 2.0,
+      "ground": true,
+      "edge": "crisp",
+      "description": "Dark bed soil with leaf litter and green sprigs."
+    }
+  ]
+}

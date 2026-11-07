@@ -1,0 +1,401 @@
+{
+  "anchor": [
+    192,
+    420
+  ],
+  "authoring_script_sha256": "da0722e4103a555fd4b6e71e63a3872e09d2ae882ad693e40de48eac38234187",
+  "blink_index": 9,
+  "cell_size": [
+    384,
+    448
+  ],
+  "directions": {
+    "ne": {
+      "key_rgba_sha256": [
+        "efc9447030a3a4095bcd7de5a8baef66513e1be9bd6df012d5f69e99f8b12a23",
+        "da51532c0b18579c38a95d0dac80e1fc8700b05a59d0233c866c45b6d2985919",
+        "a425f8f38681290d2560636a466dd75bd1a29d623d08d0b47294f547e3b2bb23",
+        "fa46632b71ce3984a9038c2769134d32eb7148cfec43df742492a73a8d680111",
+        "357da1c2a7714520fa1970303f07b0fdc1be2a9fccacc5da4b122c80a991c749",
+        "3f82f3e507ec122a7cb5b4a149c62d6e492ed94d55f48bb73bfd68f10137bec5",
+        "927b201e390b62b3021c78ca02ced99ad0e58e395e2db42c64a8421969837212",
+        "66d34c1c85eb71abc2cb6f8e0058b70c38022fb1a6bd0ed70d39664ef89d3af6",
+        "e8f3b441d4791c0588fba257fece6ec7dbb06a48d672c23277b3984025ef7f3e"
+      ],
+      "row": 6,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/iona/v1/NE.png",
+          "source_pose": 0,
+          "translation": [
+            -49,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NE.png",
+          "source_pose": 1,
+          "translation": [
+            -23,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NE.png",
+          "source_pose": 2,
+          "translation": [
+            -23,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NE.png",
+          "source_pose": 3,
+          "translation": [
+            -49,
+            16
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NE.png",
+          "source_pose": 4,
+          "translation": [
+            -22,
+            15
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NE.png",
+          "source_pose": 5,
+          "translation": [
+            -23,
+            11
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NE.png",
+          "source_pose": 6,
+          "translation": [
+            -48,
+            44
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NE.png",
+          "source_pose": 7,
+          "translation": [
+            -23,
+            43
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NE.png",
+          "source_pose": 8,
+          "translation": [
+            -23,
+            41
+          ]
+        }
+      ]
+    },
+    "nw": {
+      "key_rgba_sha256": [
+        "677dae692f7410a50a643a44757d8c0b29b82e4dd73458769bc4bba0616c5212",
+        "f9ec53c258c444a0d9dd20add1f91a0b27fad008762cf552ca32c4a0b842d748",
+        "45d0a3e7aa4d2d371764707fbc374ea39254f412b86f97a626c33746217170b4",
+        "92d8ac716bcf80416aa22901a763a5b0ddd4e6d91c0aa40b2a2d12c6bb6debde",
+        "7da66e45c989ef132f632072ea29397aba8afbc5ff9a78d1b25d5415199ee39d",
+        "53116d0bcdcc039a25c53985e6d15cc8eb486496e94fc0d3dc4d0606b8cbc675",
+        "2097e01be6e7391ceaf4c49e621e07d7e3ac4ade25916c2cb0daac1e557c066e",
+        "51582c96f99fa88280cc79caa8ff048dc320d79d9c5f0903b07e4d3e77a77a56",
+        "aca37e4913bb9be140746a377f54295c9b5afcdd63418b2a3805ea67a88c252a"
+      ],
+      "row": 9,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/iona/v1/NW.png",
+          "source_pose": 0,
+          "translation": [
+            15,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NW.png",
+          "source_pose": 1,
+          "translation": [
+            -10,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NW.png",
+          "source_pose": 2,
+          "translation": [
+            -10,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NW.png",
+          "source_pose": 3,
+          "translation": [
+            15,
+            16
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NW.png",
+          "source_pose": 4,
+          "translation": [
+            -11,
+            15
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NW.png",
+          "source_pose": 5,
+          "translation": [
+            -10,
+            11
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NW.png",
+          "source_pose": 6,
+          "translation": [
+            15,
+            44
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NW.png",
+          "source_pose": 7,
+          "translation": [
+            -11,
+            43
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/NW.png",
+          "source_pose": 8,
+          "translation": [
+            -11,
+            41
+          ]
+        }
+      ]
+    },
+    "se": {
+      "key_rgba_sha256": [
+        "3ce37f63c632867aed993bc482ada8210f5dcab38a8c51775b35bd31116c6444",
+        "303fe882e68127498891a54a18d54866f9b6353690d7d23244169b43dd0c9e75",
+        "c60f549afb6342b9ca6003fad8243e1cade24fe475f16292b61694014dbd03eb",
+        "d72516e22f078ee2d85bfa6995843ee89de2bc5f0b5c44cda7d806db421a2f54",
+        "281f90817d221dfeeaa5d1529465312b129adb6e26fbb330b9fc8045ca6a7e0a",
+        "14e938f1ffba55cd6266cc21d7a4a32f33b6df8c70601b4a472fa9a0486d2cc7",
+        "feca1edfb1be912b7f40fd3aa10bac86f57ac5fb15e712b8771ad14c28546147",
+        "9212b476008088e6c22ed4300d0a5843328c43569f6da256f7547dd7a24a59eb",
+        "0cde1120e625224ff62edd2e6667b8e11efc85cba051cc13f718af055bc48b38",
+        "846472b2b3712fe6e87c000f9cfc2cdd29bdc5bf6e15a11368a619c595d661b1"
+      ],
+      "row": 0,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/iona/v1/SE.png",
+          "source_pose": 0,
+          "translation": [
+            -29,
+            5
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SE.png",
+          "source_pose": 1,
+          "translation": [
+            -24,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SE.png",
+          "source_pose": 2,
+          "translation": [
+            -17,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SE.png",
+          "source_pose": 3,
+          "translation": [
+            -23,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SE.png",
+          "source_pose": 4,
+          "translation": [
+            -28,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SE.png",
+          "source_pose": 5,
+          "translation": [
+            -21,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SE.png",
+          "source_pose": 6,
+          "translation": [
+            -27,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SE.png",
+          "source_pose": 7,
+          "translation": [
+            -24,
+            26
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SE.png",
+          "source_pose": 8,
+          "translation": [
+            -22,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/blink-se.png",
+          "source_pose": 8,
+          "translation": [
+            -22,
+            31
+          ]
+        }
+      ]
+    },
+    "sw": {
+      "key_rgba_sha256": [
+        "83a9b7f74774d6c781e7a27888f89823bf553239161d1ba4d903639110b81af9",
+        "b53d98db521db12d597d03eeffaf28fcf7999d27878c1db5c41e70a91b2583ea",
+        "0ff2f7a549bc2cc7bff7dc69a09f2e39419d8db0b21ec71bbebcfa65cc2928ec",
+        "978c651ebc69bbc0310e8cc6db0f033eeb8cf66379aaab9aac8955f1a53f65fe",
+        "55517f49c61b3b5a23e21de7b0fb11a1cf608980510c8f0f361e76d8df568478",
+        "109cc098c5cf019c38da9c448c69c84e841642359496f31f9a9a4975fdfc5b42",
+        "7224858e59fcd237cfde32d1be34371ca7e8639e6cc85a1cb902f50ca48e9c88",
+        "fb9ce84e1f68842a62be4bba09cd2a1084722468a1286415debd60315815fd5a",
+        "e488cb6fa54904f86a2b955180e29728c0a317eff84556506385e8686f423596",
+        "d771b2d4df32334a01a75fc7555b3536ab200963f1d3d806217045fff22bad53"
+      ],
+      "row": 3,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/iona/v1/SW.png",
+          "source_pose": 0,
+          "translation": [
+            -4,
+            5
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SW.png",
+          "source_pose": 1,
+          "translation": [
+            -10,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SW.png",
+          "source_pose": 2,
+          "translation": [
+            -17,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SW.png",
+          "source_pose": 3,
+          "translation": [
+            -10,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SW.png",
+          "source_pose": 4,
+          "translation": [
+            -5,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SW.png",
+          "source_pose": 5,
+          "translation": [
+            -12,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SW.png",
+          "source_pose": 6,
+          "translation": [
+            -7,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SW.png",
+          "source_pose": 7,
+          "translation": [
+            -10,
+            26
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/SW.png",
+          "source_pose": 8,
+          "translation": [
+            -11,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/iona/v1/blink-sw.png",
+          "source_pose": 8,
+          "translation": [
+            -11,
+            31
+          ]
+        }
+      ]
+    }
+  },
+  "grid": [
+    4,
+    12
+  ],
+  "idle_index": 8,
+  "method": "Approved eight-pose sheets plus neutral idle; integer translation only; eye-only blink patch",
+  "output_sha256": "498466ea975d41617979abdf918d2ddc388c7021f55bd03eafb6fd65974a330c",
+  "schema": 4,
+  "sources": {
+    "res://art/source/characters/iona/v1/NE.png": "1f1bd3f2a8c8d1be098495ce6047808150efecfb7240274703475cd7831c9d81",
+    "res://art/source/characters/iona/v1/NW.png": "88a08033e8c733fd2306761d9f7d26f35a4d4a35747b97d516182e78d00c9681",
+    "res://art/source/characters/iona/v1/SE.png": "fb59ed28a7c100e4864e64f197090c5ddd386b571ba4e2e150b27f4b5758fa46",
+    "res://art/source/characters/iona/v1/SW.png": "5b9e4fb5954664815c6ba1292b8c826dc45800b0075e15286aad211294594220",
+    "res://art/source/characters/iona/v1/blink-se.png": "15075986535833c7ffa6bd22f8173e80200311c40aff09090ee59740eaaebac3",
+    "res://art/source/characters/iona/v1/blink-sw.png": "3d217771b5b168cbf0d4c7ca330cd36597c17e99f0f27c052670896e7dd97bed"
+  },
+  "walk_poses": 8
+}

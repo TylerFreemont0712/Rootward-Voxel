@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "id": "20261102T162658-62cf258a",
+  "kind": "update",
+  "title": "Update The Rootwell plaza ring",
+  "asset_type": "world model",
+  "status": "finished",
+  "notes": "Same 2026-11-03 square-lighting task: preserve the current adopted artwork and all civic-cycle gauge/clock/plant edits. Copy the current master into v2 and spatially subdivide only large static surfaces so the Compatibility renderer can keep every local lamp on while the camera moves. Keep moving parts/pivots and UVs/normals unchanged.",
+  "asset": {
+    "id": "rootwell-plaza",
+    "label": "The Rootwell plaza ring",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/rootwell-plaza/v1/model.blend",
+    "runtime": "assets/world/rootwell-plaza/model.glb",
+    "manifest": "assets/world/rootwell-plaza/manifest.json",
+    "catalog_notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend.",
+    "related_files": [
+      "art/source/world/rootwell-plaza/v1/provenance.json",
+      "art/source/world/square-hub/v1/author_street.py"
+    ],
+    "usage_files": [
+      "content/areas/haverlund-square.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "The Rootwell plaza ring",
+      "source": "art/source/world/rootwell-plaza/v1/model.blend",
+      "runtime": "assets/world/rootwell-plaza/model.glb",
+      "pivot": "The Rootwell's centre at ground.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Paving ring round the enlarged Rootwell with its brass band and four conduit bridges (glass flagged power_grid). Nothing here is walkable or blocks.",
+      "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend."
+    }
+  },
+  "references": [],
+  "created": "2026-11-02T16:26:58+00:00",
+  "updated": "2026-11-02T16:45:30+00:00",
+  "history": [
+    {
+      "at": "2026-11-02T16:26:58+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-02T16:26:58+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-02T16:45:30+00:00",
+      "action": "finish"
+    }
+  ],
+  "result": {
+    "assets": [
+      "rootwell-plaza"
+    ],
+    "summary": "Square renewal reviewed natively at 1600×1000. Fixed lights and spatial source meshes remove camera-distance light competition; 115→66 logical fittings, five enterable saved shops, upper park and colliding reusable barriers. All normal source builds/audits, complete scripts/test.sh, 61 real doorway/Continue checks and full-square eight-light budget pass. Three measured views improve; Rootwell remains the draw-call hotspot. See review for source versions, scope and measurements.",
+    "review": "pipeline/reviews/2026-11-03-square-lighting-and-shops.md",
+    "contexts": [
+      {
+        "id": "rootwell-plaza",
+        "label": "The Rootwell plaza ring",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/rootwell-plaza/v2/model.blend",
+        "runtime": "assets/world/rootwell-plaza/model.glb",
+        "manifest": "assets/world/rootwell-plaza/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend. Spatially sectioned large static meshes from preserved current v1 source: art/source/world/square-renewal/v1/chunk_landmarks.py.",
+        "related_files": [
+          "art/source/world/rootwell-plaza/v2/spatial-sections.json",
+          "art/source/world/square-hub/v1/author_street.py",
+          "art/source/world/square-renewal/v1/chunk_landmarks.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v2",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "The Rootwell plaza ring",
+          "source": "art/source/world/rootwell-plaza/v2/model.blend",
+          "runtime": "assets/world/rootwell-plaza/model.glb",
+          "pivot": "The Rootwell's centre at ground.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Paving ring round the enlarged Rootwell with its brass band and four conduit bridges (glass flagged power_grid). Nothing here is walkable or blocks.",
+          "notes": "art/source/world/square-hub/v1/author_street.py is initial authoring only; edit the adopted model.blend. Spatially sectioned large static meshes from preserved current v1 source: art/source/world/square-renewal/v1/chunk_landmarks.py."
+        }
+      }
+    ],
+    "fingerprints": {
+      "rootwell-plaza": {
+        "source": "2bd55c2df748e7279616a7b6b5fe17c40dc2bf4f7b5dd713d93f2d6c8c41d54d",
+        "runtime": "bf0c6dbb80e6292561d9c8ba3a0762fcac20cf27ca6312b43c295126efdd0eae",
+        "entry": "7e006df6fd5bed249e15c4a1f60cbb3d93701f98c99c310dd59da1a2522a8ac6"
+      }
+    }
+  }
+}

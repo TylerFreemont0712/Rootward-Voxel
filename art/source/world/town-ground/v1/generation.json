@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "tool": "Blender numpy (art/source/world/town-ground/v1/paint.py)",
+  "model": "Procedural, deterministic",
+  "seed": "4101-4104 (flags/cobbles copied from sparks-lane v1)",
+  "materials": [
+    {
+      "id": "town_flags",
+      "source": "art/source/world/town-ground/v1/native/town_flags.png",
+      "sha256": "4849b7f7fb9de7b11b49916b822fdb961d2c4ef599f8e9e93a6c939db241f023"
+    },
+    {
+      "id": "town_cobbles",
+      "source": "art/source/world/town-ground/v1/native/town_cobbles.png",
+      "sha256": "07f7fe4a9a9286cd66f3d6d2f6ec54e8cf4c25f0dc8a47580a687d4727b3e99a"
+    },
+    {
+      "id": "town_setts",
+      "source": "art/source/world/town-ground/v1/native/town_setts.png",
+      "sha256": "97e4586f2eae01e6e65d171c5c67ce2c6f56ec4c08b19fff49bb60e1206e4370"
+    },
+    {
+      "id": "town_brick",
+      "source": "art/source/world/town-ground/v1/native/town_brick.png",
+      "sha256": "55016e538353ee8f27bb3abc6043466f3b979798f0aa9a00605b84881505fa83"
+    },
+    {
+      "id": "town_gravel",
+      "source": "art/source/world/town-ground/v1/native/town_gravel.png",
+      "sha256": "e692ff98c9823069afa442c006bd1e60ffbdf800ac3146dc44fc3b4261a9bbeb"
+    },
+    {
+      "id": "town_bed",
+      "source": "art/source/world/town-ground/v1/native/town_bed.png",
+      "sha256": "5ea6ad61ae6eb8e80d5c2b93c308018cfd392fbfd21fc0409bc94a6605c0caa8"
+    }
+  ],
+  "library_sha256": "f694013d2b72823cb05038fca7dbe2a55411c93da8442c4632692a57192d3f6d",
+  "reference_sha256": {}
+}

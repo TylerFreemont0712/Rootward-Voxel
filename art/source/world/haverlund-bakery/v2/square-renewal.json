@@ -1,0 +1,10 @@
+{
+  "derived_from_sha256": "0414657f88db5a0793c3146b4ed90f9af24b68700957b1c33e4dfb995bbfee6e",
+  "removed_front_faces": 14056,
+  "label": "MORNING LOAF",
+  "door_center": [
+    0.3,
+    -3.17
+  ],
+  "record": "art/source/world/square-renewal/v1/revise_shops.py"
+}

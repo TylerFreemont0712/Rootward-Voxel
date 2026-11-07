@@ -1,0 +1,575 @@
+{
+  "schema": 1,
+  "id": "city-hall",
+  "title": "Haverlund City Hall",
+  "version": 1,
+  "size": [
+    28,
+    22
+  ],
+  "spawn": [
+    14,
+    3
+  ],
+  "voice_lesson": true,
+  "terrain": [
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................"
+  ],
+  "buildings": [],
+  "trees": [],
+  "zones": [
+    {
+      "id": "civic-lobby",
+      "title": "The public lobby",
+      "rect": [
+        0,
+        0,
+        28,
+        22
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "id": "hall-pendant-1",
+      "title": "Hall pendant 1",
+      "at": [
+        7,
+        15.9
+      ],
+      "zone": "civic-lobby",
+      "style": "fixture",
+      "stand": [
+        8,
+        14
+      ],
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "hall-pendant-2",
+      "title": "Hall pendant 2",
+      "at": [
+        20,
+        15.9
+      ],
+      "zone": "civic-lobby",
+      "style": "fixture",
+      "stand": [
+        21,
+        14
+      ],
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "hall-pendant-3",
+      "title": "Hall pendant 3",
+      "at": [
+        7,
+        7
+      ],
+      "zone": "civic-lobby",
+      "style": "fixture",
+      "stand": [
+        7,
+        5
+      ],
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "hall-pendant-4",
+      "title": "Hall pendant 4",
+      "at": [
+        20,
+        7
+      ],
+      "zone": "civic-lobby",
+      "style": "fixture",
+      "stand": [
+        20,
+        5
+      ],
+      "requires": "field-tablet",
+      "automatic": true
+    }
+  ],
+  "props": [],
+  "terminals": [
+    {
+      "id": "hall-terminal",
+      "title": "Civic service screen",
+      "zone": "civic-lobby",
+      "object": "hall-screen",
+      "at": [
+        26,
+        12
+      ],
+      "requires": "field-tablet"
+    }
+  ],
+  "interior": {
+    "style": "workshop-floor",
+    "shell": "city-hall-shell",
+    "exit": [
+      14,
+      0
+    ],
+    "exit_direction": "S",
+    "walk_front": 0,
+    "exit_posts": [],
+    "zoom": 22,
+    "camera_floor_lock": true,
+    "assets": [
+      {
+        "id": "hall-help",
+        "asset": "city-hall-help-desk",
+        "at": [
+          7,
+          16
+        ]
+      },
+      {
+        "id": "hall-jobs",
+        "asset": "city-hall-job-desk",
+        "at": [
+          20,
+          16
+        ]
+      },
+      {
+        "id": "hall-doors",
+        "asset": "workshop-shop-doors",
+        "at": [
+          14,
+          -0.35
+        ]
+      },
+      {
+        "id": "hall-screen",
+        "asset": "workshop-wall-screen",
+        "at": [
+          26.9,
+          12
+        ],
+        "turn": 270,
+        "height": 1.15
+      },
+      {
+        "id": "hall-board",
+        "asset": "workshop-job-board",
+        "at": [
+          18.8,
+          21.1
+        ],
+        "height": 1.7,
+        "scale": 1.25
+      },
+      {
+        "id": "waiting-bench-0",
+        "asset": "morning-civic-bench",
+        "at": [
+          4,
+          5
+        ],
+        "turn": 90
+      },
+      {
+        "id": "waiting-bench-1",
+        "asset": "morning-civic-bench",
+        "at": [
+          4,
+          9
+        ],
+        "turn": 90
+      },
+      {
+        "id": "waiting-bench-2",
+        "asset": "morning-civic-bench",
+        "at": [
+          22,
+          6
+        ],
+        "turn": 270
+      },
+      {
+        "id": "waiting-bench-3",
+        "asset": "morning-civic-bench",
+        "at": [
+          22,
+          10
+        ],
+        "turn": 270
+      },
+      {
+        "id": "archive-0",
+        "asset": "loft-shelf",
+        "at": [
+          25,
+          18
+        ],
+        "scale": 1.1,
+        "turn": 90
+      },
+      {
+        "id": "archive-1",
+        "asset": "loft-shelf",
+        "at": [
+          25,
+          20
+        ],
+        "scale": 1.1,
+        "turn": 90
+      },
+      {
+        "id": "archive-2",
+        "asset": "loft-shelf",
+        "at": [
+          2.5,
+          20
+        ],
+        "scale": 1.1,
+        "turn": 0
+      },
+      {
+        "id": "hall-plant-0",
+        "asset": "loft-floor-plant",
+        "at": [
+          2,
+          2
+        ],
+        "scale": 1.1
+      },
+      {
+        "id": "hall-plant-1",
+        "asset": "loft-floor-plant",
+        "at": [
+          26,
+          2
+        ],
+        "scale": 1.1
+      },
+      {
+        "id": "hall-plant-2",
+        "asset": "loft-floor-plant",
+        "at": [
+          2,
+          14
+        ],
+        "scale": 1.1
+      },
+      {
+        "id": "hall-plant-3",
+        "asset": "loft-floor-plant",
+        "at": [
+          23,
+          20
+        ],
+        "scale": 1.1
+      },
+      {
+        "id": "hall-pendant-1-model",
+        "asset": "workshop-hanging-lamp",
+        "at": [
+          7,
+          15.9
+        ],
+        "height": 3.4
+      },
+      {
+        "id": "hall-pendant-2-model",
+        "asset": "workshop-hanging-lamp",
+        "at": [
+          20,
+          15.9
+        ],
+        "height": 3.4
+      },
+      {
+        "id": "hall-pendant-3-model",
+        "asset": "workshop-hanging-lamp",
+        "at": [
+          7,
+          7
+        ],
+        "height": 3.4
+      },
+      {
+        "id": "hall-pendant-4-model",
+        "asset": "workshop-hanging-lamp",
+        "at": [
+          20,
+          7
+        ],
+        "height": 3.4
+      }
+    ],
+    "furniture": [
+      {
+        "kind": "counter",
+        "at": [
+          7,
+          16
+        ],
+        "size": [
+          5.6,
+          1.25
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          20,
+          16
+        ],
+        "size": [
+          4.8,
+          1.25
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          4,
+          5
+        ],
+        "size": [
+          0.8,
+          2.8
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          4,
+          9
+        ],
+        "size": [
+          0.8,
+          2.8
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          22,
+          6
+        ],
+        "size": [
+          0.8,
+          2.8
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          22,
+          10
+        ],
+        "size": [
+          0.8,
+          2.8
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          25,
+          18
+        ],
+        "size": [
+          1.0,
+          1.8
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          25,
+          20
+        ],
+        "size": [
+          1.0,
+          1.8
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          2.5,
+          20
+        ],
+        "size": [
+          2.4,
+          0.8
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          2,
+          2
+        ],
+        "size": [
+          0.7,
+          0.7
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          26,
+          2
+        ],
+        "size": [
+          0.7,
+          0.7
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          2,
+          14
+        ],
+        "size": [
+          0.7,
+          0.7
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          23,
+          20
+        ],
+        "size": [
+          0.7,
+          0.7
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          23.5,
+          17.8
+        ],
+        "size": [
+          0.16,
+          6.8
+        ]
+      }
+    ],
+    "lamp_fixtures": [
+      {
+        "id": "hall-pendant-1",
+        "asset": "hall-pendant-1-model",
+        "range": 7,
+        "energy": 1.1
+      },
+      {
+        "id": "hall-pendant-2",
+        "asset": "hall-pendant-2-model",
+        "range": 7,
+        "energy": 1.1
+      },
+      {
+        "id": "hall-pendant-3",
+        "asset": "hall-pendant-3-model",
+        "range": 7,
+        "energy": 1.1
+      },
+      {
+        "id": "hall-pendant-4",
+        "asset": "hall-pendant-4-model",
+        "range": 7,
+        "energy": 1.1
+      }
+    ],
+    "links": [
+      {
+        "id": "square",
+        "at": [
+          14,
+          0
+        ],
+        "approach": [
+          14,
+          1
+        ],
+        "direction": "S",
+        "to": "haverlund-square",
+        "arrival": [
+          57,
+          49
+        ],
+        "facing": "S",
+        "label": "Return to Rootward Square",
+        "walk_through": true,
+        "enter": 2,
+        "doors": "hall-doors"
+      }
+    ],
+    "inspections": [
+      {
+        "id": "help-desk",
+        "title": "Enquiries",
+        "at": [
+          7,
+          15
+        ],
+        "text": "A little brass bell. The register is open at TODAY. Beneath it: rooms and permits to the left; work orders to the right. Someone has added, in pencil: lost umbrellas wherever they turn up."
+      },
+      {
+        "id": "job-desk",
+        "title": "Public Works · job desk",
+        "at": [
+          20,
+          15
+        ],
+        "text": "Nell’s workshop is on the approved contractors list. The public works book keeps your current tickets here too. Pinned under it, in a quick hand: SQUARE JOBS — ASK MIRA. SHE’LL BE AT THE SERVICE SCREEN."
+      },
+      {
+        "id": "archive",
+        "title": "The civic archive",
+        "at": [
+          26,
+          18
+        ],
+        "text": "Water, tramways, street lighting. Each shelf has a year, a street and a name. The newest volume still smells of glue."
+      },
+      {
+        "id": "hall-notices",
+        "title": "Public notices",
+        "at": [
+          19,
+          20
+        ],
+        "text": "HALL OPEN UNTIL EIGHT. Keys returned to Enquiries. Please do not fold the maps back along a new crease."
+      }
+    ],
+    "city_network": true
+  }
+}

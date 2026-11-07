@@ -8,6 +8,8 @@ signal journal_requested
 signal map_requested
 signal menu_requested
 signal build_requested
+signal inventory_requested
+signal development_requested
 
 var session: GameSession
 var settings: GameSettings
@@ -74,6 +76,16 @@ func set_notebook_open(open: bool) -> void:
 
 func show_toast(text: String) -> void:
 	_show_feedback(text, &"PanelPill", Pal.PARCHMENT, 2.6)
+
+
+## A development checkpoint replaces the local context, including its old feedback.
+func clear_feedback() -> void:
+	for entry: Dictionary in _active_toasts.values():
+		if entry.has("tween"): (entry.tween as Tween).kill()
+	_active_toasts.clear()
+	for child: Node in _toast_box.get_children():
+		_toast_box.remove_child(child)
+		child.queue_free()
 
 
 ## Repeated feedback renews one visible message, including during held input.
@@ -243,35 +255,16 @@ func _refresh() -> void:
 	var zone: Dictionary = session.area.zone(session.current_zone) if session.current_zone != "" else {}
 	_location.text = "%s  ·  %s" % [session.area.title, zone.title] if not zone.is_empty() else session.area.title
 	var quest: Dictionary = session.current_quest()
-	_notebook_button.text = "Field Notes" if session.area.movement_lesson else "Notebook"
-	_build_button.visible=not session.area.movement_lesson
-	_controls_label.text="Your mapped keys walk  ·  E field notes  ·  M map  ·  Esc menu" if session.area.movement_lesson else "WASD walk  ·  Click to travel  ·  F talk or use  ·  E notebook  ·  M map  ·  B build"
+	_notebook_button.text = "Field Notes"
+	_controls_label.text="WASD walk  ·  Click to travel  ·  F talk or use  ·  E field notes  ·  M map  ·  B build"
 	_objective_hint.text=str(quest.get("summary",""))
-	if session.area.movement_lesson:
-		if not CompanionLesson.has_voice(session.state,session.completed):
-			_objective_hint.text='Hotaru is listening. Open your notes with E, Test your greeting, then Speak to her.'
-		elif MovementBindings.mapped(session.state)<4:
-			_objective_hint.text="Open your notes with E. Test each key’s code, then Apply your four movements."
-		elif MovementBindings.tried(session.state)<4:
-			_objective_hint.text="Continue from your notes and try every direction in the room. Practice: %d / 4." % MovementBindings.tried(session.state)
-		else:
-			if session.area.interior.get("style", "")=="morning-bedroom":
-				_objective_hint.text="Walk through the open door to take a first look at the village lane."
-			elif not session.area.interior.is_empty():
-				_objective_hint.text="Explore the room. Walk through the doorway to return to the village."
-			else:
-				_objective_hint.text="Follow the lane to Rootward Square and the town hall. Your home waits down the lane."
-	if session.area.movement_lesson and quest.is_empty():
-		_objective_title.text = "Your first steps are yours" if MovementBindings.finished(session.state) else "Make the keys your own"
-		_objective_progress.text = "Movement lesson complete" if MovementBindings.finished(session.state) else "Press E to connect your movement keys"
-		return
 	if quest.is_empty():
 		if not session.area.interior.is_empty():
 			_objective_title.text = "A quiet moment indoors"
-			_objective_progress.text = "Walk out through the door to return to the village"
+			_objective_progress.text = "Walk out through the door to return to the street"
 			_objective_hint.text=""
 			return
-		_objective_title.text = "Kindle Hollow is lit"
+		_objective_title.text = "No job on the board"
 		_objective_progress.text = "%d %s burning · free exploration" % [session.lamps_lit(), "lamp" if session.lamps_lit() == 1 else "lamps"]
 		return
 	var progress: Dictionary = session.quest_progress()

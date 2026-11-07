@@ -1,0 +1,15 @@
+{
+  "previous_source": "art/source/world/haverlund-clockmaker/v3/model.blend",
+  "previous_sha256": "a2ae6a3d5281328e1eabe6c942f9d3fa4114c1d7abe40f241c02b53640d4aa37",
+  "entrance_center": [
+    1.12,
+    -2.45
+  ],
+  "hinge": [
+    0.6399999856948853,
+    -2.450000047683716,
+    0.14000000059604645
+  ],
+  "placement_raise": 0.16,
+  "record": "art/source/world/square-restoration/v1/shop_door.py"
+}

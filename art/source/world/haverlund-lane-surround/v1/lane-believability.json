@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-02",
+  "before_sha256": "2705cca4dd3817da3d8886cf3e1a948c8708210d7bc7a6273540cf12edeb73ad",
+  "after_sha256": "120a084fab3f2446da1b0ab1384dc577adf853369b48b1126ea916c075d79dc7",
+  "record": "art/source/world/lane-believability/v1/refine.py",
+  "record_sha256": "cd5f5d9f1c5ed5702988005a46680b45dd37ee4513a714c8203282dbca4518e1",
+  "note": "Deliberate edit of the adopted master; prior source preserved. Export with scripts/world-art.sh.",
+  "uv_finish": {
+    "record": "art/source/world/lane-believability/v1/finish_uv.py",
+    "meshes": [
+      "stair_handrail_west",
+      "stair_handrail_east",
+      "garden_edge_railings"
+    ]
+  }
+}

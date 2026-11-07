@@ -4,7 +4,7 @@
   "kind": "update",
   "title": "Update Loft floor plant",
   "asset_type": "world model",
-  "status": "finished",
+  "status": "changes_requested",
   "notes": "User request: improve the rudimentary random ovals / bubbles used as plant life throughout Sparks & Machines. Keep it simple. Coordinated foliage-only revision across the selected room plants, street planters, trees, window boxes and vines: tapered folded leaves, connected sprigs and small five-petal flower heads. Preserve pots, buildings, supports, authored finishes, fruit/vegetable displays, robot models, placement/collision, the approved boy and camera. Deliver all revised model IDs together for review.",
   "asset": {
     "id": "loft-floor-plant",
@@ -37,7 +37,7 @@
   },
   "references": [],
   "created": "2026-10-30T01:12:23+00:00",
-  "updated": "2026-10-30T01:36:17+00:00",
+  "updated": "2026-11-02T03:24:44+00:00",
   "history": [
     {
       "at": "2026-10-30T01:12:23+00:00",
@@ -50,6 +50,10 @@
     {
       "at": "2026-10-30T01:36:17+00:00",
       "action": "finish"
+    },
+    {
+      "at": "2026-11-02T03:24:44+00:00",
+      "action": "Further changes requested: 20261102T032444-7c1743d8"
     }
   ],
   "result": {

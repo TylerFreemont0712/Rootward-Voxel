@@ -14,7 +14,7 @@ static func is_greeting(text: String) -> bool:
 	return parts.has("hotaru") and (parts.has("hello") or parts.has("hi") or parts.has("hey") or words.contains("good morning"))
 
 static func apply(area: AreaDef, state: Dictionary, command: Dictionary, changes: Array[String]) -> String:
-	if not area.movement_lesson and not area.voice_lesson:return "Hotaru's voice lesson belongs to Village Morning."
+	if not area.voice_lesson:return "Hotaru's voice lesson is not taught in this area."
 	if command.size()!=3 or command.get("target")!="hotaru" or not command.get("text") is String:return "Say text to Hotaru with print(\"Hello, Hotaru!\")."
 	var text: String=command.text
 	if text.strip_edges().is_empty() or text.length()>160:return "Say between 1 and 160 characters so Hotaru can hear you clearly."

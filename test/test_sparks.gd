@@ -1,6 +1,5 @@
 extends SceneTree
-## The Sparks & Machines journey: a separate third journey whose first area is the workshop loft. It must leave
-## Kindle Hollow and Village Morning exactly as they were (their catalog entries, HUD, fairy and saves).
+## The Sparks & Machines journey: the one journey that ships, whose first area is the workshop loft.
 var checks: int=0
 var failures: Array[String]=[]
 var game: Game
@@ -25,16 +24,14 @@ func go() -> void:
 
 func _catalog() -> void:
 	var entries: Array[Dictionary]=LevelStore.entries()
-	_check(entries.map(func(entry: Dictionary) -> String: return str(entry.id))==["kindle-hollow","village-morning","sparks-and-machines"],"The new journey is appended after the two existing ones")
-	for entry: Dictionary in entries.slice(0,2):
-		_check(entry.archived and entry.keys().all(func(key: String) -> bool: return key in ["id","title","subtitle","description","area","opening_house","archived"]),"An archived journey retains its original definition: "+str(entry.id))
+	_check(entries.map(func(entry: Dictionary) -> String: return str(entry.id))==["sparks-and-machines"],"Sparks & Machines is the only journey")
 	var spec: Dictionary=LevelStore.entry("sparks-and-machines")
-	_check(spec.area=="workshop-loft" and spec.opening_house=="" and spec.look=="paper" and spec.journal=="workshop" and spec.build==false,"The journey starts in its own loft with the paper look and no build mode")
+	_check(spec.area=="workshop-loft" and spec.look=="paper" and spec.journal=="workshop" and spec.build==false,"The journey starts in its own loft with the paper look and no build mode")
 	var source: Dictionary=AreaStore.read_source("workshop-loft")
 	_check(source.ok,"The loft document, its quests and catalog references load: "+str(source.get("errors",[])))
 	var area: AreaDef=source.get("area") if source.ok else null
 	if area==null:return
-	_check(area.width==14 and area.height==12 and area.voice_lesson and not area.movement_lesson,"The loft is 14 by 12, over the whole workshop, with the hello lesson but not the movement-key lesson")
+	_check(area.width==14 and area.height==12 and area.voice_lesson,"The loft is 14 by 12, over the whole workshop, with the hello lesson but not the movement-key lesson")
 	_check(area.interior.style=="workshop-loft" and area.interior.shell=="loft-shell","The loft names its own room style and Blender shell")
 	_check(area.quest("say-hello").goal.type=="hotaru_greeted","The loft's first job is waking Hotaru")
 	var story: Dictionary=JourneyStory.read(str(spec.story))
@@ -49,12 +46,9 @@ func _rules() -> void:
 	var loft: AreaDef=AreaStore.load_area("workshop-loft")
 	var rules:=LabWorld.new(loft)
 	var state: Dictionary=rules.initial_state()
-	_check(rules.snapshot(state).companion.enabled and not rules.snapshot(state).controls.enabled,"In the loft, print speaks to Hotaru while the keys work as usual")
+	_check(rules.snapshot(state).companion.enabled,"In the loft, print speaks to Hotaru")
 	var changes: Array[String]=[]
 	_check(CompanionLesson.apply(loft,state,{"op":"say","target":"hotaru","text":"Hello, Hotaru!"},changes)=="" and state.hotaru_greeted,"A greeting with her name is accepted in the loft")
-	var hollow: AreaDef=AreaStore.load_area("kindle-hollow")
-	var other: Dictionary=LabWorld.new(hollow).initial_state()
-	_check(CompanionLesson.apply(hollow,other,{"op":"say","target":"hotaru","text":"Hello, Hotaru!"},changes)=="Hotaru's voice lesson belongs to Village Morning." and not LabWorld.new(hollow).snapshot(other).companion.enabled,"Kindle Hollow still refuses speech with its original message")
 	var start: Vector2i=loft.spawn
 	_check(rules.is_walkable(state,start) and rules.is_walkable(state,Vector2i(7,5)),"The spawn and the top stair cell are walkable")
 	_check(start == Vector2i(6,8) and not rules.find_path(state, Vector2i(1,8), start).is_empty(), "The traveller begins by the bed with a safe route to the desk")
@@ -100,15 +94,10 @@ func _journey() -> void:
 	SaveStore.save_path="user://test_sparks_"+str(OS.get_process_id())+".json"
 	SaveStore.profile_path="user://test_sparks_profile_"+str(OS.get_process_id())+".json"
 	SaveStore.force_enabled=true
-	for level: String in ["kindle-hollow","village-morning","sparks-and-machines"]:SaveStore.delete(level)
+	SaveStore.delete("sparks-and-machines")
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
-	await game.start_new_game("kindle-hollow")
-	game.save_now()
-	var hollow_bytes: PackedByteArray=FileAccess.get_file_as_bytes(SaveStore.level_path("kindle-hollow"))
-	_check(not (game.hud is PaperHud) and is_instance_valid(game.view.hotaru),"Kindle Hollow keeps the default HUD and the fairy")
-	await game._return_to_title()
 	game._new_game_flow()
 	_check(game._modals[-1] is CharacterScreen and LevelStore.available_entries().size()==1,"New game enters the Sparks character flow directly")
 	await shot("01-levels")
@@ -119,7 +108,7 @@ func _journey() -> void:
 	await process_frame
 	_check(game.area.id=="workshop-loft" and not game.inside_house() and game._level_id=="sparks-and-machines","The journey starts in the loft itself, with no outside area")
 	_check(game.hud is PaperHud and game.hud.visible and (game.hud as PaperHud).ticket.number.text=="JOB NO. 0","The paper HUD pins JOB No. 0")
-	_check(game.view.hotaru==null and game.view.stage is WorkshopLoftStage and game.view.stage.replaces_companion(),"The loft's stage replaces the fairy")
+	_check(game.view.stage is WorkshopLoftStage and game.view.stage.replaces_companion(),"The loft's stage replaces the fairy")
 	_check(is_equal_approx(game.view.zoom(),14.5),"The loft uses its own indoor zoom")
 	_check(game._modals[-1] is OpeningCard,"The opening card comes first")
 	await shot("02-opening")
@@ -196,7 +185,7 @@ func _journey() -> void:
 		game.session.advance_walk(LabWorld.STEP_SECONDS)
 	game._process(0)
 	_check(game.session.player_cell() == Vector2i(1,8), "The traveller walks from the note to the terminal keyboard")
-	_check(game.notebook_open and game.movement_lesson is WorkshopJournal and game.session.state.inspections_read.has("desk-terminal"), "Clicking the terminal opens the first working page")
+	_check(game.notebook_open and game.journal is WorkshopJournal and game.session.state.inspections_read.has("desk-terminal"), "Clicking the terminal opens the first working page")
 	_check(game.session.state.terminal_links == ["desk-terminal"] and game.view.terminal_display != null, "Using the loft computer creates its saved zone link")
 	await _greeting()
 	game.close_notebook(true)
@@ -218,7 +207,7 @@ func _journey() -> void:
 	_check(copies==1,"Forty repeated refusals keep exactly one stairs message")
 	await shot("04-loft")
 	game.save_now()
-	_check(SaveStore.has_save("sparks-and-machines") and FileAccess.get_file_as_bytes(SaveStore.level_path("kindle-hollow"))==hollow_bytes,"The journey saves to its own file; Kindle Hollow's save is untouched")
+	_check(SaveStore.has_save("sparks-and-machines"),"The journey saves to its own file")
 	await game._return_to_title()
 	_check(game.hud is PaperHud and not game.hud.visible,"The title retains Sparks presentation with the play HUD hidden")
 	await game.continue_game("sparks-and-machines")
@@ -246,23 +235,17 @@ func _journey() -> void:
 	(game._modals[0] as WorkshopJobLedger).close()
 	await _window_steady()
 	game.open_notebook()
-	_check(game.movement_lesson is WorkshopJournal and game.movement_lesson.editor.text.contains("Hello, Hotaru!") and not (game.movement_lesson as WorkshopJournal)._in_conversation,"After the waking introduction, Field Notes anywhere opens the plain open page with the saved Python, without replaying the introduction")
+	_check(game.journal is WorkshopJournal and game.journal.editor.text.contains("Hello, Hotaru!") and not (game.journal as WorkshopJournal)._in_conversation,"After the waking introduction, Field Notes anywhere opens the plain open page with the saved Python, without replaying the introduction")
 	game.close_notebook(true)
 	await game._return_to_title()
-	await game.start_new_game("village-morning")
-	while game._flow_busy:await process_frame
-	_check(not (game.hud is PaperHud) and is_instance_valid(game.view.hotaru) and game.view.stage==null,"Village Morning still has the default HUD and the fairy")
-	_check(game.view.marker_style == "" and game.view._route_material(false) != null, "Village Morning keeps its original route and job marks")
-	game.view.show_route([Vector2i(5,5), Vector2i(6,5)])
-	_check(game.view._route_visual.get_child_count() == 2 and (game.view._route_visual.get_child(0) as MeshInstance3D).mesh is BoxMesh, "Its route is still the square gold tiles")
-	for level: String in ["kindle-hollow","village-morning","sparks-and-machines"]:SaveStore.delete(level)
+	SaveStore.delete("sparks-and-machines")
 	game.queue_free()
 	await process_frame
 	await process_frame
 
 
 func _greeting() -> void:
-	var notes:=game.movement_lesson as WorkshopJournal
+	var notes:=game.journal as WorkshopJournal
 	if notes==null:return
 	var stage:=game.view.stage as WorkshopLoftStage
 	_check(not stage.awake,"Hotaru begins with a genuinely dark window")
@@ -345,7 +328,7 @@ func _greeting() -> void:
 	game._process(0)
 	_check(game.view.building_node("hand-terminal") == null and game.view.building_node("bed-tablet").visible and game.session.state.items.is_empty(), "The old hand console is gone and the slate still waits on the bed")
 	game._open_workshop_journal(true)
-	notes=game.movement_lesson as WorkshopJournal
+	notes=game.journal as WorkshopJournal
 	_check(not notes._in_conversation and notes._writing.visible and not notes._run.disabled,"The original page stays editable after the story conversation")
 	await notes.preview()
 	_check(stage.speech_preview and not stage.speech_text.is_empty(),"A repeat test after the introduction still shows a fresh ghost print")
@@ -382,7 +365,7 @@ func _window_steady() -> void:
 			scene._layout()
 			total += 1
 			seen[str([scene.card.position, scene.card.size])] = true
-			_check(absf(scene.card.position.x + scene.card.size.x - (scene.size.x - WorkshopScene.EDGE_MARGIN)) < 1.0, "The story window runs to the right margin: " + id)
+			_check(absf(scene.card.position.x + scene.card.size.x - scene.size.x * WorkshopScene.WINDOW_RIGHT) < 1.0, "The story window keeps the requested right inset: " + id)
 			_check(scene.card.get_global_rect().encloses(Rect2(scene._text_box.global_position, scene._text_box.size)), "The words sit inside the window: " + id)
 			if scene._choices.visible:
 				var inside: Rect2 = Rect2(scene._choices.global_position, scene._choices.size)

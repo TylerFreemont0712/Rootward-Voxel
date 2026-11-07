@@ -65,6 +65,8 @@ func setup(player: Node3D, target: Node3D, is_wired: bool) -> void:
 
 ## Low on the panel, under the glass: where a screen's brass-collared socket sits.
 static func _socket_point(target: Node3D) -> Vector3:
+	var socket: Node3D=target.find_child("SlateSocket",true,false) as Node3D
+	if socket!=null:return socket.global_position
 	var box := AABB(target.global_position, Vector3.ZERO)
 	var first: bool = true
 	for node: Node in target.find_children("*", "MeshInstance3D", true, false):
@@ -86,7 +88,8 @@ func _process(delta: float) -> void:
 
 
 func _update() -> void:
-	if not is_instance_valid(_player) or not is_instance_valid(_target): return
+	if not is_inside_tree() or is_queued_for_deletion() or not is_instance_valid(_player) or not is_instance_valid(_target): return
+	if not _player.is_inside_tree() or not _target.is_inside_tree(): return
 	var from: Vector3 = _hand()
 	if wired:
 		var to: Vector3 = _socket

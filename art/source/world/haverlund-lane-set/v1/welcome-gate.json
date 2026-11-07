@@ -1,0 +1,8 @@
+{
+  "before": "0c7c0dae8364bf7c9bd46d734a0e26b7c9fcc718bd5b6480068269fbcccd2843",
+  "after": "9fae442148f0e95fb8347b64042b930c2aea04b927f230568c1a8ed7b159bfa3",
+  "vertices_moved": 240,
+  "backup": "model.pre-welcome-quest.blend",
+  "edit_script": "art/source/world/tram-welcome-sign/v1/author.py",
+  "scoped_source_sha256": "0577fa201b3448e878b0885c83125e329501549778ce8c02cd2985cc91518d67"
+}

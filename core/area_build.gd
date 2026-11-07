@@ -134,13 +134,16 @@ static func prop_is_solid(assets: Dictionary, asset: String) -> bool:
 ## The ground a prop covers: its catalog footprint if it has one, else a small square. The same arithmetic as AreaDef.
 static func prop_rect(assets: Dictionary, asset: String, at: Vector2, facing: String, scale: float) -> Rect2:
 	var size := Vector2(AreaDef.PROP_BODY, AreaDef.PROP_BODY)
+	var center := Vector2.ZERO
 	if prop_is_solid(assets, asset):
 		var footprint: Array = (assets[asset] as Dictionary).logical_footprint
 		size = Vector2(float(footprint[2]), float(footprint[3]))
+		center = Vector2(float(footprint[0]), float(footprint[1])) + size * .5
+		center = center.rotated(deg_to_rad(float(AreaDef.FACINGS[facing])))
 	if facing == "E" or facing == "W":
 		size = Vector2(size.y, size.x)
 	size *= scale
-	return Rect2(at - size * 0.5, size)
+	return Rect2(at + center * scale - size * 0.5, size)
 
 
 ## The former threshold cell can intersect the closed leaf. Keep it for the
@@ -195,6 +198,12 @@ static func object_near(area: AreaDef, point: Vector2) -> Dictionary:
 	for prop: Dictionary in area.props:
 		if (prop.rect as Rect2).grow(0.1).has_point(point):
 			return {"kind": "prop", "id": prop.id, "locked": false, "at": prop.at}
+	for item: Dictionary in area.scenery:
+		if (item.rect as Rect2).grow(0.1).has_point(point):
+			return {"kind": "scenery", "id": item.id, "locked": false, "at": item.at}
+	for wall: Dictionary in area.walls:
+		if (wall.rect as Rect2).grow(0.15).has_point(point):
+			return {"kind": "wall", "id": wall.id, "locked": false, "at": ((wall.from as Vector2) + (wall.to as Vector2)) * 0.5}
 	var best: Dictionary = {}
 	var best_distance: float = 0.7
 	for tree: Dictionary in area.trees:
@@ -300,6 +309,9 @@ static func check_prop(ctx: Dictionary, asset: String, at: Vector2, facing: Stri
 	if not ctx.assets.has(asset):
 		result.reason = "That has no model."
 		return result
+	if not layout_contains(area, rect):
+		result.reason = "Keep the layout on the upper terrace. The stairs and square stay clear."
+		return result
 	if rect.position.x < 0.0 or rect.position.y < 0.0 or rect.end.x > float(area.width) or rect.end.y > float(area.height):
 		result.reason = "Keep it inside the valley."
 		return result
@@ -329,6 +341,19 @@ static func check_prop(ctx: Dictionary, asset: String, at: Vector2, facing: Stri
 		if rect.grow(0.05).intersects(building.rect):
 			result.reason = "A building is in the way."
 			return result
+	for solid: Rect2 in area.interior.get("solids", []):
+		if rect.intersects(solid):
+			result.reason = "An authored building or barrier stands there."
+			return result
+	for furniture: Dictionary in area.interior.get("furniture", []):
+		if furniture.kind != "rug" and rect.intersects(furniture.rect):
+			result.reason = "Leave room for the existing scenery."
+			return result
+	for link: Dictionary in area.interior.get("links", []):
+		for cell: Vector2i in RoomLinks.cells(link):
+			if rect.grow(.4).has_point(Vector2(cell)):
+				result.reason = "Keep the travel entrance clear."
+				return result
 	for other: Dictionary in area.props:
 		if other.id != ignore_id and rect.intersects(other.rect):
 			result.reason = "Another doodad is there."
@@ -363,6 +388,290 @@ static func check_prop(ctx: Dictionary, asset: String, at: Vector2, facing: Stri
 			return result
 	result.ok = true
 	return result
+
+
+# ------------------------------------------------------------------ walls
+## The town's wall kit, by style: a long and a short bay (each runs along its +x from its origin) and the pier or
+## post that stands at every end, corner, junction and joint. `weight` decides whose pier stands where styles meet.
+const WALL_STYLES: Dictionary = {
+	"garden": {"title": "Garden wall", "bay": "town-garden-wall", "bay_length": 3.0, "short": "town-garden-wall-short", "short_length": 1.5, "joint": "town-garden-pier", "thickness": 0.44, "weight": 3},
+	"balustrade": {"title": "Balustrade", "bay": "town-balustrade", "bay_length": 3.0, "short": "town-balustrade-short", "short_length": 1.5, "joint": "town-balustrade-pier", "thickness": 0.38, "weight": 2},
+	"railing": {"title": "Iron railing", "bay": "town-railing", "bay_length": 2.0, "short": "town-railing-short", "short_length": 1.0, "joint": "town-railing-post", "thickness": 0.12, "weight": 1},
+}
+
+
+## The ground a wall run covers: its line, as thick as its style.
+static func wall_rect(a: Vector2, b: Vector2, style: String) -> Rect2:
+	var half: float = float((WALL_STYLES[style] as Dictionary).thickness) * 0.5
+	var low := Vector2(minf(a.x, b.x), minf(a.y, b.y))
+	var high := Vector2(maxf(a.x, b.x), maxf(a.y, b.y))
+	return Rect2(low - Vector2(half, half), high - low + Vector2(half, half) * 2.0)
+
+
+## The cell corner nearest a ground point: cells are centred on whole numbers, so corners sit on halves.
+static func snap_corner(point: Vector2) -> Vector2:
+	return Vector2(roundf(point.x + 0.5) - 0.5, roundf(point.y + 0.5) - 0.5)
+
+
+## A run from `start` toward `point`, kept to whichever axis the pointer has gone further along.
+static func wall_end(start: Vector2, point: Vector2) -> Vector2:
+	var corner: Vector2 = snap_corner(point)
+	return Vector2(corner.x, start.y) if absf(corner.x - start.x) >= absf(corner.y - start.y) else Vector2(start.x, corner.y)
+
+
+## The kit pieces that draw a set of runs, Sims-style: each run is split into the fewest whole bays of its style
+## (stretched a little to fit), and every bay joint, end, corner and junction gets one pier, the heaviest style's
+## where styles meet. [{asset, at: Vector2, turn (degrees), stretch (along the bay)}].
+static func wall_pieces(runs: Array) -> Array[Dictionary]:
+	var pieces: Array[Dictionary] = []
+	var joints: Dictionary = {}
+	for run: Dictionary in runs:
+		var style: Dictionary = WALL_STYLES[str(run.style)]
+		var a: Vector2 = run.from
+		var b: Vector2 = run.to
+		var length: float = a.distance_to(b)
+		if length < 0.01: continue
+		var along: Vector2 = (b - a) / length
+		var asset: String = str(style.bay)
+		var piece_length: float = float(style.bay_length)
+		if length < piece_length * 0.75:
+			asset = str(style.short)
+			piece_length = float(style.short_length)
+		var count: int = maxi(1, roundi(length / piece_length))
+		var bay: float = length / float(count)
+		var turn: float = rad_to_deg(atan2(along.y, along.x))
+		for index: int in range(count + 1):
+			var at: Vector2 = a + along * bay * float(index)
+			if index < count:
+				pieces.append({"asset": asset, "at": at, "turn": fposmod(turn, 360.0), "stretch": bay / piece_length})
+			var key: String = "%.2f,%.2f" % [at.x, at.y]
+			if not joints.has(key) or int((WALL_STYLES[str(joints[key].style)] as Dictionary).weight) < int(style.weight):
+				joints[key] = {"at": at, "style": str(run.style)}
+	for joint: Dictionary in joints.values():
+		pieces.append({"asset": str((WALL_STYLES[joint.style] as Dictionary).joint), "at": joint.at, "turn": 0.0, "stretch": 1.0})
+	return pieces
+
+
+## May a wall of `style` run from corner `a` to corner `b`? {ok, reason, rect}. It must lie in the layout on one
+## level, off the stairs, away from doors, travel entrances and the spawn, and through nothing that stands there.
+static func check_wall(ctx: Dictionary, a: Vector2, b: Vector2, style: String) -> Dictionary:
+	var area: AreaDef = ctx.area
+	var result: Dictionary = {"ok": false, "reason": "", "rect": Rect2()}
+	if not WALL_STYLES.has(style):
+		result.reason = "Choose a wall from the tray."
+		return result
+	if a.distance_to(b) < 0.99:
+		result.reason = "Drag along the grid to draw a wall."
+		return result
+	if not is_equal_approx(a.x, b.x) and not is_equal_approx(a.y, b.y):
+		result.reason = "Walls run straight along the grid."
+		return result
+	var rect: Rect2 = wall_rect(a, b, style)
+	result.rect = rect
+	# The cells on both sides of the run: all in the layout, on open ground, and on one level.
+	var sides: Rect2
+	if is_equal_approx(a.y, b.y):
+		sides = Rect2(minf(a.x, b.x), a.y - 0.5, absf(b.x - a.x), 1.0).grow(-0.05)
+	else:
+		sides = Rect2(a.x - 0.5, minf(a.y, b.y), 1.0, absf(b.y - a.y)).grow(-0.05)
+	if not layout_contains(area, sides):
+		result.reason = "Keep the wall on open ground in the layout. Stairs and the frame stay clear."
+		return result
+	if sides.position.x < -0.5 or sides.position.y < -0.5 or sides.end.x > float(area.width) - 0.5 or sides.end.y > float(area.height) - 0.5:
+		result.reason = "Keep the wall inside the area."
+		return result
+	if area.level_under(sides) < 0:
+		result.reason = "A wall stands on one level. Draw it along the terrace, not across its edge."
+		return result
+	for cell: Vector2i in footprint_cells(sides):
+		if area.terrain_at(cell) == AreaDef.Terrain.WATER:
+			result.reason = "Water is in the way."
+			return result
+	if rect.grow(0.3).has_point(Vector2(area.spawn)):
+		result.reason = "Keep the starting spot clear."
+		return result
+	for other: Dictionary in area.walls:
+		if rect.grow(-0.02).intersects((other.rect as Rect2).grow(-0.02)) and (is_equal_approx(a.x, b.x) == is_equal_approx((other.from as Vector2).x, (other.to as Vector2).x)):
+			result.reason = "A wall already runs there."
+			return result
+	var body: Rect2 = rect.grow(-0.02)
+	for building: Dictionary in area.buildings:
+		if body.intersects(building.rect):
+			result.reason = "A building is in the way."
+			return result
+	for solid: Rect2 in area.interior.get("solids", []):
+		if body.intersects(solid):
+			result.reason = "An authored building or barrier stands there."
+			return result
+	for furniture: Dictionary in area.interior.get("furniture", []):
+		if furniture.kind != "rug" and body.intersects(furniture.rect):
+			result.reason = "Something already stands there."
+			return result
+	for link: Dictionary in area.interior.get("links", []):
+		for cell: Vector2i in RoomLinks.cells(link):
+			if rect.grow(0.5).has_point(Vector2(cell)):
+				result.reason = "Keep the travel entrance clear."
+				return result
+	for prop: Dictionary in area.props:
+		if rect.intersects(prop.rect):
+			result.reason = "A doodad is in the way."
+			return result
+	for item: Dictionary in area.scenery:
+		if rect.intersects(item.rect):
+			result.reason = "%s is in the way." % str(item.title)
+			return result
+	for lamp: Dictionary in area.lamps:
+		if rect.grow(0.25).has_point(lamp.at):
+			result.reason = "A lamp needs room around it."
+			return result
+	for tree: Dictionary in area.trees:
+		if rect.grow(float(tree.get("trunk_radius", LabWorld.TRUNK_RADIUS)) + 0.05).has_point(tree.at):
+			result.reason = "A tree stands in the way."
+			return result
+	for villager: Dictionary in area.villagers:
+		var stops: Array = [villager.at]
+		stops.append_array(villager.route)
+		for stop: Vector2i in stops:
+			if rect.grow(0.5).has_point(Vector2(stop)):
+				result.reason = "Leave room for %s's walking route." % str(villager.id).capitalize()
+				return result
+	var player: Vector2 = Vector2(float(ctx.state.player[0]), float(ctx.state.player[1]))
+	if rect.grow(0.3).has_point(player):
+		result.reason = "You are standing there."
+		return result
+	result.ok = true
+	return result
+
+
+static func next_wall_id(document: Dictionary) -> String:
+	var highest: int = 0
+	for entry: Variant in document.get("walls", []):
+		var id: String = str((entry as Dictionary).get("id", "")) if entry is Dictionary else ""
+		if id.begins_with("wall-") and id.substr(5).is_valid_int():
+			highest = maxi(highest, id.substr(5).to_int())
+	return "wall-%d" % (highest + 1)
+
+
+## The ground a piece of scenery would cover at `at`, turned to `turn` degrees: its catalog footprint when it is
+## solid, its collision blocks carried along (a quarter turn swaps their sides), or a small body.
+static func scenery_rect(area: AreaDef, assets: Dictionary, item: Dictionary, at: Vector2, turn: float) -> Rect2:
+	var rect := Rect2(at - Vector2(AreaDef.PROP_BODY, AreaDef.PROP_BODY) * 0.5, Vector2(AreaDef.PROP_BODY, AreaDef.PROP_BODY))
+	var shape: Variant = (assets.get(str(item.asset), {}) as Dictionary).get("logical_footprint")
+	var placed: Dictionary = {}
+	for raw: Dictionary in area.interior.get("assets", []):
+		if str(raw.id) == str(item.id): placed = raw
+	if placed.get("solid", false) == true and shape is Array and shape.size() == 4:
+		var local := Rect2(float(shape[0]), float(shape[1]), float(shape[2]), float(shape[3]))
+		var angle: float = deg_to_rad(turn)
+		var scale: float = float(item.scale)
+		rect = Rect2(at + local.position.rotated(angle) * scale, Vector2.ZERO)
+		for corner: Vector2 in [local.position, local.end, Vector2(local.position.x, local.end.y), Vector2(local.end.x, local.position.y)]:
+			rect = rect.expand(at + corner.rotated(angle) * scale)
+	var swap: bool = posmod(roundi((turn - float(item.turn)) / 90.0), 2) == 1
+	var furniture: Array = area.interior.get("furniture", [])
+	for index: int in item.blocks:
+		var size: Vector2 = (furniture[index] as Dictionary).size
+		if swap: size = Vector2(size.y, size.x)
+		rect = rect.merge(Rect2(at - size * 0.5, size))
+	return rect
+
+
+## May this piece of authored scenery (a lamp, a bench, a stall) stand here, turned so? {ok, reason, rect}. It is
+## checked like a prop, ignoring itself: its own collision, its own solid footprint and the lamps it carries.
+static func check_scenery(ctx: Dictionary, scenery_id: String, at: Vector2, turn: float) -> Dictionary:
+	var area: AreaDef = ctx.area
+	var item: Dictionary = area.scenery_item(scenery_id)
+	var result: Dictionary = {"ok": false, "reason": "", "rect": Rect2()}
+	if item.is_empty():
+		result.reason = "That is part of the town's frame and stays where it is."
+		return result
+	var rect: Rect2 = scenery_rect(area, ctx.assets, item, at, turn)
+	result.rect = rect
+	if not layout_contains(area, rect):
+		result.reason = "Keep it on open ground in the layout. Stairs, walls and the frame stay clear."
+		return result
+	if rect.position.x < 0.0 or rect.position.y < 0.0 or rect.end.x > float(area.width) or rect.end.y > float(area.height):
+		result.reason = "Keep it inside the area."
+		return result
+	for cell: Vector2i in footprint_cells(rect):
+		if area.terrain_at(cell) == AreaDef.Terrain.WATER:
+			result.reason = "Water is in the way."
+			return result
+		if cell == area.spawn:
+			result.reason = "Keep the starting spot clear."
+			return result
+	var level_reason: String = _level_reason(area, rect)
+	if level_reason != "":
+		result.reason = level_reason
+		return result
+	var own: Rect2 = scenery_rect(area, ctx.assets, item, item.at, item.turn)
+	for building: Dictionary in area.buildings:
+		if rect.grow(0.05).intersects(building.rect):
+			result.reason = "A building is in the way."
+			return result
+	for solid: Rect2 in area.interior.get("solids", []):
+		if rect.intersects(solid) and not own.encloses(solid):
+			result.reason = "An authored building or barrier stands there."
+			return result
+	var furniture: Array = area.interior.get("furniture", [])
+	for index: int in range(furniture.size()):
+		var block: Dictionary = furniture[index]
+		if block.kind != "rug" and not (item.blocks as Array).has(index) and rect.intersects(block.rect):
+			result.reason = "Leave room for the existing scenery."
+			return result
+	for link: Dictionary in area.interior.get("links", []):
+		for cell: Vector2i in RoomLinks.cells(link):
+			if rect.grow(.4).has_point(Vector2(cell)):
+				result.reason = "Keep the travel entrance clear."
+				return result
+	for other: Dictionary in area.props:
+		if rect.intersects(other.rect):
+			result.reason = "Another doodad is there."
+			return result
+	for other: Dictionary in area.scenery:
+		if other.id != item.id and rect.intersects(other.rect):
+			result.reason = "Something else stands there."
+			return result
+	for lamp: Dictionary in area.lamps:
+		if not (item.lamps as Array).has(lamp.id) and rect.grow(0.3).has_point(lamp.at):
+			result.reason = "A lamp needs room around it."
+			return result
+	for tree: Dictionary in area.trees:
+		if rect.grow(float(tree.get("trunk_radius", LabWorld.TRUNK_RADIUS)) + 0.1).has_point(tree.at):
+			result.reason = "A tree stands in the way."
+			return result
+	if item.solid:
+		for villager: Dictionary in area.villagers:
+			var stops: Array = [villager.at]
+			stops.append_array(villager.route)
+			for stop: Vector2i in stops:
+				# A stop that was already beside it (someone rests on this bench, trades at this stall) stays
+				# beside it; only crowding a stop that had room is refused.
+				if rect.grow(0.5).has_point(Vector2(stop)) and not own.grow(0.5).has_point(Vector2(stop)):
+					result.reason = "Leave room for %s's walking route." % str(villager.id).capitalize()
+					return result
+		var player: Vector2 = Vector2(float(ctx.state.player[0]), float(ctx.state.player[1]))
+		if rect.grow(0.4).has_point(player):
+			result.reason = "You are standing there."
+			return result
+	result.ok = true
+	return result
+
+
+## Authored outdoor layouts expose their configured rectangle (optionally only some `levels`), never stairs or walls;
+## generated maps keep their usual bounds.
+static func layout_contains(area: AreaDef, rect: Rect2) -> bool:
+	var layout: Dictionary = area.interior.get("layout", {})
+	if layout.is_empty(): return true
+	var r: Array = layout.rect
+	var bounds := Rect2(float(r[0]) - .5, float(r[1]) - .5, float(r[2]), float(r[3]))
+	if not bounds.encloses(rect): return false
+	# An optional `levels` list keeps the layout to some terraces; the frame itself (stairs and walls) never moves.
+	var levels: Array = layout.get("levels", [])
+	for cell: Vector2i in footprint_cells(rect):
+		if not area.stair_at(cell).is_empty() or area.terrain_at(cell) == AreaDef.Terrain.ROCK: return false
+		if not levels.is_empty() and not levels.has(area.level_at(cell)): return false
+	return true
 
 
 ## May a tree of this size stand here? {ok, reason}. `ignore_key` is a tree being moved (see tree_key).
@@ -655,6 +964,10 @@ static func flood(rules: LabWorld, state: Dictionary, from: Vector2i) -> Diction
 ## The things the player must always be able to reach: {label, cells}. A group is met if any of its cells is reachable.
 static func needs(area: AreaDef, skip_building: Variant = "") -> Array[Dictionary]:
 	var groups: Array[Dictionary] = []
+	for link: Dictionary in area.interior.get("links", []):
+		groups.append({"label": "the travel entrance " + str(link.id), "cells": RoomLinks.cells(link)})
+	for terminal: Dictionary in area.terminals:
+		groups.append({"label": "the terminal " + str(terminal.id), "cells": [Vector2i(int(terminal.at[0]), int(terminal.at[1]))]})
 	for lamp: Dictionary in area.lamps:
 		var cells: Array = []
 		for dx: int in range(-1, 2):
@@ -888,6 +1201,24 @@ static func _apply_one(document: Dictionary, edit: Dictionary, paint_materials: 
 					(props[index] as Dictionary)["facing"] = str(edit.facing)
 				return true
 		return false
+	if kind == "scenery":
+		return op == "move" and _apply_scenery_move(document, edit)
+	if kind == "wall":
+		var walls: Array = document.get("walls", [])
+		var index: int = _find_building(walls, str(edit.get("id", "")))
+		match op:
+			"add":
+				if index >= 0 or not _point(edit.get("from")) or not _point(edit.get("to")) or not WALL_STYLES.has(str(edit.get("style", ""))):
+					return false
+				walls.append({"id": str(edit.id), "from": [float(edit.from[0]), float(edit.from[1])], "to": [float(edit.to[0]), float(edit.to[1])], "style": str(edit.style)})
+				document["walls"] = walls
+				return true
+			"remove":
+				if index < 0:
+					return false
+				walls.remove_at(index)
+				return true
+		return false
 	if kind == "tree":
 		var trees: Array = document.get("trees", [])
 		match op:
@@ -917,6 +1248,57 @@ static func _apply_one(document: Dictionary, edit: Dictionary, paint_materials: 
 				return true
 		return false
 	return false
+
+
+## Moves (and turns) one authored placement, with what belongs to it: the fixture lamps mapped to it (their light,
+## position and the cell a traveller works them from) and the furniture collision standing at its position. A move
+## onto another level lifts it by the difference, so it stays on the ground.
+static func _apply_scenery_move(document: Dictionary, edit: Dictionary) -> bool:
+	var room: Variant = document.get("interior")
+	if not room is Dictionary or not _point(edit.get("at")) or not (edit.get("turn", 0) is float or edit.get("turn", 0) is int):
+		return false
+	var placed: Dictionary = {}
+	for raw: Variant in room.get("assets", []):
+		if raw is Dictionary and str(raw.get("id", "")) == str(edit.get("id", "")): placed = raw
+	if placed.is_empty() or not _point(placed.get("at")):
+		return false
+	var from := Vector2(float(placed.at[0]), float(placed.at[1]))
+	var to := Vector2(float(edit.at[0]), float(edit.at[1]))
+	var shift: Vector2 = to - from
+	var old_turn: float = float(placed.get("turn", 0))
+	var new_turn: float = float(edit.get("turn", old_turn))
+	var swap: bool = posmod(roundi((new_turn - old_turn) / 90.0), 2) == 1
+	placed["at"] = [to.x, to.y]
+	placed["turn"] = new_turn
+	placed["height"] = float(placed.get("height", 0)) + float(_document_level(document, to) - _document_level(document, from))
+	for fixture: Variant in room.get("lamp_fixtures", []):
+		if not fixture is Dictionary or str(fixture.get("asset", "")) != str(placed.id): continue
+		for lamp: Variant in document.get("lamps", []):
+			if not lamp is Dictionary or str(lamp.get("id", "")) != str(fixture.get("id", "")): continue
+			if _point(lamp.get("at")):
+				lamp["at"] = [float(lamp.at[0]) + shift.x, float(lamp.at[1]) + shift.y]
+			if _point(lamp.get("stand")):
+				lamp["stand"] = [int(lamp.stand[0]) + roundi(shift.x), int(lamp.stand[1]) + roundi(shift.y)]
+	for block: Variant in room.get("furniture", []):
+		if not block is Dictionary or not _point(block.get("at")): continue
+		if Vector2(float(block.at[0]), float(block.at[1])).distance_to(from) >= 0.05: continue
+		block["at"] = [to.x, to.y]
+		if swap and _point(block.get("size")):
+			block["size"] = [block.size[1], block.size[0]]
+	return true
+
+
+## The land level under a point of a raw area document (rows run north to south), 0 off the map or without levels.
+static func _document_level(document: Dictionary, point: Vector2) -> int:
+	var rows: Variant = document.get("levels")
+	var size: Variant = document.get("size")
+	if not rows is Array or not size is Array or size.size() != 2:
+		return 0
+	var cell := Vector2i(roundi(point.x), roundi(point.y))
+	var row_index: int = int(size[1]) - 1 - cell.y
+	if row_index < 0 or row_index >= rows.size() or cell.x < 0 or cell.x >= str(rows[row_index]).length():
+		return 0
+	return str(rows[row_index])[cell.x].to_int()
 
 
 ## Validate a whole stroke before touching its rows. Water/rock entries are ignored; malformed or

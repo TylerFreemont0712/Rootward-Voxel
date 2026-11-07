@@ -1,0 +1,139 @@
+{
+  "materials": {
+    "town_bed": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/town_bed.png",
+          "sha256": "8a4bdd100ea964c64988a7a3364f20c5bada3d0f6ac2c7324a3550ca0d2d7436",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/town_bed.png",
+          "sha256": "bbdc0f2c31bc969a06260d688cf513e9fdc38bec1a970b154ac68d06c9537028",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/town-ground/v1/native/town_bed.png",
+      "source_sha256": "5ea6ad61ae6eb8e80d5c2b93c308018cfd392fbfd21fc0409bc94a6605c0caa8"
+    },
+    "town_brick": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/town_brick.png",
+          "sha256": "720952b7c236ab189d0f9439f041bbb11956b52b846b83858e56261c53976679",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/town_brick.png",
+          "sha256": "903c83109ba4aa818843756fa63313f2f01f6b961ba823d86f8557a38634cd22",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/town-ground/v1/native/town_brick.png",
+      "source_sha256": "55016e538353ee8f27bb3abc6043466f3b979798f0aa9a00605b84881505fa83"
+    },
+    "town_cobbles": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/town_cobbles.png",
+          "sha256": "cebf752a5feeefa3b1a10f6f5f39b5029f6fe5782467257a6f6954a5f41d7d8d",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/town_cobbles.png",
+          "sha256": "56d305f5e744979d999814e323bc2105df1000d453802259688d9ec0ebe88953",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/town-ground/v1/native/town_cobbles.png",
+      "source_sha256": "07f7fe4a9a9286cd66f3d6d2f6ec54e8cf4c25f0dc8a47580a687d4727b3e99a"
+    },
+    "town_flags": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/town_flags.png",
+          "sha256": "17c11219ad49f0f44b9b38a17eb49692ac92393f57cd239ad4b4ff65e363beb3",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/town_flags.png",
+          "sha256": "784c8447b3d0c364ee714bc34819e24e76424f3360b88de4e053b6a4899f939e",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/town-ground/v1/native/town_flags.png",
+      "source_sha256": "4849b7f7fb9de7b11b49916b822fdb961d2c4ef599f8e9e93a6c939db241f023"
+    },
+    "town_gravel": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/town_gravel.png",
+          "sha256": "ed02584e17728d5a231c1558ee5f6d1ef4729261b1a6daedb4591a32f146f59b",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/town_gravel.png",
+          "sha256": "3035d62497d25dbe95338f34bf38d7dcec04be6f78eef903925a8015111f77d9",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/town-ground/v1/native/town_gravel.png",
+      "source_sha256": "e692ff98c9823069afa442c006bd1e60ffbdf800ac3146dc44fc3b4261a9bbeb"
+    },
+    "town_setts": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/town_setts.png",
+          "sha256": "1836b4504bbb3ff0b9c2047973bf59893aef89790198cb7d7b50db3e5d0a9a2b",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/town_setts.png",
+          "sha256": "fe9bdbb2fda5268f8af90c7c5d3848383c3e22c7931ab5daa7adcb3d63abff76",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/town-ground/v1/native/town_setts.png",
+      "source_sha256": "97e4586f2eae01e6e65d171c5c67ce2c6f56ec4c08b19fff49bb60e1206e4370"
+    }
+  },
+  "normalization": "Lush: Lanczos to 128; solid: Lanczos to 64 then nearest to 128. Opposite edge pixels paired to make a periodic boundary. Native paintings preserved.",
+  "schema": 1,
+  "version": "town-ground-v1"
+}

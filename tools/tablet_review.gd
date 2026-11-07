@@ -34,7 +34,7 @@ func _run() -> void:
 	game.session.connect_terminal("desk-terminal")
 	game.open_notebook()
 	await _frames(20)
-	var notes := game.movement_lesson as WorkshopJournal
+	var notes := game.journal as WorkshopJournal
 	await _shot("01-greeting-blocks")
 	notes.message.text = "Hello, Hotaru!"
 	await notes.preview()
@@ -70,7 +70,7 @@ func _run() -> void:
 	game.view.sync_player(game.session.state)
 	game._activate_device("landing-lamp")
 	await _frames(20)
-	var jobs := game.movement_lesson as WorkshopJobsJournal
+	var jobs := game.journal as WorkshopJobsJournal
 	if jobs == null:
 		printerr("The lantern page did not open")
 		quit(1)
@@ -92,7 +92,7 @@ func _run() -> void:
 	game.view.sync_player(game.session.state)
 	game._activate_terminal("workshop-terminal")
 	await _frames(20)
-	jobs = game.movement_lesson as WorkshopJobsJournal
+	jobs = game.journal as WorkshopJobsJournal
 	await _shot("07-round-page")
 	await jobs.preview()
 	await _frames(80)

@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "haverlund-lane",
   "title": "Haverlund",
-  "version": 4,
+  "version": 8,
   "size": [
     24,
     28
@@ -108,7 +108,7 @@
         0,
         0,
         24,
-        5
+        8
       ]
     },
     {
@@ -116,9 +116,9 @@
       "title": "Spindle Lane",
       "rect": [
         0,
-        5,
+        8,
         24,
-        23
+        20
       ]
     }
   ],
@@ -136,7 +136,184 @@
         14,
         26
       ],
-      "requires": "field-tablet"
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "platform-west-lamp",
+      "title": "Tram steps lamp",
+      "at": [
+        6,
+        3.7
+      ],
+      "zone": "tram-halt",
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "platform-east-lamp",
+      "title": "Waiting shelter lamp",
+      "at": [
+        22.3,
+        3.6
+      ],
+      "zone": "tram-halt",
+      "style": "fixture",
+      "stand": [
+        22,
+        3
+      ],
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "pavement-lamp",
+      "at": [
+        16.5,
+        19.5
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Pavement lamp",
+      "stand": [
+        16,
+        20
+      ],
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "shop-door-lamp",
+      "at": [
+        11.15,
+        10.0
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Shop door lamp",
+      "stand": [
+        11,
+        14
+      ],
+      "requires": "field-tablet",
+      "automatic": false
+    },
+    {
+      "id": "shop-sign-lamp",
+      "at": [
+        11.15,
+        16.0
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Shop sign lamp",
+      "stand": [
+        11,
+        14
+      ],
+      "requires": "field-tablet",
+      "automatic": false
+    },
+    {
+      "id": "town-house-17-lanterns",
+      "at": [
+        -10.0,
+        9.0
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Neighbourhood · 17",
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "town-house-19-lanterns",
+      "at": [
+        -10.0,
+        30.5
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Neighbourhood · 19",
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "town-house-21-lanterns",
+      "at": [
+        -26.0,
+        25.0
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Neighbourhood · 21",
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "town-house-22-lanterns",
+      "at": [
+        -12.0,
+        -3.0
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Neighbourhood · 22",
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "town-house-23-lanterns",
+      "at": [
+        -27.0,
+        -2.0
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Neighbourhood · 23",
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "town-house-26-lanterns",
+      "at": [
+        22.0,
+        35.5
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Neighbourhood · 26",
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "town-house-30-lanterns",
+      "at": [
+        6.0,
+        60.0
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Neighbourhood · 30",
+      "requires": "field-tablet",
+      "automatic": true
+    },
+    {
+      "id": "town-house-31-lanterns",
+      "at": [
+        22.0,
+        60.0
+      ],
+      "zone": "spindle-lane",
+      "style": "fixture",
+      "title": "Neighbourhood · 31",
+      "requires": "field-tablet",
+      "automatic": true
     }
   ],
   "props": [],
@@ -340,8 +517,8 @@
       {
         "kind": "shelf",
         "at": [
-          11.6,
-          3.95
+          6,
+          3.7
         ],
         "size": [
           0.5,
@@ -560,17 +737,6 @@
       {
         "kind": "counter",
         "at": [
-          7.22,
-          25.0
-        ],
-        "size": [
-          4.55,
-          5.0
-        ]
-      },
-      {
-        "kind": "counter",
-        "at": [
           16.5,
           27.25
         ],
@@ -754,6 +920,116 @@
           0.36,
           0.36
         ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          9.55,
+          17.2
+        ],
+        "size": [
+          0.34,
+          0.34
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          10.1,
+          22.5
+        ],
+        "size": [
+          0.34,
+          0.34
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          5.25,
+          25
+        ],
+        "size": [
+          0.5,
+          4.4
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          7.25,
+          26.9
+        ],
+        "size": [
+          4.0,
+          0.3
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          7.25,
+          22.7
+        ],
+        "size": [
+          4.0,
+          0.3
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          9.45,
+          23.5
+        ],
+        "size": [
+          0.15,
+          1.9
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          9.45,
+          26.3
+        ],
+        "size": [
+          0.15,
+          1.5
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          8,
+          7
+        ],
+        "size": [
+          0.26,
+          0.4
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          10,
+          7
+        ],
+        "size": [
+          0.26,
+          0.4
+        ]
+      },
+      {
+        "kind": "shelf",
+        "at": [
+          22.3,
+          3.6
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
       }
     ],
     "assets": [
@@ -805,8 +1081,8 @@
         "id": "platform-lantern",
         "asset": "lane-lamp",
         "at": [
-          11.6,
-          3.95
+          6,
+          3.7
         ],
         "turn": 0,
         "height": 0.0,
@@ -1066,240 +1342,6 @@
         "scale": 1.0
       },
       {
-        "id": "town-house-1",
-        "asset": "seaside-saltwind-house",
-        "at": [
-          -14.0,
-          -15.0
-        ],
-        "turn": 180,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 101,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-2",
-        "asset": "seaside-rosewash-house",
-        "at": [
-          -2.0,
-          -14.0
-        ],
-        "turn": 180,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 102,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-3",
-        "asset": "seaside-eaveside-terrace",
-        "at": [
-          9.5,
-          -15.0
-        ],
-        "turn": 180,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 103,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-4",
-        "asset": "seaside-shingle-court-cottage",
-        "at": [
-          22.0,
-          -13.5
-        ],
-        "turn": 180,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": 104
-      },
-      {
-        "id": "town-house-5",
-        "asset": "seaside-lantern-row-house",
-        "at": [
-          33.0,
-          -13.5
-        ],
-        "turn": 180,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 105,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-6",
-        "asset": "seaside-rosewash-house",
-        "at": [
-          43.0,
-          -14.0
-        ],
-        "turn": 180,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 106,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-7",
-        "asset": "seaside-rosewash-house",
-        "at": [
-          -8.0,
-          -33.0
-        ],
-        "turn": 0,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 107,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-8",
-        "asset": "seaside-saltwind-house",
-        "at": [
-          6.0,
-          -34.0
-        ],
-        "turn": 0,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 108,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-9",
-        "asset": "seaside-eaveside-terrace",
-        "at": [
-          22.0,
-          -34.0
-        ],
-        "turn": 0,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 109,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-10",
-        "asset": "seaside-lantern-row-house",
-        "at": [
-          37.0,
-          -33.0
-        ],
-        "turn": 0,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 110,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-11",
-        "asset": "seaside-rosewash-house",
-        "at": [
-          36.0,
-          -2.0
-        ],
-        "turn": 270,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 111,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-12",
-        "asset": "seaside-saltwind-house",
-        "at": [
-          36.5,
-          10.0
-        ],
-        "turn": 270,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 112,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-13",
-        "asset": "seaside-shingle-court-cottage",
-        "at": [
-          36.0,
-          22.0
-        ],
-        "turn": 270,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": 113
-      },
-      {
-        "id": "town-house-14",
-        "asset": "seaside-lantern-row-house",
-        "at": [
-          52.0,
-          0.0
-        ],
-        "turn": 90,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 114,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-15",
-        "asset": "seaside-eaveside-terrace",
-        "at": [
-          54.0,
-          13.0
-        ],
-        "turn": 90,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 115,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-16",
-        "asset": "seaside-rosewash-house",
-        "at": [
-          53.0,
-          25.0
-        ],
-        "turn": 90,
-        "height": -8.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 116,
-          "plain": true
-        }
-      },
-      {
         "id": "town-house-17",
         "asset": "seaside-rosewash-house",
         "at": [
@@ -1312,18 +1354,6 @@
         "look": 117
       },
       {
-        "id": "town-house-18",
-        "asset": "seaside-saltwind-house",
-        "at": [
-          -11.0,
-          20.0
-        ],
-        "turn": 90,
-        "height": 3.0,
-        "scale": 1.0,
-        "look": 118
-      },
-      {
         "id": "town-house-19",
         "asset": "seaside-lantern-row-house",
         "at": [
@@ -1334,21 +1364,6 @@
         "height": 3.0,
         "scale": 1.0,
         "look": 119
-      },
-      {
-        "id": "town-house-20",
-        "asset": "seaside-eaveside-terrace",
-        "at": [
-          -26.0,
-          12.0
-        ],
-        "turn": 90,
-        "height": 5.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 120,
-          "plain": true
-        }
       },
       {
         "id": "town-house-21",
@@ -1396,33 +1411,6 @@
         }
       },
       {
-        "id": "town-house-24",
-        "asset": "seaside-rosewash-house",
-        "at": [
-          4.0,
-          32.5
-        ],
-        "turn": 90,
-        "height": 1.0,
-        "scale": 1.0,
-        "look": 124
-      },
-      {
-        "id": "town-house-25",
-        "asset": "seaside-lantern-row-house",
-        "at": [
-          6.0,
-          44.0
-        ],
-        "turn": 90,
-        "height": -2.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 125,
-          "plain": true
-        }
-      },
-      {
         "id": "town-house-26",
         "asset": "seaside-shingle-court-cottage",
         "at": [
@@ -1433,51 +1421,6 @@
         "height": -3.0,
         "scale": 1.0,
         "look": 126
-      },
-      {
-        "id": "town-house-27",
-        "asset": "seaside-saltwind-house",
-        "at": [
-          22.5,
-          45.0
-        ],
-        "turn": 270,
-        "height": -3.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 127,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-28",
-        "asset": "seaside-eaveside-terrace",
-        "at": [
-          36.0,
-          38.0
-        ],
-        "turn": 0,
-        "height": -3.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 128,
-          "plain": true
-        }
-      },
-      {
-        "id": "town-house-29",
-        "asset": "seaside-rosewash-house",
-        "at": [
-          -9.0,
-          41.0
-        ],
-        "turn": 90,
-        "height": 3.0,
-        "scale": 1.0,
-        "look": {
-          "seed": 129,
-          "plain": true
-        }
       },
       {
         "id": "town-house-30",
@@ -1541,50 +1484,6 @@
         "turn": 90,
         "height": 3.0,
         "scale": 0.9
-      },
-      {
-        "id": "town-tree-4",
-        "asset": "lane-tree",
-        "at": [
-          30.0,
-          -22.0
-        ],
-        "turn": 30,
-        "height": -8.0,
-        "scale": 1.0
-      },
-      {
-        "id": "town-tree-5",
-        "asset": "lane-tree",
-        "at": [
-          8.0,
-          -24.0
-        ],
-        "turn": 120,
-        "height": -8.0,
-        "scale": 1.1
-      },
-      {
-        "id": "town-tree-6",
-        "asset": "lane-cypress",
-        "at": [
-          31.0,
-          4.0
-        ],
-        "turn": 0,
-        "height": -8.0,
-        "scale": 1.1
-      },
-      {
-        "id": "town-tree-7",
-        "asset": "lane-tree",
-        "at": [
-          44.0,
-          18.0
-        ],
-        "turn": 200,
-        "height": -8.0,
-        "scale": 1.0
       },
       {
         "id": "town-tree-8",
@@ -2019,6 +1918,268 @@
           8
         ],
         "scale": 1
+      },
+      {
+        "id": "town-orchard-1",
+        "asset": "lane-tree",
+        "at": [
+          2,
+          31
+        ],
+        "turn": 37,
+        "height": 1,
+        "scale": 0.86
+      },
+      {
+        "id": "town-orchard-2",
+        "asset": "lane-tree",
+        "at": [
+          8.5,
+          33
+        ],
+        "turn": 74,
+        "height": 1,
+        "scale": 0.92
+      },
+      {
+        "id": "town-orchard-3",
+        "asset": "lane-tree",
+        "at": [
+          2,
+          40
+        ],
+        "turn": 111,
+        "height": -2,
+        "scale": 0.88
+      },
+      {
+        "id": "town-orchard-4",
+        "asset": "lane-tree",
+        "at": [
+          8,
+          47
+        ],
+        "turn": 148,
+        "height": -2,
+        "scale": 0.82
+      },
+      {
+        "id": "town-orchard-5",
+        "asset": "lane-tree",
+        "at": [
+          19,
+          44
+        ],
+        "turn": 185,
+        "height": -3,
+        "scale": 0.88
+      },
+      {
+        "id": "town-orchard-6",
+        "asset": "lane-tree",
+        "at": [
+          27,
+          46
+        ],
+        "turn": 222,
+        "height": -3,
+        "scale": 0.85
+      },
+      {
+        "id": "town-orchard-7",
+        "asset": "lane-tree",
+        "at": [
+          -10,
+          20
+        ],
+        "turn": 259,
+        "height": 3,
+        "scale": 0.9
+      },
+      {
+        "id": "town-orchard-8",
+        "asset": "lane-tree",
+        "at": [
+          -25,
+          12
+        ],
+        "turn": 296,
+        "height": 5,
+        "scale": 0.9
+      },
+      {
+        "id": "town-garden-bed-1",
+        "asset": "lane-planter",
+        "at": [
+          1.7,
+          35
+        ],
+        "turn": 90,
+        "height": 1,
+        "scale": 1.4
+      },
+      {
+        "id": "town-garden-bed-2",
+        "asset": "lane-planter",
+        "at": [
+          8.5,
+          30
+        ],
+        "turn": 90,
+        "height": 1,
+        "scale": 1.4
+      },
+      {
+        "id": "town-garden-bed-3",
+        "asset": "lane-planter",
+        "at": [
+          2,
+          45
+        ],
+        "turn": 90,
+        "height": -2,
+        "scale": 1.4
+      },
+      {
+        "id": "town-garden-bed-4",
+        "asset": "lane-planter",
+        "at": [
+          22,
+          45
+        ],
+        "turn": 90,
+        "height": -3,
+        "scale": 1.4
+      },
+      {
+        "id": "town-garden-bed-5",
+        "asset": "lane-planter",
+        "at": [
+          -10,
+          18
+        ],
+        "turn": 90,
+        "height": 3,
+        "scale": 1.4
+      },
+      {
+        "id": "town-garden-bed-6",
+        "asset": "lane-planter",
+        "at": [
+          36,
+          11
+        ],
+        "turn": 90,
+        "height": -8,
+        "scale": 1.4
+      },
+      {
+        "id": "town-garden-shed",
+        "asset": "lane-shed",
+        "at": [
+          1.8,
+          47.5
+        ],
+        "turn": 180,
+        "height": -2,
+        "scale": 0.72
+      },
+      {
+        "id": "town-garden-butt",
+        "asset": "hollow-rain-barrel",
+        "at": [
+          3.2,
+          47.5
+        ],
+        "turn": 0,
+        "height": -2,
+        "scale": 0.8
+      },
+      {
+        "id": "town-garden-seat",
+        "asset": "lane-bench",
+        "at": [
+          6.5,
+          35.5
+        ],
+        "turn": 0,
+        "height": 1,
+        "scale": 1
+      },
+      {
+        "id": "workshop-mailbox",
+        "asset": "lane-post-box",
+        "at": [
+          9.55,
+          17.2
+        ],
+        "turn": 90,
+        "height": 1,
+        "scale": 0.62
+      },
+      {
+        "id": "nell-mailbox",
+        "asset": "lane-post-box",
+        "at": [
+          10.1,
+          22.5
+        ],
+        "turn": 90,
+        "height": 1,
+        "scale": 0.62
+      },
+      {
+        "id": "tram-welcome-sign",
+        "asset": "tram-welcome-sign",
+        "at": [
+          9,
+          7
+        ],
+        "height": 1.0,
+        "turn": 0,
+        "scale": 1
+      },
+      {
+        "id": "platform-lantern-east",
+        "asset": "lane-lamp",
+        "at": [
+          22.3,
+          3.6
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1
+      },
+      {
+        "id": "shop-door-lamp-model",
+        "asset": "lane-lamp",
+        "at": [
+          11.15,
+          10.0
+        ],
+        "height": 1,
+        "scale": 0.8
+      },
+      {
+        "id": "shop-sign-lamp-model",
+        "asset": "lane-lamp",
+        "at": [
+          11.15,
+          16.0
+        ],
+        "height": 1,
+        "scale": 0.8
+      },
+      {
+        "id": "lane-service-screen",
+        "asset": "workshop-wall-screen",
+        "at": [
+          10.05,
+          21.1
+        ],
+        "turn": 90,
+        "height": 1.35,
+        "scale": 0.9
       }
     ],
     "lamp_fixtures": [
@@ -2027,6 +2188,84 @@
         "asset": "gate-lantern",
         "range": 5.0,
         "energy": 0.8
+      },
+      {
+        "id": "platform-west-lamp",
+        "asset": "platform-lantern",
+        "range": 4.0,
+        "energy": 0.65
+      },
+      {
+        "id": "platform-east-lamp",
+        "asset": "platform-lantern-east",
+        "range": 4.0,
+        "energy": 0.65
+      },
+      {
+        "id": "pavement-lamp",
+        "asset": "pavement-lamp",
+        "range": 5,
+        "energy": 0.8
+      },
+      {
+        "id": "shop-door-lamp",
+        "asset": "shop-door-lamp-model",
+        "range": 5,
+        "energy": 0.8
+      },
+      {
+        "id": "shop-sign-lamp",
+        "asset": "shop-sign-lamp-model",
+        "range": 5,
+        "energy": 0.8
+      },
+      {
+        "id": "town-house-17-lanterns",
+        "asset": "town-house-17",
+        "range": 3.5,
+        "energy": 0.3
+      },
+      {
+        "id": "town-house-19-lanterns",
+        "asset": "town-house-19",
+        "range": 3.5,
+        "energy": 0.3
+      },
+      {
+        "id": "town-house-21-lanterns",
+        "asset": "town-house-21",
+        "range": 3.5,
+        "energy": 0.3
+      },
+      {
+        "id": "town-house-22-lanterns",
+        "asset": "town-house-22",
+        "range": 3.5,
+        "energy": 0.3
+      },
+      {
+        "id": "town-house-23-lanterns",
+        "asset": "town-house-23",
+        "range": 3.5,
+        "energy": 0.3
+      },
+      {
+        "id": "town-house-26-lanterns",
+        "asset": "town-house-26",
+        "range": 3.5,
+        "energy": 0.3
+      },
+      {
+        "id": "town-house-30-lanterns",
+        "asset": "town-house-30",
+        "range": 3.5,
+        "energy": 0.3
+      },
+      {
+        "id": "town-house-31-lanterns",
+        "asset": "town-house-31",
+        "range": 3.5,
+        "energy": 0.3
       }
     ],
     "links": [
@@ -2065,8 +2304,8 @@
         "direction": "N",
         "to": "haverlund-square",
         "arrival": [
-          1,
-          8
+          13,
+          12
         ],
         "facing": "E",
         "label": "Go down to Rootward Square",
@@ -2082,16 +2321,17 @@
         ],
         "arrivals": [
           [
-            1,
-            7
+            13,
+            11
           ],
           [
-            1,
-            9
+            13,
+            13
           ]
         ],
         "walk_through": true,
-        "enter": 2
+        "enter": 2,
+        "doors": "shell"
       }
     ],
     "inspections": [
@@ -2229,8 +2469,81 @@
         ],
         "title": "A grey cat",
         "text": "Asleep on the warm coping with one paw over her nose. An ear turns toward you. The rest of her doesn't."
+      },
+      {
+        "id": "sign-commission",
+        "title": "Iona's message card",
+        "at": [
+          10,
+          8
+        ],
+        "text": "Tram landing: two or three messages. Payment: 25 p. Iona will check the lettering from the steps."
+      },
+      {
+        "id": "nell-evening",
+        "title": "Nell’s evening ticket",
+        "at": [
+          11,
+          14
+        ],
+        "text": "CLOSING ROUND · Shop lamps. Both relays tested. Check the condition before replacing anything. — N."
       }
-    ]
+    ],
+    "welcome": {
+      "braum": {
+        "skin": "sparks_bram",
+        "spawn": [
+          7,
+          25
+        ],
+        "call": [
+          11,
+          18
+        ],
+        "landing": [
+          10,
+          6
+        ]
+      },
+      "iona": {
+        "skin": "iona",
+        "at": [
+          10,
+          8
+        ]
+      },
+      "gate": "BraumGardenGate",
+      "display": "tram-welcome",
+      "gate_at": [
+        9.5,
+        25
+      ]
+    },
+    "evening": {
+      "arrival": [
+        11,
+        26
+      ],
+      "stand": [
+        12,
+        17
+      ]
+    },
+    "city_network": true,
+    "depth_fog": {
+      "height": -7.0,
+      "size": 320,
+      "day": "ffffff",
+      "night": "1d2b3b",
+      "fade_top": -2.5,
+      "solid_by": 0.7,
+      "light_floor": -2.9,
+      "edge": {
+        "start": 1.0,
+        "end": 18.0,
+        "max": 0.92
+      }
+    }
   },
   "villagers": [
     {
@@ -2242,32 +2555,36 @@
       ],
       "route": [
         [
-          11,
-          13
+          16,
+          10
         ],
         [
           11,
-          19
+          17
         ],
         [
           11,
           23
-        ],
-        [
-          14,
-          23
-        ],
-        [
-          14,
-          18
-        ],
-        [
-          11,
-          15
         ]
       ],
-      "speed": 0.9,
-      "pause": 2
+      "speed": 1.85,
+      "errands": [
+        {
+          "target": "post-box",
+          "activity": "collect_mail",
+          "seconds": 4
+        },
+        {
+          "target": "workshop-mailbox",
+          "activity": "deliver_mail",
+          "seconds": 3
+        },
+        {
+          "target": "nell-mailbox",
+          "activity": "deliver_mail",
+          "seconds": 3.5
+        }
+      ]
     },
     {
       "id": "lane-wick",
@@ -2279,23 +2596,44 @@
       "route": [
         [
           15,
-          25
+          26
         ],
         [
-          15,
-          21
+          17,
+          19
         ],
         [
-          14,
-          21
+          5,
+          3
         ],
         [
-          14,
-          25
+          23,
+          3
         ]
       ],
-      "speed": 0.65,
-      "pause": 3
+      "speed": 1.65,
+      "errands": [
+        {
+          "target": "gate-lantern",
+          "activity": "check_lamp",
+          "seconds": 4
+        },
+        {
+          "target": "pavement-lamp",
+          "activity": "check_lamp",
+          "seconds": 3.5
+        },
+        {
+          "target": "platform-lantern",
+          "activity": "check_lamp",
+          "seconds": 4
+        },
+        {
+          "target": "platform-lantern-east",
+          "activity": "check_lamp",
+          "seconds": 4
+        }
+      ]
     },
     {
       "id": "lane-trowel",
@@ -2306,24 +2644,45 @@
       ],
       "route": [
         [
-          20,
-          10
-        ],
-        [
-          19,
+          22,
           12
         ],
         [
-          18,
-          10
+          20,
+          13
         ],
         [
-          20,
+          21,
+          19
+        ],
+        [
+          22,
           8
         ]
       ],
-      "speed": 0.55,
-      "pause": 4
+      "speed": 1.5,
+      "errands": [
+        {
+          "target": "pump",
+          "activity": "tend_garden",
+          "seconds": 4.5
+        },
+        {
+          "target": "green-tree",
+          "activity": "tend_garden",
+          "seconds": 5
+        },
+        {
+          "target": "green-tree-north",
+          "activity": "tend_garden",
+          "seconds": 4
+        },
+        {
+          "target": "shed",
+          "activity": "carry_supplies",
+          "seconds": 3
+        }
+      ]
     },
     {
       "id": "lane-child-a",
@@ -2335,24 +2694,35 @@
       "route": [
         [
           16,
-          8
-        ],
-        [
-          15,
-          9
-        ],
-        [
-          16,
-          11
+          7
         ],
         [
           17,
-          9
+          11
+        ],
+        [
+          19,
+          25
         ]
       ],
-      "speed": 1.85,
-      "pause": 0.6,
-      "wander": true
+      "speed": 2.45,
+      "errands": [
+        {
+          "target": "lane-notices",
+          "activity": "read_notice",
+          "seconds": 3
+        },
+        {
+          "target": "green-bench",
+          "activity": "play",
+          "seconds": 4
+        },
+        {
+          "target": "view-bench",
+          "activity": "rest",
+          "seconds": 5
+        }
+      ]
     },
     {
       "id": "lane-child-b",
@@ -2363,25 +2733,36 @@
       ],
       "route": [
         [
-          20,
-          10
-        ],
-        [
-          19,
-          11
-        ],
-        [
-          20,
+          21,
           12
         ],
         [
-          21,
-          10
+          18,
+          12
+        ],
+        [
+          17,
+          8
         ]
       ],
-      "speed": 1.65,
-      "pause": 1.0,
-      "wander": true
+      "speed": 2.2,
+      "errands": [
+        {
+          "target": "pump",
+          "activity": "play",
+          "seconds": 3
+        },
+        {
+          "target": "green-bench",
+          "activity": "play",
+          "seconds": 5
+        },
+        {
+          "target": "lane-notices",
+          "activity": "read_notice",
+          "seconds": 4
+        }
+      ]
     },
     {
       "id": "tram-passenger-a",
@@ -2416,7 +2797,7 @@
           26
         ]
       ],
-      "speed": 1.55,
+      "speed": 1.91,
       "pause": 0.5,
       "wander": false,
       "arrival": {
@@ -2459,7 +2840,7 @@
           26
         ]
       ],
-      "speed": 1.35,
+      "speed": 1.66,
       "pause": 0.7,
       "wander": false,
       "arrival": {
@@ -2502,7 +2883,7 @@
           26
         ]
       ],
-      "speed": 1.75,
+      "speed": 2.15,
       "pause": 0.5,
       "wander": false,
       "arrival": {
@@ -2511,6 +2892,36 @@
         "offset": 0,
         "exit": "town-steps"
       }
+    }
+  ],
+  "displays": [
+    {
+      "id": "tram-welcome",
+      "title": "Tram welcome sign",
+      "object": "tram-welcome-sign",
+      "zone": "tram-halt",
+      "at": [
+        9,
+        6
+      ],
+      "commission": "sign-commission",
+      "default": [
+        "Welcome to Spindle Lane"
+      ]
+    }
+  ],
+  "terminals": [
+    {
+      "id": "lane-service-terminal",
+      "title": "Street service screen",
+      "object": "lane-service-screen",
+      "zone": "spindle-lane",
+      "at": [
+        11,
+        21
+      ],
+      "requires": "field-tablet",
+      "prompt": "Connect to the street service screen"
     }
   ]
 }

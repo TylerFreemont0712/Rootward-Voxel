@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "town-shop-shell",
+  "version": "v1",
+  "source": "art/source/world/town-shop-shell/v1/model.blend",
+  "source_sha256": "df5b74c3b4f1598024a3f7d365703eaf98a0ef0186bc49f24e311b0dcf098ee4",
+  "runtime": "assets/world/town-shop-shell/model.glb",
+  "runtime_sha256": "4d35e1ce17caaa1257ae7e86708055c5ac1d4a5a49621ad8ef8fc7c6087ea712",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.730000019073486,
+      -0.259999990463257,
+      -11.7299995422363,
+      11.5,
+      3.79999995231628,
+      0.5
+    ],
+    "geometry_sha256": "14ce2b6677f840c7540b74659e96fc3e49815c1b6b67df64cb1dcba38d2c90ed",
+    "material_records": {
+      "square_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+      },
+      "square_plaster": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "23d3a02cd880e8d5e554bdf397a7adcc8c19c2c04dd26469ef68620edd32c6ff"
+      },
+      "square_white": {
+        "albedo": [
+          9490,
+          9176,
+          8471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_window_shop": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "562da4319f4a639aa398d7bf75d75910ac2dff2624196407f75f455a8ce283b4"
+      },
+      "square_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "square_limestone",
+      "square_oak",
+      "square_plaster",
+      "square_white",
+      "square_window_shop",
+      "square_wood_dark"
+    ],
+    "meshes": 10,
+    "triangles": 2476
+  }
+}

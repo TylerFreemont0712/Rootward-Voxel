@@ -1,0 +1,862 @@
+{
+  "schema": 1,
+  "checkpoints": {
+    "hello-start": {
+      "title": "Chapter 00 · start",
+      "area": "workshop-loft",
+      "greeted": false,
+      "tablet": false,
+      "inspections": {},
+      "lamps": [],
+      "dismissed": []
+    },
+    "hello-end": {
+      "title": "Chapter 00 · end",
+      "area": "workshop-loft",
+      "greeted": true,
+      "tablet": false,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ]
+      },
+      "lamps": [],
+      "dismissed": [],
+      "at": [
+        3,
+        8
+      ]
+    },
+    "workshop-start": {
+      "title": "Chapter 01 · start",
+      "area": "workshop-floor",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ]
+      },
+      "lamps": [],
+      "dismissed": [],
+      "at": [
+        6,
+        8
+      ]
+    },
+    "workshop-end": {
+      "title": "Chapter 01 · end",
+      "area": "workshop-floor",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ]
+      },
+      "lamps": [
+        "landing-lamp"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit"
+      ],
+      "at": [
+        5,
+        11
+      ]
+    },
+    "round-start": {
+      "title": "Chapter 02 · start",
+      "area": "workshop-floor",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ]
+      },
+      "lamps": [
+        "landing-lamp"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit"
+      ],
+      "at": [
+        1,
+        2
+      ]
+    },
+    "round-end": {
+      "title": "Chapter 02 · end",
+      "area": "workshop-floor",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready"
+      ],
+      "at": [
+        1,
+        2
+      ]
+    },
+    "lane": {
+      "title": "Lane · explore",
+      "area": "haverlund-lane",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "lane-arrival",
+        "square-arrival"
+      ],
+      "at": [
+        11,
+        12
+      ]
+    },
+    "square": {
+      "title": "Square · explore",
+      "area": "haverlund-square",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "lane-arrival",
+        "square-arrival"
+      ],
+      "at": [
+        19,
+        8
+      ]
+    },
+    "welcome-start": {
+      "title": "Chapter 03 · start",
+      "area": "haverlund-lane",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "lane-arrival",
+        "square-arrival"
+      ],
+      "at": [
+        11,
+        12
+      ],
+      "read_scenes": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "lane-arrival",
+        "square-arrival"
+      ]
+    },
+    "welcome-end": {
+      "title": "Chapter 03 · end",
+      "area": "haverlund-lane",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ],
+        "haverlund-lane": [
+          "sign-commission"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival"
+      ],
+      "at": [
+        9,
+        6
+      ],
+      "read_scenes": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival"
+      ],
+      "display_cards": {
+        "tram-welcome": [
+          "Welcome to Spindle Lane",
+          "No. 7 stops here",
+          "Tea first. Tram second."
+        ]
+      }
+    },
+    "evening-start": {
+      "title": "Chapter 04 · start",
+      "area": "haverlund-lane",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ],
+        "haverlund-lane": [
+          "sign-commission",
+          "nell-evening"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival"
+      ],
+      "at": [
+        11,
+        13
+      ],
+      "read_scenes": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival",
+        "nell-evening"
+      ],
+      "display_cards": {
+        "tram-welcome": [
+          "Welcome to Spindle Lane",
+          "No. 7 stops here",
+          "Tea first. Tram second."
+        ]
+      },
+      "city_cycle": {
+        "minute": 1155,
+        "day": 1,
+        "pressure": 5.6,
+        "tripped": false,
+        "evening_started": true
+      }
+    },
+    "evening-end": {
+      "title": "Chapter 04 · end",
+      "area": "haverlund-lane",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ],
+        "haverlund-lane": [
+          "sign-commission",
+          "nell-evening"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival"
+      ],
+      "at": [
+        11,
+        13
+      ],
+      "read_scenes": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival",
+        "nell-evening"
+      ],
+      "display_cards": {
+        "tram-welcome": [
+          "Welcome to Spindle Lane",
+          "No. 7 stops here",
+          "Tea first. Tram second."
+        ]
+      },
+      "city_cycle": {
+        "minute": 1155,
+        "day": 1,
+        "pressure": 5.6,
+        "tripped": false,
+        "evening_started": true
+      },
+      "lamp_programs": {
+        "shop-door-lamp": {
+          "day": false,
+          "night": true
+        },
+        "shop-sign-lamp": {
+          "day": false,
+          "night": true
+        }
+      }
+    },
+    "city-hall": {
+      "title": "City Hall · public lobby",
+      "area": "city-hall",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ],
+        "haverlund-lane": [
+          "sign-commission"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival"
+      ],
+      "at": [
+        14,
+        5
+      ],
+      "read_scenes": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival"
+      ],
+      "display_cards": {}
+    },
+    "works-start": {
+      "title": "Chapter 05 · start",
+      "area": "haverlund-square",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ],
+        "haverlund-lane": [
+          "sign-commission",
+          "nell-evening"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival"
+      ],
+      "at": [
+        51,
+        17
+      ],
+      "read_scenes": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival",
+        "nell-evening",
+        "evening-finished"
+      ],
+      "city_cycle": {
+        "minute": 1155,
+        "day": 1,
+        "pressure": 5.6,
+        "tripped": false,
+        "evening_started": true
+      },
+      "lamp_programs": {
+        "shop-door-lamp": {
+          "day": false,
+          "night": true
+        },
+        "shop-sign-lamp": {
+          "day": false,
+          "night": true
+        }
+      },
+      "completed": {
+        "haverlund-lane": [
+          "proper-welcome",
+          "after-the-light"
+        ],
+        "workshop-floor": [
+          "waiting-ticket",
+          "landing-light",
+          "morning-round"
+        ]
+      }
+    },
+    "works-end": {
+      "title": "Chapter 05 · end",
+      "area": "haverlund-square",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ],
+        "haverlund-lane": [
+          "sign-commission",
+          "nell-evening"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival"
+      ],
+      "at": [
+        51,
+        17
+      ],
+      "read_scenes": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival",
+        "nell-evening",
+        "evening-finished",
+        "works-start",
+        "works-band",
+        "works-end"
+      ],
+      "city_cycle": {
+        "minute": 1155,
+        "day": 1,
+        "pressure": 5.6,
+        "tripped": false,
+        "evening_started": true
+      },
+      "lamp_programs": {
+        "shop-door-lamp": {
+          "day": false,
+          "night": true
+        },
+        "shop-sign-lamp": {
+          "day": false,
+          "night": true
+        }
+      },
+      "completed": {
+        "haverlund-lane": [
+          "proper-welcome",
+          "after-the-light"
+        ],
+        "workshop-floor": [
+          "waiting-ticket",
+          "landing-light",
+          "morning-round"
+        ],
+        "haverlund-square": [
+          "band-seats",
+          "room-on-the-walk",
+          "two-parks",
+          "market-day",
+          "own-corner"
+        ]
+      }
+    },
+    "market-start": {
+      "title": "Chapter 06 · start",
+      "area": "shop-bakery",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ],
+        "haverlund-lane": [
+          "sign-commission",
+          "nell-evening"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival",
+        "works-start",
+        "works-band",
+        "works-end"
+      ],
+      "at": [
+        6,
+        3
+      ],
+      "read_scenes": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival",
+        "nell-evening",
+        "works-start",
+        "works-band",
+        "works-end"
+      ],
+      "city_cycle": {
+        "minute": 1155,
+        "day": 1,
+        "pressure": 5.6,
+        "tripped": false,
+        "evening_started": true
+      },
+      "lamp_programs": {
+        "shop-door-lamp": {
+          "day": false,
+          "night": true
+        },
+        "shop-sign-lamp": {
+          "day": false,
+          "night": true
+        }
+      },
+      "completed": {
+        "haverlund-lane": [
+          "proper-welcome",
+          "after-the-light"
+        ],
+        "workshop-floor": [
+          "waiting-ticket",
+          "landing-light",
+          "morning-round"
+        ],
+        "haverlund-square": [
+          "band-seats",
+          "room-on-the-walk",
+          "two-parks",
+          "market-day",
+          "own-corner"
+        ]
+      }
+    },
+    "market-end": {
+      "title": "Chapter 06 · end",
+      "area": "shop-bakery",
+      "greeted": true,
+      "tablet": true,
+      "inspections": {
+        "workshop-loft": [
+          "nell-note",
+          "desk-terminal"
+        ],
+        "workshop-floor": [
+          "job-board"
+        ],
+        "haverlund-lane": [
+          "sign-commission",
+          "nell-evening"
+        ]
+      },
+      "lamps": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ],
+      "dismissed": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival",
+        "works-start",
+        "works-band",
+        "works-end"
+      ],
+      "at": [
+        6,
+        3
+      ],
+      "read_scenes": [
+        "workshop-arrival",
+        "waiting-ticket",
+        "landing-lit",
+        "round-ready",
+        "braum-welcome",
+        "iona-commission",
+        "welcome-finished",
+        "lane-arrival",
+        "square-arrival",
+        "nell-evening",
+        "works-start",
+        "works-band",
+        "works-end"
+      ],
+      "city_cycle": {
+        "minute": 1155,
+        "day": 1,
+        "pressure": 5.6,
+        "tripped": false,
+        "evening_started": true
+      },
+      "lamp_programs": {
+        "shop-door-lamp": {
+          "day": false,
+          "night": true
+        },
+        "shop-sign-lamp": {
+          "day": false,
+          "night": true
+        }
+      },
+      "completed": {
+        "haverlund-lane": [
+          "proper-welcome",
+          "after-the-light"
+        ],
+        "workshop-floor": [
+          "waiting-ticket",
+          "landing-light",
+          "morning-round"
+        ],
+        "haverlund-square": [
+          "band-seats",
+          "room-on-the-walk",
+          "two-parks",
+          "market-day",
+          "own-corner"
+        ],
+        "shop-bakery": [
+          "next-batch"
+        ],
+        "shop-greengrocer": [
+          "todays-prices"
+        ],
+        "shop-bookshop": [
+          "ready-for-collection"
+        ]
+      }
+    }
+  },
+  "solutions": {
+    "say-hello": "def program(world):\n    print(\"Hello, Hotaru!\")\n",
+    "landing-light": "def program(world):\n    lamp = world.lamp(\"landing-lamp\")\n    lamp.set_lit(True)\n",
+    "morning-round": "def program(world):\n    for lamp in world.zone(\"workshop\").lamps:\n        lamp.set_lit(True)\n",
+    "proper-welcome": "def program(world):\n    for message in [\"Welcome to Spindle Lane\", \"No. 7 stops here\", \"Tea first. Tram second.\"]:\n        print(message)\n",
+    "after-the-light": "def program(world):\n    for name in [\"shop-door-lamp\", \"shop-sign-lamp\"]:\n        lamp = world.lamp(name)\n        if world.time.is_dark:\n            lamp.set_lit(True)\n        else:\n            lamp.set_lit(False)\n",
+    "band-seats": "def program(world):\n    for thing in world.doodads:\n        if thing.kind == \"lane-bench\":\n            if thing.at[0] > 85:\n                thing.face(\"west\")\n            elif thing.at[1] < 2:\n                thing.face(\"north\")\n",
+    "room-on-the-walk": "def program(world):\n    for i in range(4):\n        world.doodad(\"walk-bench-\" + str(i)).move_to(25.9, 21 + 6 * i)\n",
+    "two-parks": "def dress(tree, left, right):\n    x = tree.at[0]\n    left.move_to(x - 1.5, 50)\n    right.move_to(x + 1.5, 50)\n\ndef program(world):\n    dress(world.doodad(\"park-1-tree\"), world.doodad(\"delivery-planter-1\"), world.doodad(\"delivery-planter-2\"))\n    dress(world.doodad(\"park-2-tree\"), world.doodad(\"delivery-planter-3\"), world.doodad(\"delivery-planter-4\"))\n",
+    "market-day": "def program(world):\n    stalls = []\n    for thing in world.doodads:\n        if \"stall\" in thing.kind and thing.at[0] < 43:\n            stalls.append(thing)\n    for i in range(len(stalls)):\n        stalls[i].move_to(41.9, 33.5 + 4.25 * i)\n",
+    "own-corner": "def program(world):\n    pieces = [world.doodad(\"spindle-park-bench\"), world.doodad(\"spindle-park-seat\"), world.doodad(\"spindle-park-shrub\")]\n    for i in range(len(pieces)):\n        pieces[i].move_to(6 + 4 * i, 4)\n",
+    "next-batch": "def program(world):\n    hour = 7\n    while hour <= 11:\n        print(\"BATCH AT \" + str(hour))\n        hour = hour + 2\n",
+    "todays-prices": "def program(world):\n    prices = {\"APPLES\": 4, \"LEMONS\": 3, \"PLUMS\": 6}\n    prices[\"PLUMS\"] = 5\n    for name in prices:\n        print(name + \" \" + str(prices[name]) + \"P\")\n",
+    "ready-for-collection": "def ticket(name):\n    return name.upper() + \" READY\"\n\ndef program(world):\n    for name in [\"braum\", \"iona\", \"mira\"]:\n        print(ticket(name))\n"
+  }
+}

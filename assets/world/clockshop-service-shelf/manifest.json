@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "clockshop-service-shelf",
+  "version": 1,
+  "source": "art/source/world/clockshop-service-shelf/v1/model.blend",
+  "source_sha256": "0a196759bc4e59f8e1a6a67594af7a18525078c5ddb53acdf3a3764e43868a56",
+  "runtime": "assets/world/clockshop-service-shelf/model.glb",
+  "runtime_sha256": "58b8ec7253cefa410d183dd45db5fd98e0713fda56205600ef5cb081e1e9ff25",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.25999999046326,
+      0.0,
+      -0.310000002384186,
+      1.25999999046326,
+      1.49000000953674,
+      0.32600000500679
+    ],
+    "geometry_sha256": "7588cb04f4bc7dd75b96b12f215d261ac716289ddbe54c67b6ba4c28fea028a1",
+    "material_records": {
+      "clockshop_brass": {
+        "albedo": [
+          7098,
+          5412,
+          2588,
+          10000
+        ],
+        "roughness": 4300,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_ivory": {
+        "albedo": [
+          8863,
+          8392,
+          7137,
+          10000
+        ],
+        "roughness": 7800,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_steel": {
+        "albedo": [
+          3490,
+          4078,
+          4196,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_teal": {
+        "albedo": [
+          1608,
+          3020,
+          2980,
+          10000
+        ],
+        "roughness": 7400,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_walnut": {
+        "albedo": [
+          6872,
+          6012,
+          5064,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "clockshop_brass",
+      "clockshop_ivory",
+      "clockshop_steel",
+      "clockshop_teal",
+      "clockshop_walnut"
+    ],
+    "meshes": 5,
+    "triangles": 2854
+  }
+}

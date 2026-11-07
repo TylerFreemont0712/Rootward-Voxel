@@ -38,6 +38,18 @@
         1.0
       ]
     },
+    "iona": {
+      "atlas": "res://assets/characters/skins/iona.png",
+      "label": "Iona Venn",
+      "selectable": false,
+      "source_sha256": "54d98ae0292535ed34333f6ed8ad9b22c9e3688e434e57d3e232784ef53fe899",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
     "mira": {
       "atlas": "res://assets/characters/skins/mira.png",
       "label": "Mira",

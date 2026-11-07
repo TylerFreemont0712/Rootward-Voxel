@@ -42,6 +42,8 @@ func _run() -> void:
 		var twin: Dictionary = life.duplicate(true)
 		var safe: bool = true
 		var moving: Dictionary = {}
+		var working: Dictionary = {}
+		var tasks_valid: bool = true
 		for tick: int in range(1800):
 			VillageLife.advance(area, rules, world, life, .05)
 			VillageLife.advance(area, rules, world, twin, .05)
@@ -52,8 +54,20 @@ func _run() -> void:
 					safe = safe and not occupied.has(cell) and rules.is_walkable(world, cell)
 					occupied[cell] = true
 				if person.active and person.phase < 1.0: moving[person_id] = true
+				if person.activity != "":
+					var definition: Dictionary = area.villagers.filter(func(entry: Dictionary) -> bool: return entry.id == person_id)[0]
+					var stop: int = (int(person.goal) - 1) % definition.route.size()
+					tasks_valid = tasks_valid and person.at == definition.route[stop] and person.phase == 1.0 and person.target == definition.errands[stop].target
+					if not working.has(person_id): working[person_id] = {}
+					working[person_id][person.target] = true
 		_check(safe and life == twin, id + " has deterministic collision-free motion for 90 seconds")
 		for person: Dictionary in area.villagers: _check(moving.has(person.id), person.id + " actually moves")
+		_check(tasks_valid, id + " performs work only at the authored destination, with stationary feet")
+		for person: Dictionary in area.villagers:
+			if person.has("errands"):
+				_check(working.get(person.id, {}).size() >= 2, person.id + " reaches at least two real errand destinations in 90 seconds")
+			if person.has("object") and id in ["haverlund-lane", "haverlund-square"]:
+				_check(person.has("errands") and float(person.speed) >= 1.5, person.id + " has a purposeful, brisk work round")
 		var initial: Dictionary = VillageLife.initial(area)
 		if not area.villagers.is_empty():
 			world.player = [area.villagers[0].at.x, area.villagers[0].at.y, 0]
@@ -114,12 +128,11 @@ func _service() -> void:
 
 func _art() -> void:
 	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/characters/phantoms/manifest.json"))
-	_check(manifest.profiles.size() == 3 and manifest.opacity >= .94 and manifest.opacity <= 1.0, "Three gray painted appearances are almost opaque, without a ghost effect")
+	_check(manifest.profiles.size() == 13 and manifest.opacity >= .94 and manifest.opacity <= 1.0 and manifest.gray <= .22, "Thirteen dark painted profiles are almost opaque, without a ghost effect")
 	var hashes: Array[String] = []
 	for id: String in manifest.profiles:
 		var profile: Dictionary = manifest.profiles[id]
-		_check(not hashes.has(profile.atlas_sha256), id + " has a distinct silhouette")
-		hashes.append(profile.atlas_sha256)
+		if not hashes.has(profile.atlas_sha256): hashes.append(profile.atlas_sha256)
 		var frames := load(profile.frames) as SpriteFrames
 		_check(frames != null and frames.get_animation_names().size() == 8, id + " has four walking and four idle animations")
 		for direction: String in ["se","sw","ne","nw"]:
@@ -138,12 +151,23 @@ func _art() -> void:
 		_check(exact and flat, id + " preserves every source alpha pixel and only flattens the colors")
 		var template: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/characters/adventurer/manifest.json"))
 		_check(profile.animations == template.animations and profile.fps == template.fps and profile.pixel_size == template.pixel_size, "Exact common timing, regions and anchors are retained")
+	_check(hashes.size() == 11, "Both casts and the boy supply eleven different original silhouettes; child profiles reuse two at smaller scale")
+	var presenter := VillagerView.new()
+	presenter._appearance_rng.seed = 1432
+	for group: String in manifest.groups:
+		var seen: Dictionary = {}
+		for index: int in range(manifest.groups[group].size()): seen[presenter._choose_appearance(group)] = true
+		_check(seen.size() == manifest.groups[group].size(), group + " uses every compatible silhouette before repeating")
+	presenter.free()
 
 func _invalid() -> void:
 	var source: Dictionary = AreaStore.read_source("haverlund-lane")
 	for fields: Dictionary in [{"phantom":"unknown"},{"phantom":"man","skin":"sparks_bram"},{"phantom":"child","arrival":{"delay":2,"exit":"town-steps"}},
 		{"phantom":"man","arrival":{"delay":99,"exit":"town-steps"}},{"phantom":"woman","arrival":{"delay":2,"exit":"missing"}},
-		{"skin":"sparks_bram","speed":2},{"phantom":"man","wander":"yes"}]:
+		{"skin":"sparks_bram","speed":2},{"phantom":"man","wander":"yes"},
+		{"phantom":"man","errands":[]}, {"phantom":"man","errands":[{"target":"missing","activity":"visit","seconds":3}]},
+		{"phantom":"man","errands":[{"target":"post-box","activity":"invented","seconds":3}]},
+		{"phantom":"man","errands":[{"target":"post-box","activity":"collect_mail","seconds":-2}]}]:
 		var bad: Dictionary = source.document.duplicate(true)
 		var person: Dictionary = {"id":"bad", "at":[20,2], "route":[[13,26]]}
 		person.merge(fields,true)

@@ -15,7 +15,7 @@ World art has a separate, working Blender handoff. Cottage/workshop, mill shell 
 - The original v2 PNG is unchanged: SHA-256 `d947716e3bbb55683455f47c61057265c437107164b8748636fb90c426ca6918`.
 - All four painted keys in each of the four views are preserved byte-for-byte after integer translation/padding. Twelve generated in-betweens per direction provide sixteen samples at 32 FPS, retaining the half-second cycle. Provenance pins source/output/script/backend/model hashes.
 - Actual held-key camera projection was reviewed for SE/NE/NW/SW; each key follows its intended logical axis. Starts/turns preserve the intended phase, and stopping settles to an existing passing drawing rather than snapping to a different pose.
-- [Selected painted views](../../evidence/painted-directions.png), [painted motion recording](../../evidence/painted-walk.gif), [gameplay](../../evidence/voxel-clearing.png), [live movement](../../evidence/sprite-movement.png).
+- [Selected painted views](../../evidence/painted-directions.png), [painted motion recording](../../evidence/painted-walk.gif), gameplay, live movement.
 
 The source keys repeat the same leading foot in several directions. Interpolation cannot repair this. Some generated transitions can soften painted edges. Idle is a fixed held drawing; there is no new breathing/blinking cycle. Correct alternating contact/passing keys and a deliberate idle remain required before calling this a complete production animation pipeline. The next art pass must preserve this exact design while correcting those poses.
 

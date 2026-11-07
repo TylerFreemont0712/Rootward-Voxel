@@ -1,23 +1,23 @@
 {
   "schema": 1,
   "asset": "haverlund-bookshop",
-  "version": "v1",
-  "source": "art/source/world/haverlund-bookshop/v1/model.blend",
-  "source_sha256": "ff2db86eea588c0bfbd1e272300a2546fc00bf0018c07d743e236ca0c842113a",
+  "version": "v2",
+  "source": "art/source/world/haverlund-bookshop/v2/model.blend",
+  "source_sha256": "7f0049bdf55eb36a76317926db3434626501647ab1385c917e7813e285a5856e",
   "runtime": "assets/world/haverlund-bookshop/model.glb",
-  "runtime_sha256": "e34b33a0e39a7407ae99b8995f23fcbc723a48e96c1143a8ae1319e4130a87b5",
+  "runtime_sha256": "2ca90531a750d9c0dc1e4abe34949bcdc7cd454e39dbed64743e70e7035978eb",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
     "bounds": [
       -2.93844318389893,
-      -0.0028284159488976,
+      0.0,
       -3.35190010070801,
       2.93844318389893,
       13.6159534454346,
-      4.19551944732666
+      3.60999989509583
     ],
-    "geometry_sha256": "9e64c2da8bda03c64739c39be03f1b686b24904f7567164774ebb0d2a4ce27fc",
+    "geometry_sha256": "c12ac40d477833c90d850a2279c39ecee554cfdbdde363ba37526a2057718ef1",
     "material_records": {
       "house_brick": {
         "albedo": [
@@ -48,6 +48,16 @@
         ],
         "roughness": 3500,
         "texture_rgba_sha256": "0521fe9168475a9da488e23ca89b12bdfdc600fcde1d4eb37051e2cec2478c37"
+      },
+      "lamp_glass": {
+        "albedo": [
+          10000,
+          8824,
+          6275,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
       },
       "seaside_plaster": {
         "albedo": [
@@ -109,30 +119,75 @@
         "roughness": 9400,
         "texture_rgba_sha256": "4ea052a28fbfc329afb70b626b4eae760d9d02be8e556080ec0e87f88b7bf81b"
       },
-      "shop_glass": {
+      "shop_brass": {
         "albedo": [
-          10000,
-          10000,
-          10000,
+          7451,
+          6078,
+          3373,
           10000
         ],
-        "roughness": 3500,
-        "texture_rgba_sha256": "562da4319f4a639aa398d7bf75d75910ac2dff2624196407f75f455a8ce283b4"
+        "roughness": 4500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_cream": {
+        "albedo": [
+          9333,
+          8902,
+          7686,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_glazing": {
+        "albedo": [
+          5569,
+          6980,
+          7137,
+          10000
+        ],
+        "roughness": 2200,
+        "texture_rgba_sha256": ""
+      },
+      "shop_joinery": {
+        "albedo": [
+          3961,
+          4941,
+          6196,
+          10000
+        ],
+        "roughness": 7800,
+        "texture_rgba_sha256": ""
+      },
+      "shop_recess": {
+        "albedo": [
+          1490,
+          2314,
+          2353,
+          10000
+        ],
+        "roughness": 9300,
+        "texture_rgba_sha256": ""
       }
     },
     "materials": [
       "house_brick",
       "house_paint",
       "house_window_pane",
+      "lamp_glass",
       "seaside_plaster",
       "seaside_ridge",
       "seaside_roof",
       "seaside_shutter",
       "seaside_stone",
       "seaside_timber",
-      "shop_glass"
+      "shop_brass",
+      "shop_cream",
+      "shop_glazing",
+      "shop_joinery",
+      "shop_recess"
     ],
-    "meshes": 13,
-    "triangles": 52325
+    "meshes": 23,
+    "triangles": 42142
   }
 }

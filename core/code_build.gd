@@ -6,6 +6,7 @@ extends RefCounted
 ##
 ## A command is a plain dictionary with a strict set of keys:
 ##   {op: "rotate", entity_id: "home", facing: "N"}      turn a house or doodad on the spot
+##   {op: "relocate", entity_id: "bench-2", at: [x, y]}  move a doodad or a piece of the town's scenery
 ## and is refused unless
 ##   - the player's code has earned the ability (a completed quest `unlocks` it),
 ##   - the thing is within reach (inside a place the player has visited, or within REACH cells of the player),
@@ -18,7 +19,7 @@ extends RefCounted
 ## How far from the player (in cells) code can reach beyond the places already visited.
 const REACH: float = 12.0
 const MAX_BUILD_COMMANDS: int = 16
-const BUILD_OPS: Array[String] = ["rotate"]
+const BUILD_OPS: Array[String] = ["rotate", "relocate"]
 const FACING_LETTERS: Array[String] = ["S", "E", "N", "W"]
 const FACING_WORDS: Dictionary = {"S": "south", "E": "east", "N": "north", "W": "west"}
 
@@ -53,7 +54,7 @@ static func lessons(area: AreaDef, abilities: Array) -> Dictionary:
 static func snapshot(ledger: BuildLedger, state: Dictionary, abilities: Array[String]) -> Dictionary:
 	var area: AreaDef = ledger.area
 	var result: Dictionary = {"abilities": abilities, "lessons": lessons(area, abilities), "houses": [], "trees": [], "doodads": []}
-	if not abilities.has("read") or not area.interior.is_empty():
+	if not abilities.has("read") or not editable_outdoors(area):
 		return result
 	for house: Dictionary in area.buildings:
 		if in_reach(area, state, house.at):
@@ -63,11 +64,26 @@ static func snapshot(ledger: BuildLedger, state: Dictionary, abilities: Array[St
 			var entry: Dictionary = _thing(ledger, prop)
 			entry["solid"] = bool(prop.solid)
 			(result.doodads as Array).append(entry)
+	for item: Dictionary in area.scenery:
+		if in_reach(area, state, item.at):
+			var entry: Dictionary = _thing(ledger, {"id": item.id, "asset": item.asset, "at": item.at, "facing": _facing_for(float(item.turn))})
+			entry["solid"] = bool(item.solid)
+			entry["lamps"] = (item.lamps as Array).duplicate()
+			(result.doodads as Array).append(entry)
 	for tree: Dictionary in area.trees:
 		if in_reach(area, state, tree.at):
 			(result.trees as Array).append({"at": [tree.at.x, tree.at.y], "cell": [roundi(tree.at.x), roundi(tree.at.y), 0], "size": float(tree.size),
 				"kind": _tree_kind(ledger, tree), "zone": area.zone_at(Vector2i(roundi(tree.at.x), roundi(tree.at.y)))})
 	return result
+
+
+## Generated villages, and authored outdoor districts that open a layout to the builder (Rootward Square).
+static func editable_outdoors(area: AreaDef) -> bool:
+	return area.interior.is_empty() or not (area.interior.get("layout", {}) as Dictionary).is_empty()
+
+
+static func _facing_for(turn: float) -> String:
+	return FACING_LETTERS[posmod(roundi(turn / 90.0), 4)]
 
 
 static func _thing(ledger: BuildLedger, thing: Dictionary) -> Dictionary:
@@ -108,7 +124,7 @@ static func propose(ledger: BuildLedger, state: Dictionary, commands: Array, abi
 		return {"ok": true, "reason": "", "edits": [], "area": ledger.area, "rules": ledger.rules, "changes": []}
 	if count > MAX_BUILD_COMMANDS:
 		return _reject("Use at most %d building commands in one run (you used %d)." % [MAX_BUILD_COMMANDS, count])
-	if not ledger.area.interior.is_empty():
+	if not editable_outdoors(ledger.area):
 		return _reject("Go outside first: your code changes the village from the outside, and each home keeps its own interior.")
 	var added: Array[Dictionary] = []
 	var changes: Array[String] = []
@@ -146,7 +162,48 @@ static func _step(ledger: BuildLedger, state: Dictionary, abilities: Array[Strin
 	match str(command.op):
 		"rotate":
 			return _rotate(ledger, state, abilities, area, rules, command)
+		"relocate":
+			return _relocate(ledger, state, abilities, area, rules, command)
 	return _refuse("Unknown building command.")
+
+
+## Moves a doodad or a piece of the town's scenery (a bench, a stall, a lamp standard) to a quarter-cell spot,
+## under exactly the rules the builder's mouse follows. A lamp keeps its name and program.
+static func _relocate(ledger: BuildLedger, state: Dictionary, abilities: Array[String], area: AreaDef, rules: LabWorld, command: Dictionary) -> Dictionary:
+	if not _keys_match(command, ["op", "entity_id", "at"]):
+		return _refuse("move_to needs only the doodad and where: move_to(x, y).")
+	var raw: Variant = command.at
+	if not command.entity_id is String or not raw is Array or (raw as Array).size() != 2 or not ((raw[0] is float or raw[0] is int) and (raw[1] is float or raw[1] is int)):
+		return _refuse("Move a doodad by its id to an x and a y, like bench.move_to(20, 8.5).")
+	if not abilities.has("move"):
+		return _refuse(_locked(area, "move", "move doodads"))
+	var id: String = command.entity_id
+	var to: Vector2 = AreaBuild.snap_prop(Vector2(float(raw[0]), float(raw[1])))
+	var context: Dictionary = {"area": area, "rules": rules, "state": state, "assets": ledger.assets}
+	var prop: Dictionary = area.prop(id)
+	var item: Dictionary = area.scenery_item(id)
+	if prop.is_empty() and item.is_empty():
+		return _refuse("There is no doodad called '%s' that can move. Read world.doodads for the real ids." % id)
+	var from: Vector2 = prop.at if not prop.is_empty() else item.at
+	if not in_reach(area, state, from) or not in_reach(area, state, to):
+		return _refuse("'%s' or its new spot is out of reach. Visit the place or stand within %d cells first." % [id, int(REACH)])
+	var title: String = ledger.title_for_asset(str(prop.get("asset", item.get("asset", ""))))
+	if from.is_equal_approx(to):
+		return {"ok": true, "reason": "", "edit": {}, "label": ""}
+	var checked: Dictionary
+	var edit: Dictionary
+	if not prop.is_empty():
+		var removable: Dictionary = AreaBuild.check_remove(area, "prop", id)
+		if not removable.ok:
+			return _refuse("'%s' is part of the lessons and stays where it is." % id)
+		checked = AreaBuild.check_prop(context, str(prop.asset), to, str(prop.facing), float(prop.scale), id)
+		edit = {"op": "move", "kind": "prop", "id": id, "at": [to.x, to.y], "facing": str(prop.facing), "by": "code"}
+	else:
+		checked = AreaBuild.check_scenery(context, id, to, float(item.turn))
+		edit = {"op": "move", "kind": "scenery", "id": id, "asset": str(item.asset), "at": [to.x, to.y], "turn": float(item.turn), "by": "code"}
+	if not checked.ok:
+		return _refuse("%s cannot stand at [%s, %s]: %s" % [title, str(to.x), str(to.y), str(checked.reason).to_lower()])
+	return {"ok": true, "reason": "", "edit": edit, "label": "%s (%s) moved to [%s, %s]" % [title, id, str(to.x), str(to.y)]}
 
 
 static func _rotate(ledger: BuildLedger, state: Dictionary, abilities: Array[String], area: AreaDef, rules: LabWorld, command: Dictionary) -> Dictionary:
@@ -162,6 +219,17 @@ static func _rotate(ledger: BuildLedger, state: Dictionary, abilities: Array[Str
 	if thing.is_empty():
 		kind = "prop"
 		thing = area.prop(id)
+	if thing.is_empty() and not area.scenery_item(id).is_empty():
+		var item: Dictionary = area.scenery_item(id)
+		if not in_reach(area, state, item.at):
+			return _refuse("'%s' is out of reach. Visit its place or stand within %d cells of it first." % [id, int(REACH)])
+		var turn: float = float(AreaDef.FACINGS[command.facing])
+		var scenery_check: Dictionary = AreaBuild.check_scenery({"area": area, "rules": rules, "state": state, "assets": ledger.assets}, id, item.at, turn)
+		var name: String = ledger.title_for_asset(str(item.asset))
+		if not scenery_check.ok:
+			return _refuse("%s cannot face %s: %s" % [name, FACING_WORDS[command.facing], str(scenery_check.reason).to_lower()])
+		return {"ok": true, "reason": "", "edit": {"op": "move", "kind": "scenery", "id": id, "asset": str(item.asset), "at": [item.at.x, item.at.y], "turn": turn, "turned": true, "by": "code"},
+			"label": "%s (%s) turned to face %s" % [name, id, FACING_WORDS[command.facing]]}
 	if thing.is_empty():
 		return _refuse("There is no house or doodad called '%s'. Read world.houses and world.doodads for the real ids." % id)
 	if not in_reach(area, state, thing.at):

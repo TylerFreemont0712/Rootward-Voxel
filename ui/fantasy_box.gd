@@ -32,6 +32,7 @@ func _draw(to_canvas_item: RID, rect: Rect2) -> void:
 	if rect.size.x < 4.0 or rect.size.y < 4.0:
 		return
 	var body: Rect2 = Rect2(rect.position, rect.size - Vector2(0, shadow))
+	if body.size.x < 4.0 or body.size.y < 4.0: return
 	var c: float = minf(chamfer, minf(body.size.x, body.size.y) * 0.5)
 	if shadow > 0.0:
 		var offset := PackedVector2Array()
@@ -69,6 +70,7 @@ func _draw(to_canvas_item: RID, rect: Rect2) -> void:
 
 
 func _octagon(rect: Rect2, c: float) -> PackedVector2Array:
+	c = clampf(c, 0.0, maxf(0.0, minf(rect.size.x, rect.size.y) * .5 - .01))
 	var x0: float = rect.position.x
 	var y0: float = rect.position.y
 	var x1: float = rect.end.x

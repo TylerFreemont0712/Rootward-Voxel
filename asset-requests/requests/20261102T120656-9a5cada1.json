@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "id": "20261102T120656-9a5cada1",
+  "kind": "update",
+  "title": "Update Haverlund guild hall",
+  "asset_type": "world model",
+  "status": "finished",
+  "notes": "Remove exterior enquiries counter and its contents from doorway. Replace fixed open leaves with hinged doors compatible with common DoorSwing and an enterable city hall. Preserve adopted arch, stairs, style, windows and lamps.",
+  "asset": {
+    "id": "square-guildhall",
+    "label": "Haverlund guild hall",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/square-guildhall/v1/model.blend",
+    "runtime": "assets/world/square-guildhall/model.glb",
+    "manifest": "assets/world/square-guildhall/manifest.json",
+    "catalog_notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_landmarks.py is initial authoring only; edit the adopted model.blend.",
+    "related_files": [
+      "art/source/world/sparks-square/v2/author_landmarks.py",
+      "art/source/world/square-guildhall/v1/plant-style.json",
+      "art/source/world/square-guildhall/v1/provenance.json",
+      "docs/concept/v0.72/art/guildhall-square.png"
+    ],
+    "usage_files": [
+      "content/areas/archive/haverlund-square-v2.json",
+      "content/areas/haverlund-square.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Haverlund guild hall",
+      "source": "art/source/world/square-guildhall/v1/model.blend",
+      "runtime": "assets/world/square-guildhall/model.glb",
+      "pivot": "Footprint centre at ground; front toward Blender -Y (south)",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Static square scenery. Placements, support, collision, inspections and links belong to content/areas/haverlund-square.json.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_landmarks.py is initial authoring only; edit the adopted model.blend."
+    }
+  },
+  "references": [],
+  "created": "2026-11-02T12:06:56+00:00",
+  "updated": "2026-11-02T14:09:30+00:00",
+  "history": [
+    {
+      "at": "2026-11-02T12:06:56+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-02T12:06:56+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-02T14:09:30+00:00",
+      "action": "finish"
+    }
+  ],
+  "result": {
+    "assets": [
+      "square-guildhall"
+    ],
+    "summary": "Removed the obstructing exterior counter, installed two hinged panelled oak leaves, separated the two original clock hands and connected the existing hall to the saved public lobby. Shared-clock hands and walk-through entry/return reviewed natively at 1600×1000 and 1280×720; normal source build and full scripts/test.sh pass.",
+    "review": "pipeline/reviews/2026-11-02-city-clock-evening-and-hall.md",
+    "contexts": [
+      {
+        "id": "square-guildhall",
+        "label": "Haverlund guild hall",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/square-guildhall/v1/model.blend",
+        "runtime": "assets/world/square-guildhall/model.glb",
+        "manifest": "assets/world/square-guildhall/manifest.json",
+        "catalog_notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_landmarks.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/sparks-square/v2/author_landmarks.py",
+          "art/source/world/square-guildhall/v1/city-cycle-revision.json",
+          "art/source/world/square-guildhall/v1/plant-style.json",
+          "art/source/world/square-guildhall/v1/provenance.json",
+          "docs/concept/v0.72/art/guildhall-square.png"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-square-v2.json",
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Haverlund guild hall",
+          "source": "art/source/world/square-guildhall/v1/model.blend",
+          "runtime": "assets/world/square-guildhall/model.glb",
+          "pivot": "Footprint centre at ground; front toward Blender -Y (south)",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Enterable civic building. Common hinged door_leaf/swing parts. Area room link and collision own traversal; public counters are inside city-hall.",
+          "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_landmarks.py is initial authoring only; edit the adopted model.blend.",
+          "story_parts": [
+            "door_leaf_city_hall_-1",
+            "door_leaf_city_hall_1",
+            "clock_hour_hand",
+            "clock_minute_hand"
+          ]
+        }
+      }
+    ],
+    "fingerprints": {
+      "square-guildhall": {
+        "source": "08f0149ba00fe79da651531ad5afdaf2f08b9cd9228a9a148c7e1d55b4b38b3e",
+        "runtime": "6fa925afaefb4e4a8c947c3341ef2e6fab74546d26c667ed87c3f3eea0c47b4d",
+        "entry": "bfebd32c17ef4e71dd095949d5267602d7da433b48698077ad73046666f61a01"
+      }
+    }
+  }
+}

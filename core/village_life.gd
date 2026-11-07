@@ -15,7 +15,8 @@ static func initial(area: AreaDef) -> Dictionary:
 			"goal": seed % maxi(1, villager.route.size()) if villager.get("wander", false) else 0,
 			"seed": seed, "path": [] as Array[Vector2i], "clock": 0.0, "cycle": -1,
 			"active": not villager.has("arrival"), "player_solid": not villager.has("phantom"),
-			"presence": 0.0 if villager.has("arrival") else 1.0, "age": 0.0, "fading": -1.0}
+			"presence": 0.0 if villager.has("arrival") else 1.0, "age": 0.0, "fading": -1.0,
+			"activity": "", "target": "", "facing": Vector2.ZERO, "visits": 0}
 	return result
 
 
@@ -37,8 +38,10 @@ static func reserved(area: AreaDef) -> Dictionary:
 				result[at - AreaDef.STEPS[str(link.direction)] * distance] = true
 	for terminal: Dictionary in area.terminals:
 		result[Vector2i(int(terminal.at[0]), int(terminal.at[1]))] = true
+	for display: Dictionary in area.displays:
+		result[Vector2i(int(display.at[0]),int(display.at[1]))]=true
 	for lamp: Dictionary in area.lamps:
-		if lamp.get("stand") is Array:
+		if lamp.get("stand") is Array and not lamp.get("automatic",false):
 			result[Vector2i(int(lamp.stand[0]), int(lamp.stand[1]))] = true
 	return result
 
@@ -95,9 +98,28 @@ static func advance(area: AreaDef, rules: LabWorld, world: Dictionary, residents
 	var player := Vector2i(int(world.player[0]), int(world.player[1]))
 	var protected: Dictionary = reserved(area)
 	var seconds: float = maxf(0.0, delta)
-	for definition: Dictionary in area.villagers:
+	for authored: Dictionary in area.villagers:
+		var definition: Dictionary = authored
+		var settings: Dictionary = world.get("robot_programs",{}).get(definition.id,{})
+		if not settings.is_empty():definition=authored.duplicate(true)
 		var resident: Dictionary = residents[definition.id]
+		# The district service clock keeps the tram and passengers in step even when one worker pauses.
 		resident.clock = float(resident.clock) + seconds
+		if not settings.get("running",true): continue
+		if settings.has("speed"):definition.speed=settings.speed
+		if settings.has("route") and definition.has("errands"):
+			definition.route=[]
+			definition.errands=[]
+			for stop: String in settings.route:
+				for index: int in range(authored.errands.size()):
+					if authored.errands[index].target==stop:
+						definition.route.append(authored.route[index])
+						definition.errands.append(authored.errands[index])
+		if (settings.has("route") or resident.has("program_route")) and resident.get("program_route",[])!=settings.get("route",[]):
+			resident["program_route"]=settings.get("route",[]).duplicate()
+			resident.path.clear()
+			resident.goal=0
+			resident.pause=0.0
 		if not resident.active:
 			_try_arrival(area, definition, resident, residents)
 			if not resident.active: continue
@@ -119,18 +141,30 @@ static func advance(area: AreaDef, rules: LabWorld, world: Dictionary, residents
 		resident.pause = maxf(0.0, float(resident.pause) - maxf(0.0, delta))
 		if resident.pause > 0.0 or definition.route.is_empty():
 			continue
+		resident.activity = ""
+		resident.target = ""
 		var target: Vector2i = definition.route[int(resident.goal) % definition.route.size()]
 		if resident.at == target:
 			if definition.has("arrival") and int(resident.goal) == definition.route.size() - 1:
 				resident.fading = 0.7
 				continue
+			if definition.has("errands"):
+				var task: Dictionary = definition.errands[int(resident.goal) % definition.route.size()]
+				resident.activity = task.activity
+				resident.target = task.target
+				for item: Dictionary in area.interior.assets:
+					if item.id == task.target:
+						resident.facing = Vector2(float(item.at[0]), float(item.at[1])) - Vector2(resident.at)
+				resident.visits = int(resident.visits) + 1
 			resident.seed = (int(resident.seed) * 1664525 + 1013904223) & 0x7fffffff
 			var stride: int = 1 + int(resident.seed) % maxi(1, definition.route.size() - 1) if definition.get("wander", false) else 1
 			resident.goal = int(resident.goal) + stride
 			resident.path.clear()
-			resident.pause = float(definition.get("pause", 2.0)) + float(int(resident.seed) % 23) / 10.0
+			resident.pause = float(definition.errands[(int(resident.goal) - 1) % definition.route.size()].seconds) if definition.has("errands") else float(definition.get("pause", 2.0)) + float(int(resident.seed) % 23) / 10.0
 			continue
 		var avoid: Dictionary = protected.duplicate()
+		# A working resident may reach its own service stop, including a lamp’s slate approach.
+		if definition.has("errands"):avoid.erase(target)
 		if definition.has("arrival"):
 			for cell: Vector2i in departure_cells(area, str(definition.arrival.exit)):
 				avoid.erase(cell)

@@ -18,12 +18,18 @@ static func frames_for(template: SpriteFrames, atlas: Texture2D) -> SpriteFrames
 		return template
 	var key := str(template.get_instance_id()) + "|" + str(atlas.get_instance_id())
 	if _frame_cache.has(key):
-		return _frame_cache[key]
+		var cached := (_frame_cache[key] as WeakRef).get_ref() as SpriteFrames
+		if cached != null: return cached
 	var frames := template.duplicate() as SpriteFrames
 	for animation: StringName in template.get_animation_names():
 		for index in range(template.get_frame_count(animation)):
 			var texture := (template.get_frame_texture(animation, index) as AtlasTexture).duplicate() as AtlasTexture
 			texture.atlas = atlas
 			frames.set_frame(animation, index, texture, template.get_frame_duration(animation, index))
-	_frame_cache[key] = frames
+	_frame_cache[key] = weakref(frames)
 	return frames
+
+
+static func prune_cache() -> void:
+	for key: String in _frame_cache.keys():
+		if (_frame_cache[key] as WeakRef).get_ref() == null: _frame_cache.erase(key)

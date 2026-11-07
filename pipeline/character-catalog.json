@@ -155,6 +155,19 @@
         1,
         1
       ]
+    },
+    "iona": {
+      "label": "Iona Venn",
+      "selectable": false,
+      "source": "res://art/source/characters/iona/v2/sheet.png",
+      "provenance": "res://art/source/characters/iona/v2/provenance.json",
+      "runtime": "res://assets/characters/skins/iona.png",
+      "tint": [
+        1,
+        1,
+        1,
+        1
+      ]
     }
   }
 }

@@ -11,23 +11,27 @@ var life: Dictionary = {}
 var rules: LabWorld
 var paused: bool = false
 var _arrival_pending: bool = true
+var _appearance_rng := RandomNumberGenerator.new()
+var _appearance_bags: Dictionary = {}
+var _passenger_cycles: Dictionary = {}
 
 
 func setup(clearing: ClearingView) -> void:
 	view = clearing
 	name = "Villagers"
 	life = VillageLife.initial(view.area)
+	_appearance_rng.randomize()
 	rules = LabWorld.new(view.area)
-	var people: Dictionary = AreaStore.read_villagers()
 	for resident: Dictionary in view.area.villagers:
 		if resident.has("phantom"):
 			var phantom := PhantomActor.new()
-			phantom.profile = str(resident.phantom)
+			phantom.profile = _choose_appearance(str(resident.phantom))
 			phantom.name = str(resident.id)
 			add_child(phantom)
 			phantom.position = Vector3(resident.at.x, view._deck_height(Vector2(resident.at)), -resident.at.y)
 			phantom.set_presence(float(life[resident.id].presence))
 			phantoms[resident.id] = phantom
+			_passenger_cycles[resident.id] = -1
 			continue
 		if resident.has("object"):
 			var robot: Node3D = view.building_node(str(resident.object))
@@ -39,11 +43,11 @@ func setup(clearing: ClearingView) -> void:
 				wheels.append(part as Node3D)
 			robots[resident.id] = {"node": robot, "wheels": wheels, "previous": Vector2(resident.at)}
 			continue
-		if not resident.has("skin") and not people.has(resident.id):
+		if not resident.has("skin"):
 			push_error("Unknown resident identity: " + str(resident.id))
 			continue
 		var actor := SpriteAdventurer.new()
-		actor.skin_id = str(resident.skin) if resident.has("skin") else str(people[resident.id].skin)
+		actor.skin_id = str(resident.skin)
 		actor.name = str(resident.id)
 		add_child(actor)
 		actor.position = Vector3(resident.at.x, view._deck_height(Vector2(resident.at)), -resident.at.y)
@@ -87,7 +91,9 @@ func _physics_process(delta: float) -> void:
 		for id: String in robots:
 			robots[id].previous = VillageLife.position(life[id])
 	if not paused:
-		VillageLife.advance(view.area, rules, view._committed, life, delta, view.player_cells())
+		var blocked: Dictionary=view.player_cells().duplicate()
+		blocked.merge(view.story_cells)
+		VillageLife.advance(view.area, rules, view._committed, life, delta, blocked)
 
 
 func _process(delta: float) -> void:
@@ -98,24 +104,32 @@ func _process(delta: float) -> void:
 		var actor: SpriteAdventurer = actors[id]
 		var at: Vector2 = VillageLife.position(state)
 		actor.position = Vector3(at.x, view._deck_height(at), -at.y)
+		view.fit_contact_shadow(actor, at)
 		var motion: Vector2 = Vector2(state.to - state.from) if float(state.phase) < 1.0 and not paused else Vector2.ZERO
 		actor.set_screen_motion(view._screen_direction(motion) if motion != Vector2.ZERO else Vector2.ZERO)
+		if motion == Vector2.ZERO: actor.face_screen_direction(view._screen_direction(state.facing))
 	for id: String in phantoms:
 		var state: Dictionary = life[id]
 		var phantom: PhantomActor = phantoms[id]
+		if state.active and int(state.cycle) != int(_passenger_cycles[id]):
+			for definition: Dictionary in view.area.villagers:
+				if definition.id == id: phantom.set_profile(_choose_appearance(str(definition.phantom)))
+			_passenger_cycles[id] = state.cycle
 		phantom.set_presence(float(state.presence) if state.active else 0.0)
 		if not state.active: continue
 		var at: Vector2 = VillageLife.position(state)
 		phantom.position = Vector3(at.x, view._deck_height(at), -at.y)
+		view.fit_contact_shadow(phantom, at)
 		var motion := Vector2(state.to - state.from) if float(state.phase) < 1.0 and not paused else Vector2.ZERO
 		phantom.set_screen_motion(view._screen_direction(motion) if motion != Vector2.ZERO else Vector2.ZERO)
+		if motion == Vector2.ZERO: phantom.face_screen_direction(view._screen_direction(state.facing))
 	for id: String in robots:
 		var state: Dictionary = life[id]
 		var appearance: Dictionary = robots[id]
 		var robot: Node3D = appearance.node
 		var at: Vector2 = VillageLife.position(state)
 		robot.position = Vector3(at.x, view._deck_height(at), -at.y)
-		var direction := Vector2(state.to - state.from)
+		var direction: Vector2 = Vector2(state.to - state.from) if float(state.phase) < 1.0 else state.facing
 		if direction != Vector2.ZERO and not paused:
 			robot.rotation.y = lerp_angle(robot.rotation.y, atan2(direction.x, -direction.y), 1.0 - exp(-delta * 7.0))
 		var travel: float = at.distance_to(appearance.previous)
@@ -123,3 +137,19 @@ func _process(delta: float) -> void:
 			var radius: float = clampf(float(WorldAssetMeta.value(wheel, "wheel_radius", 0.12)) * robot.scale.x, 0.02, 3.0)
 			wheel.rotation.x += travel / radius
 		appearance.previous = at
+
+
+## Shuffle bags give every compatible silhouette a turn, with a fresh order per visit.
+## Appearance randomness is cosmetic and never enters deterministic movement state.
+func _choose_appearance(group: String) -> String:
+	var bag: Array = _appearance_bags.get(group, [])
+	if bag.is_empty():
+		bag = (PhantomActor.library().get("groups", {}).get(group, [group]) as Array).duplicate()
+		for index: int in range(bag.size() - 1, 0, -1):
+			var other: int = _appearance_rng.randi_range(0, index)
+			var swap: Variant = bag[index]
+			bag[index] = bag[other]
+			bag[other] = swap
+	var chosen: String = str(bag.pop_back())
+	_appearance_bags[group] = bag
+	return chosen

@@ -13,7 +13,8 @@ func _initialize() -> void:
 
 
 func _run() -> void:
-	assets = JSON.parse_string(FileAccess.get_file_as_string("res://pipeline/world-catalog.json")).assets
+	AreaStore.use_fixtures()
+	assets = AreaStore.catalog_assets()
 	build = AreaStore.read_build_catalog()
 	_textures()
 	_rules()
@@ -53,7 +54,7 @@ func _textures() -> void:
 			_check(imported.get_value("params","mipmaps/generate") and imported.get_value("params","compress/mode") == 0,"Lossless mipmapped world import")
 	for id: String in assets:
 		var spec_asset: Dictionary = assets[id]
-		if not spec_asset.has("finish_slots"):continue
+		if not spec_asset.has("finish_slots") or not spec_asset.has("runtime"):continue
 		var manifest_path: String = "res://"+str(spec_asset.runtime).get_base_dir()+"/manifest.json"
 		var names: Array = JSON.parse_string(FileAccess.get_file_as_string(manifest_path)).audit.materials
 		var used: Array = []
@@ -108,7 +109,7 @@ func _rules() -> void:
 
 
 func _models() -> void:
-	for pair: Array in [["log-cabin-large","roof","slate_shingles"],["hearth-house","walls","red_brick"],["hollow-highback-armchair","fabric","violet_quilt"],["hollow-wayfarers-chest","metal","copper_patina"]]:
+	for pair: Array in [["hollow-rain-barrel","timber","herringbone_oak"],["hollow-rain-barrel","metal","copper_patina"]]:
 		var model: Node3D = Assets.instantiate(pair[0])
 		var second: Node3D = Assets.instantiate(pair[0])
 		root.add_child(model)

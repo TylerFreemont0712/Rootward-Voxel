@@ -4,44 +4,31 @@ This is the working human-editable route. Prototype code can create a seed; afte
 
 The [detail material library](MATERIALS.md) adds fifteen catalog recipes and runtime pictures for future authoring. `blender_retexture.py` honors optional roughness/metallic values. No existing master was retextured for this addition: builder finishes use saved instance overrides. Deliberately changing an adopted model's defaults still requires editing its existing source and reviewing the export. If you rename an original material, update its `finish_slots` binding after checking the GLB audit.
 
-## Start here: edit the cottage
+## Start here: edit a shipped model
 
-1. Open `art/source/world/cottage/v1/model.blend` in Blender with **File → Open**. This file already exists; do not run `seed` or `init` again.
-2. Use the Outliner to find groups such as **Roof**, **Walls**, **Timber**, **Masonry**, **Windows** and **Metal**. Mesh names identify shared material roles, for example `roof_geometry` or `plaster_geometry`.
-3. For a broad shape/color change, select the relevant mesh/group. For a local change, enter Edit Mode with **Tab**, select the intended vertices/faces and move/scale them. Use X-ray selection when you need the back vertices too. The initial export combines blocks by role/material; it is not a hand-built quad modeling cage, and individual doors/tiles are not all separate objects. You can reorganize the Blender source as editing needs become clearer.
-4. Keep the imported root, scale and base in place. A small roof, beam or surface edit is a good first change. Moving the footprint, entrance, river or paths also needs a matching logical-layout review in Godot.
-5. Save with **Ctrl+S**. From the standalone project root run:
+1. Find the asset in `pipeline/world-catalog.json` (its `source` is the master) and open that `model.blend` in Blender with **File → Open**. These files already exist; do not run `seed` or `init` again.
+2. Use the Outliner to find the parts. Most masters are joined by material role (walls, roof, timber, glass, metal); the clockshop and workshop furniture are one mesh per material under an empty named for the asset. Mesh names identify shared material roles.
+3. For a broad change select the relevant mesh. For a local change enter Edit Mode with **Tab**, select the intended vertices or faces and move them. New detail is easiest added as new geometry in the same materials (the clockshop revision scripts under `art/source/world/clockshop-interior/` show how, with the shared `house_kit`).
+4. Keep the imported root, scale and base in place. Moving a footprint or entrance also needs a matching layout review in Godot.
+5. Save with **Ctrl+S**, then from the project root:
 
 ```sh
-scripts/world-art.sh build cottage
-scripts/test.sh
+scripts/world-art.sh build <asset-id>
+godot --headless --editor --import --quit
+scripts/test.sh flow
 scripts/play.sh
 ```
 
-The build exports a candidate, checks it in Godot, and updates `assets/world/cottage/model.glb` plus its manifest. The clearing and its scaled workshop both use that cottage asset. Godot imports the new GLB on the next play/editor import. A roof edit therefore affects both instances intentionally.
+The build exports a candidate, checks it in Godot, and updates `assets/world/<id>/model.glb` plus its manifest. Every placement of that asset changes together. Do not edit the exported GLB as the master; the next build replaces it. For a deliberate redesign, copy the master into a new `vN/` directory, edit that, and point the catalog entry's `source` at it so the earlier version is preserved.
 
-You do not need to touch the procedural house code to edit an adopted house. Do not edit the exported GLB as the master file; the next build replaces that runtime output.
+To look at a candidate before promoting it: export with `pipeline/blender_handoff.py` and view it with `tools/asset_shot.gd <id> <png> <candidate.glb>`.
 
-## Editable files already supplied
-
-| Asset ID | Blender source | Runtime use |
-|---|---|---|
-| `cottage` | `art/source/world/cottage/v1/model.blend` | Cottage and 0.72-scale workshop. |
-| `mill-house` | `art/source/world/mill-house/v1/model.blend` | Mill building shell. The turning wheel remains in Godot. |
-| `log-cabin` | `art/source/world/log-cabin/v1/model.blend` | The violet-roofed log cabin: three of Kindle Hollow's homes. Its door and round window face +Z. |
-| `log-cabin-large` | `art/source/world/log-cabin-large/v1/model.blend` | The 5-cell (4.7 unit) log house, violet roof: four of Kindle Hollow's homes. |
-| `log-cabin-large-teal` | `art/source/world/log-cabin-large-teal/v1/model.blend` | The same house with a teal roof: the miller's house. |
-| `lamppost` | `art/source/world/lamppost/v1/model.blend` | Every `post` lamp. The mesh with the material `lamp_glass` is the lantern the game lights; keep it separate. |
-| `clearing-ground` | `art/source/world/clearing-ground/v1/model.blend` | Static land, stone banks, paving and boundary fences. Water remains a Godot shader effect. |
-| `tree` | `art/source/world/tree/v1/model.blend` | Editable reference, not selected for the clearing; per-placement procedural crowns remain active until a replacement is reviewed. |
-
-The installed authoring version used here is Blender 5.2.2 LTS; the engine is Godot 4.7.2. The script finds `blender` on PATH or the current local install. On another machine set `BLENDER_BIN` and, if needed, `GODOT_BIN`. Blender is an authoring dependency only; the game loads supplied runtime GLBs without it.
+The installed authoring version used here is Blender 5.2.2 LTS; the engine is Godot 4.7.2. The script finds `blender` on PATH or the current local install. On another machine set `BLENDER_BIN` and, if needed, `GODOT_BIN`. Blender is an authoring dependency only; the game loads supplied runtime GLBs.
 
 ## Ownership: one source of truth per asset
 
 `pipeline/world-catalog.json` records the source/version, runtime file, authority, pivot, logical footprint and behavior notes.
 
-- `authority: "procedural_test"` keeps an evolving prototype recipe selected. An editable reference can exist without replacing those tested variations.
 - `authority: "blender"` selects the runtime GLB built from the artist's source. Editing the old generator does not change that asset in-game. Missing selected output is an error, not permission to silently regenerate the shape.
 - Logical footprints, supported cells, mechanism state and player commands remain in `core/`. Blender owns visible shape and materials; it does not grant new gameplay capabilities.
 
@@ -52,13 +39,13 @@ An agent must read the catalog before changing art. After adoption, modify the e
 These commands are **one-time initialization**, not the normal edit loop:
 
 ```sh
-scripts/world-art.sh seed cottage
-scripts/world-art.sh init cottage
-scripts/world-art.sh build cottage
-scripts/world-art.sh compare cottage
+scripts/world-art.sh seed <asset-id>
+scripts/world-art.sh init <asset-id>
+scripts/world-art.sh build <asset-id>
+scripts/world-art.sh compare <asset-id>
 ```
 
-The supplied assets have already completed this sequence. `seed` and `init` refuse to overwrite existing source/seed files. For a new procedural version, first choose a new version/source directory in the catalog and add/adjust its explicit seed recipe. The seed exporter currently knows cottage, mill-house, clearing-ground, tree, log-cabin, log-cabin-large, log-cabin-large-teal and lamppost (the cabins and lamppost are drawn in `pipeline/world_recipes.gd`, which is parametric: the defaults are the 3-cell cabin and `LARGE` is the 5-cell house); it is not a general converter for arbitrary game objects. To see an editable source as the game's camera does, run `blender --background --factory-startup --python tools/blender_preview.py -- <model.blend> <out.png> [yaw] [ortho_scale] [look_height]`; it renders without saving the file.
+The supplied assets have already completed this sequence. `seed` and `init` refuse to overwrite existing source/seed files. For a new procedural version, first choose a new version/source directory in the catalog and add/adjust its explicit seed recipe. The seed exporter's recipes covered the village models that were retired on 2026-11-05; new models are authored directly in Blender (below), so `seed` is effectively retired. To see an editable source as the game's camera does, run `blender --background --factory-startup --python tools/blender_preview.py -- <model.blend> <out.png> [yaw] [ortho_scale] [look_height]`; it renders without saving the file.
 
 `seed` runs only the selected maker, turns material batches into ordinary grouped meshes, exports lossless PNG textures in GLB and checks the result before saving the seed/provenance. `init` imports that GLB, packs the textures and saves an editable `.blend` with an orthographic material-preview view. It does not weld, simplify or remesh the geometry.
 
@@ -80,7 +67,7 @@ After an intentional visual edit, compare against the original may correctly fai
 
 One cell is one Godot unit. Blender uses meters at unit scale 1. glTF handles Blender's Z-up/Godot's Y-up conversion. Keep the imported asset root and orientation; do not manually rotate 90° to compensate for the two tools' axis displays. In Godot the house front is +Z; the logical adapter maps `[x,y,height]` to `(x,height,-y)`.
 
-The house pivot is its ground origin. The clearing-ground source retains the whole clearing's existing coordinates so its banks/paths line up. A new small prop should instead have its own ground pivot and local dimensions. Keep decorative overhang separate from the blocking footprint.
+A building's pivot is its ground origin. Ground masters (`haverlund-square-ground`, the lane set) keep whole-area coordinates so their paving, stairs and walls line up with the area document. A new small prop should have its own ground pivot and local dimensions. Keep decorative overhang separate from the blocking footprint.
 
 The seed preserves simple palette/material roles and small texture patterns. Arbitrary Blender node networks do not transfer as-is; use supported glTF materials or deliberately bake/recreate the needed surface. Godot ShaderMaterials, including animated water, remain engine effects. See [Godot export limitations](https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/exporting_3d_scenes.html) and [format guidance](https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_3d_scenes/available_formats.html).
 

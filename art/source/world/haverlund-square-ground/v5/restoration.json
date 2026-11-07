@@ -1,0 +1,9 @@
+{
+  "source": "art/source/world/haverlund-square-ground/v3/model.blend",
+  "sha256": "fd678548655423b5b0ae465e3333a5aec62740b89a65465fe5d848ea0682dfd7",
+  "removed_subfog_faces": 10985,
+  "offset": [
+    16,
+    0
+  ]
+}

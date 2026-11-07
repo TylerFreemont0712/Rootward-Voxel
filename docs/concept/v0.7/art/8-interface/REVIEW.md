@@ -13,7 +13,7 @@ def program(world):
 
 The output tape reads “Hello, Hotaru!”. Each Test, Speak and Apply column has four visible states: cream default, coloured hover, deep pressed and grey disabled. The board has three stamped tickets; a separate pinned objective, icon badges and dialogue frame complete the sheet. The portrait slot is a placeholder.
 
-![Workshop journey card with Hotaru in the loft window](U2-journey-card.wheels.png)
+!Workshop journey card with Hotaru in the loft window
 
 The selected journey card is also linked from [the complete index](../INDEX.md#phase-8--interface). Its second composition gives the loft window and tiny Hotaru a clear focal point, with calm sky and water on the left for later typeset title text. A separate wheel revision carries the current robot-base direction into the workshop bench detail.
 

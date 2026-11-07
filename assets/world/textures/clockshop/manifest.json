@@ -1,0 +1,37 @@
+{
+  "materials": {
+    "clockshop_parquet": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/clockshop/detail/clockshop_parquet.png",
+          "sha256": "4a6ad2b57c90727a98e228c0b4de162d637a2a1147fd49bbbd190c0e9e23c03e",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/clockshop/lush/clockshop_parquet.png",
+          "sha256": "72af9a2b815fb6b5bb81e121c3a05fba2520f70cadd3c2778850591c783efe3f",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/clockshop/solid/clockshop_parquet.png",
+          "sha256": "4446089b4c9d8de4d1c7293c917df642faefe1d8f0cfc9449f2686e069fd16dc",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/clockshop-interior/v1/textures/clockshop_parquet.png",
+      "source_sha256": "b4fd2827768afedddfedc43f68a1adc2b491cf75a220486d37acb6c7c6a95265"
+    }
+  },
+  "normalization": "Lush: Lanczos to 128; solid: Lanczos to 64 then nearest to 128. Detail: Lanczos to 512. Opposite edge pixels paired to make a periodic boundary. Native paintings preserved.",
+  "schema": 1,
+  "version": "clockshop-v1"
+}

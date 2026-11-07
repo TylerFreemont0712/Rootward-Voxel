@@ -1,6 +1,6 @@
 # Ground paint and blending
 
-Generated land has a continuous ground skin, a 2×2 appearance grid per logical cell and the Land menu (the Paint tool) in [build mode](BUILD.md). Walking, quests and programmable commands still use the original cell terrain. Rune Mill's adopted `clearing-ground` model keeps its original surface; Paint is available only for generated land (`ground: {}`).
+Generated land has a continuous ground skin, a 2×2 appearance grid per logical cell and the Land menu (the Paint tool) in [build mode](BUILD.md). Walking, quests and programmable commands still use the original cell terrain. Rune Mill's adopted `clearing-ground` model keeps its original surface; ordinary authored maps retain their selected surface. The square explicitly exposes an upper layout overlay through `interior.layout`; see [the layout guide](../docs/concept/v0.8/square-layout.md).
 
 **Land → Floors** adds `herringbone_oak`, `terracotta_tile`, `encaustic_tile` and `limestone_flags` from the fifteen-picture [detail library](MATERIALS.md). Their atlas pictures append to the original six without changing previous indices. They use the existing luminance height fallback and appearance-paint rules. Interior floors use the same recipes through the separate room finish panel.
 
@@ -61,4 +61,15 @@ To add a ground material, register a ground picture/tint/tile entry in the textu
 
 `scripts/test.sh` includes pure ground/document/history/rule tests, independent art hash/correlation checks, six scenery-asset lifecycle checks and build input with a 40-card fake tray. `tools/ground_shot.gd` requires a window and tests actual GPU pixels for derived versus explicit equivalent tones and uniform ground versus a single plane, both within a cell and across 16-cell chunks.
 
-The prompt's literal default-versus-all-`grass` image equality conflicts with derived light/dark tone variation. The tool reports that difference and tests exact tone equivalence plus uniform surface continuity separately. See the [review record](reviews/2026-10-23-ground-paint-and-builder.md), [six-pair comparison](../evidence/ground-blend-vs-reference.png) and [Paint capture](../evidence/build-paint-stroke.png).
+The prompt's literal default-versus-all-`grass` image equality conflicts with derived light/dark tone variation. The tool reports that difference and tests exact tone equivalence plus uniform surface continuity separately. See the review record, six-pair comparison and Paint capture.
+
+## Authored square overlay
+
+Sparks & Machines enables the existing builder only in configured `build_areas`. The square `interior.layout` names a bounded rectangle across the restored terraces, fourteen item IDs and the project review-export path. `GroundSkin` keeps the Blender GLB unchanged and adds a nearest-filtered half-cell paint mask. Empty texels discard the overlay fragment, revealing the original surface. Only chunks containing explicit paint create geometry; removing the last paint from a chunk removes that mesh. Overlay chunks are 3 cells wide to retain the local-light bound. Undo, cancel, Eraser and asynchronous Continue all rebuild from the same saved edit layer. Painting outside the layout or on stairs is filtered out. Placement uses catalog footprints, authored collision, travel-entrance clearance and the existing reachability check. Terrain shaping remains disabled on authored land.
+
+## Town ground
+
+Land → **Town** offers seven paints in Haverlund's own hand ([town-ground v1](../art/source/world/town-ground/v1/README.md)): `town_flags` and `town_cobbles` (the square's own limestone flags and sandstone cobbles, copied unchanged), `town_setts` (large granite setts), `town_brick` (running-bond brick), `town_gravel` (garden hoggin), `town_bed` (planting-bed soil) and `town_lawn` (the existing lush grass picture, which is the square's lawn at its own density). The pictures are painted by the same deterministic masonry and noise routines as the lane and square paving, built by `scripts/art.sh` as the `town-ground-v1` texture library (128×128 lush and solid), and appended to `GroundSkin.PICTURES`.
+
+Texture-catalog entries may name an `edge`. `crisp` paving keeps to its own half-cell sub-tile, so it is cut straight and never warped into its neighbours. `kerbed` ground (lawn, bed, gravel) is cut straight too, and draws a limestone kerb with a dark lip along every side that meets `crisp` paving or, in an authored overlay, unpainted authored ground. Natural ground (no `edge`) keeps the warped border described above. The new materials were ground-only additions: `compatible_bake_catalog` now records the exact prior catalog (`art/source/world/town-ground/v1/texture-catalog-before.json`), so no adopted Blender source was re-baked.
+

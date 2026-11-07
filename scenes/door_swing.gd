@@ -12,7 +12,14 @@ static func leaves(model: Node) -> Array[Node3D]:
 	if model == null:
 		return found
 	for node: Node in model.find_children("door_leaf*", "Node3D", true, false):
-		found.append(node as Node3D)
+		var parent: Node=node.get_parent()
+		var belongs: bool=true
+		while parent!=null and parent!=model:
+			if bool((parent.get_meta("extras",{}) as Dictionary).get("door_group",false)):
+				belongs=false
+				break
+			parent=parent.get_parent()
+		if belongs: found.append(node as Node3D)
 	return found
 
 

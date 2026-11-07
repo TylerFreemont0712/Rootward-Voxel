@@ -6,7 +6,9 @@ Player Python runs in the copied Wasmtime/CPython WASI boundary, on a worker thr
 
 On Linux x86_64, run `scripts/setup-runtime.sh` from the project root. It downloads pinned archives, verifies checksums and prepares ignored `sandbox/runtime/`. Initial setup needs the network; subsequent play and tests use local files. The script exits without replacing an existing prepared runtime.
 
-Godot is the runtime engine. Host Python runs authoring/test helpers only. Blender and AI services are not game dependencies. Other host platforms need a matching Wasmtime/CPython WASI distribution and explicit packaging verification; the bootstrap currently supports Linux x86_64.
+Windows x64 has `scripts/setup-runtime.ps1` and `scripts/play.ps1`. The bootstrap verifies pinned archives, installs `wasmtime.exe`, compiles the portable Python module natively, and makes the standard library read-only with NTFS permissions. Its ignored `sandbox/runtime-windows/` stays separate from Linux's native compiled module. Setup writes its completion marker only after all these steps. See [desktop commands and verification status](../docs/DESKTOP.md); native Windows WASI/gameplay validation remains outstanding.
+
+Godot is the runtime engine. Host Python runs authoring/test helpers only. Blender and AI services are not game dependencies. Other host platforms need a matching native Wasmtime build and explicit packaging verification. `Sandbox.runtime_folder()` / `binary_name()` choose Windows or Linux paths; `ROOTWARD_SANDBOX_RUNTIME` overrides the directory. This platform adaptation is recorded with its upstream and current hashes in [PROVENANCE.json](PROVENANCE.json).
 
 ## Boundaries
 

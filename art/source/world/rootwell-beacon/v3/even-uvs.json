@@ -1,0 +1,14 @@
+{
+  "asset": "rootwell-beacon",
+  "previous": "v2",
+  "previous_sha256": "5c50546d1909468eccb0e103c44126742f5575825ac784d983af5198199032db",
+  "record": "art/source/world/rootwell-texture-pass/v1/even_uvs.py",
+  "repeat_m": {
+    "seaside_stone": 1.9,
+    "rootwell_verdigris": 1.6
+  },
+  "faces_reprojected": {
+    "seaside_stone": 10226,
+    "rootwell_verdigris": 1434
+  }
+}

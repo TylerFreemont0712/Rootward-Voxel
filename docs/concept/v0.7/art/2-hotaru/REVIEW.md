@@ -8,7 +8,7 @@ The user's later direction gives ground-going automatons rolling wheel bases. Th
 
 | H1 · Floating and rolling turnaround | H2 · Wheeled expressions |
 |---|---|
-| ![Hotaru's unchanged floating shape and compact wheeled ground mode](H1-turnaround.wheels.png) | ![Six spark-eye expressions on the same compact wheeled body](H2-expressions.wheels.png) |
+| !Hotaru's unchanged floating shape and compact wheeled ground mode | !Six spark-eye expressions on the same compact wheeled body |
 
 Both use the second wheel-revision take, selected under delegated judgment. The flying portrait and world-scale study remain useful references for her upper body and floating mode.
 
@@ -20,7 +20,7 @@ Both use the second wheel-revision take, selected under delegated judgment. The 
 
 | H3 · Dialogue portrait, variant 2 | H4 · World study, variant 2 |
 |---|---|
-| ![Transparent painted Hotaru portrait, floating and waving](H3-portrait.png) | ![Approved wider Haverlund study with the player, Hotaru and an enlarged inset](H4-in-world.alt1.png) |
+| ![Transparent painted Hotaru portrait, floating and waving](H3-portrait.png) | !Approved wider Haverlund study with the player, Hotaru and an enlarged inset |
 
 The approved design keeps the soft round body, oversized teal cap, brass-rimmed spark window, rosy enamel dots, red rotor knob, mitten hands and paper-tape reader. Floating and working modes share the same parts. The expressions use the window light rather than a human face; Off has dark glass and no eyes. The user chose the expression sheet with its legs unfolded, overriding the pack's floating-only request. The portrait keeps the legs retracted and uses the residents' painted finish. In the world study, the teal cap and warm window remain distinct from the nearby lamps.
 
@@ -28,11 +28,11 @@ The approved design keeps the soft round body, oversized teal cap, brass-rimmed 
 
 | Turnaround, variant 1 | Expressions, variant 1 |
 |---|---|
-| ![Slightly more cylindrical Hotaru turnaround alternate](H1-turnaround.alt1.png) | ![Expression alternate with drawn motion marks](H2-expressions.alt1.png) |
+| !Slightly more cylindrical Hotaru turnaround alternate | !Expression alternate with drawn motion marks |
 
 | Portrait, variant 1 | Later world refinement, variant 3 |
 |---|---|
-| ![Portrait alternate with unfolded legs and closer framing](H3-portrait.alt1.png) | ![Later smaller-character refinement, retained as an unapproved alternative](H4-in-world.png) |
+| !Portrait alternate with unfolded legs and closer framing | ![Later smaller-character refinement, retained as an unapproved alternative](H4-in-world.png) |
 
 [World study, variant 1](H4-in-world.alt2.png) is a closer two-cottage composition with substantially larger characters. The [later floating-only expression refinement](H2-expressions.png) remains a draft alternative. The second expression attempt was initially set aside for unfolding the legs, then restored from its original generated file when the user selected all second versions. No approved PNG has been overwritten.
 

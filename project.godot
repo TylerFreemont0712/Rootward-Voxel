@@ -69,9 +69,22 @@ common/physics_ticks_per_second=60
 [rootward]
 
 development/asset_showcase_on_title=true
+development/tools_enabled=true
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 anti_aliasing/quality/msaa_3d=2
+limits/opengl/max_renderable_lights=64
+
+[shader_globals]
+
+city_supply={
+"type": "float",
+"value": 1.0
+}
+light_floor={
+"type": "float",
+"value": -1000.0
+}

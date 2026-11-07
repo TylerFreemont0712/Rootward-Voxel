@@ -62,11 +62,16 @@ func _run() -> void:
 	var bounds: Array = manifest.audit.bounds
 	_check(absf(float(bounds[3]) - float(bounds[0]) - 7.5) < 0.1 and float(bounds[4]) > 9.0 and float(bounds[4]) < 10.5, "The Rootwell is 7.5 m across (its conduits' lips add 3 cm a side) and about 9.5 m tall")
 	# The power reaches it: conduits climb the four cardinal flights to the drum, their glass flagged for the grid shader.
-	var conduit: MeshInstance3D = nodes.get("rootwell_conduit_glass")
-	_check(conduit != null and WorldAssetMeta.value(conduit, "power_grid", false) and conduit.material_override is ShaderMaterial, "Glowing conduits climb the Rootwell's steps")
-	if conduit != null:
-		var reach: AABB = conduit.get_aabb()
-		_check(reach.size.x > 4.5 and reach.size.z > 4.5 and reach.size.y > .4, "They run up all four flights to the drum (%s)" % reach)
+	var conduits: Array[MeshInstance3D] = []
+	var reach := AABB()
+	for name: String in nodes:
+		if name.begins_with("rootwell_conduit_glass") and nodes[name] is MeshInstance3D:
+			var section := nodes[name] as MeshInstance3D
+			var section_bounds: AABB = section.transform * section.get_aabb()
+			reach = section_bounds if conduits.is_empty() else reach.merge(section_bounds)
+			conduits.append(section)
+	_check(not conduits.is_empty() and conduits.all(func(section: MeshInstance3D) -> bool: return WorldAssetMeta.value(section,"power_grid",false) and section.material_override is ShaderMaterial), "Glowing conduit sections climb the Rootwell's steps")
+	_check(reach.size.x > 4.5 and reach.size.z > 4.5 and reach.size.y > .4, "Together they run up all four flights to the drum (%s)" % reach)
 	_check(int(manifest.audit.triangles) <= TRIANGLE_BUDGET, "It stays within its foliage review budget (%d / %d triangles)" % [int(manifest.audit.triangles), TRIANGLE_BUDGET])
 	# Placed once, at the heart of Rootward Square v3, replacing the earlier beacon.
 	var placed: Array[String] = []

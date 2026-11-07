@@ -52,7 +52,8 @@ if textures.get("compatible_bake_catalog"):
     check(previous["set"] == textures["set"], "Baked texture selection changed")
     for material, recipe in previous["materials"].items():
         current = {key: value for key, value in textures["materials"].get(material, {}).items() if key != "ground"}
-        check(current == recipe, f"Baked material {material} changed: retexture and rebuild required")
+        baked = {key: value for key, value in recipe.items() if key != "ground"}
+        check(current == baked, f"Baked material {material} changed: retexture and rebuild required")
     compatible_hash = hashlib.sha256(ancestor.read_bytes()).hexdigest()
 for asset, entry in world["assets"].items():
     note = (root / entry["source"]).parent / "retexture.json"
@@ -72,17 +73,17 @@ for folder in ("app", "core", "scenes", "ui", "art", "pipeline", "scripts", "too
             continue
         text = file.read_text()
         check(not any(path in text for path in retired), f"Active file depends on retired experiment: {file.relative_to(root)}")
-documents = ["README.md", "AGENTS.md", "docs/PROJECT_HANDOFF.md", "docs/PROGRAMMING.md",
-             "pipeline/README.md", "pipeline/CHARACTERS.md", "pipeline/REVIEW.md",
-             "pipeline/BLENDER.md", "pipeline/WORLD_ASSETS.md", "pipeline/AREAS.md", "pipeline/GROUND.md", "pipeline/BUILD.md",
-             "reference/README.md", "sandbox/README.md", "pipeline/BUILDER_LIBRARY.md",
-             "pipeline/reviews/2026-10-24-builder-library.md", "art/source/world/village-library/v1/README.md",
-             "pipeline/DIALOGUE.md", "pipeline/reviews/2026-10-24-village-dialogue.md", "art/source/portraits/v1/README.md"]
-for name in documents:
-    file = root / name
+# Every maintained manual, concept note and review: a link to a file that no longer exists is a failure.
+documents = [root / name for name in ("README.md", "AGENTS.md", "reference/README.md", "sandbox/README.md", "test/README.md")]
+for folder in ("docs", "pipeline"):
+    documents += sorted((root / folder).rglob("*.md"))
+for file in documents:
+    if not file.is_file():
+        continue
+    name = file.relative_to(root)
     for target in re.findall(r"\[[^\]]*\]\(([^)]+)\)", file.read_text()):
-        target = target.split("#", 1)[0].strip("<>")
-        if not target or "://" in target:
+        target = target.split("#", 1)[0].strip("<>").split(" ")[0]
+        if not target or "://" in target or target.startswith("mailto:"):
             continue
         check((file.parent / target).exists(), f"Broken handoff link: {name} -> {target}")
 check("evidence/*.png" not in (root / ".gitignore").read_text(), "Selected visual evidence must travel with the project")

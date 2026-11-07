@@ -104,13 +104,10 @@ func _play() -> void:
 	SaveStore.save_path="user://test_workshop_"+str(OS.get_process_id())+".json"
 	SaveStore.profile_path="user://test_workshop_profile_"+str(OS.get_process_id())+".json"
 	SaveStore.force_enabled=true
-	for id: String in ["kindle-hollow","village-morning","sparks-and-machines"]:SaveStore.delete(id)
+	SaveStore.delete("sparks-and-machines")
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
-	await game.start_new_game("kindle-hollow")
-	game.save_now()
-	var hollow: PackedByteArray=FileAccess.get_file_as_bytes(SaveStore.level_path("kindle-hollow"))
 	await game.start_new_game("sparks-and-machines")
 	game._pop_all_modals()
 	game.close_notebook(true)
@@ -207,8 +204,7 @@ func _play() -> void:
 	while game._flow_busy:await process_frame
 	_check(game.area.id=="workshop-loft" and game.session.player_cell()==Vector2i(7,5), "The return arrives on the matching loft stair tread, mid-loft")
 	_check(game.session.state.memory.get("loft_only")=="kept" and not game.session.state.memory.has("floor_only") and game.session.state.hotaru_greeted, "The loft retains its own memory and receives shared voice progress")
-	_check(FileAccess.get_file_as_bytes(SaveStore.level_path("kindle-hollow"))==hollow, "The second room does not alter another journey's save")
-	for id: String in ["kindle-hollow","village-morning","sparks-and-machines"]:SaveStore.delete(id)
+	SaveStore.delete("sparks-and-machines")
 	game.queue_free()
 	await process_frame
 	await process_frame

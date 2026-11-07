@@ -1,0 +1,16 @@
+{
+  "area_version": 8,
+  "area_sha256": "c15debc51e1999d79c94872989b0dde22cae1e3521304f30c6463e84626594e6",
+  "baseline_document": "content/areas/archive/haverlund-square-v6.json",
+  "baseline_ground": "art/source/world/haverlund-square-ground/v3/model.blend",
+  "selected_ground": "art/source/world/haverlund-square-ground/v5/model.blend",
+  "clockmaker_at": [
+    12.5,
+    20
+  ],
+  "shop_approach": [
+    16,
+    21
+  ],
+  "placement_notes": "Bounded plot fit after native roof-occlusion review; final area JSON remains authoritative."
+}

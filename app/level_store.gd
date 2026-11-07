@@ -1,6 +1,7 @@
 class_name LevelStore
 extends RefCounted
-## Content-owned starting points. Houses keep using the ordinary saved-room flow.
+## Content-owned starting points. Sparks & Machines is the only journey that ships; the catalog keeps the shape of
+## a list so another can be added beside it.
 
 const MAIN_LEVEL: String="sparks-and-machines"
 
@@ -9,7 +10,7 @@ static func default_id()->String:
 	return str(raw.get("default",MAIN_LEVEL))
 
 static func available_entries()->Array[Dictionary]:
-	return entries().filter(func(item: Dictionary)->bool:return not item.get("archived",false))
+	return entries()
 
 static func entries() -> Array[Dictionary]:
 	var raw: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://content/levels/catalog.json"))
@@ -24,8 +25,7 @@ static func entry(id: String) -> Dictionary:
 
 static func resumable() -> String:
 	var last: String = SaveStore.last_level()
-	var available: Array[Dictionary]=available_entries()
-	if available.any(func(item: Dictionary)->bool:return item.id==last) and SaveStore.has_save(last):return last
-	for item: Dictionary in available:
+	if entry(last).is_empty() == false and SaveStore.has_save(last):return last
+	for item: Dictionary in entries():
 		if SaveStore.has_save(item.id):return item.id
 	return default_id()

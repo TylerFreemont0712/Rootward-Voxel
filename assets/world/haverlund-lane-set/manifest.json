@@ -3,21 +3,21 @@
   "asset": "haverlund-lane-set",
   "version": "v1",
   "source": "art/source/world/haverlund-lane-set/v1/model.blend",
-  "source_sha256": "4ef25674f1974c97305938495f7c6a370079131cdec5c548d9f83a7d14279dc5",
+  "source_sha256": "0577fa201b3448e878b0885c83125e329501549778ce8c02cd2985cc91518d67",
   "runtime": "assets/world/haverlund-lane-set/model.glb",
-  "runtime_sha256": "9d3d03ec44b1a5de93e94a041cb7fa0f81b785c20cc09f972e796434dd75ea8d",
+  "runtime_sha256": "e47cf31a92b815160aa7f956fc6e27347849a2bda2619d78304d9c7956f1fe26",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
     "bounds": [
       -3.45000076293945,
       -1.60000014305115,
-      -29.7000007629395,
+      -29.6889705657959,
       23.7000007629395,
       5.39839506149292,
       1.56989812850952
     ],
-    "geometry_sha256": "cc856b97dc159084775eb8bc7ebabee3e83757bd9d6d95507e94bf0ce922c1e8",
+    "geometry_sha256": "215cbd72525daf04a37a0853b3265b32c001f0192fe1ee887e3643514ff2efda",
     "material_records": {
       "grid_bed": {
         "albedo": [
@@ -440,7 +440,7 @@
       "lane_wood_dark",
       "lane_wood_light"
     ],
-    "meshes": 39,
-    "triangles": 358132
+    "meshes": 45,
+    "triangles": 358956
   }
 }

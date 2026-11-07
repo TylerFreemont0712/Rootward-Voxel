@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "asset": "town-retaining-wall",
+  "version": "v1",
+  "source": "art/source/world/town-retaining-wall/v1/model.blend",
+  "source_sha256": "8826a5b34465921053d97e4aafb416eb90df6b919255baeedbac039ff376c88d",
+  "runtime": "assets/world/town-retaining-wall/model.glb",
+  "runtime_sha256": "cbe193871c0b79d782f7ed7f0155bf26e5f3ee9376933b288e0684123d0e8f27",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.51999998092651,
+      0.0,
+      -0.239999994635582,
+      1.51999998092651,
+      2.01999998092651,
+      0.239999994635582
+    ],
+    "geometry_sha256": "732fd97146c2c07998a66f0580fd00ea13507a4e409438099536bff49dbca407",
+    "material_records": {
+      "square_ashlar": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "3ecee23a18a756f661e086eb563a58c7b57af699cc78ea44ae1cf4e72b9269c5"
+      },
+      "square_limestone_pale": {
+        "albedo": [
+          9333,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_shade": {
+        "albedo": [
+          7686,
+          6980,
+          5569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "square_ashlar",
+      "square_limestone_pale",
+      "square_limestone_shade"
+    ],
+    "meshes": 3,
+    "triangles": 132
+  }
+}

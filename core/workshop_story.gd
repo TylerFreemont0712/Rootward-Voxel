@@ -3,10 +3,11 @@ extends RefCounted
 ## Bounded authored scenes and committed quest prerequisites; no files or nodes.
 
 static func valid(scenes: Variant) -> bool:
-	if not scenes is Dictionary or scenes.size() > 16: return false
+	if not scenes is Dictionary or scenes.size() > 40: return false
 	for id: Variant in scenes:
 		var scene: Variant = scenes[id]
 		if not AreaDef._id(id) or not scene is Dictionary or not scene.get("title") is String or str(scene.title).length() > 80 or not scene.get("pages") is Array or scene.pages.is_empty() or scene.pages.size() > 12: return false
+		if scene.has("manual") and not scene.manual is bool: return false
 		if scene.has("requires") and not AreaDef._id(scene.requires): return false
 		if scene.has("area") and not AreaDef._id(scene.area): return false
 		for field: String in ["narrator", "finish_label"]:
@@ -15,7 +16,7 @@ static func valid(scenes: Variant) -> bool:
 		for lamp: Variant in scene.get("lamps_on", []):
 			if not AreaDef._id(lamp): return false
 		for page: Variant in scene.pages:
-			if not page is Dictionary or page.get("speaker") not in ["narration", "hotaru", "ticket", "player"] or not page.get("text") is String or str(page.text).is_empty() or str(page.text).length() > 500: return false
+			if not page is Dictionary or page.get("speaker") not in ["narration", "hotaru", "ticket", "note", "player", "braum", "iona", "nell", "mira", "tessa", "ada", "gret"] or not page.get("text") is String or str(page.text).is_empty() or str(page.text).length() > 500: return false
 			if not page.get("choices", []) is Array or page.get("choices", []).size() > 3: return false
 			for choice: Variant in page.get("choices", []):
 				if not choice is Dictionary or not choice.get("text") is String or str(choice.text).is_empty() or str(choice.text).length() > 120 or not choice.get("reply") is String or str(choice.reply).is_empty() or str(choice.reply).length() > 300: return false
@@ -25,7 +26,7 @@ static func valid(scenes: Variant) -> bool:
 static func pending(scenes: Dictionary, area: String, completed: Array, seen: Array, lamps: Dictionary = {}) -> String:
 	for id: String in scenes:
 		var scene: Dictionary = scenes[id]
-		if scene.get("area", "workshop-floor") == area and scene.has("requires") and completed.has(str(scene.requires)) and not seen.has(id) and can_play(scene, lamps): return id
+		if not scene.get("manual",false) and scene.get("area", "workshop-floor") == area and scene.has("requires") and completed.has(str(scene.requires)) and not seen.has(id) and can_play(scene, lamps): return id
 	return ""
 
 
@@ -54,7 +55,7 @@ static func log_line(scenes: Dictionary, token: Variant) -> Dictionary:
 	var choices: Array = page.get("choices", [])
 	var index: int = int(token.choice)
 	if index < 0 or index >= choices.size(): return {}
-	return {"speaker":"player" if token.kind == "choice" else "hotaru", "text":choices[index].text if token.kind == "choice" else choices[index].reply}
+	return {"speaker":"player" if token.kind == "choice" else str(page.speaker), "text":choices[index].text if token.kind == "choice" else choices[index].reply}
 
 
 static func restore_log(raw: Variant, scenes: Dictionary) -> Array:

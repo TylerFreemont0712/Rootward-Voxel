@@ -1,4 +1,5 @@
 .godot/
+/sandbox/runtime-windows/
 .cache/
 sandbox/runtime/
 evidence/*.log

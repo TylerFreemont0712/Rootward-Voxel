@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "area": "shop-bakery",
+  "quests": [
+    {
+      "id": "next-batch",
+      "title": "The next batch",
+      "after": [
+        "own-corner"
+      ],
+      "concept": "A while loop and counting with numbers",
+      "summary": "Ada Kettering bakes at seven, nine and eleven. People keep knocking on the back door to ask when. Put all three batches on her board. Work payment: 15 p.",
+      "goal": {
+        "type": "all",
+        "goals": [
+          {
+            "type": "inspection_read",
+            "id": "bake-order"
+          },
+          {
+            "type": "display_lines",
+            "id": "bake-board",
+            "noun": "batches on the board",
+            "lines": [
+              "BATCH AT 7",
+              "BATCH AT 9",
+              "BATCH AT 11"
+            ]
+          }
+        ]
+      },
+      "access": {
+        "kind": "display",
+        "id": "bake-board"
+      },
+      "focus": {
+        "at": [
+          7,
+          10
+        ]
+      },
+      "lesson": [
+        "Read Ada's note on the board's frame, then jack the slate in below it. Each printed line is a page of the board.",
+        "A number can be kept in a name and changed: hour = 7, then hour = hour + 2 makes it 9.",
+        "while repeats its indented lines for as long as its condition is True. The condition is checked again each time round, so something inside the loop must change it, or it never stops.",
+        "str(hour) turns a number into words, so it can join other words: \"BATCH AT \" + str(hour).",
+        "Start at 7, go up by 2 and stop after 11."
+      ],
+      "guide": {
+        "title": "Counting up with while",
+        "text": "The loop runs while the condition holds, and the last line inside it moves the count on.",
+        "code": "count = 1\nwhile count <= 3:\n    print(\"LOAF \" + str(count))\n    count = count + 1"
+      },
+      "starter": [
+        "# next_batch.py",
+        "# Ada bakes every two hours: seven, nine and eleven.",
+        "",
+        "def program(world):",
+        "    hour = 7",
+        "    print(\"BATCH AT \" + str(hour))",
+        "    # TODO: the nine o'clock and eleven o'clock batches"
+      ],
+      "hints": [
+        "The starter prints one page. A while loop can print one page for each batch.",
+        "while hour <= 11:  then, indented, the print line and hour = hour + 2."
+      ],
+      "done": "Seven, nine, eleven. The board says it so Ada doesn't have to."
+    }
+  ]
+}

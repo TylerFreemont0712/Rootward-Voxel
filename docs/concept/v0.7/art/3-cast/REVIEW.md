@@ -20,11 +20,11 @@ Nell keeps her braided silver hair, warm skin, round brass spectacles and friend
 
 | Apprentice, front | Apprentice, rear |
 |---|---|
-| ![First front variant, with a knotted neckerchief and a more detailed satchel](C1-apprentice-se.alt1.png) | ![First rear variant, with an unwanted belt buckle at the back](C1-apprentice-ne.alt1.png) |
+| !First front variant, with a knotted neckerchief and a more detailed satchel | !First rear variant, with an unwanted belt buckle at the back |
 
 | Nell, portrait | Nell, sprite |
 |---|---|
-| ![First portrait variant, with more pronounced cable knitting and a steel-coloured spanner](C2a-nell-portrait.alt1.png) | ![First sprite variant, with a waist apron, scissors and a paintbrush](C2b-nell-sprite.alt1.png) |
+| ![First portrait variant, with more pronounced cable knitting and a steel-coloured spanner](C2a-nell-portrait.alt1.png) | !First sprite variant, with a waist apron, scissors and a paintbrush |
 
 The first front apprentice has tighter hair framing and a more detailed satchel. The first rear view puts a buckle on the back waist. Nell's first sprite uses a different apron and adds artist's tools; the second brings it into agreement with her portrait and the maker brief.
 

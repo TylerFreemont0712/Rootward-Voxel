@@ -24,6 +24,8 @@ var _arrow_material: StandardMaterial3D
 var _ghost_root: Node3D
 var _ghost_models: Dictionary = {}
 var _ghost_key: String = ""
+var _wall_root: Node3D
+var _wall_key: String = ""
 var _ghost_tint: StandardMaterial3D
 var _ring: MeshInstance3D
 var _ring_material: StandardMaterial3D
@@ -152,12 +154,12 @@ func show_ghost(spec: Dictionary) -> void:
 		_ghost_key = key
 	_ghost_root.visible = _ghost_root.get_child_count() > 0
 	_ghost_root.position = Vector3(at.x, view.ground_y(at), -at.y)
-	_ghost_root.rotation_degrees.y = float(AreaDef.FACINGS[spec.get("facing", "S")]) if spec.kind in ["building", "prop", "stairs"] else 0.0
+	_ghost_root.rotation_degrees.y = float(AreaDef.FACINGS[spec.get("facing", "S")]) if spec.kind in ["building", "prop", "scenery", "stairs"] else 0.0
 	_ghost_tint.albedo_color = Color(color, 0.4)
 	if spec.kind == "building":
 		_show_tiles(spec.get("cells", []), color)
 		_show_arrow(spec.get("door", Vector2i(-1, -1)), str(spec.get("facing", "S")), valid)
-	elif spec.kind == "prop":
+	elif spec.kind == "prop" or spec.kind == "scenery":
 		_show_tiles(spec.get("cells", []), color)
 		_arrow.visible = false
 	elif spec.kind == "stairs":
@@ -168,6 +170,36 @@ func show_ghost(spec: Dictionary) -> void:
 		_show_tiles([], color)
 		_arrow.visible = false
 		_show_ring(at, color, 0.85 * float(spec.get("size", 1.0)))
+
+
+## The proposal while a wall is drawn: its kit pieces, tinted green where it fits and red where it does not.
+## `pieces` is AreaBuild.wall_pieces for the run.
+func show_wall(pieces: Array[Dictionary], valid: bool) -> void:
+	if _wall_root == null:
+		_wall_root = Node3D.new()
+		_wall_root.name = "WallProposal"
+		add_child(_wall_root)
+	var key: String = JSON.stringify(pieces) + str(valid)
+	_wall_root.visible = true
+	_ghost_tint.albedo_color = Color(OK if valid else BAD, 0.4)
+	if key == _wall_key: return
+	_wall_key = key
+	for child: Node in _wall_root.get_children():
+		child.free()
+	for piece: Dictionary in pieces:
+		var model: Node3D = WorldAssets.instantiate(str(piece.asset))
+		if model == null: continue
+		_mark(model, _ghost_tint)
+		var at: Vector2 = piece.at
+		model.position = Vector3(at.x, view.ground_y(at + Vector2(0.01, 0.01)) + 0.01, -at.y)
+		model.rotation_degrees.y = float(piece.turn)
+		model.scale = Vector3(float(piece.stretch), 1.0, 1.0)
+		_wall_root.add_child(model)
+
+
+func hide_wall() -> void:
+	if _wall_root != null:
+		_wall_root.visible = false
 
 
 func hide_ghost() -> void:
@@ -319,8 +351,8 @@ func show_selection(object: Dictionary) -> void:
 	if object.is_empty():
 		return
 	_selection.visible = true
-	if object.kind == "building" or object.kind == "prop":
-		var body: Dictionary = view.area.building(str(object.id)) if object.kind == "building" else view.area.prop(str(object.id))
+	if object.kind in ["building", "prop", "scenery", "wall"]:
+		var body: Dictionary = _body(object)
 		if body.is_empty():
 			clear_selection()
 			return
@@ -386,15 +418,27 @@ func highlight(object: Dictionary, mode: String) -> void:
 		return
 	_highlight_color = {"move": MOVE, "delete": BAD, "locked": LOCKED}.get(mode, MOVE)
 	_highlight_tint.albedo_color = Color(_highlight_color, 0.4)
-	if object.kind == "building" or object.kind == "prop":
-		_highlighted = view.building_node(str(object.id))
+	if object.kind in ["building", "prop", "scenery", "wall"]:
+		_highlighted = view.building_node(str(object.id)) if object.kind != "wall" else null
 		if _highlighted != null:
 			_mark_highlight(_highlighted, _highlight_tint)
-		var building: Dictionary = view.area.building(str(object.id)) if object.kind == "building" else view.area.prop(str(object.id))
+		var building: Dictionary = _body(object)
 		if not building.is_empty():
 			_show_tiles(AreaBuild.footprint_cells(building.rect), _highlight_color)
 	else:
 		_show_ring(object.at, _highlight_color, 0.85 * float(object.get("size", 1.0)))
+
+
+## What stands in the world for a chosen building, doodad or piece of authored scenery, or {}.
+func _body(object: Dictionary) -> Dictionary:
+	match str(object.get("kind", "")):
+		"building": return view.area.building(str(object.id))
+		"prop": return view.area.prop(str(object.id))
+		"scenery": return view.area.scenery_item(str(object.id))
+		"wall":
+			for wall: Dictionary in view.area.walls:
+				if wall.id == str(object.id): return {"id": wall.id, "rect": wall.rect, "at": ((wall.from as Vector2) + (wall.to as Vector2)) * 0.5}
+	return {}
 
 
 func clear_highlight() -> void:
@@ -474,9 +518,36 @@ func pick_object(viewport_position: Vector2, stairs: bool = false) -> Dictionary
 		if hit != null and origin.distance_to(hit) < best_distance:
 			best_distance = origin.distance_to(hit)
 			best = {"kind": "prop", "id": prop.id, "locked": false, "at": prop.at}
+	# Authored scenery the layout lets a designer move (a lamp standard, a bench, a stall): its body is its model.
+	var carried: Dictionary = {}
+	for item: Dictionary in view.area.scenery:
+		for lamp_id: String in item.lamps: carried[lamp_id] = true
+		var node: Node3D = view.building_node(item.id)
+		if node == null:
+			continue
+		var rect: Rect2 = (item.rect as Rect2).grow(0.15)
+		var base: float = view.ground_y(item.at)
+		var top: float = maxf(world_aabb(node).end.y, base + 0.5)
+		var body := AABB(Vector3(rect.position.x, base, -rect.end.y), Vector3(rect.size.x, top - base, rect.size.y))
+		var hit: Variant = body.intersects_ray(origin, direction)
+		if hit != null and origin.distance_to(hit) < best_distance:
+			best_distance = origin.distance_to(hit)
+			best = {"kind": "scenery", "id": item.id, "locked": false, "at": item.at}
+	# Drawn walls: the run's line, as thick as its style and about as tall as the kit.
+	for wall: Dictionary in view.area.walls:
+		var rect: Rect2 = (wall.rect as Rect2).grow(0.1)
+		var middle: Vector2 = ((wall.from as Vector2) + (wall.to as Vector2)) * 0.5
+		var base: float = view.ground_y(middle + Vector2(0.01, 0.01))
+		var body := AABB(Vector3(rect.position.x, base, -rect.end.y), Vector3(rect.size.x, 1.5, rect.size.y))
+		var hit: Variant = body.intersects_ray(origin, direction)
+		if hit != null and origin.distance_to(hit) < best_distance:
+			best_distance = origin.distance_to(hit)
+			best = {"kind": "wall", "id": wall.id, "locked": false, "at": middle}
 	# Lamps, gates and bridge decks are part of the lessons (they cannot be moved), but they are the things a
-	# program can reach, so they can be chosen to see their code.
+	# program can reach, so they can be chosen to see their code. A lamp carried by movable scenery is chosen as that.
 	for lamp: Dictionary in view.area.lamps:
+		if carried.has(lamp.id):
+			continue
 		var at: Vector2 = lamp.at
 		var beacon: bool = str(lamp.get("style", "")) == "beacon"
 		var half: float = 0.6 if beacon else 0.34

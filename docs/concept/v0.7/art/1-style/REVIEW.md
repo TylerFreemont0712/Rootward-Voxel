@@ -4,9 +4,9 @@
 
 ## Current selection
 
-The selected T1 now has a separate [wheel-base revision](T1-haverlund-key-art.wheels.png), carrying the user’s later rolling-robot direction into the working street automatons. The approved original below is preserved unchanged. T6 remains selected.
+The selected T1 now has a separate wheel-base revision, carrying the user’s later rolling-robot direction into the working street automatons. The approved original below is preserved unchanged. T6 remains selected.
 
-![The harbour key art with rolling automatons](T1-haverlund-key-art.wheels.png)
+!The harbour key art with rolling automatons
 
 ## Earlier approved pair
 
@@ -22,7 +22,7 @@ The warm light, terracotta roofs, cream plaster, teal enamel and copper details 
 
 | T1 · First variant | T6 · First variant |
 |---|---|
-| ![Alternate harbour composition, with a tree behind the Rootwell](T1-haverlund-key-art.alt1.png) | ![Alternate lighting study with a wider harbour backdrop](T6-lighting-key.alt1.png) |
+| !Alternate harbour composition, with a tree behind the Rootwell | !Alternate lighting study with a wider harbour backdrop |
 
 The first T1 is retained for its atmosphere, but its tree behind the wellhead gives the square too much of the earlier oak concept's silhouette. The first T6 has an attractive harbour backdrop, but incorrectly lights the street lamp in daylight.
 

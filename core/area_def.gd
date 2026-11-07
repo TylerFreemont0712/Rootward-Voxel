@@ -11,7 +11,7 @@ const SCHEMA: int = 1
 ## "S" is toward -y, "E" toward +x. The value is the Godot Y rotation in degrees.
 const FACINGS: Dictionary = {"S": 0.0, "E": 90.0, "N": 180.0, "W": 270.0}
 ## What a quest can teach the player's code to do to the valley's houses, trees and doodads (see CodeBuild).
-const CAPABILITIES: Array[String] = ["read", "turn"]
+const CAPABILITIES: Array[String] = ["read", "turn", "move"]
 const FENCE_THICKNESS: float = 0.16
 const WALL_THICKNESS: float = 0.5
 const MAX_SIDE: int = 160
@@ -22,6 +22,7 @@ const PROP_BODY: float = 0.4
 const MAX_LEVEL: int = 2
 ## One cell's step toward each facing, in logical directions.
 const STEPS: Dictionary = {"S": Vector2i(0, -1), "E": Vector2i(1, 0), "N": Vector2i(0, 1), "W": Vector2i(-1, 0)}
+const AMBIENT_ACTIVITIES: Array[String] = ["collect_mail", "deliver_mail", "check_lamp", "tend_garden", "carry_supplies", "inspect", "trade", "read_notice", "rest", "play", "visit"]
 
 enum Terrain { GRASS, PATH, COBBLE, WATER, ROCK }
 const GLYPHS: Dictionary = {".": Terrain.GRASS, ",": Terrain.PATH, "=": Terrain.COBBLE, "~": Terrain.WATER, "#": Terrain.ROCK}
@@ -49,7 +50,14 @@ var trees: Array[Dictionary] = []
 ## Loose decorations the player places: {id, asset, at, facing, scale, rect, solid}. `solid` is true when the
 ## catalog gives the asset a footprint, which then blocks movement; `rect` is the ground it covers either way.
 var props: Array[Dictionary] = []
+## Authored room scenery that the layout lets a designer move: {id, asset, at, turn, height, scale, rect, solid,
+## lamps (ids of the fixture lamps it carries), blocks (indices of the furniture collision standing at its position)}.
+## Only placements of the asset types in `interior.layout.scenery`, standing on the ground inside the area.
+var scenery: Array[Dictionary] = []
 var segments: Array[Dictionary] = []
+## Walls drawn along cell edges (`walls` in the document): {id, from, to, style, rect}. Each also stands in
+## `segments` (with its `wall_id`), so it blocks the edges it runs along like any wall or fence.
+var walls: Array[Dictionary] = []
 var lamps: Array[Dictionary] = []
 var gates: Array[Dictionary] = []
 var bridges: Array[Dictionary] = []
@@ -58,13 +66,13 @@ var zones: Array[Dictionary] = []
 ## {id, title, object, zone, at}: reusable fixed terminals and their reachable approaches.
 var terminals: Array[Dictionary] = []
 ## {id, item, object, title, at}: an authored thing the traveller can pick up, and where they stand to do it.
+var displays: Array[Dictionary] = []
 var pickups: Array[Dictionary] = []
 var quests: Array[Dictionary] = []
 ## Presentation settings and logical furniture/inhabitant data for instanced rooms and the village edge.
 var interior: Dictionary = {}
 var boundary: Dictionary = {}
 var villagers: Array[Dictionary] = []
-var movement_lesson: bool = false
 ## The hello lesson (print speaks to Hotaru) without the movement-key lesson: the player walks normally.
 var voice_lesson: bool = false
 var _index: Dictionary = {}
@@ -146,6 +154,14 @@ func building(building_id: String) -> Dictionary:
 	return {}
 
 
+## The movable scenery placement with this id, or {}.
+func scenery_item(scenery_id: String) -> Dictionary:
+	for entry: Dictionary in scenery:
+		if entry.id == scenery_id:
+			return entry
+	return {}
+
+
 ## The prop with this id, or {} (a linear scan, like building()).
 func prop(prop_id: String) -> Dictionary:
 	for entry: Dictionary in props:
@@ -204,10 +220,6 @@ func _read(document: Dictionary, catalog: Dictionary, errors: Array[String]) -> 
 	id = str(document.get("id", ""))
 	title = str(document.get("title", ""))
 	version = int(document.get("version", 0))
-	if not document.get("movement_lesson", false) is bool:
-		errors.append("movement_lesson must be true or false.")
-		return
-	movement_lesson = document.get("movement_lesson", false)
 	if not document.get("voice_lesson", false) is bool:
 		errors.append("voice_lesson must be true or false.")
 		return
@@ -251,13 +263,127 @@ func _read(document: Dictionary, catalog: Dictionary, errors: Array[String]) -> 
 	_read_props(document.get("props", []), catalog, errors)
 	_read_trees(document.get("trees", []), catalog, errors)
 	_read_segments(document.get("segments", []), errors)
+	_read_walls(document.get("walls", []), errors)
 	_read_lamps(document.get("lamps", []), errors)
 	_read_gates(document.get("gates", []), errors)
 	_read_bridges(document.get("bridges", []), errors)
 	_read_wheels(document.get("wheels", []), errors)
 	_read_places(document, errors)
+	_read_placed_solids(catalog, errors)
+	_read_scenery(catalog, errors)
 	_read_terminals(document.get("terminals", []), catalog, errors)
 	_read_pickups(document.get("pickups", []), errors)
+	_read_displays(document.get("displays", []), errors)
+	_read_welcome(errors)
+
+
+## Explicit placed collision uses the reusable catalog envelope, independent of
+## mesh bounds. This also works for barriers outside an area's walking boundary.
+func _read_placed_solids(catalog: Dictionary, errors: Array[String]) -> void:
+	if interior.is_empty(): return
+	var solids: Array[Rect2] = []
+	for item: Variant in interior.get("assets", []):
+		if not item is Dictionary: continue
+		if item.has("solid") and not item.solid is bool:
+			errors.append("A placed asset's solid flag must be true or false.")
+			return
+		if not item.get("solid", false): continue
+		var shape: Variant = catalog.get(str(item.get("asset", "")), {}).get("logical_footprint")
+		if not shape is Array or shape.size() != 4 or not shape.all(_number) or float(shape[2]) <= 0 or float(shape[3]) <= 0 or not _point_value(item.get("at")) or not _number(item.get("scale", 1)) or float(item.get("scale", 1)) <= 0 or float(item.get("scale", 1)) > 4 or not _number(item.get("turn", 0)) or not is_equal_approx(fposmod(float(item.get("turn", 0)), 90), 0):
+			errors.append("A solid placed asset needs a catalog footprint, position, positive scale up to 4 and a quarter turn.")
+			return
+		var at := Vector2(float(item.at[0]), float(item.at[1]))
+		var local := Rect2(float(shape[0]), float(shape[1]), float(shape[2]), float(shape[3]))
+		var angle: float = deg_to_rad(float(item.get("turn", 0)))
+		var scale: float = float(item.get("scale", 1))
+		var rect := Rect2(at + local.position.rotated(angle) * scale, Vector2.ZERO)
+		for corner: Vector2 in [local.position, local.end, Vector2(local.position.x, local.end.y), Vector2(local.end.x, local.position.y)]:
+			rect = rect.expand(at + corner.rotated(angle) * scale)
+		solids.append(rect)
+	interior["solids"] = solids
+
+
+## Which authored placements a designer may move (see `scenery`). The furniture at exactly a placement's position is
+## its collision (a lamp post's block, a bench's seat) and travels with it; a fixture lamp mapped to it keeps its id.
+func _read_scenery(catalog: Dictionary, errors: Array[String]) -> void:
+	var layout: Dictionary = interior.get("layout", {})
+	var kinds: Variant = layout.get("scenery", [])
+	if not kinds is Array or not kinds.all(func(id: Variant) -> bool: return _id(id)):
+		errors.append("A layout's scenery must be a list of asset ids.")
+		return
+	if kinds.is_empty(): return
+	var furniture: Array = interior.get("furniture", [])
+	for item: Variant in interior.get("assets", []):
+		if not item is Dictionary or not kinds.has(str(item.get("asset", ""))) or item.get("locked", false) == true: continue
+		if not _point_value(item.get("at")) or not _number(item.get("turn", 0)) or not _number(item.get("height", 0)) or not _number(item.get("scale", 1)): continue
+		var at := Vector2(float(item.at[0]), float(item.at[1]))
+		var cell := Vector2i(roundi(at.x), roundi(at.y))
+		if not in_bounds(cell) or terrain_at(cell) in [Terrain.ROCK, Terrain.WATER] or not stair_at(cell).is_empty(): continue
+		# Authored grounds rise one metre a level; a placement up on a wall, a roof or the dressing past the edge is not
+		# standing on this cell's ground, so it is not offered for moving.
+		if absf(float(item.get("height", 0)) - float(level_at(cell))) > 0.3: continue
+		var turn: float = float(item.get("turn", 0))
+		var scale: float = float(item.get("scale", 1))
+		var blocks: Array[int] = []
+		for index: int in range(furniture.size()):
+			if ((furniture[index] as Dictionary).at as Vector2).distance_to(at) < 0.05: blocks.append(index)
+		var shape: Variant = (catalog.get(str(item.asset), {}) as Dictionary).get("logical_footprint")
+		var solid: bool = item.get("solid", false) == true and shape is Array and shape.size() == 4
+		var rect := Rect2(at - Vector2(PROP_BODY, PROP_BODY) * 0.5, Vector2(PROP_BODY, PROP_BODY))
+		if solid:
+			var local := Rect2(float(shape[0]), float(shape[1]), float(shape[2]), float(shape[3]))
+			var angle: float = deg_to_rad(turn)
+			rect = Rect2(at + local.position.rotated(angle) * scale, Vector2.ZERO)
+			for corner: Vector2 in [local.position, local.end, Vector2(local.position.x, local.end.y), Vector2(local.end.x, local.position.y)]:
+				rect = rect.expand(at + corner.rotated(angle) * scale)
+		for index: int in blocks:
+			rect = rect.merge((furniture[index] as Dictionary).rect)
+		var carried: Array[String] = []
+		for fixture: Variant in interior.get("lamp_fixtures", []):
+			if fixture is Dictionary and str(fixture.get("asset", "")) == str(item.id): carried.append(str(fixture.id))
+		scenery.append({"id": str(item.id), "asset": str(item.asset), "at": at, "turn": turn, "height": float(item.get("height", 0)),
+			"scale": scale, "rect": rect, "solid": solid or not blocks.is_empty(), "lamps": carried, "blocks": blocks,
+			"title": str((catalog.get(str(item.asset), {}) as Dictionary).get("label", item.asset))})
+
+
+func _read_welcome(errors: Array[String]) -> void:
+	if not interior.has("welcome"):return
+	var spec: Variant=interior.welcome
+	if not spec is Dictionary or not _id(spec.get("gate")) or not _point_value(spec.get("gate_at")) or DisplayCards.find(self,str(spec.get("display",""))).is_empty():
+		errors.append("Welcome staging needs an authored gate, hinge approach and known display.")
+		return
+	for id: String in ["braum","iona"]:
+		var actor: Variant=spec.get(id)
+		if not actor is Dictionary or not _id(actor.get("skin")):
+			errors.append("Welcome staging needs both character skins and positions.")
+			return
+		for field: String in (["spawn","call","landing"] if id=="braum" else ["at"]):
+			if not _cell_value(actor.get(field)) or not in_bounds(Vector2i(actor[field][0],actor[field][1])):
+				errors.append("Welcome character stops must be whole cells inside this area.")
+				return
+
+
+func _read_displays(value: Variant, errors: Array[String]) -> void:
+	if not value is Array or value.size()>16:
+		errors.append("displays must be a list of at most 16 mounted signs.")
+		return
+	for raw: Variant in value:
+		if not raw is Dictionary or not _id(raw.get("id")) or not raw.get("title") is String or raw.title.is_empty() or raw.title.length()>80 or not _cell_value(raw.get("at")) or zone(str(raw.get("zone", ""))).is_empty() or not _id(raw.get("object")) or not _id(raw.get("commission")):
+			errors.append("A display needs id, title, approach, zone, placed object and commission inspection.")
+			return
+		if not in_bounds(Vector2i(raw.at[0],raw.at[1])) or not DisplayCards.find(self,raw.id).is_empty() or not (interior.get("assets",[]) as Array).any(func(item: Dictionary)->bool:return item.id==raw.object) or not (interior.get("inspections",[]) as Array).any(func(item:Dictionary)->bool:return item.id==raw.commission):
+			errors.append("A display must name a unique mounted object, valid approach and known commission.")
+			return
+		var object_at: Vector2
+		for item: Dictionary in interior.get("assets",[]):
+			if item.id==raw.object:object_at=Vector2(item.at[0],item.at[1])
+		if zone_at(Vector2i(raw.at[0],raw.at[1]))!=raw.zone or object_at.distance_to(Vector2(raw.at[0],raw.at[1]))>2.0:
+			errors.append("A display approach must stand beside its object in its named zone.")
+			return
+		if DisplayCards.text_error(raw.get("default",["Welcome"]))!="":
+			errors.append("Invalid default display card.")
+			return
+		displays.append(raw.duplicate(true))
 
 
 func _read_terminals(value: Variant, catalog: Dictionary, errors: Array[String]) -> void:
@@ -340,6 +466,23 @@ func _read_places(document: Dictionary, errors: Array[String]) -> void:
 			errors.append("An interior needs an exit cell and a furniture list.")
 			return
 		interior = room.duplicate(true)
+		if room.has("map_offset") and (not _cell_value(room.map_offset)):
+			errors.append("map_offset needs two whole cell coordinates.")
+		if room.has("stair_steps") and (not _whole(room.stair_steps) or int(room.stair_steps) < 2 or int(room.stair_steps) > 12):
+			errors.append("stair_steps (steps per stair flight in the authored ground) must be a whole number from 2 to 12.")
+			return
+		if room.has("layout"):
+			var layout: Variant = room.layout
+			if not layout is Dictionary or not layout.get("rect") is Array or layout.rect.size() != 4 or not layout.rect.all(_whole) or not layout.get("items") is Array or layout.items.is_empty() or not layout.items.all(func(id: Variant) -> bool: return _id(id)):
+				errors.append("A layout needs a whole-cell rect and a shelf of item ids.")
+				return
+			var bounds := Rect2(float(layout.rect[0]), float(layout.rect[1]), float(layout.rect[2]), float(layout.rect[3]))
+			if bounds.size.x <= 0 or bounds.size.y <= 0 or not Rect2(0, 0, width, height).encloses(bounds):
+				errors.append("Keep the layout rectangle inside the area.")
+				return
+			if layout.has("levels") and (not layout.levels is Array or not layout.levels.all(func(level: Variant) -> bool: return _whole(level) and int(level) >= 0 and int(level) <= MAX_LEVEL)):
+				errors.append("A layout's levels must be whole land levels.")
+				return
 		var connection_error: String = _room_connection_error(room)
 		if connection_error != "":
 			errors.append(connection_error)
@@ -443,6 +586,19 @@ func _read_places(document: Dictionary, errors: Array[String]) -> void:
 		if raw.has("wander") and (not raw.has("phantom") or not raw.wander is bool):
 			errors.append("Only a phantom can choose varied wander stops (true or false).")
 			return
+		if raw.has("errands"):
+			if not raw.errands is Array or raw.errands.is_empty() or raw.errands.size() != route.size() or raw.get("wander", false) or raw.has("arrival"):
+				errors.append("An errand round needs one ordered task per route stop, without random wandering or tram arrivals.")
+				return
+			for index: int in range(route.size()):
+				var task: Variant = raw.errands[index]
+				if not task is Dictionary or task.get("activity") not in AMBIENT_ACTIVITIES or not _id(task.get("target")) or not _number(task.get("seconds")) or float(task.seconds) < 1.0 or float(task.seconds) > 15.0:
+					errors.append("An ambient task needs a known activity, a placed target and a 1–15 second work stop.")
+					return
+				var targets: Array = (interior.get("assets", []) as Array).filter(func(item: Dictionary) -> bool: return item.id == task.target)
+				if targets.is_empty() or Vector2(route[index]).distance_to(Vector2(float(targets[0].at[0]), float(targets[0].at[1]))) > 6.0:
+					errors.append("An ambient task must stop beside its real placed target (within six cells of its centre).")
+					return
 		if raw.has("arrival"):
 			var arrival: Variant = raw.arrival
 			var links: Array = interior.get("links", [])
@@ -461,7 +617,7 @@ func _read_places(document: Dictionary, errors: Array[String]) -> void:
 				return
 		seen[raw.id] = true
 		var resident: Dictionary = {"id": raw.id, "at": at, "route": route, "home": str(raw.get("home", ""))}
-		for field: String in ["skin", "object", "phantom", "speed", "pause", "wander", "arrival"]:
+		for field: String in ["skin", "object", "phantom", "speed", "pause", "wander", "arrival", "errands"]:
 			if raw.has(field): resident[field] = raw[field]
 		villagers.append(resident)
 
@@ -693,7 +849,7 @@ func _read_props(value: Variant, catalog: Dictionary, errors: Array[String]) -> 
 			size = Vector2(size.y, size.x)
 		size *= scale
 		var at := Vector2(float(raw.at[0]), float(raw.at[1]))
-		var rect := Rect2(at - size * 0.5, size)
+		var rect := AreaBuild.prop_rect(catalog, str(raw.asset), at, facing, scale)
 		if rect.position.x < 0.0 or rect.position.y < 0.0 or rect.end.x > float(width) or rect.end.y > float(height):
 			errors.append("Prop '%s' lies outside the area." % raw.id)
 			return
@@ -766,6 +922,34 @@ func _read_segments(value: Variant, errors: Array[String]) -> void:
 		segments.append({"kind": raw.kind, "from": a, "to": b, "rect": rect, "thickness": thickness})
 
 
+## A drawn wall runs between two cell corners (half-cell coordinates) along x or y, one style of the town's kit.
+func _read_walls(value: Variant, errors: Array[String]) -> void:
+	if not value is Array:
+		errors.append("walls must be a list.")
+		return
+	for raw: Variant in value:
+		if not raw is Dictionary or not _id(raw.get("id")) or not _point_value(raw.get("from")) or not _point_value(raw.get("to")) or not AreaBuild.WALL_STYLES.has(str(raw.get("style", ""))):
+			errors.append("Each wall needs an id, from [x, y], to [x, y] and a known style.")
+			return
+		var a := Vector2(float(raw["from"][0]), float(raw["from"][1]))
+		var b := Vector2(float(raw["to"][0]), float(raw["to"][1]))
+		var on_corners: bool = [a.x, a.y, b.x, b.y].all(func(v: float) -> bool: return is_equal_approx(fposmod(v, 1.0), 0.5))
+		var length: float = a.distance_to(b)
+		if not on_corners or (not is_equal_approx(a.x, b.x) and not is_equal_approx(a.y, b.y)) or length < 0.99 or length > 64.01:
+			errors.append("Wall '%s' must run along cell edges, along x or y, 1 to 64 cells long." % raw.id)
+			return
+		if minf(a.x, b.x) < -0.5 or minf(a.y, b.y) < -0.5 or maxf(a.x, b.x) > float(width) - 0.5 or maxf(a.y, b.y) > float(height) - 0.5:
+			errors.append("Wall '%s' lies outside the area." % raw.id)
+			return
+		if walls.any(func(other: Dictionary) -> bool: return other.id == raw.id):
+			errors.append("Wall id '%s' is used twice." % raw.id)
+			return
+		var style: Dictionary = AreaBuild.WALL_STYLES[str(raw.style)]
+		var rect: Rect2 = AreaBuild.wall_rect(a, b, str(raw.style))
+		walls.append({"id": str(raw.id), "from": a, "to": b, "style": str(raw.style), "rect": rect})
+		segments.append({"kind": "fence" if float(style.thickness) < 0.2 else "wall", "from": a, "to": b, "rect": rect, "thickness": float(style.thickness), "wall_id": str(raw.id)})
+
+
 func _read_lamps(value: Variant, errors: Array[String]) -> void:
 	if not value is Array:
 		errors.append("lamps must be a list.")
@@ -797,6 +981,9 @@ func _read_lamps(value: Variant, errors: Array[String]) -> void:
 				return
 			entry["title"] = raw.title
 		_index["lamp:" + raw.id] = entry
+		if raw.has("automatic"):
+			if not raw.automatic is bool: errors.append("Lamp automatic must be true or false.")
+			else: entry["automatic"] = raw.automatic
 		lamps.append(entry)
 
 
@@ -897,6 +1084,11 @@ func _read_quests(document: Dictionary, errors: Array[String]) -> void:
 		entry["concept"] = str(raw.get("concept", ""))
 		entry["optional"] = bool(raw.get("optional", false))
 		entry["chapter"] = str(raw.get("chapter", ""))
+		var after: Variant = raw.get("after", [])
+		if not after is Array or not (after as Array).all(func(id: Variant) -> bool: return _id(id)):
+			errors.append("Quest '%s' after must list the ids of jobs elsewhere on the journey." % raw.id)
+			return
+		entry["after"] = (after as Array).duplicate()
 		var unlocks: Array[String] = []
 		for capability: Variant in raw.get("unlocks", []):
 			if not capability is String or not CAPABILITIES.has(capability):
@@ -935,23 +1127,40 @@ func _cross_check(errors: Array[String]) -> void:
 			errors.append("Quest '%s' focus needs at [x, y]." % entry.id)
 		var access: Variant = entry.get("access")
 		if access != null:
-			var valid: bool = access is Dictionary and access.get("kind") in ["device", "zone"] and _id(access.get("id"))
+			var valid: bool = access is Dictionary and access.get("kind") in ["device", "zone", "display"] and _id(access.get("id"))
 			if valid and access.kind == "device": valid = not lamp(str(access.id)).is_empty()
+			if valid and access.kind == "display": valid = not DisplayCards.find(self,str(access.id)).is_empty()
 			if valid and access.kind == "zone": valid = not zone(str(access.id)).is_empty()
 			if not valid: errors.append("Quest '%s' access must name a known lamp (device) or zone." % entry.id)
 
 
 func _check_goal(goal: Dictionary, quest_id: String, errors: Array[String]) -> void:
 	match str(goal.get("type", "")):
-		"movement_ready":
-			if not movement_lesson:
-				errors.append("A movement quest needs movement_lesson enabled in its area.")
+		"doodads_face_point":
+			if not goal.get("ids") is Array or (goal.ids as Array).is_empty() or not _point_value(goal.get("at")) or not (goal.ids as Array).all(func(id: Variant) -> bool: return not Quests.doodad(self, str(id)).is_empty()):
+				errors.append("Quest '%s' doodads_face_point needs known doodad ids and a point." % quest_id)
+		"doodads_at":
+			if not goal.get("targets") is Array or (goal.targets as Array).is_empty() or not (goal.targets as Array).all(func(t: Variant) -> bool: return t is Dictionary and not Quests.doodad(self, str(t.get("id", ""))).is_empty() and _point_value(t.get("at")) and (not t.has("facing") or FACINGS.has(str(t.facing)))):
+				errors.append("Quest '%s' doodads_at needs targets of known doodads, each with at [x, y] and an optional facing." % quest_id)
+		"doodads_row":
+			if not goal.get("assets") is Array or (goal.assets as Array).is_empty() or not str(goal.get("axis", "")) in ["x", "y"] or not _number(goal.get("gap", 0)):
+				errors.append("Quest '%s' doodads_row needs assets, an axis (x or y) and a gap." % quest_id)
+		"doodads_in_rect":
+			if not goal.get("assets") is Array or not goal.get("rect") is Array or (goal.rect as Array).size() != 4 or not (goal.rect as Array).all(_number) or not _whole(goal.get("at_least")) or int(goal.at_least) < 1:
+				errors.append("Quest '%s' doodads_in_rect needs assets, rect [x, y, w, h] and at_least." % quest_id)
 		"hotaru_greeted":
-			if not movement_lesson and not voice_lesson:
-				errors.append("A movement quest needs movement_lesson enabled in its area.")
+			if not voice_lesson:
+				errors.append("A greeting goal needs voice_lesson enabled in its area.")
 		"inspection_read":
 			if not _id(goal.get("id")) or not (interior.get("inspections", []) as Array).any(func(item: Dictionary) -> bool: return item.id == goal.id):
 				errors.append("Quest '%s' needs a known room inspection." % quest_id)
+		"display_lines":
+			if DisplayCards.find(self, str(goal.get("id", ""))).is_empty() or not goal.get("lines") is Array or (goal.lines as Array).is_empty() or (goal.lines as Array).size() > DisplayCards.MAX_PAGES or DisplayCards.text_error(goal.lines) != "":
+				errors.append("Quest '%s' display_lines needs a known sign and one to three valid lines." % quest_id)
+		"display_messages":
+			if DisplayCards.find(self,str(goal.get("id", ""))).is_empty(): errors.append("Display goal needs a known sign.")
+		"lamp_program":
+			if lamp(str(goal.get("id", ""))).is_empty(): errors.append("Lamp program goal needs a known lamp.")
 		"lamps_lit":
 			if goal.has("zone") and zone(str(goal.zone)).is_empty():
 				errors.append("Quest '%s' goal names unknown zone '%s'." % [quest_id, str(goal.zone)])
@@ -1003,7 +1212,7 @@ func _room_connection_error(room: Dictionary) -> String:
 	if room.has("walk_front") and (not _number(room.walk_front) or float(room.walk_front) < 0 or float(room.walk_front) >= height): return "Keep the room's walking front inside its height."
 	for field: String in ["links", "inspections", "stair_flights", "exit_posts", "lamp_fixtures"]:
 		# A hub such as the town square has many more things to look at than a room.
-		var bound: int = 64 if field == "inspections" else 24
+		var bound: int = 128 if field == "lamp_fixtures" else (64 if field == "inspections" else 24)
 		if not room.get(field, []) is Array or room.get(field, []).size() > bound: return "Room %s must be a bounded list." % field
 	var ids: Array[String] = []
 	for link: Variant in room.get("links", []):

@@ -11,6 +11,8 @@ const CLEARANCE: float = 0.055
 static func height(area: AreaDef, point: Vector2, entrances: Array[Dictionary]) -> float:
 	var cell := Vector2i(floori(point.x + 0.5), floori(point.y + 0.5))
 	var result: float = float(area.level_at(cell)) * TerrainBuilder.LEVEL_RISE
+	# Authored stair models may cut a level into a different number of equal steps than the procedural ones.
+	var steps: int = int(area.interior.get("stair_steps", TerrainBuilder.STAIR_STEPS)) if not area.interior.is_empty() else TerrainBuilder.STAIR_STEPS
 	for flight: Dictionary in area.stairs:
 		var relative: Vector2 = point - Vector2(flight.at)
 		var forward := Vector2(flight.dir)
@@ -18,8 +20,8 @@ static func height(area: AreaDef, point: Vector2, entrances: Array[Dictionary]) 
 		if absf(relative.cross(forward)) > 0.4 or along < -0.5 - FOOT_LEAD or along > 0.5:
 			continue
 		var base: float = float(flight.level) * TerrainBuilder.LEVEL_RISE
-		var depth: float = 1.0 / float(TerrainBuilder.STAIR_STEPS)
-		for index: int in range(TerrainBuilder.STAIR_STEPS):
+		var depth: float = 1.0 / float(steps)
+		for index: int in range(steps):
 			var edge: float = -0.5 + float(index) * depth
 			if along < edge - FOOT_LEAD:
 				break
@@ -51,6 +53,25 @@ static func height(area: AreaDef, point: Vector2, entrances: Array[Dictionary]) 
 		if point.distance_to(Vector2(float(area.interior.exit[0]), float(area.interior.exit[1]))) < 0.85:
 			result = maxf(result, 0.11)
 	return result + CLEARANCE
+
+
+## How far a flat contact shadow under feet at `point` must rise so no tread under its footprint (half extents
+## `half`, in cells) covers it. Zero away from stairs; on a flight it rests on the highest tread beneath it rather
+## than cutting into the next riser as the feet move.
+static func contact_lift(area: AreaDef, point: Vector2, entrances: Array[Dictionary], half: Vector2 = Vector2(.33, .22)) -> float:
+	var near: bool = false
+	for flight: Dictionary in area.stairs:
+		if (Vector2(flight.at) - point).length_squared() < 2.25:
+			near = true
+			break
+	if not near:
+		return 0.0
+	var here: float = height(area, point, entrances)
+	var lift: float = 0.0
+	for dx: float in [-1.0, 0.0, 1.0]:
+		for dy: float in [-1.0, 0.0, 1.0]:
+			lift = maxf(lift, height(area, point + Vector2(dx * half.x, dy * half.y), entrances) - here)
+	return lift
 
 
 ## A room's descending hatch replaces its floor support, including the old exit

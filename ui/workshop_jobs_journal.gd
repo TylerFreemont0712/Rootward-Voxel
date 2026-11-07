@@ -18,6 +18,13 @@ var _notepad: FieldNotepad
 var _editor_column: VBoxContainer
 var _devices: VBoxContainer
 var _variables: VBoxContainer
+var _files: VBoxContainer
+var _split: HSplitContainer
+var _sidebar: PanelContainer
+var _sidebar_toggle: FButton
+var _card_preview: Label
+var _card_next: FButton
+var _card_page: int = 0
 var _pages: OptionButton
 var _status: Label
 var _run: FButton
@@ -36,7 +43,7 @@ var playback: ProgramPlayback
 var _hint_index: int = 0
 var _last_values: Dictionary = {}
 var _notes_slide: Tween
-## Where the traveller is writing: {"kind": "device"|"zone", "id", "title"}, or {} for every reached page.
+## Where the traveller is writing: {"kind": "device"|"zone"|"display", "id", "title"}.
 var context: Dictionary = {}
 
 func setup(value: GameSession, settings: GameSettings) -> void:
@@ -60,8 +67,10 @@ func setup(value: GameSession, settings: GameSettings) -> void:
 		_pages.set_item_metadata(0, "scratch-" + str(context.id) if not context.is_empty() else "")
 	# The slate.
 	_tablet = TabletScreen.new(TabletScreen.Look.SLATE)
-	_tablet.link_kind = TabletScreen.Link.NONE if context.is_empty() else (TabletScreen.Link.WIRED if context.get("kind", "") == "zone" else TabletScreen.Link.WIRELESS)
+	_tablet.link_kind = TabletScreen.Link.NONE if context.is_empty() else (TabletScreen.Link.WIRED if context.get("kind", "") in ["zone","display"] else TabletScreen.Link.WIRELESS)
 	_tablet.link = _link_words()
+	_sidebar_toggle=UI.icon_button(&"sidebar","Toggle sidebar · Ctrl+B",toggle_sidebar)
+	_tablet.header_end.add_child(_sidebar_toggle)
 	_tablet.header_end.add_child(UI.icon_button(&"cross", back_label, close))
 	add_child(_tablet)
 	_tablet.add_child(_pages)
@@ -73,26 +82,38 @@ func setup(value: GameSession, settings: GameSettings) -> void:
 		if session.busy: return
 		_pages.select(index)
 		_show_page())
-	var row := UI.hbox(0)
-	row.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	_tablet.content.add_child(row)
-	var device_panel := PanelContainer.new()
+	_split=HSplitContainer.new()
+	_split.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	_split.add_theme_constant_override("separation",6)
+	_tablet.content.add_child(_split)
+	_sidebar=PanelContainer.new()
 	var device_box: StyleBoxFlat = CodePalette.glass(CodePalette.BG_RAISED)
 	device_box.content_margin_left = 12.0
 	device_box.content_margin_top = 10.0
-	device_panel.add_theme_stylebox_override("panel", device_box)
-	device_panel.custom_minimum_size.x = 236
-	var side := UI.vbox(14)
-	device_panel.add_child(side)
-	_devices = UI.vbox(8)
-	side.add_child(_devices)
-	_variables = UI.vbox(4)
-	side.add_child(_variables)
-	row.add_child(device_panel)
+	device_box.content_margin_right=8.0
+	_sidebar.add_theme_stylebox_override("panel", device_box)
+	_sidebar.custom_minimum_size.x=128
+	_sidebar.size_flags_horizontal=Control.SIZE_FILL
+	var scroll:=ScrollContainer.new()
+	scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	_sidebar.add_child(scroll)
+	var side := UI.vbox(8)
+	side.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	scroll.add_child(side)
+	_files=_sidebar_section(side,"files","FILES")
+	_devices=_sidebar_section(side,"devices","DEVICES")
+	_variables=_sidebar_section(side,"variables","VARIABLES")
+	_split.add_child(_sidebar)
 	_editor_column = UI.vbox(4)
+	_editor_column.custom_minimum_size.x=240
 	_editor_column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_editor_column.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	row.add_child(_editor_column)
+	_split.add_child(_editor_column)
+	_sidebar.visible=session.slate_sidebar_visible
+	_split.split_offset=session.slate_sidebar_width
+	_split.dragged.connect(func(offset:int)->void:
+		session.slate_sidebar_width=clampi(offset,128,360)
+		if offset!=session.slate_sidebar_width:_split.split_offset=session.slate_sidebar_width)
 	_run = UI.button("Debug", &"debug", &"ButtonPrimary", preview)
 	_run.tooltip_text = "Debug (F5 or Ctrl+Enter): run the routine as a ghost in the room"
 	_apply = UI.button("Apply routine", &"check", &"ButtonStamp", apply_routine)
@@ -125,7 +146,8 @@ func setup(value: GameSession, settings: GameSettings) -> void:
 	session.run_finished.connect(_tested)
 	session.preview_changed.connect(func(ready: bool) -> void:
 		_apply.disabled = not ready or session.busy
-		_refresh_devices())
+		_refresh_devices()
+		_refresh_card())
 	session.busy_changed.connect(func(busy: bool) -> void:
 		_run.disabled = busy
 		_pages.disabled = busy
@@ -137,7 +159,35 @@ func setup(value: GameSession, settings: GameSettings) -> void:
 
 ## The slate takes a larger share of the screen than the paper drawer did.
 func _wanted_width() -> float:
-	return clampf(get_viewport_rect().size.x * .41, 640.0, 840.0)
+	return clampf(get_viewport_rect().size.x * .47, 740.0, 980.0)
+
+
+func _sidebar_section(parent: VBoxContainer, id: String, title: String) -> VBoxContainer:
+	var content:=UI.vbox(5)
+	var heading:=UI.button(("▾ " if session.slate_sections.get(id,true) else "▸ ")+title,&"",&"ButtonQuiet",Callable())
+	heading.alignment=HORIZONTAL_ALIGNMENT_LEFT
+	heading.tooltip_text="Collapse or expand "+title.to_lower()
+	heading.pressed.connect(func()->void:
+		content.visible=not content.visible
+		session.slate_sections[id]=content.visible
+		heading.text=("▾ " if content.visible else "▸ ")+title)
+	parent.add_child(heading)
+	content.visible=bool(session.slate_sections.get(id,true))
+	parent.add_child(content)
+	return content
+
+
+func toggle_sidebar() -> void:
+	session.slate_sidebar_visible=not session.slate_sidebar_visible
+	_sidebar.visible=session.slate_sidebar_visible
+	if _sidebar.visible:_split.split_offset=session.slate_sidebar_width
+	_sidebar_toggle.tooltip_text=("Hide sidebar" if _sidebar.visible else "Show sidebar")+" · Ctrl+B"
+
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if drawer_open and event is InputEventKey and event.pressed and not event.echo and event.ctrl_pressed and event.keycode==KEY_B:
+		toggle_sidebar()
+		get_viewport().set_input_as_handled()
 
 
 func fit_drawer() -> void:
@@ -260,6 +310,7 @@ func _belongs_here(quest: Dictionary) -> bool:
 	if context.is_empty(): return true
 	var access: Variant = quest.get("access")
 	if not access is Dictionary: return false
+	if context.kind=="display":return access.kind=="display" and str(access.id)==str(context.id)
 	if context.kind == "device": return access.kind == "device" and str(access.id) == str(context.id)
 	if access.kind == "zone": return str(access.id) == str(context.id)
 	var lamp: Dictionary = session.area.lamp(str(access.id))
@@ -275,8 +326,11 @@ func _caption() -> String:
 func _link_words() -> String:
 	var reach: Array[Dictionary] = _reach()
 	match str(context.get("kind", "")):
+		"display":return "Jacked in  ·  %s  ·  message card" % str(context.get("title",context.id))
 		"zone":
-			return "Jacked in  ·  %s  ·  %d device%s" % [str(context.id), reach.size(), "" if reach.size() == 1 else "s"]
+			return "Jacked in  ·  %s  ·  %d device%s" % [str(context.id), reach.size()+RobotPrograms.snapshot(session.area,session.state).size(), "" if reach.size()+RobotPrograms.snapshot(session.area,session.state).size() == 1 else "s"]
+		"robot":
+			return "Service link  ·  "+str(context.id)
 		"device":
 			return "Paired  ·  " + str(context.get("title", context.id))
 	return "No link  ·  stand at a screen or a fitting"
@@ -287,7 +341,7 @@ func _reach() -> Array[Dictionary]:
 	var lamps: Array[Dictionary] = []
 	if context.is_empty(): return lamps
 	for lamp: Dictionary in session.rules.snapshot(session.state).lamps:
-		if (context.kind == "zone" and str(lamp.zone) == str(context.id)) or (context.kind == "device" and str(lamp.id) == str(context.id)):
+		if (context.kind == "zone" and str(lamp.zone) == str(context.id)) or (context.kind == "device" and (str(lamp.id) == str(context.id) or session.area.lamp(str(lamp.id)).get("stand",[]) == session.area.lamp(str(context.id)).get("stand",[-1,-1]))):
 			lamps.append(lamp)
 	return lamps
 
@@ -310,6 +364,12 @@ func _show_page() -> void:
 		child.queue_free()
 	_notepad.clear_pages()
 	_page = str(_pages.get_item_metadata(_pages.selected))
+	session.output_display=str(context.id) if context.get("kind","")=="display" else ""
+	session.daylight_program = false
+	session.robot_link=context.get("kind","")=="robot"
+	_card_preview=null
+	_card_next=null
+	_card_page=0
 	_tablet.select_tab(_pages.selected)
 	_hint_index = 0
 	_last_values.clear()
@@ -344,11 +404,28 @@ func _show_page() -> void:
 		for line: String in str(quest.get("lesson", "")).split("\n"):
 			if not line.is_empty(): job.add_child(UI.dim(line, 16))
 		if _page == "morning-round": _loop_guide(job)
+		if quest.get("guide") is Dictionary: _quest_guide(job, quest.guide)
+		elif context.get("kind","")=="display":_message_guide(job)
+		if context.get("kind","")=="device":
+			var automatic := CheckBox.new()
+			automatic.text="Daylight routine · test day + dark"
+			automatic.button_pressed = scratch or _page=="after-the-light" or not session.state.lamp_programs.get(str(context.id),{}).is_empty()
+			session.daylight_program = automatic.button_pressed
+			job.add_child(automatic)
+			automatic.toggled.connect(func(on: bool)->void:
+				session.daylight_program=on
+				session.discard_preview())
+			job.add_child(UI.dim("A daylight routine is tested twice in the Python sandbox. Apply installs both results; the shared clock selects the right one.",16))
+		if context.get("kind","")=="robot":
+			job.add_child(UI.dim("Read robot.stops for the worker’s service points. set_route([...]) changes their order; set_speed(2) changes pace. pause() and resume() control the round. All routes still use ordinary paths.",16))
 		editor = CodeEditor.new()
 		editor.custom_minimum_size.y = 150
 		editor.size_flags_vertical = Control.SIZE_EXPAND_FILL
 		editor.apply_settings(_settings)
 		editor.text = str(session.workshop_pages.get(_page, quest.get("starter", 'def program(world):\n    print("' + session.area.zone(str(context.get("id", ""))).get("title", "Connected") + '")\n')))
+		if scratch and not session.workshop_pages.has(_page):
+			if context.kind=="device": editor.text='def program(world):\n    lamp = world.lamp("'+str(context.id)+'")\n    if world.time.is_dark:\n        lamp.set_lit(True)\n    else:\n        lamp.set_lit(False)\n'
+			elif context.kind=="robot": editor.text='def program(world):\n    robot = world.robot("'+str(context.id)+'")\n    print(robot.stops)\n    robot.set_speed(2)\n    robot.resume()\n'
 		CodePalette.style(editor)
 		_editor_column.add_child(editor)
 		editor.run_requested.connect(preview)
@@ -362,15 +439,29 @@ func _show_page() -> void:
 		editor.mouse_exited.connect(func() -> void: if not _hover.pinned: _hover.dismiss())
 		editor.gui_input.connect(func(event: InputEvent) -> void:
 			if event is InputEventMouseButton and event.pressed and not event.ctrl_pressed: _hover.dismiss())
+		editor.gui_input.connect(_unhandled_key_input)
 		playback = ProgramPlayback.new()
 		playback.code.apply_settings(_settings)
 		playback.use_screen_look()
 		playback.variables_changed.connect(_show_variables)
 		_editor_column.add_child(playback)
+		if context.get("kind","")=="display":
+			var card_row:=UI.hbox(8)
+			_card_preview=UI.label("Installed card",&"",14,CodePalette.DIM)
+			_card_preview.custom_minimum_size.y=44
+			_card_preview.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+			card_row.add_child(UI.fill(_card_preview))
+			_card_next=UI.button("Next page",&"chevron",&"ButtonQuiet",func()->void:
+				_card_page+=1
+				_refresh_card())
+			card_row.add_child(_card_next)
+			_editor_column.add_child(card_row)
+			_refresh_card()
 		if not scratch: _fill_hints(quest)
 		_status.text = "Debug runs the routine as a ghost in the room. Apply routine keeps it."
 	_fill_names()
 	_fill_index()
+	_fill_files()
 	_show_variables({})
 	_refresh_devices()
 	_loading = false
@@ -393,6 +484,56 @@ func _loop_guide(job: VBoxContainer) -> void:
 	column.add_child(UI.dim('The list holds the three lights in this room. "lamp" is a temporary name for one light at a time:', 17))
 	column.add_child(CodePalette.snippet("for lamp in lamps:\n    lamp.set_lit(True)", 17))
 	column.add_child(UI.dim("First the stair lantern, then the repair light, then the assembly light. Each gets the same indented instruction. The colon starts the loop; the spaces show what belongs inside it.", 17))
+
+
+## A job's own worked example: {title, text, code}. The notebook carries the syntax so the people don't have to.
+func _quest_guide(job: VBoxContainer, guide: Dictionary) -> void:
+	var panel:=UI.panel(&"PanelInset")
+	job.add_child(panel)
+	var column:=UI.vbox(6)
+	panel.add_child(column)
+	column.add_child(UI.label(str(guide.get("title","")).to_upper(),&"LabelCaps",13,PaperPal.TEAL_DEEP))
+	if str(guide.get("text","")) != "": column.add_child(UI.dim(str(guide.text),17))
+	if str(guide.get("code","")) != "": column.add_child(CodePalette.snippet(str(guide.code),16))
+
+
+func _message_guide(job: VBoxContainer) -> void:
+	var panel:=UI.panel(&"PanelInset")
+	job.add_child(panel)
+	var column:=UI.vbox(6)
+	panel.add_child(column)
+	column.add_child(UI.label("THE SAME LOOP, WITH WORDS",&"LabelCaps",13,PaperPal.TEAL_DEEP))
+	column.add_child(UI.dim("A list can hold words as well as lamps. Each printed line becomes one page; the sign repeats the installed card.",17))
+	column.add_child(CodePalette.snippet('messages = ["Welcome", "Mind the step"]\nfor message in messages:\n    print(message)',16))
+
+
+func _fill_files() -> void:
+	for child:Node in _files.get_children():
+		_files.remove_child(child)
+		child.queue_free()
+	for index:int in range(_pages.item_count):
+		var slot:int=index
+		var id:String=str(_pages.get_item_metadata(index))
+		var file:=UI.button(id.replace("-","_")+".py",&"",&"ButtonQuiet",func()->void:
+			if session.busy:return
+			_pages.select(slot)
+			_show_page())
+		file.clip_text=true
+		file.tooltip_text=file.text
+		file.alignment=HORIZONTAL_ALIGNMENT_LEFT
+		file.add_theme_color_override("font_color",CodePalette.TEXT if id==_page else CodePalette.DIM)
+		_files.add_child(file)
+
+
+func _refresh_card() -> void:
+	if not is_instance_valid(_card_preview):return
+	var display:Dictionary=DisplayCards.find(session.area,str(context.id))
+	var ghost:bool=session.has_preview()
+	var state:Dictionary=session.preview_state() if ghost else session.state
+	var pages:Array=state.get("display_cards",{}).get(display.id,display.get("default",["Welcome"]))
+	_card_next.disabled=pages.size()<2
+	_card_preview.text="%s · %d / %d\n%s" % ["GHOST CARD" if ghost else "INSTALLED CARD",(_card_page%pages.size())+1,pages.size(),str(pages[_card_page%pages.size()])]
+	_card_preview.add_theme_color_override("font_color",PaperPal.GHOST if ghost else CodePalette.TEXT)
 
 
 ## The hints page: one more each time it is asked, the earlier ones kept in view.
@@ -421,7 +562,9 @@ func _fill_names() -> void:
 		child.queue_free()
 	names.add_child(UI.label("ON THIS LINK", &"LabelCaps", 13, PaperPal.BRASS_LO))
 	match str(context.get("kind", "")):
+		"display": names.add_child(_name_line("print(message)","writes one line to this sign's card"))
 		"zone": names.add_child(_name_line('world.zone("%s")' % str(context.id), "the screen's zone"))
+		"robot": names.add_child(_name_line('world.robot("%s")' % str(context.id), "the worker on this service link"))
 		"device": names.add_child(_name_line('world.lamp("%s")' % str(context.id), "the fitting beside you"))
 		_: names.add_child(UI.dim("Nothing. Stand at a screen or beside a fitting.", 16))
 	for lamp: Dictionary in _reach():
@@ -452,11 +595,20 @@ func _refresh_devices() -> void:
 	for child: Node in _devices.get_children():
 		_devices.remove_child(child)
 		child.queue_free()
-	_devices.add_child(UI.label("DEVICES", &"LabelCaps", 11))
+	if context.get("kind","")=="display":
+		var display:Dictionary=DisplayCards.find(session.area,str(context.id))
+		_devices.add_child(UI.label(str(display.title),&"",13,CodePalette.VARIABLE))
+		var pages:Array=session.state.get("display_cards",{}).get(display.id,display.get("default",[]))
+		_devices.add_child(UI.label("%d message%s installed" % [pages.size(),"" if pages.size()==1 else "s"],&"LabelDim",12))
+		_refresh_card()
+		return
 	var reach: Array[Dictionary] = _reach()
-	if reach.is_empty():
+	if reach.is_empty() and RobotPrograms.snapshot(session.area,session.state).is_empty():
 		_devices.add_child(UI.label("None in reach", &"LabelDim", 13))
 		return
+	for robot: Dictionary in RobotPrograms.snapshot(session.area,session.state):
+		_devices.add_child(UI.label(str(robot.id),&"",12,CodePalette.VARIABLE))
+		_devices.add_child(UI.label("%s · %.1f cells/s" % ["working" if robot.running else "paused",float(robot.speed)],&"LabelDim",11))
 	var proposed: Dictionary = session.preview_state().get("lamps", {}) if session.has_preview() else {}
 	for lamp: Dictionary in reach:
 		var lit: bool = bool(session.state.get("lamps", {}).get(lamp.id, false))
@@ -473,9 +625,14 @@ func _refresh_devices() -> void:
 		var id_label: Label = UI.label(str(lamp.id), &"", 13, CodePalette.VARIABLE)
 		id_label.add_theme_font_override("font", UITheme.mono_font())
 		words.add_child(id_label)
+		id_label.clip_text=true
+		words.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		var fitting: Dictionary = session.area.lamp(str(lamp.id))
 		var state: String = ("on" if lit else "off") + ("  →  " + ("on" if bool(proposed[lamp.id]) else "off") if ghost else "")
-		words.add_child(UI.label("%s · %s" % [str(fitting.get("title", "lamp")), state], &"", 11, PaperPal.GHOST if ghost else CodePalette.DIM))
+		var caption:=UI.label("%s · %s" % [str(fitting.get("title", "lamp")), state], &"", 11, PaperPal.GHOST if ghost else CodePalette.DIM)
+		caption.clip_text=true
+		caption.tooltip_text=caption.text
+		words.add_child(caption)
 		row.add_child(words)
 		_devices.add_child(row)
 
@@ -489,7 +646,6 @@ func _show_variables(names: Dictionary) -> void:
 	for child: Node in _variables.get_children():
 		_variables.remove_child(child)
 		child.queue_free()
-	_variables.add_child(UI.label("VARIABLES", &"LabelCaps", 11))
 	if names.is_empty():
 		_variables.add_child(UI.label("Debug to see them.", &"LabelDim", 12))
 		return
@@ -507,6 +663,9 @@ func _show_variables(names: Dictionary) -> void:
 		row.add_child(arrow)
 		if items.is_empty(): row.add_child(UI.spacer(0.0))
 		var name: FButton = UI.button(key, &"", &"ButtonQuiet", func() -> void: go_to_definition(key))
+		name.clip_text=true
+		name.custom_minimum_size.x=48
+		name.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		name.add_theme_color_override("font_color", CodePalette.VARIABLE)
 		name.add_theme_color_override("font_hover_color", CodePalette.VARIABLE.lightened(0.2))
 		name.tooltip_text = "Go to where %s is set" % key
@@ -575,6 +734,7 @@ func _edited() -> void:
 	_save_page()
 	session.discard_preview()
 	if playback != null: playback.clear()
+	_refresh_card()
 	_status.text = "Changed · debug this page again before applying."
 	_show_variables({})
 	_hover.dismiss()
@@ -587,6 +747,8 @@ func _edited() -> void:
 
 func preview() -> void:
 	if session.busy or not is_instance_valid(editor): return
+	editor.clear_error()
+	playback.clear()
 	_save_page()
 	await session.run_preview()
 
@@ -594,6 +756,9 @@ func _tested(result: Dictionary) -> void:
 	if not drawer_open or not is_instance_valid(editor): return
 	if result.get("stale", false):
 		_status.text = "That debug run is out of date. Debug the current page again."
+		_tablet.set_output(_status.text,&"error")
+		_tablet.set_state(&"error")
+		_refresh_card()
 		return
 	playback.load_run(session.source, result, editor)
 	for event: Dictionary in result.get("trace", []):
@@ -606,6 +771,7 @@ func _tested(result: Dictionary) -> void:
 		_status.text = str(result.get("reason", "Check this line.")) if result.get("rejected", false) else str(advice.title)+"\n"+str(advice.body)
 		_tablet.set_output(_status.text.split("\n")[0], &"error")
 		_tablet.set_state(&"error")
+		_refresh_card()
 		return
 	var candidate: Dictionary = session.preview_state()
 	var quest: Dictionary = session.area.quest(_page)
@@ -622,6 +788,8 @@ func _tested(result: Dictionary) -> void:
 		_glow_apply(met)
 	_tablet.set_state(&"debug")
 	_refresh_devices()
+	_card_page=0
+	_refresh_card()
 	if is_instance_valid(_stage): _stage.play_speech(WorkshopJournal._printed_lines(result), true)
 	if is_instance_valid(_stage) and not str(result.get("stdout", "")).strip_edges().is_empty(): _stage.show_output(str(result.stdout), true)
 
@@ -638,7 +806,8 @@ func apply_routine() -> void:
 	_tablet.set_state(&"ok")
 	_refresh_devices()
 	_fill_index()
-	_status.text = "Applied. Your page is saved." if _page.begins_with("scratch-") else ("Applied. Return to the workshop to continue." if session.completed.has(_page) else "Applied. The job is still open; check the ticket and try another routine.")
+	_status.text = "Applied. Your page is saved." if _page.begins_with("scratch-") else ("Applied. Put the slate away to carry on." if session.completed.has(_page) else "Applied. The job is still open; check the ticket and try another routine.")
+	_refresh_card()
 	if not was_done and session.completed.has(_page): _set_done(true)
 	applied.emit()
 
@@ -653,12 +822,14 @@ func _set_done(done: bool) -> void:
 		var quest: Dictionary = session.area.quest(_page)
 		_tablet.set_output("✓ %s: done." % str(quest.get("title", "The job")), &"ok")
 		_tablet.set_state(&"done")
-		_status.text = "Nell's ticket is done. Put the slate away to carry on."
+		_status.text = "The ticket is done. Put the slate away to carry on."
 		var glow: Tween = create_tween().set_loops(4)
 		glow.tween_property(_done, "modulate", Color(1.25, 1.25, 1.25), .35)
 		glow.tween_property(_done, "modulate", Color.WHITE, .35)
 	else:
 		_done.modulate = Color.WHITE
+		_run.visible=is_instance_valid(editor)
+		_apply.visible=is_instance_valid(editor)
 
 
 ## Apply glows while a debug run would finish the job, so the next step is plain.
@@ -674,6 +845,7 @@ func _glow_apply(on: bool) -> void:
 
 func stop() -> void:
 	_save_page()
+	session.output_display=""
 	session.discard_preview()
 	if is_instance_valid(_stage): _stage.clear_speech()
 	drop_focus()

@@ -2,16 +2,14 @@
 
 This describes what a player's Python can do today. The authoritative implementations are `sandbox/world_harness.py` (the objects), `core/lab_world.gd` (what is legal) and `app/session.gd` (preview, apply, undo). The in-game Reference tab is generated from `core/api_reference.gd`, and a test checks that every entry exists in the harness.
 
-Residents offer optional [conversation examples](../pipeline/DIALOGUE.md) for variables, loops, functions, lists and conditions. **Show code** is read-only; **Copy example** and **Open notebook** let you try one deliberately. Opening an example leaves your draft, world and quests unchanged.
-
 ## Your program
 
-The notebook runs a function called `program` inside CPython/WASI each time you press Run:
+Field Notes run a function called `program` inside CPython/WASI each time you press Test or Debug:
 
 ```python
 def program(world):
-    green = world.zone("green")
-    for lamp in green.lamps:
+    workshop = world.zone("workshop")
+    for lamp in workshop.lamps:
         lamp.set_lit(True)
 ```
 
@@ -21,16 +19,11 @@ You do not need to return anything. Calls like `lamp.set_lit(True)` are recorded
 
 | Object | You get it from | Members |
 |---|---|---|
-| `world` | passed to `program` | `lamp(name)`, `lamps`, `gate(name)`, `gates`, `bridge(name)`, `bridges`, `prop(name)`, `props`, `house(id)`, `houses`, `tree(x, y)`, `trees`, `doodad(id)`, `doodads`, `zone(name)`, `zones`, `here`, `player`, `memory` |
-| Zone | `world.zone("green")`, `world.zones` | `id`, `name`, `lamps`, `gates`, `bridges`, `props`, `houses`, `trees`, `doodads` |
+| `world` | passed to `program` | `lamp(name)`, `lamps`, `gate(name)`, `gates`, `bridge(name)`, `bridges`, `zone(name)`, `zones`, `here`, `player`, `memory` |
+| Zone | `world.zone("workshop")`, `world.zones` | `id`, `name`, `lamps` (and `gates`, `bridges` where an area has them) |
 | Lamp | `world.lamp("landing-lamp")`, `zone.lamps` | `id`, `zone`, `cell`, `lit`, `set_lit(True/False)` |
-| Gate | `world.gate("night-gate")`, `zone.gates` | `id`, `zone`, `cell`, `is_open`, `set_open(True/False)` |
-| Bridge | `world.bridge("mill-bridge")`, `zone.bridges` | `id`, `zone`, `cells`, `built`, `place_deck(cell)`, `remove_deck(cell)` |
-| Prop | `world.prop("prop-1")`, `world.props`, `zone.props` | `id`, `asset`, `name`, `zone`, `cell`, `active`, `set_active(True/False)` |
-| House | `world.house("home")`, `world.houses`, `zone.houses` | `id`, `kind`, `name`, `at`, `cell`, `facing`, `zone`, `locked`, `face("north")` |
-| Doodad | `world.doodad("prop-1")`, `world.doodads`, `zone.doodads` | `id`, `kind`, `name`, `at`, `cell`, `facing`, `solid`, `zone`, `face("east")` |
-| Tree | `world.tree(31.5, 6)`, `world.trees`, `zone.trees` | `at`, `cell`, `size`, `kind`, `zone` |
-| Controls (Village Morning) | `world.controls` | `bindings`, `bind_move(key, x, y)`, `bind(key, direction)` |
+| Gate | `world.gate("id")`, `zone.gates` | `id`, `zone`, `cell`, `is_open`, `set_open(True/False)` (engine support; no shipped room has a programmable gate) |
+| Bridge | `world.bridge("id")`, `zone.bridges` | `id`, `zone`, `cells`, `built`, `place_deck(cell)`, `remove_deck(cell)` (engine support; none shipped) |
 
 An object mirrors your own calls: after `lamp.set_lit(True)`, `lamp.lit` is `True` in the same run, so `if west.lit and east.lit:` sees what you just did. `world.memory` is a dictionary of small JSON values that persists once you Apply.
 
@@ -47,39 +40,8 @@ The objects above produce these commands, and `core/` validates every one, whate
 | `set_field` | `op`, `entity_id`, `field`, `value` | Lamps expose `enabled`; gates expose `open`; interactive props expose `active`. `value` must be a real Boolean. The target must be known. A gate cannot close on the cell the player stands on. |
 | `place` | `op`, `kind`, `at` | `kind` is `bridge_deck`; `at` is a bridge socket `[x,y,0]`. Decks go down in socket order, so each is supported by the one before. Placing a deck that exists is harmless. |
 | `remove` | `op`, `at` | Removes the last deck of a bridge. Not under the player; not leaving a deck unsupported. |
-| `rotate` | `op`, `entity_id`, `facing` | Turns a house or doodad on the spot; `facing` is `N`, `E`, `S` or `W`. Needs the `turn` ability; see [Houses, trees and doodads](#houses-trees-and-doodads). |
-| `bind_key` | `op`, `target`, `key`, `delta` (or `direction`) | Village Morning only; target is `player`, key is W/A/S/D or UP/LEFT/DOWN/RIGHT, delta is `[x,y]`. Apply requires a single cardinal cell; a direction string remains compatible. Bounded incorrect deltas can be demonstrated without applying. |
 
-## Your first voice in Village Morning
-
-Hotaru, your fairy companion, first asks for a greeting in **Field Notes / 00 — Saying Hello**:
-
-```python
-def program(world):
-    print("Hello, Hotaru!")
-```
-
-Blocks compile the same print statement. **Test code** previews your words; **Speak** commits them. Hotaru’s opening has no player reply choices and opens this page automatically when her explanation ends. Speaking a successful greeting automatically starts her First Steps explanation, then opens /01. Test alone remains a preview. Optional replies unlock after learning to speak, and that learning survives Undo. In this journey, print also records the bounded plain command `{"op":"say","target":"hotaru","text":"Hello, Hotaru!"}`. The game validates 1–160 characters and applies the whole batch atomically. Other journeys retain ordinary print output.
-
-Testing either lesson reveals actual executed Python lines with small variable values, plus Replay, Pause and Next line. Evidence comes from inside CPython/WASI and is bounded to the first 96 events. Failed runs can still show the lines that reached the error. The visual replay does not execute code or change the world.
-
-## Movement keys in Village Morning
-
-Choose the Python tab in the movement notebook to write your own key map:
-
-```python
-def program(world):
-    x = y = 0
-    y += 1
-    world.controls.bind_move("W", x, y)
-    # Repeat with fresh x/y for A, S and D.
-```
-
-The Blocks tab edits the same arithmetic in numbered event blocks, with **See Python** exposing the generated source. x += 1 goes east ↘, x -= 1 west ↖, y += 1 north ↗, y -= 1 south ↙. **Test code** runs the real program and animates the result in a copy of your room. Try 0, 1 or 3 and compare the numbered targets; malformed/unbounded values, diagonals, zero and excessive movement cannot be installed. The test does not move your real character or count as practice. The **>** on a block tests only that section and cannot be applied. **Test code** checks the full program. **Apply** installs the exact validated map; **Continue · try my keys** returns to the room for a successful step in each real direction to finish the quest.
-
-These are bounded declarations, not Python callbacks executed on every key press. `world.controls.bind("W", "north")` remains compatible, and valid calls update the proxy's `bindings` dictionary within the same run. Controls follow you from home to the lane; Kindle Hollow keeps its existing controls. See [Village Morning](../pipeline/MORNING.md).
-
-Extra fields and unknown commands are rejected. Commands run in order against a detached candidate; one invalid command rejects the whole batch. Up to 64 commands are allowed. Cells are whole-number `[x,y,height]`. Height is always 0 in code today, even where build mode has raised the land into terraces.
+Extra fields and unknown commands are rejected. Commands run in order against a detached candidate; one invalid command rejects the whole batch. Up to 128 commands are allowed. Cells are whole-number `[x,y,height]`. Height is always 0 in code today, even where build mode has raised the land into terraces.
 
 Walking takes one cardinal cell at a time; the picture slides smoothly between centers while the authoritative state commits at the end of each step. Passage checks use the full circular foot footprint against buildings, trunks, lamp posts, fences, walls, rock, water and closed gates.
 
@@ -87,46 +49,26 @@ Walking takes one cardinal cell at a time; the picture slides smoothly between c
 
 Run cancels a click route, waits for an active step to finish, then executes your code against that settled snapshot. Apply is unavailable during a step, so a program cannot remove support from under a walking character. **Undo** reverts the most recent committed world change, whether an applied program or a manual prop action (lamps, gates, bridges, working props, memory) and leaves you where you stand and what you have discovered intact; it refuses while you stand on a deck or gate it would remove. **Start the hollow over** darkens the valley and deactivates working props but keeps your code, finished quests, explored places and build edits. Saved active states survive moving or turning a prop and Continue; older saves with no prop state start those props inactive.
 
-## Working props
+## Tram message cards
 
-Place an interactive item from the [builder library](../pipeline/BUILDER_LIBRARY.md), choose the standing object with Move, and read its actual `prop-N` id and Code section. **Write code for it** inserts the fetching line. These instance ids are distinct from asset names such as `hollow-brass-lever`.
+After Iona's commission conversation, F at the tram welcome sign opens its own slate page. This context directs `print` into a card, instead of speaking to Hotaru. A program finishes normally; the sign's presenter repeats the installed pages every four seconds without running Python again.
 
-```python
-def program(world):
-    lever = world.prop("prop-1")
-    lantern = world.prop("prop-2")
-    lantern.set_active(lever.active)
-```
-
-Replace the two ids with your own placed objects. `active` is a Boolean: it opens/closes a chest, pulls/resets a lever, starts/stops a wheel or pump, swings/stops a bell, or lights/dims a glowing piece. Static furniture is absent from this API. Python may change known objects remotely, like lamps; **F** is a nearby manual action requiring a clear approach within 2.2 cells. Neither path changes support or the object's blocking footprint. A manual action clears a stale code proposal. The bell animates without audio; containers have no inventory, and workbenches do not craft items.
-
-## Houses, trees and doodads
-
-Your code can read the village's houses, trees and doodads, and turn houses and doodads, once the lessons have taught it. These are **structures**, not state: a change is one of the builder's own edits (`{op: "move", …, turned: true, by: "code"}`), kept in the same layer over the area document, saved with the journey and drawn by the same code. A working prop is a doodad too, with the same id: `world.prop(id)` gives its on/off state, `world.doodad(id)` where it stands.
+This is the same field-slate workspace used for workshop lights: Job/Index/Names/Hints notes, files, devices, variables, the code editor and line debugger. The job book can walk you to its connection. Drag or fold the sidebar, or press Ctrl+B, to enlarge the code view; Put away still tucks the paper notes. There is one Debug → Apply routine flow for both jobs.
 
 ```python
 def program(world):
-    row = world.zone("cottage-row")
-    for house in row.houses:
-        if house.cell[1] < 18:
-            house.face("north")
+    messages = [
+        "Welcome to Spindle Lane",
+        "No. 7 stops here",
+        "Tea first. Tram second.",
+    ]
+    for message in messages:
+        print(message)
 ```
 
-`facing` is a word (`"north"`, `"east"`, `"south"` or `"west"`); `at` is the centre as `[x, y]` (x grows eastward, y northward); `cell` is `[x, y, 0]`, so `house.cell[1]` is how far north it stands. `kind` is the builder tray's own id (`"house-hollow"`, `"tree-oak"`, `"park-bench"`). Trees have no id and no facing: `world.tree(x, y)` finds the one standing there, and `world.trees` lists them. The object mirrors your calls (`house.face("north")` then `house.facing == "north"`), and asking for the facing a house already has records nothing.
+Several ordinary `print` calls work too. Completed logical lines become messages, preserving `sep`, `end` and explicit newlines. A final newline terminates the last message. Use one to three nonblank messages, at most 32 printable ASCII/Latin-1 characters each; two distinct installed messages complete the job. Controls, emoji and longer output give a plain error. Each message wraps into two fixed-width rows of 16 cells. Debug previews the whole card and lets you step through its pages; Apply commits the same validated proposal. Editing/moving/closing/travel clears a stale preview. Messages and the separate draft save. Rewriting the card never pays the wage again.
 
-**Abilities.** A lesson's `unlocks` list teaches the code an ability: `read` (see houses, trees and doodads) and `turn` (`face`). The ability arrives when the lesson is **reached** (becomes available), not when it is finished, because the lesson's own goal needs it; finishing keeps it. Until then, `world.houses` and friends raise a `WorldError` that names the lesson, the Reference tab dims those entries with the same lesson in the tooltip, and the World tab says where they will appear. The harness only explains this; the host enforces it, so a hand-written `rotate` command is refused too. For trying the API without playing to the lesson, start the game with `VOXEL_CODE_ABILITIES=all` (or `read,turn`).
-
-**Reach.** Code sees and touches a thing only if it stands in a place you have visited, **or** within 12 cells of where you stand. (The valley's named places cover only about two thirds of it and most trees stand between them, so the second rule is what makes the forests reachable: walk there.) The test applies to the thing's own position, and to both ends of anything that moves.
-
-**Rules.** Each command is checked by the same rules as the builder (`AreaBuild.check_*`): a house cannot turn to face water, rock or another wall, locked things (the mill) refuse with "part of the lessons", and the refusal is in plain words with the command's number (`Command 2: …`). A run may use at most 16 building commands. Building is refused inside a home (go outside first). The whole batch is atomic: if any command is refused nothing changes. The cheap rules run for every command against the world the earlier ones left; the slow check that nothing you need is cut off (every lamp, door and place stays reachable) runs **once** for the whole batch.
-
-**Preview, Apply, Undo.** Run draws translucent models where a house would turn (up to 48); Apply commits that same proposal into the builder's edit list, so it saves, shows in build mode's history and undoes like any edit. **Undo** takes a program's building away with its other changes, but only while nothing has been built since: if you have placed or moved things by hand, undo those first (the notebook says so) rather than have history reordered. **Start the hollow over** keeps everything built.
-
-Captures: [the World tab](../evidence/code-world-tab.png), [a Run preview](../evidence/code-preview.png), [after Apply](../evidence/code-applied.png) and [the builder's Code section](../evidence/code-build-details.png) and, in the second chapter, [the lesson](../evidence/code-lesson.png) and [the journal](../evidence/code-journal.png).
-
-**The lesson.** `read` and `turn` are taught by **Face the lane**, the first lesson of an optional second chapter ("Chapter two · Shaping the hollow") that opens after the epilogue: the two southern cottages of Cottage Row turn their sides to the lane, and the player loops over `row.houses`, tests `house.cell[1] < 18` and calls `house.face("north")`. The goal is the `houses_facing` goal type; the reference solution is in `test/test_area.gd` and its starter, which only prints what each house knows, does not solve it. The five-quest arc and its epilogue are unchanged: the epilogue fires when the *main* arc finishes (quests marked `optional` never hold it back or repeat it), points to the chapter, and the journal lists the chapter under its own heading.
-
-**Status.** The abilities, rules, preview, apply, undo, interface and the first lesson are built and tested (`test/test_code_build.gd`, `test/test_area.gd`). Not built yet: placing, moving and removing houses, trees and doodads from code, and the lessons that would teach them. These later abilities are planned; nothing exposes them. `VOXEL_CODE_ABILITIES=all` (or `read,turn`) still grants abilities regardless of lessons, for trying the API early.
+The internal typed command is `set_sign_messages` with a mounted target ID and full message list. Core validates commission, carried slate, visited zone, physical range and text before accepting a batch atomically. No new general device API or money-writing capability is exposed to player code. See [property rules](../pipeline/PROPERTY.md).
 
 ## Errors and help
 
@@ -138,4 +80,38 @@ The Python sandbox has a 2-second runtime timeout, a 7-second wall-clock backsto
 
 ## Where to look
 
-`docs/PROGRAMMING.md` (this) · `sandbox/world_harness.py` (objects) · `core/lab_world.gd` (rules) · `core/code_build.gd` (what code may do to houses, trees and doodads) · `core/api_reference.gd` (what the Reference tab and completion show) · `content/areas/kindle-hollow.quests.json` (the lessons that teach it).
+`docs/PROGRAMMING.md` (this) · `sandbox/world_harness.py` (objects) · `core/lab_world.gd` (rules) · `core/api_reference.gd` (what the Reference tab and completion show) · `content/areas/*.quests.json` (the lessons that teach it).
+
+## Shared time and daylight routines
+
+Sparks & Machines exposes `world.time.is_dark`, a Boolean that is True from 18:00 until 06:00. `world.time.hour` is a fractional hour from 0 to just below 24; `phase` is Morning, Day, Evening or Night, and `day` starts at 1. The clock is read-only. It is shared across the loft, workshop, lane, square and city hall, saved between sessions, and paused while reading, coding or talking. City pressure and breaker controls are not part of the player API.
+
+Every placed lamp-glass/festoon-glass model is connected: 148 logical fittings cover the loft, workshop, lane, square, surrounding house lanterns and City Hall. Background and large-building lanterns are addressed from the district service screens; their code does not require walking off the map.
+
+At a lamp’s shared field slate, **Daylight routine** makes Debug execute the same Python twice in the WASI worker: a daylight input and a darkness input. Each connected lamp must receive a Boolean instruction in both tests. Apply installs those two decisions; the clock selects between them on later dusk/dawn changes. This is a finite day/dark controller, not arbitrary background Python or a minute-by-minute scheduler. Other device/build commands belong on separate pages. Manual lamp instructions remain available when the mode is unchecked.
+
+```python
+def program(world):
+    lamp = world.lamp("shop-door-lamp")
+    if world.time.is_dark:
+        lamp.set_lit(True)
+    else:
+        lamp.set_lit(False)
+```
+
+The shop’s Chapter 04 ticket requires the correct decision for **both** connected shop lamps, plus Nell’s accepted ticket. A permanently lit lamp does not complete it. Debug remains a proposal; Apply commits that same validated day/night table, and Undo restores the previous table. Time itself is outside machine Undo.
+
+## Service robots
+
+The street service screen, square screen and civic screen expose `world.robots` and `world.robot(id)`. A worker’s place must already have been visited. Its `id`, `running`, `speed`, `stops` and current `route` are readable. Some workers also have a nearby authored service point. The runtime validates every command again; a fake address, unsupported stop or out-of-range speed rejects the whole batch.
+
+```python
+def program(world):
+    wick = world.robot("square-wick")
+    print(wick.stops)
+    wick.set_speed(2.5)       # 0.5 to 3 cells per second
+    wick.set_route([wick.stops[-1], wick.stops[0]])
+    wick.resume()            # pause() stops the round
+```
+
+A route contains 1–12 names from that worker’s own service stops; normal collision, residents and passages still apply. Settings are saved per room and take part in Preview, Apply and Undo. This first interface controls work rounds and pace. Fault-specific repairs and arbitrary robot movement destinations are not implemented.

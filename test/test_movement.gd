@@ -11,6 +11,7 @@ func _initialize() -> void:
 
 
 func _run() -> void:
+	AreaStore.use_fixtures()
 	var area: AreaDef = AreaStore.load_area("rune-mill")
 	if area == null:
 		printerr("FAIL: the Rune Mill area document did not load")

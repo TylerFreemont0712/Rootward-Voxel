@@ -1,0 +1,13 @@
+{
+  "previous": "v6",
+  "previous_sha256": "e0c610874ecaa08ca292c88c72233d0714be36d6a76a9cd33b45a3b1d1bd83b6",
+  "removed_plot_objects": 13,
+  "removed_ground_faces": 186,
+  "rect": [
+    9.5,
+    14.5,
+    6.0,
+    40.0
+  ],
+  "record": "art/source/world/square-restoration/v2/pave_court.py"
+}

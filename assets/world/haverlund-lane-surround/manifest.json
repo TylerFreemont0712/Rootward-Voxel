@@ -1,11 +1,11 @@
 {
   "schema": 1,
   "asset": "haverlund-lane-surround",
-  "version": "v1",
-  "source": "art/source/world/haverlund-lane-surround/v1/model.blend",
-  "source_sha256": "2705cca4dd3817da3d8886cf3e1a948c8708210d7bc7a6273540cf12edeb73ad",
+  "version": 2,
+  "source": "art/source/world/haverlund-lane-surround/v2/model.blend",
+  "source_sha256": "da4ae9671ba822cadd5c3b89d4187094f69e42f8db216d47c6a9ee5687454d28",
   "runtime": "assets/world/haverlund-lane-surround/model.glb",
-  "runtime_sha256": "e3eafed549079351929e655cf29d13e200b8fda161f061b860e29ac1e4bfcc5a",
+  "runtime_sha256": "20ac701bb4c6d07dace89569ba59af483cf685697e6b35dfea705e9649d038ae",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
@@ -17,8 +17,18 @@
       5.15999984741211,
       46.5
     ],
-    "geometry_sha256": "13d36c50c68b37bcb2ad638927a65fefbb5d36a04f01cc40c6064024422003d6",
+    "geometry_sha256": "ae705d5a28ed387544f77637b6820ef7b7d858b29389cb62d4371cf679d481e9",
     "material_records": {
+      "garden_iron": {
+        "albedo": [
+          3318,
+          3959,
+          3811,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
       "grid_bed": {
         "albedo": [
           3035,
@@ -91,6 +101,7 @@
       }
     },
     "materials": [
+      "garden_iron",
       "grid_bed",
       "grid_bronze",
       "grid_glass",
@@ -99,7 +110,7 @@
       "ground_grass",
       "seaside_stone"
     ],
-    "meshes": 10,
-    "triangles": 76446
+    "meshes": 13,
+    "triangles": 109824
   }
 }

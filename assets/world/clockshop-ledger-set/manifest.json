@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "clockshop-ledger-set",
+  "version": 1,
+  "source": "art/source/world/clockshop-ledger-set/v1/model.blend",
+  "source_sha256": "69af346de04f3404125d641b4ae73bfba4ee78aa69f0c7ecb81c104e203b4afc",
+  "runtime": "assets/world/clockshop-ledger-set/model.glb",
+  "runtime_sha256": "7bd0a7aeaf20ee051009d4e10ebf79dbd43c08e569227c65ad2fbc8cd5a974b6",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.49603071808815,
+      0.00500000268220901,
+      -0.365000009536743,
+      0.415000021457672,
+      0.219999998807907,
+      0.400000005960464
+    ],
+    "geometry_sha256": "0b53daf002a707fb3420f23434c887ac4b84d9f898733f850f815276ce9cf62a",
+    "material_records": {
+      "clockshop_brass": {
+        "albedo": [
+          7098,
+          5412,
+          2588,
+          10000
+        ],
+        "roughness": 4300,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_ink": {
+        "albedo": [
+          1529,
+          1686,
+          1647,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_ivory": {
+        "albedo": [
+          8863,
+          8392,
+          7137,
+          10000
+        ],
+        "roughness": 7800,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_leather": {
+        "albedo": [
+          4706,
+          2941,
+          1961,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_teal": {
+        "albedo": [
+          1608,
+          3020,
+          2980,
+          10000
+        ],
+        "roughness": 7400,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "clockshop_brass",
+      "clockshop_ink",
+      "clockshop_ivory",
+      "clockshop_leather",
+      "clockshop_teal"
+    ],
+    "meshes": 5,
+    "triangles": 460
+  }
+}

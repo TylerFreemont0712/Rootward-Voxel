@@ -4,12 +4,13 @@ extends Control
 ## a stack of modal screens. It owns flow (title, new game, continue, pause, quit) and saving; the
 ## GameSession owns what happens inside the world.
 
-const AREA_ID: String = "kindle-hollow"
 const TERRAIN_NAMES: Array[String] = ["grass", "dirt path", "cobbles", "water", "rock"]
 ## The world moves at 60 Hz, so drawing more often (a 165 Hz screen would) only works the graphics card harder.
 ## Behind another window the valley keeps going at half that.
 const FRAME_RATE: int = 60
 const BACKGROUND_FRAME_RATE: int = 30
+
+var welcome: WelcomeQuest
 
 var settings := GameSettings.new()
 var area: AreaDef
@@ -21,6 +22,8 @@ var ledger: BuildLedger:
 			session.ledger = value
 ## Who is building: "studio" (everything) or "player" (the open items and allowances). VOXEL_BUILD_POLICY=player tries the latter.
 var build_policy: String = "studio"
+## Native reviews point this at scratch evidence so they never overwrite the user's layout draft.
+var layout_export_override: String = ""
 var view: ClearingView
 var session: GameSession
 var builder: BuildMode
@@ -28,8 +31,7 @@ var hud: Hud
 ## What F would do, shown over the resident or the thing itself, and the marks over residents with something to say.
 var prompts: WorldPrompts
 var workshop_speech: WorkshopSpeech
-var notebook: NotebookPanel
-var movement_lesson: LearningLesson
+var journal: LearningLesson
 var title: TitleScreen
 var surface: SubViewportContainer
 var world_viewport: SubViewport
@@ -46,17 +48,17 @@ var _opened_once: bool = false
 var _source: Dictionary = {}
 var _build_catalog: Dictionary = {}
 var _interior_catalog: Dictionary = {}
-var _people: Dictionary = {}
 var _rooms: Dictionary = {}
 var _journey_rooms: Dictionary = {}
 var _inside_id: String = ""
 var _outer_ledger: BuildLedger
 var _outer_save: Dictionary = {}
 var _outer_source: Dictionary = {}
-var _met_villagers: Dictionary = {}
 var _dialogue_read: Dictionary = {}
 var _workshop_dismissed: Array = []
 var _workshop_log: Array = []
+var _last_clock_minute: int = -1
+var evening: EveningQuest
 var _banter_index: int = 0
 var _interaction: Dictionary = {}
 var _interaction_clock: float = 0.0
@@ -86,7 +88,11 @@ const VEIL_CLOSE_SECONDS: float = 0.55
 const VEIL_OPEN_SECONDS: float = 0.7
 ## The veil stays closed at least this long, the time the next place takes to build included, so the gears are
 ## always seen turning before the way opens.
-const VEIL_CLOSED_SECONDS: float = 0.55
+const VEIL_CLOSED_SECONDS: float = 0.9
+const VEIL_READY_SECONDS: float = 0.25
+const VEIL_WARM_FRAMES: int = 8
+var transition_phase: String = ""
+var last_transition: Dictionary = {}
 ## Walking through a doorway: how long the doors swing before the traveller steps into them, how long the traveller
 ## is seen walking before the veil starts to grow, and how far behind the arrival cell they come from.
 const DOOR_LEAD_SECONDS: float = 0.18
@@ -105,7 +111,6 @@ func _ready() -> void:
 	_source = AreaStore.read_source(_root_area_id)
 	_build_catalog = AreaStore.read_build_catalog()
 	_interior_catalog = AreaStore.read_interiors()
-	_people = AreaStore.read_villagers()
 	if OS.get_environment("VOXEL_BUILD_POLICY") == "player":
 		build_policy = "player"
 	if _source.ok:
@@ -134,6 +139,7 @@ func _ready() -> void:
 			view.stage.sync_progress(session.state, session.completed))
 	session.ledger = ledger
 	session.extra_abilities = _granted_abilities()
+	session.journey_source = _journey_completed
 	session.build_changed.connect(_on_build_edited)
 	session.progress_saved.connect(_queue_save.bind(0.4))
 	session.source_changed.connect(_queue_save.bind(1.6))
@@ -146,20 +152,12 @@ func _ready() -> void:
 	workshop_speech = WorkshopSpeech.new()
 	workshop_speech.setup(view, surface, world_viewport)
 	add_child(workshop_speech)
-	notebook = NotebookPanel.new()
-	notebook.setup(session, settings)
-	notebook.visible = false
-	notebook.close_requested.connect(close_notebook)
-	notebook.extent_changed.connect(_drawer_extent_changed)
-	add_child(notebook)
-	_place_notebook(false)
 	builder = BuildMode.new()
 	builder.name = "Build"
 	add_child(builder)
 	builder.setup(view, session, surface, world_viewport, self, ledger)
 	builder.exit_requested.connect(close_build)
 	builder.edited.connect(_on_build_edited)
-	builder.code_requested.connect(_on_build_code)
 	title = null
 	_overlay = Control.new()
 	_overlay.name = "Overlay"
@@ -177,7 +175,8 @@ func _ready() -> void:
 	_hint_timer.one_shot = true
 	_hint_timer.timeout.connect(_first_run_hint)
 	add_child(_hint_timer)
-	session.quest_completed.connect(_on_quest_completed)
+	welcome=WelcomeQuest.new(self)
+	session.quest_changed.connect(_settle_wages)
 	_apply_display()
 	view.set_zoom(float(settings.get_value("zoom")))
 	get_tree().set_auto_accept_quit(false)
@@ -193,6 +192,8 @@ func _wire_hud(next: Hud) -> void:
 	hud.map_requested.connect(open_map)
 	hud.menu_requested.connect(open_pause)
 	hud.build_requested.connect(open_build)
+	hud.development_requested.connect(open_development)
+	hud.inventory_requested.connect(open_inventory)
 	add_child(hud)
 
 
@@ -231,6 +232,7 @@ func _indoors() -> bool:
 
 # -------------------------------------------------------------------- flow
 func show_title() -> void:
+	SaveStore.development = false
 	close_build()
 	playing = false
 	close_notebook(true)
@@ -252,8 +254,6 @@ func show_title() -> void:
 		var main_quests: Array[Dictionary] = Quests.main(area)
 		var main_done: int = main_quests.filter(func(entry: Dictionary) -> bool: return (save.get("completed", []) as Array).has(entry.id)).size()
 		summary = "%s · %d of %d quests · %d %s burning" % [str(save.get("name", SaveStore.DEFAULT_NAME)), main_done, main_quests.size(), burning, "lamp" if burning == 1 else "lamps"]
-		if resume_level != AREA_ID:
-			summary = "%s · %s" % [str(save.get("name",SaveStore.DEFAULT_NAME)),str(LevelStore.entry(resume_level).get("title",resume_level))]
 	title = TitleScreen.new()
 	title.setup(not save.is_empty(), summary)
 	title.continue_requested.connect(continue_game)
@@ -304,18 +304,13 @@ func start_new_game(level: String = "") -> void:
 		_load_edits([])
 		session.begin(area, view)
 		_rooms.clear()
-		_met_villagers.clear()
 		_dialogue_read.clear()
 		_workshop_dismissed.clear()
 		_workshop_log.clear()
 		_banter_index = 0
 		_room_zoom_scale = 1.0
-		if str(spec.get("opening_house",""))!="":
-			_start_in_home(str(spec.opening_house))
 		_enter_play())
-	if level=="village-morning":
-		talk_hotaru()
-	elif not (_story.get("opening", {}) as Dictionary).is_empty():
+	if not (_story.get("opening", {}) as Dictionary).is_empty():
 		_play_opening()
 
 
@@ -323,9 +318,7 @@ func start_new_game(level: String = "") -> void:
 func _play_opening() -> void:
 	if not playing or not _modals.is_empty():return
 	var card := OpeningCard.new()
-	var workshop: bool = _journal_kind() == "workshop"
-	card.setup(_story.opening, workshop)
-	if not workshop: card.finished.connect(func() -> void: open_notebook.call_deferred())
+	card.setup(_story.opening, true)
 	_push_modal(card)
 
 func _new_game_flow() -> void:
@@ -364,21 +357,6 @@ func _choose_level(level: String, resume: bool) -> void:
 		_open_character("new", {})
 
 
-func _start_in_home(house: String) -> void:
-	var at: Vector2i=HouseInstances.door(area,house)
-	session.state.player=[at.x,at.y,0]
-	var entry: Dictionary=HouseInstances.check_enter(area,session.rules,session.state,house,_interior_catalog)
-	if not entry.ok:
-		push_error(str(entry.reason))
-		return
-	var source: Dictionary=_room_source(entry)
-	_outer_ledger=ledger
-	_outer_source=_source
-	_outer_save=session.to_save()
-	_outer_save["edits"]=ledger.edits.duplicate(true)
-	_activate_room(entry,source)
-
-
 func _enter_play() -> void:
 	playing = true
 	if title != null:
@@ -392,7 +370,6 @@ func _enter_play() -> void:
 	view.apply_state(session.state)
 	view.focus_on(Vector2(session.player_cell()), true)
 	_sync_pickups()
-	notebook.reload_from_session()
 	close_notebook(true)
 	_update_input_gate()
 	save_now()
@@ -411,7 +388,6 @@ func save_now() -> void:
 	if playing and session != null:
 		var data: Dictionary
 		if _inside_id != "":
-			_carry_movement(_outer_save)
 			_cache_room()
 			data = _outer_save.duplicate(true)
 			data.source = session.source
@@ -419,13 +395,12 @@ func save_now() -> void:
 			data.name = session.player_name
 		else:
 			data = session.to_save()
-			data["edits"] = ledger.edits.duplicate(true)
+			data["edits"] = ledger.saved_edits()
 		if not (_level_spec.get("room_areas", []) as Array).is_empty():
 			_cache_journey_room()
 			data = (_journey_rooms.get(_root_area_id, data) as Dictionary).duplicate(true)
 			data["journey_rooms"] = {"version": 1, "active": area.id, "rooms": _journey_rooms.duplicate(true)}
 		data["travel"] = {"version": 1, "active": _inside_id, "rooms": _rooms.duplicate(true)}
-		data["met_villagers"] = _met_villagers.duplicate()
 		data["dialogue_read"] = _dialogue_read.duplicate(true)
 		if _journal_kind() == "workshop": data["workshop_log"] = _workshop_log.duplicate(true)
 		data["level"]=_level_id
@@ -473,8 +448,16 @@ func inside_house() -> bool:
 
 
 func _process(delta: float) -> void:
-	if not playing or hud == null:
+	if not playing or hud == null or _flow_busy:
 		return
+	if _level_id==LevelStore.MAIN_LEVEL:
+		if not notebook_open and _modals.is_empty() and not builder.active and not session.busy and (not session.cycle.evening_started or _journey_completed().has("after-the-light")):
+			CityCycle.advance(session.cycle,delta)
+			if int(session.cycle.minute)!=_last_clock_minute:
+				_last_clock_minute=int(session.cycle.minute)
+				_queue_save(2.0)
+		session.sync_cycle()
+		_try_evening_return()
 	if _pending_room_target != "" and not session.is_walking() and session._route.is_empty() and not session.busy:
 		var target: String = _pending_room_target
 		_pending_room_target = ""
@@ -484,7 +467,11 @@ func _process(delta: float) -> void:
 				if target == "nell-note": _activate_loft_desk(target)
 				elif not PlayerItems.find(area, target).is_empty(): _activate_pickup(target)
 				elif not area.lamp(target).is_empty(): _activate_device(target)
+				elif not DisplayCards.find(area,target).is_empty(): open_display(target)
 				else: _activate_terminal(target)
+	if welcome!=null: welcome.tick(delta)
+	if evening==null:evening=EveningQuest.new(self)
+	evening.tick(delta)
 	_interaction_clock += delta
 	if _interaction_clock >= 0.12:
 		_interaction_clock = 0.0
@@ -509,10 +496,8 @@ func _refresh_interaction() -> void:
 			return
 	if view.villagers != null:
 		view.villagers.paused = false
-	if view.villagers != null:
-		var resident: String = view.villagers.near(Vector2(session.player_cell()))
-		if resident != "" and _people.has(resident):
-			_interaction = {"kind": "talk", "id": resident, "label": "Talk to " + str(_people[resident].name)}
+	if _interaction.is_empty() and evening!=null:_interaction=evening.interaction()
+	if _interaction.is_empty() and welcome!=null: _interaction=welcome.interaction()
 	if _interaction.is_empty() and _journal_kind() == "workshop":
 		if area.id == "workshop-loft" and Vector2(session.player_cell()).distance_to(Vector2(_room_target_approach("nell-note"))) < FieldAccess.RANGE and not (session.state.inspections_read as Array).has("nell-note") and not CompanionLesson.has_voice(session.state, session.completed):
 			_interaction = {"kind":"loft-desk", "id":"nell-note", "label":"Read Nell’s note"}
@@ -529,7 +514,7 @@ func _refresh_interaction() -> void:
 
 	if _interaction.is_empty():
 		var inspection: Dictionary = RoomLinks.nearest(area, Vector2(session.player_cell()), "inspections", _interact_radius())
-		if not inspection.is_empty() and inspection.id not in ["nell-note", "desk-terminal"]: _interaction = {"kind": "inspection", "id": inspection.id, "label": "Look at " + str(inspection.title)}
+		if not inspection.is_empty() and inspection.id not in ["nell-note", "desk-terminal", "sign-commission", "nell-evening"]: _interaction = {"kind": "inspection", "id": inspection.id, "label": "Look at " + str(inspection.title)}
 	if _interaction.is_empty():
 		var link: Dictionary = RoomLinks.nearest(area, Vector2(session.player_cell()), "links", _interact_radius())
 		if not link.is_empty(): _interaction = {"kind": "room-link", "id": link.id, "label": str(link.get("label", "Take the stairs"))}
@@ -541,26 +526,20 @@ func _refresh_interaction() -> void:
 		_interaction={"kind":"talk","id":"hotaru","label":"Talk to Hotaru"}
 	var kind: String = str(_interaction.get("kind", ""))
 	var prompt_id: String = str(_interaction.get("id", ""))
+	if kind=="display": prompt_id=str(DisplayCards.find(area,prompt_id).get("object",""))
 	if kind == "terminal": prompt_id = str(ZoneTerminals.find(area, prompt_id).get("object", ""))
 	elif kind == "device": prompt_id = _fixture_for(prompt_id)
 	elif kind == "pickup": prompt_id = str(PlayerItems.find(area, prompt_id).get("object", ""))
-	var lit: String = _object_for_target(_pending_room_target) if _pending_room_target != "" else (prompt_id if kind in ["loft-desk", "terminal", "pickup", "device"] else "")
+	var lit: String = _object_for_target(_pending_room_target) if _pending_room_target != "" else (prompt_id if kind in ["loft-desk", "terminal", "pickup", "device", "display"] else "")
 	view.set_target_highlight(lit)
-	prompts.set_target("prop" if kind in ["inspection", "room-link", "loft-desk", "terminal", "pickup", "device"] else kind, prompt_id, str(prompts.markers.get(_interaction.get("id", ""), "")) if kind == "talk" else "", "F  ·  " + str(_interaction.label) if kind != "" else "")
+	prompts.set_target("talk" if kind in ["welcome-person","nell-evening"] else ("prop" if kind in ["inspection", "room-link", "loft-desk", "terminal", "pickup", "device", "display"] else kind), prompt_id, str(prompts.markers.get(_interaction.get("id", ""), "")) if kind == "talk" else "", "F  ·  " + str(_interaction.label) if kind != "" else "")
 
 
-## The mark over each resident here: "?" when they can help with the current lesson and "!" when they have
-## something you have not heard (VillageDialogue.marker); residents with nothing new get none.
+## The marks over residents who have something to say: the welcome and evening jobs add theirs.
 func _resident_marks() -> Dictionary:
 	var marks: Dictionary = {}
-	if view.villagers == null or session == null:
-		return marks
-	var quest: String = str(session.current_quest().get("id", ""))
-	for id: String in view.villagers.speakers:
-		if _people.has(id):
-			var mark: String = VillageDialogue.marker(_people[id], _dialogue_read.get(id, []), _met_villagers.has(id), quest)
-			if mark != "":
-				marks[id] = mark
+	if welcome!=null: marks.merge(welcome.markers())
+	if evening!=null and area.id=="haverlund-lane" and session.cycle.evening_started and not session.state.inspections_read.has("nell-evening"):marks["nell"]="!"
 	return marks
 
 
@@ -569,6 +548,13 @@ func interact() -> void:
 		return
 	_refresh_interaction()
 	match str(_interaction.get("kind", "")):
+		"nell-evening":
+			evening.face_player()
+			_show_workshop_scene("nell-evening","nell-evening")
+		"welcome-person":
+			welcome.talk(str(_interaction.id))
+		"display":
+			open_display(str(_interaction.id))
 		"terminal":
 			_activate_terminal(str(_interaction.id))
 		"pickup":
@@ -580,8 +566,24 @@ func interact() -> void:
 		"room-link":
 			session.walk_to_link(str(_interaction.id))
 		"inspection":
+			for actor: Dictionary in RobotPrograms.definitions(area):
+				if actor.object==str(_interaction.id) and RobotPrograms.in_reach(area,session.state,actor):
+					_open_workshop_journal(false,{"kind":"robot","id":actor.id,"title":str(actor.object).capitalize()})
+					return
+			if area.id=="city-hall" and str(_interaction.id)=="job-desk":
+				open_journal()
+				return
+			if area.id=="haverlund-square" and str(_interaction.id)=="bank":
+				open_inventory(true)
+				return
 			for item: Dictionary in area.interior.get("inspections", []):
 				if str(item.id) == str(_interaction.id):
+					if item.id=="beacon-dial":
+						workshop_speech.inspect(item.id,item.title,CityInstruments.describe_pressure(float(session.cycle.pressure)))
+						return
+					if item.id=="hall-clock":
+						workshop_speech.inspect(item.id,item.title,"%02d:%02d. The hall and your slate are keeping the same time." % [int(session.cycle.minute)/60,int(session.cycle.minute)%60])
+						return
 					if _journal_kind() == "workshop" and item.id == "job-board" and CompanionLesson.has_voice(session.state, session.completed) and _dialogue_read.get("loft-waking", []).has("introduced") and not _dialogue_read.get("workshop-scenes", []).has("waiting-ticket"):
 						_show_workshop_scene("waiting-ticket", "job-board")
 						return
@@ -603,28 +605,9 @@ func interact() -> void:
 				save_now()
 				_refresh_interaction()
 		"talk":
-			var id: String = str(_interaction.id)
-			if id=="hotaru":
+			if str(_interaction.id)=="hotaru":
 				talk_hotaru()
 				return
-			# Face each other before the conversation opens.
-			var other: Vector3 = (view.villagers.actors[id] as Node3D).position
-			session.turn_toward(session._direction_toward(session.player_cell(), Vector2i(Vector2(other.x, -other.z).round())))
-			view.villagers.face(id, Vector2(session.player_cell()))
-			var conversation := VillageConversation.new()
-			conversation.setup(_people[id], settings, _dialogue_read.get(id, []))
-			conversation.settings_requested.connect(open_settings)
-			conversation.notebook_requested.connect(func() -> void:
-				conversation.close()
-				open_notebook())
-			conversation.read_changed.connect(func(keys: Array) -> void:
-				_dialogue_read[id] = keys.duplicate()
-				_queue_save(0.4))
-			_met_villagers[id] = true
-			_push_modal(conversation)
-			if view.villagers != null:
-				view.villagers.paused = true
-			save_now()
 
 
 func _activate_loft_desk(id: String) -> void:
@@ -737,9 +720,6 @@ func _activate_device(id: String) -> void:
 	if not FieldAccess.near(session.state, lamp.stand):
 		hud.show_toast("Stand beside the %s to open its code." % title.to_lower())
 		return
-	if _job_pages_for("device", id).is_empty():
-		workshop_speech.inspect(id, title, "Nothing has been asked of it yet. Nell’s ticket will say what she wants.")
-		return
 	_open_workshop_journal(false, {"kind":"device", "id":id, "title":title})
 
 
@@ -756,6 +736,8 @@ func _job_pages_for(kind: String, id: String) -> Array[Dictionary]:
 ## The placed object a walk-to target stands for, so the walk can light it: the note, a terminal's screen, a
 ## pickup's object or a lamp's fixture.
 func _object_for_target(id: String) -> String:
+	var display: Dictionary=DisplayCards.find(area,id)
+	if not display.is_empty():return str(display.object)
 	if id == "nell-note": return id
 	var terminal: Dictionary = ZoneTerminals.find(area, id)
 	if not terminal.is_empty(): return str(terminal.object)
@@ -765,6 +747,8 @@ func _object_for_target(id: String) -> String:
 
 
 func _room_target_approach(id: String) -> Vector2i:
+	var display: Dictionary=DisplayCards.find(area,id)
+	if not display.is_empty():return Vector2i(display.at[0],display.at[1])
 	var lamp: Dictionary = area.lamp(id)
 	if not lamp.is_empty() and lamp.get("stand") is Array: return Vector2i(int(lamp.stand[0]), int(lamp.stand[1]))
 	var terminal: Dictionary = ZoneTerminals.find(area, id)
@@ -818,18 +802,12 @@ func _offer_zone_connection(terminal: Dictionary) -> void:
 
 
 func _house_title(id: String) -> String:
-	for resident: Dictionary in (_outer_ledger.area if inside_house() else area).villagers:
-		if resident.home == id and _people.has(resident.id):
-			return str(_people[resident.id].name) + "'s home"
 	var house: Dictionary = (_outer_ledger.area if inside_house() else area).building(id)
 	return ledger.title_for_asset(str(house.get("asset", "")))
 
 
 func _on_doorway_requested(house: String) -> void:
 	if _flow_busy or not playing or notebook_open or builder.active or not _modals.is_empty():
-		return
-	if area.movement_lesson and not MovementBindings.finished(session.state):
-		hud.show_toast("Try every movement direction once before stepping outside. E opens your notebook.")
 		return
 	if house == "" and not inside_house():
 		# A journey that starts in a room has no outside yet; its stairs answer with a line instead.
@@ -859,7 +837,7 @@ func enter_house(id: String) -> bool:
 	_outer_ledger = ledger
 	_outer_source = _source
 	_outer_save = session.to_save()
-	_outer_save["edits"] = ledger.edits.duplicate(true)
+	_outer_save["edits"] = ledger.saved_edits()
 	# The landing is outside the closed leaf. Returning never occupies the threshold.
 	_outer_save.state.player = [entry.return_cell[0], entry.return_cell[1], 0]
 	# The next inward step would meet the closed frame: open it here, before
@@ -879,7 +857,6 @@ func _room_source(entry: Dictionary) -> Dictionary:
 		return source
 	source.document = source.document.duplicate(true)
 	source.document.title = _house_title(str(entry.house))
-	if _root_area_id=="village-morning" and str(entry.house)=="morning-home":source.document.title="Your room"
 	var parent: AreaDef = _outer_ledger.area if inside_house() else area
 	for resident: Dictionary in parent.villagers:
 		if resident.home == entry.house and source.document.interior.has("host"):
@@ -898,22 +875,18 @@ func _activate_room(entry: Dictionary, source: Dictionary) -> void:
 	var room_edits: Array = saved.get("edits", []) if saved.get("edits", []) is Array else []
 	ledger = BuildLedger.new(source.document, source.assets, source.quests, _build_catalog, room_edits, build_policy, AreaStore.ground_materials())
 	area = ledger.area
-	if area.movement_lesson:
-		if not saved.get("state") is Dictionary:saved["state"]=ledger.rules.initial_state()
-		_carry_movement(saved)
 	view.setup(area)
 	view.set_character_skin("adventurer")
 	session.begin(area, view, saved)
 	view.set_zoom(11.0)
 	view.set_warmth(0.75)
-	notebook.reload_from_session()
 	_refresh_interaction()
 
 
 func _cache_room() -> void:
 	if _inside_id != "" and _rooms.has(_inside_id):
 		_rooms[_inside_id].save = session.to_save()
-		_rooms[_inside_id].save["edits"] = ledger.edits.duplicate(true)
+		_rooms[_inside_id].save["edits"] = ledger.saved_edits()
 
 
 func leave_house() -> bool:
@@ -923,7 +896,6 @@ func leave_house() -> bool:
 	_cache_room()
 	_outer_save.source = session.source
 	_outer_save.stats = session.stats.duplicate()
-	_carry_movement(_outer_save)
 	await _fade(_activate_exterior)
 	save_now()
 	return true
@@ -940,29 +912,14 @@ func _activate_exterior() -> void:
 	view.set_zoom(float(settings.get_value("zoom")))
 	view.set_warmth(0.28, true)
 	builder.ledger = ledger
-	notebook.reload_from_session()
 	_refresh_interaction()
-
-
-func _carry_movement(saved: Dictionary) -> void:
-	if not area.movement_lesson:return
-	if saved.get("state") is Dictionary:
-		saved.state["spoken"]=session.state.get("spoken", "")
-		saved.state["hotaru_greeted"]=CompanionLesson.has_voice(session.state,session.completed)
-		saved.state["controls"]=session.state.get("controls",{}).duplicate(true)
-		saved.state["movement_used"]=session.state.get("movement_used",[]).duplicate()
-	saved["movement_editor"]=session.movement_editor.duplicate(true)
-	saved["greeting_editor"]=session.greeting_editor.duplicate(true)
 
 
 func _restore_places(save: Dictionary) -> void:
 	_workshop_dismissed.clear()
 	_workshop_log = WorkshopStory.restore_log(save.get("workshop_log", []), _story.get("scenes", {})) if _journal_kind() == "workshop" else []
 	_banter_index = 0
-	_met_villagers = save.get("met_villagers", {}).duplicate(true) if save.get("met_villagers") is Dictionary else {}
-	var speakers: Dictionary=_people.duplicate()
-	speakers["hotaru"]=HotaruDialogue.person(session.player_name,_root_area_id=="village-morning")
-	_dialogue_read = VillageDialogue.restore_read(save.get("dialogue_read", {}), speakers)
+	_dialogue_read = {}
 	# The loft's world-anchored introduction has one authored read marker rather
 	# than resident topic pages. Restore only that known marker, within its journey.
 	var read: Variant = save.get("dialogue_read", {})
@@ -1019,6 +976,8 @@ func _journey_completed() -> Array:
 ## Only shared notebook/voice progress crosses floors. World memory, objects,
 ## player position and completed local work remain in their own room snapshot.
 func _share_journey_progress(saved: Dictionary) -> void:
+	saved["accounts"] = session.accounts.duplicate(true)
+	saved["city_cycle"] = session.cycle.duplicate(true)
 	saved["source"] = session.source
 	saved["stats"] = session.stats.duplicate(true)
 	saved["greeting_editor"] = session.greeting_editor.duplicate(true)
@@ -1035,23 +994,36 @@ func _share_journey_progress(saved: Dictionary) -> void:
 
 func _cache_journey_room() -> void:
 	var saved: Dictionary = session.to_save()
-	saved["edits"] = ledger.edits.duplicate(true)
+	saved["edits"] = ledger.saved_edits()
 	_journey_rooms[area.id] = saved
 	for id: String in _journey_rooms: _share_journey_progress(_journey_rooms[id])
 
 
 func _activate_journey_room(source: Dictionary, saved: Dictionary) -> void:
+	_stage_journey_room(source, saved)
+	view.setup(area)
+	_complete_journey_room(saved)
+
+
+func _activate_journey_room_async(source: Dictionary, saved: Dictionary) -> void:
+	_stage_journey_room(source, saved)
+	await view.setup_async(area)
+	_complete_journey_room(saved)
+
+
+func _stage_journey_room(source: Dictionary, saved: Dictionary) -> void:
 	_source = source
 	ledger = BuildLedger.new(source.document, source.assets, source.quests, _build_catalog, saved.get("edits", []), build_policy, AreaStore.ground_materials())
 	area = ledger.area
-	view.setup(area)
+
+
+func _complete_journey_room(saved: Dictionary) -> void:
 	view.set_character_skin(str(settings.get_value("character_skin")))
 	session.begin(area, view, saved)
 	view.set_zoom(_indoor_zoom(12.5))
 	view.set_warmth(.75, false)
 	_sync_pickups()
 	builder.ledger = ledger
-	notebook.reload_from_session()
 	_refresh_interaction()
 
 
@@ -1085,7 +1057,7 @@ func travel_room_link(id: String) -> bool:
 	var from_area: String = area.id
 	if not walking:
 		await _fade(func() -> void:
-			_activate_journey_room(source, saved)
+			await _activate_journey_room_async(source, saved)
 			session.turn_toward(facing))
 		save_now()
 		return true
@@ -1110,20 +1082,25 @@ func travel_room_link(id: String) -> bool:
 	# They walk at walking pace the whole way; once the veil has them, the floor beyond the doorway does not matter.
 	var leave_cells: float = (WALK_LEAD_SECONDS + VEIL_CLOSE_SECONDS) / LabWorld.STEP_SECONDS
 	var leaving: Callable = func(fraction: float) -> void: view.walk_player_visual(start, start + out * leave_cells, fraction)
-	var arriving: Callable = func(fraction: float) -> void: view.walk_player_visual(arrive_from, Vector2(onward), fraction)
-	view.set_player_motion(out / LabWorld.STEP_SECONDS)
+	var arrival_walk_seconds: float = arrive_cells * LabWorld.STEP_SECONDS
+	var reveal_seconds: float = maxf(VEIL_OPEN_SECONDS, arrival_walk_seconds)
+	var arriving: Callable = func(fraction: float) -> void:
+		var progress: float = minf(1.0, fraction * reveal_seconds / arrival_walk_seconds)
+		view.walk_player_visual(arrive_from, Vector2(onward), progress)
+		if progress >= 1.0: view.end_travel_walk()
+	view.begin_travel_walk(out / LabWorld.STEP_SECONDS)
 	await _fade(func() -> void:
-		_activate_journey_room(source, saved)
+		await _activate_journey_room_async(source, saved)
 		session.turn_toward(facing)
 		back.merge(RoomLinks.back_to(area, from_area))
 		DoorSwing.set_open(view.link_doors(str(back.get("doors", ""))), true, 0.0)
 		_veil_open_origin = _cell_uv(Vector2(target))
 		view.walk_player_visual(arrive_from, Vector2(onward), 0.0)
-		view.set_player_motion(Vector2(facing) / LabWorld.STEP_SECONDS),
+		view.begin_travel_walk(Vector2(facing) / LabWorld.STEP_SECONDS),
 		VEIL_CLOSE_SECONDS, leaving, arriving, _cell_uv(start + out * 0.6),
-		maxf(VEIL_OPEN_SECONDS, arrive_cells * LabWorld.STEP_SECONDS), WALK_LEAD_SECONDS)
+		reveal_seconds, WALK_LEAD_SECONDS)
 	view.sync_player(session.state)
-	view.set_player_motion(Vector2.ZERO)
+	view.end_travel_walk()
 	if back.has("doors"):
 		DoorSwing.set_open(view.link_doors(str(back.doors)), false)
 	save_now()
@@ -1168,44 +1145,24 @@ func toggle_notebook() -> void:
 
 func open_notebook() -> void:
 	if not playing or notebook_open or not _modals.is_empty():return
-	if _journal_kind()=="workshop":
-		if area.id != "workshop-loft" and not _dialogue_read.get("loft-waking", []).has("introduced"):
-			hud.show_toast("Your first page is at the terminal upstairs.")
-			return
-		if area.id == "workshop-loft" and not CompanionLesson.has_voice(session.state, session.completed):
-			var read: Array = session.state.get("inspections_read", [])
-			if not read.has("nell-note"):
-				hud.show_toast("There’s a note under the mug on the desk.")
-				return
-			if not read.has("desk-terminal"):
-				hud.show_toast("Use the terminal on the desk to open your first page.")
-				return
-		# Field Notes anywhere is the plain open page. A zone's or a lamp's code is reached by standing at it.
-		_open_workshop_journal(true)
+	if area.id != "workshop-loft" and not _dialogue_read.get("loft-waking", []).has("introduced"):
+		hud.show_toast("Your first page is at the terminal upstairs.")
 		return
-	notebook_open=true
-	_opened_once=true
-	if area.movement_lesson:
-		movement_lesson=MovementLesson.new() if CompanionLesson.has_voice(session.state,session.completed) else GreetingLesson.new()
-		movement_lesson.setup(session,settings)
-		movement_lesson.applied.connect(save_now)
-		movement_lesson.next_lesson.connect(_hotaru_next_lesson)
-		movement_lesson.closed.connect(close_notebook)
-		movement_lesson.extent_changed.connect(_drawer_extent_changed)
-		add_child(movement_lesson)
-		move_child(movement_lesson,_overlay.get_index())
-		add_child(movement_lesson.test_window)
-		move_child(movement_lesson.test_window,_overlay.get_index())
-		var window: LessonTestWindow=movement_lesson.test_window
-		movement_lesson.tree_exiting.connect(func() -> void:
-			if is_instance_valid(window):window.queue_free())
-		movement_lesson.fit_drawer()
-		movement_lesson.show_drawer(true)
-	else:
-		notebook.fit_drawer()
-		notebook.show_drawer(true)
-	hud.set_notebook_open(true)
-	_update_input_gate()
+	if area.id == "workshop-loft" and not CompanionLesson.has_voice(session.state, session.completed):
+		var read: Array = session.state.get("inspections_read", [])
+		if not read.has("nell-note"):
+			hud.show_toast("There’s a note under the mug on the desk.")
+			return
+		if not read.has("desk-terminal"):
+			hud.show_toast("Use the terminal on the desk to open your first page.")
+			return
+	# Field Notes anywhere is the plain open page. A zone's or a lamp's code is reached by standing at it.
+	if _dialogue_read.get("loft-waking",[]).has("introduced"):
+		for display:Dictionary in area.displays:
+			if DisplayCards.in_reach(area,session.state,display):
+				open_display(str(display.id))
+				return
+	_open_workshop_journal(true)
 
 
 ## The Sparks loft's first page; it uses the same session and sandbox as every lesson.
@@ -1215,28 +1172,28 @@ func _open_workshop_journal(greeting_page: bool = false, context: Dictionary = {
 	var introduction_seen: bool = _dialogue_read.get("loft-waking", []).has("introduced")
 	var jobs: bool = not greeting_page and introduction_seen and CompanionLesson.has_voice(session.state, session.completed)
 	if jobs and session.greeting_editor.is_empty(): session.greeting_editor = {"mode":"python", "python":session.source}
-	movement_lesson = WorkshopJobsJournal.new() if jobs else WorkshopJournal.new()
-	if jobs: (movement_lesson as WorkshopJobsJournal).context = context
-	movement_lesson.setup(session, settings)
-	movement_lesson.applied.connect(save_now)
+	journal = WorkshopJobsJournal.new() if jobs else WorkshopJournal.new()
+	if jobs: (journal as WorkshopJobsJournal).context = context
+	journal.setup(session, settings)
+	journal.applied.connect(save_now)
 	if jobs:
-		(movement_lesson as WorkshopJobsJournal).story_log_requested.connect(open_workshop_log)
-		(movement_lesson as WorkshopJobsJournal).greeting_requested.connect(func() -> void:
+		(journal as WorkshopJobsJournal).story_log_requested.connect(open_workshop_log)
+		(journal as WorkshopJobsJournal).greeting_requested.connect(func() -> void:
 			close_notebook(true)
 			_open_workshop_journal(true))
-		(movement_lesson as WorkshopJobsJournal).destination_requested.connect(_workshop_destination)
+		(journal as WorkshopJobsJournal).destination_requested.connect(_workshop_destination)
 	else:
-		(movement_lesson as WorkshopJournal).waking_requested.connect(func() -> void: _workshop_waking.call_deferred())
-		(movement_lesson as WorkshopJournal).introduction_finished.connect(func() -> void:
+		(journal as WorkshopJournal).waking_requested.connect(func() -> void: _workshop_waking.call_deferred())
+		(journal as WorkshopJournal).introduction_finished.connect(func() -> void:
 			_dialogue_read["loft-waking"] = ["introduced"]
 			save_now())
-	movement_lesson.closed.connect(close_notebook)
-	movement_lesson.extent_changed.connect(_drawer_extent_changed)
-	add_child(movement_lesson)
-	move_child(movement_lesson, _overlay.get_index())
-	movement_lesson.fit_drawer()
-	movement_lesson.show_drawer(true)
-	if not jobs: (movement_lesson as WorkshopJournal).restore_story(introduction_seen)
+	journal.closed.connect(close_notebook)
+	journal.extent_changed.connect(_drawer_extent_changed)
+	add_child(journal)
+	move_child(journal, _overlay.get_index())
+	journal.fit_drawer()
+	journal.show_drawer(true)
+	if not jobs: (journal as WorkshopJournal).restore_story(introduction_seen)
 	hud.set_notebook_open(true)
 	if jobs:
 		if _authored_zoom() > 0.0: view.set_zoom(_indoor_zoom(0.0) * SLATE_PULL_BACK)
@@ -1250,8 +1207,10 @@ func _show_slate_link(context: Dictionary) -> void:
 	_clear_slate_link()
 	if context.is_empty() or view.player_node() == null: return
 	var target: Node3D = null
-	var wired: bool = str(context.get("kind", "")) == "zone"
-	if wired:
+	var wired: bool = str(context.get("kind", "")) in ["zone","display"]
+	if str(context.get("kind",""))=="display":
+		target=view.building_node(str(DisplayCards.find(area,str(context.id)).get("object","")))
+	elif wired:
 		var terminal: Dictionary = ZoneTerminals.find(area, str(context.get("terminal", "")))
 		if not terminal.is_empty(): target = view.building_node(str(terminal.object))
 	elif view._lamps.has(str(context.get("id", ""))):
@@ -1267,14 +1226,9 @@ func _clear_slate_link() -> void:
 	_slate_link = null
 
 
-func _hotaru_next_lesson() -> void:
-	close_notebook(true)
-	talk_hotaru("movement")
-
-
 func _workshop_destination(id: String) -> void:
 	close_notebook(true)
-	if not ZoneTerminals.find(area, id).is_empty() or not area.lamp(id).is_empty():
+	if not ZoneTerminals.find(area, id).is_empty() or not area.lamp(id).is_empty() or not DisplayCards.find(area,id).is_empty():
 		_walk_to_room_target(id)
 		return
 	if not RoomLinks.find(area, id).is_empty():
@@ -1298,7 +1252,9 @@ func _show_workshop_scene(id: String, inspection: String = "") -> void:
 			if _workshop_log.size() > 128: _workshop_log.pop_front()
 		_queue_save(.4))
 	scene.log_requested.connect(open_workshop_log)
-	scene.setup(_story.scenes[id], view.stage as WorkshopLoftStage, settings)
+	var authored: Dictionary=_story.scenes[id].duplicate(true)
+	authored["player_name"]=session.player_name
+	scene.setup(authored, view.stage as WorkshopLoftStage, settings)
 	if not _workshop_dismissed.has(id): _workshop_dismissed.append(id)
 	var room_id: String = area.id
 	scene.finished.connect(func() -> void:
@@ -1308,6 +1264,7 @@ func _show_workshop_scene(id: String, inspection: String = "") -> void:
 		_dialogue_read["workshop-scenes"] = read
 		if id == "loft-waking": _dialogue_read["loft-waking"] = ["introduced"]
 		if inspection != "": session.read_inspection(inspection)
+		if id=="iona-commission": _issue_message_card()
 		save_now()
 		if id in ["waiting-ticket", "landing-lit"]: _offer_job_place.call_deferred())
 	_push_modal(scene)
@@ -1322,7 +1279,7 @@ func _workshop_waking() -> void:
 func open_workshop_log() -> void:
 	if _journal_kind() != "workshop" or (_modals.size() > 0 and _modals[-1] is WorkshopLog): return
 	var log := WorkshopLog.new()
-	log.setup(_workshop_log, _story.get("scenes", {}), _story.get("opening", {}).get("note", {}), _dialogue_read.get("nell-note", []).has("read"))
+	log.setup(_workshop_log, _story.get("scenes", {}), _story.get("opening", {}).get("note", {}), _dialogue_read.get("nell-note", []).has("read"), session.player_name)
 	_push_modal(log)
 
 
@@ -1340,31 +1297,21 @@ func talk_hotaru(topic: String="") -> void:
 				_banter_index += 1
 		else: open_notebook()
 		return
-	var person: Dictionary=HotaruDialogue.person(session.player_name,area.movement_lesson,CompanionLesson.has_voice(session.state,session.completed),topic)
-	var conversation:=VillageConversation.new()
-	conversation.setup(person,settings,_dialogue_read.get("hotaru",[]))
-	conversation.settings_requested.connect(open_settings)
-	conversation.notebook_requested.connect(func() -> void:
-		conversation.close()
-		open_notebook())
-	conversation.read_changed.connect(func(keys: Array) -> void:
-		_dialogue_read["hotaru"]=keys.duplicate()
-		_queue_save(.4))
-	_push_modal(conversation)
 
 
 func close_notebook(instant: bool = false) -> void:
+	session.output_display=""
+	session.daylight_program=false
+	session.robot_link=false
 	if not notebook_open and not instant:return
 	notebook_open=false
-	if movement_lesson!=null:
-		var panel: LearningLesson=movement_lesson
-		movement_lesson=null
+	if journal!=null:
+		var panel: LearningLesson=journal
+		journal=null
 		panel.stop()
 		panel.show_drawer(false,instant)
 		if instant:panel.queue_free()
 		else:get_tree().create_timer(.26).timeout.connect(panel.queue_free)
-	notebook.drop_focus()
-	notebook.show_drawer(false,instant)
 	if is_instance_valid(_slate_link) and playing: _apply_room_zoom()
 	_clear_slate_link()
 	if hud!=null:hud.set_notebook_open(false)
@@ -1372,17 +1319,12 @@ func close_notebook(instant: bool = false) -> void:
 	_update_input_gate()
 
 
-func _place_notebook(opened: bool) -> void:
-	notebook.fit_drawer()
-	notebook.show_drawer(opened,true)
-
-
 func _drawer_extent_changed(pixels: float) -> void:
 	var inset: float=pixels if notebook_open else 0.0
 	if workshop_speech != null: workshop_speech.right_inset = inset
 	if hud!=null:hud.set_right_inset(inset)
 	# The field slate's notepad reaches further into the room than the slate, so the room is framed left of both.
-	var extra: float=(movement_lesson as WorkshopJobsJournal).extra_reserve() if notebook_open and movement_lesson is WorkshopJobsJournal else 0.0
+	var extra: float=(journal as WorkshopJobsJournal).extra_reserve() if notebook_open and journal is WorkshopJobsJournal else 0.0
 	view.set_view_shift((inset+extra)/maxf(1.0,size.x)*.5)
 
 
@@ -1390,30 +1332,7 @@ func _first_run_hint() -> void:
 	if playing and not _opened_once and _modals.is_empty():
 		if _journal_kind() == "workshop" and area.id == "workshop-loft" and not (session.state.inspections_read as Array).has("desk-terminal"):
 			hud.show_toast("Nell left a note under the mug on the desk." if not (session.state.inspections_read as Array).has("nell-note") else "Use the terminal on the desk to open your first page.")
-		else: hud.show_toast("Press E to open your Field Notes" if _journal_kind()!="" else "Press E to open your notebook")
-
-
-## The last quest sets off a ring of light from the beacon, then an epilogue.
-func _on_quest_completed(quest: Dictionary) -> void:
-	if _journal_kind()=="workshop":
-		return
-	if area.movement_lesson:
-		if quest.id!="say-hello":
-			hud.show_toast('Hotaru: “You’re walking! I’ll follow you into the lane.”')
-		return
-	# The epilogue belongs to the main arc: finishing a later, optional chapter never repeats it.
-	if bool(quest.get("optional", false)) or not Quests.main_arc_done(area, session.completed):
-		return
-	var beacon: Dictionary = area.lamp("beacon")
-	if not beacon.is_empty():
-		view.celebrate(beacon.at)
-	await get_tree().create_timer(3.4).timeout
-	if playing and _modals.is_empty():
-		close_notebook()
-		var epilogue := EpilogueScreen.new()
-		epilogue.setup(area, session.stats, session.player_name, session.current_quest())
-		epilogue.title_requested.connect(_return_to_title)
-		_push_modal(epilogue)
+		else: hud.show_toast("Press E to open your Field Notes")
 
 
 # -------------------------------------------------------------- build mode
@@ -1421,11 +1340,8 @@ func _on_quest_completed(quest: Dictionary) -> void:
 func open_build() -> void:
 	if not playing or builder.active or not _modals.is_empty():
 		return
-	if not bool(_level_spec.get("build", true)):
+	if not bool(_level_spec.get("build", true)) and not (_level_spec.get("build_areas", []) as Array).has(area.id):
 		hud.show_toast(str(_story.get("no_build", "There's nothing to build up here yet.")))
-		return
-	if area.movement_lesson:
-		hud.show_toast("This first slice is about your movement keys. Building comes later.")
 		return
 	if inside_house():
 		_open_room_finishes()
@@ -1474,7 +1390,23 @@ func close_build() -> void:
 		view.set_zoom(float(settings.get_value("zoom")))
 		view.focus_on(Vector2(session.player_cell()))
 		save_now()
+		_export_layout()
 	_update_input_gate()
+
+
+## A reviewable copy of this layout lives in the checkout; the campaign save still owns the edit history.
+func _export_layout() -> void:
+	var relative: String = str((area.interior.get("layout", {}) as Dictionary).get("export", ""))
+	if relative != "content/development/layouts/haverlund-square.json": return
+	if OS.get_environment("VOXEL_LAB_FRESH") == "1" and layout_export_override == "": return
+	var path: String = "res://" + relative if layout_export_override == "" else layout_export_override
+	if DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(path.get_base_dir())) != OK: return
+	var file := FileAccess.open(path + ".tmp", FileAccess.WRITE)
+	if file == null: return
+	var applied: Dictionary = AreaBuild.apply(ledger.base_document, ledger.edits, ledger.paint_materials)
+	file.store_string(JSON.stringify({"schema":1,"area":area.id,"base_version":area.version,"edits":ledger.edits,"document":applied.document}, "  "))
+	file.close()
+	DirAccess.rename_absolute(ProjectSettings.globalize_path(path + ".tmp"), ProjectSettings.globalize_path(path))
 
 
 func _on_build_edited(_label: String) -> void:
@@ -1482,14 +1414,66 @@ func _on_build_edited(_label: String) -> void:
 	_queue_save(0.4)
 
 
-## "Write code for it" in the details panel: leave building, open the notebook and add the line that fetches the thing.
-func _on_build_code(snippet: String) -> void:
-	close_build()
-	open_notebook()
-	notebook.insert_snippet(snippet)
-
-
 # ------------------------------------------------------------------- modals
+func open_development() -> void:
+	if not DevelopmentMode.available() or not playing or _level_id != LevelStore.MAIN_LEVEL or _flow_busy or session.busy: return
+	_pop_all_modals()
+	var panel := DevelopmentPanel.new()
+	panel.setup(self)
+	panel.checkpoint_requested.connect(func(id: String) -> void:
+		if not DevelopmentMode.jump(self, id): hud.show_toast("That development checkpoint could not be loaded."))
+	panel.solution_requested.connect(func() -> void:
+		if not DevelopmentMode.fill_solution(self): hud.show_toast("There is no reference routine for this page."))
+	panel.finish_requested.connect(func() -> void:
+		if not await DevelopmentMode.finish_current(self): hud.show_toast("This job could not be finished; check its access and code."))
+	panel.normal_requested.connect(func() -> void:
+		_pop_all_modals()
+		close_notebook(true)
+		save_now()
+		SaveStore.development = false
+		if SaveStore.has_save(_level_id): continue_game(_level_id)
+		else: show_title())
+	panel.hour_requested.connect(func(hour: float)->void:
+		DevelopmentMode.enter(self)
+		_pop_all_modals()
+		CityCycle.at_hour(session.cycle,hour)
+		session.sync_cycle()
+		save_now())
+	panel.pressure_requested.connect(func(pressure: float)->void:
+		DevelopmentMode.enter(self)
+		_pop_all_modals()
+		CityCycle.set_pressure(session.cycle,pressure)
+		session.sync_cycle()
+		save_now())
+	panel.breaker_reset_requested.connect(func()->void:
+		DevelopmentMode.enter(self)
+		_pop_all_modals()
+		session.cycle.tripped=false
+		CityCycle.set_pressure(session.cycle,5.6)
+		session.sync_cycle()
+		save_now())
+	panel.power_preview_requested.connect(preview_loading_power)
+	_push_modal(panel)
+
+
+func preview_loading_power(power: Dictionary) -> void:
+	if not DevelopmentMode.available() or _flow_busy or session.busy: return
+	_pop_all_modals()
+	_flow_busy = true
+	_update_input_gate()
+	_veil.set_world_state({"city_power":power})
+	_veil.set_status("City-power study · " + str(power.get("label", "Steady")))
+	await _veil.close(Vector2(.5,.5), VEIL_CLOSE_SECONDS)
+	var previous: int = world_viewport.render_target_update_mode
+	world_viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
+	await get_tree().create_timer(2.5).timeout
+	world_viewport.render_target_update_mode = previous as SubViewport.UpdateMode
+	await _veil.open(Vector2(.5,.5), VEIL_OPEN_SECONDS)
+	_veil.set_world_state(session.state)
+	_flow_busy = false
+	_update_input_gate()
+
+
 func open_pause() -> void:
 	if not playing or not _modals.is_empty():
 		return
@@ -1517,6 +1501,13 @@ func open_journal() -> void:
 		jobs.setup(session, _story, _workshop_reached_jobs())
 		jobs.notes_requested.connect(func() -> void:
 			jobs.close()
+			var quest:Dictionary=session.current_quest()
+			var place:Dictionary=FieldAccess.place_for(area,quest)
+			if not place.is_empty():
+				var at:Vector2i=_room_target_approach(str(place.target))
+				if at.x>=0 and Vector2(session.player_cell()).distance_to(Vector2(at))>=FieldAccess.RANGE:
+					_workshop_destination(str(place.target))
+					return
 			open_notebook.call_deferred())
 		jobs.destination_requested.connect(func(id: String) -> void:
 			jobs.close()
@@ -1525,17 +1516,6 @@ func open_journal() -> void:
 			else: _workshop_destination(id))
 		_push_modal(jobs)
 		return
-	if area.movement_lesson or _journal_kind()!="":
-		open_notebook()
-		return
-	if not playing:
-		return
-	var journal := JournalPanel.new()
-	journal.setup(session)
-	journal.notebook_requested.connect(func() -> void:
-		_pop_all_modals()
-		open_notebook())
-	_push_modal(journal)
 
 
 ## The job book includes reached work from each visited room without revealing future jobs.
@@ -1550,7 +1530,7 @@ func _workshop_reached_jobs() -> Array[Dictionary]:
 		if id != area.id:
 			var saved_completed: Variant = _journey_rooms[id].get("completed", [])
 			completed = saved_completed if saved_completed is Array else []
-		var current: Dictionary = Quests.current(room, completed)
+		var current: Dictionary = Quests.current(room, completed, _journey_completed())
 		for quest: Dictionary in room.quests:
 			var done: bool = completed.has(quest.id)
 			if not done and quest != current: continue
@@ -1580,16 +1560,8 @@ func _open_character(mode: String, save: Dictionary) -> void:
 	var screen := CharacterScreen.new()
 	var journey_area: AreaDef = _outer_ledger.area if inside_house() else area
 	var choice: Dictionary=LevelStore.entry(_pending_level_id if mode=="new" else (_level_id if playing else str(save.get("level",LevelStore.default_id()))))
-	var home_save: Dictionary={}
-	if not choice.is_empty():
-		if mode=="new" or not playing:journey_area=AreaStore.load_area(str(choice.area))
-		var home: String=str(choice.get("opening_house",""))
-		if journey_area.movement_lesson and home!="":
-			var template: String=HouseInstances.template_for(journey_area,home,_interior_catalog)
-			var rooms: Dictionary=_rooms if playing else save.get("travel",{}).get("rooms",{})
-			home_save=rooms.get(journey_area.id+"/"+home,{}).get("save",{})
-			journey_area=AreaStore.load_area(template)
-			if not playing and mode=="view" and not home_save.is_empty():save=home_save
+	if not choice.is_empty() and (mode=="new" or not playing):
+		journey_area=AreaStore.load_area(str(choice.area))
 	var options: Dictionary = {"mode": mode, "area": journey_area, "name": SaveStore.player_name(), "completed": [], "stats": {}, "lamps_lit": 0, "zones_found": 0}
 	options.skin = settings.get_value("character_skin")
 	var character: Variant = choice.get("character", {})
@@ -1597,9 +1569,7 @@ func _open_character(mode: String, save: Dictionary) -> void:
 		options.merge(character, true)
 	if playing and mode == "view":
 		options.merge({"name": session.player_name, "completed": session.completed, "stats": session.stats, "lamps_lit": session.lamps_lit(), "zones_found": (session.state.zones_seen as Array).size()}, true)
-		if journey_area.movement_lesson:
-			if not inside_house():options.completed=home_save.get("completed",[])
-		elif inside_house():
+		if inside_house():
 			options.completed = _outer_save.completed
 			options.lamps_lit = _saved_lamps(_outer_save)
 			options.zones_found = (_outer_save.state.zones_seen as Array).size()
@@ -1619,12 +1589,10 @@ func _open_character(mode: String, save: Dictionary) -> void:
 
 func _confirm_reset() -> void:
 	var confirm := ConfirmDialog.new()
-	if area.movement_lesson:
-		confirm.ask("Reset this area?", "The room's objects and program memory start fresh. Your keys, movement practice, notebook and finished quest are kept.", "Reset area", true)
-	elif inside_house():
+	if inside_house():
 		confirm.ask("Reset this room?", "This home's lamp goes dark and its program memory clears. Your notebook, discoveries and the village stay as they are.", "Reset room", true)
 	else:
-		confirm.ask("Start the hollow over?", "Every lamp goes dark, the bridge washes away and the gate shuts. Your code and the quests you have finished are kept.", "Start over", true)
+		confirm.ask("Reset this room?", "Every lamp here goes dark and this room's program memory clears. Your notes, jobs and pay are kept.", "Reset room", true)
 	confirm.confirmed.connect(func() -> void:
 		_pop_all_modals()
 		session.reset_world())
@@ -1641,6 +1609,7 @@ func _return_to_title() -> void:
 
 
 func _push_modal(modal: Modal) -> void:
+	if hud!=null and modal is WorkshopScene:hud.clear_feedback()
 	if not _modals.is_empty():
 		_modals[-1].visible = false
 	_modals.append(modal)
@@ -1671,9 +1640,9 @@ func _pop_all_modals() -> void:
 func _update_input_gate() -> void:
 	if workshop_speech != null: workshop_speech.visible = not _modals.any(func(modal: Modal) -> bool: return modal is WorkshopScene or modal is WorkshopLog or modal is AssetShowcase)
 	if playing and hud != null and not (builder != null and builder.active):
-		hud.visible = not _modals.any(func(modal: Modal) -> bool: return modal is VillageConversation)
+		hud.visible = true
 	if session != null:
-		session.input_enabled = playing and not _flow_busy and _modals.is_empty() and movement_lesson==null and not (builder != null and builder.active)
+		session.input_enabled = playing and not _flow_busy and _modals.is_empty() and journal==null and not (builder != null and builder.active)
 		if view.villagers != null:
 			view.villagers.paused = not session.input_enabled
 
@@ -1683,7 +1652,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if not event is InputEventKey or not event.pressed or event.echo or not playing or _flow_busy or not _modals.is_empty():
 		return
 	var key: Key = (event as InputEventKey).keycode
-	var typing: bool = movement_lesson.has_text_focus() if movement_lesson!=null else notebook.has_text_focus()
+	var typing: bool = journal != null and journal.has_text_focus()
 	if builder.active and key != KEY_F11:
 		if builder.handle_key(event as InputEventKey):
 			get_viewport().set_input_as_handled()
@@ -1691,14 +1660,19 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if not typing and session.input_enabled and key in [KEY_W, KEY_A, KEY_S, KEY_D, KEY_UP, KEY_LEFT, KEY_DOWN, KEY_RIGHT]:
 		_pending_room_target = ""
 	match key:
+		KEY_I:
+			if not typing: open_inventory()
+		KEY_F8:
+			if DevelopmentMode.available():
+				get_viewport().set_input_as_handled()
+				open_development()
 		KEY_ESCAPE:
 			if workshop_speech != null and workshop_speech.dismiss_inspection():
 				get_viewport().set_input_as_handled()
 				return
 			get_viewport().set_input_as_handled()
 			if typing:
-				if movement_lesson!=null:movement_lesson.drop_focus()
-				else:notebook.drop_focus()
+				if journal!=null:journal.drop_focus()
 			elif notebook_open:
 				close_notebook()
 			else:
@@ -1710,7 +1684,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 					close_notebook()
 				else:
 					open_notebook()
-					if not area.movement_lesson and _journal_kind()=="":notebook.focus_editor.call_deferred()
 		KEY_M:
 			if not typing:
 				get_viewport().set_input_as_handled()
@@ -1733,7 +1706,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		KEY_ENTER, KEY_KP_ENTER:
 			if event.ctrl_pressed and notebook_open:
 				get_viewport().set_input_as_handled()
-				if movement_lesson!=null:movement_lesson.preview()
+				if journal!=null:journal.preview()
 				else:session.run_preview()
 
 
@@ -1760,7 +1733,7 @@ func _on_world_input(event: InputEvent) -> void:
 				return
 			var cell: Vector2i = view.pick_cell(view_point)
 			if cell.x >= 0:
-				if movement_lesson==null:session.click_cell(cell)
+				if journal==null:session.click_cell(cell)
 				hud.show_inspection(describe_cell(cell))
 		elif button == MOUSE_BUTTON_WHEEL_UP or button == MOUSE_BUTTON_WHEEL_DOWN:
 			if _authored_zoom() > 0.0:
@@ -1863,6 +1836,8 @@ func _build_world() -> void:
 	surface.add_child(world_viewport)
 	view = ClearingView.new()
 	world_viewport.add_child(view)
+	# The first room is built under the journey's own look, so its job marker is the paper one from the start.
+	view.set_marker_style("paper" if str(LevelStore.entry(_level_id).get("look", "")) == "paper" else "")
 	view.setup(area)
 
 
@@ -1875,7 +1850,7 @@ func _celebration_state() -> Dictionary:
 		state.gates[gate.id] = true
 	for bridge: Dictionary in area.bridges:
 		state.bridges[bridge.id] = (bridge.sockets as Array).size()
-	state.player = [29, 21, 0] if area.id==AREA_ID else [area.spawn.x,area.spawn.y,0]
+	state.player = [area.spawn.x, area.spawn.y, 0]
 	return state
 
 
@@ -1896,6 +1871,10 @@ func _fade(action: Callable, down_seconds: float = VEIL_CLOSE_SECONDS, during_do
 		return
 	_flow_busy = true
 	_update_input_gate()
+	_veil.set_world_state(session.state if session != null else {})
+	_veil.set_status("Following the conduits…")
+	transition_phase = "covering"
+	last_transition = {"warm_frames":0, "closed_seconds":0.0}
 	var from: Vector2 = origin if origin is Vector2 else _player_uv()
 	var walk: Tween = null
 	if during_down.is_valid():
@@ -1907,21 +1886,32 @@ func _fade(action: Callable, down_seconds: float = VEIL_CLOSE_SECONDS, during_do
 	if walk != null and walk.is_running():
 		await walk.finished
 	var closed_at: int = Time.get_ticks_msec()
-	# The next place is built in one go; the veil redraws itself between pieces so its gears keep turning, and the
-	# world underneath, which nobody can see, is not drawn.
+	# Natural area travel prepares resources and builds in bounded batches, yielding normal frames.
+	# Legacy synchronous actions retain the pump; the hidden world is not drawn during construction.
 	var world_update: int = world_viewport.render_target_update_mode
 	world_viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
+	transition_phase = "loading"
 	BuildPump.tick = _veil.keep_turning
-	action.call()
+	await action.call()
 	BuildPump.tick = Callable()
 	world_viewport.render_target_update_mode = world_update as SubViewport.UpdateMode
-	await get_tree().process_frame
+	transition_phase = "warming"
+	_veil.set_status("Opening the way…")
+	# Present the new world under full cover before moving the traveller into it.
+	# Shader/texture uploads and camera settling belong to this hidden period.
+	for frame: int in range(VEIL_WARM_FRAMES):
+		await get_tree().process_frame
+		last_transition.warm_frames = int(last_transition.warm_frames) + 1
+	await get_tree().create_timer(VEIL_READY_SECONDS).timeout
 	var remaining: float = VEIL_CLOSED_SECONDS - float(Time.get_ticks_msec() - closed_at) / 1000.0
 	if remaining > 0.0:
 		await get_tree().create_timer(remaining).timeout
 	var to: Vector2 = _veil_open_origin if _veil_open_origin is Vector2 else _player_uv()
 	_veil_open_origin = null
+	last_transition.closed_seconds = float(Time.get_ticks_msec() - closed_at) / 1000.0
+	transition_phase = "revealing"
 	await _veil.open(to, up_seconds, during_up)
+	transition_phase = ""
 	_flow_busy = false
 	_update_input_gate()
 
@@ -1967,3 +1957,66 @@ func _on_setting_changed(key: String) -> void:
 				view.set_zoom(float(settings.get_value("zoom")))
 		"character_skin":
 			view.set_character_skin(str(settings.get_value("character_skin")))
+
+
+# Journey property is separate from undoable machine state. Receipts make back pay
+# and repeated/undone repairs safe; the active account snapshot travels exactly.
+func _settle_wages() -> void:
+	if _level_id!=LevelStore.MAIN_LEVEL or session==null: return
+	var paid_any: bool=false
+	var payments: Dictionary=_story.get("payments",{})
+	for id: String in _journey_completed():
+		if not payments.has(id) or session.accounts.receipts.has(id): continue
+		var paid: Dictionary=PlayerAccounts.claim(session.accounts,id,int(payments[id]),id.replace("-"," ").capitalize())
+		if paid.ok:
+			paid_any=true
+			session.accounts=paid.accounts
+			if hud!=null: hud.show_toast("Work payment · %d p added to your purse" % payments[id])
+			_queue_save(.2)
+
+	if paid_any: session.state_changed.emit()
+
+func _issue_message_card() -> void:
+	if session.accounts.receipts.has("welcome-material") or not session.state.inspections_read.has("sign-commission"):return
+	var grant: Dictionary=PlayerAccounts.change_item(session.accounts,"message-card",1)
+	if grant.ok:
+		var marked: Dictionary=PlayerAccounts.claim(grant.accounts,"welcome-material",0,"Reusable message card from Iona")
+		if marked.ok:session.accounts=marked.accounts
+
+func open_inventory(bank: bool=false) -> void:
+	if not playing or _flow_busy or session.busy or session.is_walking() or not _modals.is_empty(): return
+	if bank:
+		var counter: Dictionary={}
+		for item: Dictionary in area.interior.get("inspections",[]):
+			if item.id=="bank": counter=item
+		if counter.is_empty() or Vector2(session.player_cell()).distance_to(Vector2(counter.at[0],counter.at[1]))>=1.6:return
+	close_notebook(true)
+	var book:=PropertyBook.new()
+	book.setup(session,bank)
+	book.transfer_requested.connect(func(amount:int,deposit:bool)->void:
+		var result: Dictionary=PlayerAccounts.transfer(session.accounts,amount,deposit)
+		if result.ok:
+			session.accounts=result.accounts
+			session.discard_preview()
+			session.state_changed.emit()
+			save_now()
+		book.refresh("Transfer recorded." if result.ok else str(result.reason)))
+	_push_modal(book)
+
+func open_display(id: String) -> void:
+	var spec: Dictionary=DisplayCards.find(area,id)
+	if not DisplayCards.in_reach(area,session.state,spec) or not _modals.is_empty() or session.is_walking():return
+	close_notebook(true)
+	hud.clear_feedback()
+	_open_workshop_journal(false,{"kind":"display","id":id,"title":str(spec.title)})
+
+
+func _try_evening_return() -> void:
+	if session.cycle.evening_started or area.id!="haverlund-lane" or notebook_open or not _modals.is_empty() or session.is_walking() or session.busy:return
+	if not _journey_completed().has("proper-welcome") or not _dialogue_read.get("workshop-scenes",[]).has("welcome-finished"):return
+	session.cycle.evening_started=true
+	await _fade(func()->void:
+		CityCycle.at_hour(session.cycle,19.25)
+		session.sync_cycle())
+	hud.show_toast("Evening · Nell is coming back down the lane.")
+	save_now()

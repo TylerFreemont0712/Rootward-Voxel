@@ -19,6 +19,7 @@ func go() -> void:
 	var args := OS.get_cmdline_user_args()
 	if not args.is_empty(): output = args[0]
 	_rules()
+	_tram_work()
 	_refusals()
 	_art()
 	await _play()
@@ -36,18 +37,21 @@ func _rules() -> void:
 	_check(parsed.ok, "The lane's collision, links and outdoor data validate: " + str(parsed.get("errors", [])))
 	if not parsed.ok: return
 	var area: AreaDef = parsed.area
+	var fog: Dictionary = area.interior.get("depth_fog", {})
+	_check(float(fog.get("height", 0.0)) < -5.0 and float(fog.get("fade_top", 0.0)) < -1.0 and float(fog.get("edge", {}).get("max", 0.0)) > 0.5, "Mist hides the lower town below the lane's walls and thins the town round its edges")
 	var rules := LabWorld.new(area)
 	var state: Dictionary = rules.initial_state()
 	_check(area.width == 24 and area.height == 28 and area.interior.style == "workshop-lane" and area.interior.shell == "haverlund-lane-set", "The lane is a 24 by 28 outdoor scene drawn from its own Blender set")
-	_check(area.voice_lesson and not area.movement_lesson and area.quests.is_empty(), "The lane shares the journey's notebook and has no job of its own yet")
+	_check(area.voice_lesson and area.quest("proper-welcome").access.kind=="display", "The lane shares the journey's notebook and offers the sign commission")
 	var spec: Dictionary = LevelStore.entry("sparks-and-machines")
-	_check((spec.room_areas as Array) == ["workshop-loft", "workshop-floor", "haverlund-lane", "haverlund-square"], "The journey opens the lane third and the square fourth, after the two floors")
+	_check((spec.room_areas as Array).slice(0,5) == ["workshop-loft", "workshop-floor", "haverlund-lane", "haverlund-square", "city-hall"], "The journey opens the lane third and the square fourth and city hall fifth, after the two floors")
 	var start := Vector2i(10, 12)
 	_check(rules.is_walkable(state, start) and area.spawn == start, "The traveller arrives on the step outside the green doors")
-	var targets: Array = [Vector2i(14, 26), Vector2i(12, 26), Vector2i(19, 25), Vector2i(21, 26), Vector2i(17, 6), Vector2i(16, 10), Vector2i(22, 12), Vector2i(1, 5), Vector2i(8, 7),
+	var targets: Array = [Vector2i(14, 26), Vector2i(12, 26), Vector2i(19, 25), Vector2i(21, 26), Vector2i(17, 6), Vector2i(16, 10), Vector2i(22, 12), Vector2i(1, 5), Vector2i(7, 7),
 		Vector2i(13, 4), Vector2i(1, 2), Vector2i(23, 2), Vector2i(19, 2), Vector2i(7, 4), Vector2i(10, 25), Vector2i(10, 19), Vector2i(9, 21), Vector2i(22, 20), Vector2i(17, 26)]
 	for item: Dictionary in area.interior.inspections:
 		targets.append(Vector2i(int(item.at[0]), int(item.at[1])))
+	targets.append(Vector2i(10,17)) # A former standing cell stays clear beside the added delivery box.
 	for target: Vector2i in targets:
 		_check(rules.is_walkable(state, target) and not rules.find_path(state, target, start).is_empty(), "The lane reaches " + str(target) + " from the doors")
 	for zone: Dictionary in area.zones:
@@ -57,7 +61,7 @@ func _rules() -> void:
 			for y: int in range(rect.position.y, rect.end.y):
 				if not reached and rules.is_walkable(state, Vector2i(x, y)) and not rules.find_path(state, Vector2i(x, y), start).is_empty(): reached = true
 		_check(reached, "Someone can walk into the zone " + str(zone.id))
-	for blocked: Vector2i in [Vector2i(5, 0), Vector2i(12, 1), Vector2i(3, 12), Vector2i(9, 14), Vector2i(2, 20), Vector2i(2, 23), Vector2i(7, 25), Vector2i(0, 15), Vector2i(12, 27), Vector2i(23, 10), Vector2i(19, 14), Vector2i(19, 4)]:
+	for blocked: Vector2i in [Vector2i(5, 0), Vector2i(12, 1), Vector2i(3, 12), Vector2i(9, 14), Vector2i(2, 20), Vector2i(2, 23), Vector2i(5, 25), Vector2i(0, 15), Vector2i(12, 27), Vector2i(23, 10), Vector2i(19, 14), Vector2i(19, 4)]:
 		_check(not rules.is_walkable(state, blocked), "Solid ground stays solid at " + str(blocked))
 	_check(area.ground_level(Vector2(5, 3)) == 0.0 and area.ground_level(Vector2(5, 8)) == 1.0, "The halt is a level below the lane")
 	state.player = [13, 5, 0]
@@ -104,9 +108,6 @@ func _rules() -> void:
 	state.items = []
 	_check(not FieldAccess.lamp_in_reach(area, state, lamp), "Without the slate the lamp does not answer even from beside it")
 	_check(FieldAccess.lamp_reason(area, lamp).contains("gate lamp"), "The notebook names where to stand for it")
-	var hollow: AreaDef = AreaStore.load_area("kindle-hollow")
-	var valley: Dictionary = LabWorld.new(hollow).initial_state()
-	_check(FieldAccess.lamp_in_reach(hollow, valley, hollow.lamps[0]), "Kindle Hollow's lamps keep their older reach")
 
 
 func _refusals() -> void:
@@ -134,6 +135,31 @@ func _refusals() -> void:
 	_check(AreaDef.parse(plain, source.assets, source.quests).ok, "Outdoor light and street life are optional when no passengers depend on the tram")
 
 
+func _tram_work() -> void:
+	var lane:AreaDef=AreaStore.load_area("haverlund-lane")
+	var rules:=LabWorld.new(lane)
+	var state:Dictionary=rules.initial_state()
+	var saved:Dictionary=state.duplicate(true)
+	saved.player=[8,7,0] # A previously legal cell now occupied by the moved sign post.
+	saved.memory={"my_note":"keep this"}
+	saved.display_cards={"tram-welcome":["My saved words","Mind the step"]}
+	saved.lamps.erase("platform-west-lamp")
+	saved.lamps.erase("platform-east-lamp")
+	var restored:Dictionary=rules.normalize_state(saved)
+	_check(not restored.is_empty() and restored.memory==saved.memory and restored.display_cards==saved.display_cards and rules.is_walkable(restored,Vector2i(restored.player[0],restored.player[1])),"Old lane saves keep custom messages and move safely out of a relocated sign post")
+	_check(restored.lamps.has_all(["platform-west-lamp","platform-east-lamp"]),"Older saves gain both waiting-area light states")
+	_check(VillageLife.reserved(lane).has(Vector2i(lane.displays[0].at[0],lane.displays[0].at[1])),"Ambient work leaves the sign's coding approach clear")
+	# Prove the complete authored lamp round independently of temporary pedestrian queues.
+	var wick:Dictionary=lane.villagers.filter(func(person:Dictionary)->bool:return person.id=="lane-wick")[0]
+	lane.villagers.assign([wick])
+	var life:Dictionary=VillageLife.initial(lane)
+	var targets:Dictionary={}
+	for tick:int in range(2400):
+		VillageLife.advance(lane,rules,state,life,.1)
+		if life[wick.id].activity=="check_lamp":targets[life[wick.id].target]=true
+	_check(targets.has_all(["platform-lantern","platform-lantern-east"]),"Wick reaches and checks the lamps at both ends of the waiting area")
+
+
 func _art() -> void:
 	var catalog: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://pipeline/world-catalog.json"))
 	for id: String in PROPS:
@@ -159,6 +185,20 @@ func _art() -> void:
 			_check(not panes.is_empty() and panes.all(func(mesh: Node) -> bool: return not mesh.has_node("IllustratedOutline")), id + " has painted glass with no outline over it")
 			house.free()
 	var set: Node3D = WorldAssets.instantiate("haverlund-lane-set")
+	_check(RoomLinks.find(AreaStore.load_area("haverlund-lane"), "town-steps").get("doors") == "shell", "Stair travel opens the lane set's hinged gate")
+	_check(DoorSwing.leaves(set).size() == 2 and not DoorSwing.is_open(set), "The gate has two intact leaves, closed at rest")
+	DoorSwing.set_open(set, true, 0)
+	_check(DoorSwing.is_open(set), "Both gate leaves open about their exported hinges")
+	DoorSwing.set_open(set, false, 0)
+	_check(not DoorSwing.is_open(set), "The gate closes at the same registration")
+	var garden: Node=set.find_child("BraumGardenGate",true,false)
+	_check(DoorSwing.leaves(garden).size()==1 and not DoorSwing.is_open(garden),"Braum's garden hinge is independent of the town stair gate")
+	DoorSwing.set_open(garden,true,0)
+	_check(DoorSwing.is_open(garden) and not DoorSwing.is_open(set),"Opening the garden leaves the town stair gate closed")
+	_check(set.find_children("stair_handrail*", "Node3D", true, false).size() == 2, "Both handrails continue over the first flight")
+	var surround: Node3D = WorldAssets.instantiate("haverlund-lane-surround")
+	_check(surround.find_children("stair_handrail*", "Node3D", true, false).size() + surround.find_children("stair_parapet*", "Node3D", true, false).size() == 2 and surround.find_child("garden_edge_railings", true, false) != null, "The background guards both sides of the town steps (rail and parapet) and the garden edges")
+	surround.free()
 	var grass: bool = false
 	if set != null:
 		for mesh: Node in set.find_children("*", "MeshInstance3D", true, false):
@@ -174,7 +214,7 @@ func _play() -> void:
 	SaveStore.save_path = "user://test_lane_" + str(OS.get_process_id()) + ".json"
 	SaveStore.profile_path = "user://test_lane_profile_" + str(OS.get_process_id()) + ".json"
 	SaveStore.force_enabled = true
-	for id: String in ["kindle-hollow", "village-morning", "sparks-and-machines"]: SaveStore.delete(id)
+	SaveStore.delete("sparks-and-machines")
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
@@ -269,7 +309,8 @@ func _play() -> void:
 	game._refresh_interaction()
 	_check(game._interaction.get("kind") == "device" and game._interaction.get("id") == "gate-lamp", "Beside the gate, F opens the gate lamp's code")
 	game.interact()
-	_check(game.workshop_speech._inspection.get("id") == "gate-lamp" and not game.notebook_open, "With no ticket for it yet, the lamp only says nothing has been asked of it")
+	_check(game.notebook_open and game.journal is WorkshopJobsJournal and (game.journal as WorkshopJobsJournal)._page=="scratch-gate-lamp", "A lamp without a ticket opens its own shared-slate scratch page")
+	game.close_notebook(true)
 	game._pop_all_modals()
 	var lantern: Node3D = game.view._lamps.get("gate-lamp")
 	_check(lantern != null and lantern.has_meta("glass"), "The gate lamp is bound to the lantern on its pedestal")

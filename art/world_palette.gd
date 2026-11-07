@@ -17,6 +17,13 @@ const COLORS := {
 	"woven_linen": Color.WHITE,
 	"violet_quilt": Color.WHITE,
 	"tooled_leather": Color.WHITE,
+	"town_flags": Color.WHITE,
+	"town_cobbles": Color.WHITE,
+	"town_setts": Color.WHITE,
+	"town_brick": Color.WHITE,
+	"town_gravel": Color.WHITE,
+	"town_bed": Color.WHITE,
+	"town_lawn": Color("638b41"),
 
 	"grass": Color("638b41"), "grass_light": Color("83a852"), "grass_dark": Color("4e763b"),
 	"soil": Color("755846"), "soil_light": Color("96745b"), "soil_dark": Color("584b48"),

@@ -26,6 +26,6 @@ The service face: a recessed vented panel, copper risers, relief fittings and ac
 
 **Modelled 2026-10-29** as [`rootwell-beacon`](../../../art/source/world/rootwell/v1/README.md), viewable in Asset Showcase (Dev); see the [headpiece review](../../../pipeline/reviews/2026-10-29-rootwell-headpiece.md). The playable square keeps the older model until the square layout pass places the new one.
 
-The square's current editable model remains [`square-beacon/v1/model.blend`](../../../art/source/world/square-beacon/v1/model.blend), selected by [`pipeline/world-catalog.json`](../../../pipeline/world-catalog.json). The playable placement, footprint and interactions remain in [`haverlund-square.json`](../../../content/areas/haverlund-square.json). This pass supplies the main art reference for a future deliberate source revision.
+The square's current editable model remains `square-beacon/v1/model.blend`, selected by [`pipeline/world-catalog.json`](../../../pipeline/world-catalog.json). The playable placement, footprint and interactions remain in [`haverlund-square.json`](../../../content/areas/haverlund-square.json). This pass supplies the main art reference for a future deliberate source revision.
 
 [Versioned images, exact prompts and provenance](../../../art/source/world/square-beacon/concept-v1/README.md) · [Review](../../../pipeline/reviews/2026-10-29-rootwell-asset-concept.md).

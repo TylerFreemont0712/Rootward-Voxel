@@ -71,7 +71,7 @@ static func _find_glass(node: Node) -> MeshInstance3D:
 		var instance := node as MeshInstance3D
 		if instance.mesh != null and instance.mesh.get_surface_count() > 0:
 			var material: Material = instance.get_active_material(0)
-			if material != null and material.resource_name.ends_with("lamp_glass"):
+			if material != null and (material.resource_name.ends_with("lamp_glass") or material.resource_name.ends_with("festoon_glass")):
 				return instance
 	for child: Node in node.get_children():
 		var found: MeshInstance3D = _find_glass(child)
@@ -107,6 +107,7 @@ static func bind_fixture(root: Node3D, spec: Dictionary) -> bool:
 	root.set_meta("unlit", dark)
 	root.set_meta("lit", lit)
 	var light := OmniLight3D.new()
+	light.light_cull_mask = 1
 	light.name = "FixtureLight"
 	light.position = center
 	light.light_color = Color("ffe1a0")

@@ -1,10 +1,571 @@
 {
-  "builder_sha256": "5e7979c153c573184249fae65c82ee062a8818cce10b26d517d2d79c87e097f3",
-  "family": "painted_crowd_v2",
-  "gray": 0.46,
+  "builder_sha256": "4e73407a6fd15c44ac435405167619e4acba74ba92cac3a3a110faf0d5f101ab",
+  "family": "painted_crowd_v3",
+  "gray": 0.2,
+  "groups": {
+    "child": [
+      "child",
+      "child_tessa",
+      "child_mira"
+    ],
+    "man": [
+      "man",
+      "bram",
+      "rowan",
+      "sparks_rowan"
+    ],
+    "woman": [
+      "woman",
+      "mira",
+      "tessa",
+      "nell",
+      "sparks_tessa",
+      "sparks_nell"
+    ]
+  },
   "motion_sha256": "b84741d46f4de4548648268d30ddcf823cd30b1ec5255cacdeaedec23da720d2",
-  "opacity": 0.96,
+  "opacity": 0.98,
   "profiles": {
+    "bram": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/bram.png",
+      "atlas_sha256": "18e197c6afa3cffbcf0f5c9010fcd378ef54ca0fcbcf39a65569e288ea5cc3ad",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/bram.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/bram/v1/sheet.png",
+      "painted_source_sha256": "f2826f0bb64095186d97c9fceb587737566f02837dc6976a76176d27e09a2c55",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        1.0,
+        1.0
+      ],
+      "skin": "bram"
+    },
     "child": {
       "animations": {
         "idle_ne": [
@@ -545,6 +1106,1086 @@
       ],
       "skin": "adventurer"
     },
+    "child_mira": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/child_mira.png",
+      "atlas_sha256": "945901209f233fd3cb13c17b37cf4eff9f45e9a7a5e7f260c0fe4f5d5bb636a3",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/child_mira.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/mira/v1/sheet.png",
+      "painted_source_sha256": "4da74efd92985cfc359cd351f15f790cde91753c04437c0614951de8ad419196",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        0.9,
+        0.8
+      ],
+      "skin": "mira"
+    },
+    "child_tessa": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/child_tessa.png",
+      "atlas_sha256": "cf5780cd28739a350d34731473a7b083e1a18cbaf381975b213d8a65daa0b4c8",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/child_tessa.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/tessa/v1/sheet.png",
+      "painted_source_sha256": "60f968f7770cc8a217c717439e3af72c7d36093b229199bc20fe75791397af9f",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        0.9,
+        0.8
+      ],
+      "skin": "tessa"
+    },
     "man": {
       "animations": {
         "idle_ne": [
@@ -1084,6 +2725,3786 @@
         1.0
       ],
       "skin": "sparks_bram"
+    },
+    "mira": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/mira.png",
+      "atlas_sha256": "945901209f233fd3cb13c17b37cf4eff9f45e9a7a5e7f260c0fe4f5d5bb636a3",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/mira.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/mira/v1/sheet.png",
+      "painted_source_sha256": "4da74efd92985cfc359cd351f15f790cde91753c04437c0614951de8ad419196",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        1.0,
+        1.0
+      ],
+      "skin": "mira"
+    },
+    "nell": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/nell.png",
+      "atlas_sha256": "5aa7ef9c5bec024a9d784dba1bec5bed00d1a9ea2839fd42a534d0c21064f851",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/nell.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/nell/v1/sheet.png",
+      "painted_source_sha256": "d4bf4cc138caedb1d5e9d5f2c80302ef71a06210a9e245c60cdcdb70e3c01dc8",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        1.0,
+        1.0
+      ],
+      "skin": "nell"
+    },
+    "rowan": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/rowan.png",
+      "atlas_sha256": "04eb8220ab862d12fa7a554884a1ef1ed0f454f90c4fba2f173ddbf32e9943cf",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/rowan.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/rowan/v1/sheet.png",
+      "painted_source_sha256": "bb2e6b1e05020a216c9351f09454c81ee8ad102f477e100bd2afb12f13f82e3f",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        1.0,
+        1.0
+      ],
+      "skin": "rowan"
+    },
+    "sparks_nell": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/sparks_nell.png",
+      "atlas_sha256": "0e0bd273e5938dfb8a51ab30eaa222bf6aee753e01b150eb51305f574f7c2509",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/sparks_nell.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/nell/sparks-v2/sheet.png",
+      "painted_source_sha256": "11fa1a998b6d7cc575366a319ba677b2ee078b229a13d604fe6a516b2b43dfdb",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        1.0,
+        1.0
+      ],
+      "skin": "sparks_nell"
+    },
+    "sparks_rowan": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/sparks_rowan.png",
+      "atlas_sha256": "b5d3c6481d617553ebb00a0b3442b8462418de067255bfd6f4b43fb01c1ca2e6",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/sparks_rowan.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/rowan/sparks-v2/sheet.png",
+      "painted_source_sha256": "287dcc7d46be945623604fe14cd0c893bd6e9cab4817b005980ba118b728f113",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        1.0,
+        1.0
+      ],
+      "skin": "sparks_rowan"
+    },
+    "sparks_tessa": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/sparks_tessa.png",
+      "atlas_sha256": "fe5d8490be0ee759180072ee603ade68aae6da53c1c1b9b75c36eb33d747841b",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/sparks_tessa.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/tessa/sparks-v2/sheet.png",
+      "painted_source_sha256": "59a0a43fb7f9a4f85901c5935b0a2ece94408adead5cd2325f4e93eaafed281e",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        1.0,
+        1.0
+      ],
+      "skin": "sparks_tessa"
+    },
+    "tessa": {
+      "animations": {
+        "idle_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              3584,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              4928,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              896,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              896,
+              384,
+              448
+            ]
+          }
+        ],
+        "idle_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              2240,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              384,
+              2240,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_ne": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              2688,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              3136,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              3136,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_nw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              0,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 367,
+            "region": [
+              384,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 365,
+            "region": [
+              768,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 358,
+            "region": [
+              1152,
+              4032,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 359,
+            "region": [
+              0,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 363,
+            "region": [
+              384,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              768,
+              4480,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 360,
+            "region": [
+              1152,
+              4480,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_se": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              0,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              448,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              448,
+              384,
+              448
+            ]
+          }
+        ],
+        "walk_sw": [
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 369,
+            "region": [
+              0,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              384,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 372,
+            "region": [
+              768,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 374,
+            "region": [
+              1152,
+              1344,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 370,
+            "region": [
+              0,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 366,
+            "region": [
+              384,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 373,
+            "region": [
+              768,
+              1792,
+              384,
+              448
+            ]
+          },
+          {
+            "anchor": [
+              192.0,
+              420.0
+            ],
+            "opaque_height": 380,
+            "region": [
+              1152,
+              1792,
+              384,
+              448
+            ]
+          }
+        ]
+      },
+      "atlas": "res://assets/characters/phantoms/tessa.png",
+      "atlas_sha256": "cf5780cd28739a350d34731473a7b083e1a18cbaf381975b213d8a65daa0b4c8",
+      "fps": 18.4615384615385,
+      "frames": "res://assets/characters/phantoms/tessa.tres",
+      "idle": {
+        "blink_directions": [
+          "se",
+          "sw"
+        ],
+        "blink_duration": 0.12,
+        "blink_interval": [
+          6.0,
+          7.0
+        ],
+        "breath_amplitude": 0.006,
+        "breath_period": 3.6,
+        "rear_breath_amplitude": 0.004
+      },
+      "painted_source": "res://art/source/characters/tessa/v1/sheet.png",
+      "painted_source_sha256": "60f968f7770cc8a217c717439e3af72c7d36093b229199bc20fe75791397af9f",
+      "pixel_size": 0.00392953929539295,
+      "scale": [
+        1.0,
+        1.0
+      ],
+      "skin": "tessa"
     },
     "woman": {
       "animations": {
@@ -1627,6 +7048,7 @@
     }
   },
   "schema": 2.0,
-  "source": "res://art/source/characters/phantoms/v2/appearances.json",
-  "source_sha256": "11af8fea9d57efc217d0f341d655ec5e1ab88c1bc9194dd43015132195504fe0"
+  "source": "res://art/source/characters/phantoms/v3/appearances.json",
+  "source_sha256": "7af088b438339231bdf1d9f9d78920668ba507662b30a05a3e4e5f850ae514af",
+  "texture_compression": "vram"
 }

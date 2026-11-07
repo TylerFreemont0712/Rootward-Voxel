@@ -63,6 +63,7 @@ static func foundation(area: AreaDef, block: Callable) -> void:
 ## Walls and fences stand on the level of the ground under their middle.
 static func segments(area: AreaDef, block: Callable) -> void:
 	for segment: Dictionary in area.segments:
+		if segment.has("wall_id"): continue  # drawn walls are assembled from the town's wall kit (WallRuns)
 		var middle: Vector2 = ((segment.from as Vector2) + (segment.to as Vector2)) * 0.5
 		var lift: float = float(area.level_at(Vector2i(floori(middle.x + 0.5), floori(middle.y + 0.5)))) * LEVEL_RISE
 		if segment.kind == "wall":

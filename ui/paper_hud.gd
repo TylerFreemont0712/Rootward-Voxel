@@ -8,10 +8,21 @@ var story: Dictionary = {}
 var ticket: JobTicket
 var _holding_completed: bool = false
 var _notes_open: bool = false
+var _dev_button: FButton
+var _purse_button: FButton
 
 
 func _init() -> void:
 	theme = PaperTheme.theme()
+
+
+func setup(game_session: GameSession, game_settings: GameSettings) -> void:
+	super.setup(game_session,game_settings)
+	session.state_changed.connect(_refresh_purse)
+
+
+func _refresh_purse() -> void:
+	if _purse_button!=null:_purse_button.text="Bag · %d p" % session.accounts.wallet
 
 
 func set_notebook_open(open: bool) -> void:
@@ -20,9 +31,21 @@ func set_notebook_open(open: bool) -> void:
 	_place_ticket()
 
 
+func _process(_delta: float) -> void:
+	# Wrapped labels settle after the container's minimum-size notification.
+	# Fit the small pin once the final height is available, including after a job changes.
+	if ticket != null: _place_ticket()
+
+
 func _place_ticket() -> void:
 	if _quest_group != null:
-		_quest_group.position.y = maxf(84.0, size.y - 300.0) if _notes_open else 84.0
+		if ticket != null:
+			# This panel is a child of a plain Control, so it grows to fit text
+			# but needs an explicit shrink after wrapping or changing jobs.
+			ticket.size = Vector2(380.0, ticket.get_combined_minimum_size().y)
+		_quest_group.position.y = maxf(84.0, size.y - ticket.size.y - 108.0) if _notes_open and ticket != null else 84.0
+		if _toast_box != null:
+			_toast_box.offset_bottom = -(size.y - _quest_group.position.y + 18.0) if _notes_open else -96.0
 
 
 func _build() -> void:
@@ -38,15 +61,25 @@ func _build() -> void:
 	row.add_child(_location)
 	plate.add_child(row)
 	add_child(plate)
+	var dial := DayDial.new()
+	dial.session = session
+	dial.set_anchors_preset(Control.PRESET_TOP_RIGHT)
+	dial.offset_left = -270
+	dial.offset_top = 18
+	dial.offset_right = -22
+	dial.offset_bottom = 68
+	add_child(dial)
 	_quest_group = Control.new()
 	_quest_group.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_quest_group.position = Vector2(22, 84)
-	_quest_group.size = Vector2(320, 260)
+	_quest_group.size = Vector2(380, 300)
 	add_child(_quest_group)
 	resized.connect(_place_ticket)
 	ticket = JobTicket.new()
 	ticket.pressed.connect(func() -> void: journal_requested.emit())
 	_quest_group.add_child(ticket)
+	ticket.resized.connect(_place_ticket)
+	ticket.minimum_size_changed.connect(_place_ticket)
 	_objective_pill = ticket
 	_objective_title = ticket.title
 	_objective_hint = ticket.hint
@@ -66,10 +99,18 @@ func _build() -> void:
 	var menu := UI.icon_button(&"menu", "Menu (Esc)", func() -> void: menu_requested.emit())
 	menu.focus_mode = Control.FOCUS_NONE
 	buttons.add_child(menu)
-	# The default HUD's build button is never offered here; it exists only so shared code can hide it.
-	_build_button = UI.icon_button(&"hammer", "", Callable())
+	if DevelopmentMode.available():
+		_dev_button = UI.button("Dev · F8", &"", &"", func() -> void: development_requested.emit())
+		_dev_button.tooltip_text = "Chapter starts, ends and reference code (F8)"
+		buttons.add_child(_dev_button)
+	_purse_button=UI.button("Bag · I",&"",&"",func()->void:inventory_requested.emit())
+	_purse_button.tooltip_text="Inventory and account book (I)"
+	buttons.add_child(_purse_button)
+	_build_button = UI.button("Layout · B", &"hammer", &"", func() -> void: build_requested.emit())
+	_build_button.tooltip_text = "Arrange the upper paths, park and barriers (B)"
+	_build_button.focus_mode = Control.FOCUS_NONE
 	_build_button.visible = false
-	add_child(_build_button)
+	buttons.add_child(_build_button)
 	# No controls hint here: the buttons carry their own tooltips and the lower right stays clear for dialogue.
 	_stage = Control.new()
 	_stage.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -109,14 +150,30 @@ func show_toast(text: String) -> void:
 	_show_feedback(text, &"PanelCard", PaperPal.INK, 3.0)
 
 
+func reset_pin() -> void:
+	_holding_completed = false
+	ticket.clear_stamp()
+	_refresh()
+
+
 func _refresh() -> void:
 	if _location == null:
 		return
+	_build_button.visible = not (session.area.interior.get("layout", {}) as Dictionary).is_empty()
+	_refresh_purse()
+	if _dev_button != null: _dev_button.text = "Dev mode · F8" if SaveStore.development else "Dev · F8"
 	var zone: Dictionary = session.area.zone(session.current_zone) if session.current_zone != "" else {}
 	_location.text = "%s  ·  %s" % [session.area.title, zone.title] if not zone.is_empty() else session.area.title
 	if _holding_completed:
 		return
 	var quest: Dictionary = session.current_quest()
+	if quest.get("id","")=="proper-welcome" and not session.accounts.receipts.has("morning-round"):
+		ticket.set_context("02","The morning round","")
+		ticket.set_steps([])
+		ticket.set_job("","Out on the lane","Nell’s morning round is waiting inside. Finish the workshop lights before taking on another job.")
+		return
+	var chapter: Dictionary = DevelopmentMode.chapter(story, str(quest.get("id", "")), session.area.id)
+	ticket.set_context(str(chapter.get("id", "")), str(chapter.get("title", "")), str(quest.get("concept", "")))
 	ticket.set_steps([])
 	if quest.is_empty():
 		ticket.stamp(false)
@@ -131,6 +188,8 @@ func _refresh() -> void:
 		return
 	var numbers: Dictionary = story.get("tickets", {})
 	var hint: String = str(quest.get("summary", ""))
+	if quest.id=="proper-welcome" and not session.state.inspections_read.has("sign-commission"):
+		hint="Braum is looking for Nell’s help. Speak to him outside the white garden fence, then meet Iona at the tram sign."
 	if quest.id == "say-hello" and session.area.id == "workshop-loft":
 		var read: Array = session.state.get("inspections_read", [])
 		var note: bool = read.has("nell-note")
@@ -143,7 +202,7 @@ func _refresh() -> void:
 		]
 		ticket.set_steps(steps)
 	var where: String = FieldAccess.place_hint(session.area, quest)
-	if where != "": hint = (hint + " " + where).strip_edges()
+	if where != "" and not (quest.id=="proper-welcome" and not session.state.inspections_read.has("sign-commission")): hint = (hint + " " + where).strip_edges()
 	ticket.set_job(str(numbers.get(quest.id, "")), str(quest.title), hint)
 	if ticket.stamped():
 		ticket.stamp(false)
@@ -151,6 +210,8 @@ func _refresh() -> void:
 
 func _on_quest_completed(quest: Dictionary) -> void:
 	_holding_completed = true
+	var chapter: Dictionary = DevelopmentMode.chapter(story, str(quest.id), session.area.id)
+	ticket.set_context(str(chapter.get("id", "")), str(chapter.get("title", "")), str(quest.get("concept", "")))
 	ticket.set_steps([])
 	if quest.id == "say-hello":
 		var steps: Array[Dictionary] = [{"text":"Read Nell’s note", "done":true}, {"text":"Use the loft terminal", "done":true}, {"text":"Greet Hotaru", "done":true}]

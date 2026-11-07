@@ -1,0 +1,306 @@
+{
+  "schema": 1,
+  "id": "shop-clockmaker",
+  "title": "Pendulum & Pin",
+  "version": 3,
+  "size": [
+    12,
+    12
+  ],
+  "spawn": [
+    6,
+    3
+  ],
+  "voice_lesson": true,
+  "terrain": [
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............"
+  ],
+  "buildings": [],
+  "trees": [],
+  "zones": [
+    {
+      "id": "shop-floor",
+      "title": "Pendulum & Pin",
+      "rect": [
+        0,
+        0,
+        12,
+        12
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "id": "shop-pendant-1",
+      "zone": "shop-floor",
+      "at": [
+        3.3,
+        4
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    },
+    {
+      "id": "shop-pendant-2",
+      "zone": "shop-floor",
+      "at": [
+        8,
+        8
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    }
+  ],
+  "props": [],
+  "interior": {
+    "style": "workshop-square",
+    "shell": "clockshop-shell",
+    "zoom": 12,
+    "exit": [
+      6,
+      0
+    ],
+    "exit_direction": "S",
+    "walk_front": 0,
+    "furniture": [],
+    "assets": [
+      {
+        "id": "longcase-a",
+        "asset": "clockshop-longcase",
+        "at": [
+          0.6,
+          6.4
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "longcase-b",
+        "asset": "clockshop-longcase",
+        "at": [
+          0.6,
+          8.5
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "display",
+        "asset": "clockshop-display-counter",
+        "at": [
+          7.8,
+          5.4
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "repair-bench",
+        "asset": "clockshop-repair-bench",
+        "at": [
+          7.6,
+          9.6
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "parts-cabinet",
+        "asset": "clockshop-parts-cabinet",
+        "at": [
+          3.2,
+          10.7
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "parts-tray",
+        "asset": "clockshop-clockwork-tray",
+        "at": [
+          7.8,
+          9.25
+        ],
+        "turn": 0,
+        "height": 1.08,
+        "scale": 0.8
+      },
+      {
+        "id": "wall-clock-a",
+        "asset": "clockshop-regulator",
+        "at": [
+          1.5,
+          11.17
+        ],
+        "turn": 0,
+        "height": 1.5,
+        "scale": 1
+      },
+      {
+        "id": "wall-clock-b",
+        "asset": "clockshop-regulator",
+        "at": [
+          3.2,
+          11.17
+        ],
+        "turn": 0,
+        "height": 2.5,
+        "scale": 0.65
+      },
+      {
+        "id": "wall-clock-c",
+        "asset": "clockshop-regulator",
+        "at": [
+          10.5,
+          11.17
+        ],
+        "turn": 0,
+        "height": 1.5,
+        "scale": 1
+      },
+      {
+        "id": "mantel-a",
+        "asset": "clockshop-mantel-clock",
+        "at": [
+          2.6,
+          10.65
+        ],
+        "turn": 0,
+        "height": 2.39,
+        "scale": 0.85
+      },
+      {
+        "id": "mantel-b",
+        "asset": "clockshop-mantel-clock",
+        "at": [
+          3.6,
+          10.65
+        ],
+        "turn": 0,
+        "height": 2.39,
+        "scale": 0.7
+      },
+      {
+        "id": "shop-pendant-1-model",
+        "asset": "clockshop-brass-pendant",
+        "at": [
+          3.3,
+          4.0
+        ],
+        "turn": 0,
+        "height": 3.5,
+        "scale": 1
+      },
+      {
+        "id": "shop-pendant-2-model",
+        "asset": "clockshop-brass-pendant",
+        "at": [
+          8,
+          8
+        ],
+        "turn": 0,
+        "height": 3.5,
+        "scale": 1
+      }
+    ],
+    "lamp_fixtures": [
+      {
+        "id": "shop-pendant-1",
+        "asset": "shop-pendant-1-model",
+        "range": 7,
+        "energy": 1.2
+      },
+      {
+        "id": "shop-pendant-2",
+        "asset": "shop-pendant-2-model",
+        "range": 7,
+        "energy": 1.2
+      }
+    ],
+    "links": [
+      {
+        "id": "square",
+        "at": [
+          6,
+          0
+        ],
+        "approach": [
+          6,
+          1
+        ],
+        "direction": "S",
+        "to": "haverlund-square",
+        "arrival": [
+          16,
+          21
+        ],
+        "facing": "E",
+        "label": "Return to Spindle Walk",
+        "walk_through": true,
+        "enter": 1,
+        "doors": "shell"
+      }
+    ],
+    "inspections": [
+      {
+        "id": "clock-repairs",
+        "at": [
+          5,
+          9
+        ],
+        "title": "The repair bench",
+        "text": "An open escapement sits in its stand beside the loupe, screwdrivers and parts trays. Each wheel can be removed from its frame for cleaning."
+      },
+      {
+        "id": "clock-display",
+        "at": [
+          8,
+          4
+        ],
+        "title": "Pendulum & Pin",
+        "text": "Walnut mantel clocks and pocket watches rest on green felt beneath the curved brass-edged case."
+      },
+      {
+        "id": "clock-parts",
+        "at": [
+          3,
+          9
+        ],
+        "title": "Drawers of time",
+        "text": "Seven rows of brass-labelled drawers hold pinions, springs, jewels and winding keys. Finished cases wait along the wall."
+      }
+    ],
+    "city_network": true
+  }
+}

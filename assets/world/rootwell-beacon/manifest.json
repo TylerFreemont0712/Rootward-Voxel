@@ -1,11 +1,11 @@
 {
   "schema": 1,
   "asset": "rootwell-beacon",
-  "version": "v1",
-  "source": "art/source/world/rootwell-beacon/v1/model.blend",
-  "source_sha256": "b9767cd34d288297a77fd3d143a83bc0e629b9e3fce98c51f33894c4783e6682",
+  "version": "v3",
+  "source": "art/source/world/rootwell-beacon/v3/model.blend",
+  "source_sha256": "a60f7c45e6e93a46b5631978dfbe927b8f8c0b6747fb174089e393c93f70a4db",
   "runtime": "assets/world/rootwell-beacon/model.glb",
-  "runtime_sha256": "ba2a997e5308b014714ca1e2d4ab1f33769e61a91b9f95b4cd5c3ac08df0042c",
+  "runtime_sha256": "b0b8f2e296ba58a4cff69a69e4f4df6176d9de85b78eeee59d7ea89cfcedee4b",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
@@ -17,7 +17,7 @@
       9.51186943054199,
       3.77999997138977
     ],
-    "geometry_sha256": "1f63a321fb6444e19ba3695051aa1094ac572441cebf839470b03d663eebadbc",
+    "geometry_sha256": "cb66dde88dcf628f848bd57d64c6a21f753654a21e185993619b6f2e114da16c",
     "material_records": {
       "grid_bed": {
         "albedo": [
@@ -119,6 +119,26 @@
         "roughness": 6000,
         "texture_rgba_sha256": "3a6a819a220762a8dfc975732de4ecfb1bab53195a21305b3bdce7e41e1445d7"
       },
+      "rootwell_pressure_amber": {
+        "albedo": [
+          9063,
+          7548,
+          4236,
+          10000
+        ],
+        "roughness": 5000,
+        "texture_rgba_sha256": ""
+      },
+      "rootwell_pressure_green": {
+        "albedo": [
+          4731,
+          7220,
+          5838,
+          10000
+        ],
+        "roughness": 5000,
+        "texture_rgba_sha256": ""
+      },
       "rootwell_red": {
         "albedo": [
           7608,
@@ -201,6 +221,8 @@
       "rootwell_enamel",
       "rootwell_ink",
       "rootwell_light",
+      "rootwell_pressure_amber",
+      "rootwell_pressure_green",
       "rootwell_red",
       "rootwell_root",
       "rootwell_verdigris",
@@ -209,7 +231,7 @@
       "seaside_stone",
       "seaside_timber"
     ],
-    "meshes": 24,
-    "triangles": 354525
+    "meshes": 88,
+    "triangles": 357887
   }
 }

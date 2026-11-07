@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed",
+  "seed": "Not exposed",
+  "prompt_sha256": "814294ec5643b93591070a6c8747434732086a830552ae20223b7c758691be85",
+  "portraits": [
+    {
+      "id": "iona",
+      "source": "art/source/portraits/sparks/v3/iona.png",
+      "sha256": "ffdd29cce9383e49341b8a32da2daf348a9bf8dcde6b74e1d848faa2e518bd18",
+      "reference_sha256": {
+        "art/source/characters/iona/v1/SE.png": "fb59ed28a7c100e4864e64f197090c5ddd386b571ba4e2e150b27f4b5758fa46",
+        "art/source/portraits/sparks/v2/traveller.png": "adc85a74c276543d3d97b38c54c94d4f503f7bb69241b05722d1f54c2b90c1a1"
+      }
+    },
+    {
+      "id": "braum",
+      "source": "art/source/portraits/sparks/v3/braum.png",
+      "sha256": "7a4487f2ea1dd176007bee2fba90a4a34946a7f9798e185b79834a1ad160ef46",
+      "reference_sha256": {
+        "art/source/characters/bram/sparks-v1/SE.png": "34db655f2bdee277b700bef712401bde86fb3067e3908b7ce510e8530cac4c04",
+        "assets/portraits/bram.png": "751a32148299acceb66afb25d84a819b88e9470f434518d75677dafc55723baf"
+      }
+    }
+  ]
+}

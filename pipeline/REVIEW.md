@@ -47,8 +47,6 @@ VOXEL_LAB_FRESH=1 scripts/play.sh --resolution 1600x1000 -s res://tools/facing_r
 | Source ownership | Accepted painted/Blender sources stay unchanged unless deliberately edited; builds verify their hashes and derived output. |
 | Skin reuse | One common animation/template contract; appearance changes do not create per-skin motion settings. |
 
-`tools/movement_review.gd` drives actual mouse/keyboard walking in the real game: clicks across the green, builds the bridge through the notebook, crosses it, checks held input/release/focus and saves temporary frames plus selected movement evidence. `tools/playthrough.gd` finishes the whole level and `tools/area_shot.gd` renders any spot of an area. `tools/build_tour.gd` drives build mode through the real game and `tools/build_overlay_shot.gd` renders its drawing alone. `tools/asset_shot.gd` shows one world asset beside the character (a recipe before adoption, the exported GLB after), and `tools/blender_preview.py` renders an editable `.blend` from the game's angle. `tools/art_study.tscn` is the selected character detail; `VOXEL_ART_STUDY=house` uses the adopted cottage instead.
-
 Keep a small current set of selected captures in `evidence/`. Intermediate frames/logs live in ignored `.cache/`. Preserve source history in `art/source/`, with inactive experiments in import-excluded `art/source/archive/`.
 
 ## Current foundation and expansion
@@ -56,8 +54,8 @@ Keep a small current set of selected captures in `evidence/`. Intermediate frame
 | Pipeline | Implemented | Deliberate next work |
 | --- | --- | --- |
 | Character | Approved eight-pose paintings, neutral breath/blink, shared frame/skin registry, phase-preserving appearance changes. | More authored identities; additional actions or different proportions need a reviewed template revision. |
-| World art | Protected Blender source/export/audit for cottage, mill, log cabin, lamppost and land; documented procedural trees/mechanisms/materials. | Adopt further assets as their visual/source edits are reviewed. |
-| Area | Versioned area documents loaded by rules and view: Kindle Hollow (64×48, nine zones, five quests) and the original clearing, with reachability and lock tests. | Area transitions, Blender adoption of generated land, a map editor. |
+| World art | Every shipped model is a protected Blender source with an audited runtime export; the beacon, gates and the wheel stay procedural mechanisms. | Adopt further assets as their visual/source edits are reviewed. |
+| Area | Versioned area documents loaded by rules and view: the ten rooms of the journey, with reachability, lock and quest-solution tests. | Further rooms and chapters. |
 | Programming | Bounded real WASI execution, atomic commands, preview/apply/undo/reset and stale-result guards. | Add capabilities for concrete gameplay needs. |
 | Persistence | One save slot (world, quests, discoveries, memory, source, name) and a settings file; Continue restores them. | A migration policy when area versions change; more than one slot. |
 

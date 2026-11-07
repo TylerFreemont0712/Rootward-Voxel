@@ -300,7 +300,7 @@ The player can return to the same Python page or explore both rooms. The loft's 
 
 ## 6. Notes for whoever implements this
 
-- Today's dialogue system already supports guided sequences, topics and response choices ([pipeline/DIALOGUE.md](../../../pipeline/DIALOGUE.md)). Narration pages and three-tone replies fit within it. Telegram tape for automatons needs a small presentation variant of the dialogue box.
+- Today's dialogue system already supports guided sequences, topics and response choices (pipeline/DIALOGUE.md). Narration pages and three-tone replies fit within it. Telegram tape for automatons needs a small presentation variant of the dialogue box.
 - Keep every page to one or two sentences. Where this script shows *"…"* or a second quoted sentence after a ·, that's a new page.
 - Replies change the next line or two and converge; they never branch the quest.
 - Writers should reread [the rules](#3-the-rules-for-writing-a-line) and [the banned list](#banned-phrases-and-habits) before writing new lines, then read each scene aloud.

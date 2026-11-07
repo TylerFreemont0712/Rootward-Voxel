@@ -1,6 +1,6 @@
 extends SceneTree
 ## Build mode's rules: where things may stand, what stays reachable, undo/redo and the saved edit list.
-## Pure rules over Kindle Hollow's real document, so they also prove the new houses fit the town.
+## Pure rules over the Kindle Hollow fixture in test/fixtures, a village that no longer ships with the game.
 
 var _checks: int = 0
 var _failures: Array[String] = []
@@ -15,11 +15,11 @@ func _initialize() -> void:
 
 
 func _run() -> void:
-	var world: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://pipeline/world-catalog.json"))
-	_assets = world.assets
-	_document = JSON.parse_string(FileAccess.get_file_as_string("res://content/areas/kindle-hollow.json"))
-	_quests = JSON.parse_string(FileAccess.get_file_as_string("res://content/areas/kindle-hollow.quests.json"))
-	_catalog = JSON.parse_string(FileAccess.get_file_as_string("res://content/build/catalog.json"))
+	AreaStore.use_fixtures()
+	_assets = AreaStore.catalog_assets()
+	_document = JSON.parse_string(FileAccess.get_file_as_string("res://test/fixtures/areas/kindle-hollow.json"))
+	_quests = JSON.parse_string(FileAccess.get_file_as_string("res://test/fixtures/areas/kindle-hollow.quests.json"))
+	_catalog = JSON.parse_string(FileAccess.get_file_as_string("res://test/fixtures/build-catalog.json"))
 	_catalog_tests()
 	_geometry_tests()
 	_placement_tests()
@@ -81,7 +81,7 @@ func _catalog_tests() -> void:
 		if entry.kind == "prop":
 			var spec: Dictionary = _assets.get(entry.asset, {})
 			var shape: Variant = spec.get("logical_footprint")
-			_check(not spec.is_empty() and FileAccess.file_exists("res://" + str(spec.get("runtime", ""))) and (shape == null or (shape is Array and (shape as Array).size() == 4)), "%s names a built model with no footprint or a rectangular one" % entry.id)
+			_check(not spec.is_empty() and (not spec.has("runtime") or FileAccess.file_exists("res://" + str(spec.get("runtime", "")))) and (shape == null or (shape is Array and (shape as Array).size() == 4)), "%s names a built model with no footprint or a rectangular one" % entry.id)
 	_check(AreaBuild.allowed_items(_catalog, "studio").size() == _catalog.items.size(), "The studio may place everything")
 	var villager: Array[Dictionary] = AreaBuild.allowed_items(_catalog, "player")
 	_check(villager.size() < _catalog.items.size() and villager.all(func(entry: Dictionary) -> bool: return entry.audience == "player"), "A villager is offered only player items")

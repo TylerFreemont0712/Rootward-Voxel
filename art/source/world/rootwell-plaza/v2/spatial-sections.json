@@ -1,0 +1,26 @@
+{
+  "source_sha256": "f1ad2d6ab4d40ffe0e5c9ab9382ff264d09eb191ac7a0a8e927ca84bc4578dd2",
+  "chunks": [
+    [
+      "conduit_glass_glass",
+      16
+    ],
+    [
+      "grid_bed",
+      16
+    ],
+    [
+      "grid_bronze",
+      16
+    ],
+    [
+      "house_paint",
+      20
+    ],
+    [
+      "seaside_stone",
+      32
+    ]
+  ],
+  "metres": 3
+}

@@ -1,0 +1,10 @@
+{
+  "derived_from_sha256": "ef647435bcc44001cc74f2a52b46f1d002be78764aa295da27066ada18b5c568",
+  "removed_front_faces": 9423,
+  "label": "THE PANTRY",
+  "door_center": [
+    0.5,
+    -3.17
+  ],
+  "record": "art/source/world/square-renewal/v1/revise_shops.py"
+}

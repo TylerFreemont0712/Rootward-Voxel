@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "clockshop-clock-crates",
+  "version": 1,
+  "source": "art/source/world/clockshop-clock-crates/v1/model.blend",
+  "source_sha256": "4fb84a374cca5af27a604e02d403b29e2d987697540395942f059a755182a3bf",
+  "runtime": "assets/world/clockshop-clock-crates/model.glb",
+  "runtime_sha256": "ae64ada652d0a7e82011030c58a1da280edfbe0d75568e0e5af4015c9e7f922a",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.615000009536743,
+      0.0100000016391277,
+      -0.41499999165535,
+      0.615000009536743,
+      1.0,
+      0.441000014543533
+    ],
+    "geometry_sha256": "c20ba818a7be7db5466611f436ad35fc75111c6c59496526c1696543c51a7c40",
+    "material_records": {
+      "clockshop_darkwood": {
+        "albedo": [
+          2196,
+          1529,
+          1176,
+          10000
+        ],
+        "roughness": 6800,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_felt": {
+        "albedo": [
+          2863,
+          3922,
+          3529,
+          10000
+        ],
+        "roughness": 9800,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_ink": {
+        "albedo": [
+          1529,
+          1686,
+          1647,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_ivory": {
+        "albedo": [
+          8863,
+          8392,
+          7137,
+          10000
+        ],
+        "roughness": 7800,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_steel": {
+        "albedo": [
+          3490,
+          4078,
+          4196,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_walnut": {
+        "albedo": [
+          6872,
+          6012,
+          5064,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "clockshop_darkwood",
+      "clockshop_felt",
+      "clockshop_ink",
+      "clockshop_ivory",
+      "clockshop_steel",
+      "clockshop_walnut"
+    ],
+    "meshes": 6,
+    "triangles": 2769
+  }
+}

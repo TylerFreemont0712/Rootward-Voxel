@@ -1,0 +1,226 @@
+{
+  "schema": 1,
+  "asset": "haverlund-apothecary",
+  "version": "v2",
+  "source": "art/source/world/haverlund-apothecary/v2/model.blend",
+  "source_sha256": "eee11fff9023293e7db80a5aa37816a80f8e23ccd5d091f0f50c43b7a5ec1eca",
+  "runtime": "assets/world/haverlund-apothecary/model.glb",
+  "runtime_sha256": "6fa2161342d8430fe0e6abf76de082ba6f2e28622780d64a5c7cd51ce6daaa39",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -4.86499977111816,
+      -0.0791633501648903,
+      -3.9850001335144,
+      5.95000028610229,
+      8.8608570098877,
+      3.67500019073486
+    ],
+    "geometry_sha256": "587babf891ec1f73527ff3d7f7f10302defca20aad6e6317925f77dbcfff9ddd",
+    "material_records": {
+      "apoth_bottle_amber": {
+        "albedo": [
+          7098,
+          4471,
+          1725,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "apoth_bottle_blue": {
+        "albedo": [
+          3059,
+          4353,
+          5608,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "apoth_bottle_green": {
+        "albedo": [
+          3098,
+          4902,
+          2980,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "apoth_clear_glass": {
+        "albedo": [
+          9137,
+          9373,
+          9020,
+          1200
+        ],
+        "roughness": 1800,
+        "texture_rgba_sha256": ""
+      },
+      "apoth_copper": {
+        "albedo": [
+          6588,
+          4078,
+          2471,
+          10000
+        ],
+        "roughness": 5000,
+        "texture_rgba_sha256": ""
+      },
+      "apoth_gold": {
+        "albedo": [
+          8471,
+          6980,
+          3608,
+          10000
+        ],
+        "roughness": 4200,
+        "texture_rgba_sha256": ""
+      },
+      "apoth_green": {
+        "albedo": [
+          1843,
+          2902,
+          2353,
+          10000
+        ],
+        "roughness": 7200,
+        "texture_rgba_sha256": ""
+      },
+      "apoth_green_light": {
+        "albedo": [
+          3020,
+          4196,
+          3333,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "apoth_house_glass": {
+        "albedo": [
+          8745,
+          9333,
+          8863,
+          2200
+        ],
+        "roughness": 2000,
+        "texture_rgba_sha256": ""
+      },
+      "apoth_lamp_glass": {
+        "albedo": [
+          10000,
+          8235,
+          5451,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": ""
+      },
+      "apoth_plum": {
+        "albedo": [
+          4196,
+          2039,
+          2745,
+          10000
+        ],
+        "roughness": 7400,
+        "texture_rgba_sha256": ""
+      },
+      "apoth_recess": {
+        "albedo": [
+          1373,
+          1176,
+          980,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "house_window_pane": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3500,
+        "texture_rgba_sha256": "0521fe9168475a9da488e23ca89b12bdfdc600fcde1d4eb37051e2cec2478c37"
+      },
+      "seaside_ridge": {
+        "albedo": [
+          8323,
+          9357,
+          8756,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "17f725a43d1eea9b6eb895d363df96a4b71f5a269e1842133e0ff5fa4aa0d329"
+      },
+      "seaside_roof": {
+        "albedo": [
+          8323,
+          9357,
+          8756,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "17f725a43d1eea9b6eb895d363df96a4b71f5a269e1842133e0ff5fa4aa0d329"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      },
+      "seaside_timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "apoth_bottle_amber",
+      "apoth_bottle_blue",
+      "apoth_bottle_green",
+      "apoth_clear_glass",
+      "apoth_copper",
+      "apoth_gold",
+      "apoth_green",
+      "apoth_green_light",
+      "apoth_house_glass",
+      "apoth_lamp_glass",
+      "apoth_plum",
+      "apoth_recess",
+      "house_paint",
+      "house_window_pane",
+      "seaside_ridge",
+      "seaside_roof",
+      "seaside_stone",
+      "seaside_timber"
+    ],
+    "meshes": 21,
+    "triangles": 38266
+  }
+}

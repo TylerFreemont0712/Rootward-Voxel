@@ -1,0 +1,5 @@
+{
+  "previous_sha256": "44a4f22f3d7c3f337ecc3dc78f8e037bd5c98f3cdabc49022387976246f264d0",
+  "record": "art/source/world/haverlund-clockmaker/v2/detail_finish.py",
+  "change": "Replace degenerate vertical beam hands with modeled spade hands; fill side openings and add tower slit, pipe brackets."
+}

@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "pantry-sack-row",
+  "version": 1,
+  "source": "art/source/world/pantry-sack-row/v1/model.blend",
+  "source_sha256": "61c6ae8c191ee2acf649c32672195be5d1a19f304bbf1ee315476d69d6dd7324",
+  "runtime": "assets/world/pantry-sack-row/model.glb",
+  "runtime_sha256": "e48f154975f788af3039804ea594c3160d99c7cbcdaf219a852d1d532d3ea79c",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.5217262506485,
+      0.0,
+      -0.330000013113022,
+      1.5217262506485,
+      0.808406174182892,
+      0.330000013113022
+    ],
+    "geometry_sha256": "08ab01ce4b9cfffb3751ba43c727ccd646892cfc2dca27dcbc464067b7536c58",
+    "material_records": {
+      "shop_crumb": {
+        "albedo": [
+          9137,
+          8118,
+          6039,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_flour": {
+        "albedo": [
+          9451,
+          9255,
+          8784,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_onion": {
+        "albedo": [
+          7725,
+          5412,
+          3059,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_paper": {
+        "albedo": [
+          9373,
+          9020,
+          8118,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_potato": {
+        "albedo": [
+          7216,
+          5882,
+          4078,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_sack": {
+        "albedo": [
+          7882,
+          7059,
+          5412,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_steel": {
+        "albedo": [
+          4157,
+          4627,
+          4706,
+          10000
+        ],
+        "roughness": 4500,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "shop_crumb",
+      "shop_flour",
+      "shop_onion",
+      "shop_paper",
+      "shop_potato",
+      "shop_sack",
+      "shop_steel"
+    ],
+    "meshes": 7,
+    "triangles": 920
+  }
+}

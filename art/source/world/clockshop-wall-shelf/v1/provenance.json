@@ -1,0 +1,7 @@
+{
+  "record": "art/source/world/clockshop-interior/v2/author_curios.py",
+  "units": "metres",
+  "front": "Blender -Y",
+  "palette": "clockshop-parts-cabinet/v1/model.blend (materials only)",
+  "source_sha256": "2df15b5e932f96b7b29c0927e3354f12f95132ca8c2d697ccfa8f4a093b6ae8f"
+}

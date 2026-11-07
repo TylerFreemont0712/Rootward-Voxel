@@ -23,12 +23,12 @@ Godot 4.7.2 used the GL Compatibility renderer on the AMD Radeon 680M for these 
 
 ## Evidence reviewed
 
-- [Gameplay at 1600×1000](../../evidence/voxel-clearing.png)
-- [Real Python changes applied](../../evidence/voxel-clearing-applied.png)
-- [Character detail](../../evidence/character-detail.png)
-- [Cottage detail](../../evidence/house-detail.png)
-- [Mouse/keyboard review end state](../../evidence/sprite-movement.png)
-- [Actual click-to-walk recording](../../evidence/grid-walk.gif)
+- Gameplay at 1600×1000
+- Real Python changes applied
+- Character detail
+- Cottage detail
+- Mouse/keyboard review end state
+- Actual click-to-walk recording
 
 The character detail, normal clearing, cottage and a frame crossing the bridge were inspected. The cottage capture contains no flower boxes. Scene depth, roof/beam detail and sprite ground contact are visible. The movement GIF was exported at 12 FPS from the viewport frames captured every five 60 Hz ticks; it is gameplay evidence, not generated concept art.
 

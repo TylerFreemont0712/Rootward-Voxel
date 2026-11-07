@@ -32,7 +32,15 @@ static func runtime_dir() -> String:
 	var override := OS.get_environment(RUNTIME_ENV)
 	if override != "":
 		return override
-	return ProjectSettings.globalize_path("res://sandbox/runtime")
+	return ProjectSettings.globalize_path("res://sandbox/" + runtime_folder(OS.get_name()))
+
+
+static func runtime_folder(platform: String) -> String:
+	return "runtime-windows" if platform == "Windows" else "runtime"
+
+
+static func binary_name(platform: String) -> String:
+	return "wasmtime.exe" if platform == "Windows" else "wasmtime"
 
 
 static func is_available(language: String) -> bool:
@@ -80,7 +88,7 @@ static func run(job: SandboxJob) -> SandboxResult:
 
 
 static func _wasmtime() -> String:
-	return runtime_dir().path_join("bin/wasmtime")
+	return runtime_dir().path_join("bin/" + binary_name(OS.get_name()))
 
 
 static func _arguments(job: SandboxJob, dir: String) -> PackedStringArray:

@@ -770,7 +770,8 @@
         "range": 4,
         "energy": 0.55
       }
-    ]
+    ],
+    "city_network": true
   },
   "terminals": [
     {

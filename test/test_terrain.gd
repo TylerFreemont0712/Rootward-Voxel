@@ -19,11 +19,12 @@ func _initialize() -> void:
 
 
 func _run() -> void:
-	var world: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://pipeline/world-catalog.json"))
+	AreaStore.use_fixtures()
+	var world: Dictionary = {"assets": AreaStore.catalog_assets()}
 	_assets = world.assets
-	_document = JSON.parse_string(FileAccess.get_file_as_string("res://content/areas/kindle-hollow.json"))
-	_quests = JSON.parse_string(FileAccess.get_file_as_string("res://content/areas/kindle-hollow.quests.json"))
-	_catalog = JSON.parse_string(FileAccess.get_file_as_string("res://content/build/catalog.json"))
+	_document = JSON.parse_string(FileAccess.get_file_as_string("res://test/fixtures/areas/kindle-hollow.json"))
+	_quests = JSON.parse_string(FileAccess.get_file_as_string("res://test/fixtures/areas/kindle-hollow.quests.json"))
+	_catalog = JSON.parse_string(FileAccess.get_file_as_string("res://test/fixtures/build-catalog.json"))
 	_document_tests()
 	_walking_tests()
 	_ledger_tests()

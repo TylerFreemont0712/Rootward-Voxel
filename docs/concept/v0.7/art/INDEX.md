@@ -1,6 +1,6 @@
 # Sparks & Machines — complete concept index
 
-38 current selections across nine phases. [Visual gallery](gallery.html) · [Design decisions](DESIGN_DECISIONS.md) · [Exact prompts and provenance](prompts.json) · [Validation](validation.json)
+38 current selections across nine phases. Visual gallery · [Design decisions](DESIGN_DECISIONS.md) · [Exact prompts and provenance](prompts.json) · Validation
 
 Ground-going automatons use compact rolling wheel bases. Hotaru retains her floating silhouette and tucked wheels. Earlier approved originals remain preserved. These are concept references; runtime adoption is separate.
 
@@ -12,7 +12,7 @@ Ground-going automatons use compact rolling wheel bases. Hotaru retains her floa
 
 | Id | Selected image | Native size |
 |---|---|---|
-| T1 | [Haverlund key art](1-style/T1-haverlund-key-art.wheels.png) | 1536×1024 |
+| T1 | Haverlund key art | 1536×1024 |
 | T6 | [Lighting key](1-style/T6-lighting-key.png) | 1536×1024 |
 
 <a id="phase-2--hotaru"></a>
@@ -23,10 +23,10 @@ Ground-going automatons use compact rolling wheel bases. Hotaru retains her floa
 
 | Id | Selected image | Native size |
 |---|---|---|
-| H1 | [Hotaru turnaround · rolling base](2-hotaru/H1-turnaround.wheels.png) | 1536×1024 |
-| H2 | [Hotaru expressions · rolling base](2-hotaru/H2-expressions.wheels.png) | 1536×1024 |
+| H1 | Hotaru turnaround · rolling base | 1536×1024 |
+| H2 | Hotaru expressions · rolling base | 1536×1024 |
 | H3 | [Hotaru portrait](2-hotaru/H3-portrait.png) | 1024×1536 |
-| H4 | [Hotaru at game scale](2-hotaru/H4-in-world.alt1.png) | 1536×1024 |
+| H4 | Hotaru at game scale | 1536×1024 |
 
 <a id="phase-3--the-apprentice-and-nell"></a>
 
@@ -64,10 +64,10 @@ Ground-going automatons use compact rolling wheel bases. Hotaru retains her floa
 | Id | Selected image | Native size |
 |---|---|---|
 | T3 | [Rootward Square · day](5-town/T3-rootward-square-day.wheels.png) | 1536×1024 |
-| T4 | [Rootward Square · dusk](5-town/T4-rootward-square-dusk.wheels.png) | 1536×1024 |
+| T4 | Rootward Square · dusk | 1536×1024 |
 | T5 | [Rootwell design sheet](5-town/T5-rootwell-sheet.png) | 1536×1024 |
-| T2 | [The outskirts · golden hour](5-town/T2-outskirts-golden-hour.wheels.png) | 1536×1024 |
-| P2 | [Outskirts buildings](5-town/P2-outskirts-buildings.wheels.png) | 1536×1024 |
+| T2 | The outskirts · golden hour | 1536×1024 |
+| P2 | Outskirts buildings | 1536×1024 |
 
 <a id="phase-6--automatons"></a>
 
@@ -109,19 +109,19 @@ Ground-going automatons use compact rolling wheel bases. Hotaru retains her floa
 | Id | Selected image | Native size |
 |---|---|---|
 | U1 | [Paper and enamel interface](8-interface/U1-ui-sheet.png) | 1536×1024 |
-| U2 | [Workshop journey card](8-interface/U2-journey-card.wheels.png) | 1536×1024 |
+| U2 | Workshop journey card | 1536×1024 |
 
 <a id="phase-9--future-places"></a>
 
 ## Phase 9 — Future places
 
-[Phase review](9-future/REVIEW.md)
+Phase review
 
 | Id | Selected image | Native size |
 |---|---|---|
-| F1 | [A harbour street](9-future/F1-harbour-street.png) | 1536×1024 |
-| F2 | [A Rootworks chamber](9-future/F2-rootworks-chamber.png) | 1536×1024 |
-| F3 | [Festival night](9-future/F3-festival-night.circuit.png) | 1536×1024 |
+| F1 | A harbour street | 1536×1024 |
+| F2 | A Rootworks chamber | 1536×1024 |
+| F3 | Festival night | 1536×1024 |
 
 ## Review and adoption
 

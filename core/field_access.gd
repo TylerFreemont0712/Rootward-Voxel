@@ -57,6 +57,9 @@ static func zone_reason(area: AreaDef, zone_id: String) -> String:
 static func place_for(area: AreaDef, quest: Dictionary) -> Dictionary:
 	var access: Variant = quest.get("access")
 	if not access is Dictionary: return {}
+	if access.kind == "display":
+		var display: Dictionary=DisplayCards.find(area,str(access.id))
+		return {"kind":"display","title":str(display.get("title","sign")),"target":str(access.id)} if not display.is_empty() else {}
 	if access.kind == "device":
 		var lamp: Dictionary = area.lamp(str(access.id))
 		if lamp.is_empty(): return {}
