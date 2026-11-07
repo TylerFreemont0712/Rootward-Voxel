@@ -7,13 +7,7 @@ extends RefCounted
 ## from Blender shells use it. `look` dresses a modular house (see HouseVariants.look).
 static func build(area: AreaDef, block: Callable, place: Callable = Callable()) -> void:
 	if area.interior.get("style", "") in ["workshop-loft", "workshop-floor", "workshop-lane", "workshop-square"]:
-		WorkshopLoftRoom.build(area, place)
-		return
-	if area.interior.get("style", "") == "morning-bedroom":
-		MorningRoom.build(area, block)
-		return
-	if area.interior.get("style", "") == "town-hall":
-		TownHallRoom.build(area, block)
+		ShellRoom.build(area, place)
 		return
 	var palette: Dictionary = area.interior.get("materials", {}).duplicate(true)
 	palette.merge(area.interior.get("finishes", {}), true)

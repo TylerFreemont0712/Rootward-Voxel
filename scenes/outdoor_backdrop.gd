@@ -8,14 +8,14 @@ extends MeshInstance3D
 const FAR_MARGIN: float = 6.0
 const HAZE: Shader = preload("res://art/backdrop_haze.gdshader")
 
-var view: ClearingView
+var view: WorldView
 ## 0 keeps the picture still on screen; larger values let it follow the room further.
 var parallax: float = 0.2
 var _aspect: float = 16.0 / 9.0
 var _centre: Vector3
 
 
-func setup(scene_view: ClearingView, outdoor: Dictionary) -> bool:
+func setup(scene_view: WorldView, outdoor: Dictionary) -> bool:
 	view = scene_view
 	var texture := load(str(outdoor.backdrop)) as Texture2D
 	if texture == null:

@@ -60,7 +60,7 @@
     "assets": [
       "haverlund-bakery",
       "haverlund-bank",
-      "haverlund-bookshop",
+      "haverlund-tailor",
       "haverlund-cafe",
       "haverlund-fruit-market",
       "haverlund-greengrocer",
@@ -169,17 +169,17 @@
         }
       },
       {
-        "id": "haverlund-bookshop",
+        "id": "haverlund-tailor",
         "label": "Finch & Sons, books",
         "catalog": "pipeline/world-catalog.json",
-        "source": "art/source/world/haverlund-bookshop/v1/model.blend",
-        "runtime": "assets/world/haverlund-bookshop/model.glb",
-        "manifest": "assets/world/haverlund-bookshop/manifest.json",
+        "source": "art/source/world/haverlund-tailor/v1/model.blend",
+        "runtime": "assets/world/haverlund-tailor/model.glb",
+        "manifest": "assets/world/haverlund-tailor/manifest.json",
         "catalog_notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend.",
         "related_files": [
-          "art/source/world/haverlund-bookshop/v1/coplanar.json",
-          "art/source/world/haverlund-bookshop/v1/plant-style.json",
-          "art/source/world/haverlund-bookshop/v1/provenance.json",
+          "art/source/world/haverlund-tailor/v1/coplanar.json",
+          "art/source/world/haverlund-tailor/v1/plant-style.json",
+          "art/source/world/haverlund-tailor/v1/provenance.json",
           "art/source/world/square-hub/v1/author_shops.py"
         ],
         "usage_files": [
@@ -190,8 +190,8 @@
           "authority": "blender",
           "status": "integrated_sparks_square",
           "label": "Finch & Sons, books",
-          "source": "art/source/world/haverlund-bookshop/v1/model.blend",
-          "runtime": "assets/world/haverlund-bookshop/model.glb",
+          "source": "art/source/world/haverlund-tailor/v1/model.blend",
+          "runtime": "assets/world/haverlund-tailor/model.glb",
           "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
           "logical_footprint": [
             -2.5,
@@ -1787,7 +1787,7 @@
         "runtime": "b15d8fda7c3e1da7316c7e93531fec4dda6d3a412830bf409bce4dffb2bbcb6e",
         "entry": "ef0fb58fbe3b5272a6f46c68c210e14dee2fe658325a611d832b6130db305147"
       },
-      "haverlund-bookshop": {
+      "haverlund-tailor": {
         "source": "ff2db86eea588c0bfbd1e272300a2546fc00bf0018c07d743e236ca0c842113a",
         "runtime": "e34b33a0e39a7407ae99b8995f23fcbc723a48e96c1143a8ae1319e4130a87b5",
         "entry": "58262d1d9a5560223714935936710092ba9322bbb212645f78def37c5f6facd5"

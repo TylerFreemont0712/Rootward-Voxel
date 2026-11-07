@@ -3,7 +3,7 @@ extends SceneTree
 ## any area document: placed buildings, mechanisms, generated terrain, picking and the following camera.
 
 const Geometry := preload("res://pipeline/world_geometry.gd")
-const View := preload("res://scenes/clearing_view.gd")
+const View := preload("res://scenes/world_view.gd")
 const SurfaceMaterials := preload("res://art/surface_materials.gd")
 var _failures: Array[String] = []
 var _checks: int = 0

@@ -31,13 +31,13 @@
           "turn": 90.0
         },
         {
-          "asset": "haverlund-bookshop",
+          "asset": "haverlund-tailor",
           "at": [
             30.4,
             26.3
           ],
           "height": 0.0,
-          "id": "bookshop",
+          "id": "tailor",
           "scale": 1.0,
           "solid": true,
           "turn": 90.0
@@ -6040,7 +6040,7 @@
             35.0,
             25.0
           ],
-          "id": "bookshop",
+          "id": "tailor",
           "text": "Cloth, coats and repairs. A paper measuring tape hangs beside the glazed door.",
           "title": "Finch & Thread"
         },
@@ -6614,9 +6614,9 @@
           "range": 4.3
         },
         {
-          "asset": "bookshop",
+          "asset": "tailor",
           "energy": 0.85,
-          "id": "bookshop-window-lamp",
+          "id": "tailor-window-lamp",
           "range": 4.3
         },
         {
@@ -7026,12 +7026,12 @@
             26.0
           ],
           "direction": "W",
-          "doors": "bookshop",
+          "doors": "tailor",
           "enter": 2.0,
           "facing": "N",
-          "id": "bookshop",
+          "id": "tailor",
           "label": "Enter Finch & Thread",
-          "to": "shop-bookshop",
+          "to": "shop-tailor",
           "walk_through": true
         },
         {
@@ -8044,7 +8044,7 @@
           26.0
         ],
         "automatic": true,
-        "id": "bookshop-window-lamp",
+        "id": "tailor-window-lamp",
         "requires": "field-tablet",
         "stand": [
           34.0,

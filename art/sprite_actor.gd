@@ -1,8 +1,8 @@
-class_name SpriteAdventurer
+class_name SpriteActor
 extends Node3D
 ## Presentation only. Walking rules and authoritative position live in core/app.
 
-const Skins := preload("res://art/frame_skin.gd")
+const FrameSkin := preload("res://art/frame_skin.gd")
 @export var skin_id: String = ""
 ## A faint copy drawn over scenery, so the player never vanishes behind a tree or roof.
 @export var occlusion_silhouette: bool = false
@@ -27,8 +27,8 @@ var _cosmetic_rng := RandomNumberGenerator.new()
 
 
 func _ready() -> void:
-	name = "SpriteAdventurer"
-	_skin_library = Skins.read_library()
+	name = "SpriteActor"
+	_skin_library = FrameSkin.read_library()
 	if _skin_library.is_empty():
 		return
 	_manifest = JSON.parse_string(FileAccess.get_file_as_string(_skin_library.template.manifest))
@@ -62,7 +62,7 @@ func _ready() -> void:
 
 func set_skin(id: String) -> bool:
 	if _skin_library.is_empty():
-		_skin_library = Skins.read_library()
+		_skin_library = FrameSkin.read_library()
 	if _skin_library.is_empty() or not _skin_library.skins.has(id):
 		return false
 	if sprite == null:
@@ -77,7 +77,7 @@ func set_skin(id: String) -> bool:
 	var frame := sprite.frame
 	var progress := sprite.frame_progress
 	var playing := sprite.is_playing()
-	sprite.sprite_frames = Skins.frames_for(_shared_frames, atlas)
+	sprite.sprite_frames = FrameSkin.frames_for(_shared_frames, atlas)
 	sprite.play(animation)
 	sprite.set_frame_and_progress(frame, progress)
 	if not playing:

@@ -30,7 +30,7 @@ The normalizer retains its established method: lush uses Lanczos to 128; solid u
 
 ## Visible review
 
-`tools/seaside_house_textures_review.gd` displays all fifteen actual built maps in both styles at 2×2 repetition, with colour names and five family columns. The 1600×1000 board provides the repeat/contrast check. No new house is rendered in the game, since this pass authors concepts rather than geometry.
+`tools/reviews/seaside_house_textures_review.gd` displays all fifteen actual built maps in both styles at 2×2 repetition, with colour names and five family columns. The 1600×1000 board provides the repeat/contrast check. No new house is rendered in the game, since this pass authors concepts rather than geometry.
 
 - [Lush repeat board](../../evidence/seaside-house-textures/2026-10-29/lush.png)
 - [Solid repeat board](../../evidence/seaside-house-textures/2026-10-29/solid.png)

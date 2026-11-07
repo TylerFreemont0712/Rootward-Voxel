@@ -12,7 +12,7 @@ const BAD: Color = Color(0.96, 0.4, 0.34)
 const MOVE: Color = Color(0.98, 0.78, 0.36)
 const LOCKED: Color = Color(0.62, 0.66, 0.72)
 
-var view: ClearingView
+var view: WorldView
 var _grid: MeshInstance3D
 var _grid_material: ShaderMaterial
 var _tiles: Node3D
@@ -42,8 +42,8 @@ var _shape_pool: Array[MeshInstance3D] = []
 var _shape_materials: Dictionary = {}
 
 
-func setup(clearing_view: ClearingView) -> void:
-	view = clearing_view
+func setup(world_view: WorldView) -> void:
+	view = world_view
 	name = "BuildOverlay"
 	visible = false
 	_grid_material = ShaderMaterial.new()

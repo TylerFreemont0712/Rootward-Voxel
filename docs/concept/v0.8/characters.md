@@ -14,7 +14,7 @@ Regional accents can be suggested lightly through cadence and a small set of ord
 
 ## Braum — makes things for people
 
-**Existing identity:** carpenter/builder, dark curls, rust and burgundy work clothes, leather apron; house with the freshly painted fence. Story display name **Braum**, reusing existing `bram` / `sparks_bram` resources.
+**Existing identity:** carpenter/builder, dark curls, rust and burgundy work clothes, leather apron; house with the freshly painted fence. Story display name **Braum**, wearing the `sparks_braum` sprite (named `sparks_bram` before 2026-11-07).
 
 **Proposed past:** learned his trade making boarding ramps, crates and repairs on the waterfront. Came back uphill when his mother's knees made their old stairs difficult; rebuilding her entrance turned into work for half the street. He now knows who needs a wider gate or an extra handrail. His own fence is the one job he can repaint without negotiating a customer.
 

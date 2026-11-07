@@ -27,7 +27,7 @@ var tool: int = Tool.PLACE
 var item_id: String = ""
 var facing: String = "S"
 var ledger: BuildLedger
-var view: ClearingView
+var view: WorldView
 var session: GameSession
 var surface: Control
 var world_viewport: SubViewport
@@ -76,7 +76,7 @@ var _stairs_up: String = ""
 
 
 ## Builds the overlay, the interface and the thumbnail studio. `host` is where the interface goes.
-func setup(p_view: ClearingView, p_session: GameSession, p_surface: Control, p_viewport: SubViewport, host: Control, p_ledger: BuildLedger) -> void:
+func setup(p_view: WorldView, p_session: GameSession, p_surface: Control, p_viewport: SubViewport, host: Control, p_ledger: BuildLedger) -> void:
 	view = p_view
 	session = p_session
 	surface = p_surface
@@ -151,7 +151,7 @@ func enter() -> void:
 	_hover_object = {}
 	session.replace_area(ledger.area, ledger.rules)
 	overlay.set_active(true)
-	view.set_camera_mode(ClearingView.CameraMode.FREE)
+	view.set_camera_mode(WorldView.CameraMode.FREE)
 	view.set_marker_hidden(true)
 	view.focus_on(Vector2(session.player_cell()))
 	view.set_zoom(BUILD_ZOOM)
@@ -639,7 +639,7 @@ func _land_label(level: int) -> String:
 		"raise":
 			return "Raise to level %d" % level
 		"lower":
-			return "Lower to the valley floor" if level == 0 else "Lower to level %d" % level
+			return "Lower to ground level" if level == 0 else "Lower to level %d" % level
 		"water":
 			return "Dig water"
 		"land":
@@ -688,7 +688,7 @@ func _start_shape() -> void:
 		_deny("Land rises no higher than level %d." % AreaDef.MAX_LEVEL)
 		return
 	if land_tool == "lower" and _stroke_level < 0:
-		_deny("This is the valley floor. Dig water to go lower.")
+		_deny("This is ground level. Dig water to go lower.")
 		return
 	stroke_active = true
 	_stroke.clear()
@@ -1344,11 +1344,11 @@ func _object_subject(object: Dictionary) -> Dictionary:
 		var facts: Dictionary = describe_item(entry) if not entry.is_empty() else {"spec": "Grows on grass, keeps a cell clear"}
 		return {
 			"key": "tree:%s" % AreaBuild.tree_key(object.at),
-			"kicker": "In the valley",
+			"kicker": "In this place",
 			"title": str(entry.get("title", "Tree")),
 			"blurb": str(entry.get("blurb", "")),
 			"spec": str(facts.get("spec", "")),
-			"model": _model_maker(asset, size, true, ClearingView.tree_seed(object.at)),
+			"model": _model_maker(asset, size, true, WorldView.tree_seed(object.at)),
 			"icon": &"tree",
 			"turns": false,
 			"removable": true,
@@ -1373,7 +1373,7 @@ func _object_subject(object: Dictionary) -> Dictionary:
 	var spec: String = str(describe_item(item).get("spec", "")) if not item.is_empty() else ""
 	var subject: Dictionary = {
 		"key": "%s:%s" % [kind, object.id],
-		"kicker": "Part of the lessons" if locked else "In the valley",
+		"kicker": "Part of the lessons" if locked else "In this place",
 		"title": ledger.title_for_asset(asset_id),
 		"blurb": str(item.get("blurb", "")),
 		"spec": spec,

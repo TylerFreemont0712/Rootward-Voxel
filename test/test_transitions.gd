@@ -3,7 +3,7 @@ extends SceneTree
 var checks: int = 0
 var failures: Array[String] = []
 var game: Game
-const HullJob := preload("res://art/outline_job.gd")
+const OutlineJob := preload("res://art/outline_job.gd")
 
 func _initialize() -> void:
 	OS.set_environment("VOXEL_LAB_FRESH","1")
@@ -55,7 +55,7 @@ func _outline() -> void:
 	mesh.radial_segments = 64
 	mesh.rings = 40
 	var synchronous: ArrayMesh = IllustratedEdges._hull(mesh)
-	var job := HullJob.new(mesh)
+	var job := OutlineJob.new(mesh)
 	job.advance(1)
 	_check(not job.done,"Large outline construction yields before completing all vertices")
 	var chunks: int = 1
@@ -74,7 +74,7 @@ func _dialogue() -> void:
 		var host := Control.new()
 		host.size = dimensions
 		root.add_child(host)
-		var scene := WorkshopScene.new()
+		var scene := DialogueWindow.new()
 		host.add_child(scene)
 		scene.setup({"pages":[{"speaker":"hotaru","text":"A longer story passage stays readable as the dialogue window becomes smaller. ".repeat(45),"choices":[{"text":"I arrived last night."},{"text":"How long have you been here?"},{"text":"What is Nell working on?"}]}]},null,settings)
 		for frame: int in range(4): await process_frame
@@ -100,7 +100,7 @@ func _travel() -> void:
 	game._pop_all_modals()
 	game.close_notebook(true)
 	_check(DevelopmentMode.jump(game,"workshop-end"),"Set up the existing workshop chapter")
-	game._workshop_dismissed = game._story.scenes.keys()
+	game._dismissed_scenes = game._story.scenes.keys()
 	await _cross(Vector2i(13,4),Vector2i.RIGHT,"haverlund-lane")
 	await _cross(Vector2i(13,26),Vector2i(0,1),"haverlund-square")
 	var uphill := RoomLinks.find(game.area,"uphill")
@@ -125,8 +125,8 @@ func _cross(at: Vector2i, direction: Vector2i, destination: String) -> void:
 		await process_frame
 		guard += 1
 		if game.transition_phase == "loading": loading_frames += 1
-		if game.view._body is SpriteAdventurer and game.view._travel_motion != Vector2.ZERO:
-			var sprite: AnimatedSprite3D = (game.view._body as SpriteAdventurer).sprite
+		if game.view._body is SpriteActor and game.view._travel_motion != Vector2.ZERO:
+			var sprite: AnimatedSprite3D = (game.view._body as SpriteActor).sprite
 			game.view.set_player_motion(Vector2.ZERO)
 			correct = correct and str(sprite.animation).begins_with("walk_") and sprite.is_playing()
 			frames[sprite.frame] = true

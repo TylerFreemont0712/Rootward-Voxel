@@ -3,7 +3,7 @@ extends Node3D
 ## Glass lettering and connection lamps on the same reusable authored computer.
 ## The desk computer's glass, which the lettering size was drawn for.
 const GLASS_WIDTH: float = .578
-var view: ClearingView
+var view: WorldView
 var displays: Dictionary = {}
 var _output: String = ""
 var _output_preview: bool = false
@@ -11,8 +11,8 @@ var _output_zone: String = ""
 var _state: Dictionary = {}
 var _preview: bool = false
 
-func setup(clearing: ClearingView) -> void:
-	view = clearing
+func setup(world_view: WorldView) -> void:
+	view = world_view
 	for terminal: Dictionary in view.area.terminals:
 		var model: Node3D = view.building_node(terminal.object)
 		if model == null: continue

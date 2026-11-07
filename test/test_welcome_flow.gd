@@ -35,7 +35,7 @@ func _run()->void:
 	while Time.get_ticks_msec()<timeout:
 		await process_frame
 		if not game.welcome.actors.is_empty():
-			var actor:SpriteAdventurer=game.welcome.actors.braum.actor
+			var actor:SpriteActor=game.welcome.actors.braum.actor
 			phases[actor.sprite.frame]=true
 			var p:Vector3=game.welcome.actors.braum.node.position
 			if Vector2(p.x,-p.z).distance_to(Vector2(11,18))<.05:break
@@ -44,7 +44,7 @@ func _run()->void:
 	game._refresh_interaction()
 	_check(game._interaction.get("id")=="braum","Approaching Braum offers a real F conversation")
 	game.interact()
-	_check(not game._modals.is_empty() and game._modals[-1] is WorkshopScene,"Braum opens the story portrait scene")
+	_check(not game._modals.is_empty() and game._modals[-1] is DialogueWindow,"Braum opens the story portrait scene")
 	await _shot("02-braum-dialogue")
 	await _finish_dialogue()
 	_check(game.welcome.seen("braum-welcome"),"The finished introduction is remembered")
@@ -57,8 +57,8 @@ func _run()->void:
 	_check(game.session.accounts.inventory.get("message-card",0)==1,"Iona issues one reusable inventory card")
 	var money:int=int(game.session.accounts.wallet)
 	game.open_journal()
-	_check(game._modals[-1] is WorkshopJobLedger,"The sign commission appears in the same job book as the workshop")
-	(game._modals[-1] as WorkshopJobLedger).destination_requested.emit("tram-welcome")
+	_check(game._modals[-1] is JobLedger,"The sign commission appears in the same job book as the workshop")
+	(game._modals[-1] as JobLedger).destination_requested.emit("tram-welcome")
 	# Follow the actual planned route through ordinary accepted steps. Native review windows
 	# may lose desktop focus while screenshots are saved; focus loss correctly cancels held input.
 	var sign_route:Array[Vector2i]=game.session._route.duplicate()
@@ -68,9 +68,9 @@ func _run()->void:
 		game.session.request_step(cell-game.session.player_cell())
 		game.session.advance_walk(LabWorld.STEP_SECONDS)
 	game._process(0)
-	_check(game.notebook_open and game.journal is WorkshopJobsJournal,"The sign's own connection opens its editor")
-	if not game.journal is WorkshopJobsJournal:_finish();return
-	var editor:WorkshopJobsJournal=game.journal
+	_check(game.notebook_open and game.journal is JobsJournal,"The sign's own connection opens its editor")
+	if not game.journal is JobsJournal:_finish();return
+	var editor:JobsJournal=game.journal
 	for frame:int in range(3):await process_frame
 	_check(editor._notepad.page(&"job").get_child_count()>4 and editor.context.kind=="display","The shared notepad supplies the sign's job, lesson, names and hints")
 	_check(editor.drawer_width>840 and editor._sidebar.size.x<=220 and editor.editor.size.x>350,"The wider slate gives most of its glass to code")
@@ -138,7 +138,7 @@ func _run()->void:
 	await _shot("05a-job-acknowledgement")
 	await _finish_dialogue()
 	_check(game.welcome.seen("welcome-finished"),"Iona and Braum acknowledge the installed card, then stay available without replaying")
-	var reply:Dictionary=WorkshopStory.log_line(game._story.scenes,{"scene":"braum-welcome","page":0,"kind":"reply","choice":0})
+	var reply:Dictionary=StoryScenes.log_line(game._story.scenes,{"scene":"braum-welcome","page":0,"kind":"reply","choice":0})
 	_check(reply.get("speaker")=="braum","Braum's replies retain his speaker in the saved story log")
 	await _shot("05-working-sign")
 	if output!="":
@@ -203,7 +203,7 @@ func _place(at:Vector2i)->void:
 	game.view.sync_player(game.session.state)
 func _finish_dialogue()->void:
 	if game._modals.is_empty():return
-	var scene:WorkshopScene=game._modals[-1] as WorkshopScene
+	var scene:DialogueWindow=game._modals[-1] as DialogueWindow
 	if scene==null:return
 	for step:int in range(100):
 		if not is_instance_valid(scene) or scene.is_queued_for_deletion():break

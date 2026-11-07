@@ -127,7 +127,7 @@ func _play() -> void:
 		game.queue_free()
 		await process_frame
 		return
-	_check(game.view.stage is WorkshopFloorStage and not game.view.companion_present(), "A sleeping Hotaru stays upstairs until she has heard the greeting")
+	_check(game.view.stage is FloorStage and not game.view.companion_present(), "A sleeping Hotaru stays upstairs until she has heard the greeting")
 	_check(game.session.player_cell()==Vector2i(6,8) and game.view.player_node().position.y > 1.4, "The player arrives partway down the stairs, mid-room, ready to descend")
 	await shot("01-upper-landing")
 	for n: int in range(3):
@@ -143,7 +143,7 @@ func _play() -> void:
 	await game.session.run_preview()
 	_check(game.session.has_preview() and game.session.apply_preview(), "The downstairs printer runs and commits real WASI Python")
 	_check(game.session.state.memory.get("floor_only")=="kept" and not game.session.state.memory.has("loft_only"), "Program memory belongs to the current floor")
-	_check((game.view.stage as WorkshopFloorStage).awake and game.view.companion_present(), "An awake Hotaru joins the lodger at the assembly bench")
+	_check((game.view.stage as FloorStage).awake and game.view.companion_present(), "An awake Hotaru joins the lodger at the assembly bench")
 	await create_timer(5.1).timeout
 	_check(game.hud._objective_title.text=="The waiting ticket", "After greeting the pinned hint points to the workshop's next job")
 	game.session.state.player=[8,5,0]
@@ -159,7 +159,7 @@ func _play() -> void:
 	game._refresh_interaction()
 	_check(game._interaction.get("id")=="bread-cupboard", "The food cupboard offers its own contextual interaction")
 	game.interact()
-	_check(game._modals.is_empty() and game.workshop_speech._inspection.get("id")=="bread-cupboard", "The bread tin uses an object bubble without a modal")
+	_check(game._modals.is_empty() and game.world_speech._inspection.get("id")=="bread-cupboard", "The bread tin uses an object bubble without a modal")
 	await shot("07-bread-note")
 	game._pop_all_modals()
 	game.session.state.player=[12,10,0]
@@ -167,13 +167,13 @@ func _play() -> void:
 	game._refresh_interaction()
 	_check(game._interaction.get("kind")=="inspection" and game._interaction.get("id")=="job-board", "F offers the nearby job board")
 	game.interact()
-	_check(game._modals.is_empty() and game.workshop_speech._inspection.get("id")=="job-board", "The unrecruited ticket uses an object bubble")
+	_check(game._modals.is_empty() and game.world_speech._inspection.get("id")=="job-board", "The unrecruited ticket uses an object bubble")
 	await shot("03-job-board")
 	game._pop_all_modals()
 	game.session.state.player=[13,4,0]
 	game.view.sync_player(game.session.state)
 	for frame: int in range(3): await process_frame
-	_check((game.view.stage as WorkshopFloorStage)._door_faded, "The foreground doors turn translucent near the player instead of hiding the sprite")
+	_check((game.view.stage as FloorStage)._door_faded, "The foreground doors turn translucent near the player instead of hiding the sprite")
 	for n: int in range(40):
 		game._stairs_said=-10.0
 		game._on_doorway_requested("")

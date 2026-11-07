@@ -75,7 +75,7 @@
   "props": [],
   "interior": {
     "style": "workshop-square",
-    "shell": "pantry-shell",
+    "shell": "greengrocer-shell",
     "zoom": 12,
     "exit": [
       6,
@@ -87,7 +87,7 @@
     "assets": [
       {
         "id": "jar-shelves",
-        "asset": "pantry-jar-shelves",
+        "asset": "greengrocer-jar-shelves",
         "at": [
           -0.22,
           4.4
@@ -99,7 +99,7 @@
       },
       {
         "id": "sack-row",
-        "asset": "pantry-sack-row",
+        "asset": "greengrocer-sack-row",
         "at": [
           -0.1,
           9.8
@@ -111,7 +111,7 @@
       },
       {
         "id": "produce-stand",
-        "asset": "pantry-produce-stand",
+        "asset": "greengrocer-produce-stand",
         "at": [
           4.5,
           7.4
@@ -123,7 +123,7 @@
       },
       {
         "id": "grocer-counter",
-        "asset": "pantry-counter",
+        "asset": "greengrocer-counter",
         "at": [
           8.5,
           5.8

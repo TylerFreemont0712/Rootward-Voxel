@@ -31,7 +31,7 @@ Movement and player commands remain independent of animation. Skins cannot overr
 
 ## Existing skins
 
-`adventurer` is the approved default, with unchanged artwork and tint. **`mira`** is a separately painted female lantern cartographer: wavy espresso bob, brass hair clips, warm brown skin, plum coat, ochre scarf, sage cuffs, moss trousers and chestnut boots. Her versioned nine-cell SE/NE sheets, exact SW/NW mirrors and eye-only blink are under `art/source/characters/mira/v1/`; the packed atlas is compiled to `assets/characters/skins/mira.png` through the same build.
+`adventurer` is the approved default, with unchanged artwork and tint. **`mira`** is a separately painted female lantern cartographer: wavy espresso bob, brass hair clips, warm brown skin, plum coat, ochre scarf, sage cuffs, moss trousers and chestnut boots. Her versioned nine-cell SE/NE sheets, exact SW/NW mirrors and eye-only blink are under `art/source/characters/mira/v1/`; the packed atlas is compiled to `assets/characters/skins/village_mira.png` through the same build.
 
 The player is the approved boy (`adventurer`). Mira is a village NPC, alongside four newly painted residents. The Character screen names and turns the boy; resident skins are hidden from its picker. Older Mira player preferences resolve to the boy without changing saved progress.
 
@@ -49,7 +49,7 @@ Each has SE/NE nine-pose paintings, exact per-cell SW/NW mirrors, front eye-only
 Actor usage:
 
 ```gdscript
-var actor := SpriteAdventurer.new()
+var actor := SpriteActor.new()
 actor.skin_id = "adventurer"
 add_child(actor)
 actor.set_skin("adventurer_twilight")
@@ -109,10 +109,10 @@ Normal builds and play do not need imagegen, ComfyUI, Blender or a network servi
 
 ## Anonymous painted crowd
 
-Chapter 03 also registers the hidden **`iona`** human skin, separate from the crowd selection. Her apron/curls/silver forelock use the same shared template, mirrored direction pairs and idle contract as the approved boy. [Source paintings, prompts and registration](../art/source/characters/iona/README.md) · [Quest review](reviews/2026-11-02-welcome-quest-and-property.md). Braum keeps `sparks_bram`; his revised dialogue painting does not replace his walking atlas.
+Chapter 03 also registers the hidden **`sparks_iona`** human skin (`iona` until the [2026-11-07 renames](../docs/RENAMES_2026-11-07.md)), separate from the crowd selection. Her apron/curls/silver forelock use the same shared template, mirrored direction pairs and idle contract as the approved boy. [Source paintings, prompts and registration](../art/source/characters/iona/README.md) · [Quest review](reviews/2026-11-02-welcome-quest-and-property.md). Braum wears `sparks_braum` (formerly `sparks_bram`); his revised dialogue painting does not replace his walking atlas.
 
-The current Sparks crowd has **thirteen charcoal profiles from eleven complete painted atlases**, selected by `art/source/characters/phantoms/v3/appearances.json`. Both the original village and Sparks casts contribute their different hair, coats, hats and body outlines; the boy and two reduced villager profiles form the child pool. The offline builder preserves every source alpha pixel and inherits the common frames, timing, anchors and idle metadata. Rendering uses gray 0.20 at 98% opacity.
+The current Sparks crowd has **thirteen charcoal profiles from eleven complete painted atlases**, selected by `art/source/characters/phantoms/v4/appearances.json` (v3 with the profile ids renamed). Both the original village and Sparks casts contribute their different hair, coats, hats and body outlines; the boy and two reduced villager profiles form the child pool. The offline builder preserves every source alpha pixel and inherits the common frames, timing, anchors and idle metadata. Rendering uses gray 0.20 at 98% opacity.
 
 `art-catalog.json` selects `phantoms.texture_compression: "vram"`. The existing phantom builder writes that policy into its manifest and Godot imports; source/runtime PNG alpha remains exact, while the GPU uses compressed white/alpha masks with mipmaps (S3TC on desktop). Each 1536×5376 crowd atlas uses about 10.5 MiB rather than 42 MiB. The approved boy and named painted skins retain lossless GPU imports. Review silhouettes in motion at gameplay scale after import-policy changes. Frame-skin caches use weak references: active actors share frames, and departed rooms release them. See the [memory review](reviews/2026-11-05-memory-and-desktop-graphics.md).
 
-`groups` registers compatible adult/child pools. `VillagerView` draws from shuffled bags using cosmetic randomness per visit, and chooses new appearances when tram passengers return. Appearance randomness never enters world movement or saves. `PhantomActor.set_profile` preserves playback phase, facing and idle state. Build through `scripts/art.sh`; these are ambient profiles, not player skins. Original paintings and v1/v2 source selections remain intact. See [ambient inhabitants](VILLAGE.md#sparks-ambient-inhabitants).
+`groups` registers compatible adult/child pools. `ResidentsView` draws from shuffled bags using cosmetic randomness per visit, and chooses new appearances when tram passengers return. Appearance randomness never enters world movement or saves. `PhantomActor.set_profile` preserves playback phase, facing and idle state. Build through `scripts/art.sh`; these are ambient profiles, not player skins. Original paintings and v1/v2 source selections remain intact. See [ambient inhabitants](VILLAGE.md#sparks-ambient-inhabitants).

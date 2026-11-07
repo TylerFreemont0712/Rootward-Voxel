@@ -14,7 +14,7 @@ The street planter's first review showed the old flower heads floating beyond th
 
 ![House rear planting before and after](../../evidence/plant-style-2026-10-30/seaside-rosewash-house-180.png)
 
-The models were reviewed in Godot 4.7.2 using the normal Compatibility renderer on the AMD Radeon 680M. `tools/plant_style_review.gd` captures matched front/rear comparisons for nine representative models, applies the same house variants to both sides, and uses the approved camera heading/elevation. Actual area views were reviewed at camera size 13 and 1600×1000 for the loft, workshop, lane and square, plus 1280×720 for the square. Both loft plant instances remain distinct placements with the existing scales/turns.
+The models were reviewed in Godot 4.7.2 using the normal Compatibility renderer on the AMD Radeon 680M. `tools/reviews/plant_style_review.gd` captures matched front/rear comparisons for nine representative models, applies the same house variants to both sides, and uses the approved camera heading/elevation. Actual area views were reviewed at camera size 13 and 1600×1000 for the loft, workshop, lane and square, plus 1280×720 for the square. Both loft plant instances remain distinct placements with the existing scales/turns.
 
 [Loft](../../evidence/plant-style-2026-10-30/loft.png) · [Workshop](../../evidence/plant-style-2026-10-30/workshop.png) · [Lane](../../evidence/plant-style-2026-10-30/lane.png) · [Square](../../evidence/plant-style-2026-10-30/square.png) · [Square at 720p](../../evidence/plant-style-2026-10-30/square-720.png)
 

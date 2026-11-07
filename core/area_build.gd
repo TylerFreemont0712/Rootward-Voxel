@@ -225,7 +225,7 @@ static func check_building(ctx: Dictionary, asset: String, at: Vector2, facing: 
 		return result
 	result.door = door_cell(rect, at, facing, door_offset(rect,at,facing,scale,ctx.assets[asset].get("entrance",{})))
 	if rect.position.x < 0.0 or rect.position.y < 0.0 or rect.end.x > float(area.width) or rect.end.y > float(area.height):
-		result.reason = "Keep it inside the valley."
+		result.reason = "Keep it inside this place."
 		return result
 	for cell: Vector2i in footprint_cells(rect):
 		match area.terrain_at(cell):
@@ -313,7 +313,7 @@ static func check_prop(ctx: Dictionary, asset: String, at: Vector2, facing: Stri
 		result.reason = "Keep the layout on the upper terrace. The stairs and square stay clear."
 		return result
 	if rect.position.x < 0.0 or rect.position.y < 0.0 or rect.end.x > float(area.width) or rect.end.y > float(area.height):
-		result.reason = "Keep it inside the valley."
+		result.reason = "Keep it inside this place."
 		return result
 	for cell: Vector2i in footprint_cells(rect):
 		match area.terrain_at(cell):
@@ -689,7 +689,7 @@ static func check_tree(ctx: Dictionary, at: Vector2, size: float, ignore_key: St
 		return result
 	var cell := Vector2i(roundi(at.x), roundi(at.y))
 	if at.x < 0.25 or at.y < 0.25 or at.x > float(area.width) - 1.25 or at.y > float(area.height) - 1.25:
-		result.reason = "Keep it inside the valley."
+		result.reason = "Keep it inside this place."
 		return result
 	match area.terrain_at(cell):
 		AreaDef.Terrain.WATER:
@@ -835,7 +835,7 @@ static func land_blockers(area: AreaDef) -> Dictionary:
 ## asks it for every cell it crosses. `blockers` is land_blockers(area).
 static func land_reason(area: AreaDef, blockers: Dictionary, state: Dictionary, tool: String, cell: Vector2i, level: int = 0) -> String:
 	if not area.in_bounds(cell):
-		return "Keep it inside the valley."
+		return "Keep it inside this place."
 	var terrain: int = area.terrain_at(cell)
 	if terrain == AreaDef.Terrain.ROCK:
 		return "Rock stays as it is."
@@ -848,7 +848,7 @@ static func land_reason(area: AreaDef, blockers: Dictionary, state: Dictionary, 
 				return "That ground is up there already."
 		"lower":
 			if level < 0:
-				return "This is the valley floor. Dig water to go lower."
+				return "This is ground level. Dig water to go lower."
 			if current <= level:
 				return "That ground is down there already."
 		"water":
@@ -888,7 +888,7 @@ static func check_stairs(ctx: Dictionary, at: Vector2i, up: String) -> Dictionar
 	var dir: Vector2i = AreaDef.STEPS[up]
 	for cell: Vector2i in [at - dir, at, at + dir]:
 		if not area.in_bounds(cell):
-			return refuse.call("Keep them inside the valley.")
+			return refuse.call("Keep them inside this place.")
 		if area.terrain_at(cell) in [AreaDef.Terrain.WATER, AreaDef.Terrain.ROCK]:
 			return refuse.call("Stairs need dry ground below, on and above them.")
 	if not area.stair_at(at).is_empty():

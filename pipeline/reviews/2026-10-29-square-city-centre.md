@@ -12,7 +12,7 @@ After the first v3 pass the user asked for:
 ## Result
 
 - **Shops:**
-  - `square-west-terrace` is retired. In its place stand three separate shop-houses from one shopfront recipe in the seaside house kit: `haverlund-bakery` (Morning Loaf), `haverlund-greengrocer` and `haverlund-bookshop` (Finch & Sons). Each has painted joinery, gold fascia lettering, a lit display window, a striped awning, a hanging sign and its wares set out.
+  - `square-west-terrace` is retired. In its place stand three separate shop-houses from one shopfront recipe in the seaside house kit: `haverlund-bakery` (Morning Loaf), `haverlund-greengrocer` and `haverlund-tailor` (Finch & Sons). Each has painted joinery, gold fascia lettering, a lit display window, a striped awning, a hanging sign and its wares set out.
   - `haverlund-cafe` (the Harbour Cup) takes the corner of Lantern Row, with parasol tables.
   - A news kiosk stands at the arrival, and a coffee cart stands on the promenade.
   - The market now has two rows of stalls back to back, with their stock between them.

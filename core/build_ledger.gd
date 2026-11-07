@@ -73,7 +73,7 @@ func _init(document: Dictionary, world_assets: Dictionary, quests: Variant, cata
 				_prop_serial = maxi(_prop_serial, prop_id.substr(5).to_int())
 	var applied: Dictionary = AreaBuild.apply(base_document, saved, paint_materials)
 	for edit: Variant in applied.skipped:
-		problems.append("An old edit no longer fits the valley: %s" % JSON.stringify(edit))
+		problems.append("An old edit no longer fits this place: %s" % JSON.stringify(edit))
 	var parsed: Dictionary = AreaDef.parse(applied.document, assets, quest_document, paint_materials)
 	if parsed.ok:
 		for edit: Variant in saved:
@@ -347,7 +347,7 @@ func paint(material: String, cells: Array, state: Dictionary) -> Dictionary:
 			return {"ok": false, "reason": "A paint stroke needs whole sub-tile coordinates."}
 		var sub := Vector2i(int(cell[0]), int(cell[1]))
 		if sub.x < 0 or sub.y < 0 or sub.x >= area.width * 2 or sub.y >= area.height * 2:
-			return {"ok": false, "reason": "Keep paint inside the valley."}
+			return {"ok": false, "reason": "Keep paint inside this place."}
 		if GroundPaint.is_ground(area, sub) and AreaBuild.layout_contains(area, Rect2(Vector2(sub) * .5 - Vector2(.5, .5), Vector2(.5, .5))) and area.stair_at(Vector2i(sub.x / 2, sub.y / 2)).is_empty() and not unique.has(sub):
 			unique[sub] = true
 			kept.append([sub.x, sub.y])
@@ -367,7 +367,7 @@ func land_blockers() -> Dictionary:
 ## "" if this land tool may change this cell (raise and lower toward `level`), else why not. Cheap.
 func land_reason(tool: String, cell: Vector2i, level: int, state: Dictionary) -> String:
 	if not area.ground.is_empty() or not area.interior.is_empty():
-		return "This ground is an authored model. Shape the valley's generated land instead."
+		return "This ground is an authored model. Shape generated land instead."
 	return AreaBuild.land_reason(area, land_blockers(), state, tool, cell, level)
 
 
@@ -403,7 +403,7 @@ func shape(tool: String, level: int, cells: Array, state: Dictionary) -> Diction
 
 func check_stairs(at: Vector2i, up: String, state: Dictionary) -> Dictionary:
 	if not area.ground.is_empty() or not area.interior.is_empty():
-		return {"ok": false, "reason": "This ground is an authored model. Build stairs in the valley's generated land."}
+		return {"ok": false, "reason": "This ground is an authored model. Build stairs on generated land."}
 	return AreaBuild.check_stairs(context(state), at, up)
 
 
@@ -513,10 +513,10 @@ func _commit(edit: Dictionary, state: Dictionary, skip_building: String, commit:
 func _swap_to(list: Array, state: Dictionary, skip_building: String, appearance_only: bool = false) -> Dictionary:
 	var applied: Dictionary = AreaBuild.apply(base_document, list, paint_materials)
 	if not (applied.skipped as Array).is_empty():
-		return {"ok": false, "reason": "That edit does not fit the valley."}
+		return {"ok": false, "reason": "That edit does not fit this place."}
 	var parsed: Dictionary = AreaDef.parse(applied.document, assets, quest_document, paint_materials)
 	if not parsed.ok:
-		return {"ok": false, "reason": "That edit does not fit the valley: %s" % str(parsed.errors)}
+		return {"ok": false, "reason": "That edit does not fit this place: %s" % str(parsed.errors)}
 	var candidate: AreaDef = parsed.area
 	if appearance_only:
 		return {"ok": true, "reason": "", "area": candidate, "rules": rules}

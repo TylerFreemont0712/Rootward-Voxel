@@ -44,7 +44,7 @@
     "reference": "res://reference/voxel-isometric.png",
     "palette": "res://art/world_palette.gd",
     "materials": "res://art/surface_materials.gd",
-    "geometry": "res://scenes/clearing_view.gd",
+    "geometry": "res://scenes/world_view.gd",
     "layout_and_collision": "res://core/lab_world.gd",
     "areas": "res://content/areas/",
     "camera_elevation_degrees": 31,
@@ -286,8 +286,8 @@
     }
   },
   "phantoms": {
-    "version": "v3",
-    "source": "res://art/source/characters/phantoms/v3/appearances.json",
+    "version": "v4",
+    "source": "res://art/source/characters/phantoms/v4/appearances.json",
     "runtime": "res://assets/characters/phantoms",
     "manifest": "res://assets/characters/phantoms/manifest.json",
     "texture_compression": "vram"

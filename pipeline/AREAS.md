@@ -55,7 +55,7 @@ Goals are `lamps_lit` (`zone`, `ids` or `all`), `bridge_built`, `gate_open`, `re
 | `core/area_def.gd`, `core/lab_world.gd`, `core/quests.gd` | Parsing, traversal and commands, goal evaluation. |
 | `art/terrain_builder.gd` | Turns terrain cells and segments into batched voxel blocks (generated land). |
 | `art/mechanism_builder.gd` | Lamps, the beacon, gates, bridge decks and the wheel. |
-| `scenes/clearing_view.gd` | `setup(area)`: places buildings, trees and mechanisms, owns the following camera, lighting and the lamp light pool. |
+| `scenes/world_view.gd` | `setup(area)`: places buildings, trees and mechanisms, owns the following camera, lighting and the lamp light pool. |
 | `pipeline/world-catalog.json` | Asset authority and footprints; its `areas` block lists the documents. |
 | `docs/PROGRAMMING.md` | The player-visible API. |
 
@@ -124,7 +124,7 @@ Automatic street service cells remain normal passages for ambient traffic. Quest
 
 An `interior.assets` placement may explicitly set `solid: true`. `AreaDef` resolves its world-catalog `logical_footprint` (local `[x,y,width,depth]`) through the placement's quarter turn and scale into `interior.solids`; `LabWorld` indexes those rectangles for the same foot-circle and passage checks as other obstacles. Rendering bounds never determine collision. The default remains visual-only. Unknown/malformed footprints, nonpositive scale and diagonal turns are refused. Offset pivots are retained, including town railing bays authored from their run start. Builder prop placement uses that same offset convention.
 
-Rootward Square now uses these envelopes for the three market shop bodies, its modular railings/garden walls/piers and one replacement retaining-wall bay. New doors use normal reciprocal room links into `shop-bakery`, `shop-greengrocer`, `shop-bookshop` (Finch & Thread), `shop-clockmaker` and `shop-apothecary`. All five are registered Sparks journey rooms with separate saved state and memory. Old square saves covered by repaired barriers move only their feet to a nearby reachable cell; progress remains intact. The upper park is background dressing. Trading and new shop quests remain proposed.
+Rootward Square now uses these envelopes for the three market shop bodies, its modular railings/garden walls/piers and one replacement retaining-wall bay. New doors use normal reciprocal room links into `shop-bakery`, `shop-greengrocer`, `shop-tailor` (Finch & Thread), `shop-clockmaker` and `shop-apothecary`. All five are registered Sparks journey rooms with separate saved state and memory. Old square saves covered by repaired barriers move only their feet to a nearby reachable cell; progress remains intact. The upper park is background dressing. Trading and new shop quests remain proposed.
 
 ## Spindle strip revision — 2026-11-03
 
@@ -144,7 +144,7 @@ Current clockshop document v4 grows to 14×14 without changing origin/door cells
 
 ## The high square: white mist
 
-Rootward Square stands high over the harbour, and below its retaining walls the town drops out of sight into solid white. `interior.depth_fog` in `haverlund-square.json` configures one alpha-only height overlay (`art/depth_mist.gdshader`, built as `LowerTownMist` in `scenes/clearing_view.gd`):
+Rootward Square stands high over the harbour, and below its retaining walls the town drops out of sight into solid white. `interior.depth_fog` in `haverlund-square.json` configures one alpha-only height overlay (`art/depth_mist.gdshader`, built as `LowerTownMist` in `scenes/world_view.gd`):
 
 | Key | Meaning |
 |---|---|

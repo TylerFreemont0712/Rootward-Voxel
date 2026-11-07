@@ -20,6 +20,7 @@
     {"id": "finishes", "file": "test/test_finishes.gd", "tier": "quick", "est": 1, "what": "Surface finish textures, slots and history"},
     {"id": "zone_terminals", "file": "test/test_zone_terminals.gd", "tier": "quick", "est": 1, "what": "Zone terminals and the tablet's links"},
     {"id": "accounts", "file": "test/test_accounts.gd", "tier": "quick", "est": 1, "what": "Pay, bank and receipts"},
+    {"id": "save_migration", "file": "test/test_save_migration.gd", "tier": "quick", "est": 1, "what": "Old saves load after content renames"},
     {"id": "city_cycle", "file": "test/test_city_cycle.gd", "tier": "quick", "est": 3, "what": "Shared clock, dusk and overload"},
     {"id": "display_cards", "file": "test/test_display_cards.gd", "tier": "quick", "est": 1, "what": "Tram sign messages"},
     {"id": "clockmaker", "file": "test/test_clockmaker.gd", "tier": "quick", "est": 1, "what": "The clockmaker's exterior, room and saves"},

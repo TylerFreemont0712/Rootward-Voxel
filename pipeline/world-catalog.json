@@ -65,7 +65,7 @@
       "runtime": "assets/world/loft-shell/model.glb",
       "pivot": "Room origin: centre of cell (0, 0) on the floor; logical +y is Blender +Y (Godot -Z); one metre per cell",
       "logical_footprint": null,
-      "behavior": "Room presentation only, placed by WorkshopLoftRoom. The area document owns the exit, walls and collision.",
+      "behavior": "Room presentation only, placed by ShellRoom. The area document owns the exit, walls and collision.",
       "illustrated_edges": true,
       "notes": "T7a shell deliberately refined from the adopted master: calm painted oak, staggered plank joints, open stair hatch, clear painted harbour windows. First source retained as model.pre-furnishing.blend. Flipped revision 2026-10-28 (sparks-loft/v1/flipped_loft_revision.py): seen from the yard side, 14 by 12, three street windows and two gable windows matching the lane, the stair opening mid-room."
     },
@@ -2132,13 +2132,13 @@
       "behavior": "Static square building. The area document owns its blocks, inspections and the wares' blocks; the door is not enterable.",
       "notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend. Deliberate square-renewal source edit; previous source version retained. Record: art/source/world/square-renewal/v1/."
     },
-    "haverlund-bookshop": {
+    "haverlund-tailor": {
       "version": "v2",
       "authority": "blender",
       "status": "integrated_sparks_square",
       "label": "Finch & Thread · clothier",
-      "source": "art/source/world/haverlund-bookshop/v2/model.blend",
-      "runtime": "assets/world/haverlund-bookshop/model.glb",
+      "source": "art/source/world/haverlund-tailor/v2/model.blend",
+      "runtime": "assets/world/haverlund-tailor/model.glb",
       "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
       "logical_footprint": [
         -2.5,
@@ -2832,13 +2832,13 @@
       "notes": "Original market shop interior collection. art/source/world/shop-interiors/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
       "behavior": "Reusable visual; area document owns placements, collision, inspections and any sign or lamp role."
     },
-    "pantry-produce-stand": {
+    "greengrocer-produce-stand": {
       "version": 1,
       "authority": "blender",
       "status": "integrated_sparks_square",
       "label": "The Pantry produce stand",
-      "source": "art/source/world/pantry-produce-stand/v1/model.blend",
-      "runtime": "assets/world/pantry-produce-stand/model.glb",
+      "source": "art/source/world/greengrocer-produce-stand/v1/model.blend",
+      "runtime": "assets/world/greengrocer-produce-stand/model.glb",
       "pivot": "Ground centre; Blender -Y front, +Y logical north. The chalk board's origin is its centre (placement height sets the mounting).",
       "logical_footprint": [
         -1.32,
@@ -2850,13 +2850,13 @@
       "notes": "Original market shop interior collection. art/source/world/shop-interiors/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
       "behavior": "Reusable visual; area document owns placements, collision, inspections and any sign or lamp role."
     },
-    "pantry-sack-row": {
+    "greengrocer-sack-row": {
       "version": 1,
       "authority": "blender",
       "status": "integrated_sparks_square",
       "label": "Open sacks of potatoes, onions and grain",
-      "source": "art/source/world/pantry-sack-row/v1/model.blend",
-      "runtime": "assets/world/pantry-sack-row/model.glb",
+      "source": "art/source/world/greengrocer-sack-row/v1/model.blend",
+      "runtime": "assets/world/greengrocer-sack-row/model.glb",
       "pivot": "Ground centre; Blender -Y front, +Y logical north. The chalk board's origin is its centre (placement height sets the mounting).",
       "logical_footprint": [
         -1.54,
@@ -2868,13 +2868,13 @@
       "notes": "Original market shop interior collection. art/source/world/shop-interiors/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
       "behavior": "Reusable visual; area document owns placements, collision, inspections and any sign or lamp role."
     },
-    "pantry-jar-shelves": {
+    "greengrocer-jar-shelves": {
       "version": 1,
       "authority": "blender",
       "status": "integrated_sparks_square",
       "label": "Dresser of jars and tins",
-      "source": "art/source/world/pantry-jar-shelves/v1/model.blend",
-      "runtime": "assets/world/pantry-jar-shelves/model.glb",
+      "source": "art/source/world/greengrocer-jar-shelves/v1/model.blend",
+      "runtime": "assets/world/greengrocer-jar-shelves/model.glb",
       "pivot": "Ground centre; Blender -Y front, +Y logical north. The chalk board's origin is its centre (placement height sets the mounting).",
       "logical_footprint": [
         -1.4,
@@ -2886,13 +2886,13 @@
       "notes": "Original market shop interior collection. art/source/world/shop-interiors/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
       "behavior": "Reusable visual; area document owns placements, collision, inspections and any sign or lamp role."
     },
-    "pantry-counter": {
+    "greengrocer-counter": {
       "version": 1,
       "authority": "blender",
       "status": "integrated_sparks_square",
       "label": "Grocer's counter with a beam scale",
-      "source": "art/source/world/pantry-counter/v1/model.blend",
-      "runtime": "assets/world/pantry-counter/model.glb",
+      "source": "art/source/world/greengrocer-counter/v1/model.blend",
+      "runtime": "assets/world/greengrocer-counter/model.glb",
       "pivot": "Ground centre; Blender -Y front, +Y logical north. The chalk board's origin is its centre (placement height sets the mounting).",
       "logical_footprint": [
         -1.4,
@@ -3038,13 +3038,13 @@
       "notes": "Original market shop interior collection. art/source/world/shop-interiors/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
       "behavior": "Room shell with a hinged door (`door_leaf_bakery`) in the shopfront's colour; the room document owns collision."
     },
-    "pantry-shell": {
+    "greengrocer-shell": {
       "version": 1,
       "authority": "blender",
       "status": "integrated_sparks_square",
       "label": "The Pantry · cutaway room",
-      "source": "art/source/world/pantry-shell/v1/model.blend",
-      "runtime": "assets/world/pantry-shell/model.glb",
+      "source": "art/source/world/greengrocer-shell/v1/model.blend",
+      "runtime": "assets/world/greengrocer-shell/model.glb",
       "pivot": "Room origin (cell 0, 0); floor -0.5 to 11.5, west and north walls standing, glazed door at x 6 on the open front.",
       "logical_footprint": null,
       "illustrated_edges": true,

@@ -19,7 +19,7 @@ The man uses `sparks_bram`, the woman `sparks_mira`, and the child the approved 
 - Editable selection: `art/source/characters/phantoms/v2/appearances.json`.
 - Catalog/build: `pipeline/art-catalog.json`, `pipeline/phantom_builder.gd`, **`scripts/art.sh`**.
 - Derived output: `assets/characters/phantoms/` (three masks, inherited SpriteFrames and source/build hashes).
-- Presenter: `art/phantom_actor.gd`, using the existing `SpriteAdventurer` playback and anchors.
+- Presenter: `art/phantom_actor.gd`, using the existing `SpriteActor` playback and anchors.
 
 Original character paintings and the player are unchanged. The earlier geometric silhouette study is rejected and unselected, with its source and previews retained in `art/source/characters/phantoms/v1/`. The runtime build stages metadata in `.cache/phantom-art/` and publishes only a complete manifest, so preparation cannot expose missing playback metadata to a running view.
 
@@ -33,7 +33,7 @@ Notebook, modal, title and build mode freeze passenger and tram clocks together.
 
 ## Native review
 
-`tools/phantom_crowd_review.gd` runs the real game with isolated progress and travels through the existing stairs, shop doors and town steps. It observes the first three-adult service, passengers leaving at the gate, the gap between trams and the following two-adult service. It then checks actual movement input through a gray person and against a robot, plus modal pause.
+`tools/reviews/phantom_crowd_review.gd` runs the real game with isolated progress and travels through the existing stairs, shop doors and town steps. It observes the first three-adult service, passengers leaving at the gate, the gap between trams and the following two-adult service. It then checks actual movement input through a gray person and against a robot, plus modal pause.
 
 The painted version was reviewed at **1600×1000** and **1280×720** using the existing camera heading, elevation and gameplay zoom. The final neutral-gray palette was reviewed at both sizes; selected captures are linked below. Renderer: Godot 4.7.2 Compatibility/OpenGL on AMD Radeon 680M. Full frame sequences and logs are in `.cache/phantom-crowd/`.
 

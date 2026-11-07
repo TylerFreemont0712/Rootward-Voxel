@@ -3,14 +3,16 @@ extends RefCounted
 ## One save slot per journey, plus the player's name. Everything is plain JSON in this project's own user
 ## directory (RootwardVoxelLab); nothing is shared with the main Rootward game.
 
-## The first journey's filename is kept as the base, so a journey's slot is "<base>.<level id>.json" and saves
-## written before the other journeys were removed still load.
-const SAVE_PATH: String = "user://kindle_hollow.save.json"
+## A journey's slot is "<base>.<level id>.json". Saves made before 2026-11-07 used the Kindle Hollow base name; one is
+## read once if no current save exists, and set aside as ".bak" when the game first saves under the current name.
+const SAVE_PATH: String = "user://rootward.save.json"
+const LEGACY_SAVE_PATH: String = "user://kindle_hollow.save.json"
 const PROFILE_PATH: String = "user://profile.json"
 const DEFAULT_NAME: String = "Wren"
 
 ## Tests point these at scratch files and switch saving on, so they never touch a player's own save.
 static var save_path: String = SAVE_PATH
+static var legacy_save_path: String = LEGACY_SAVE_PATH
 static var profile_path: String = PROFILE_PATH
 static var force_enabled: bool = false
 static var development: bool = false
@@ -21,19 +23,31 @@ static func has_save(level: String = LevelStore.MAIN_LEVEL) -> bool:
 
 
 static func level_path(level: String) -> String:
-	var base: String = save_path.get_basename() + ".dev.json" if development else save_path
+	return _slot(save_path, level)
+
+
+## Where the same slot lived under the old base name. A scratch save_path never falls back to the player's real
+## old save; a test that wants the fallback points legacy_save_path at a scratch file too.
+static func legacy_level_path(level: String) -> String:
+	return _slot(legacy_save_path, level) if save_path == SAVE_PATH or legacy_save_path != LEGACY_SAVE_PATH else ""
+
+
+static func _slot(base_path: String, level: String) -> String:
+	var base: String = base_path.get_basename() + ".dev.json" if development else base_path
 	return base.get_basename() + "." + level.validate_filename() + ".json"
 
 
 ## The parsed save, or {} when there is none or it cannot be read.
 static func read(level: String = LevelStore.MAIN_LEVEL) -> Dictionary:
 	var path: String = level_path(level)
+	if not _fresh() and not FileAccess.file_exists(path) and FileAccess.file_exists(legacy_level_path(level)):
+		path = legacy_level_path(level)
 	if _fresh() or not FileAccess.file_exists(path):
 		return {}
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
 	if not parsed is Dictionary or int((parsed as Dictionary).get("version", 0)) != GameSession.SAVE_VERSION:
 		return {}
-	return parsed
+	return SaveMigration.upgrade(parsed)
 
 
 static func write(data: Dictionary, level: String = LevelStore.MAIN_LEVEL) -> bool:
@@ -46,12 +60,23 @@ static func write(data: Dictionary, level: String = LevelStore.MAIN_LEVEL) -> bo
 		return false
 	file.store_string(JSON.stringify(data, "  "))
 	file.close()
-	return DirAccess.rename_absolute(ProjectSettings.globalize_path(temporary), ProjectSettings.globalize_path(path)) == OK
+	if DirAccess.rename_absolute(ProjectSettings.globalize_path(temporary), ProjectSettings.globalize_path(path)) != OK:
+		return false
+	_retire_legacy(level)
+	return true
 
 
 static func delete(level: String = LevelStore.MAIN_LEVEL) -> void:
 	if not _fresh() and FileAccess.file_exists(level_path(level)):
 		DirAccess.remove_absolute(ProjectSettings.globalize_path(level_path(level)))
+	if not _fresh(): _retire_legacy(level)
+
+
+## Once the current slot exists (or the player starts over) an old-name save must never be read again.
+static func _retire_legacy(level: String) -> void:
+	var legacy: String = legacy_level_path(level)
+	if legacy != "" and FileAccess.file_exists(legacy):
+		DirAccess.rename_absolute(ProjectSettings.globalize_path(legacy), ProjectSettings.globalize_path(legacy + ".bak"))
 
 
 static func _profile() -> Dictionary:

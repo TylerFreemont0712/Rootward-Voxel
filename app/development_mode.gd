@@ -66,8 +66,8 @@ static func jump(game: Game, id: String) -> bool:
 	enter(game)
 	game.session.prepare_travel()
 	game._journey_rooms = rooms
-	game._workshop_dismissed = (point.get("dismissed", []) as Array).duplicate()
-	game._workshop_log.clear()
+	game._dismissed_scenes = (point.get("dismissed", []) as Array).duplicate()
+	game._dialogue_log.clear()
 	game._dialogue_read = {"loft-waking":["introduced"]} if point.get("greeted", false) else {}
 	game._dialogue_read["workshop-scenes"]=(point.get("read_scenes",[]) as Array).duplicate()
 	if game._dialogue_read["workshop-scenes"].has("iona-commission"):
@@ -93,8 +93,8 @@ static func _completed(area: AreaDef, state: Dictionary, named: Variant) -> Arra
 
 
 static func current_code_job(game: Game) -> Dictionary:
-	if game.journal is WorkshopJobsJournal:
-		var selected: Dictionary = game.area.quest((game.journal as WorkshopJobsJournal)._page)
+	if game.journal is JobsJournal:
+		var selected: Dictionary = game.area.quest((game.journal as JobsJournal)._page)
 		if not selected.is_empty(): return selected
 	return game.session.current_quest()
 
@@ -140,7 +140,7 @@ static func fill_solution(game: Game) -> bool:
 	game.session.set_source(code)
 	if quest.id == "say-hello":
 		game.session.greeting_editor = {"mode":"python", "python":code}
-		game._open_workshop_journal(true)
+		game._open_jobs_journal(true)
 	elif context.get("kind")=="display":
 		var display: Dictionary=DisplayCards.find(game.area,str(context.id))
 		if not game.session.state.inspections_read.has(display.commission):game.session.state.inspections_read.append(display.commission)
@@ -152,9 +152,9 @@ static func fill_solution(game: Game) -> bool:
 		game.session.workshop_pages[quest.id] = code
 		var access: Dictionary = context.duplicate()
 		access["title"] = str(FieldAccess.place_for(game.area, quest).get("title", quest.title))
-		game._open_workshop_journal(false, access)
-		if game.journal is WorkshopJobsJournal:
-			var journal := game.journal as WorkshopJobsJournal
+		game._open_jobs_journal(false, access)
+		if game.journal is JobsJournal:
+			var journal := game.journal as JobsJournal
 			for index: int in range(journal._pages.item_count):
 				if journal._pages.get_item_metadata(index) == quest.id:
 					journal._pages.select(index)

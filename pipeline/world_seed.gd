@@ -1,4 +1,4 @@
-extends "res://scenes/clearing_view.gd"
+extends "res://scenes/world_view.gd"
 ## One-way bootstrap from prototype recipes. Never runs while exporting an artist's .blend.
 
 const Recipes := preload("res://pipeline/world_recipes.gd")

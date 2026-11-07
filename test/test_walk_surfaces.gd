@@ -79,11 +79,11 @@ func _run() -> void:
 			for tread: Array in spec.steps:
 				var point: Vector2 = center+outward*float(tread[0])*scale
 				_check(WalkingSurface.height(area,point,entry)>=float(tread[3])*scale+WalkingSurface.CLEARANCE-.0001,"House steps track mesh rotation and scale")
-	var actor := SpriteAdventurer.new()
+	var actor := SpriteActor.new()
 	root.add_child(actor)
 	await process_frame
 	_check(actor.sprite.billboard==BaseMaterial3D.BILLBOARD_FIXED_Y,"The painted actor's depth plane stays vertical above its feet")
-	_check(is_equal_approx(actor._upright.scale.y*cos(SpriteAdventurer.CAMERA_ELEVATION),1.0),"Upright correction preserves the approved on-screen proportions")
+	_check(is_equal_approx(actor._upright.scale.y*cos(SpriteActor.CAMERA_ELEVATION),1.0),"Upright correction preserves the approved on-screen proportions")
 	actor.queue_free()
 	if failures.is_empty():print("Walking surfaces and door rules: %d checks passed." % checks)
 	else:

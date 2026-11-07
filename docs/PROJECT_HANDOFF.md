@@ -2,7 +2,7 @@
 
 This is a self-contained Godot 4.7.2 project. **Sparks & Machines** is the only journey: it starts in `content/areas/workshop-loft.json` and passes through the workshop floor, Spindle Lane, Rootward Square, City Hall and five shops (ten saved rooms, listed in `content/levels/catalog.json`). The user accepted the clearing's size, camera scale, painted boy and voxel-inspired style as the baseline; keep them stable unless a feature deliberately needs a reviewed change. Nothing here depends on, or edits, the separate main Rootward game.
 
-Kindle Hollow and Village Morning were removed on 2026-11-05. See [what was removed and how to get it back](PURGE_2026-11-05.md).
+Kindle Hollow and Village Morning were removed on 2026-11-05. See [what was removed and how to get it back](PURGE_2026-11-05.md). Folders, file names and ids follow [NAMING](NAMING.md); the 2026-11-07 tidy-up that set them is [RENAMES_2026-11-07](RENAMES_2026-11-07.md).
 
 ## Start and verify
 
@@ -30,7 +30,7 @@ Playing uses supplied runtime art; no Blender, AI service or network is needed. 
 - **Loft and workshop floor** (`workshop-loft`, `workshop-floor`): bed, desk terminal, Nell's note, the field tablet and wall screen; chapters 00–02 (`say-hello`, `waiting-ticket`, `landing-light`, `morning-round`). Reviews: [loft](../pipeline/reviews/2026-10-27-sparks-loft-furnished-and-first-code.md), [workshop](../pipeline/reviews/2026-10-27-workshop-floor.md), [rearranged](../pipeline/reviews/2026-10-29-workshop-floor-rearranged.md), [tablet and wall screen](../pipeline/reviews/2026-10-27-tablet-and-wall-screen.md).
 - **Spindle Lane** (`haverlund-lane`): the street, the town gate (two real hinge nodes), the tram halt, Braum's garden and the tram sign for **A proper welcome**. Reviews: [lane](../pipeline/reviews/2026-10-28-spindle-lane.md), [tram stop](../pipeline/reviews/2026-11-02-tram-stop-and-shared-slate.md), [welcome quest](../pipeline/reviews/2026-11-02-welcome-quest-and-property.md), [lane errands](../pipeline/reviews/2026-11-02-lane-errands-and-development.md).
 - **Rootward Square** (`haverlund-square`, 88×64): the Rootwell, the guild hall and City Hall, market, shops, a terraced west promenade (Spindle Walk, with Pendulum & Pin) and the **Layout · B** studio. The square stands high over the harbour: below the walls everything vanishes into solid white mist ([depth mist](../pipeline/AREAS.md#the-high-square-white-mist)). Reviews: [hub](../pipeline/reviews/2026-10-29-square-hub-v3.md), [lighting and shops](../pipeline/reviews/2026-11-03-square-lighting-and-shops.md), [layout studio](../pipeline/reviews/2026-11-03-square-layout-studio.md), [restoration](../pipeline/reviews/2026-11-04-square-restoration-and-clockshop.md), [clockshop expansion](../pipeline/reviews/2026-11-04-clockshop-expansion-and-depth.md).
-- **City Hall and shops** (`city-hall`, `shop-bakery`, `shop-greengrocer`, `shop-bookshop`, `shop-clockmaker`, `shop-apothecary`): cutaway rooms linked from the square; the clockmaker's 14×14 room has fifty placed objects. Thyme & Tonic (original model, 2026-11-05) stands beside the clockmaker; its room is still the empty shell.
+- **City Hall and shops** (`city-hall`, `shop-bakery`, `shop-greengrocer`, `shop-tailor`, `shop-clockmaker`, `shop-apothecary`): cutaway rooms linked from the square; the clockmaker's 14×14 room has fifty placed objects. Thyme & Tonic (original model, 2026-11-05) stands beside the clockmaker; its room is still the empty shell.
 - **City, clock and money:** `core/city_cycle.gd` owns the saved clock (a day is 24 minutes of exploration; travel and cognition pause it) and latched overload; `core/lamp_programs.gd` and `core/robot_programs.gd` compile real executions into validated routines; `core/player_accounts.gd` keeps an integer-pence purse, bank balance and receipts. Review: [clock, evening and City Hall](../pipeline/reviews/2026-11-02-city-clock-evening-and-hall.md).
 - **Dialogue and transitions:** story windows and the clockwork veil. [Review](../pipeline/reviews/2026-11-02-dialogue-and-clockwork-transitions.md); voice rules in [concept/v0.7/07-dialogue.md](concept/v0.7/07-dialogue.md).
 
@@ -45,7 +45,7 @@ Playing uses supplied runtime art; no Blender, AI service or network is needed. 
 | Programming API | [PROGRAMMING](PROGRAMMING.md); rules in `core/`, adapter in `sandbox/`. | `test_lab`, `test_ui`, flow tests. |
 | Interface | [UI](../pipeline/UI.md); `ui/`, `app/game.gd`. | `test_app`, `test_ui`, flow tests. |
 | Asset requests | [asset-requests/README](../asset-requests/README.md); `scripts/asset-requests.sh`. | `test_asset_workflow.py`, `test_asset_request_ui`. |
-| Visual acceptance | [REVIEW](../pipeline/REVIEW.md); `tools/area_shot.gd`, `tools/*_review.gd`; selected `evidence/`. | Captures at the real camera scale. |
+| Visual acceptance | [REVIEW](../pipeline/REVIEW.md); `tools/area_shot.gd`, `tools/reviews/`; selected `evidence/`. | Captures at the real camera scale. |
 
 One active character pipeline: `scripts/art.sh` (`scripts/character-art.sh` delegates to it). Rejected cutout and interpolation experiments live only in import-excluded `art/source/archive/`.
 

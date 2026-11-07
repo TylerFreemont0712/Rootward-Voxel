@@ -16,7 +16,7 @@ Tender’s first SE sheet pointed toward the opposite diagonal; it is preserved 
 
 ## Native review
 
-`tools/wick_tender_review.gd` uses the actual fixed orthographic heading/elevation, camera size 16 and the approved boy for scale. It plays all eight direction sprites with `flip_h=false`, observes all four rolling phases, then captures a closer size-10 view. Review sizes are 1.85 world units for Wick including his carried lantern and 0.95 for Tender; no placed actor was resized.
+`tools/reviews/wick_tender_review.gd` uses the actual fixed orthographic heading/elevation, camera size 16 and the approved boy for scale. It plays all eight direction sprites with `flip_h=false`, observes all four rolling phases, then captures a closer size-10 view. Review sizes are 1.85 world units for Wick including his carried lantern and 0.95 for Tender; no placed actor was resized.
 
 - [1600×1000 gameplay scale](../../evidence/sparks-robots/2026-10-29/1600x1000-directions.png)
 - [1600×1000 closer view](../../evidence/sparks-robots/2026-10-29/1600x1000-detail.png)

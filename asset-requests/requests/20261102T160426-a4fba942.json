@@ -7,17 +7,17 @@
   "status": "finished",
   "notes": "Direct user request 2026-11-03: improve square lighting and optimization; turn market frontage into bakery, food and clothing shops with clear windows and working doors/interiors; clockmaker/apothecary strip and upper park; reusable colliding barriers, simplify hidden lower town. Preserve camera, painted boy and existing adopted source edits. Ground gets spatial chunks and separate reusable retaining wall modules; shops retain their authored upper stories with deliberate storefront edits.",
   "asset": {
-    "id": "haverlund-bookshop",
+    "id": "haverlund-tailor",
     "label": "Finch & Sons, books",
     "catalog": "pipeline/world-catalog.json",
-    "source": "art/source/world/haverlund-bookshop/v1/model.blend",
-    "runtime": "assets/world/haverlund-bookshop/model.glb",
-    "manifest": "assets/world/haverlund-bookshop/manifest.json",
+    "source": "art/source/world/haverlund-tailor/v1/model.blend",
+    "runtime": "assets/world/haverlund-tailor/model.glb",
+    "manifest": "assets/world/haverlund-tailor/manifest.json",
     "catalog_notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend.",
     "related_files": [
-      "art/source/world/haverlund-bookshop/v1/coplanar.json",
-      "art/source/world/haverlund-bookshop/v1/plant-style.json",
-      "art/source/world/haverlund-bookshop/v1/provenance.json",
+      "art/source/world/haverlund-tailor/v1/coplanar.json",
+      "art/source/world/haverlund-tailor/v1/plant-style.json",
+      "art/source/world/haverlund-tailor/v1/provenance.json",
       "art/source/world/square-hub/v1/author_shops.py"
     ],
     "usage_files": [
@@ -28,8 +28,8 @@
       "authority": "blender",
       "status": "integrated_sparks_square",
       "label": "Finch & Sons, books",
-      "source": "art/source/world/haverlund-bookshop/v1/model.blend",
-      "runtime": "assets/world/haverlund-bookshop/model.glb",
+      "source": "art/source/world/haverlund-tailor/v1/model.blend",
+      "runtime": "assets/world/haverlund-tailor/model.glb",
       "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
       "logical_footprint": [
         -2.5,
@@ -57,25 +57,29 @@
     {
       "at": "2026-11-02T16:45:30+00:00",
       "action": "finish"
+    },
+    {
+      "at": "2026-11-07T00:00:00+00:00",
+      "action": "renamed haverlund-tailor (docs/RENAMES_2026-11-07.md); source and runtime unchanged, catalog entry fingerprint re-recorded"
     }
   ],
   "result": {
     "assets": [
-      "haverlund-bookshop"
+      "haverlund-tailor"
     ],
     "summary": "Square renewal reviewed natively at 1600×1000. Fixed lights and spatial source meshes remove camera-distance light competition; 115→66 logical fittings, five enterable saved shops, upper park and colliding reusable barriers. All normal source builds/audits, complete scripts/test.sh, 61 real doorway/Continue checks and full-square eight-light budget pass. Three measured views improve; Rootwell remains the draw-call hotspot. See review for source versions, scope and measurements.",
     "review": "pipeline/reviews/2026-11-03-square-lighting-and-shops.md",
     "contexts": [
       {
-        "id": "haverlund-bookshop",
+        "id": "haverlund-tailor",
         "label": "Finch & Thread · clothier",
         "catalog": "pipeline/world-catalog.json",
-        "source": "art/source/world/haverlund-bookshop/v2/model.blend",
-        "runtime": "assets/world/haverlund-bookshop/model.glb",
-        "manifest": "assets/world/haverlund-bookshop/manifest.json",
+        "source": "art/source/world/haverlund-tailor/v2/model.blend",
+        "runtime": "assets/world/haverlund-tailor/model.glb",
+        "manifest": "assets/world/haverlund-tailor/manifest.json",
         "catalog_notes": "art/source/world/square-hub/v1/author_shops.py is initial authoring only; edit the adopted model.blend. Deliberate square-renewal source edit; previous source version retained. Record: art/source/world/square-renewal/v1/.",
         "related_files": [
-          "art/source/world/haverlund-bookshop/v2/square-renewal.json",
+          "art/source/world/haverlund-tailor/v2/square-renewal.json",
           "art/source/world/square-hub/v1/author_shops.py",
           "art/source/world/square-renewal/v1/README.md"
         ],
@@ -87,8 +91,8 @@
           "authority": "blender",
           "status": "integrated_sparks_square",
           "label": "Finch & Thread · clothier",
-          "source": "art/source/world/haverlund-bookshop/v2/model.blend",
-          "runtime": "assets/world/haverlund-bookshop/model.glb",
+          "source": "art/source/world/haverlund-tailor/v2/model.blend",
+          "runtime": "assets/world/haverlund-tailor/model.glb",
           "pivot": "Footprint centre at ground; shopfront toward Blender -Y (Godot +Z); wares stand up to 0.9 m in front.",
           "logical_footprint": [
             -2.5,
@@ -103,10 +107,10 @@
       }
     ],
     "fingerprints": {
-      "haverlund-bookshop": {
+      "haverlund-tailor": {
         "source": "7f0049bdf55eb36a76317926db3434626501647ab1385c917e7813e285a5856e",
         "runtime": "2ca90531a750d9c0dc1e4abe34949bcdc7cd454e39dbed64743e70e7035978eb",
-        "entry": "6217117219b2eaccadeae83438d929d37844bddc2b7bacc3ac169cdc19038251"
+        "entry": "d2164b6d6d27279d753f29b9b52daf012c1c98bb0f87c5b0b44e2e3439095508"
       }
     }
   }

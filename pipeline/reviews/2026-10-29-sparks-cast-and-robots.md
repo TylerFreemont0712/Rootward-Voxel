@@ -16,14 +16,14 @@ The robots are Pip (postal sorter), Trowel (gardener), Wick (lamplighter), Heron
 
 ## Native visual review
 
-`tools/sparks_cast_review.gd` runs the actual `SpriteAdventurer` with the approved boy beside all five new skins in four directions. It captures walk playback and an eight-second neutral/breath/blink sequence. Both 1600×1000 and 1280×720 reviews show 24 complete actors; all 12 front views blink and all rear views retain their neutral artwork. The orthographic heading, elevation and approximate gameplay pixel height follow the existing character review fixture.
+`tools/reviews/sparks_cast_review.gd` runs the actual `SpriteActor` with the approved boy beside all five new skins in four directions. It captures walk playback and an eight-second neutral/breath/blink sequence. Both 1600×1000 and 1280×720 reviews show 24 complete actors; all 12 front views blink and all rear views retain their neutral artwork. The orthographic heading, elevation and approximate gameplay pixel height follow the existing character review fixture.
 
 - [1600×1000 directions](../../evidence/sparks-cast/2026-10-29/1600x1000-directions.png)
 - [1600×1000 blinks](../../evidence/sparks-cast/2026-10-29/1600x1000-blink.png)
 - [1280×720 directions](../../evidence/sparks-cast/2026-10-29/1280x720-directions.png)
 - [1280×720 blinks](../../evidence/sparks-cast/2026-10-29/1280x720-blink.png)
 
-The derived documentation movement sheets and GIF inputs come from `tools/sparks_sprite_gallery.gd`; preview resizing does not alter source paintings or runtime atlases. Robot preview scale is fitted for comparison rather than a world-height decision.
+The derived documentation movement sheets and GIF inputs come from `tools/reviews/sparks_sprite_gallery.gd`; preview resizing does not alter source paintings or runtime atlases. Robot preview scale is fitted for comparison rather than a world-height decision.
 
 ## Verification
 

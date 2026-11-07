@@ -59,7 +59,7 @@ def main():
             'asset': options.asset, 'version': entry['version'], 'created': datetime.now(timezone.utc).isoformat(),
             'seed_sha256': digest(seed), 'recipe': 'pipeline/world_seed.gd',
             'recipe_sha256': digest(ROOT / 'pipeline/world_seed.gd'),
-            'geometry_recipe_sha256': digest(ROOT / 'scenes/clearing_view.gd'),
+            'geometry_recipe_sha256': digest(ROOT / 'scenes/world_view.gd'),
             'note': 'One-way procedural bootstrap. model.blend becomes the editable source after init.'
         }, indent=2) + '\n')
     elif options.operation == 'init':

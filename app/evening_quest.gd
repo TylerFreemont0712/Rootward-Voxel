@@ -4,7 +4,7 @@ extends RefCounted
 var game: Game
 var _content: Node3D
 var _holder: Node3D
-var _actor: SpriteAdventurer
+var _actor: SpriteActor
 var _path: Array[Vector2i] = []
 
 func _init(owner_game: Game) -> void:game=owner_game
@@ -19,7 +19,7 @@ func tick(delta: float) -> void:
 		_holder=Node3D.new()
 		_holder.name="NellReturned"
 		_content.add_child(_holder)
-		_actor=SpriteAdventurer.new()
+		_actor=SpriteActor.new()
 		_actor.skin_id="sparks_nell"
 		_holder.add_child(_actor)
 		var at: Array = config.arrival if not game.session.state.inspections_read.has("nell-evening") else config.stand

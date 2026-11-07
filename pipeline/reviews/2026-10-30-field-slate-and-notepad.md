@@ -1,6 +1,6 @@
 # Field slate and spiral notepad — 2026-10-30
 
-The user liked the idea of the code surface as its own solid device, with Field Notes kept separately for instructions, names and hints, and asked to see it in game with both in view. Two decisions came with it: only zones are plugged in (everything else links "like bluetooth"), and Field Notes should feel like a ringed notepad. The first greeting at the loft terminal stays as it was. Reviewed at 1920×1080 with `tools/tablet_review.gd` (frames in `.cache/tablet/`, not committed).
+The user liked the idea of the code surface as its own solid device, with Field Notes kept separately for instructions, names and hints, and asked to see it in game with both in view. Two decisions came with it: only zones are plugged in (everything else links "like bluetooth"), and Field Notes should feel like a ringed notepad. The first greeting at the loft terminal stays as it was. Reviewed at 1920×1080 with `tools/reviews/tablet_review.gd` (frames in `.cache/tablet/`, not committed).
 
 ## What it looks like
 

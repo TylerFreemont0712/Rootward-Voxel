@@ -14,7 +14,7 @@ This continues the [opening storyboard](storyboard.md). The user proposed a neig
 
 Build the sign as one main quest. Save the gate-lamp condition lesson for afterward, rather than requiring another single-lamp tutorial before anyone can reach the sign. Its old “Again?” complaint remains useful for the developing supply mystery. The sign is a fresh success with room for personal expression.
 
-**Name:** the user used **Braum**. Use that display name in this draft for the established carpenter/neighbour; retain existing `bram` / `sparks_bram` asset IDs and identity. Do not create a second almost-identical carpenter or rename resources as a side effect of this proposal.
+**Name:** the user used **Braum**. Use that display name in this draft for the established carpenter/neighbour; the sprite id is now `sparks_braum` (2026-11-07) and identity. Do not create a second almost-identical carpenter or rename resources as a side effect of this proposal.
 
 ## What makes this a quest
 
@@ -254,18 +254,18 @@ Implemented contract:
 6. Debug remains a detached card with manual Next/Replay and an obvious ghost indication. Apply commits that same proposal atomically. Edits, motion, context changes and travel invalidate it. Raw stdout/error text is not trusted device content; the existing result framing and core checks remain in force.
 7. Save the installed messages and editable source with the area/journey. A lightweight presenter cycles the committed pages every roughly four seconds, resetting its cosmetic phase on re-entry if convenient. It never repeatedly runs Python, holds a worker alive, performs `sleep`, or saves every visual tick.
 
-Limits are one to three nonblank messages, each at most 32 characters from printable ASCII or Latin-1 (excluding control characters). Two distinct messages complete the goal. Text wraps deterministically into two rows of 16 fixed-advance character cells; overlong/unsupported output gives an explicit error. The sign uses the same WorkshopJobsJournal slate, notepad, Dark+ editor and line debugger as the light jobs. Its card readout includes a Next page button. The slate sidebar can be dragged, folded or hidden with Ctrl+B.
+Limits are one to three nonblank messages, each at most 32 characters from printable ASCII or Latin-1 (excluding control characters). Two distinct messages complete the goal. Text wraps deterministically into two rows of 16 fixed-advance character cells; overlong/unsupported output gives an explicit error. The sign uses the same JobsJournal slate, notepad, Dark+ editor and line debugger as the light jobs. Its card readout includes a Next page button. The slate sidebar can be dragged, folded or hidden with Ctrl+B.
 
 ### Art and character work
 
 - **Tram welcome sign:** new adopted world asset, cream enamel/brass with a dark glass message face and warm, high-contrast lettering. Match the workshop terminals and seaside street, with a small maintenance lid and slate socket. A static stop-name plaque and a two-row changeable face keep it useful with any custom text. No modern neon advertising wall is needed.
 - **Placement:** beside the tram stair landing/shelter, facing the pedestrian approach. Keep clear of tracks, the tram's movement envelope, passenger arrival cells, handrails and the ordinary path to the workshop. The current `tram-halt` inspection approaches `[18, 2]`; this is a reference for locating the work, not an approved new sign footprint.
 - **Readability proof:** actual 1600×1000 and 1280×720 camera views, at the normal camera scale, with the longest allowed page. Make the physical panel/text layout readable from the approach before adding decorative detail. Also provide a nearby inspection view with current message, page navigation and the full card. Inspection supports the sign; it must not be the only place its lettering exists.
-- **Braum:** reuse the established `sparks_bram` appearance. Author his entrance/gate presentation and a portrait matching his selected clothes if the existing portrait does not. Preserve the old masters and IDs. No new motion template is needed.
+- **Braum:** reuse the established `sparks_braum` appearance. Author his entrance/gate presentation and a portrait matching his selected clothes if the existing portrait does not. Preserve the old masters and IDs. No new motion template is needed.
 - **Iona:** a new shared-frame skin, full-body conversation portrait, prompts/provenance and catalog entries through the existing art build. Cropped dark curls with a silver forelock, blue work apron, bone-coloured paint marks and a narrow rolled smock distinguish her from Nell, Mira and Tessa. No one-sided writing on clothing that would break mirrored frames.
 - **Work dressing:** one restrained tool roll/paint pot/temporary trestle group if useful. Reuse suitable existing props; no new house interior or wholesale tram-station rebuild is required.
 
-World-art work goes through [asset requests](../../../asset-requests/README.md) and the existing world build. The sign and garden hinge have asset-request records and delivered review artifacts. Character skins/portraits use their established catalogs. Human story participants also need a modest dialogue extension: `WorkshopStory` now permits Braum and Iona as named speakers, switches their whole-body portraits and preserves the replying speaker and player name in the log.
+World-art work goes through [asset requests](../../../asset-requests/README.md) and the existing world build. The sign and garden hinge have asset-request records and delivered review artifacts. Character skins/portraits use their established catalogs. Human story participants also need a modest dialogue extension: `StoryScenes` now permits Braum and Iona as named speakers, switches their whole-body portraits and preserves the replying speaker and player name in the log.
 
 ## Build order and proof
 

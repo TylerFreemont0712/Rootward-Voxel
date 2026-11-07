@@ -125,10 +125,10 @@ func _robots() -> void:
 	if not proposal.ok:return
 	var after: Dictionary=proposal.state
 	_check(after.robot_programs["square-wick"].speed==2.5 and after.robot_programs["square-wick"].route.size()==2,"The chosen pace and two-stop round are committed data")
-	var life: Dictionary=VillageLife.initial(area)
-	var before: Vector2=VillageLife.position(life["square-wick"])
-	VillageLife.advance(area,rules,after,life,10)
-	_check(VillageLife.position(life["square-wick"])==before,"A paused robot actually stops its work round")
+	var life: Dictionary=TownLife.initial(area)
+	var before: Vector2=TownLife.position(life["square-wick"])
+	TownLife.advance(area,rules,after,life,10)
+	_check(TownLife.position(life["square-wick"])==before,"A paused robot actually stops its work round")
 	_check(rules.normalize_state(after).robot_programs==after.robot_programs,"Valid robot instructions survive save/restore")
 	var damaged: Dictionary=after.duplicate(true)
 	damaged.robot_programs["square-wick"][12]=false
@@ -136,7 +136,7 @@ func _robots() -> void:
 	var resume: Dictionary=rules.propose(after,[{"op":"set_robot","id":"square-wick","field":"running","value":true}],{})
 	var stops: Array=[]
 	for frame: int in range(2000):
-		VillageLife.advance(area,rules,resume.state,life,.1)
+		TownLife.advance(area,rules,resume.state,life,.1)
 		var worker: Dictionary=life["square-wick"]
 		if worker.target!="" and (stops.is_empty() or stops[-1]!=worker.target):stops.append(worker.target)
 		if stops.size()==2:break
@@ -152,13 +152,13 @@ func _robots() -> void:
 	lane_state.player=[11,21,0]
 	lane_state.terminal_links=["lane-service-terminal"]
 	lane_state.zones_seen=lane.zones.map(func(zone: Dictionary)->String:return zone.id)
-	var scheduled: Dictionary=VillageLife.initial(lane)
+	var scheduled: Dictionary=TownLife.initial(lane)
 	var first_worker: String=str(scheduled.keys()[0])
 	var clock_pause: Dictionary=lane_rules.propose(lane_state,[{"op":"set_robot","id":first_worker,"field":"running","value":false}],{})
-	var service_before: float=VillageLife.clock(scheduled)
-	var worker_before: Vector2=VillageLife.position(scheduled[first_worker])
-	if clock_pause.ok:VillageLife.advance(lane,lane_rules,clock_pause.state,scheduled,1.0)
-	_check(clock_pause.ok and VillageLife.clock(scheduled)>service_before and VillageLife.position(scheduled[first_worker])==worker_before,"Pausing the first worker cannot freeze the district tram/passenger service clock")
+	var service_before: float=TownLife.clock(scheduled)
+	var worker_before: Vector2=TownLife.position(scheduled[first_worker])
+	if clock_pause.ok:TownLife.advance(lane,lane_rules,clock_pause.state,scheduled,1.0)
+	_check(clock_pause.ok and TownLife.clock(scheduled)>service_before and TownLife.position(scheduled[first_worker])==worker_before,"Pausing the first worker cannot freeze the district tram/passenger service clock")
 
 func _check(ok: bool, message: String) -> void:
 	checks+=1
@@ -166,7 +166,7 @@ func _check(ok: bool, message: String) -> void:
 
 func _drafts() -> void:
 	var area: AreaDef=AreaStore.load_area("workshop-loft")
-	var view:=ClearingView.new()
+	var view:=WorldView.new()
 	root.add_child(view)
 	await process_frame
 	view.setup(area)

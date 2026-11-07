@@ -249,7 +249,7 @@ func _prop_tests() -> void:
 	_check(not ledger.check_item("house-hollow", chest, "S", state).ok, "A house cannot be built over a prop")
 	_check(not ledger.check_item("tree-oak", chest + Vector2(0.5, 0.0), "S", state).ok, "A tree keeps clear of a prop")
 	_check(ledger.check_item("wooden-chair", Vector2(44, 10), "S", state).reason == "Water is in the way.", "A prop cannot stand in the river")
-	_check(ledger.check_item("wooden-chair", Vector2(-1, 5), "S", state).reason == "Keep it inside the valley.", "...or off the map")
+	_check(ledger.check_item("wooden-chair", Vector2(-1, 5), "S", state).reason == "Keep it inside this place.", "...or off the map")
 	var standing: Dictionary = _state(ledger, Vector2i(34, 5))
 	var on_player: Dictionary = ledger.check_item("woodpile", Vector2(34, 5), "S", standing)
 	_check(on_player.reason == "You are standing there.", "A prop that blocks cannot be put on the player (%s)" % on_player.reason)

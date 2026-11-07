@@ -1,10 +1,10 @@
 # Tablet screen, VS Code editor and blue ghost text — 2026-10-30
 
-Slice 1 of [the quest line and tablet plan](../../docs/concept/v0.7/10-quest-line-and-tablet-plan.md), plus a small request the user made while it was in progress. Reviewed in Godot at 1600×1000 with `tools/tablet_review.gd`; frames are written to `.cache/tablet/` (not committed).
+Slice 1 of [the quest line and tablet plan](../../docs/concept/v0.7/10-quest-line-and-tablet-plan.md), plus a small request the user made while it was in progress. Reviewed in Godot at 1600×1000 with `tools/reviews/tablet_review.gd`; frames are written to `.cache/tablet/` (not committed).
 
 ## What changed
 
-- **Code is on glass.** The greeting page and every job page put their editor on a `TabletScreen`: file tabs, the editor, an OUTPUT strip and a status bar in VS Code Dark+ colours (`ui/code_palette.gd`). Job pages use the field slate; the greeting uses the loft desk terminal. Names a program makes up (`lamp`, `lamps`, `world`) are coloured as variables. The loop example in the morning-round guide is a read-only code block in the same colours.
+- **Code is on glass.** The greeting page and every job page put their editor on a `TabletScreen`: file tabs, the editor, an OUTPUT strip and a status bar in VS Code Dark+ colours (`ui/code/code_palette.gd`). Job pages use the field slate; the greeting uses the loft desk terminal. Names a program makes up (`lamp`, `lamps`, `world`) are coloured as variables. The loop example in the morning-round guide is a read-only code block in the same colours.
 - **The tablet is always whole.** It sits below the scrolling paper instructions rather than inside them, so a long page (the morning round) no longer pushes the editor and output off the bottom.
 - **Replay is a debugger.** The executing line has VS Code's yellow highlight and a gutter arrow; any values the line worked with are written dim at its end. The caption reads `Line 3`, with values only when there are some.
 - **Ghost text is blue.** A Test's speech is a translucent ice-blue bubble with a dashed outline whose dashes march, a breathing glow, thought-dots, a `TEST · GHOST` caption and a gentle bob, its newest letters fading in. Real speech is unchanged. World proposals (lamp glass, ghost boxes, bridge decks, gates, routes of builder previews) are the same blue, outlined, with coral for removal.

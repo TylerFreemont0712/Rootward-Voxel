@@ -1,7 +1,7 @@
 extends SceneTree
 ## Export contract for all six refined models: preserved sources, independent blink and wheel/pole sides.
 
-const Assets:=preload("res://art/world_assets.gd")
+const WorldAssets:=preload("res://art/world_assets.gd")
 var checks: int=0
 var failures: Array[String]=[]
 
@@ -10,10 +10,10 @@ func _initialize()->void:run.call_deferred()
 func run()->void:
 	for name: String in ["pip","wick","trowel","heron","tender","tally"]:
 		var id: String="robot-"+name
-		var spec:=Assets.entry(id)
+		var spec:=WorldAssets.entry(id)
 		var provenance: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://art/source/world/"+id+"/v2/provenance.json"))
 		_check(spec.version=="v2" and FileAccess.get_sha256("res://"+str(provenance.previous_source))==str(provenance.previous_source_sha256),id+" retains its original adopted source")
-		var model:=Assets.instantiate(id)
+		var model:=WorldAssets.instantiate(id)
 		root.add_child(model)
 		await process_frame
 		var blink:=model.get_node_or_null("SparkBlink") as RobotBlink
@@ -37,7 +37,7 @@ func run()->void:
 		for wheel: Node3D in wheels:
 			var radius: float=float(WorldAssetMeta.value(wheel,"wheel_radius",.12))
 			_check(radius>.03 and radius<.20 and absf(wheel.position.y-radius)<.012,id+" axle puts its wheel on the floor")
-		var presenter:=WorkshopLaneStage.new()
+		var presenter:=LaneStage.new()
 		var route: Array[Vector3]=[Vector3.ZERO,Vector3(0,0,10)]
 		var trip: Dictionary={"node":model,"points":route,"next":1,"wait":0.0,"speed":1.0,"wheels":wheels,"loop":false,"step":1,"pause":0.0}
 		if not wheels.is_empty():

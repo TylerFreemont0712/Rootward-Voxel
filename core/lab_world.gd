@@ -212,7 +212,7 @@ func normalize_state(raw: Variant) -> Dictionary:
 				if (building.get("collision_rects",[]) as Array).is_empty() or _circle_intersects_rect(Vector2(cell),building.rect):continue
 				for solid: Rect2 in building.collision_rects:
 					if _circle_intersects_rect(Vector2(cell),solid):recovered=HouseInstances.door(area,building.id)
-		if recovered.x<0 and area.id in ["morning-bedroom", "workshop-loft", "workshop-floor", "shop-clockmaker"]:
+		if recovered.x<0 and area.id in ["workshop-loft", "workshop-floor", "shop-clockmaker"]:
 			# These rooms gained/rearranged furniture in version 2. Preserve the
 			# saved program memory and lessons; move only an obstructed player.
 			recovered=area.spawn

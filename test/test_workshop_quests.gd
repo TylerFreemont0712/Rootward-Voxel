@@ -56,19 +56,19 @@ func _rules() -> void:
 		else:doc.interior.lamp_fixtures[0].asset="not-a-room-asset"
 		_check(not AreaDef.parse(doc,source.assets,source.quests).ok,"Invalid fixture mapping is rejected: "+defect)
 	var scenes: Dictionary=JourneyStory.read("res://content/journeys/sparks-and-machines.json").scenes
-	_check(WorkshopStory.valid(scenes),"Every scene has bounded original prose, speaker and reply data")
-	_check(WorkshopStory.log_line(scenes, {"scene":"loft-waking", "page":3, "kind":"page"}).text.contains("work ticket downstairs"), "Earlier saved story tokens still point to their original line")
-	_check(WorkshopStory.pending(scenes,"workshop-floor",["say-hello"],[])=="workshop-arrival","Committed greeting offers the first downstairs conversation")
-	_check(WorkshopStory.pending(scenes,"workshop-floor",["say-hello"],["workshop-arrival"])=="","A lighting preview cannot schedule the completion scene")
-	_check(WorkshopStory.pending(scenes,"workshop-floor",["say-hello","landing-light"],["workshop-arrival"],{})=="","Turning a finished light off postpones narration that requires it to be lit")
-	_check(WorkshopStory.pending(scenes,"workshop-floor",["say-hello","landing-light"],["workshop-arrival"],{"landing-lamp":true})=="landing-lit","Relighting the fitting makes its unread consequence available again")
-	_check(WorkshopStory.restore_read(["round-ready","unknown","round-ready"],scenes)==["round-ready"],"Saved story reads are whitelisted and deduplicated")
-	var tokens: Array=WorkshopStory.restore_log([{"scene":"waiting-ticket","page":2,"kind":"choice","choice":1},{"scene":"unknown","page":0,"kind":"page"},{"scene":"waiting-ticket","page":2,"kind":"reply","choice":-1}],scenes)
-	_check(tokens.size()==1 and WorkshopStory.log_line(scenes,tokens[0]).speaker=="player","Story logs restore only valid authored choices")
-	_check(WorkshopStory.restore_log("unbounded text",scenes).is_empty(),"A malformed story log cannot inject saved prose")
+	_check(StoryScenes.valid(scenes),"Every scene has bounded original prose, speaker and reply data")
+	_check(StoryScenes.log_line(scenes, {"scene":"loft-waking", "page":3, "kind":"page"}).text.contains("work ticket downstairs"), "Earlier saved story tokens still point to their original line")
+	_check(StoryScenes.pending(scenes,"workshop-floor",["say-hello"],[])=="workshop-arrival","Committed greeting offers the first downstairs conversation")
+	_check(StoryScenes.pending(scenes,"workshop-floor",["say-hello"],["workshop-arrival"])=="","A lighting preview cannot schedule the completion scene")
+	_check(StoryScenes.pending(scenes,"workshop-floor",["say-hello","landing-light"],["workshop-arrival"],{})=="","Turning a finished light off postpones narration that requires it to be lit")
+	_check(StoryScenes.pending(scenes,"workshop-floor",["say-hello","landing-light"],["workshop-arrival"],{"landing-lamp":true})=="landing-lit","Relighting the fitting makes its unread consequence available again")
+	_check(StoryScenes.restore_read(["round-ready","unknown","round-ready"],scenes)==["round-ready"],"Saved story reads are whitelisted and deduplicated")
+	var tokens: Array=StoryScenes.restore_log([{"scene":"waiting-ticket","page":2,"kind":"choice","choice":1},{"scene":"unknown","page":0,"kind":"page"},{"scene":"waiting-ticket","page":2,"kind":"reply","choice":-1}],scenes)
+	_check(tokens.size()==1 and StoryScenes.log_line(scenes,tokens[0]).speaker=="player","Story logs restore only valid authored choices")
+	_check(StoryScenes.restore_log("unbounded text",scenes).is_empty(),"A malformed story log cannot inject saved prose")
 	var broken: Dictionary=scenes.duplicate(true)
 	broken["workshop-arrival"].pages[0].text="x".repeat(501)
-	_check(not WorkshopStory.valid(broken),"Oversize story pages are rejected")
+	_check(not StoryScenes.valid(broken),"Oversize story pages are rejected")
 	var manifest: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://assets/world/loft-window-life/manifest.json"))
 	_check(not manifest.audit.material_records.keys().any(func(key: String) -> bool: return key.contains("leaf") or key.contains("soil")),"Only the windowsill plant is removed from its keepsakes asset")
 	_check(manifest.audit.bounds[0]>.03 and manifest.audit.bounds[4]>.3,"The windowsill book and keepsake box remain")
@@ -101,19 +101,19 @@ func _play() -> void:
 	game.session.request_step(Vector2i(0,-1))
 	while game._flow_busy:await process_frame
 	game._refresh_interaction()
-	_check(game._modals.size()==1 and game._modals[0] is WorkshopScene,"The next conversation starts in the actual workshop after descent")
-	_check(not game.workshop_speech.visible,"A dialogue card suppresses the duplicate speech bubble behind it")
+	_check(game._modals.size()==1 and game._modals[0] is DialogueWindow,"The next conversation starts in the actual workshop after descent")
+	_check(not game.world_speech.visible,"A dialogue card suppresses the duplicate speech bubble behind it")
 	if game._modals.is_empty():return
-	var arrival:=game._modals[0] as WorkshopScene
+	var arrival:=game._modals[0] as DialogueWindow
 	_check(arrival._portrait.texture!=null,"The story stage uses the selected robot portrait")
 	await shot("02-workshop-arrival")
 	arrival.close()
 	game._refresh_interaction()
 	_check(game._modals.is_empty() and not game._dialogue_read.get("workshop-scenes",[]).has("workshop-arrival"),"Leaving a scene does not mark it read or immediately reopen it")
 	game.talk_hotaru()
-	_drain(game._modals[0] as WorkshopScene,1)
+	_drain(game._modals[0] as DialogueWindow,1)
 	_check(game._dialogue_read["workshop-scenes"].has("workshop-arrival"),"Returning to Hotaru completes the chosen conversation")
-	_check(game._workshop_log.any(func(token: Dictionary) -> bool:return token.kind=="choice") and game._workshop_log.any(func(token: Dictionary) -> bool:return token.kind=="reply"),"The saved log records the chosen player line and its answer")
+	_check(game._dialogue_log.any(func(token: Dictionary) -> bool:return token.kind=="choice") and game._dialogue_log.any(func(token: Dictionary) -> bool:return token.kind=="reply"),"The saved log records the chosen player line and its answer")
 	_check(game.session.walk_to(Vector2i(12,10)),"The board can be reached from the upper landing by the actual stair route")
 	# Drive the authored route through session steps without depending on desktop focus.
 	var route: Array[Vector2i]=game.session._route.duplicate()
@@ -123,11 +123,11 @@ func _play() -> void:
 		game.session.advance_walk(LabWorld.STEP_SECONDS)
 	_check(game.session.player_cell()==Vector2i(12,10),"The route descends the flight and reaches the board")
 	game.interact()
-	var ticket:=game._modals[0] as WorkshopScene
+	var ticket:=game._modals[0] as DialogueWindow
 	ticket.close()
 	_check(not game.session.completed.has("waiting-ticket"),"Closing the ticket before finishing leaves the reading quest open")
 	game.interact()
-	ticket=game._modals[0] as WorkshopScene
+	ticket=game._modals[0] as DialogueWindow
 	for n: int in range(6):ticket.advance()
 	await shot("03-ticket-choice")
 	_drain(ticket,0)
@@ -146,8 +146,8 @@ func _play() -> void:
 	game.view.sync_player(game.session.state)
 	game.session.state.items = []
 	game._activate_device("landing-lamp")
-	_check(not game.notebook_open and game.workshop_speech._inspection.get("id", "") == "landing-lamp", "Without the tablet the lantern's fitting only describes itself")
-	game.workshop_speech.dismiss_inspection()
+	_check(not game.notebook_open and game.world_speech._inspection.get("id", "") == "landing-lamp", "Without the tablet the lantern's fitting only describes itself")
+	game.world_speech.dismiss_inspection()
 	game.session.state.items = carried
 	game.session.state.player = [7,11,0]
 	game.view.sync_player(game.session.state)
@@ -164,15 +164,15 @@ func _play() -> void:
 		game.session.request_step(cell-game.session.player_cell())
 		game.session.advance_walk(LabWorld.STEP_SECONDS)
 	game._process(0)
-	_check(game.session.player_cell() == Vector2i(5,11) and game.journal is WorkshopJobsJournal and game.journal._page == "landing-light" and game.session.state.terminal_links.is_empty(), "Walking to the lantern opens its job page without linking the zone's screen")
-	_check((game.journal as WorkshopJobsJournal)._pages.item_count == 1, "Beside the lantern only the lantern's page is offered")
-	var slate := game.journal as WorkshopJobsJournal
+	_check(game.session.player_cell() == Vector2i(5,11) and game.journal is JobsJournal and game.journal._page == "landing-light" and game.session.state.terminal_links.is_empty(), "Walking to the lantern opens its job page without linking the zone's screen")
+	_check((game.journal as JobsJournal)._pages.item_count == 1, "Beside the lantern only the lantern's page is offered")
+	var slate := game.journal as JobsJournal
 	_check(slate._tablet.link_kind == TabletScreen.Link.WIRELESS and is_instance_valid(game._slate_link) and not game._slate_link.wired, "Beside a single fitting the slate pairs over the air, and the room shows the signal")
 	var pad: Rect2 = slate._notepad.get_global_rect()
 	var dock: Rect2 = Rect2(Vector2(game.size.x - slate.drawer_width - SideDrawer.MARGIN, 0), Vector2(slate.drawer_width, game.size.y))
 	_check(pad.position.x < dock.position.x and pad.end.x > dock.position.x and pad.end.y > game.size.y * .9 and slate._notepad.current() == &"job", "The notepad is clipped to the slate's lower end, open at the job")
 	await shot("03c-connected-terminal")
-	var notes:=game.journal as WorkshopJobsJournal
+	var notes:=game.journal as JobsJournal
 	await notes.preview()
 	_check(game.session.has_preview() and not game.session.preview_state().lamps["landing-lamp"] and not game.session.completed.has("landing-light"),"The unchanged starter leaves the lamp visibly off and the quest incomplete")
 	notes.editor.text=LIGHT
@@ -202,7 +202,7 @@ func _play() -> void:
 	_check(notes._done.visible and not notes._run.visible and not notes._apply.visible, "A finished job offers one plain key: put the slate away and carry on")
 	game.close_notebook(true)
 	game._refresh_interaction()
-	var lit:=game._modals[0] as WorkshopScene
+	var lit:=game._modals[0] as DialogueWindow
 	await shot("05-lantern-consequence")
 	_drain(lit,2)
 	for n: int in range(3):await process_frame
@@ -215,7 +215,7 @@ func _play() -> void:
 		game.session.advance_walk(LabWorld.STEP_SECONDS)
 	game._process(0)
 	_check(game.session.state.terminal_links.has("workshop-terminal") and game.session.player_cell() == Vector2i(1,2), "Standing at the wall screen with the tablet links the room's zone")
-	notes=game.journal as WorkshopJobsJournal
+	notes=game.journal as JobsJournal
 	_check(notes._page=="morning-round" and notes.editor.text.contains("lamps[0]"),"The screen opens the distinct round starter")
 	_check(notes._tablet.link_kind == TabletScreen.Link.WIRED and is_instance_valid(game._slate_link) and game._slate_link.wired, "At a zone's screen the slate is plugged in, and its cord runs to the socket")
 	var reserve: float = notes.extra_reserve()
@@ -240,27 +240,27 @@ func _play() -> void:
 	_check(game.session.workshop_pages["landing-light"]==LIGHT and game.session.workshop_pages["morning-round"]==ROUND and game.session.greeting_editor.python==CompanionLesson.STARTER,"The greeting and both job drafts retain their separate sources")
 	game.close_notebook(true);game._refresh_interaction()
 	_check(game._slate_link == null and is_equal_approx(game.view.zoom(), game._indoor_zoom(0.0)), "Putting the slate down unplugs it and returns the room's zoom")
-	var ending:=game._modals[0] as WorkshopScene
+	var ending:=game._modals[0] as DialogueWindow
 	_drain(ending,1)
 	_check(game._dialogue_read["workshop-scenes"].has("round-ready"),"The final reaction and the next complaint have a saved reading boundary")
 	game.session.state.player=[8,5,0];game.view.sync_player(game.session.state)
 	await shot("07-round-kept")
-	var log_size: int=game._workshop_log.size()
+	var log_size: int=game._dialogue_log.size()
 	game.session.state.player=[3,10,0];game.view.sync_player(game.session.state)
 	game.interact()
-	_check(game._modals.is_empty() and game.workshop_speech._inspection.get("id")=="bread-cupboard" and game.session.input_enabled,"Object inspection is a world bubble and keeps movement available")
-	_check(game._workshop_log.size()==log_size,"Incidental inspection text stays out of the story log")
+	_check(game._modals.is_empty() and game.world_speech._inspection.get("id")=="bread-cupboard" and game.session.input_enabled,"Object inspection is a world bubble and keeps movement available")
+	_check(game._dialogue_log.size()==log_size,"Incidental inspection text stays out of the story log")
 	await shot("08-object-bubble")
 	game.session.state.player=[8,5,0];game.view.sync_player(game.session.state)
 	for frame: int in range(3):await process_frame
-	_check(game.workshop_speech._inspection.is_empty(),"Walking away dismisses an object bubble")
+	_check(game.world_speech._inspection.is_empty(),"Walking away dismisses an object bubble")
 	game.talk_hotaru()
-	_check(game._modals.is_empty() and (game.view.stage as WorkshopLoftStage).speech_speaker=="hotaru" and game._workshop_log.size()==log_size,"Already-read companion chatter uses one unlogged speech bubble")
-	game.open_workshop_log()
-	_check(game._modals.size()==1 and game._modals[0] is WorkshopLog,"The saved transcript opens as an intentional side drawer")
+	_check(game._modals.is_empty() and (game.view.stage as LoftStage).speech_speaker=="hotaru" and game._dialogue_log.size()==log_size,"Already-read companion chatter uses one unlogged speech bubble")
+	game.open_dialogue_log()
+	_check(game._modals.size()==1 and game._modals[0] is DialogueLog,"The saved transcript opens as an intentional side drawer")
 	await shot("09-story-log")
-	(game._modals[0] as WorkshopLog).close()
-	var saved_log: Array=game._workshop_log.duplicate(true)
+	(game._modals[0] as DialogueLog).close()
+	var saved_log: Array=game._dialogue_log.duplicate(true)
 	game.save_now()
 	await game._return_to_title()
 	await game.continue_game("sparks-and-machines")
@@ -268,18 +268,18 @@ func _play() -> void:
 	_check(game.area.id=="workshop-floor" and game.session.completed.has("morning-round") and game.session.state.inspections_read.has("job-board"),"Continue restores the completed chapter and actual ticket discovery")
 	_check(game._modals.is_empty() and game._dialogue_read["workshop-scenes"].has("round-ready"),"Read scenes do not replay on Continue")
 	_check(game.session.workshop_pages["landing-light"]==LIGHT and game.session.workshop_pages["morning-round"]==ROUND,"Both editable routines survive Continue")
-	_check(game._workshop_log==saved_log,"The authored story transcript and selected responses survive Continue")
+	_check(game._dialogue_log==saved_log,"The authored story transcript and selected responses survive Continue")
 	_check(game.session.state.terminal_links.has("workshop-terminal"), "The fixed terminal connection survives Continue")
 	game.session.state.player=[9,3,0]
 	game.view.sync_player(game.session.state)
 	game.open_notebook()
-	_check(game.journal is WorkshopJournal and not game.session.rules.snapshot(game.session.state).zones.size() > 0,"Field Notes away from the screen is the plain open page and reaches no zone")
+	_check(game.journal is GreetingJournal and not game.session.rules.snapshot(game.session.state).zones.size() > 0,"Field Notes away from the screen is the plain open page and reaches no zone")
 	game.close_notebook(true)
 	game.session.state.player=[1,2,0]
 	game.view.sync_player(game.session.state)
 	game._activate_terminal("workshop-terminal")
-	_check(game.journal is WorkshopJobsJournal,"After the chapter the job pages remain at the screen for experiments")
-	_check((game.journal as WorkshopJobsJournal)._page=="morning-round","The completed chapter opens its most recent routine rather than the old ticket")
+	_check(game.journal is JobsJournal,"After the chapter the job pages remain at the screen for experiments")
+	_check((game.journal as JobsJournal)._page=="morning-round","The completed chapter opens its most recent routine rather than the old ticket")
 	game.close_notebook(true)
 	game.session.state.player=[6,8,0]
 	game.view.sync_player(game.session.state)
@@ -287,11 +287,11 @@ func _play() -> void:
 	while game._flow_busy:await process_frame
 	_check(game.area.id=="workshop-loft" and game.session.workshop_pages.get("morning-round")==ROUND,"The saved job drafts travel back upstairs with the player")
 	game.open_journal()
-	_check(game._modals[0] is WorkshopJobLedger and _has_text(game._modals[0], "The morning round"), "The job book keeps reached downstairs work visible after returning upstairs")
+	_check(game._modals[0] is JobLedger and _has_text(game._modals[0], "The morning round"), "The job book keeps reached downstairs work visible after returning upstairs")
 	await shot("10-job-book-after-round")
-	(game._modals[0] as WorkshopJobLedger).close()
+	(game._modals[0] as JobLedger).close()
 	game.open_notebook()
-	_check(game.journal is WorkshopJournal and game.journal.editor.text==CompanionLesson.STARTER,"The original greeting remains independently editable after both jobs")
+	_check(game.journal is GreetingJournal and game.journal.editor.text==CompanionLesson.STARTER,"The original greeting remains independently editable after both jobs")
 	game.close_notebook(true)
 	game.session.request_step(Vector2i(0,-1))
 	while game._flow_busy:await process_frame
@@ -323,7 +323,7 @@ func _fixture_visible() -> bool:
 					if hit!=null and origin.distance_to(hit)<origin.distance_to(target)-.03:return false
 	return true
 
-func _drain(scene: WorkshopScene, choice: int = 0) -> void:
+func _drain(scene: DialogueWindow, choice: int = 0) -> void:
 	for n: int in range(60):
 		if not is_instance_valid(scene) or scene.is_queued_for_deletion():return
 		if scene._choices.visible:scene._choose(scene._page.choices[mini(choice,scene._page.choices.size()-1)])

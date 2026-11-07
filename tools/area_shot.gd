@@ -17,7 +17,7 @@ func _run() -> void:
 	if area == null:
 		quit(1)
 		return
-	var view := ClearingView.new()
+	var view := WorldView.new()
 	root.add_child(view)
 	await process_frame
 	var started: int = Time.get_ticks_msec()
@@ -26,7 +26,7 @@ func _run() -> void:
 	var focus := Vector2(area.spawn)
 	if args.size() >= 4:
 		focus = Vector2(float(args[2]), float(args[3]))
-	view.set_camera_mode(ClearingView.CameraMode.FIXED)
+	view.set_camera_mode(WorldView.CameraMode.FIXED)
 	view.focus_on(focus, true)
 	if args.size() >= 8 and args[7] == "free":
 		# The gameplay camera keeps small rooms near their middle; a review can look at any wall.

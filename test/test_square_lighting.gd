@@ -2,7 +2,7 @@ extends SceneTree
 ## Every section stays inside Compatibility lighting limits; lights stay at their fittings.
 func _initialize() -> void: _run.call_deferred()
 func _run() -> void:
-	var view:=ClearingView.new()
+	var view:=WorldView.new()
 	root.add_child(view)
 	await process_frame
 	view.setup(AreaStore.load_area("haverlund-square"))

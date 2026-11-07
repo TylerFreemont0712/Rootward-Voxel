@@ -13,7 +13,7 @@ const CAMERA: Vector3 = Vector3(21.0, 17.8, 21.0)
 const MODELS: Dictionary = {
 	"town-fountain": {"allowed": 0.0, "pictures": true},
 	"haverlund-cafe": {"allowed": 0.3},
-	"haverlund-bookshop": {"allowed": 0.3},
+	"haverlund-tailor": {"allowed": 0.3},
 	"haverlund-bakery": {"allowed": 0.3},
 	"haverlund-post-office": {"allowed": 0.3},
 	"haverlund-greengrocer": {"allowed": 0.5},

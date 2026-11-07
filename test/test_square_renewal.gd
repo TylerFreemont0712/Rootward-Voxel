@@ -8,7 +8,7 @@ func _run() -> void:
 	if area == null: quit(1); return
 	var rules := LabWorld.new(area)
 	var state := rules.initial_state()
-	for id: String in ["bakery","greengrocer","bookshop"]:
+	for id: String in ["bakery","greengrocer","tailor"]:
 		var link := RoomLinks.find(area,id)
 		_check(not link.is_empty(),id+" has an exterior doorway")
 		var at := Vector2i(int(link.at[0]),int(link.at[1]))
@@ -22,7 +22,7 @@ func _run() -> void:
 		var far: Vector2i = Vector2i(5,8) if id in ["clockmaker","apothecary"] else Vector2i(int(inside.displays[0].at[0]), int(inside.displays[0].at[1]))
 		_check(not indoor.find_path(indoor.initial_state(),far,inside.spawn).is_empty(),id+" can be crossed from the door to the back of the room")
 	# The three market shops are furnished (2026-11-06): their own shell and door, a shopkeeper, a board and notes.
-	for id: String in ["bakery","greengrocer","bookshop"]:
+	for id: String in ["bakery","greengrocer","tailor"]:
 		var inside: AreaDef = AreaStore.load_area("shop-"+id)
 		var back := RoomLinks.find(inside,"square")
 		_check(str(inside.interior.shell).ends_with("-shell") and str(inside.interior.shell) != "town-shop-shell" and back.get("doors") == "shell" and inside.displays.size() == 1 and inside.villagers.size() == 1 and inside.interior.inspections.size() >= 4 and (inside.interior.assets as Array).size() >= 6, id+" is furnished with its own door, board, keeper and notes")
@@ -36,7 +36,7 @@ func _run() -> void:
 		var back := RoomLinks.find(AreaStore.load_area("shop-apothecary"),"square")
 		_check(Vector2i(back.arrival[0],back.arrival[1])==Vector2i(apothecary.at[0],apothecary.at[1]),"Leaving the apothecary returns to its own door")
 	_check(not rules.find_path(state,Vector2i(12,40),area.spawn).is_empty(),"The physic garden is reachable through its opening on the walk")
-	for id: String in ["bakery","greengrocer","bookshop"]:
+	for id: String in ["bakery","greengrocer","tailor"]:
 		_check(not rules.is_walkable(state,Vector2i(28,int(RoomLinks.find(area,id).at[1]))),id+" stands against the terrace wall; no path runs behind it")
 	_check(not rules.find_path(state,Vector2i(19,3),area.spawn).is_empty(),"The raised park is reachable from the arrival")
 	_check(not rules.find_path(state,Vector2i(23,52),area.spawn).is_empty(),"The promenade reaches the future northern frontages")

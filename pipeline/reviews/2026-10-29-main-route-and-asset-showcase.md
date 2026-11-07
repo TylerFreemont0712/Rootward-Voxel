@@ -10,7 +10,7 @@ The user selected **Sparks & Machines** as the main game, paused Kindle Hollow a
 - Search and select models from `pipeline/world-catalog.json`; drag to turn, use the wheel to zoom, or use quarter-turn/reset and auto-rotate. Optional metre grid and the unchanged boy sprite give scale. Bounds fitting preserves the whole model through rotations. Reload uses the existing model factory with cache replacement; Clear restores the empty stage.
 - `rootward/development/asset_showcase_on_title=true` in `project.godot` exposes the option now. Set it to `false` to hide both the entry and handler later. Release builds also hide it.
 
-Implementation: `app/level_store.gd`, `app/game.gd`, `ui/title_screen.gd`, `ui/asset_showcase.gd`, `scenes/asset_showcase_stage.gd`, the existing `ModelTurntable` and `WorldAssets` loader. No new art pipeline, engine, provider or runtime service.
+Implementation: `app/level_store.gd`, `app/game.gd`, `ui/screens/title_screen.gd`, `ui/dev/asset_showcase.gd`, `scenes/preview/asset_showcase_stage.gd`, the existing `ModelTurntable` and `WorldAssets` loader. No new art pipeline, engine, provider or runtime service.
 
 ## Verification
 

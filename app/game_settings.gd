@@ -6,7 +6,7 @@ signal changed(key: String)
 
 const PATH: String = "user://settings.cfg"
 const LAYOUT_VERSION: int=2
-const Skins := preload("res://art/frame_skin.gd")
+const FrameSkin := preload("res://art/frame_skin.gd")
 const DEFAULTS: Dictionary = {
 	"fullscreen": true,
 	"ui_scale": 1.0,

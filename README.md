@@ -52,11 +52,14 @@ The full story, chapters and API are described in [docs/concept/v0.7](docs/conce
 | `content/` | Area documents (`areas/<id>.json`, `.quests.json`), the journey story and chapters, the level catalog, builder shelf and development checkpoints. |
 | `core/` | Pure rules over plain data: area parsing, walkability and commands, quests, build rules and ledger, city clock, lamp and robot programs. No nodes, no files. |
 | `app/` | Game flow (`game.gd`), the session, saves, settings and the dev tools. |
-| `scenes/`, `art/` | The 3D view, room stages and builders for materials, mechanisms and sprites. |
-| `ui/` | The paper-and-enamel interface and its screens ([UI guide](pipeline/UI.md)). |
+| `scenes/`, `art/` | The 3D view (`scenes/world_view.gd`), per-room story stages (`scenes/stages/`), model previews, and builders for materials, mechanisms and sprites. |
+| `ui/` | The paper-and-enamel interface, grouped by job: `kit/`, `hud/`, `story/`, `notebook/`, `code/`, `build/`, `screens/`, `dev/` ([UI guide](pipeline/UI.md)). |
+| `tools/` | Capture helpers; `tools/reviews/` holds the one-off review and study scripts. |
 | `sandbox/` | The pinned Wasmtime / CPython WASI runner and the Python `world` harness. |
 | `pipeline/` | Catalogs, playbooks, importers and dated reviews. `art/source/` holds sources and editable Blender masters; `assets/` holds what the game loads. |
 | `test/` | Automated checks, their [manifest](test/manifest.json) and `fixtures/`. |
+
+Names follow [docs/NAMING.md](docs/NAMING.md): one class per file, kebab-case content ids, `sparks_<name>` character sprites. Old names from before 2026-11-07 are listed in [docs/RENAMES_2026-11-07.md](docs/RENAMES_2026-11-07.md).
 
 ## Tests
 
@@ -69,7 +72,7 @@ scripts/test.sh square lane   # any tests whose id contains these words
 scripts/test.sh --list     # every test, its tier and cost
 ```
 
-Tests run in parallel from [test/manifest.json](test/manifest.json), print one line each and exit non-zero on any failure or script error. See [test/README.md](test/README.md). Reviews of a changed view are made at the actual camera scale with `tools/area_shot.gd` (one area, any focus and zoom) and `tools/square_layout_review.gd` (the layout studio in a window).
+Tests run in parallel from [test/manifest.json](test/manifest.json), print one line each and exit non-zero on any failure or script error. See [test/README.md](test/README.md). Reviews of a changed view are made at the actual camera scale with `tools/area_shot.gd` (one area, any focus and zoom) and `tools/reviews/square_layout_review.gd` (the layout studio in a window).
 
 ## Art and assets
 

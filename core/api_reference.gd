@@ -7,7 +7,7 @@ extends RefCounted
 ## Member kinds: "method" takes arguments, "attribute" is read, "global" is a name usable anywhere.
 const TYPES: Dictionary = {
 	"World": {
-		"summary": "The village as Python sees it. It is the one value passed to program(world).",
+		"summary": "The world as Python sees it. It is the one value passed to program(world).",
 		"members": [
 			{"name":"time","kind":"attribute","sig":"world.time","doc":"The town’s shared clock. is_dark is True after dusk and before dawn.","returns":"WorldTime"},
 			{"name":"robot","kind":"method","sig":"world.robot(name)","doc":"A worker on the connected service screen. Visit its place first.","returns":"Robot"},
@@ -52,8 +52,8 @@ const TYPES: Dictionary = {
 		"ability": "read",
 		"members": [
 			{"name": "id", "kind": "attribute", "sig": "house.id", "doc": "Its name, such as \"home\" or \"build-3\".", "returns": "str"},
-			{"name": "kind", "kind": "attribute", "sig": "house.kind", "doc": "What sort of house, such as \"house-hollow\". The same names the builder's tray uses.", "returns": "str"},
-			{"name": "name", "kind": "attribute", "sig": "house.name", "doc": "Its title, such as \"Hollow House\".", "returns": "str"},
+			{"name": "kind", "kind": "attribute", "sig": "house.kind", "doc": "What sort of house, such as \"seaside-saltwind-house\". The same names the builder's tray uses.", "returns": "str"},
+			{"name": "name", "kind": "attribute", "sig": "house.name", "doc": "Its title, such as \"Saltwind House\".", "returns": "str"},
 			{"name": "at", "kind": "attribute", "sig": "house.at", "doc": "Its centre as [x, y]. x grows eastward and y northward.", "returns": "list"},
 			{"name": "cell", "kind": "attribute", "sig": "house.cell", "doc": "Its nearest cell as [x, y, 0]. house.cell[1] is how far north it stands.", "returns": "list"},
 			{"name": "facing", "kind": "attribute", "sig": "house.facing", "doc": "Which way its door faces: \"north\", \"east\", \"south\" or \"west\". Updates as soon as you call face.", "returns": "str"},
@@ -63,7 +63,7 @@ const TYPES: Dictionary = {
 		],
 	},
 	"Doodad": {
-		"summary": "Something placed in the village: a chair, a barrel, a lever. Working ones (see Prop) are doodads too, with the same id.",
+		"summary": "Something placed in the world: a chair, a barrel, a lever. Working ones (see Prop) are doodads too, with the same id.",
 		"ability": "read",
 		"members": [
 			{"name": "id", "kind": "attribute", "sig": "doodad.id", "doc": "Its placed id, such as prop-1.", "returns": "str"},
@@ -94,7 +94,7 @@ const TYPES: Dictionary = {
 		"summary": "A working builder object: a lamp, chest, lever, bell, pump or craft machine. Its ground footprint stays fixed.",
 		"members": [
 			{"name": "id", "kind": "attribute", "sig": "prop.id", "doc": "Its placed id, such as prop-1; find it in the builder details or World tab.", "returns": "str"},
-			{"name": "asset", "kind": "attribute", "sig": "prop.asset", "doc": "The kind of object, such as hollow-brass-lever.", "returns": "str"},
+			{"name": "asset", "kind": "attribute", "sig": "prop.asset", "doc": "The kind of object, such as bakery-oven.", "returns": "str"},
 			{"name": "name", "kind": "attribute", "sig": "prop.name", "doc": "Its readable catalog title.", "returns": "str"},
 			{"name": "zone", "kind": "attribute", "sig": "prop.zone", "doc": "The district it stands in, or an empty string outside named places.", "returns": "str"},
 			{"name": "cell", "kind": "attribute", "sig": "prop.cell", "doc": "Its nearest logical cell as [x, y, 0].", "returns": "list"},

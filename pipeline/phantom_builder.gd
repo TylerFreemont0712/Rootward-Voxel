@@ -1,7 +1,7 @@
 extends RefCounted
 ## Offline gray masks of the selected painted cast. Preserve source alpha and the exact common frame contract.
 const BUILDER := "res://pipeline/phantom_builder.gd"
-const Skins := preload("res://art/frame_skin.gd")
+const FrameSkin := preload("res://art/frame_skin.gd")
 const PREPARED := "res://.cache/phantom-art/prepared.json"
 
 static func prepare(spec: Dictionary) -> bool:
@@ -61,7 +61,7 @@ static func build(spec: Dictionary, metadata: Dictionary, template: SpriteFrames
 	for profile: Dictionary in manifest.profiles.values():
 		var atlas := load(profile.atlas) as Texture2D
 		if atlas == null or profile.atlas_sha256 != FileAccess.get_sha256(profile.atlas) or profile.painted_source_sha256 != FileAccess.get_sha256(profile.painted_source): return false
-		var frames: SpriteFrames = Skins.frames_for(template, atlas)
+		var frames: SpriteFrames = FrameSkin.frames_for(template, atlas)
 		if ResourceSaver.save(frames, profile.frames) != OK: return false
 		for field: String in ["pixel_size", "fps", "idle", "animations"]:
 			profile[field] = metadata[field].duplicate(true) if metadata[field] is Dictionary else metadata[field]

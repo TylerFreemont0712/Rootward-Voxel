@@ -14,7 +14,7 @@ The existing shell was deliberately refined with its original master preserved. 
 
 ## Field Notes /00
 
-Nell’s opening note now opens `WorkshopJournal`. E, J, the ticket and Field Notes return to the same saved page. While it is open, the job ticket moves lower so it cannot hide Hotaru on small screens. The paper drawer uses dark Python text on cream, the real `CodeEditor`, and execution evidence returned by the existing worker-thread WASI runner.
+Nell’s opening note now opens `GreetingJournal`. E, J, the ticket and Field Notes return to the same saved page. While it is open, the job ticket moves lower so it cannot hide Hotaru on small screens. The paper drawer uses dark Python text on cream, the real `CodeEditor`, and execution evidence returned by the existing worker-thread WASI runner.
 
 | Test before Speak | Committed greeting |
 |---|---|

@@ -125,7 +125,7 @@ static func propose(ledger: BuildLedger, state: Dictionary, commands: Array, abi
 	if count > MAX_BUILD_COMMANDS:
 		return _reject("Use at most %d building commands in one run (you used %d)." % [MAX_BUILD_COMMANDS, count])
 	if not editable_outdoors(ledger.area):
-		return _reject("Go outside first: your code changes the village from the outside, and each home keeps its own interior.")
+		return _reject("Go outside first: your code changes the town from the outside, and each home keeps its own interior.")
 	var added: Array[Dictionary] = []
 	var changes: Array[String] = []
 	var touched: Array[String] = []
@@ -260,17 +260,17 @@ static func _world_with(ledger: BuildLedger, added: Array[Dictionary]) -> Dictio
 	longer.append_array(added)
 	var applied: Dictionary = AreaBuild.apply(ledger.base_document, longer, ledger.paint_materials)
 	if not (applied.skipped as Array).is_empty():
-		return {"ok": false, "reason": "That does not fit the valley."}
+		return {"ok": false, "reason": "That does not fit this place."}
 	var parsed: Dictionary = AreaDef.parse(applied.document, ledger.assets, ledger.quest_document, ledger.paint_materials)
 	if not parsed.ok:
-		return {"ok": false, "reason": "That does not fit the valley: %s" % str(parsed.errors)}
+		return {"ok": false, "reason": "That does not fit this place: %s" % str(parsed.errors)}
 	return {"ok": true, "reason": "", "area": parsed.area, "rules": LabWorld.new(parsed.area)}
 
 
 static func _locked(area: AreaDef, ability: String, what: String) -> String:
 	var teacher: Dictionary = Quests.unlocking(area, ability)
 	if teacher.is_empty():
-		return "Your code cannot %s in this valley." % what
+		return "Your code cannot %s here." % what
 	return "Your code cannot %s yet. Reach the lesson \"%s\" to learn how." % [what, str(teacher.title)]
 
 

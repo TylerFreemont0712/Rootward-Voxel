@@ -17,7 +17,7 @@ func go() -> void:
  await game.start_new_game("sparks-and-machines")
  _check(DevelopmentMode.jump(game,"square"),"Development jump reaches the revised square")
  SaveStore.development=false
- game._dialogue_read["workshop-scenes"]=game._story.scenes.keys();game._workshop_dismissed=game._story.scenes.keys()
+ game._dialogue_read["workshop-scenes"]=game._story.scenes.keys();game._dismissed_scenes=game._story.scenes.keys()
  game._pop_all_modals();game.close_notebook(true)
  game.session.set_physics_process(false)
  await walk(Vector2i(13,12))
@@ -125,7 +125,7 @@ func _mouse(down: bool) -> void:
 func walk(target: Vector2i) -> void:
  game.session.set_physics_process(false)
  if game.session.is_walking():game.session.advance_walk(LabWorld.STEP_SECONDS)
- if game.view.villagers!=null:game.view.villagers.set_physics_process(false);game.view.villagers.set_process(false)
+ if game.view.residents!=null:game.view.residents.set_physics_process(false);game.view.residents.set_process(false)
  game.session._cancel_route()
  var route: Array[Vector2i]=game.session.rules.find_path(game.session.state,target,game.session.player_cell(),game.view.resident_cells())
  _check(target==game.session.player_cell() or not route.is_empty(),"A walkable route reaches "+str(target))

@@ -1,6 +1,6 @@
 # The story window — 2026-10-28
 
-The portrait conversation (`WorkshopScene`) was a full-width card whose height followed the text, whose side margins followed which portraits were showing, and whose choices floated above it in a separate box. Between pages the card visibly resized, and a reply page looked like a second and third window.
+The portrait conversation (`DialogueWindow`) was a full-width card whose height followed the text, whose side margins followed which portraits were showing, and whose choices floated above it in a separate box. Between pages the card visibly resized, and a reply page looked like a second and third window.
 
 It is now one window:
 

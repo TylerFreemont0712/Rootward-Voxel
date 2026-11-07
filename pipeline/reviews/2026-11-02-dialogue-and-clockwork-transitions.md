@@ -6,11 +6,11 @@ The loading train now has seven actual involute wheel profiles with matching pit
 
 ## Sources and ownership
 
-- `ui/workshop_scene.gd`: fixed raised/inset window, a scrolling text column, right-side responses and distinct portrait stages. Existing story content and speaker highlighting are retained.
+- `ui/story/dialogue_window.gd`: fixed raised/inset window, a scrolling text column, right-side responses and distinct portrait stages. Existing story content and speaker highlighting are retained.
 - [Traveller v2 source pack](../../art/source/portraits/sparks/v2/README.md): 1024×1536 RGBA, generated with the built-in image tool from the approved boy and existing portraits. Exact [prompt](../../art/source/portraits/sparks/v2/traveller-prompt.json) and [provenance](../../art/source/portraits/sparks/v2/traveller-provenance.json) are recorded. The output is copied losslessly through `scripts/art.sh`, selected by `portrait_libraries` in the art catalog. Old sources, gameplay sprite pixels and the shared character template are preserved.
-- `ui/gear_geometry.gd`, `ui/clockwork_wheel.gd`, `ui/clockwork_gears.gd`: code-drawn presentation; no new generated gear textures or world-asset pipeline.
-- `ui/gear_veil.gd` and its shader: toothed cover/reveal, a persistent bounded phase clock and the power snapshot entry point.
-- `art/outline_job.gd`, `art/illustrated_edges.gd`, `art/world_assets.gd`, `art/workshop_loft_room.gd`, `scenes/clearing_view.gd`: threaded resource preparation, incremental versions of the same outline/placement operations and gradual hidden rendering. Synchronous tools retain their existing setup API. Only the main thread creates nodes.
+- `ui/transition/gear_geometry.gd`, `ui/transition/clockwork_wheel.gd`, `ui/transition/clockwork_gears.gd`: code-drawn presentation; no new generated gear textures or world-asset pipeline.
+- `ui/transition/gear_veil.gd` and its shader: toothed cover/reveal, a persistent bounded phase clock and the power snapshot entry point.
+- `art/outline_job.gd`, `art/illustrated_edges.gd`, `art/world_assets.gd`, `art/shell_room.gd`, `scenes/world_view.gd`: threaded resource preparation, incremental versions of the same outline/placement operations and gradual hidden rendering. Synchronous tools retain their existing setup API. Only the main thread creates nodes.
 - `app/game.gd`: awaits the covered build, renders at least eight warm-up frames plus 0.25 seconds, holds full cover for at least 0.9 seconds, and gives visual travel ownership of walking animation until arrival. The player template/atlas remain referenced across the swap, avoiding an end-of-load texture reload. Integer destinations, collision and saved room state retain their existing authority.
 
 This pass does not edit Blender sources, area layout, the previous lane deliverables or quest solutions.
@@ -27,11 +27,11 @@ This pass does not edit Blender sources, area layout, the previous lane delivera
 - `test/test_transitions.gd`: 47 checks passed. Covers triangulated profiles, clearance through a full tooth engagement for every neighbouring pair, tooth-count angular ratios, non-mutating/clamped power data, identical synchronous/incremental outline arrays, long-text scrolling and dialogue bounds at both sizes, real input crossings and changing walk frames, warm-up/minimum cover, animation ownership release and a power preview that preserves the save.
 - `test/test_sparks.gd`: 371 checks passed during the full suite, including all authored story pages sharing one stable window and opposing portraits.
 - Full `scripts/test.sh`: passed with no script/engine errors, including world-art/source handoff, saved rooms, quests, WASI boundaries, movement, dialogue, development tools and 11 asset-workflow lifecycle tests.
-- Native `tools/dialogue_transition_review.gd`: reviewed at 1600×1000 and 1280×720, Godot 4.7.2, Compatibility/OpenGL on the AMD Radeon 680M. Both reviews exercise the real floor → lane → square → lane links, actual changing walking frames, dialogue replies and the F8 power controls. Final cadence and selected captures accompany this review.
+- Native `tools/reviews/dialogue_transition_review.gd`: reviewed at 1600×1000 and 1280×720, Godot 4.7.2, Compatibility/OpenGL on the AMD Radeon 680M. Both reviews exercise the real floor → lane → square → lane links, actual changing walking frames, dialogue replies and the F8 power controls. Final cadence and selected captures accompany this review.
 
 ```sh
-scripts/play.sh --resolution 1600x1000 -s res://tools/dialogue_transition_review.gd -- .cache/dialogue-transitions/final-1600
-scripts/play.sh --resolution 1280x720 -s res://tools/dialogue_transition_review.gd -- .cache/dialogue-transitions/final-1280
+scripts/play.sh --resolution 1600x1000 -s res://tools/reviews/dialogue_transition_review.gd -- .cache/dialogue-transitions/final-1600
+scripts/play.sh --resolution 1280x720 -s res://tools/reviews/dialogue_transition_review.gd -- .cache/dialogue-transitions/final-1280
 ```
 
 The following final measurements exclude PNG capture time. The 1280 review fixes its own frame cap at 60 to prevent OS focus changes from invoking the normal game's 30 fps background cap; it does not move focus or change the regular game.

@@ -969,7 +969,7 @@
     "tailor-intro": {
       "title": "Finch & Thread",
       "requires": "own-corner",
-      "area": "shop-bookshop",
+      "area": "shop-tailor",
       "pages": [
         {
           "speaker": "narration",
@@ -1033,7 +1033,7 @@
     "tailor-done": {
       "title": "Two bells in an hour",
       "requires": "ready-for-collection",
-      "area": "shop-bookshop",
+      "area": "shop-tailor",
       "pages": [
         {
           "speaker": "narration",
@@ -1095,7 +1095,7 @@
       "Every crate has two tags. One of them is Tessa’s handwriting.",
       "The scale has an apple in it. I think it lives there."
     ],
-    "shop-bookshop": [
+    "shop-tailor": [
       "One row of thread is out of order. Two blues have swapped.",
       "The mirror makes the room twice as long. I checked the other side."
     ],
@@ -1129,7 +1129,7 @@
       "title": "The Pantry",
       "hint": "The price board is on the back wall. Teo’s note is underneath it."
     },
-    "shop-bookshop": {
+    "shop-tailor": {
       "title": "Finch & Thread",
       "hint": "Gret’s order board is on the back wall, with the order book on its ledge."
     }
@@ -1232,7 +1232,7 @@
       "areas": [
         "shop-bakery",
         "shop-greengrocer",
-        "shop-bookshop"
+        "shop-tailor"
       ],
       "start": "market-start",
       "end": "market-end"

@@ -1,13 +1,13 @@
 extends SceneTree
 ## Authored crowd coverage, no Nell/clones, shared tram service, asymmetric player collision and coherent local rounds.
-const Skins := preload("res://art/frame_skin.gd")
+const FrameSkin := preload("res://art/frame_skin.gd")
 var checks: int = 0
 var failures: Array[String] = []
 
 func _initialize() -> void: _run.call_deferred()
 
 func _run() -> void:
-	var skins: Dictionary = Skins.read_library().skins
+	var skins: Dictionary = FrameSkin.read_library().skins
 	var cast: Array[String] = []
 	var models: Dictionary = {}
 	var phantoms: int = 0
@@ -17,10 +17,10 @@ func _run() -> void:
 		if area == null: continue
 		var rules := LabWorld.new(area)
 		var world: Dictionary = rules.initial_state()
-		var reserved: Dictionary = VillageLife.reserved(area)
+		var reserved: Dictionary = TownLife.reserved(area)
 		for person: Dictionary in area.villagers:
 			_check(rules.is_walkable(world, person.at) and not reserved.has(person.at), str(person.id) + " has an open start")
-			_check(person.id != "sparks-nell" and person.get("skin", "") not in ["nell", "sparks_nell"], "Nell is absent until the story introduces her")
+			_check(person.id != "sparks-nell" and person.get("skin", "") not in ["village_nell", "sparks_nell"], "Nell is absent until the story introduces her")
 			if person.has("skin"):
 				_check(skins.has(person.skin) and str(person.skin).begins_with("sparks_") and not cast.has(person.skin), "Only one of each Sparks cast sprite is placed")
 				cast.append(person.skin)
@@ -30,7 +30,7 @@ func _run() -> void:
 					if item.id == person.object: models[item.asset] = true
 			var avoid: Dictionary = reserved.duplicate()
 			if person.has("arrival"):
-				for cell: Vector2i in VillageLife.departure_cells(area, person.arrival.exit): avoid.erase(cell)
+				for cell: Vector2i in TownLife.departure_cells(area, person.arrival.exit): avoid.erase(cell)
 			var from: Vector2i = person.at
 			for target: Vector2i in person.route:
 				var path: Array[Vector2i] = rules.find_path(world, target, from, avoid)
@@ -38,19 +38,19 @@ func _run() -> void:
 				for cell: Vector2i in path:
 					_check(rules.can_step(world, from, cell), "Every route uses legal passages")
 					from = cell
-		var life: Dictionary = VillageLife.initial(area)
+		var life: Dictionary = TownLife.initial(area)
 		var twin: Dictionary = life.duplicate(true)
 		var safe: bool = true
 		var moving: Dictionary = {}
 		var working: Dictionary = {}
 		var tasks_valid: bool = true
 		for tick: int in range(1800):
-			VillageLife.advance(area, rules, world, life, .05)
-			VillageLife.advance(area, rules, world, twin, .05)
+			TownLife.advance(area, rules, world, life, .05)
+			TownLife.advance(area, rules, world, twin, .05)
 			var occupied: Dictionary = {}
 			for person_id: String in life:
 				var person: Dictionary = life[person_id]
-				for cell: Vector2i in VillageLife.cells(person):
+				for cell: Vector2i in TownLife.cells(person):
 					safe = safe and not occupied.has(cell) and rules.is_walkable(world, cell)
 					occupied[cell] = true
 				if person.active and person.phase < 1.0: moving[person_id] = true
@@ -68,12 +68,12 @@ func _run() -> void:
 				_check(working.get(person.id, {}).size() >= 2, person.id + " reaches at least two real errand destinations in 90 seconds")
 			if person.has("object") and id in ["haverlund-lane", "haverlund-square"]:
 				_check(person.has("errands") and float(person.speed) >= 1.5, person.id + " has a purposeful, brisk work round")
-		var initial: Dictionary = VillageLife.initial(area)
+		var initial: Dictionary = TownLife.initial(area)
 		if not area.villagers.is_empty():
 			world.player = [area.villagers[0].at.x, area.villagers[0].at.y, 0]
 			var before: Dictionary = world.duplicate(true)
-			VillageLife.clear_arrival(area, rules, world, initial, {})
-			_check(world == before and not VillageLife.occupied(initial, true).has(Vector2i(world.player[0], world.player[1])), "Continue moves a solid resident aside without changing player progress")
+			TownLife.clear_arrival(area, rules, world, initial, {})
+			_check(world == before and not TownLife.occupied(initial, true).has(Vector2i(world.player[0], world.player[1])), "Continue moves a solid resident aside without changing player progress")
 	_check(cast.size() == 2 and cast.has("sparks_mira") and cast.has("sparks_rowan") and phantoms == 23 and models.size() == 6, "Mira/Rowan only in the square, eighteen square phantoms, two lane kids and a three-adult passenger pool")
 	_service()
 	_art()
@@ -88,7 +88,7 @@ func _service() -> void:
 	_check(not area.villagers.any(func(person: Dictionary) -> bool: return person.has("skin")), "The lane has no named characters")
 	var rules := LabWorld.new(area)
 	var world: Dictionary = rules.initial_state()
-	var life: Dictionary = VillageLife.initial(area)
+	var life: Dictionary = TownLife.initial(area)
 	var arrivals: Dictionary = {}
 	var departed: int = 0
 	var correct: bool = true
@@ -96,15 +96,15 @@ func _service() -> void:
 	var non_solid: bool = true
 	for tick: int in range(7200):
 		var before: Dictionary = life.duplicate(true)
-		VillageLife.advance(area, rules, world, life, .05)
+		TownLife.advance(area, rules, world, life, .05)
 		var occupied: Dictionary = {}
 		for id: String in life:
 			var resident: Dictionary = life[id]
-			for cell: Vector2i in VillageLife.cells(resident):
+			for cell: Vector2i in TownLife.cells(resident):
 				safe = safe and not occupied.has(cell)
 				occupied[cell] = true
 			if not resident.player_solid:
-				for cell: Vector2i in VillageLife.cells(resident): non_solid = non_solid and not VillageLife.occupied(life, true).has(cell)
+				for cell: Vector2i in TownLife.cells(resident): non_solid = non_solid and not TownLife.occupied(life, true).has(cell)
 			if not id.begins_with("tram-"): continue
 			if not before[id].active and resident.active:
 				var schedule: Dictionary = TramSchedule.sample(area.interior.life.tram, resident.clock)
@@ -118,11 +118,11 @@ func _service() -> void:
 	_check(safe and non_solid, "Passengers and kids never overlap other residents/robots, and never block the player")
 	var kids: Array = area.villagers.filter(func(person: Dictionary) -> bool: return person.get("phantom") == "child")
 	_check(kids.size() == 2, "Exactly two resident phantom kids on the lane")
-	var initial: Dictionary = VillageLife.initial(area)
+	var initial: Dictionary = TownLife.initial(area)
 	world.player = [kids[0].at.x, kids[0].at.y, 0]
 	var blocked: Dictionary = {kids[0].at:true, kids[0].at+Vector2i.RIGHT:true}
-	VillageLife.clear_arrival(area, rules, world, initial, blocked)
-	_check(initial[kids[0].id].at == kids[0].at and not VillageLife.occupied(initial,true).has(kids[0].at), "The player may stand inside a phantom without displacement or collision")
+	TownLife.clear_arrival(area, rules, world, initial, blocked)
+	_check(initial[kids[0].id].at == kids[0].at and not TownLife.occupied(initial,true).has(kids[0].at), "The player may stand inside a phantom without displacement or collision")
 	var schedule: Dictionary = TramSchedule.sample(area.interior.life.tram, 0)
 	_check(schedule.docked and schedule.at_stop == 3.0, "The first visit uses the existing tram offset, not an unrelated timer")
 
@@ -152,7 +152,7 @@ func _art() -> void:
 		var template: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/characters/adventurer/manifest.json"))
 		_check(profile.animations == template.animations and profile.fps == template.fps and profile.pixel_size == template.pixel_size, "Exact common timing, regions and anchors are retained")
 	_check(hashes.size() == 11, "Both casts and the boy supply eleven different original silhouettes; child profiles reuse two at smaller scale")
-	var presenter := VillagerView.new()
+	var presenter := ResidentsView.new()
 	presenter._appearance_rng.seed = 1432
 	for group: String in manifest.groups:
 		var seen: Dictionary = {}
@@ -162,9 +162,9 @@ func _art() -> void:
 
 func _invalid() -> void:
 	var source: Dictionary = AreaStore.read_source("haverlund-lane")
-	for fields: Dictionary in [{"phantom":"unknown"},{"phantom":"man","skin":"sparks_bram"},{"phantom":"child","arrival":{"delay":2,"exit":"town-steps"}},
+	for fields: Dictionary in [{"phantom":"unknown"},{"phantom":"man","skin":"sparks_braum"},{"phantom":"child","arrival":{"delay":2,"exit":"town-steps"}},
 		{"phantom":"man","arrival":{"delay":99,"exit":"town-steps"}},{"phantom":"woman","arrival":{"delay":2,"exit":"missing"}},
-		{"skin":"sparks_bram","speed":2},{"phantom":"man","wander":"yes"},
+		{"skin":"sparks_braum","speed":2},{"phantom":"man","wander":"yes"},
 		{"phantom":"man","errands":[]}, {"phantom":"man","errands":[{"target":"missing","activity":"visit","seconds":3}]},
 		{"phantom":"man","errands":[{"target":"post-box","activity":"invented","seconds":3}]},
 		{"phantom":"man","errands":[{"target":"post-box","activity":"collect_mail","seconds":-2}]}]:

@@ -9,7 +9,7 @@ var game: Game
 var output: String = ""
 const WorldAssets := preload("res://art/world_assets.gd")
 const MODELS: Array[String] = ["haverlund-square-ground", "rootwell-beacon", "rootwell-plaza", "square-guildhall", "haverlund-post-office",
-	"haverlund-fruit-market", "haverlund-bank", "haverlund-bakery", "haverlund-greengrocer", "haverlund-bookshop", "haverlund-cafe",
+	"haverlund-fruit-market", "haverlund-bank", "haverlund-bakery", "haverlund-greengrocer", "haverlund-tailor", "haverlund-cafe",
 	"square-banner-lamp", "square-flower-stall", "square-fruit-stall", "square-market-stall", "square-timber-store", "square-node",
 	"robot-pip", "robot-trowel", "robot-wick", "robot-heron", "robot-tender", "robot-tally", "town-balustrade", "town-balustrade-pier",
 	"town-railing", "town-railing-stair", "town-railing-post", "town-garden-wall", "town-garden-pier", "town-garden-gate", "town-power-pillar",
@@ -98,7 +98,7 @@ func _rules() -> void:
 		var from: Vector2i = robot.at
 		var clear: bool = true
 		for target: Vector2i in robot.route:
-			var path: Array[Vector2i] = rules.find_path(state, target, from, VillageLife.reserved(area))
+			var path: Array[Vector2i] = rules.find_path(state, target, from, TownLife.reserved(area))
 			clear = clear and (from == target or not path.is_empty())
 			from = target
 		_check(clear, "Robot " + str(robot.object) + " has a collision-checked round")
@@ -113,7 +113,7 @@ func _rules() -> void:
 	# Every placement names a catalogued model; the old one-piece west terrace has gone.
 	var placed: Array = (area.interior.assets as Array).map(func(item: Dictionary) -> String: return str(item.asset))
 	_check(placed.all(func(id: String) -> bool: return not WorldAssets.entry(id).is_empty()) and not placed.has("square-west-terrace"), "Every placement is a catalogued model and the old terrace is replaced by separate shops")
-	_check(["haverlund-bakery", "haverlund-greengrocer", "haverlund-bookshop", "haverlund-cafe", "town-kiosk", "town-coffee-cart"].all(func(id: String) -> bool: return placed.has(id)), "Shops, a kiosk and a coffee cart line the square")
+	_check(["haverlund-bakery", "haverlund-greengrocer", "haverlund-tailor", "haverlund-cafe", "town-kiosk", "town-coffee-cart"].all(func(id: String) -> bool: return placed.has(id)), "Shops, a kiosk and a coffee cart line the square")
 	# The Rootwell stands 35 % larger than its model, and every seat round it faces it with a planter at its back.
 	var well: Array = (area.interior.assets as Array).filter(func(item: Dictionary) -> bool: return item.asset == "rootwell-beacon")
 	_check(well.size() == 1 and float(well[0].get("scale", 1.0)) >= 1.3, "The Rootwell is placed at least 30 % larger")
@@ -203,13 +203,13 @@ func _play() -> void:
 	_check(game.area.id=="haverlund-square" and game.session.player_cell()==Vector2i(15,11), "The downhill route walks on through the veil and down into the square's south-west street")
 	if game.area.id!="haverlund-square":
 		game.queue_free();await process_frame;return
-	var stage := game.view.stage as WorkshopLaneStage
+	var stage := game.view.stage as LaneStage
 	_check(stage != null and game.view.companion_present(), "The square has the same robot, speech and outdoor life presenter")
 	_check(PlayerItems.has(game.session.state,"field-tablet") and not game.session.state.memory.has("lane_only"), "The tablet travels while area program memory stays local")
 	# Story discovery happens in Game._process once travel has released its input gate.
 	game._refresh_interaction()
 	await shot("02-street-arrival")
-	var arrival := game._modals[-1] as WorkshopScene if not game._modals.is_empty() else null
+	var arrival := game._modals[-1] as DialogueWindow if not game._modals.is_empty() else null
 	_check(arrival!=null and arrival.pages.size()==3, "A short arrival scene introduces the square without adding a quest")
 	if arrival!=null:
 		while is_instance_valid(arrival) and arrival.index < arrival.pages.size(): arrival.advance()
@@ -226,8 +226,8 @@ func _play() -> void:
 	_check(game.session.player_cell()==Vector2i(28,7) and game.view.player_node().position.y<.2,"The feet reach the square floor from two flights")
 	# Robots on their rounds move, turn their wheels, and wait for someone standing in their way.
 	if stage != null:
-		_check(stage._rounds.is_empty() and game.view.villagers.robots.size() == 7, "Seven robot rounds have one logical controller each")
-		var residents: VillagerView = game.view.villagers
+		_check(stage._rounds.is_empty() and game.view.residents.robots.size() == 7, "Seven robot rounds have one logical controller each")
+		var residents: ResidentsView = game.view.residents
 		residents.set_physics_process(false)
 		residents.set_process(false)
 		var pip: Dictionary = residents.robots["square-pip"]
@@ -252,9 +252,9 @@ func _play() -> void:
 	_check(game._interaction.get("id")=="beacon-dial", "F inspects the beacon's dial from the plaza")
 	game.interact()
 	await shot("04-beacon")
-	game.workshop_speech.dismiss_inspection()
+	game.world_speech.dismiss_inspection()
 	if not output.is_empty() and DisplayServer.get_name()!="headless":
-		game.view.set_camera_mode(ClearingView.CameraMode.FIXED)
+		game.view.set_camera_mode(WorldView.CameraMode.FIXED)
 		game.view.focus_on(Vector2(58,24),true)
 		game.view.set_zoom(10)
 		await shot("04b-beacon-detail")
@@ -262,7 +262,7 @@ func _play() -> void:
 		game.view.set_zoom(24)
 		await shot("10-overview")
 		game.view.set_zoom(16)
-		game.view.set_camera_mode(ClearingView.CameraMode.FOLLOW)
+		game.view.set_camera_mode(WorldView.CameraMode.FOLLOW)
 	await walk(Vector2i(35,22))
 	await shot("05-shops")
 	await walk(Vector2i(38,39))
@@ -275,7 +275,7 @@ func _play() -> void:
 	game._refresh_interaction()
 	_check(game._interaction.get("kind")=="terminal", "The service screen by the beacon offers its physical connection")
 	game.interact()
-	var page := game.journal as WorkshopJobsJournal
+	var page := game.journal as JobsJournal
 	_check(page!=null and is_instance_valid(page.editor), "With no quest the screen opens a useful connected scratch page")
 	if page!=null and is_instance_valid(page.editor):
 		page.editor.text='def program(world):\n    for lamp in world.zone("rootward-square").lamps:\n        lamp.set_lit(True)\n    world.memory["square_only"] = 29\n'
@@ -291,7 +291,7 @@ func _play() -> void:
 	game._pop_all_modals()
 	_check(game.area.id=="haverlund-square" and game.session.state.memory.get("square_only")==29 and game.session.state.terminal_links.has("square-terminal"), "Continue keeps the square, its link, its program and its lights")
 	_check(str(game.session.workshop_pages.get("scratch-rootward-square", "")).contains("square_only"), "The connected scratch page survives Continue independently of lesson drafts")
-	_check(not game._modals.any(func(modal: Modal) -> bool: return modal is WorkshopScene), "The arrival stays read after Continue")
+	_check(not game._modals.any(func(modal: Modal) -> bool: return modal is DialogueWindow), "The arrival stays read after Continue")
 	await shot("09-square-saved")
 	await walk(Vector2i(13,12))
 	_check(game.session.request_step(Vector2i(-1,0)), "A normal step reaches the street's head without leaving the square")

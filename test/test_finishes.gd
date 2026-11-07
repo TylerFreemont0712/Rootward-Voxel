@@ -1,7 +1,7 @@
 extends SceneTree
 ## Texture source/output contracts, declared material slots, cosmetic edit validation and saved history.
 
-const Assets := preload("res://art/world_assets.gd")
+const WorldAssets := preload("res://art/world_assets.gd")
 var checks: int = 0
 var failures: Array[String] = []
 var assets: Dictionary
@@ -110,8 +110,8 @@ func _rules() -> void:
 
 func _models() -> void:
 	for pair: Array in [["hollow-rain-barrel","timber","herringbone_oak"],["hollow-rain-barrel","metal","copper_patina"]]:
-		var model: Node3D = Assets.instantiate(pair[0])
-		var second: Node3D = Assets.instantiate(pair[0])
+		var model: Node3D = WorldAssets.instantiate(pair[0])
+		var second: Node3D = WorldAssets.instantiate(pair[0])
 		root.add_child(model)
 		root.add_child(second)
 		FinishMaterials.apply(model,assets[pair[0]],{pair[1]:pair[2]})

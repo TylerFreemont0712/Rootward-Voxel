@@ -1254,7 +1254,7 @@
       "requires": "field-tablet"
     },
     {
-      "id": "bookshop-window-lamp",
+      "id": "tailor-window-lamp",
       "at": [
         34,
         26
@@ -4105,8 +4105,8 @@
         "solid": true
       },
       {
-        "id": "bookshop",
-        "asset": "haverlund-bookshop",
+        "id": "tailor",
+        "asset": "haverlund-tailor",
         "at": [
           30.4,
           26.3
@@ -8702,7 +8702,7 @@
         "doors": "greengrocer"
       },
       {
-        "id": "bookshop",
+        "id": "tailor",
         "at": [
           34,
           26
@@ -8712,7 +8712,7 @@
           26
         ],
         "direction": "W",
-        "to": "shop-bookshop",
+        "to": "shop-tailor",
         "arrival": [
           6,
           0
@@ -8721,7 +8721,7 @@
         "label": "Enter Finch & Thread",
         "walk_through": true,
         "enter": 2,
-        "doors": "bookshop"
+        "doors": "tailor"
       },
       {
         "id": "clockmaker",
@@ -8860,7 +8860,7 @@
         "text": "Oranges stacked into a careful pyramid. One is missing from the very top."
       },
       {
-        "id": "bookshop",
+        "id": "tailor",
         "at": [
           35.0,
           25.0
@@ -9438,8 +9438,8 @@
         "energy": 0.85
       },
       {
-        "id": "bookshop-window-lamp",
-        "asset": "bookshop",
+        "id": "tailor-window-lamp",
+        "asset": "tailor",
         "range": 4.3,
         "energy": 0.85
       },

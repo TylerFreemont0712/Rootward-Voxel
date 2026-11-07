@@ -1,5 +1,5 @@
 class_name PhantomActor
-extends SpriteAdventurer
+extends SpriteActor
 ## Anonymous gray versions of the selected painted sprites, with their exact frames, gait and foot anchors.
 
 var profile: String = "man"

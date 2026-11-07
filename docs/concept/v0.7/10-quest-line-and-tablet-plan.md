@@ -6,11 +6,11 @@
 
 | The user's ask | What is true today | Slice |
 |---|---|---|
-| A tablet-like code screen that matches the concept | Field Notes is a paper page. The code sits in a cream inset (`WorkshopJournal._paper_code`) | 1 |
+| A tablet-like code screen that matches the concept | Field Notes is a paper page. The code sits in a cream inset (`GreetingJournal._paper_code`) | 1 |
 | Code that looks like VS Code, not cream paper | Same. `CodeEditor` already has a dark palette, but the paper pages override it | 1 |
 | The "go through the code" replay looks like code too | `ProgramPlayback` reuses the paper inset and a teal line highlight | 1 |
-| Ghost text outlined in blue, obviously a ghost | A paper bubble at 80% opacity with the caption "GHOST PRINT · TEST" (`WorkshopSpeech`) | 1 |
-| Apply should show a real bubble and a small waking scene before the chat | `WorkshopJournal.speak()` emits `waking_requested`, `Game._workshop_waking()` closes the notebook and opens the `loft-waking` portrait scene in the same frame. Hotaru's waking is a material swap with no staging | 2 |
+| Ghost text outlined in blue, obviously a ghost | A paper bubble at 80% opacity with the caption "GHOST PRINT · TEST" (`WorldSpeech`) | 1 |
+| Apply should show a real bubble and a small waking scene before the chat | `GreetingJournal.speak()` emits `waking_requested`, `Game._hotaru_waking()` closes the notebook and opens the `loft-waking` portrait scene in the same frame. Hotaru's waking is a material swap with no staging | 2 |
 | The workshop should not feel like the sun is in the room; shadows make no sense; lamps should make it easier to see | One shadow-casting `DirectionalLight3D` ("LateAfternoonSun") lights every room. Rooms get warmth 0.75 whether or not a lamp is lit. Lamp lights are unshadowed omnis | 3 |
 | Lamp positions look random | `repair-light` hangs at (2.0, 5.3) but the repair bench's centre line is x 0.55, so it floats about 1.4 cells off the bench. Pendants hang from nothing (the cutaway has no ceiling). Nothing connects the lamps to the screen that controls them | 3 |
 | Progression, not abrupt scene changes | Apply flips every lamp in one frame. Quest completion is a card and a scene | 2, 4 |
@@ -83,14 +83,14 @@ Each slice is small and reviewable, runs in Godot at gameplay camera scale, and 
 
 **What the user sees.** The code surface becomes a device. Instructions stay on paper, because paper is Nell's voice. Code is on glass, because glass is the machine.
 
-- **Two skins of one component** (`ui/tablet_screen.gd`, new). *Desk terminal* for /00: cream-and-teal casing with a recessed screen, matching the loft computer. *Field slate* for job pages: dark enamel bezel, brass cord and plug at the top edge, a link lamp reading `CONNECTED · workshop`. Before the slate is picked up, /00 uses the desk terminal; after, jobs use the slate.
+- **Two skins of one component** (`ui/code/tablet_screen.gd`, new). *Desk terminal* for /00: cream-and-teal casing with a recessed screen, matching the loft computer. *Field slate* for job pages: dark enamel bezel, brass cord and plug at the top edge, a link lamp reading `CONNECTED · workshop`. Before the slate is picked up, /00 uses the desk terminal; after, jobs use the slate.
 - **Screen:** a file tab (`landing_light.py`), editor with line numbers, an OUTPUT strip below it in the same dark, and a thin status row (line and column, `Python`, link state). Test code and Apply sit on the lower bezel as keys, keeping their current styles.
-- **Colours** in one new file, `ui/code_palette.gd`, so nothing is inline (the UI rule in [UI.md](../../../pipeline/UI.md)). VS Code Dark+ values: background `#1e1e1e`, text `#d4d4d4`, line numbers `#858585`, current line `#2a2d2e`, selection `#264f78`, keywords `#569cd6`, control flow (`for`, `if`, `in`, `not`) `#c586c0`, functions and builtins `#dcdcaa`, strings `#ce9178`, numbers `#b5cea8`, comments `#6a9955`, `.attributes` `#9cdcfe`. IBM Plex Mono stays; the existing font-size setting still applies.
+- **Colours** in one new file, `ui/code/code_palette.gd`, so nothing is inline (the UI rule in [UI.md](../../../pipeline/UI.md)). VS Code Dark+ values: background `#1e1e1e`, text `#d4d4d4`, line numbers `#858585`, current line `#2a2d2e`, selection `#264f78`, keywords `#569cd6`, control flow (`for`, `if`, `in`, `not`) `#c586c0`, functions and builtins `#dcdcaa`, strings `#ce9178`, numbers `#b5cea8`, comments `#6a9955`, `.attributes` `#9cdcfe`. IBM Plex Mono stays; the existing font-size setting still applies.
 - **Replay looks like a debugger.** The current line gets the yellow execution highlight with a gutter arrow, and variable values appear dim at the end of the line, as in VS Code's inline values. `ProgramPlayback` already carries the values.
 - **Ghost text:** translucent blue-white fill, a 2 px blue outline with a soft pulsing glow, a **dashed** outline so it still reads without colour, a slow 2–3 px bob, letters fading in as they are typed, and a dotted tail. Real speech stays a solid paper bubble with dark ink. The caption becomes a small `TEST · GHOST` chip.
 - **Ghost in the world:** the same blue outline and pulse for every Test proposal. A previewed lamp gets a blue outline and a blue halo that does not light the room; Apply is what makes the room really brighten.
 
-**Where.** New `ui/tablet_screen.gd`, `ui/code_palette.gd`. Edit `ui/workshop_journal.gd`, `ui/workshop_jobs_journal.gd`, `ui/program_playback.gd`, `ui/workshop_speech.gd`, `scenes/clearing_view.gd` (`_ghost_material`, `_set_fixture_preview`, `_ghost_box`), `ui/paper_pal.gd` (ghost-blue tokens; exact blue picked from two or three on-screen swatches at review). `CodeEditor`'s default palette stays, so the archived journeys keep their look; the new palette is applied as an override, as `_paper_code` does now.
+**Where.** New `ui/code/tablet_screen.gd`, `ui/code/code_palette.gd`. Edit `ui/notebook/greeting_journal.gd`, `ui/notebook/jobs_journal.gd`, `ui/code/program_playback.gd`, `ui/story/world_speech.gd`, `scenes/world_view.gd` (`_ghost_material`, `_set_fixture_preview`, `_ghost_box`), `ui/kit/paper_pal.gd` (ghost-blue tokens; exact blue picked from two or three on-screen swatches at review). `CodeEditor`'s default palette stays, so the archived journeys keep their look; the new palette is applied as an override, as `_paper_code` does now.
 
 **Checks.** `test_sparks.gd` and `test_ui.gd` expectations updated. Screenshots at actual size of /00 (terminal skin), a job page (slate skin), a Test ghost bubble and a ghost lamp.
 
@@ -104,15 +104,15 @@ Today Send message closes the notebook and opens the portrait chat at once. Stag
 4. A beat of stillness. Then dust lifts off the shelf, a shiver, the rotor ticks twice and spins up, the lantern glass warms from dim to amber (an animated blend, replacing today's hard material swap), the eyes flicker on with two blinks, and she rises into her bob.
 5. The camera nudges to Hotaru. Her first words, "Oh. Morning.", appear as a world bubble. The portrait scene then continues from its second page.
 
-Reusable shape for every Apply: **drawer away → camera to the change → effect in program order → reaction bubble → ticket stamp → optional portrait scene.** This slice builds it as one helper on the room stage (`WorkshopLoftStage`), with the waking as its first user.
+Reusable shape for every Apply: **drawer away → camera to the change → effect in program order → reaction bubble → ticket stamp → optional portrait scene.** This slice builds it as one helper on the room stage (`LoftStage`), with the waking as its first user.
 
-**Where.** `scenes/workshop_loft_stage.gd` (the timeline), `app/game.gd` (`_workshop_waking`, the `loft-waking` scene needs a start page), `ui/workshop_journal.gd`, `content/journeys/sparks-and-machines.json`. A save that is already awake must not replay it. A save with the voice earned but the waking unseen (`restore_story`) keeps today's direct route. *To verify:* the camera frame API (`RoomStage.frame()`, `focus_on`).
+**Where.** `scenes/stages/loft_stage.gd` (the timeline), `app/game.gd` (`_hotaru_waking`, the `loft-waking` scene needs a start page), `ui/notebook/greeting_journal.gd`, `content/journeys/sparks-and-machines.json`. A save that is already awake must not replay it. A save with the voice earned but the waking unseen (`restore_story`) keeps today's direct route. *To verify:* the camera frame API (`RoomStage.frame()`, `focus_on`).
 
 **Checks.** `test_workshop.gd`/`test_sparks.gd` play-through still reaches the portrait scene; a new check that the skip control lands in the same end state as the full beat.
 
 ### Slice 3 — Lamplit rooms and lamp placement
 
-**Light.** `ClearingView._make_lighting` builds one shadowed sun and `_apply_warmth` lifts it indoors to 0.75, so a closed room is lit like an outdoor afternoon. Add a per-room `interior.look: "lamplit"` (default unchanged for every other room):
+**Light.** `WorldView._make_lighting` builds one shadowed sun and `_apply_warmth` lifts it indoors to 0.75, so a closed room is lit like an outdoor afternoon. Add a per-room `interior.look: "lamplit"` (default unchanged for every other room):
 
 - The sun becomes **window light**: cool, low (about 0.2–0.3), no hard shadow, no streaks. Optionally a soft pool under each real window.
 - Ambient drops and cools. The unlit workshop reads as early, shutters half-closed: dim but legible. The readability rule in [02](02-art-direction.md) still applies.
@@ -126,7 +126,7 @@ The user wants the look and the shadows kept ([performance memory](../../../pipe
 
 **The order is part of the lesson.** `zone.lamps` order is authored, and the loop plays in that order. If the wire runs screen → bench → table → stairs, `lamps` and the quest text ("first the stair lantern, then…") must be reordered together, or the wire made to follow the list. Decide with the circuit.
 
-**Where.** `scenes/clearing_view.gd`, `scenes/workshop_loft_stage.gd`, `content/areas/workshop-floor.json` (version bump; `lamps`, `interior.assets` positions, `lighting`, `lamp_fixtures`; the stair lantern's `stand` cell and the quest `focus` markers must move with it), and the lamp assets. Per [AGENTS.md](../../../AGENTS.md) the asset edits go through the request queue (`workshop-hanging-lamp`, `workshop-stair-lamp`, and the shell if joists are added), built with `scripts/world-art.sh`, and acceptance stays with the user.
+**Where.** `scenes/world_view.gd`, `scenes/stages/loft_stage.gd`, `content/areas/workshop-floor.json` (version bump; `lamps`, `interior.assets` positions, `lighting`, `lamp_fixtures`; the stair lantern's `stand` cell and the quest `focus` markers must move with it), and the lamp assets. Per [AGENTS.md](../../../AGENTS.md) the asset edits go through the request queue (`workshop-hanging-lamp`, `workshop-stair-lamp`, and the shell if joists are added), built with `scripts/world-art.sh`, and acceptance stays with the user.
 
 **Checks.** Screenshots at zero, one and three lamps. Frame time before and after.
 
@@ -134,7 +134,7 @@ The user wants the look and the shadows kept ([performance memory](../../../pipe
 
 Uses slice 2's helper on the lamps. A loop Apply plays the lamps in list order: a spark runs along the conduit, the lamp warms up, the room brightens a step, and the tablet's counter reads 1/3, 2/3, 3/3. Then Hotaru's reaction bubble and the ticket stamp. A single-lamp job plays one spark. Test plays the same sequence as blue ghosts only.
 
-**Where.** `scenes/clearing_view.gd` (`apply_state`, `_set_fixture_preview`, the conduit pulse), `app/game.gd`, `ui/workshop_jobs_journal.gd`. Everything shown is derived from the committed state and command order, so a stale or rejected proposal never plays.
+**Where.** `scenes/world_view.gd` (`apply_state`, `_set_fixture_preview`, the conduit pulse), `app/game.gd`, `ui/notebook/jobs_journal.gd`. Everything shown is derived from the committed state and command order, so a stale or rejected proposal never plays.
 
 ### Slice 5 — Chapter 2: "Again?"
 
@@ -152,7 +152,7 @@ Bram lit the lamp, so the starter turns it **off** and the ghost shows the lit l
 
 **What the engine needs (verified).**
 - A quest cannot set the world's starting state today. Add an optional `setup` (for example `{"lamps": {"gate-lamp": true}}`) applied once when the quest becomes current, and saved.
-- `requires` is validated against quests in the same area (`AreaDef`), so the lane needs its own `haverlund-lane.quests.json`, and the workshop ticket gates it at journey level, the way `WorkshopStory.pending` does with `_journey_completed()`. Adding quests to the lane changes what its session holds (the `say-hello` gotcha in the v0.7 notes): `test_lane.gd` needs care.
+- `requires` is validated against quests in the same area (`AreaDef`), so the lane needs its own `haverlund-lane.quests.json`, and the workshop ticket gates it at journey level, the way `StoryScenes.pending` does with `_journey_completed()`. Adding quests to the lane changes what its session holds (the `say-hello` gotcha in the v0.7 notes): `test_lane.gd` needs care.
 - The gate lamp already has a `stand` cell and `requires: field-tablet` ability, so no new node is needed.
 
 **Where.** `content/areas/haverlund-lane.quests.json` (new), `content/areas/workshop-floor.quests.json` (the ticket as an inspection, like "The waiting ticket"), `content/journeys/sparks-and-machines.json` (scenes, ticket "No. 4"), `core/area_def.gd` and `core/quests.gd` (`setup`), `test/test_area.gd` (reference solutions), a new `test/test_lane_quests.gd` added to `scripts/test.sh`.

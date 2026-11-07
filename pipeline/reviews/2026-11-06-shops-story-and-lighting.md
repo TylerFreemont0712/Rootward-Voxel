@@ -8,7 +8,7 @@ The user asked for consistent night lighting, the Rootwell's texture faults fixe
 
 The Compatibility renderer draws at most 32 lights a frame by default, and the square alone has 70 lamps. Lamps past the nearest 32 kept their glowing glass but lit nothing, which is why light appeared to switch on as the player approached. Two changes fix it:
 
-- Every lamp now has a soft, unlit **light pool** on the ground under it (`ClearingView._light_pools`, an additive radial card on the unlit layer). It shows whenever the lamp is on. Outdoors it fades with daylight; indoors it glows softly at any hour. It casts no shadows and costs one quad per lamp. Pools follow lamps that build mode moves.
+- Every lamp now has a soft, unlit **light pool** on the ground under it (`WorldView._light_pools`, an additive radial card on the unlit layer). It shows whenever the lamp is on. Outdoors it fades with daylight; indoors it glows softly at any hour. It casts no shadows and costs one quad per lamp. Pools follow lamps that build mode moves.
 - `rendering/limits/opengl/max_renderable_lights` is raised to 64, so more of the near lamps also light their surroundings for real.
 
 ## The Rootwell

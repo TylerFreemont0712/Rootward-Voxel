@@ -7,5 +7,5 @@ export ROOTWARD_SANDBOX_RUNTIME="${ROOTWARD_SANDBOX_RUNTIME:-$project_root/sandb
 export VOXEL_LAB_FRESH=1
 tour="${1:-$project_root/.cache/tour}"
 rm -rf "$tour"
-"$project_root/scripts/play.sh" --resolution "${SHOT_SIZE:-1600x1000}" -s res://tools/sparks_tour.gd -- "$tour"
+"$project_root/scripts/play.sh" --resolution "${SHOT_SIZE:-1600x1000}" -s res://tools/reviews/sparks_tour.gd -- "$tour"
 echo "Screens saved in $tour"

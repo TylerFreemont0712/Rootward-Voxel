@@ -34,7 +34,7 @@ func _run() -> void:
 				_check(LabWorld.new(target).is_walkable(LabWorld.new(target).initial_state(), arrival), "%s: arriving from '%s' lands on a walkable cell" % [target.id, str(link.id)])
 	# Each room builds and draws a frame.
 	for id: String in parsed:
-		var view := ClearingView.new()
+		var view := WorldView.new()
 		root.add_child(view)
 		await process_frame
 		var began: int = Time.get_ticks_msec()

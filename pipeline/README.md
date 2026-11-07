@@ -31,7 +31,7 @@ This is the active pipeline for the approved foundation of **Sparks & Machines**
 | `art/source/world/<id>/<version>/model.blend` | Human-editable source after Blender handoff. |
 | `assets/world/<id>/model.glb` + manifest | Audited runtime handoff with source/export hashes. |
 | `core/area_def.gd`, `core/lab_world.gd`, `core/quests.gd` | Document validation; actual traversal/support/command authority; goal evaluation. |
-| `scenes/clearing_view.gd`, `art/world_assets.gd`, `art/mechanism_builder.gd` | The data-driven view and camera, selected asset loading, interactive parts. |
+| `scenes/world_view.gd`, `art/world_assets.gd`, `art/mechanism_builder.gd` | The data-driven view and camera, selected asset loading, interactive parts. |
 | `evidence/` | Selected review captures that travel with the reviews. |
 | `.cache/` | Disposable intermediate frames, candidate exports, test reports and logs. |
 

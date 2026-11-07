@@ -61,7 +61,7 @@ Add new ids through a versioned source, texture recipes, `SurfaceFinishes` choic
 `test/test_finishes.gd` checks hashes, pixels, imports, bindings, capabilities, history and instance isolation. `test/test_material_flow.gd` drives actual dropdown signals, floor paints, active prop preservation, room undo and saved Continue. Run `scripts/test.sh` and inspect windowed views:
 
 ```sh
-godot --path . --resolution 1600x1000 -s res://tools/detail_texture_board.gd -- .cache/detail-materials/boards
+godot --path . --resolution 1600x1000 -s res://tools/reviews/detail_texture_board.gd -- .cache/detail-materials/boards
 VOXEL_LAB_FRESH=1 godot --path . --resolution 1600x1000 -s res://test/test_material_flow.gd -- .cache/detail-materials/tour
 ```
 

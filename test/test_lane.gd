@@ -148,14 +148,14 @@ func _tram_work() -> void:
 	var restored:Dictionary=rules.normalize_state(saved)
 	_check(not restored.is_empty() and restored.memory==saved.memory and restored.display_cards==saved.display_cards and rules.is_walkable(restored,Vector2i(restored.player[0],restored.player[1])),"Old lane saves keep custom messages and move safely out of a relocated sign post")
 	_check(restored.lamps.has_all(["platform-west-lamp","platform-east-lamp"]),"Older saves gain both waiting-area light states")
-	_check(VillageLife.reserved(lane).has(Vector2i(lane.displays[0].at[0],lane.displays[0].at[1])),"Ambient work leaves the sign's coding approach clear")
+	_check(TownLife.reserved(lane).has(Vector2i(lane.displays[0].at[0],lane.displays[0].at[1])),"Ambient work leaves the sign's coding approach clear")
 	# Prove the complete authored lamp round independently of temporary pedestrian queues.
 	var wick:Dictionary=lane.villagers.filter(func(person:Dictionary)->bool:return person.id=="lane-wick")[0]
 	lane.villagers.assign([wick])
-	var life:Dictionary=VillageLife.initial(lane)
+	var life:Dictionary=TownLife.initial(lane)
 	var targets:Dictionary={}
 	for tick:int in range(2400):
-		VillageLife.advance(lane,rules,state,life,.1)
+		TownLife.advance(lane,rules,state,life,.1)
 		if life[wick.id].activity=="check_lamp":targets[life[wick.id].target]=true
 	_check(targets.has_all(["platform-lantern","platform-lantern-east"]),"Wick reaches and checks the lamps at both ends of the waiting area")
 
@@ -252,11 +252,11 @@ func _play() -> void:
 	var dark_paint := dark_quad.get_active_material(0) as StandardMaterial3D if dark_quad != null else null
 	_check(dark_paint != null and dark_paint.albedo_texture == null and dark_paint.albedo_color.get_luminance() < 0.05, "The inside of the lane's workshop doors is flat black")
 	_check(is_equal_approx(game.view.zoom(), 16.0), "The lane uses its own wider view")
-	_check(game.view.stage is WorkshopLaneStage and game.view.companion_present(), "An awake Hotaru waits by the shop door")
+	_check(game.view.stage is LaneStage and game.view.companion_present(), "An awake Hotaru waits by the shop door")
 	var backdrop := game.view.camera.get_node_or_null("PaintedDistance") as OutdoorBackdrop
 	_check(backdrop != null and backdrop.material_override is ShaderMaterial, "The painted harbour hangs behind the lane")
 	_check(game.view._environment.background_color.is_equal_approx(Color("c4d6da")) and is_equal_approx(game.view._sun.light_energy, .88), "The lane has its own daylight and sea haze")
-	var stage := game.view.stage as WorkshopLaneStage
+	var stage := game.view.stage as LaneStage
 	_check(stage.find_children("ChimneySmoke*", "CPUParticles3D", true, false).size() == 3, "The workshop's, Nell's and Bram's chimneys smoke")
 	_check(game.view.building_node("nell-house") != null and game.view.building_node("workshop-front") != null and game.view.building_node("bram-cottage") != null, "Nell's house stands between her workshop and Bram's cottage")
 	_check(stage._cloths.size() == 5 and stage._gulls.size() == 3, "The washing sways and three gulls wheel over the harbour")
@@ -270,7 +270,7 @@ func _play() -> void:
 	stage._place_tram(60.0 - 14.0)
 	_check(not tram.visible, "Between trips the tram is down the hill, out of sight")
 	game._refresh_interaction()
-	var scene := game._modals[-1] as WorkshopScene if not game._modals.is_empty() else null
+	var scene := game._modals[-1] as DialogueWindow if not game._modals.is_empty() else null
 	_check(scene != null and scene.pages.size() == 4, "The first time out, Hotaru has something to say about the street")
 	if scene != null:
 		_check(scene._speaker.text == "Spindle Lane" and scene._finish_label == "Back to the lane", "The lane's scene is narrated as the lane and ends back on it")
@@ -309,7 +309,7 @@ func _play() -> void:
 	game._refresh_interaction()
 	_check(game._interaction.get("kind") == "device" and game._interaction.get("id") == "gate-lamp", "Beside the gate, F opens the gate lamp's code")
 	game.interact()
-	_check(game.notebook_open and game.journal is WorkshopJobsJournal and (game.journal as WorkshopJobsJournal)._page=="scratch-gate-lamp", "A lamp without a ticket opens its own shared-slate scratch page")
+	_check(game.notebook_open and game.journal is JobsJournal and (game.journal as JobsJournal)._page=="scratch-gate-lamp", "A lamp without a ticket opens its own shared-slate scratch page")
 	game.close_notebook(true)
 	game._pop_all_modals()
 	var lantern: Node3D = game.view._lamps.get("gate-lamp")

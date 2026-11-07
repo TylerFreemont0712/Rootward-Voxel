@@ -1,10 +1,9 @@
 extends SceneTree
 ## A skin cannot redefine motion; switching appearance never resets actor state.
 
-const Actor := preload("res://art/sprite_actor.gd")
 const Contract := preload("res://pipeline/character_contract.gd")
 const Builder := preload("res://pipeline/frame_skin_builder.gd")
-const Skins := preload("res://art/frame_skin.gd")
+const FrameSkin := preload("res://art/frame_skin.gd")
 var _checks := 0
 var _failures: Array[String] = []
 
@@ -34,7 +33,7 @@ func _run() -> void:
 	broken.active = "missing"
 	_check(not Builder.catalog_errors(broken).is_empty(), "Reject an unregistered active skin")
 	broken = catalog.duplicate(true)
-	broken.skins.mira.selectable = "yes"
+	broken.skins.village_mira.selectable = "yes"
 	_check(not Builder.catalog_errors(broken).is_empty(), "Appearance visibility must be an explicit boolean")
 	broken = catalog.duplicate(true)
 	broken.skins.adventurer.tint = [1, 1, 1, 0]
@@ -46,10 +45,10 @@ func _run() -> void:
 	_check(not Builder.catalog_errors(broken).is_empty(), "Skin output cannot overwrite authored sources")
 	broken.skins.adventurer.runtime = "res://assets/characters/skins/example.png"
 	_check(not Builder.catalog_errors(broken).is_empty(), "Authored skin requires source provenance")
-	var library := Skins.read_library()
+	var library := FrameSkin.read_library()
 	_check(library.active == "adventurer" and library.skins.size() >= 2, "Approved default and second appearance are registered")
 	_check(library.template.sha256 == FileAccess.get_sha256(Contract.TEMPLATE), "Runtime library matches common template")
-	var actor := Actor.new()
+	var actor := SpriteActor.new()
 	root.add_child(actor)
 	actor.set_process(false)
 	await process_frame
@@ -75,7 +74,7 @@ func _run() -> void:
 	_check(actor._idle_seconds == idle_seconds and actor._next_blink_at == next_blink and actor.sprite.scale == breath_scale, "Skin swap preserves breathing and blink clocks")
 	_check(not actor.set_skin("unknown") and actor.skin_id == "adventurer" and actor.sprite.frame == 1, "Unknown skin leaves the current actor unchanged")
 	var alternate := ImageTexture.create_from_image(Image.load_from_file(ProjectSettings.globalize_path(library.template.atlas)))
-	var retargeted := Skins.frames_for(frames, alternate)
+	var retargeted := FrameSkin.frames_for(frames, alternate)
 	var same_motion := true
 	var separate_art := true
 	for animation: StringName in frames.get_animation_names():
@@ -87,17 +86,18 @@ func _run() -> void:
 			separate_art = separate_art and replacement.atlas == alternate and original.atlas != alternate
 	_check(same_motion, "Authored alternate atlas inherits every frame, region, duration, speed and loop")
 	_check(separate_art, "Retargeting art never mutates the approved frame textures")
-	_check(Skins.frames_for(frames, alternate) == retargeted, "Actors reuse cached frames for an alternate atlas")
+	_check(FrameSkin.frames_for(frames, alternate) == retargeted, "Actors reuse cached frames for an alternate atlas")
 	var metadata: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(library.template.manifest))
 	_check(Builder._check_atlas(library.template.atlas, metadata), "Approved atlas satisfies custom-skin alignment validation")
-	_check(library.skins.has("mira") and library.skins.mira.atlas != library.template.atlas, "Mira is a separately authored appearance, not a tint")
-	_check(Builder._check_atlas(library.skins.mira.atlas, metadata), "Every Mira walk, neutral and blink frame fits the common footprint and height")
-	_check(Builder._verified_source(catalog.skins.mira), "Mira's registered source and every directional painting match their provenance")
-	for id: String in ["rowan", "bram", "tessa", "nell", "sparks_nell", "sparks_mira", "sparks_rowan", "sparks_bram", "sparks_tessa"]:
+	_check(library.skins.has("village_mira") and library.skins.village_mira.atlas != library.template.atlas, "Mira is a separately authored appearance, not a tint")
+	_check(Builder._check_atlas(library.skins.village_mira.atlas, metadata), "Every Mira walk, neutral and blink frame fits the common footprint and height")
+	_check(Builder._verified_source(catalog.skins.village_mira), "Mira's registered source and every directional painting match their provenance")
+	for id: String in ["village_rowan", "village_bram", "village_tessa", "village_nell", "sparks_nell", "sparks_mira", "sparks_rowan", "sparks_braum", "sparks_tessa", "sparks_iona"]:
 		_check(library.skins.has(id) and not library.skins[id].selectable, id + " is a village resident, not a player replacement")
 		_check(Builder._verified_source(catalog.skins[id]), id + " has intact authored source provenance")
 		_check(Builder._check_atlas(library.skins[id].atlas, metadata), id + " fits all shared poses, anchors and scale")
-		var directory: String = "res://art/source/characters/" + id.trim_prefix("sparks_") + ("/sparks-v2/" if id.begins_with("sparks_") else "/v1/")
+		# The painted source folder is whatever the catalog registers; ids and folder names are independent.
+		var directory: String = str(catalog.skins[id].source).get_base_dir() + "/"
 		if id.begins_with("sparks_"):
 			_check_cast_registration(directory,id)
 		for pair: Array in [["SE", "SW"], ["NE", "NW"]]:
@@ -128,7 +128,7 @@ func _run() -> void:
 	_check_mira_mirrors()
 	actor.set_screen_motion(Vector2(1, -0.5))
 	actor.sprite.set_frame_and_progress(6, 0.4)
-	_check(actor.set_skin("mira") and actor.animation_name == "walk_ne" and actor.sprite.frame == 6 and is_equal_approx(actor.sprite.frame_progress, 0.4), "Changing to the authored Mira atlas preserves rear walk phase")
+	_check(actor.set_skin("village_mira") and actor.animation_name == "walk_ne" and actor.sprite.frame == 6 and is_equal_approx(actor.sprite.frame_progress, 0.4), "Changing to the authored Mira atlas preserves rear walk phase")
 	var mira_frames := actor.sprite.sprite_frames
 	var identical_motion := true
 	for animation: StringName in frames.get_animation_names():

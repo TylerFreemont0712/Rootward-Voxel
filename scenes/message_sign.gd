@@ -7,7 +7,7 @@ var pages: Array = []
 var _clock: float = 0.0
 var _index: int = -1
 
-func setup(view: ClearingView, spec: Dictionary) -> void:
+func setup(view: WorldView, spec: Dictionary) -> void:
 	definition=spec
 	var model: Node3D=view.building_node(str(spec.object))
 	if model==null: return

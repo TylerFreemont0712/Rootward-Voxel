@@ -1,7 +1,6 @@
 extends SceneTree
 ## Approved painted keys, mirrors, neutral idle, cosmetic timing and walk phase.
 
-const Actor := preload("res://art/sprite_actor.gd")
 var _failures: Array[String] = []
 var _checks: int = 0
 
@@ -56,12 +55,12 @@ func _run() -> void:
 	blink.flip_x()
 	var sw_blink := Image.load_from_file(ProjectSettings.globalize_path(source_dir + "/blink-sw.png"))
 	_check(blink.get_data() == sw_blink.get_data(), "SW blink exactly mirrors SE blink")
-	var actor := Actor.new()
+	var actor := SpriteActor.new()
 	root.add_child(actor)
 	actor.set_process(false)
 	await process_frame
 	_check(actor.sprite is AnimatedSprite3D and not actor.sprite.no_depth_test, "Painted sprite respects 3D depth")
-	_check(actor.sprite.animation == &"idle_se" and actor.sprite.frame == 0, "Actor starts in open-eye neutral SE idle")
+	_check(actor.sprite.animation == &"idle_se" and actor.sprite.frame == 0, "SpriteActor starts in open-eye neutral SE idle")
 	var directions: Dictionary = {"se": Vector2(1, 0.5), "sw": Vector2(-1, 0.5), "ne": Vector2(1, -0.5), "nw": Vector2(-1, -0.5)}
 	for direction: String in directions:
 		actor.set_screen_motion(directions[direction])

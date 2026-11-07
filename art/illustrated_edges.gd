@@ -3,7 +3,7 @@ extends RefCounted
 ## Fine sepia silhouettes for selected world models. Original surfaces and their
 ## imported materials stay intact. Smoothed hull normals close hard mesh corners.
 
-const HullJob := preload("res://art/outline_job.gd")
+const OutlineJob := preload("res://art/outline_job.gd")
 
 static var _meshes: Dictionary = {}
 static var _material: ShaderMaterial
@@ -24,7 +24,7 @@ static func apply(model: Node3D) -> void:
 	_attach(instance, hull)
 
 static func _hull(source: Mesh) -> ArrayMesh:
-	var job := HullJob.new(source)
+	var job := OutlineJob.new(source)
 	while not job.done: job.advance()
 	return job.result
 
@@ -38,7 +38,7 @@ static func apply_async(model: Node3D) -> void:
 		if not _eligible(instance): continue
 		var hull := _cached(instance.mesh)
 		if hull == null:
-			var job := HullJob.new(instance.mesh)
+			var job := OutlineJob.new(instance.mesh)
 			while not job.done:
 				job.advance()
 				if not job.done: await (Engine.get_main_loop() as SceneTree).process_frame

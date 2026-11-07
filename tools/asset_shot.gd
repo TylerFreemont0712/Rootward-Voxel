@@ -8,7 +8,6 @@ extends SceneTree
 const Seed := preload("res://pipeline/world_seed.gd")
 const Geometry := preload("res://pipeline/world_geometry.gd")
 const WorldAssets := preload("res://art/world_assets.gd")
-const SpriteActor := preload("res://art/sprite_actor.gd")
 
 
 func _initialize() -> void:
@@ -22,10 +21,10 @@ func _run() -> void:
 		quit(2)
 		return
 	var source: String = args[2] if args.size() > 2 else "runtime"
-	var view := ClearingView.new()
+	var view := WorldView.new()
 	root.add_child(view)
 	await process_frame
-	view.set_camera_mode(ClearingView.CameraMode.FIXED)
+	view.set_camera_mode(WorldView.CameraMode.FIXED)
 	var asset: Node3D
 	if source == "recipe":
 		var maker := Seed.new()

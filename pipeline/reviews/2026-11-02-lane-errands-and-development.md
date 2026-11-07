@@ -36,7 +36,7 @@ The marked lane gate now has intact, correctly registered leaves which open as t
 - `test/test_town_life.gd`: 2,392 checks passed, including legal routes, stationary work at actual targets, at least two destinations per outdoor inhabitant within 90 seconds, deterministic separation, all appearance pools, original alpha/timing and four tram services.
 - `test/test_lane.gd`: 163 checks passed, including two closed-at-rest gate leaves, opening/closing and both sets of handrails.
 - `test/test_development.gd`: **58 checks passed**, including checkpoint/state validation, byte-identical ordinary saves, reference-code WASI/Apply, the wider pin, actual chapter Start/End button signals and Return to regular game.
-- Native `tools/lane_polish_review.gd` passed at **1600×1000** and **1280×720**: actual downward input opens the gate, both directions travel correctly, the gate closes behind the return, and chapter controls/cards remain visible. Selected captures above come from those runs with isolated progress.
+- Native `tools/reviews/lane_polish_review.gd` passed at **1600×1000** and **1280×720**: actual downward input opens the gate, both directions travel correctly, the gate closes behind the return, and chapter controls/cards remain visible. Selected captures above come from those runs with isolated progress.
 - The final full **`scripts/test.sh` completed successfully**, including the app, WASI, UI, movement, art, world models, asset workflow and source guards. Documentation/handoff links passed 1,490 checks and ground art 121. Focused final lane/errand/dev tests also passed after the last clearance/layout refinements. `git diff --check` is clean.
 
 ## Scope

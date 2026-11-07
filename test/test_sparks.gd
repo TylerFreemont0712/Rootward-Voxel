@@ -108,7 +108,7 @@ func _journey() -> void:
 	await process_frame
 	_check(game.area.id=="workshop-loft" and not game.inside_house() and game._level_id=="sparks-and-machines","The journey starts in the loft itself, with no outside area")
 	_check(game.hud is PaperHud and game.hud.visible and (game.hud as PaperHud).ticket.number.text=="JOB NO. 0","The paper HUD pins JOB No. 0")
-	_check(game.view.stage is WorkshopLoftStage and game.view.stage.replaces_companion(),"The loft's stage replaces the fairy")
+	_check(game.view.stage is LoftStage and game.view.stage.replaces_companion(),"The loft's stage replaces the fairy")
 	_check(is_equal_approx(game.view.zoom(),14.5),"The loft uses its own indoor zoom")
 	_check(game._modals[-1] is OpeningCard,"The opening card comes first")
 	await shot("02-opening")
@@ -143,9 +143,9 @@ func _journey() -> void:
 	var tablet_object: Node3D = game.view.building_node("bed-tablet")
 	_check(tablet_object != null and tablet_object.visible and game.session.state.items.is_empty(), "Nell’s tablet is lying on the bed when the journey begins, and the traveller carries nothing")
 	game._refresh_interaction()
-	_check(game._interaction.get("kind", "") != "pickup" and game._pick_workshop_object(game.view.camera.unproject_position(BuildOverlay.world_aabb(tablet_object).get_center())) != "tablet", "The tablet is part of the room until Hotaru has sent the traveller to it")
+	_check(game._interaction.get("kind", "") != "pickup" and game._pick_room_object(game.view.camera.unproject_position(BuildOverlay.world_aabb(tablet_object).get_center())) != "tablet", "The tablet is part of the room until Hotaru has sent the traveller to it")
 	var note_point: Vector2 = game.view.camera.unproject_position(BuildOverlay.world_aabb(note_object).get_center())
-	_check(game._pick_workshop_object(note_point)=="nell-note", "The visible note is a clickable world object")
+	_check(game._pick_room_object(note_point)=="nell-note", "The visible note is a clickable world object")
 	var click := InputEventMouseButton.new()
 	click.button_index = MOUSE_BUTTON_LEFT
 	click.pressed = true
@@ -185,7 +185,7 @@ func _journey() -> void:
 		game.session.advance_walk(LabWorld.STEP_SECONDS)
 	game._process(0)
 	_check(game.session.player_cell() == Vector2i(1,8), "The traveller walks from the note to the terminal keyboard")
-	_check(game.notebook_open and game.journal is WorkshopJournal and game.session.state.inspections_read.has("desk-terminal"), "Clicking the terminal opens the first working page")
+	_check(game.notebook_open and game.journal is GreetingJournal and game.session.state.inspections_read.has("desk-terminal"), "Clicking the terminal opens the first working page")
 	_check(game.session.state.terminal_links == ["desk-terminal"] and game.view.terminal_display != null, "Using the loft computer creates its saved zone link")
 	await _greeting()
 	game.close_notebook(true)
@@ -212,7 +212,7 @@ func _journey() -> void:
 	_check(game.hud is PaperHud and not game.hud.visible,"The title retains Sparks presentation with the play HUD hidden")
 	await game.continue_game("sparks-and-machines")
 	_check(game.area.id=="workshop-loft" and game.hud is PaperHud and game._modals.is_empty(),"Continue resumes in the loft without replaying the opening")
-	_check((game.view.stage as WorkshopLoftStage).awake,"Continue restores Hotaru's committed awake state")
+	_check((game.view.stage as LoftStage).awake,"Continue restores Hotaru's committed awake state")
 	var legacy_save: Dictionary = game.session.to_save()
 	legacy_save.state.erase("terminal_links")
 	legacy_save.state.erase("items")
@@ -224,18 +224,18 @@ func _journey() -> void:
 	game.session.reset_world()
 	_check(game.session.state.items == reset_world_state.items, "Resetting the room keeps what the traveller carries")
 	_check(game.session.state.inspections_read.has("nell-note") and not game.view.building_node("nell-note").visible and game._dialogue_read.get("nell-note", []).has("read"), "Continue keeps the note read and its physical paper put away")
-	game.open_workshop_log()
-	_check(game._modals[0] is WorkshopLog and _text(game._modals[0], "Lodger"), "The read note is kept in the story log")
+	game.open_dialogue_log()
+	_check(game._modals[0] is DialogueLog and _text(game._modals[0], "Lodger"), "The read note is kept in the story log")
 	await shot("16-story-log")
-	(game._modals[0] as WorkshopLog).close()
+	(game._modals[0] as DialogueLog).close()
 	game.open_journal()
-	_check(game._modals.size()==1 and game._modals[0] is WorkshopJobLedger, "The pinned job opens the reached jobs book")
+	_check(game._modals.size()==1 and game._modals[0] is JobLedger, "The pinned job opens the reached jobs book")
 	_check(not _text(game._modals[0], "The morning round"), "The job book does not reveal work in an unvisited room")
 	await shot("15-job-book")
-	(game._modals[0] as WorkshopJobLedger).close()
+	(game._modals[0] as JobLedger).close()
 	await _window_steady()
 	game.open_notebook()
-	_check(game.journal is WorkshopJournal and game.journal.editor.text.contains("Hello, Hotaru!") and not (game.journal as WorkshopJournal)._in_conversation,"After the waking introduction, Field Notes anywhere opens the plain open page with the saved Python, without replaying the introduction")
+	_check(game.journal is GreetingJournal and game.journal.editor.text.contains("Hello, Hotaru!") and not (game.journal as GreetingJournal)._in_conversation,"After the waking introduction, Field Notes anywhere opens the plain open page with the saved Python, without replaying the introduction")
 	game.close_notebook(true)
 	await game._return_to_title()
 	SaveStore.delete("sparks-and-machines")
@@ -245,9 +245,9 @@ func _journey() -> void:
 
 
 func _greeting() -> void:
-	var notes:=game.journal as WorkshopJournal
+	var notes:=game.journal as GreetingJournal
 	if notes==null:return
-	var stage:=game.view.stage as WorkshopLoftStage
+	var stage:=game.view.stage as LoftStage
 	_check(not stage.awake,"Hotaru begins with a genuinely dark window")
 	_check(notes.mode=="blocks" and notes.message.text=="Hello", "The first page starts with an editable message block")
 	await shot("09-blocks")
@@ -304,8 +304,8 @@ func _greeting() -> void:
 	_check(game.session.state.hotaru_greeted and game.session.completed.has("say-hello") and stage.awake and not stage.output_is_preview,"Speak commits the tested greeting, wakes Hotaru and completes the job")
 	_check(notes._output.text.contains("Hello, Hotaru!") and notes._status.text.contains("Morning"),"The journal keeps the real output and Hotaru's ordinary morning response")
 	for frame: int in range(3):await process_frame
-	_check(game._modals.size()==1 and game._modals[0] is WorkshopScene,"Waking opens a portrait story conversation outside the code drawer")
-	var waking:=game._modals[0] as WorkshopScene
+	_check(game._modals.size()==1 and game._modals[0] is DialogueWindow,"Waking opens a portrait story conversation outside the code drawer")
+	var waking:=game._modals[0] as DialogueWindow
 	_check(not game.notebook_open and waking._portrait.texture!=null,"The waking avatar leaves the room visible and the editor closes cleanly")
 	waking._layout()
 	_check(waking._player_portrait.texture != null and waking._portrait.flip_h and waking._player_portrait.position.x > waking._portrait.position.x, "Hotaru and the traveller have opposing portrait positions")
@@ -313,7 +313,7 @@ func _greeting() -> void:
 	_check(waking._choices.visible and waking._choices.get_child_count()==3,"Hotaru's greeting keeps all three authored replies")
 	await shot("11-waking-choices")
 	waking._choose(waking._page.choices[1])
-	_check(waking._page.speaker=="player" and waking._text.text==WorkshopJournal.REPLIES[1],"A chosen reply is shown as the player's own line")
+	_check(waking._page.speaker=="player" and waking._text.text==GreetingJournal.REPLIES[1],"A chosen reply is shown as the player's own line")
 	_check(waking._player_portrait.modulate == Color.WHITE and waking._portrait.modulate.r < 1.0, "The speaker’s portrait is highlighted without making the other transparent")
 	await shot("12-hotaru-answer")
 	var pickup_cue: bool = false
@@ -327,8 +327,8 @@ func _greeting() -> void:
 	_check(game._dialogue_read.get("loft-waking",[]).has("introduced"),"The finished waking story is saved separately from program state")
 	game._process(0)
 	_check(game.view.building_node("hand-terminal") == null and game.view.building_node("bed-tablet").visible and game.session.state.items.is_empty(), "The old hand console is gone and the slate still waits on the bed")
-	game._open_workshop_journal(true)
-	notes=game.journal as WorkshopJournal
+	game._open_jobs_journal(true)
+	notes=game.journal as GreetingJournal
 	_check(not notes._in_conversation and notes._writing.visible and not notes._run.disabled,"The original page stays editable after the story conversation")
 	await notes.preview()
 	_check(stage.speech_preview and not stage.speech_text.is_empty(),"A repeat test after the introduction still shows a fresh ghost print")
@@ -356,16 +356,16 @@ func _window_steady() -> void:
 	var total: int = 0
 	for id: String in (game._story.scenes as Dictionary).keys():
 		if not game._modals.is_empty(): break
-		game._show_workshop_scene(id)
+		game._show_story_scene(id)
 		if game._modals.is_empty(): continue
-		var scene := game._modals[-1] as WorkshopScene
+		var scene := game._modals[-1] as DialogueWindow
 		for step: int in range(60):
 			if scene.is_queued_for_deletion(): break
 			scene.advance()
 			scene._layout()
 			total += 1
 			seen[str([scene.card.position, scene.card.size])] = true
-			_check(absf(scene.card.position.x + scene.card.size.x - scene.size.x * WorkshopScene.WINDOW_RIGHT) < 1.0, "The story window keeps the requested right inset: " + id)
+			_check(absf(scene.card.position.x + scene.card.size.x - scene.size.x * DialogueWindow.WINDOW_RIGHT) < 1.0, "The story window keeps the requested right inset: " + id)
 			_check(scene.card.get_global_rect().encloses(Rect2(scene._text_box.global_position, scene._text_box.size)), "The words sit inside the window: " + id)
 			if scene._choices.visible:
 				var inside: Rect2 = Rect2(scene._choices.global_position, scene._choices.size)
@@ -443,7 +443,7 @@ func _tablet() -> void:
 	game._refresh_interaction()
 	_check(game._interaction.get("kind", "") == "pickup" and str(game._interaction.label).contains("tablet"), "After her cue, standing at the foot of the bed offers the tablet")
 	var point: Vector2 = game.view.camera.unproject_position(BuildOverlay.world_aabb(tablet).get_center())
-	_check(game._pick_workshop_object(point) == "tablet", "The visible tablet becomes a clickable world object")
+	_check(game._pick_room_object(point) == "tablet", "The visible tablet becomes a clickable world object")
 	await shot("08-tablet-offered")
 	game.session.state.player = [7,5,0]
 	game.view.sync_player(game.session.state)
@@ -467,8 +467,8 @@ func _tablet() -> void:
 		game.session.advance_walk(LabWorld.STEP_SECONDS)
 	game._process(0)
 	_check(game.session.state.items == ["field-tablet"], "Arriving takes the tablet and records it as carried")
-	_check(game._modals.size() == 1 and game._modals[0] is WorkshopScene, "Lifting it opens the short scene about what it is")
-	var scene := game._modals[0] as WorkshopScene
+	_check(game._modals.size() == 1 and game._modals[0] is DialogueWindow, "Lifting it opens the short scene about what it is")
+	var scene := game._modals[0] as DialogueWindow
 	await shot("08b-tablet-scene")
 	_check(scene._portrait.texture != null, "Hotaru takes part in the scene")
 	var told_where: bool = false
@@ -485,7 +485,7 @@ func _tablet() -> void:
 	_check(PlayerItems.has(game.session.state, "field-tablet"), "The item survives in the rules, not only in the picture")
 
 
-func _drain_speech(stage: WorkshopLoftStage) -> void:
+func _drain_speech(stage: LoftStage) -> void:
 	for step: int in range(32):
 		if stage.speech_text=="" or stage.speech_complete:return
 		stage.advance_speech()

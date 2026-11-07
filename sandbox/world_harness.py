@@ -44,7 +44,7 @@ def _need(ability, what):
     lesson = _build.get("lessons", {}).get(ability)
     if lesson:
         raise WorldError("Your code cannot %s yet. Reach the lesson %r to learn how." % (what, lesson))
-    raise WorldError("Your code cannot %s in this valley." % what)
+    raise WorldError("Your code cannot %s here." % what)
 
 
 def _direction(value):

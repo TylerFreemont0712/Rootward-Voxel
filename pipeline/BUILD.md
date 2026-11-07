@@ -31,9 +31,9 @@ Applying the list to a copy of the document (`AreaBuild.apply`) and parsing that
 | Data | `content/build/catalog.json` | Categories, items (a prop names a world-catalog asset), `audience` (`player` or `studio`) and policies. |
 | Rules | `core/area_build.gd` | Pure: footprints, snapping, `check_prop` and friends, the reachability check, `apply`. |
 | History | `core/build_ledger.gd` | The edit list with `place`, `move_*`, `remove_*`, `paint`, `undo`, `redo`; keeps the current `area` and `rules`. |
-| Picture | `scenes/clearing_view.gd`, `scenes/build_overlay.gd`, `art/build_grid.gdshader`, `art/ground_skin.gd` | `sync_edits` redraws only what changed; the overlay draws the grid, ghost, footprint and hover, and picks. |
+| Picture | `scenes/world_view.gd`, `scenes/build_overlay.gd`, `art/build_grid.gdshader`, `art/ground_skin.gd` | `sync_edits` redraws only what changed; the overlay draws the grid, ghost, footprint and hover, and picks. |
 | Controller | `app/build_mode.gd` | Tools, hover, choice, clicks and drags, turning, the free camera, undo/redo and the Esc ladder. |
-| Interface | `ui/build_hud.gd`, `ui/build_bubble.gd`, `ui/build_details.gd`, `ui/build_card.gd`, `scenes/model_turntable.gd`, `scenes/thumbnail_studio.gd` | The left rail of round tools, the bottom tray, the right details panel with a live turning model and a facing compass. |
+| Interface | `ui/build/build_hud.gd`, `ui/build/build_bubble.gd`, `ui/build/build_details.gd`, `ui/build/build_card.gd`, `scenes/preview/model_turntable.gd`, `scenes/preview/thumbnail_studio.gd` | The left rail of round tools, the bottom tray, the right details panel with a live turning model and a facing compass. |
 | Game | `app/game.gd` | Owns the ledger, rebuilds it from the save on Continue, saves after edits, swaps the session's world. |
 
 ## The rules a placement must satisfy
@@ -66,7 +66,7 @@ Snapping: props snap to quarter cells, buildings so their edges sit on the grid,
 1. Register an exported model through [world assets](WORLD_ASSETS.md), with a rectangular `logical_footprint` for anything that blocks.
 2. Add an item to `content/build/catalog.json` naming the asset, category, title and `audience`.
 3. To offer it in the square, add its item id to `interior.layout.items` in `content/areas/haverlund-square.json`.
-4. Run `scripts/test.sh flow` (`test_layout_flow` drives the real input path; `test_square_layout` checks the rules) and look at it with `tools/square_layout_review.gd`.
+4. Run `scripts/test.sh flow` (`test_layout_flow` drives the real input path; `test_square_layout` checks the rules) and look at it with `tools/reviews/square_layout_review.gd`.
 
 `test_build` covers catalog, rules, history and policies over the fixture village; `test_ground` proves appearance edits preserve rules; `test_terrain` covers the terrain engine; `test_layout_flow` drives the studio the way a player does.
 

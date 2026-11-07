@@ -1,6 +1,6 @@
 # The programming API
 
-This describes what a player's Python can do today. The authoritative implementations are `sandbox/world_harness.py` (the objects), `core/lab_world.gd` (what is legal) and `app/session.gd` (preview, apply, undo). The in-game Reference tab is generated from `core/api_reference.gd`, and a test checks that every entry exists in the harness.
+This describes what a player's Python can do today. The authoritative implementations are `sandbox/world_harness.py` (the objects), `core/lab_world.gd` (what is legal) and `app/game_session.gd` (preview, apply, undo). The in-game Reference tab is generated from `core/api_reference.gd`, and a test checks that every entry exists in the harness.
 
 ## Your program
 
@@ -47,7 +47,7 @@ Walking takes one cardinal cell at a time; the picture slides smoothly between c
 
 ## Previews, undo and reset
 
-Run cancels a click route, waits for an active step to finish, then executes your code against that settled snapshot. Apply is unavailable during a step, so a program cannot remove support from under a walking character. **Undo** reverts the most recent committed world change, whether an applied program or a manual prop action (lamps, gates, bridges, working props, memory) and leaves you where you stand and what you have discovered intact; it refuses while you stand on a deck or gate it would remove. **Start the hollow over** darkens the valley and deactivates working props but keeps your code, finished quests, explored places and build edits. Saved active states survive moving or turning a prop and Continue; older saves with no prop state start those props inactive.
+Run cancels a click route, waits for an active step to finish, then executes your code against that settled snapshot. Apply is unavailable during a step, so a program cannot remove support from under a walking character. **Undo** reverts the most recent committed world change, whether an applied program or a manual prop action (lamps, gates, bridges, working props, memory) and leaves you where you stand and what you have discovered intact; it refuses while you stand on a deck or gate it would remove. **Reset this area** (or **Reset this room** indoors) darkens the lamps and deactivates working props but keeps your code, finished quests, explored places and build edits. Saved active states survive moving or turning a prop and Continue; older saves with no prop state start those props inactive.
 
 ## Tram message cards
 

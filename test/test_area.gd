@@ -158,7 +158,7 @@ func _public_works() -> void:
 ## Chapter 06: each shop's board job. The reference solution writes exactly the lines the shopkeeper asked for; the
 ## starter runs and writes a card, but not that one.
 func _market_street() -> void:
-	for spec: Array in [["shop-bakery", "next-batch", "bake-board"], ["shop-greengrocer", "todays-prices", "price-board"], ["shop-bookshop", "ready-for-collection", "order-board"]]:
+	for spec: Array in [["shop-bakery", "next-batch", "bake-board"], ["shop-greengrocer", "todays-prices", "price-board"], ["shop-tailor", "ready-for-collection", "order-board"]]:
 		var room: AreaDef = AreaStore.load_area(spec[0])
 		var quest: Dictionary = room.quest(spec[1])
 		_check(Quests.available(room, [], []).is_empty() and Quests.current(room, [], ["own-corner"]).get("id") == spec[1], "%s opens once Public Works is finished" % spec[1])

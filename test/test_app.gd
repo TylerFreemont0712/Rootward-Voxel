@@ -32,7 +32,7 @@ func _frames(count: int) -> void:
 
 func _session_tests() -> void:
 	var area: AreaDef = AreaStore.load_area("shop-bakery")
-	var view := ClearingView.new()
+	var view := WorldView.new()
 	root.add_child(view)
 	await process_frame
 	view.setup(area)
@@ -42,7 +42,7 @@ func _session_tests() -> void:
 	session.begin(area, view)
 	await process_frame
 	var start: Vector2i = session.player_cell()
-	_check(view._body is SpriteAdventurer, "The animated sprite is the runtime character")
+	_check(view._body is SpriteActor, "The animated sprite is the runtime character")
 	var step: Vector2i = _open_step(session)
 	_check(step != Vector2i.ZERO and session.walk_to(start + step * 2) and session._route.size() == 2, "Click target plans the route")
 	session._cancel_route()
@@ -95,13 +95,13 @@ func _game_tests() -> void:
 	root.add_child(game)
 	await _frames(6)
 	_check(game.title != null and not game.playing and not game.hud.visible, "The game opens on the title screen")
-	_check(game.area.id == "workshop-loft" and game.view.camera_mode == ClearingView.CameraMode.FIXED, "The title opens over the Sparks loft")
+	_check(game.area.id == "workshop-loft" and game.view.camera_mode == WorldView.CameraMode.FIXED, "The title opens over the Sparks loft")
 	_check(_find_button(game.title, "Continue") == null and _find_button(game.title, "New game") != null, "The main title offers a new Sparks game")
 	_check(LevelStore.entries().size() == 1 and LevelStore.entries()[0].id == LevelStore.MAIN_LEVEL, "Sparks & Machines is the only journey")
 	await game.start_new_game(LevelStore.MAIN_LEVEL)
 	await _frames(4)
 	_check(game.playing and game.hud.visible and game.title == null, "A new journey enters play")
-	_check(game.view.camera_mode == ClearingView.CameraMode.FOLLOW, "Play uses the following camera")
+	_check(game.view.camera_mode == WorldView.CameraMode.FOLLOW, "Play uses the following camera")
 	_check(SaveStore.has_save(LevelStore.MAIN_LEVEL), "Starting a journey writes a save")
 	var session: GameSession = game.session
 	game._pop_all_modals()
@@ -138,10 +138,10 @@ func _game_tests() -> void:
 	_check(screen._actor != null and screen._actor.sprite != null, "The character screen shows the painted adventurer")
 	screen._turn(1)
 	_check(str(screen._actor.animation_name) == "idle_sw", "Turning the character shows another painted view")
-	_check(screen._skin_buttons.has("adventurer") and not screen._skin_buttons.has("mira") and not screen._skin_buttons.has("adventurer_twilight"), "The boy is the player; the residents are not player appearances")
+	_check(screen._skin_buttons.has("adventurer") and not screen._skin_buttons.has("village_mira") and not screen._skin_buttons.has("adventurer_twilight"), "The boy is the player; the residents are not player appearances")
 	var before_appearance: Dictionary = session.state.duplicate(true)
-	screen._select_skin("mira")
-	_check(screen._actor.skin_id == "adventurer" and (game.view._body as SpriteAdventurer).skin_id == "adventurer", "A resident skin cannot replace the playable boy")
+	screen._select_skin("village_mira")
+	_check(screen._actor.skin_id == "adventurer" and (game.view._body as SpriteActor).skin_id == "adventurer", "A resident skin cannot replace the playable boy")
 	_check(game.settings.get_value("character_skin") == "adventurer" and session.state == before_appearance and session.player_name == "Ash", "Player identity stays separate from world state and chosen name")
 	game._pop_all_modals()
 	game.settings.set_value("character_skin", "unknown")
@@ -168,7 +168,7 @@ func _game_tests() -> void:
 	await game.continue_game()
 	await _frames(4)
 	_check(game.playing and game.session.player_cell() == target and game.session.state.memory.get("kept") == 7, "Continue restores the position and program memory")
-	_check((game.view._body as SpriteAdventurer).skin_id == "adventurer", "Continue keeps the boy as the player")
+	_check((game.view._body as SpriteActor).skin_id == "adventurer", "Continue keeps the boy as the player")
 	# Starting over replaces the save.
 	await game.start_new_game(LevelStore.MAIN_LEVEL)
 	await _frames(4)

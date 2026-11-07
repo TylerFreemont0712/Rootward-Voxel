@@ -39,7 +39,7 @@ The café corner reuses the first square's café tables. Benches, planters, the 
 
 ## Robots on their rounds
 
-`interior.life.robots` lists a placed robot, a path of points, a speed and a pause. `WorkshopLaneStage` rolls each robot along its path, turns it to face where it is going and turns its wheels, which are separate nodes. It waits at the ends of its round and waits while the apprentice stands in its way. This is presentation only: robots never block a cell or decide where anyone may walk. `AreaDef` refuses a malformed round. The test checks that every round keeps at least 0.3 from every blocking footprint.
+`interior.life.robots` lists a placed robot, a path of points, a speed and a pause. `LaneStage` rolls each robot along its path, turns it to face where it is going and turns its wheels, which are separate nodes. It waits at the ends of its round and waits while the apprentice stands in its way. This is presentation only: robots never block a cell or decide where anyone may walk. `AreaDef` refuses a malformed round. The test checks that every round keeps at least 0.3 from every blocking footprint.
 
 ## Arrival, inspections and the screen
 
@@ -74,7 +74,7 @@ The user has not played it yet. The captures and checks are agent-driven.
 
 - **Document:** `content/areas/haverlund-square.json` version 2, 36×32. The street rows are y 21–25: level 2 at x 0–1, a flight at x 2, level 1 at x 3–5, a flight at x 6, and the square at level 0. There are 53 blocking rectangles and 45 placed assets. The first square's document is kept at `content/areas/archive/haverlund-square-v1.json`. Spindle Lane's `town-steps` link now arrives at (1,23), facing east.
 - **Art:** 16 new Blender masters, authored by `art/source/world/sparks-square/v2/` ([source pack](../../art/source/world/sparks-square/v2/README.md)) with the lane pack's palette, painted surfaces and fine outlines. Of the first square's masters, the service pedestal, café table, produce stall and postal worker are still placed. The set, Rootwell, town hall and three shopfronts are kept with the status `retained_previous_concept`.
-- **Code:** `AreaDef._life_error` validates `life.robots`, and `WorkshopLaneStage._roll` moves the robots. Nothing else changed in the engine, and the other journeys are untouched.
+- **Code:** `AreaDef._life_error` validates `life.robots`, and `LaneStage._roll` moves the robots. Nothing else changed in the engine, and the other journeys are untouched.
 
 ## Checks
 

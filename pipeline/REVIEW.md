@@ -26,12 +26,12 @@ Skin changes must preserve animation frame/subframe, facing, blink clock, breath
 Focused views:
 
 ```sh
-VOXEL_LAB_FRESH=1 scripts/play.sh --resolution 1000x1000 res://tools/painted_study.tscn
-VOXEL_LAB_FRESH=1 scripts/play.sh --resolution 1000x1000 res://tools/skin_study.tscn
+VOXEL_LAB_FRESH=1 scripts/play.sh --resolution 1000x1000 res://tools/reviews/painted_study.tscn
+VOXEL_LAB_FRESH=1 scripts/play.sh --resolution 1000x1000 res://tools/reviews/skin_study.tscn
 VOXEL_LAB_FRESH=1 scripts/play.sh --resolution 1600x1000 -s res://tools/facing_review.gd
 ```
 
-`tools/painted_record.gd` records actual selected actors. Set `VOXEL_IDLE_REVIEW=1` for eight idle seconds and front-blink observation. `tools/skin_study.tscn` compares the unchanged default with Mira in all four directions, using shared frames. `tools/character_review.gd -- <output-directory>` records their walks and eight idle seconds, selects Mira through the real Character controls, and captures her portrait and normal-scale gameplay. Run review tools with `VOXEL_LAB_FRESH=1`.
+`tools/reviews/painted_record.gd` records actual selected actors. Set `VOXEL_IDLE_REVIEW=1` for eight idle seconds and front-blink observation. `tools/reviews/skin_study.tscn` compares the unchanged default with Mira in all four directions, using shared frames. `tools/character_review.gd -- <output-directory>` records their walks and eight idle seconds, selects Mira through the real Character controls, and captures her portrait and normal-scale gameplay. Run review tools with `VOXEL_LAB_FRESH=1`.
 
 ## World and interaction review
 
