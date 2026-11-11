@@ -89,7 +89,7 @@ The story, chapters and the Python API: [docs/concept/v0.7](docs/concept/v0.7/RE
 Godot 4.7.2 with typed GDScript, developed on Linux; Windows x64 is supported for playing and testing from source.
 
 ```sh
-git clone --single-branch -b release https://github.com/TylerFreemont0712/Rootward-Voxel.git   # a few MB
+git clone https://github.com/TylerFreemont0712/Rootward-Voxel.git   # about 7 MB
 cd Rootward-Voxel
 scripts/setup.sh           # the Python sandbox and the game's pictures and models (about 800 MB, once)
 scripts/play.sh            # play from source (Godot 4.7.2 as `godot` on the PATH, or GODOT_BIN)

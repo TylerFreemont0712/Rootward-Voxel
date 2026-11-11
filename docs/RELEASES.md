@@ -5,8 +5,16 @@ Rootward Voxel ships three ways from one repository:
 | Who | Gets | How |
 |---|---|---|
 | A player on Windows or Linux | The game, ready to play, no Godot needed | **Rootward Voxel Setup** from the [latest release](https://github.com/TylerFreemont0712/Rootward-Voxel/releases/latest) |
-| Someone reading or changing the code | Code, content, docs (~6 MB clone) | `git clone`, then `scripts/setup.sh` (or `setup.ps1`) for the sandbox and the game's media |
+| Someone reading or changing the code | Code, content, docs (~7 MB clone) | `git clone`, then `scripts/setup.sh` (or `setup.ps1`) for the sandbox and the game's media |
 | Someone remaking art | The above plus Blender masters, source paintings, concept boards and review captures | `scripts/setup.sh --dev` (or `scripts/fetch-media.sh dev`) |
+
+## History
+
+`main` started again from a clean slate on 2026-11-11, so a clone is a few megabytes. The history before that (the
+old `main` and `nvidia-gpu-opt-in`, about 3 GB with every picture and model) is not on GitHub: it is kept as the
+local tags `archive/main-pre-release`, `archive/nvidia-gpu-opt-in` and `archive/pre-release`, and in the bundle
+`/data/Projects/Rootward-Voxel-history-2026-11-11.bundle` on the development machine
+(`git clone <bundle> <folder>` restores it). Do not push those tags: a clone would download the 3 GB again.
 
 ## Media lives in release packs, not in git
 
