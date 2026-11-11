@@ -1,0 +1,193 @@
+{
+  "schema": 1,
+  "asset": "lane-tram",
+  "version": "v1",
+  "source": "art/source/world/lane-tram/v1/model.blend",
+  "source_sha256": "8bae6f1fa503f2b11165b13d6bf278fa010f4dc1e666bf0a09c4b84ba29be131",
+  "runtime": "assets/world/lane-tram/model.glb",
+  "runtime_sha256": "17adebde5a73933f39cbba1139824082d2697e541d7a3d755f6ebec750a39e9b",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -3.40999984741211,
+      -0.0299999713897705,
+      -1.08000004291534,
+      3.40999984741211,
+      3.8050000667572,
+      1.08000004291534
+    ],
+    "geometry_sha256": "6eba737a89f5beb2c0dcec1c02631f28d2ce5412fe3232e3ffee2931e9499cf3",
+    "material_records": {
+      "lane_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_enamel_cream": {
+        "albedo": [
+          9255,
+          8863,
+          7843,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_gold": {
+        "albedo": [
+          8392,
+          6980,
+          4157,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_ink": {
+        "albedo": [
+          3137,
+          2392,
+          1882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_iron_light": {
+        "albedo": [
+          3608,
+          3922,
+          4078,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_ochre": {
+        "albedo": [
+          7608,
+          6039,
+          3333,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_pages": {
+        "albedo": [
+          7961,
+          7373,
+          5961,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_red": {
+        "albedo": [
+          7098,
+          2745,
+          2275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_red_dark": {
+        "albedo": [
+          5451,
+          2000,
+          1608,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_steel": {
+        "albedo": [
+          4275,
+          4667,
+          4902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_steel_dark": {
+        "albedo": [
+          2039,
+          2431,
+          2667,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_teal": {
+        "albedo": [
+          2471,
+          4824,
+          4549,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_teal_dark": {
+        "albedo": [
+          1922,
+          3725,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_window_tram": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "570359370681dc1fe820e43751f43a2306d76360136b7f33e42a05cddc7eb4ca"
+      }
+    },
+    "materials": [
+      "lane_brass",
+      "lane_enamel_cream",
+      "lane_gold",
+      "lane_ink",
+      "lane_iron",
+      "lane_iron_light",
+      "lane_ochre",
+      "lane_pages",
+      "lane_red",
+      "lane_red_dark",
+      "lane_steel",
+      "lane_steel_dark",
+      "lane_teal",
+      "lane_teal_dark",
+      "lane_window_tram"
+    ],
+    "meshes": 15,
+    "triangles": 26388
+  }
+}

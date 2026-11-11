@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "20261029T055043-4dadd5c3",
+  "kind": "delete",
+  "title": "Delete Flower Pot",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "flower-pot",
+    "label": "Flower Pot",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/flower-pot/v1/model.blend",
+    "runtime": "assets/world/flower-pot/model.glb",
+    "manifest": "assets/world/flower-pot/manifest.json",
+    "catalog_notes": "Voxel terracotta pot on a soil bed with four small plus-shaped blossoms on one-voxel stems. 0.05 m voxels: 0.6 m across, 0.45 m to the rim, about 0.9 m to the top of the flowers. Proposed footprint is the pot itself; the blossoms overhang it.",
+    "related_files": [
+      "art/source/world/flower-pot/v1/brief.md",
+      "art/source/world/flower-pot/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/areas/village-morning.json",
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Flower Pot",
+      "source": "art/source/world/flower-pot/v1/model.blend",
+      "runtime": "assets/world/flower-pot/model.glb",
+      "pivot": "ground origin at the pot's centre; no front face",
+      "logical_footprint": [
+        -0.3,
+        -0.3,
+        0.6,
+        0.6
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Voxel terracotta pot on a soil bed with four small plus-shaped blossoms on one-voxel stems. 0.05 m voxels: 0.6 m across, 0.45 m to the rim, about 0.9 m to the top of the flowers. Proposed footprint is the pot itself; the blossoms overhang it."
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:50:43+00:00",
+  "updated": "2026-10-29T06:29:20+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:50:43+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:29:20+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/village-morning.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/flower-pot/v1/brief.md",
+    "art/source/world/flower-pot/v1/model.blend",
+    "art/source/world/flower-pot/v1/provenance.json",
+    "assets/world/flower-pot/manifest.json",
+    "assets/world/flower-pot/model.glb",
+    "assets/world/flower-pot/model.glb.import"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "id": "20261029T052559-b1e221d8",
+  "kind": "update",
+  "title": "Update Trowel, the gardening robot",
+  "asset_type": "world model",
+  "status": "changes_requested",
+  "notes": "Refine the adopted model closely to docs/concept/v0.72/art/robots/trowel-sheet.png. Improve rounded construction, working-tool details and materials; preserve the rolling pivots and the robot’s physical side details. Add a small natural eye blink. No new gameplay or work animation requested.",
+  "asset": {
+    "id": "robot-trowel",
+    "label": "Trowel, the gardening robot",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/robot-trowel/v1/model.blend",
+    "runtime": "assets/world/robot-trowel/model.glb",
+    "manifest": "assets/world/robot-trowel/manifest.json",
+    "catalog_notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_props.py is initial authoring only; edit the adopted model.blend.",
+    "related_files": [
+      "art/source/world/robot-trowel/v1/provenance.json",
+      "art/source/world/sparks-square/v2/author_props.py",
+      "docs/concept/v0.72/art/guildhall-square.png"
+    ],
+    "usage_files": [
+      "content/areas/haverlund-square.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Trowel, the gardening robot",
+      "source": "art/source/world/robot-trowel/v1/model.blend",
+      "runtime": "assets/world/robot-trowel/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y; wheels are separate nodes wheel_* turning about X",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Square scenery. A working robot stands where the area document places it; robots on their rounds move along interior.life.robots, presentation only, never blocking.",
+      "notes": "Guildhall Square concept (docs/concept/v0.72/art/guildhall-square.png). Native lane/square materials. art/source/world/sparks-square/v2/author_props.py is initial authoring only; edit the adopted model.blend."
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:25:59+00:00",
+  "updated": "2026-10-29T05:59:25+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:25:59+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T05:25:59+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-10-29T05:58:23+00:00",
+      "action": "finish"
+    },
+    {
+      "at": "2026-10-29T05:59:25+00:00",
+      "action": "Further changes requested: 20261029T055925-63760dca"
+    }
+  ],
+  "result": {
+    "assets": [
+      "robot-trowel"
+    ],
+    "summary": "Watering-can shell, perforated rose, handle, rear terracotta pot, modeled leaves and flowers. Includes independent eye-only blink and authored wheel-radius rolling. Normal world build, 86 model checks, 25 request UI checks and full scripts/test.sh passed; native concept/old/new four-angle review, square play-through and gameplay-scale lineup reviewed. Tool-use animations remain future work.",
+    "review": "pipeline/reviews/2026-10-29-robot-models-and-request-markers.md",
+    "contexts": [
+      {
+        "id": "robot-trowel",
+        "label": "Trowel, the gardening robot",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/robot-trowel/v2/model.blend",
+        "runtime": "assets/world/robot-trowel/model.glb",
+        "manifest": "assets/world/robot-trowel/manifest.json",
+        "catalog_notes": "Concept-matched native source refinement after docs/concept/v0.72/art/robots/trowel-sheet.png. Existing v1 source preserved. Refinement records and packed Blender-painted surfaces: art/source/world/sparks-robot-refinement/v1/. Edit the adopted v2 model.blend; use scripts/world-art.sh build robot-trowel.",
+        "related_files": [
+          "art/source/world/robot-trowel/v2/provenance.json",
+          "art/source/world/sparks-robot-refinement/v1/README.md",
+          "docs/concept/v0.72/art/robots/trowel-sheet.png"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v2",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Trowel, the gardening robot",
+          "source": "art/source/world/robot-trowel/v2/model.blend",
+          "runtime": "assets/world/robot-trowel/model.glb",
+          "pivot": "Ground centre; front toward Blender -Y; wheels are separate nodes wheel_* turning about X",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Square scenery. A working robot stands where the area document places it; robots on their rounds move along interior.life.robots, presentation only, never blocking. Separate wheel pivots carry wheel_radius metadata for correct rolling distance.",
+          "notes": "Concept-matched native source refinement after docs/concept/v0.72/art/robots/trowel-sheet.png. Existing v1 source preserved. Refinement records and packed Blender-painted surfaces: art/source/world/sparks-robot-refinement/v1/. Edit the adopted v2 model.blend; use scripts/world-art.sh build robot-trowel.",
+          "spark_blink": true
+        }
+      }
+    ],
+    "fingerprints": {
+      "robot-trowel": {
+        "source": "fcf64b9175dbbe6eb8d48b88b39a34dd87e44aec8d55cbc503060ebc59dca474",
+        "runtime": "ac700f7677248e33554b857b78de3fe829610c999b20407ae9a504f5e198ec40",
+        "entry": "648f6064198b1b6f83f6d0cf7c6cb1e5fc91b44de209bc39b9cda4b42ca536d1"
+      }
+    }
+  }
+}

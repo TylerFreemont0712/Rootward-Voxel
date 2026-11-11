@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-27",
+  "record": "art/source/world/sparks-loft/v1/lived_in_revision.py",
+  "sources": [
+    {
+      "asset": "loft-bed",
+      "before": "64d6bf8fb5c469511925808ac9b827114c4ba2ad20db438b32b7be658432453b",
+      "backup": "art/source/world/loft-bed/v1/model.pre-lived-in.blend",
+      "after": "dc00acf4da7ec393ae632fa84d378df7e7826cd9532420f664f2123af187b5fc"
+    },
+    {
+      "asset": "loft-wall-life",
+      "before": "4ed6bac05b245e1aabf19b10f1726662cd4fe4c91367bd3fabaf056756278a2c",
+      "backup": "art/source/world/loft-wall-life/v1/model.pre-lived-in.blend",
+      "after": "dfecc3dfb7360eec44d24588033566d6772957fa781cb4ed02e0af794972c426"
+    },
+    {
+      "asset": "loft-chair",
+      "before": "9e0970618070dc2aac2a8027ba2aa93f48c010f1ef1f1d536c84bc0853bb668e",
+      "backup": "art/source/world/loft-chair/v1/model.pre-lived-in.blend",
+      "after": "f3315d9d49ee177bb545e849560b5a9af9815e2f78124f0e0b1dfda8b3f19211"
+    }
+  ]
+}

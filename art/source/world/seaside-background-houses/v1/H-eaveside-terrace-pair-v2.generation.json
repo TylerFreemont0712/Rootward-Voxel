@@ -1,0 +1,17 @@
+{
+  "id": "H-eaveside-terrace-pair",
+  "letter": "H",
+  "key": "background-house-h-v2",
+  "dest": "art/source/world/seaside-background-houses/v1/H-eaveside-terrace-pair-v2.png",
+  "refs": [
+    "art/source/world/seaside-background-houses/v1/H-eaveside-terrace-pair.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Refine this two-view house concept plate, retaining its same house identity, warm painted outline style, palette, doors, domestic details, roof shapes, chimney placement, camera elevation and true opposite front-right / rear-left viewpoints. Keep both entire buildings and every roof, chimney and foundation inside the sheet with generous ivory margins; slightly reduce the overall plate scale to make room if necessary. No labels or text. The current terrace pair's taller house has only TWO full floors plus its attic. Add EXACTLY ONE complete upper residential floor to the TALLER unit in BOTH views, so it has THREE full storeys plus its gable attic. Keep the LOWER unit at TWO storeys with the same lower teal roof. In the left/front view the taller unit is on viewer-left; in the right/rear view the taller unit is on viewer-right. Preserve their joined party wall, two street entrances, stepped roof relationship, same flat foundation and useful rear kitchen/laundry details. The added floor must make their height step clearly stronger.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-a6fc16d1-9ad9-41ce-b839-11385f803c8f.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "3cb73a28bcdf8eb169b4879512ca5df0b5368590c00ef24989d395a172c42c10",
+  "reference_sha256": {
+    "art/source/world/seaside-background-houses/v1/H-eaveside-terrace-pair.png": "6430d3ad09ed5439b473e6f88c5dacf3fecae0416abb2dde9b3317ea18f614dd"
+  }
+}

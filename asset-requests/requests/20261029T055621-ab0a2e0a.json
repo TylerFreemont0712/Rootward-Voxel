@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "id": "20261029T055621-ab0a2e0a",
+  "kind": "delete",
+  "title": "Delete Market Stall",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "market-stall",
+    "label": "Market Stall",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/market-stall/v1/model.blend",
+    "runtime": "assets/world/market-stall/model.glb",
+    "manifest": "assets/world/market-stall/manifest.json",
+    "catalog_notes": "A plank counter with corner posts, a back board and a violet and cream striped canopy, with baskets and apples on the counter. The proposed footprint is the stall body, and the canopy overhangs it.",
+    "related_files": [
+      "art/source/world/market-stall/v1/brief.md",
+      "art/source/world/market-stall/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Market Stall",
+      "source": "art/source/world/market-stall/v1/model.blend",
+      "runtime": "assets/world/market-stall/model.glb",
+      "pivot": "ground origin at the centre of the stall body",
+      "logical_footprint": [
+        -0.75,
+        -0.45,
+        1.5,
+        0.9
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A plank counter with corner posts, a back board and a violet and cream striped canopy, with baskets and apples on the counter. The proposed footprint is the stall body, and the canopy overhangs it.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark",
+          "roof_light"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:56:21+00:00",
+  "updated": "2026-10-29T06:29:00+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:56:21+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:29:00+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/market-stall/v1/brief.md",
+    "art/source/world/market-stall/v1/model.blend",
+    "art/source/world/market-stall/v1/provenance.json",
+    "assets/world/market-stall/manifest.json",
+    "assets/world/market-stall/model.glb",
+    "assets/world/market-stall/model.glb.import"
+  ]
+}

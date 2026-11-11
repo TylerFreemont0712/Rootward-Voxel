@@ -1,0 +1,11 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed",
+  "seed": "Not exposed",
+  "prompt": "Use case: identity-preserve. Production transparent painted character sheet. Image 1 strictly defines the REAR-RIGHT / NORTHEAST three-quarter camera, nine walking/neutral poses and 3x3 sheet layout. Image 2 defines IONA VENN's exact new identity and clothing. Repaint the nine poses of image 1 as Iona from image 2, viewed from the BACK-RIGHT. NO satchel, scarf or maps. Iona is a mature signwriter, short dark tight curls with a silver forelock (mostly hidden from rear), bone-white rolled sleeve smock, ink-blue apron tied with a fabric bow at the back waist, olive trousers, dark brown work boots. Back of her hair and torso visible, no frontal face or eyes. Same painterly chibi scale and warm brown contours as both references. Exactly 1254x1254 transparent RGBA sheet, nine equal 418x418 cells, poses 1-8 matching the rear walking gait of image 1 cell for cell, bottom-right neutral both boots planted arms relaxed. Clear alternating strides/opposing arm swing. Same identity and scale in every cell. Keep entire hair/hands/boots INSIDE each cell with generous transparent gaps, boot soles around local y390 and crown about y40. No cropping across cell edges. No background, grid, shadows, labels, text, scene or extra characters.",
+  "references": [
+    "art/source/characters/mira/sparks-v1/NE.png",
+    "art/source/characters/iona/v1/SE.png"
+  ],
+  "source": "/home/joejin/.codex/generated_images/01a19a13-e572-7ac1-8ed3-988b77df56c0/exec-a605b998-7ffe-407a-940e-2273966bc5df.png"
+}

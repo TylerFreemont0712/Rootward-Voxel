@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "asset": "loft-rug",
+  "version": "v1",
+  "source": "art/source/world/loft-rug/v1/model.blend",
+  "source_sha256": "6417b9c30551ec5a9951e4d8fd9a2b32bf3b9e308c44dd0947e199e54121052a",
+  "runtime": "assets/world/loft-rug/model.glb",
+  "runtime_sha256": "76186a7fdd0cf0e17beea055b2d75ad994f6f898a4bda4388a4891c0e1ed3ae9",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.8513445854187,
+      0.0130348242819309,
+      -1.34665060043335,
+      1.85134017467499,
+      0.0589190050959587,
+      1.34665024280548
+    ],
+    "geometry_sha256": "0f266807e3fb8cb605b08600126c7bdff035cb6c253a105b6b4c164ec3ed47e8",
+    "material_records": {
+      "loft_linen": {
+        "albedo": [
+          9333,
+          8980,
+          8275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_rug": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "984d0c4776fcbc61e8dcf9d6a77aa6f83bfea78cd8e0b731011f8e06630f26a2"
+      }
+    },
+    "materials": [
+      "loft_linen",
+      "loft_rug"
+    ],
+    "meshes": 2,
+    "triangles": 4096
+  }
+}

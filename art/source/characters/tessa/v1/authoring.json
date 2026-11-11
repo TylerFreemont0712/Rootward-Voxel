@@ -1,0 +1,40 @@
+{
+  "blink_crop": [
+    90,
+    35,
+    250,
+    250
+  ],
+  "eye_rectangles": [
+    [
+      116.0,
+      72.0,
+      42.0,
+      46.0
+    ],
+    [
+      167.0,
+      61.0,
+      33.0,
+      47.0
+    ]
+  ],
+  "inputs": {
+    "NE.png": "58d68898efa93f3126b98402249fc5f0e184bbfe65ea086a3040ce60bad30a13",
+    "NW.png": "3b3812fc3492ddbfa38d352b5afc01fa760f8e9ff085446b9f950a57ac7e228d",
+    "SE.png": "4c62f0852dee2c2b39e89bc44285cb46e8b372bc9c1b7b40a232730823fb27da",
+    "SW.png": "b77bd6d0466d061b84fefc5c7333d05d4321e0485a75440b9b2986a61a0518e8",
+    "blink-generated.png": "1ec54374e54529db09acdddcee21270458eff3eef7122348ba1a25b97a1aaeed",
+    "blink-reference.png": "51dc846697edbcc622b8af319a8ba0adfcacdf8ab9b616ec460f4b9911e54412",
+    "blink-se.png": "a4cc41b6a40443e67eb3dc2ac6bc0ed0ae7e2714045019e6dd16fd5874a8b26a",
+    "blink-sw.png": "74ac526c10d16da646ac20508d4148edb9b9523e6e40d628712101326c3b0b77",
+    "idle-se.png": "dd6891314353ff0e8a4a925320feb77679d169ba196e1671cc2496a7e4a63a66",
+    "prompt-blink.txt": "149f1b4e97b1d141740bf592926e2580d5fa1a180aaf7ab11988373f8fdd76ee",
+    "prompt-ne.txt": "771cd976806851478afa9c467c224d660f4e55c4a423ab6be1c3643484d17344",
+    "prompt-se.txt": "595bef8f9d39633807f47e29e1907ba56901bffd6027f1678c4aad1d878659b0"
+  },
+  "method": "SE/NE are original 3x3 generated paintings. SW/NW are exact per-cell mirrors. Generated blink crop is resized to its reference; only two feathered eye ellipses are composited. All other neutral pixels remain exact. Existing shared-template packer performs integer translation only.",
+  "model": "not exposed",
+  "seed": "not exposed",
+  "tool": "built-in image_gen.imagegen"
+}

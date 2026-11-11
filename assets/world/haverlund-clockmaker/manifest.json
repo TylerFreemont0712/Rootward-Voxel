@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "asset": "haverlund-clockmaker",
+  "version": 4,
+  "source": "art/source/world/haverlund-clockmaker/v4/model.blend",
+  "source_sha256": "cf210ac9484a3cd72a8759e24af4269745ad23c62642244f8f616634014934f0",
+  "runtime": "assets/world/haverlund-clockmaker/model.glb",
+  "runtime_sha256": "4c62973c7dba66f26a9bc17e1cd529626cf3523b3d8eeaed5e42c6032966737e",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -4.047767162323,
+      -0.159999996423721,
+      -3.38499999046326,
+      3.98999953269958,
+      10.9499998092651,
+      3.22000002861023
+    ],
+    "geometry_sha256": "e2d789c9794dc3af88fe33413f976e9b092b45d4e8af09fb0835575d659a5122",
+    "material_records": {
+      "clock_brass": {
+        "albedo": [
+          7255,
+          5529,
+          2627,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": ""
+      },
+      "clock_bronze_dark": {
+        "albedo": [
+          4118,
+          3373,
+          2078,
+          10000
+        ],
+        "roughness": 5000,
+        "texture_rgba_sha256": ""
+      },
+      "clock_clear_glass": {
+        "albedo": [
+          9333,
+          9137,
+          8667,
+          750
+        ],
+        "roughness": 2600,
+        "texture_rgba_sha256": ""
+      },
+      "clock_copper_edge": {
+        "albedo": [
+          2863,
+          4510,
+          4235,
+          10000
+        ],
+        "roughness": 6300,
+        "texture_rgba_sha256": ""
+      },
+      "clock_copper_painted": {
+        "albedo": [
+          6652,
+          6652,
+          7736,
+          10000
+        ],
+        "roughness": 7800,
+        "texture_rgba_sha256": "4770b31c07d7fd1a8fe638f075babcffef8d1c024319197c18463d08df079652"
+      },
+      "clock_cream": {
+        "albedo": [
+          9451,
+          8902,
+          7255,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "clock_fascia": {
+        "albedo": [
+          1569,
+          3020,
+          3020,
+          10000
+        ],
+        "roughness": 7200,
+        "texture_rgba_sha256": ""
+      },
+      "clock_ivory_dial": {
+        "albedo": [
+          9216,
+          8745,
+          7490,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "clock_recess": {
+        "albedo": [
+          1490,
+          2039,
+          1961,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": ""
+      },
+      "clock_warm_backing": {
+        "albedo": [
+          2588,
+          2314,
+          1804,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": ""
+      },
+      "clock_watch_gold": {
+        "albedo": [
+          7216,
+          5765,
+          3059,
+          10000
+        ],
+        "roughness": 3700,
+        "texture_rgba_sha256": ""
+      },
+      "house_lamp_glass": {
+        "albedo": [
+          10000,
+          8510,
+          6275,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "house_window_pane": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3500,
+        "texture_rgba_sha256": "0521fe9168475a9da488e23ca89b12bdfdc600fcde1d4eb37051e2cec2478c37"
+      },
+      "seaside_plaster": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "491d49702b9d152c888c2e78d7fb4b0ace16aadf59ddd4ab75607654e59ecbbe"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      },
+      "seaside_timber": {
+        "albedo": [
+          8650,
+          8210,
+          7484,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "clock_brass",
+      "clock_bronze_dark",
+      "clock_clear_glass",
+      "clock_copper_edge",
+      "clock_copper_painted",
+      "clock_cream",
+      "clock_fascia",
+      "clock_ivory_dial",
+      "clock_recess",
+      "clock_warm_backing",
+      "clock_watch_gold",
+      "house_lamp_glass",
+      "house_paint",
+      "house_window_pane",
+      "seaside_plaster",
+      "seaside_stone",
+      "seaside_timber"
+    ],
+    "meshes": 34,
+    "triangles": 64555
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "id": "20261029T055008-3574c2ad",
+  "kind": "delete",
+  "title": "Delete Clay Jug",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "clay-jug",
+    "label": "Clay Jug",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/clay-jug/v1/model.blend",
+    "runtime": "assets/world/clay-jug/model.glb",
+    "manifest": "assets/world/clay-jug/manifest.json",
+    "catalog_notes": "Terracotta jug with a wide belly, a cream glazed shoulder, neck and lip, a dark throat and one loop handle on the +X side. 0.45 m across the belly, 0.5 m tall. No blocking footprint is proposed; the handle overhangs the belly.",
+    "related_files": [
+      "art/source/world/clay-jug/v1/brief.md",
+      "art/source/world/clay-jug/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Clay Jug",
+      "source": "art/source/world/clay-jug/v1/model.blend",
+      "runtime": "assets/world/clay-jug/model.glb",
+      "pivot": "ground origin at the bounding-box centre; body axis 0.05 m toward -X",
+      "logical_footprint": null,
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
+      "notes": "Terracotta jug with a wide belly, a cream glazed shoulder, neck and lip, a dark throat and one loop handle on the +X side. 0.45 m across the belly, 0.5 m tall. No blocking footprint is proposed; the handle overhangs the belly.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:50:08+00:00",
+  "updated": "2026-10-29T06:27:57+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:50:08+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:27:57+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/clay-jug/v1/brief.md",
+    "art/source/world/clay-jug/v1/model.blend",
+    "art/source/world/clay-jug/v1/provenance.json",
+    "assets/world/clay-jug/manifest.json",
+    "assets/world/clay-jug/model.glb",
+    "assets/world/clay-jug/model.glb.import"
+  ]
+}

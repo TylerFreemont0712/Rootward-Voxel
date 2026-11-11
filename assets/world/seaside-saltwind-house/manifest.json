@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "asset": "seaside-saltwind-house",
+  "version": "v1",
+  "source": "art/source/world/seaside-saltwind-house/v1/model.blend",
+  "source_sha256": "1348381559ec0097a182977a0e49fb3ccd20a2c92119970103be1d72000fb8b5",
+  "runtime": "assets/world/seaside-saltwind-house/model.glb",
+  "runtime_sha256": "2dc9bf080f1cdd7ca2cf9d498530d5a679b6bb07fc0bdac6ab8c41a5987ba5c9",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -4.94500017166138,
+      0.0,
+      -4.64451694488525,
+      4.94500017166138,
+      12.2647190093994,
+      3.81415367126465
+    ],
+    "geometry_sha256": "d39278736f839c97e81485ef8825cf22d85f5eb98a6fa31bce05d6854d5822ae",
+    "material_records": {
+      "house_brick": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "a1cc1afc886ca6ee1007ecd2dc472e8f7e38b52588dbced45c60df50660caa38"
+      },
+      "house_lamp_glass": {
+        "albedo": [
+          10000,
+          8510,
+          6275,
+          10000
+        ],
+        "roughness": 8800,
+        "texture_rgba_sha256": ""
+      },
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "8bf51a9eb0a9c4d1398077ea697d5956854d2961d070159e7f7da5fb2fc472e4"
+      },
+      "house_window_pane": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3500,
+        "texture_rgba_sha256": "0521fe9168475a9da488e23ca89b12bdfdc600fcde1d4eb37051e2cec2478c37"
+      },
+      "seaside_plaster": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "7068c16a7c8bda8d843035f2b63572145a616a157459609212823b509a441fb4"
+      },
+      "seaside_ridge": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "ded5a294cd42a02ed6d2b8bb815cbb0b45fd4cf6ae6066ce5c7674d079ff0e61"
+      },
+      "seaside_roof": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "5b210fed7aa4707f5bf2aea90e3a42d78ce6694c33e098de2d5320e9ab448ab1"
+      },
+      "seaside_shutter": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "10b2bf7b785b437a8bde5ee2533b912c3d998c74964b0627fab8fda9dee65cb7"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      },
+      "seaside_timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "house_brick",
+      "house_lamp_glass",
+      "house_paint",
+      "house_window_pane",
+      "seaside_plaster",
+      "seaside_ridge",
+      "seaside_roof",
+      "seaside_shutter",
+      "seaside_stone",
+      "seaside_timber"
+    ],
+    "meshes": 23,
+    "triangles": 157462
+  }
+}

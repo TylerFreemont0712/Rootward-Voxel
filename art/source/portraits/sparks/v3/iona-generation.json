@@ -1,0 +1,11 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed",
+  "seed": "Not exposed",
+  "prompt": "Use case: illustration-story. Final high definition full-body transparent dialogue painting for Sparks & Machines. Image 1 is IONA VENN's authoritative character identity/outfit; image 2 is the approved main character portrait STYLE/QUALITY reference only, not her identity. Paint Iona, a distinct mature woman signwriter in her mid-forties, warm medium-brown skin, thoughtful brown eyes with subtle smile lines, cropped tightly curled dark hair with one broad silver forelock, cream rolled-sleeve work smock, blue painter's apron with a few cream paint marks and brass buckles, olive trousers, worn dark brown boots. Relaxed confident attentive expression, whole torso/hips/head turned toward screen RIGHT, where the person she speaks to will stand. Body proportion is the same painterly three-head-tall chibi world as reference, not a realistic tall adult. Hands naturally at sides, no held tools. COMPLETE figure from hair tips to boot soles inside a vertical 1024x1536 RGBA canvas with comfortable clear margins. Rich polished painterly shading, crisp intentional warm-brown contours, beautiful controlled cloth/leather detail, natural warm lighting, same high quality as image 2. No background, cast shadow, ground, fog, aura, border, text, watermark or extra character. True transparent background.",
+  "references": [
+    "art/source/characters/iona/v1/SE.png",
+    "art/source/portraits/sparks/v2/traveller.png"
+  ],
+  "source": "/home/joejin/.codex/generated_images/01a19a13-e572-7ac1-8ed3-988b77df56c0/exec-270c7956-ebe9-4756-a54b-1db8bbd503e2.png"
+}

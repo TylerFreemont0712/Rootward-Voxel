@@ -1,0 +1,10 @@
+{
+  "asset": "robot-pip",
+  "date": "2026-10-29",
+  "source_sha256": "30f38927a7f2ef4830f8cbfe7d531c72d58b142a1681dbf803543b11a179f2ca",
+  "backup": "model.pre-finish.blend",
+  "backup_sha256": "d0ea7305783fb3861ca05817f53e9a851553158b4cb3be96e2a168fc1ba49c62",
+  "edit_record": "art/source/world/sparks-robot-refinement/v1/pip_parcels_edit.py",
+  "edit_record_sha256": "5b0ade0aa845a81262ac3d901627061170b30e3879e324247cd06cfe219f77d7",
+  "note": "User removed Pip satchel and requested compartment parcels; tagged eye-only geometry for cosmetic blink. Previous v2 source preserved."
+}

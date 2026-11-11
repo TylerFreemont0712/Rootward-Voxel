@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "asset": "robot-wick",
+  "version": "v2",
+  "source": "art/source/world/robot-wick/v2/model.blend",
+  "source_sha256": "f439b407116c4e6e41d9b0580c8278047a0b6945c45e06fe671d8af432d4eb8b",
+  "runtime": "assets/world/robot-wick/model.glb",
+  "runtime_sha256": "3689c457692525063171aad0cff4d14d62ca2054479cc361165747136bd0cfa8",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.296849995851517,
+      0.0,
+      -0.232000008225441,
+      0.606000006198883,
+      1.94099998474121,
+      0.275000005960464
+    ],
+    "geometry_sha256": "cbeb48f08e35576ccd1901b4d233e5eac7d279177eb5644c808d0c729cf9c2f7",
+    "material_records": {
+      "robot_amber": {
+        "albedo": [
+          9647,
+          6745,
+          1569,
+          10000
+        ],
+        "roughness": 2400,
+        "texture_rgba_sha256": ""
+      },
+      "robot_brass": {
+        "albedo": [
+          7686,
+          5412,
+          1765,
+          10000
+        ],
+        "roughness": 3100,
+        "texture_rgba_sha256": ""
+      },
+      "robot_cream": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4200,
+        "texture_rgba_sha256": "501280e82c84b8fde631a9a7eb73b27a5830db948713e979f760f7bd3249a2ee"
+      },
+      "robot_eyes": {
+        "albedo": [
+          10000,
+          9412,
+          7059,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "robot_glass": {
+        "albedo": [
+          9686,
+          7255,
+          2980,
+          4800
+        ],
+        "roughness": 1900,
+        "texture_rgba_sha256": ""
+      },
+      "robot_gold": {
+        "albedo": [
+          9098,
+          6863,
+          2471,
+          10000
+        ],
+        "roughness": 2600,
+        "texture_rgba_sha256": ""
+      },
+      "robot_ink": {
+        "albedo": [
+          1412,
+          1686,
+          1686,
+          10000
+        ],
+        "roughness": 6500,
+        "texture_rgba_sha256": ""
+      },
+      "robot_lantern_spark": {
+        "albedo": [
+          10000,
+          9020,
+          6314,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "robot_rubber": {
+        "albedo": [
+          1882,
+          2118,
+          2196,
+          10000
+        ],
+        "roughness": 8200,
+        "texture_rgba_sha256": ""
+      },
+      "robot_rubber_edge": {
+        "albedo": [
+          3137,
+          3255,
+          3294,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "robot_teal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "b03e3c61409a3b8ec528af25c9cdfbc2dd82ad1e5853cde383e89ec9cc8ee50e"
+      },
+      "robot_teal_dark": {
+        "albedo": [
+          627,
+          3176,
+          3373,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "robot_amber",
+      "robot_brass",
+      "robot_cream",
+      "robot_eyes",
+      "robot_glass",
+      "robot_gold",
+      "robot_ink",
+      "robot_lantern_spark",
+      "robot_rubber",
+      "robot_rubber_edge",
+      "robot_teal",
+      "robot_teal_dark"
+    ],
+    "meshes": 30,
+    "triangles": 33636
+  }
+}

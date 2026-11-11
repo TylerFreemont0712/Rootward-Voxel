@@ -1,0 +1,19 @@
+{
+  "asset": "haverlund-apothecary",
+  "version": "v2",
+  "date": "2026-11-05",
+  "reference": "art/source/world/spindle-strip/v1/apothecary-concept.png",
+  "record": "art/source/world/haverlund-apothecary/v2/author_original.py",
+  "record_sha256": "2704676ead9f64e67da9be8bfe32033178cf8baf9df07934cf7322c14817a914",
+  "shared_utilities": "art/source/world/seaside-houses/v1/house_kit.py",
+  "palette": {
+    "stone": "seaside_stone_limestone",
+    "plaster": "seaside_plaster_cream",
+    "roof": "seaside_roof_slate",
+    "ridge": "seaside_roof_slate",
+    "timber": "seaside_timber_oak",
+    "shutter": "seaside_shutter_sage"
+  },
+  "geometry": "Independently authored stone body, steep slate roof with hipped end, front cross gable with herb drying pole, arched dormer with copper hood, bowed glazed shopfront with fascia and copper roof, recessed porch with arched green frame and hinged plum door, herb glasshouse wing with cresting, hanging mortar-and-pestle sign. No existing building mesh imported.",
+  "retained_previous_source": "art/source/world/haverlund-apothecary/v1/model.blend"
+}

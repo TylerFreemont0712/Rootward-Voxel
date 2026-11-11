@@ -1,0 +1,31 @@
+; Rootward Voxel Setup (docs/RELEASES.md): the installer, a small Godot project of its own so its download stays
+; small. scripts/build.py copies the game's icon, fonts and a title backdrop into brand/ and writes version.txt.
+
+config_version=5
+
+[application]
+
+config/name="Rootward Voxel Setup"
+config/description="Installs, updates and uninstalls Rootward Voxel."
+run/main_scene="res://setup.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://brand/icon.png"
+boot_splash/show_image=false
+boot_splash/bg_color=Color(0.0588, 0.0431, 0.0314, 1)
+
+[debug]
+
+gdscript/warnings/untyped_declaration=2
+
+[display]
+
+window/size/viewport_width=1120
+window/size/viewport_height=680
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

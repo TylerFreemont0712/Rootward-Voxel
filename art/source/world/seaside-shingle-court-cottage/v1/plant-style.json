@@ -1,0 +1,76 @@
+{
+  "asset": "seaside-shingle-court-cottage",
+  "source": "art/source/world/seaside-shingle-court-cottage/v1/model.blend",
+  "backup": "art/source/world/seaside-shingle-court-cottage/v1/model.pre-plant-style.blend",
+  "before_sha256": "2bf02f9642859bd5e8e7a9b6d39369661933b91a703ef9d4b10cdfa7f7a17c88",
+  "after_sha256": "f4d562d9f86a157cb9423bb5a1eeb1889a2e37f6f57efbda1539b76de6fb8b25",
+  "objects": [
+    {
+      "object": "detail_garden_gate",
+      "replaced_components": {
+        "leaf_dark": 17,
+        "flower_pink": 14,
+        "leaf": 26,
+        "flower_white": 8,
+        "leaf_light": 9
+      },
+      "protected_faces": 556,
+      "protected_sha256": "93e310064344d185e13903f7ca7e195db2abd3456c16482851021a84f6b8558d"
+    },
+    {
+      "object": "detail_planters",
+      "replaced_components": {
+        "leaf": 15,
+        "leaf_light": 15,
+        "leaf_dark": 6,
+        "flower_pink": 6,
+        "flower_white": 7,
+        "flower_red": 2,
+        "olive": 6,
+        "flower_orange": 3
+      },
+      "protected_faces": 216,
+      "protected_sha256": "3ff5bd3052f3727a1286e31474db17b76a1cc63f0145227424bef286bd10b0cb"
+    },
+    {
+      "object": "detail_vines",
+      "replaced_components": {
+        "leaf": 27,
+        "flower_pink": 3,
+        "flower_white": 14,
+        "leaf_light": 14,
+        "leaf_dark": 12
+      },
+      "protected_faces": 84,
+      "protected_sha256": "09bfec373f9ad0233010f958834ccee4e5ad4beecf9c82be4c1c6f324f43feef"
+    },
+    {
+      "object": "detail_window_boxes",
+      "replaced_components": {
+        "leaf": 34,
+        "flower_pink": 10,
+        "leaf_light": 18,
+        "flower_red": 11,
+        "leaf_dark": 34,
+        "flower_white": 17
+      },
+      "protected_faces": 264,
+      "protected_sha256": "56b8089a970507acd2031171403af819c7c7e899c33104637f1150ee8370f32f"
+    },
+    {
+      "object": "detail_yard",
+      "replaced_components": {
+        "leaf": 15,
+        "leaf_light": 15,
+        "leaf_dark": 6,
+        "flower_white": 10,
+        "flower_pink": 9,
+        "olive": 3,
+        "flower_red": 5
+      },
+      "protected_faces": 852,
+      "protected_sha256": "dd8d343c6f1c33fffcd421fdbd16c1404d5b45003ed009c12254afd745b4b64c"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

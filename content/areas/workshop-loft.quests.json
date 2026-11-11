@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "area": "workshop-loft",
+  "quests": [
+    {
+      "id": "say-hello",
+      "title": "Hello, Hotaru",
+      "concept": "print and words",
+      "summary": "Hotaru is dozing on the shelf. Send her a greeting through the loft terminal.",
+      "goal": {
+        "type": "hotaru_greeted"
+      },
+      "requires": [],
+      "lesson": [
+        "The terminal shows the output of your program. A greeting addressed to Hotaru rings her message bell when you send it.",
+        "`print()` sends words out of your program. Words go inside quotation marks.",
+        "```python",
+        "def program(world):",
+        "    print(\"Hello, Hotaru!\")",
+        "```",
+        "Test ghost-types your actual words above the player and shows them on the screen. Send message delivers them to Hotaru. After she wakes, answer her question."
+      ],
+      "starter": [
+        "def program(world):",
+        "    print(\"Hello\")"
+      ],
+      "hints": [
+        "A greeting addressed to Hotaru rings her message bell.",
+        "A greeting with her name: print(\"Hello, Hotaru!\")"
+      ],
+      "done": "Hotaru has heard your message."
+    }
+  ]
+}

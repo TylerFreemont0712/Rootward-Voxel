@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "asset": "city-hall-shell",
+  "version": "v1",
+  "source": "art/source/world/city-hall-shell/v1/model.blend",
+  "source_sha256": "2584288be2f78f6fa11b72e6b37a81c22774ffcf9ca4fadf553c841e7e2d5e3c",
+  "runtime": "assets/world/city-hall-shell/model.glb",
+  "runtime_sha256": "36d4765c382e8a69c01d8a40baa334ea4a6e86775b0d530a43bc3ac097a9242e",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.800000011920929,
+      -0.340000003576279,
+      -21.7999992370605,
+      27.6499996185303,
+      5.09999990463257,
+      0.649999618530273
+    ],
+    "geometry_sha256": "01abd8a8390a72f362e956da1e73090cae73ea6e07138f7ea47ad337ffb06a16",
+    "material_records": {
+      "square_ashlar": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "3ecee23a18a756f661e086eb563a58c7b57af699cc78ea44ae1cf4e72b9269c5"
+      },
+      "square_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_gold.001": {
+        "albedo": [
+          8471,
+          7059,
+          3725,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_ink": {
+        "albedo": [
+          3137,
+          2392,
+          1882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_pale": {
+        "albedo": [
+          9333,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_shade": {
+        "albedo": [
+          7686,
+          6980,
+          5569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+      },
+      "square_teal": {
+        "albedo": [
+          2471,
+          4824,
+          4549,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_white": {
+        "albedo": [
+          9490,
+          9176,
+          8471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_window_shop": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "562da4319f4a639aa398d7bf75d75910ac2dff2624196407f75f455a8ce283b4"
+      },
+      "square_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "square_ashlar",
+      "square_brass",
+      "square_gold.001",
+      "square_ink",
+      "square_limestone",
+      "square_limestone_pale",
+      "square_limestone_shade",
+      "square_oak",
+      "square_teal",
+      "square_white",
+      "square_window_shop",
+      "square_wood"
+    ],
+    "meshes": 12,
+    "triangles": 24392
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "workshop-stair-lamp",
+  "version": "v1",
+  "source": "art/source/world/workshop-stair-lamp/v1/model.blend",
+  "source_sha256": "f7088a6f68d180667123840cbf0bd350984a46e7651630e0904f4052c42a4069",
+  "runtime": "assets/world/workshop-stair-lamp/model.glb",
+  "runtime_sha256": "9e44589fa0fab500bc55becbbc6d01dc215bf4d968ed200cfd022cb384ef89c7",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.180000007152557,
+      -0.175000011920929,
+      -0.0649999976158142,
+      0.180000007152557,
+      0.501993715763092,
+      0.540000021457672
+    ],
+    "geometry_sha256": "6c2e9b2569021d0df41f78df5cd01c4fc48da18b03a55145a4208de0b845fe9e",
+    "material_records": {
+      "workshop_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_lamp_glass": {
+        "albedo": [
+          10000,
+          8941,
+          6784,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_steel_dark": {
+        "albedo": [
+          2039,
+          2431,
+          2667,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_teal_dark": {
+        "albedo": [
+          2078,
+          3725,
+          3569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "workshop_brass",
+      "workshop_lamp_glass",
+      "workshop_steel_dark",
+      "workshop_teal_dark",
+      "workshop_wood_dark"
+    ],
+    "meshes": 5,
+    "triangles": 1596
+  }
+}

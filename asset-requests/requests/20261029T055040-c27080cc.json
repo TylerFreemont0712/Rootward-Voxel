@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "id": "20261029T055040-c27080cc",
+  "kind": "delete",
+  "title": "Delete Fallen Log",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "fallen-log",
+    "label": "Fallen Log",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/fallen-log/v1/model.blend",
+    "runtime": "assets/world/fallen-log/model.glb",
+    "manifest": "assets/world/fallen-log/manifest.json",
+    "catalog_notes": "A round trunk with bark, a pale cut end at +X and moss on top. The proposed footprint is the trunk itself, which a walker would plausibly be blocked by.",
+    "related_files": [
+      "art/source/world/fallen-log/v1/brief.md",
+      "art/source/world/fallen-log/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Fallen Log",
+      "source": "art/source/world/fallen-log/v1/model.blend",
+      "runtime": "assets/world/fallen-log/model.glb",
+      "pivot": "ground origin at the centre of the log",
+      "logical_footprint": [
+        -0.6,
+        -0.2,
+        1.2,
+        0.4
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A round trunk with bark, a pale cut end at +X and moss on top. The proposed footprint is the trunk itself, which a walker would plausibly be blocked by.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:50:40+00:00",
+  "updated": "2026-10-29T06:27:58+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:50:40+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:27:58+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/fallen-log/v1/brief.md",
+    "art/source/world/fallen-log/v1/model.blend",
+    "art/source/world/fallen-log/v1/provenance.json",
+    "assets/world/fallen-log/manifest.json",
+    "assets/world/fallen-log/model.glb",
+    "assets/world/fallen-log/model.glb.import"
+  ]
+}

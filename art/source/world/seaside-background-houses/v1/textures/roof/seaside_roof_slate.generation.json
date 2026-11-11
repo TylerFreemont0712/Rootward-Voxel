@@ -1,0 +1,21 @@
+{
+  "id": "seaside_roof_slate",
+  "title": "Slate grey roof tile",
+  "color": "muted blue-slate grey ceramic, preserving the same curved clay tile shape rather than redesigning it as flat slate",
+  "family": "roof",
+  "tile": 1.2,
+  "roughness": 0.9,
+  "key": "house-texture-seaside_roof_slate",
+  "dest": "art/source/world/seaside-background-houses/v1/textures/roof/seaside_roof_slate.png",
+  "refs": [
+    "art/source/world/seaside-background-houses/v1/textures/roof/seaside_roof_terracotta.png"
+  ],
+  "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling roof ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to muted blue-slate grey ceramic, preserving the same curved clay tile shape rather than redesigning it as flat slate. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nKeep the exact curved clay pan tile form, horizontal courses and outlined joints; this is the same roof texture in a different ceramic finish. Small exposed chips remain muted clay, not a new moss or metal surface.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-509d15ed-8725-4360-a675-28460cbb3e15.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "0996e3e497947d3252f6ef774008e905dbcaa85a854d40cdd91a086c0288d028",
+  "reference_sha256": {
+    "art/source/world/seaside-background-houses/v1/textures/roof/seaside_roof_terracotta.png": "076914819930861c0e9f77ea17a42ddb72eb78b59f6d6439cf359eb0d2817f36"
+  }
+}

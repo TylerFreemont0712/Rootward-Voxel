@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "asset": "town-coffee-cart",
+  "version": "v1",
+  "source": "art/source/world/town-coffee-cart/v1/model.blend",
+  "source_sha256": "692eda9c301985eda4023ce79a7d3b65590e94661be85b28d53cd9587b79b81a",
+  "runtime": "assets/world/town-coffee-cart/model.glb",
+  "runtime_sha256": "02e5b3e05791c25890ecd45f06d51b5908947f592d7256b30758573bb87ae0a5",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.899999976158142,
+      -0.0199999529868364,
+      -0.667012751102448,
+      1.23000001907349,
+      2.3199999332428,
+      1.04534935951233
+    ],
+    "geometry_sha256": "e29bffcaff8e8bd55d2ddaca48548ff35ba9476f4124483bea7e577930ff54cb",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "seaside_shutter": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "10b2bf7b785b437a8bde5ee2533b912c3d998c74964b0627fab8fda9dee65cb7"
+      },
+      "seaside_timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "house_paint",
+      "seaside_shutter",
+      "seaside_timber"
+    ],
+    "meshes": 3,
+    "triangles": 2953
+  }
+}

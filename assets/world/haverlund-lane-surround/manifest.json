@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "haverlund-lane-surround",
+  "version": 2,
+  "source": "art/source/world/haverlund-lane-surround/v2/model.blend",
+  "source_sha256": "da4ae9671ba822cadd5c3b89d4187094f69e42f8db216d47c6a9ee5687454d28",
+  "runtime": "assets/world/haverlund-lane-surround/model.glb",
+  "runtime_sha256": "20ac701bb4c6d07dace89569ba59af483cf685697e6b35dfea705e9649d038ae",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -44.5,
+      -8.0,
+      -76.5,
+      72.5,
+      5.15999984741211,
+      46.5
+    ],
+    "geometry_sha256": "ae705d5a28ed387544f77637b6820ef7b7d858b29389cb62d4371cf679d481e9",
+    "material_records": {
+      "garden_iron": {
+        "albedo": [
+          3318,
+          3959,
+          3811,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "grid_bed": {
+        "albedo": [
+          3035,
+          3318,
+          3227,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "grid_bronze": {
+        "albedo": [
+          6097,
+          5271,
+          3811,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "grid_glass": {
+        "albedo": [
+          6800,
+          5271,
+          2828,
+          10000
+        ],
+        "roughness": 5600,
+        "texture_rgba_sha256": ""
+      },
+      "ground_cobbles": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9500,
+        "texture_rgba_sha256": "66ca389b305a99aa5a0d43690a6be756d098285882c69e76c61f00a0417bca09"
+      },
+      "ground_flags": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9500,
+        "texture_rgba_sha256": "f941b1f207c57ee7845ac7de975562f91530049fe0260ace5fc64051b83a6d58"
+      },
+      "ground_grass": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9700,
+        "texture_rgba_sha256": "39b26b9bc0b466eb4bfc09e7c0a64cbe9d86e59c40a95a3ee100c8b0a5079dce"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      }
+    },
+    "materials": [
+      "garden_iron",
+      "grid_bed",
+      "grid_bronze",
+      "grid_glass",
+      "ground_cobbles",
+      "ground_flags",
+      "ground_grass",
+      "seaside_stone"
+    ],
+    "meshes": 13,
+    "triangles": 109824
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "anchor": [
+    192,
+    420
+  ],
+  "authoring_script_sha256": "da0722e4103a555fd4b6e71e63a3872e09d2ae882ad693e40de48eac38234187",
+  "blink_index": 9,
+  "cell_size": [
+    384,
+    448
+  ],
+  "directions": {
+    "ne": {
+      "key_rgba_sha256": [
+        "6bdd03fe4983e29a638d15e639b9f8deeaacf2394a0f3cf4b197ef774348d452",
+        "bb15b681bbfe2632872992799e803814b51993ac281b9418c688e8f038289cc6",
+        "9e06f6560f1d1151ca17c46a009b953aee1d6db8882729ff50432f52bfd84505",
+        "7aed7c7433f722e5f740c9bc3e69b2b7072053b970d2fa629c71ea5454ffd399",
+        "987236c930510bdf2fb867a6b9067d36a4392734ddfeb24d1551fe03c3e02abc",
+        "1ee689cd946537b70eeb3845838eb936e4b4ead86cc29cd162e98630fa26ab10",
+        "3a19a51abac75b7448c4456637a7b637770cc81e1cef9b3df3d079fdad9fa8c8",
+        "60047f0b3581116e1e0ad18f4bd8c3c4baa08715e6b190daa73b81b554c0223d",
+        "2f9e0f9b0306c9c2e250c522dff8ded13b0679c137ccbf3628aa78820d664782"
+      ],
+      "row": 6,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/mira/v1/NE.png",
+          "source_pose": 0,
+          "translation": [
+            -25,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NE.png",
+          "source_pose": 1,
+          "translation": [
+            -21,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NE.png",
+          "source_pose": 2,
+          "translation": [
+            -29,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NE.png",
+          "source_pose": 3,
+          "translation": [
+            -23,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NE.png",
+          "source_pose": 4,
+          "translation": [
+            -21,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NE.png",
+          "source_pose": 5,
+          "translation": [
+            -36,
+            28
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NE.png",
+          "source_pose": 6,
+          "translation": [
+            -25,
+            51
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NE.png",
+          "source_pose": 7,
+          "translation": [
+            -21,
+            53
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NE.png",
+          "source_pose": 8,
+          "translation": [
+            -37,
+            45
+          ]
+        }
+      ]
+    },
+    "nw": {
+      "key_rgba_sha256": [
+        "d5715dd3b28933f4d9f27ab9c12ba9ce3f97eb4dc7594d16a551f29441e9f222",
+        "83786f40e806eee2943e4088c0252ebfa73791276d98028de6c60aa305c6ec34",
+        "6654b2412ed56cd6a1cf765b559fd2671547567fa179b50f79b8fc135977d8e7",
+        "5edc0640cc2c8728be4ea6d91dde27f29c5233b867135666f5f2b6c084936755",
+        "8bd30bf816adb8a618e32c9ba1736ac20fba3197336b67e39f593c7b6b559da2",
+        "f8870933698bdd797315fdb29c86e9805a021b1536babf203bd4923b756c2a8d",
+        "ec5dca5f94ffaea448e795ddbeecf6a050db50954ad35b1d9520587bf070cbe2",
+        "f5204ebbf86fe262e8d18eff560b5ed130d57e40d161246b26b20aec67e2b13c",
+        "49a5539ce55ec7601d0fd979770c2e97c07626716631ba77a3b3462091636369"
+      ],
+      "row": 9,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/mira/v1/NW.png",
+          "source_pose": 0,
+          "translation": [
+            -9,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NW.png",
+          "source_pose": 1,
+          "translation": [
+            -13,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NW.png",
+          "source_pose": 2,
+          "translation": [
+            -4,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NW.png",
+          "source_pose": 3,
+          "translation": [
+            -10,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NW.png",
+          "source_pose": 4,
+          "translation": [
+            -13,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NW.png",
+          "source_pose": 5,
+          "translation": [
+            3,
+            28
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NW.png",
+          "source_pose": 6,
+          "translation": [
+            -8,
+            51
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NW.png",
+          "source_pose": 7,
+          "translation": [
+            -12,
+            53
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/NW.png",
+          "source_pose": 8,
+          "translation": [
+            4,
+            45
+          ]
+        }
+      ]
+    },
+    "se": {
+      "key_rgba_sha256": [
+        "3d9a698038aa0eea38edc1ead51def31374625397851f5db75ef58338dd8d484",
+        "6940137d8291e81625cc2a18c1633941b6bb8d2bce016e7c1d7c96b88a8d534a",
+        "363c2d85f69a3bfb708b53bccae4027e52dfc9e007de04b46f5e2b3b12c47951",
+        "1c8130a7bd6dc465d9d25ca98ab3cf8b93e7064097aa0706b555fbb0384f2876",
+        "43aa4eb3a625613b3670d056876a59d6da1297ba77c6ea7b64941abc72f8e0a6",
+        "e53746acbdb308e74c74435ee0ae101a7627f1e34ede449743ef203c6d005dd3",
+        "cb3d6205f524ed207223770d5114709a5a40a25b912c11583f8d3cfca7ba94cb",
+        "e6e7274de2e4de85960ec613391090b09080060726b0841ee16b3182ed690c9b",
+        "89e89b9454815ad78ecd354e119ddcb690373b3dd6162de4746273b011f72ad9",
+        "80dda8d2f72dfdb839d2f9df339c6e12ff7704dae6f314a649db3bbb6bbf9d80"
+      ],
+      "row": 0,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/mira/v1/SE.png",
+          "source_pose": 0,
+          "translation": [
+            -25,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SE.png",
+          "source_pose": 1,
+          "translation": [
+            -19,
+            9
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SE.png",
+          "source_pose": 2,
+          "translation": [
+            -29,
+            7
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SE.png",
+          "source_pose": 3,
+          "translation": [
+            -25,
+            16
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SE.png",
+          "source_pose": 4,
+          "translation": [
+            -17,
+            19
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SE.png",
+          "source_pose": 5,
+          "translation": [
+            -26,
+            20
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SE.png",
+          "source_pose": 6,
+          "translation": [
+            -27,
+            41
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SE.png",
+          "source_pose": 7,
+          "translation": [
+            -22,
+            37
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SE.png",
+          "source_pose": 8,
+          "translation": [
+            -23,
+            40
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/blink-se.png",
+          "source_pose": 8,
+          "translation": [
+            -23,
+            40
+          ]
+        }
+      ]
+    },
+    "sw": {
+      "key_rgba_sha256": [
+        "697bd5efded465a98293d5792d658631f4aa1628ff65e2a3f89c7a20cb058b6d",
+        "58ba4e289802a7e537f37d94e04980c4b0a512c7350962cbb384fdd8bf66602f",
+        "ac2dd52572a3ea84f8dd0a037265e21214b6601e49fac83a6a66499e7cfdb49a",
+        "06cd38d52beb8311d48204d851b5bf8d8f71c09cc4503dc624b9083f12089860",
+        "b6cdec93f4a9c76b1ee7ae3a36566b2efccb0ffcb2cc45dfd25ecf2c722d5bbc",
+        "f28d9e618bdc53b8263df8b64971e4321778ec2b085374cb21ff903c2fc38d41",
+        "eb6691ea02cabad6e80cce86258453a3b44d86c60469b7ce82b4feae9a4e9052",
+        "1893c5f778d57e92d9ce1c83cba38113fc543e340aaf648db8c64ad2743cad14",
+        "adf334647fe54f6f2c7e4f2cdc4cd6eaf2b93f8c88fdfd57064ebd27697f430b",
+        "b62aa6621ce5976fe1be46d923cbf7928c031ccc0cf5930a0b84e0e478321210"
+      ],
+      "row": 3,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/mira/v1/SW.png",
+          "source_pose": 0,
+          "translation": [
+            -8,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SW.png",
+          "source_pose": 1,
+          "translation": [
+            -14,
+            9
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SW.png",
+          "source_pose": 2,
+          "translation": [
+            -5,
+            7
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SW.png",
+          "source_pose": 3,
+          "translation": [
+            -9,
+            16
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SW.png",
+          "source_pose": 4,
+          "translation": [
+            -17,
+            19
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SW.png",
+          "source_pose": 5,
+          "translation": [
+            -8,
+            20
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SW.png",
+          "source_pose": 6,
+          "translation": [
+            -6,
+            41
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SW.png",
+          "source_pose": 7,
+          "translation": [
+            -12,
+            37
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/SW.png",
+          "source_pose": 8,
+          "translation": [
+            -10,
+            40
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/v1/blink-sw.png",
+          "source_pose": 8,
+          "translation": [
+            -10,
+            40
+          ]
+        }
+      ]
+    }
+  },
+  "grid": [
+    4,
+    12
+  ],
+  "idle_index": 8,
+  "method": "Approved eight-pose sheets plus neutral idle; integer translation only; eye-only blink patch",
+  "output_sha256": "4da74efd92985cfc359cd351f15f790cde91753c04437c0614951de8ad419196",
+  "schema": 4,
+  "sources": {
+    "res://art/source/characters/mira/v1/NE.png": "b8d3b12b5951f3b04ec4f54bbb7e529bdb212acc6222d50030fae52a5571feb3",
+    "res://art/source/characters/mira/v1/NW.png": "d38de5f00c2f21c8630aab3a5b92c4d758516ab45c24da3bad857343420000f8",
+    "res://art/source/characters/mira/v1/SE.png": "b92e4d18504185720b03a588aef2a849f11e40f9c65a3dd3c745a0137ff775a6",
+    "res://art/source/characters/mira/v1/SW.png": "4c1b057d62de48ddf23d5119e2896904b1981e894cae906a7ec00434926faee3",
+    "res://art/source/characters/mira/v1/blink-se.png": "ce8fea16b0e7e20f39c50570b3b3c56a30d14797a6adaa02ab1e04662c7138de",
+    "res://art/source/characters/mira/v1/blink-sw.png": "6dc6c755b54859927dc077302be0ad83bbcdcfd46626fce658ffb108b0c3b41a"
+  },
+  "walk_poses": 8
+}

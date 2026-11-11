@@ -1,0 +1,9 @@
+{
+  "asset": "loft-shell",
+  "retextured": "2026-10-26T15:21:18.412629+00:00",
+  "texture_catalog_sha256": "e185043f9affd3ea14c5607a6c3439ff58daa9acf2aefd2145f45d77df5110dd",
+  "texture_set": "lush",
+  "script": "pipeline/blender_retexture.py",
+  "backup": "model.pre-retexture.blend",
+  "note": "Materials and UVs rewritten from the texture catalog; geometry untouched. Run build to export."
+}

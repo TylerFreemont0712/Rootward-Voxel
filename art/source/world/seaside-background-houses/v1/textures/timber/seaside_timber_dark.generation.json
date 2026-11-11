@@ -1,0 +1,21 @@
+{
+  "id": "seaside_timber_dark",
+  "title": "Dark chestnut timber",
+  "color": "deep warm chestnut-brown oak, retaining readable grain rather than near-black wood",
+  "family": "timber",
+  "tile": 1,
+  "roughness": 0.94,
+  "key": "house-texture-seaside_timber_dark",
+  "dest": "art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_dark.png",
+  "refs": [
+    "art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_oak.png"
+  ],
+  "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling timber ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to deep warm chestnut-brown oak, retaining readable grain rather than near-black wood. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nPreserve fine surface texture and tonal shading while making the new palette clearly distinct.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-317e71f3-ad26-4bf2-8618-3ac78f788fe5.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "433ef5ac141a7cdbf3470a14383f2504c3ca911aa61bddcc9722528658cb0455",
+  "reference_sha256": {
+    "art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_oak.png": "f0532292e084a669f9b4b485a4205e0b53e13f042cd7ccc655b3e7cc657fcfbe"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "id": "20261103T171036-83042da5",
+  "kind": "update",
+  "title": "Update Pendulum & Pin · clockmaker",
+  "asset_type": "world model",
+  "status": "finished",
+  "notes": "Raise doorway above ground with a proper plinth. Make the central glazed door between the clock display bays the working shop entrance. Keep the separate recessed residence door static. Preserve concept architecture and semantic clock hands.",
+  "asset": {
+    "id": "haverlund-clockmaker",
+    "label": "Pendulum & Pin · clockmaker",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/haverlund-clockmaker/v3/model.blend",
+    "runtime": "assets/world/haverlund-clockmaker/model.glb",
+    "manifest": "assets/world/haverlund-clockmaker/manifest.json",
+    "catalog_notes": "Two deliberate refinement passes on the retained v2 master toward the original concept. Curved bell cap and dormer, fitted copper roof, arched casements aligned to actual openings, bowed glazed display cases with supported mantel/pocket clocks, serif fascia, corrected rear door and anchored pipes. Lamp glass is separate from clear glazing. Footprint, working entrance and shared-time hand pivots retained.",
+    "related_files": [
+      "art/source/world/haverlund-clockmaker/v3/README.md",
+      "art/source/world/haverlund-clockmaker/v3/drain_finish.json",
+      "art/source/world/haverlund-clockmaker/v3/drain_finish.py",
+      "art/source/world/haverlund-clockmaker/v3/edit_support.py",
+      "art/source/world/haverlund-clockmaker/v3/export_finish.json",
+      "art/source/world/haverlund-clockmaker/v3/export_finish.py",
+      "art/source/world/haverlund-clockmaker/v3/finalize_material_roles.json",
+      "art/source/world/haverlund-clockmaker/v3/finalize_material_roles.py",
+      "art/source/world/haverlund-clockmaker/v3/font-copyright.txt",
+      "art/source/world/haverlund-clockmaker/v3/provenance.json",
+      "art/source/world/haverlund-clockmaker/v3/readability_finish.json",
+      "art/source/world/haverlund-clockmaker/v3/readability_finish.py",
+      "art/source/world/haverlund-clockmaker/v3/refine_frontage.json",
+      "art/source/world/haverlund-clockmaker/v3/refine_frontage.py",
+      "art/source/world/haverlund-clockmaker/v3/refine_structure.json",
+      "art/source/world/haverlund-clockmaker/v3/refine_structure.py",
+      "art/source/world/haverlund-clockmaker/v3/runtime_detail_finish.json",
+      "art/source/world/haverlund-clockmaker/v3/runtime_detail_finish.py",
+      "art/source/world/haverlund-clockmaker/v3/tone_finish.json",
+      "art/source/world/haverlund-clockmaker/v3/tone_finish.py"
+    ],
+    "usage_files": [
+      "content/areas/archive/haverlund-square-v5.json",
+      "content/areas/haverlund-square.json",
+      "content/development/layouts/haverlund-square.json",
+      "content/development/spindle-strip-plan.json"
+    ],
+    "catalog_entry": {
+      "version": "v3",
+      "authority": "blender",
+      "status": "authored",
+      "label": "Pendulum & Pin · clockmaker",
+      "source": "art/source/world/haverlund-clockmaker/v3/model.blend",
+      "runtime": "assets/world/haverlund-clockmaker/model.glb",
+      "pivot": "Footprint centre, front Blender -Y",
+      "logical_footprint": [
+        -3.8,
+        -2.85,
+        7.6,
+        5.6
+      ],
+      "illustrated_edges": true,
+      "notes": "Two deliberate refinement passes on the retained v2 master toward the original concept. Curved bell cap and dormer, fitted copper roof, arched casements aligned to actual openings, bowed glazed display cases with supported mantel/pocket clocks, serif fascia, corrected rear door and anchored pipes. Lamp glass is separate from clear glazing. Footprint, working entrance and shared-time hand pivots retained.",
+      "behavior": "Semantic door_leaf_clockmaker hinge and shared-time clock hands. Interior remains a separate cleared shell."
+    }
+  },
+  "references": [],
+  "created": "2026-11-03T17:10:36+00:00",
+  "updated": "2026-11-03T17:45:57+00:00",
+  "history": [
+    {
+      "at": "2026-11-03T17:10:36+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-03T17:10:36+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-03T17:45:57+00:00",
+      "action": "finish"
+    }
+  ],
+  "result": {
+    "assets": [
+      "haverlund-clockmaker"
+    ],
+    "summary": "Raised the adopted clockmaker on a 0.16 m plinth and made the central glazed door between clock displays the active shop entrance; the residence door remains static. Kept shared-time hands and power binding. Full suite, 76 model/room/save checks and 20 native entry/Continue/return checks passed.",
+    "review": "pipeline/reviews/2026-11-04-square-restoration-and-clockshop.md",
+    "contexts": [
+      {
+        "id": "haverlund-clockmaker",
+        "label": "Pendulum & Pin · clockmaker",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-clockmaker/v4/model.blend",
+        "runtime": "assets/world/haverlund-clockmaker/model.glb",
+        "manifest": "assets/world/haverlund-clockmaker/manifest.json",
+        "catalog_notes": "Two deliberate refinement passes on the retained v2 master toward the original concept. Curved bell cap and dormer, fitted copper roof, arched casements aligned to actual openings, bowed glazed display cases with supported mantel/pocket clocks, serif fascia, corrected rear door and anchored pipes. Lamp glass is separate from clear glazing. Footprint, working entrance and shared-time hand pivots retained.",
+        "related_files": [
+          "art/source/world/haverlund-clockmaker/v4/entrance.json"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-square-v5.json",
+          "content/areas/archive/haverlund-square-v7-layout-sketch.json",
+          "content/areas/archive/haverlund-square-v7.json",
+          "content/areas/haverlund-square.json",
+          "content/development/layouts/haverlund-square.json",
+          "content/development/spindle-strip-plan.json"
+        ],
+        "catalog_entry": {
+          "version": 4,
+          "authority": "blender",
+          "status": "authored",
+          "label": "Pendulum & Pin · clockmaker",
+          "source": "art/source/world/haverlund-clockmaker/v4/model.blend",
+          "runtime": "assets/world/haverlund-clockmaker/model.glb",
+          "pivot": "Footprint centre, front Blender -Y",
+          "logical_footprint": [
+            -3.8,
+            -2.85,
+            7.6,
+            5.6
+          ],
+          "illustrated_edges": true,
+          "notes": "Two deliberate refinement passes on the retained v2 master toward the original concept. Curved bell cap and dormer, fitted copper roof, arched casements aligned to actual openings, bowed glazed display cases with supported mantel/pocket clocks, serif fascia, corrected rear door and anchored pipes. Lamp glass is separate from clear glazing. Footprint, working entrance and shared-time hand pivots retained.",
+          "behavior": "Semantic door_leaf_clockmaker hinge and shared-time clock hands. Interior remains a separate cleared shell."
+        }
+      }
+    ],
+    "fingerprints": {
+      "haverlund-clockmaker": {
+        "source": "cf210ac9484a3cd72a8759e24af4269745ad23c62642244f8f616634014934f0",
+        "runtime": "4c62973c7dba66f26a9bc17e1cd529626cf3523b3d8eeaed5e42c6032966737e",
+        "entry": "40725b2f0e6343445c611de27464ac6584173d3f5e9c40b9a914467c0d4e96fd"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "asset": "haverlund-lane-surround",
+  "routes": [
+    {
+      "route": "town-steps-continuation",
+      "start": [
+        12.5,
+        29.5
+      ],
+      "end": [
+        12.5,
+        76.4
+      ],
+      "length": 51.5,
+      "risers": 22,
+      "surface_start": -0.6000003814697266,
+      "surface_end": -5.0
+    }
+  ],
+  "paving_cuts": 38,
+  "existing_pillars": 17
+}

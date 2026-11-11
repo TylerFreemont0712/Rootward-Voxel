@@ -1,0 +1,24 @@
+{
+  "asset": "haverlund-lane-set",
+  "date": "2026-10-28",
+  "reference": "docs/concept/v0.7/art/4-opening/T7c-workshop-lane.wheels.png",
+  "authoring_record": "art/source/world/sparks-lane/v1/author_set.py",
+  "authoring_record_sha256": "42d93ec63c5bd0c238583357d8ac37a0ac5d61fe6a9e722a858668516d6d3585",
+  "kit_sha256": "26267046a1dc1a943f8d91d12e36863bdd670edc41951c7b46d51683c24d7aec",
+  "textures": "art/source/world/sparks-lane/v1/textures.py",
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh.",
+  "poles": {
+    "south": [
+      10.25,
+      6.3
+    ],
+    "middle": [
+      16.3,
+      14.6
+    ],
+    "north": [
+      16.3,
+      23.4
+    ]
+  }
+}

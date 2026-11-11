@@ -1,0 +1,74 @@
+{
+  "asset": "lane-cottage",
+  "source": "art/source/world/lane-cottage/v1/model.blend",
+  "backup": "art/source/world/lane-cottage/v1/model.pre-plant-style.blend",
+  "before_sha256": "c8370f12f5e4dac6df01100aa7c9bcc7734fd10e45cbf064d023d1dbeb45446a",
+  "after_sha256": "3de85cb16f0bd205f3dfce623c72a6e8f61985d80d2d898fd810210195649a04",
+  "objects": [
+    {
+      "object": "lane_leaf_dark",
+      "replaced_components": {
+        "leaf_dark": 28
+      },
+      "protected_faces": 240,
+      "protected_sha256": "9109b22f6564cdc7f1a877cc3456711b2dbb7f61cf7cfd365a7ca6e9f623e0ac"
+    },
+    {
+      "object": "lane_leaf",
+      "replaced_components": {
+        "leaf": 37
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_leaf_light",
+      "replaced_components": {
+        "leaf_light": 42
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_white",
+      "replaced_components": {
+        "flower_white": 4
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_pink",
+      "replaced_components": {
+        "flower_pink": 3
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_violet",
+      "replaced_components": {
+        "flower_violet": 2
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_yellow",
+      "replaced_components": {
+        "flower_yellow": 2
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_red",
+      "replaced_components": {
+        "flower_red": 1
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

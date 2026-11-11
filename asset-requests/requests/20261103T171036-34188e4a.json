@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "id": "20261103T171036-34188e4a",
+  "kind": "update",
+  "title": "Update Rootward Square ground and the town's land round it",
+  "asset_type": "world model",
+  "status": "changes_requested",
+  "notes": "Restore the original terraced square (before the broad flat shopping expansion), preserving lighting sections. Modestly open existing upper pavement. Replace distant lower scenery with depth fog; preserve the monumental wall and stairs.",
+  "asset": {
+    "id": "haverlund-square-ground",
+    "label": "Rootward Square ground and the town's land round it",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/haverlund-square-ground/v4/model.blend",
+    "runtime": "assets/world/haverlund-square-ground/model.glb",
+    "manifest": "assets/world/haverlund-square-ground/manifest.json",
+    "catalog_notes": "Built from art/source/world/square-hub/v1/plan.py by author_ground.py (initial authoring only); edit the adopted model.blend. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Deliberate square-renewal source edit; previous source version retained. Record: art/source/world/square-renewal/v1/. Stair/strip layout revision: art/source/world/spindle-strip/v1/README.md. Prior v2 master retained.",
+    "related_files": [
+      "art/source/world/city-power-grid/v2/README.md",
+      "art/source/world/haverlund-square-ground/v4/README.md",
+      "art/source/world/haverlund-square-ground/v4/revision.json",
+      "art/source/world/spindle-strip/v1/README.md",
+      "art/source/world/square-hub/v1/plan.py",
+      "art/source/world/square-renewal/v1/README.md"
+    ],
+    "usage_files": [
+      "content/areas/archive/haverlund-square-v5.json",
+      "content/areas/archive/haverlund-square-v6.json",
+      "content/areas/haverlund-square.json",
+      "content/development/layouts/haverlund-square.json"
+    ],
+    "catalog_entry": {
+      "version": 4,
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Rootward Square ground and the town's land round it",
+      "source": "art/source/world/haverlund-square-ground/v4/model.blend",
+      "runtime": "assets/world/haverlund-square-ground/model.glb",
+      "pivot": "Area coordinates; Blender +X is logical +x, +Y logical +y, Z up. Level 0 (the square) at z 0; the lower town at z -10.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Base land of Rootward Square v3 only: paving, levels, retaining walls, copings, stairs, the Rootwell's setts and brass channels, and the town's ground past every edge. Buildings, railings, lamps, props and houses are separate models placed by content/areas/haverlund-square.json, which owns every walkable cell, level, stair and block.",
+      "notes": "Built from art/source/world/square-hub/v1/plan.py by author_ground.py (initial authoring only); edit the adopted model.blend. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Deliberate square-renewal source edit; previous source version retained. Record: art/source/world/square-renewal/v1/. Stair/strip layout revision: art/source/world/spindle-strip/v1/README.md. Prior v2 master retained."
+    }
+  },
+  "references": [],
+  "created": "2026-11-03T17:10:36+00:00",
+  "updated": "2026-11-03T18:09:03+00:00",
+  "history": [
+    {
+      "at": "2026-11-03T17:10:36+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-03T17:10:36+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-03T17:45:57+00:00",
+      "action": "finish"
+    },
+    {
+      "at": "2026-11-03T18:09:03+00:00",
+      "action": "Further changes requested: 20261103T180903-01564734"
+    }
+  ],
+  "result": {
+    "assets": [
+      "haverlund-square-ground"
+    ],
+    "summary": "Restored the pre-flat v6/v3 terraces in ground v5, retaining extended loading, saved offset and layout tools. Recessed only the clockmaker plot; removed sub-mist geometry and fifteen deep placements. Day/night layered mist obscures the bottom. Full suite, fixed-light budget, native loading/layout/stairs and save/archive checks passed.",
+    "review": "pipeline/reviews/2026-11-04-square-restoration-and-clockshop.md",
+    "contexts": [
+      {
+        "id": "haverlund-square-ground",
+        "label": "Rootward Square ground and the town's land round it",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-square-ground/v5/model.blend",
+        "runtime": "assets/world/haverlund-square-ground/model.glb",
+        "manifest": "assets/world/haverlund-square-ground/manifest.json",
+        "catalog_notes": "Built from art/source/world/square-hub/v1/plan.py by author_ground.py (initial authoring only); edit the adopted model.blend. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Deliberate square-renewal source edit; previous source version retained. Record: art/source/world/square-renewal/v1/. Stair/strip layout revision: art/source/world/spindle-strip/v1/README.md. Prior v2 master retained.",
+        "related_files": [
+          "art/source/world/city-power-grid/v2/README.md",
+          "art/source/world/haverlund-square-ground/v5/clockmaker-plot.json",
+          "art/source/world/haverlund-square-ground/v5/restoration.json",
+          "art/source/world/spindle-strip/v1/README.md",
+          "art/source/world/square-hub/v1/plan.py",
+          "art/source/world/square-renewal/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-square-v5.json",
+          "content/areas/archive/haverlund-square-v6.json",
+          "content/areas/archive/haverlund-square-v7-layout-sketch.json",
+          "content/areas/archive/haverlund-square-v7.json",
+          "content/areas/haverlund-square.json",
+          "content/development/layouts/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": 5,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Rootward Square ground and the town's land round it",
+          "source": "art/source/world/haverlund-square-ground/v5/model.blend",
+          "runtime": "assets/world/haverlund-square-ground/model.glb",
+          "pivot": "Area coordinates; Blender +X is logical +x, +Y logical +y, Z up. Level 0 (the square) at z 0; the lower town at z -10.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Base land of Rootward Square v3 only: paving, levels, retaining walls, copings, stairs, the Rootwell's setts and brass channels, and the town's ground past every edge. Buildings, railings, lamps, props and houses are separate models placed by content/areas/haverlund-square.json, which owns every walkable cell, level, stair and block.",
+          "notes": "Built from art/source/world/square-hub/v1/plan.py by author_ground.py (initial authoring only); edit the adopted model.blend. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Deliberate square-renewal source edit; previous source version retained. Record: art/source/world/square-renewal/v1/. Stair/strip layout revision: art/source/world/spindle-strip/v1/README.md. Prior v2 master retained."
+        }
+      }
+    ],
+    "fingerprints": {
+      "haverlund-square-ground": {
+        "source": "60378fb0493f67c294b5a5ebd9b2f50b350f65bbc3b471212d20ac1293e609b4",
+        "runtime": "3b56d1e276280abc0a85692ad5c05eb572f4eab0395df28b2faabfe3ce0cd9c3",
+        "entry": "86940d58637592e8b0814b316e96da518c94e05ca7f572800a327ccee64ad09a"
+      }
+    }
+  }
+}

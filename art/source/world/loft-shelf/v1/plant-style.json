@@ -1,0 +1,34 @@
+{
+  "asset": "loft-shelf",
+  "source": "art/source/world/loft-shelf/v1/model.blend",
+  "backup": "art/source/world/loft-shelf/v1/model.pre-plant-style.blend",
+  "before_sha256": "686601bd080820ff8a9043dc415619389df107f9c9b771b7026ed6a57e993100",
+  "after_sha256": "82bbd3c9278a33b9ae1e9d73ca17e5740d32e25fb545ee6174d6d553ffe555eb",
+  "objects": [
+    {
+      "object": "loft_leaf_dark",
+      "replaced_components": {
+        "leaf_dark": 4
+      },
+      "protected_faces": 240,
+      "protected_sha256": "154681e8ad3b644620e7c11f95a99ded7c63ac466a4f47e7fd8e734338b4ae57"
+    },
+    {
+      "object": "loft_leaf",
+      "replaced_components": {
+        "leaf": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "loft_leaf_light",
+      "replaced_components": {
+        "leaf_light": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

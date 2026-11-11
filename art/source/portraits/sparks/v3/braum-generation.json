@@ -1,0 +1,18 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed",
+  "seed": "Not exposed",
+  "transparent_background": true,
+  "prompt": "Use case: identity-preserve. Final full-body transparent dialogue portrait for Sparks & Machines. Image 1 defines the exact existing carpenter identity and clothes; image 2 is the higher-detail portrait of the same man. Paint this SAME carpenter, called Braum in the story: warm brown skin, dark brown tight curly hair, brown eyes, generous confident smile, rust-orange waistcoat over a burgundy rolled-sleeve shirt, leather carpenter apron with plain tool pockets, dark work trousers and brown boots. Preserve recognizable face, hair and outfit; chibi storybook anatomy matching the sprite, not a tall realistic man. ENTIRE figure turned in a natural right-facing three-quarter pose: head, shoulders, torso, hips and boots all toward screen RIGHT, speaking to someone there. Hands relaxed, one thumb hooked beside apron, no carried tools or shield, no extra hat or accessories. COMPLETE hair-to-boot figure inside vertical 1024x1536 RGBA canvas with 5% margins. Polished hand-painted warm storybook rendering, crisp dark brown contours, rich fabric and leather shading, expressive confident face; same game as the supplied art. True transparent background, clean edges with NO brown haze/halo/backdrop, ground, shadow cloud, text, border, watermark or extra person.",
+  "references": [
+    "art/source/characters/bram/sparks-v1/SE.png",
+    "assets/portraits/bram.png"
+  ],
+  "reference_sha256": {
+    "art/source/characters/bram/sparks-v1/SE.png": "34db655f2bdee277b700bef712401bde86fb3067e3908b7ce510e8530cac4c04",
+    "assets/portraits/bram.png": "751a32148299acceb66afb25d84a819b88e9470f434518d75677dafc55723baf"
+  },
+  "source": "/home/joejin/.codex/generated_images/01a19a13-e572-7ac1-8ed3-988b77df56c0/exec-bcd218c6-517d-4775-8b90-3e59a55db04b.png",
+  "selected_source": "art/source/portraits/sparks/v3/braum.png",
+  "sha256": "7a4487f2ea1dd176007bee2fba90a4a34946a7f9798e185b79834a1ad160ef46"
+}

@@ -1,0 +1,13 @@
+{
+  "asset": "robot-trowel",
+  "date": "2026-10-29",
+  "previous_source": "art/source/world/robot-trowel/v1/model.blend",
+  "previous_source_sha256": "511b0826990acdc2860c7aece3c382c3c814d29fd642f340a9ea623c89ec755e",
+  "source": "art/source/world/robot-trowel/v2/model.blend",
+  "source_sha256": "fcf64b9175dbbe6eb8d48b88b39a34dd87e44aec8d55cbc503060ebc59dca474",
+  "edit_record": "art/source/world/sparks-robot-refinement/v1/refine_other_sources.py",
+  "edit_record_sha256": "bd835cfde30c9947c5fc1440f84c72bb2de9bce21271eac79b932d62ba29d7ba",
+  "helper": "art/source/world/sparks-robot-refinement/v1/refine_sources.py",
+  "helper_sha256": "d5adcb1492650674a7c5dab251a3f8f2f77807b23d7eecf0e4ce9abc01b99cac",
+  "note": "Deliberate native geometry refinement preserving adopted root/wheel objects; further edits use the saved source."
+}

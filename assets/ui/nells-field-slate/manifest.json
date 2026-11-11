@@ -1,0 +1,37 @@
+{
+  "id": "nells-field-slate",
+  "jack": [
+    68.5,
+    26.0,
+    7.5
+  ],
+  "lamp": [
+    101.0,
+    25.5,
+    6.5
+  ],
+  "normalization": "Cropped to the casing; transparent matte cleared; screen window filled with opaque #000000; Lanczos to 50%.",
+  "runtime": "res://assets/ui/nells-field-slate/frame.png",
+  "runtime_sha256": "5fdb15eb6f45e1c0afadf60a1d328cc2645bb36bb3e75be7f7f1b70c3ce8f675",
+  "scale": 0.5,
+  "schema": 1,
+  "size": [
+    490,
+    738
+  ],
+  "slice": [
+    110,
+    55,
+    55,
+    130
+  ],
+  "source": "res://art/source/ui/nells-field-slate/v1/nells-field-slate-frame.png",
+  "source_sha256": "d541f3bcf782f611d80c17ed25664a5c9b1b7efda721a08645322bae44739ff5",
+  "version": "v1",
+  "window": [
+    39.0,
+    46.0,
+    412.0,
+    572.0
+  ]
+}

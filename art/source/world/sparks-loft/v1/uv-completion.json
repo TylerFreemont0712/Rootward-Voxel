@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-27",
+  "record": "complete_uvs.py",
+  "changed": {
+    "loft-tape-machine": [
+      "paper_feed"
+    ],
+    "loft-hotaru": [
+      "loft_paper"
+    ]
+  },
+  "note": "Untextured curve/paper surfaces now have finite UVs for the world audit. Painted UV layers and all geometry/materials unchanged."
+}

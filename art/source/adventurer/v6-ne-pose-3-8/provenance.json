@@ -1,0 +1,35 @@
+{
+  "tool": "built-in image_gen",
+  "before_sha256": "51e5fd57781e43e8c86572ef27c22109429641c255673dbbfbce67e3ac65bdee",
+  "output_sha256": "aaa8cf9b76ed39d3bda11f936938284496a9fea7d044e87a747bd93aa76b0966",
+  "size": [
+    1254,
+    1254
+  ],
+  "changed_poses": [
+    3,
+    8
+  ],
+  "unchanged_poses": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    9
+  ],
+  "prompts": "prompt.json",
+  "other_direction_sha256": {
+    "NW.png": "3d12e62432ee983f3beb1643e744c0594f05fa220d8f9983b11daf8fa69ac6ef",
+    "SE.png": "3e720dca66ea681f26868c4a9fad657713ad37a4799f83dc75cd3719c15ce214",
+    "SW.png": "aef3eccf96153aa84cb094a85481e62bced21c32acc73e82c26b1249c5392575"
+  },
+  "checks": [
+    "RGBA transparency retained",
+    "1254x1254 canvas retained",
+    "all 9 poses nonempty",
+    "7 untargeted poses pixel-identical",
+    "both heads and pose 8 near arm preserved"
+  ]
+}

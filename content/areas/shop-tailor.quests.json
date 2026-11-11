@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "area": "shop-tailor",
+  "quests": [
+    {
+      "id": "ready-for-collection",
+      "title": "Ready for collection",
+      "after": [
+        "own-corner"
+      ],
+      "concept": "Functions that return a value, and text methods",
+      "summary": "Gret Finch has fourteen finished orders and two collections. Put the oldest three on her board, name first and READY after, in capitals: Braum, Iona and Mira. Work payment: 20 p.",
+      "goal": {
+        "type": "all",
+        "goals": [
+          {
+            "type": "inspection_read",
+            "id": "order-ticket"
+          },
+          {
+            "type": "display_lines",
+            "id": "order-board",
+            "noun": "orders on the board",
+            "lines": [
+              "BRAUM READY",
+              "IONA READY",
+              "MIRA READY"
+            ]
+          }
+        ]
+      },
+      "access": {
+        "kind": "display",
+        "id": "order-board"
+      },
+      "focus": {
+        "at": [
+          8,
+          10
+        ]
+      },
+      "lesson": [
+        "Read the order book on the board's ledge, then jack the slate in below the board.",
+        "A function can hand a result back with return. ticket(\"iona\") then stands for whatever ticket returned.",
+        "Text has its own methods: \"iona\".upper() is \"IONA\". The order book has the names in small letters, as people signed them.",
+        "Write the ticket once as a function, then use it for each name in the list."
+      ],
+      "guide": {
+        "title": "Making something with a function",
+        "text": "return sends a value back to wherever the function was called. The caller decides what to do with it.",
+        "code": "def label(word):\n    return word.upper() + \"!\"\n\nprint(label(\"sale\"))   # SALE!"
+      },
+      "starter": [
+        "# ready_for_collection.py",
+        "# Names as they signed the order book.",
+        "",
+        "def ticket(name):",
+        "    # TODO: give back the name in capitals, then a space and READY",
+        "    return name",
+        "",
+        "def program(world):",
+        "    for name in [\"braum\", \"iona\", \"mira\"]:",
+        "        print(ticket(name))"
+      ],
+      "hints": [
+        "The loop already prints whatever ticket gives back. Run it: the pages say braum, iona and mira.",
+        "return name.upper() + \" READY\""
+      ],
+      "done": "Three names on the board. Gret has put the kettle on, in case anyone comes."
+    }
+  ]
+}

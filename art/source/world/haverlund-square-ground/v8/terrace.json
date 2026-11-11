@@ -1,0 +1,179 @@
+{
+  "previous": "v7",
+  "previous_sha256": "5579f7f41f1f7a84393eaa98f1a281816c773cc85a423d2a80b0f8f82dd34b34",
+  "record": "art/source/world/square-terrace/v1/terrace_ground.py",
+  "removed_floor_faces": 700,
+  "new_floor_sections": 106,
+  "floor_pieces": {
+    "ground_flags": 458,
+    "ground_cobbles": 298
+  },
+  "stray_wall_faces_removed": 64,
+  "rear_wall_faces_added": 144,
+  "conduit_routes": [
+    {
+      "route": "spindle-landing",
+      "start": [
+        21.55,
+        8.0
+      ],
+      "end": [
+        3.53,
+        8.0
+      ],
+      "length": 18.02
+    },
+    {
+      "route": "spindle-spine",
+      "start": [
+        20.5,
+        8.0
+      ],
+      "end": [
+        20.5,
+        53.6
+      ],
+      "length": 45.6
+    },
+    {
+      "route": "clockmaker-feed",
+      "start": [
+        20.5,
+        21.0
+      ],
+      "end": [
+        16.25,
+        21.0
+      ],
+      "length": 4.25
+    },
+    {
+      "route": "apothecary-feed",
+      "start": [
+        20.5,
+        30.0
+      ],
+      "end": [
+        16.25,
+        30.0
+      ],
+      "length": 4.25
+    },
+    {
+      "route": "walk-lamp-18",
+      "start": [
+        20.5,
+        18.0
+      ],
+      "end": [
+        25.55,
+        18.0
+      ],
+      "length": 5.05
+    },
+    {
+      "route": "walk-lamp-30",
+      "start": [
+        20.5,
+        30.0
+      ],
+      "end": [
+        25.55,
+        30.0
+      ],
+      "length": 5.05
+    },
+    {
+      "route": "walk-lamp-42",
+      "start": [
+        20.5,
+        42.0
+      ],
+      "end": [
+        25.55,
+        42.0
+      ],
+      "length": 5.05
+    },
+    {
+      "route": "walk-lamp-52",
+      "start": [
+        20.5,
+        52.5
+      ],
+      "end": [
+        25.55,
+        52.5
+      ],
+      "length": 5.05
+    },
+    {
+      "route": "lane-step-riser",
+      "start": [
+        3.505,
+        8.0,
+        2.0
+      ],
+      "end": [
+        3.505,
+        8.0,
+        3.96
+      ],
+      "length": 1.96
+    }
+  ],
+  "joints": [
+    [
+      20.5,
+      8.0
+    ],
+    [
+      20.5,
+      18.0
+    ],
+    [
+      20.5,
+      21.0
+    ],
+    [
+      20.5,
+      30.0
+    ],
+    [
+      20.5,
+      42.0
+    ],
+    [
+      20.5,
+      52.5
+    ]
+  ],
+  "areas": [
+    [
+      3.5,
+      -0.5,
+      21.5,
+      14.5
+    ],
+    [
+      9.5,
+      9.5,
+      27.1,
+      54.5
+    ]
+  ],
+  "cobble_bands": [
+    [
+      3.5,
+      5.5,
+      20.5,
+      10.5
+    ],
+    [
+      18.5,
+      5.5,
+      22.5,
+      54.5
+    ]
+  ]
+}

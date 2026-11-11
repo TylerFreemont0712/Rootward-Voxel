@@ -1,0 +1,237 @@
+{
+  "schema": 1,
+  "asset": "workshop-jar-shelf",
+  "version": "v1",
+  "source": "art/source/world/workshop-jar-shelf/v1/model.blend",
+  "source_sha256": "fd6e36901f0a35c7ecb5e23cfcc1579ac8c45acb0e7af0ddf1013c5756a8d564",
+  "runtime": "assets/world/workshop-jar-shelf/model.glb",
+  "runtime_sha256": "000788cddfeac1b6216e528f7614f10a9d6ab465ee30736149d7e1f5bc099eab",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.850000023841858,
+      0.968550801277161,
+      0.0,
+      0.850000083446503,
+      2.58999991416931,
+      0.340499997138977
+    ],
+    "geometry_sha256": "1f7dde668f5b87ad82446cb7fe1718b7ff7d470b3990f7d3167e7c94ba0fc7ee",
+    "material_records": {
+      "workshop_blue": {
+        "albedo": [
+          4078,
+          4902,
+          5412,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_blue_light": {
+        "albedo": [
+          5961,
+          6588,
+          6588,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_cream": {
+        "albedo": [
+          9098,
+          8745,
+          7922,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_glass": {
+        "albedo": [
+          7059,
+          7216,
+          6157,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+      },
+      "workshop_ochre": {
+        "albedo": [
+          7020,
+          6078,
+          3804,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_pages": {
+        "albedo": [
+          7961,
+          7373,
+          5961,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_paper": {
+        "albedo": [
+          9569,
+          9098,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_plum": {
+        "albedo": [
+          5255,
+          4078,
+          4588,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_red": {
+        "albedo": [
+          6588,
+          3961,
+          3020,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_steel": {
+        "albedo": [
+          3451,
+          3882,
+          4157,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_steel_dark": {
+        "albedo": [
+          2039,
+          2431,
+          2667,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_steel_light": {
+        "albedo": [
+          5373,
+          5647,
+          5490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_teal": {
+        "albedo": [
+          2706,
+          4902,
+          4627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_teal_dark": {
+        "albedo": [
+          2078,
+          3725,
+          3569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_teal_light": {
+        "albedo": [
+          5176,
+          6667,
+          6275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "workshop_blue",
+      "workshop_blue_light",
+      "workshop_brass",
+      "workshop_cream",
+      "workshop_glass",
+      "workshop_oak",
+      "workshop_ochre",
+      "workshop_pages",
+      "workshop_paper",
+      "workshop_plum",
+      "workshop_red",
+      "workshop_steel",
+      "workshop_steel_dark",
+      "workshop_steel_light",
+      "workshop_teal",
+      "workshop_teal_dark",
+      "workshop_teal_light",
+      "workshop_wood",
+      "workshop_wood_dark"
+    ],
+    "meshes": 19,
+    "triangles": 7740
+  }
+}

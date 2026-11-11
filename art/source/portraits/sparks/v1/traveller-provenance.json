@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "prompt_sha256": "e55f0ac16ec82270640cfc9b98450ae55c9bbbd7969c1f4b4b5b0834c13e952c",
+  "portraits": [
+    {
+      "id": "traveller",
+      "source": "art/source/portraits/sparks/v1/traveller.png",
+      "sha256": "425e8681b79c835958d2e3f7d9cd660fcc1ed5b0d3a8ddd45811bc09fa94fc87",
+      "reference_sha256": {
+        "art/source/adventurer/v9-directional-walk/idle-se.png": "3bf00cafeeccf30c26b3367131d814094539b78ec6313ca4b9cf0d38c4a07919",
+        "art/source/portraits/sparks/v1/hotaru-robot.png": "4fca154096bc72a53a38d92428636fd13de76ece28cc17e0329639260af68a95"
+      }
+    }
+  ]
+}

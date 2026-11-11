@@ -1,0 +1,12 @@
+{
+  "before": "6569aac553c9e8498bbf6f96c6fab349f92b5eb029f4f0d295c72e6b7dcdf33b",
+  "after": "08f0149ba00fe79da651531ad5afdaf2f08b9cd9228a9a148c7e1d55b4b38b3e",
+  "record": "art/source/world/civic-cycle/v1/revise.py",
+  "doorway_vertices_removed": 2192,
+  "door_leaves": "Two hinged panelled oak leaves, common door_leaf/swing extras. Exterior counter removed; public desk moves inside.",
+  "clock_record": "art/source/world/civic-cycle/v1/shared_clock.py",
+  "clock_parts": [
+    "clock_hour_hand",
+    "clock_minute_hand"
+  ]
+}

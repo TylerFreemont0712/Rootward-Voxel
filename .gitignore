@@ -1,0 +1,54 @@
+# >>> media
+# Pictures and models live in packs on the repository's GitHub releases, not in git (docs/RELEASES.md): media.lock
+# names every file, scripts/fetch-media.sh installs them, scripts/pack-media.sh packs new ones. scripts/media.py reads
+# this block to decide what media is, so keep it between these two markers and keep it first (rules below it still win).
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.glb
+*.gltf
+*.blend
+*.exr
+*.psd
+*.aseprite
+*.mp4
+*.webm
+*.ogg
+*.wav
+*.mp3
+*.zip
+# Godot's sidecars travel with their media: an .import file without its picture makes load() fail.
+*.png.import
+*.jpg.import
+*.jpeg.import
+*.webp.import
+*.gif.import
+*.glb.import
+*.gltf.import
+*.blend.import
+*.exr.import
+*.ogg.import
+*.wav.import
+*.mp3.import
+# Kept in git all the same: the README's screenshots.
+!/docs/images/**
+# <<< media
+
+# Godot
+.godot/
+installer/.godot/
+# The installer's brand art, fonts and version are copied in by scripts/build.py from the game
+installer/brand/
+installer/version.txt
+
+# Local, per machine
+.cache/
+/build/
+/.worktrees/
+sandbox/runtime/
+/sandbox/runtime-windows/
+__pycache__/
+*.py[cod]
+*.blend[0-9]*

@@ -1,0 +1,173 @@
+{
+  "active": "adventurer",
+  "schema": 1,
+  "skins": {
+    "adventurer": {
+      "atlas": "res://assets/characters/adventurer/sheet.png",
+      "label": "Original",
+      "selectable": true,
+      "source_sha256": "6e7db11c4c1403efc3af748014cbe06b600779319117bf29ab30f3fe9abd471d",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "adventurer_twilight": {
+      "atlas": "res://assets/characters/adventurer/sheet.png",
+      "label": "Twilight tint — shared frame skin example",
+      "selectable": false,
+      "source_sha256": "6e7db11c4c1403efc3af748014cbe06b600779319117bf29ab30f3fe9abd471d",
+      "tint": [
+        0.86,
+        0.93,
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_braum": {
+      "atlas": "res://assets/characters/skins/sparks_braum.png",
+      "label": "Braum — Sparks",
+      "selectable": false,
+      "source_sha256": "172d69af5a2d10c0af86aa11fc199aee53ecb2ed64b443ab805fb246c6c21e9a",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_iona": {
+      "atlas": "res://assets/characters/skins/sparks_iona.png",
+      "label": "Iona Venn — Sparks",
+      "selectable": false,
+      "source_sha256": "54d98ae0292535ed34333f6ed8ad9b22c9e3688e434e57d3e232784ef53fe899",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_mira": {
+      "atlas": "res://assets/characters/skins/sparks_mira.png",
+      "label": "Mira — Sparks",
+      "selectable": false,
+      "source_sha256": "e7142190a862a08f62e89741f5a7db96f7a476fb96b8cea65213e92c2df263f9",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_nell": {
+      "atlas": "res://assets/characters/skins/sparks_nell.png",
+      "label": "Nell — Sparks",
+      "selectable": false,
+      "source_sha256": "11fa1a998b6d7cc575366a319ba677b2ee078b229a13d604fe6a516b2b43dfdb",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_rowan": {
+      "atlas": "res://assets/characters/skins/sparks_rowan.png",
+      "label": "Rowan — Sparks",
+      "selectable": false,
+      "source_sha256": "287dcc7d46be945623604fe14cd0c893bd6e9cab4817b005980ba118b728f113",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_tessa": {
+      "atlas": "res://assets/characters/skins/sparks_tessa.png",
+      "label": "Tessa — Sparks",
+      "selectable": false,
+      "source_sha256": "59a0a43fb7f9a4f85901c5935b0a2ece94408adead5cd2325f4e93eaafed281e",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "village_bram": {
+      "atlas": "res://assets/characters/skins/village_bram.png",
+      "label": "Bram — village",
+      "selectable": false,
+      "source_sha256": "f2826f0bb64095186d97c9fceb587737566f02837dc6976a76176d27e09a2c55",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "village_mira": {
+      "atlas": "res://assets/characters/skins/village_mira.png",
+      "label": "Mira — village",
+      "selectable": false,
+      "source_sha256": "4da74efd92985cfc359cd351f15f790cde91753c04437c0614951de8ad419196",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "village_nell": {
+      "atlas": "res://assets/characters/skins/village_nell.png",
+      "label": "Nell — village",
+      "selectable": false,
+      "source_sha256": "d4bf4cc138caedb1d5e9d5f2c80302ef71a06210a9e245c60cdcdb70e3c01dc8",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "village_rowan": {
+      "atlas": "res://assets/characters/skins/village_rowan.png",
+      "label": "Rowan — village",
+      "selectable": false,
+      "source_sha256": "bb2e6b1e05020a216c9351f09454c81ee8ad102f477e100bd2afb12f13f82e3f",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "village_tessa": {
+      "atlas": "res://assets/characters/skins/village_tessa.png",
+      "label": "Tessa — village",
+      "selectable": false,
+      "source_sha256": "60f968f7770cc8a217c717439e3af72c7d36093b229199bc20fe75791397af9f",
+      "tint": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "template": {
+    "atlas": "res://assets/characters/adventurer/sheet.png",
+    "frames": "res://assets/characters/adventurer/frames.tres",
+    "id": "painted_chibi_v1",
+    "manifest": "res://assets/characters/adventurer/manifest.json",
+    "sha256": "b84741d46f4de4548648268d30ddcf823cd30b1ec5255cacdeaedec23da720d2",
+    "sheet_size": [
+      1536,
+      5376
+    ]
+  }
+}

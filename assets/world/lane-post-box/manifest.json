@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "lane-post-box",
+  "version": "v1",
+  "source": "art/source/world/lane-post-box/v1/model.blend",
+  "source_sha256": "c81f99a01d83849775b5be8ee6b7f2f745a3106976bedf337ec3d93de307e5f4",
+  "runtime": "assets/world/lane-post-box/model.glb",
+  "runtime_sha256": "aa6e85235a5c2f7adef727946640db7c909c9ec3d8fdb4987dd1783c29b61fee",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.270000010728836,
+      0.0,
+      -0.270000010728836,
+      0.270000010728836,
+      1.28999996185303,
+      0.270000010728836
+    ],
+    "geometry_sha256": "4301676e7d036bafad51c1864cd0a50d7132cd1316a38a68f9b6266d357f129f",
+    "material_records": {
+      "lane_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_ink": {
+        "albedo": [
+          3137,
+          2392,
+          1882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_red": {
+        "albedo": [
+          7098,
+          2745,
+          2275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_red_dark": {
+        "albedo": [
+          5451,
+          2000,
+          1608,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_white": {
+        "albedo": [
+          9490,
+          9176,
+          8471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_brass",
+      "lane_ink",
+      "lane_iron",
+      "lane_red",
+      "lane_red_dark",
+      "lane_white"
+    ],
+    "meshes": 6,
+    "triangles": 1216
+  }
+}

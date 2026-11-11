@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-27",
+  "record": "art/source/world/sparks-loft/v1/refine_marked_assets.py",
+  "sources": [
+    {
+      "asset": "loft-travel-stacks",
+      "before": "ac216d98fc8a0acf28c859ab90ba209c0c4daf8d001f61b4633f57571409b415",
+      "backup": "art/source/world/loft-travel-stacks/v1/model.pre-marked-review.blend",
+      "after": "0be4e0a06158b8a9f5bc3d48094d4de694b1287f2f7cd382c2b5f3613d165550"
+    },
+    {
+      "asset": "loft-bed",
+      "before": "d7b81fdcaa37b5658842a4b8aa410efa872ad99c6971cb77b49f1a1b54286426",
+      "backup": "art/source/world/loft-bed/v1/model.pre-marked-review.blend",
+      "after": "64d6bf8fb5c469511925808ac9b827114c4ba2ad20db438b32b7be658432453b"
+    },
+    {
+      "asset": "loft-wall-life",
+      "before": "d46c18ec168299c382864c84896ce574b26bc03caaaf5c2ee8a05f08b0915f40",
+      "backup": "art/source/world/loft-wall-life/v1/model.pre-marked-review.blend",
+      "after": "5e32c72d651c07dcd265a893d44afd87f346c5c6c867a50811693fe80c79c45d"
+    },
+    {
+      "asset": "loft-shell",
+      "before": "967817f946385a487d5f5e3edc03911f7b7e67e40baf570944f4a5fb881ae95d",
+      "backup": "art/source/world/loft-shell/v1/model.pre-marked-review.blend",
+      "after": "9921f7aa4d637826f923cb770c931a24d24f56715762bf582d5ec42d0e6570e4"
+    },
+    {
+      "asset": "loft-cable",
+      "before": "1dfa66208a86868176bfdc3b346977152fcb4757a95c8b1713d67159c810db00",
+      "backup": "art/source/world/loft-cable/v1/model.pre-marked-review.blend",
+      "after": "8524a67a9137ff589cd09aec5df6053355d909c6c36b4f5912f0dffed87c14ae"
+    }
+  ]
+}

@@ -1,0 +1,2355 @@
+{
+ "schema": 1,
+ "note": "Footprint-only catalog entries for the engine rule tests in test/fixtures. They describe geometry the rules read; no model or Blender source ships for them.",
+ "assets": {
+  "cottage": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; preserve imported root",
+   "logical_footprint": [
+    -1.275,
+    -1.225,
+    2.55,
+    2.45
+   ],
+   "behavior": "visual_only; gameplay rules remain in core",
+   "finish_slots": {
+    "walls": [
+     "plaster"
+    ],
+    "roof": [
+     "roof",
+     "roof_dark",
+     "roof_light"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark",
+     "entrance_oak"
+    ],
+    "masonry": [
+     "stone",
+     "stone_dark",
+     "stone_light",
+     "entrance_stone"
+    ],
+    "metal": [
+     "gold",
+     "iron"
+    ]
+   },
+   "building_revision": "2026-10-24-buildings-v1",
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "kind": "arched oak",
+    "threshold": "pale stone",
+    "plane": 1.5,
+    "width": 0.86,
+    "height": 1.82,
+    "bottom": 0.17,
+    "steps": [
+     [
+      2.075,
+      1.5250000000000001,
+      1.51,
+      0.09620000000000001
+     ],
+     [
+      1.645,
+      0.5750000000000001,
+      1.26,
+      0.185
+     ]
+    ],
+    "hinge": "DoorHinge"
+   }
+  },
+  "mill-house": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; preserve imported root",
+   "logical_footprint": [
+    -1.275,
+    -1.225,
+    2.55,
+    2.45
+   ],
+   "behavior": "visual_only; gameplay rules remain in core",
+   "finish_slots": {
+    "walls": [
+     "plaster"
+    ],
+    "roof": [
+     "teal",
+     "teal_dark",
+     "teal_light"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark",
+     "entrance_oak"
+    ],
+    "masonry": [
+     "stone",
+     "stone_dark",
+     "stone_light",
+     "entrance_stone"
+    ],
+    "metal": [
+     "gold",
+     "iron"
+    ]
+   },
+   "building_revision": "2026-10-24-buildings-v1",
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "kind": "arched oak",
+    "threshold": "pale stone",
+    "plane": 1.5,
+    "width": 0.86,
+    "height": 1.82,
+    "bottom": 0.17,
+    "steps": [
+     [
+      2.075,
+      1.5250000000000001,
+      1.51,
+      0.09620000000000001
+     ],
+     [
+      1.645,
+      0.5750000000000001,
+      1.26,
+      0.185
+     ]
+    ],
+    "hinge": "DoorHinge"
+   }
+  },
+  "clearing-ground": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; preserve imported root",
+   "logical_footprint": null,
+   "behavior": "visual_only; gameplay rules remain in core",
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "wood_dark"
+    ],
+    "masonry": [
+     "stone",
+     "stone_dark",
+     "stone_light"
+    ]
+   }
+  },
+  "tree": {
+   "version": "v1",
+   "authority": "procedural_test",
+   "pivot": "ground origin; preserve imported root",
+   "logical_footprint": {
+    "trunk_radius": 0.18
+   },
+   "behavior": "visual_only; gameplay rules remain in core",
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "wood"
+    ]
+   }
+  },
+  "log-cabin": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; preserve imported root; door and gable face +Z",
+   "logical_footprint": [
+    -1.45,
+    -1.43,
+    2.9,
+    2.86
+   ],
+   "behavior": "visual_only; gameplay rules remain in core",
+   "finish_slots": {
+    "walls": [
+     "oak",
+     "oak_light"
+    ],
+    "roof": [
+     "roof",
+     "roof_dark",
+     "roof_light"
+    ],
+    "timber": [
+     "wood",
+     "wood_dark",
+     "wood_light",
+     "entrance_oak"
+    ],
+    "masonry": [
+     "stone_dark",
+     "stone_light",
+     "stone_warm",
+     "entrance_stone"
+    ],
+    "metal": [
+     "gold",
+     "iron"
+    ]
+   },
+   "building_revision": "2026-10-24-buildings-v1",
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "kind": "arched oak",
+    "threshold": "pale stone",
+    "plane": 1.53,
+    "width": 0.86,
+    "height": 1.82,
+    "bottom": 0.17,
+    "steps": [
+     [
+      2.28,
+      1.73,
+      1.51,
+      0.09620000000000001
+     ],
+     [
+      1.8499999999999999,
+      0.7799999999999999,
+      1.26,
+      0.185
+     ]
+    ],
+    "hinge": "DoorHinge"
+   }
+  },
+  "log-cabin-large": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; preserve imported root; door and gable face +Z",
+   "logical_footprint": [
+    -2.35,
+    -2.35,
+    4.7,
+    4.7
+   ],
+   "behavior": "visual_only; gameplay rules remain in core",
+   "finish_slots": {
+    "walls": [
+     "oak",
+     "oak_light"
+    ],
+    "roof": [
+     "roof",
+     "roof_dark",
+     "roof_light"
+    ],
+    "timber": [
+     "wood",
+     "wood_dark",
+     "wood_light",
+     "entrance_oak"
+    ],
+    "masonry": [
+     "stone_dark",
+     "stone_light",
+     "stone_warm",
+     "entrance_stone"
+    ],
+    "metal": [
+     "gold",
+     "iron"
+    ]
+   },
+   "building_revision": "2026-10-24-buildings-v1",
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "kind": "arched oak",
+    "threshold": "pale stone",
+    "plane": 2.43,
+    "width": 1.1,
+    "height": 2.2,
+    "bottom": 0.17,
+    "steps": [
+     [
+      3.2,
+      2.65,
+      1.75,
+      0.09620000000000001
+     ],
+     [
+      2.77,
+      1.7000000000000002,
+      1.5,
+      0.185
+     ]
+    ],
+    "hinge": "DoorHinge"
+   }
+  },
+  "log-cabin-large-teal": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; preserve imported root; door and gable face +Z",
+   "logical_footprint": [
+    -2.35,
+    -2.35,
+    4.7,
+    4.7
+   ],
+   "behavior": "visual_only; gameplay rules remain in core",
+   "finish_slots": {
+    "walls": [
+     "oak",
+     "oak_light"
+    ],
+    "roof": [
+     "teal",
+     "teal_dark",
+     "teal_light"
+    ],
+    "timber": [
+     "wood",
+     "wood_dark",
+     "wood_light",
+     "entrance_oak"
+    ],
+    "masonry": [
+     "stone_dark",
+     "stone_light",
+     "stone_warm",
+     "entrance_stone"
+    ],
+    "metal": [
+     "gold",
+     "iron"
+    ]
+   },
+   "building_revision": "2026-10-24-buildings-v1",
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "kind": "arched oak",
+    "threshold": "pale stone",
+    "plane": 2.43,
+    "width": 1.1,
+    "height": 2.2,
+    "bottom": 0.17,
+    "steps": [
+     [
+      3.2,
+      2.65,
+      1.75,
+      0.09620000000000001
+     ],
+     [
+      2.77,
+      1.7000000000000002,
+      1.5,
+      0.185
+     ]
+    ],
+    "hinge": "DoorHinge"
+   }
+  },
+  "hearth-oak": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; front +Z; one unit per tile",
+   "logical_footprint": {
+    "trunk_radius": 0.5
+   },
+   "behavior": "static tree; only the catalog trunk radius blocks movement"
+  },
+  "ridge-cedar": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; front +Z; one unit per tile",
+   "logical_footprint": {
+    "trunk_radius": 0.36
+   },
+   "behavior": "static tree; only the catalog trunk radius blocks movement"
+  },
+  "river-willow": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; front +Z; one unit per tile",
+   "logical_footprint": {
+    "trunk_radius": 0.5
+   },
+   "behavior": "static tree; only the catalog trunk radius blocks movement"
+  },
+  "hearth-house": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; front +Z; one unit per tile",
+   "logical_footprint": [
+    -2.5,
+    -2.5,
+    5,
+    5
+   ],
+   "behavior": "static building with catalog footprint and instanced room",
+   "finish_slots": {
+    "walls": [
+     "cream",
+     "plaster_warm"
+    ],
+    "roof": [
+     "roof_teal_dark",
+     "roof_teal_hi",
+     "roof_violet",
+     "roof_violet_dark",
+     "roof_violet_hi"
+    ],
+    "timber": [
+     "dark",
+     "oak",
+     "oak_edge",
+     "timber"
+    ],
+    "masonry": [
+     "mortar",
+     "stone",
+     "stone_edge",
+     "entrance_stone"
+    ],
+    "metal": [
+     "brass",
+     "iron"
+    ]
+   },
+   "building_revision": "2026-10-24-buildings-v1",
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "kind": "arched oak",
+    "threshold": "pale stone",
+    "plane": 2.47,
+    "width": 1.15,
+    "height": 2.18,
+    "bottom": 0.18,
+    "steps": [
+     [
+      3.35,
+      2.8,
+      1.7999999999999998,
+      0.1014
+     ],
+     [
+      2.92,
+      1.85,
+      1.5499999999999998,
+      0.195
+     ]
+    ],
+    "hinge": "DoorHinge"
+   }
+  },
+  "lantern-loft": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; front +Z; one unit per tile",
+   "logical_footprint": [
+    -3.5,
+    -3.5,
+    7,
+    7
+   ],
+   "behavior": "static building with catalog footprint and instanced room",
+   "finish_slots": {
+    "walls": [
+     "cream",
+     "plaster_warm"
+    ],
+    "roof": [
+     "roof_teal",
+     "roof_teal_dark",
+     "roof_teal_hi"
+    ],
+    "timber": [
+     "dark",
+     "oak",
+     "oak_edge",
+     "timber"
+    ],
+    "masonry": [
+     "mortar",
+     "stone",
+     "stone_edge",
+     "entrance_stone"
+    ],
+    "metal": [
+     "brass",
+     "iron"
+    ]
+   },
+   "building_revision": "2026-10-24-buildings-v1",
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "kind": "planked oak",
+    "threshold": "pale stone",
+    "plane": 3.31,
+    "width": 1.3,
+    "height": 2.28,
+    "bottom": 0.15,
+    "steps": [
+     [
+      4.35,
+      3.8,
+      1.9500000000000002,
+      0.09620000000000001
+     ],
+     [
+      3.92,
+      2.85,
+      1.7000000000000002,
+      0.185
+     ]
+    ],
+    "hinge": "DoorHinge"
+   }
+  },
+  "brook-mill": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin; front +Z; one unit per tile",
+   "logical_footprint": [
+    -3,
+    -2.5,
+    6,
+    5
+   ],
+   "behavior": "static building with catalog footprint and instanced room",
+   "finish_slots": {
+    "walls": [
+     "cream",
+     "plaster_warm"
+    ],
+    "roof": [
+     "roof_teal",
+     "roof_teal_dark",
+     "roof_teal_hi",
+     "roof_violet",
+     "roof_violet_dark",
+     "roof_violet_hi"
+    ],
+    "timber": [
+     "dark",
+     "oak",
+     "oak_edge",
+     "timber"
+    ],
+    "masonry": [
+     "mortar",
+     "stone",
+     "stone_edge",
+     "entrance_stone"
+    ],
+    "metal": [
+     "brass",
+     "iron"
+    ]
+   },
+   "building_revision": "2026-10-24-buildings-v1",
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "kind": "planked oak",
+    "threshold": "pale stone",
+    "plane": 2.52,
+    "width": 1.38,
+    "height": 2.2,
+    "bottom": 0.28,
+    "steps": [
+     [
+      3.35,
+      2.8,
+      2.03,
+      0.15340000000000004
+     ],
+     [
+      2.92,
+      1.85,
+      1.7799999999999998,
+      0.29500000000000004
+     ]
+    ],
+    "hinge": "DoorHinge"
+   }
+  },
+  "wooden-barrel": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin at the barrel's centre; base on z = 0",
+   "logical_footprint": [
+    -0.225,
+    -0.25,
+    0.45,
+    0.5
+   ],
+   "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "iron"
+    ]
+   }
+  },
+  "woodpile": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin at the centre of the stack; base on z = 0",
+   "logical_footprint": [
+    -0.45,
+    -0.2,
+    0.9,
+    0.4
+   ],
+   "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark",
+     "wood_light"
+    ]
+   }
+  },
+  "window-planter": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground centre of the box",
+   "logical_footprint": [
+    -0.4,
+    -0.15,
+    0.8,
+    0.25
+   ],
+   "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+   "finish_slots": {
+    "timber": [
+     "wood",
+     "wood_dark",
+     "wood_light"
+    ]
+   }
+  },
+  "tree-stump": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground centre of the stump",
+   "logical_footprint": [
+    -0.25,
+    -0.25,
+    0.5,
+    0.5
+   ],
+   "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+   "finish_slots": {
+    "timber": [
+     "wood",
+     "wood_dark",
+     "wood_light"
+    ]
+   }
+  },
+  "park-bench": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin at the seat centre",
+   "logical_footprint": [
+    -0.45,
+    -0.2,
+    0.9,
+    0.4
+   ],
+   "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light"
+    ],
+    "metal": [
+     "iron"
+    ]
+   }
+  },
+  "wooden-chair": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin at the footprint centre; base on z = 0",
+   "logical_footprint": [
+    -0.225,
+    -0.225,
+    0.45,
+    0.45
+   ],
+   "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ]
+   }
+  },
+  "bookshelf": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin at the footprint centre; base on z = 0",
+   "logical_footprint": [
+    -0.25,
+    -0.15,
+    0.5,
+    0.3
+   ],
+   "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+   "finish_slots": {
+    "walls": [
+     "cream",
+     "plaster"
+    ],
+    "roof": [
+     "roof",
+     "roof_light",
+     "teal",
+     "teal_light"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ]
+   }
+  },
+  "hearth-stool": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin at the seat centre; base on z = 0",
+   "logical_footprint": [
+    -0.175,
+    -0.175,
+    0.35,
+    0.35
+   ],
+   "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+   "finish_slots": {
+    "walls": [
+     "cream",
+     "plaster",
+     "plaster_shade"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ]
+   }
+  },
+  "watering-can": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin at the bounding-box centre; body axis 0.125 m behind it",
+   "logical_footprint": null,
+   "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement."
+  },
+  "wooden-bucket": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin at the bucket's centre, on the body axis",
+   "logical_footprint": null,
+   "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "iron"
+    ]
+   }
+  },
+  "wheelbarrow": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "ground origin at the bounding-box centre; tray centre 0.125 m toward the handles",
+   "logical_footprint": [
+    -0.225,
+    -0.45,
+    0.45,
+    0.9
+   ],
+   "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark",
+     "wood_light"
+    ],
+    "metal": [
+     "iron"
+    ]
+   }
+  },
+  "hollow-highback-armchair": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.5,
+    -0.45,
+    1.0,
+    0.9
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass"
+    ],
+    "fabric": [
+     "cloth_lilac",
+     "cloth_plum"
+    ]
+   }
+  },
+  "hollow-trestle-table": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -1.1,
+    -0.5,
+    2.2,
+    1.0
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass"
+    ]
+   }
+  },
+  "hollow-writing-desk": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.775,
+    -0.4,
+    1.55,
+    0.8
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass"
+    ],
+    "fabric": [
+     "linen"
+    ]
+   }
+  },
+  "hollow-mapmakers-table": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.825,
+    -0.5,
+    1.65,
+    1.0
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass",
+     "iron"
+    ],
+    "fabric": [
+     "cloth_teal",
+     "linen"
+    ]
+   }
+  },
+  "hollow-apothecary-cabinet": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.675,
+    -0.31,
+    1.35,
+    0.62
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream",
+     "plaster"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass"
+    ]
+   }
+  },
+  "hollow-kitchen-dresser": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.775,
+    -0.325,
+    1.55,
+    0.65
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass"
+    ],
+    "fabric": [
+     "cloth_plum",
+     "cloth_teal",
+     "linen"
+    ]
+   }
+  },
+  "hollow-oak-wardrobe": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.65,
+    -0.35,
+    1.3,
+    0.7
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass"
+    ],
+    "fabric": [
+     "cloth_plum"
+    ]
+   }
+  },
+  "hollow-washstand": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.5,
+    -0.325,
+    1.0,
+    0.65
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass"
+    ],
+    "fabric": [
+     "linen"
+    ]
+   }
+  },
+  "hollow-woven-settee": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.8,
+    -0.4,
+    1.6,
+    0.8
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood_dark"
+    ],
+    "fabric": [
+     "cloth_light",
+     "cloth_teal",
+     "linen"
+    ]
+   }
+  },
+  "hollow-patchwork-bed": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.55,
+    -1.0,
+    1.1,
+    2.0
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass"
+    ],
+    "fabric": [
+     "cloth_lilac",
+     "cloth_plum",
+     "linen"
+    ]
+   }
+  },
+  "hollow-carpenters-bench": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.95,
+    -0.425,
+    1.9,
+    0.85
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "iron"
+    ]
+   }
+  },
+  "hollow-bellows-forge": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.85,
+    -0.525,
+    1.7,
+    1.05
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "light",
+    "on": "Stoke",
+    "off": "Bank"
+   },
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "wood_dark"
+    ],
+    "masonry": [
+     "stone",
+     "stone_dark",
+     "stone_light"
+    ],
+    "metal": [
+     "copper",
+     "iron"
+    ]
+   }
+  },
+  "hollow-grinding-wheel": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.55,
+    -0.375,
+    1.1,
+    0.75
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "spin_x",
+    "on": "Start",
+    "off": "Stop"
+   },
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood_dark"
+    ],
+    "masonry": [
+     "stone",
+     "stone_light"
+    ],
+    "metal": [
+     "brass",
+     "iron"
+    ]
+   }
+  },
+  "hollow-tool-rack": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.7,
+    -0.25,
+    1.4,
+    0.5
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "iron"
+    ]
+   }
+  },
+  "hollow-potters-wheel": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.55,
+    -0.45,
+    1.1,
+    0.9
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "spin_y",
+    "on": "Start",
+    "off": "Stop"
+   },
+   "finish_slots": {
+    "timber": [
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "masonry": [
+     "stone"
+    ],
+    "metal": [
+     "iron"
+    ]
+   }
+  },
+  "hollow-weavers-loom": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.75,
+    -0.5,
+    1.5,
+    1.0
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass"
+    ],
+    "fabric": [
+     "cloth_lilac",
+     "cloth_plum"
+    ]
+   }
+  },
+  "hollow-spinning-wheel": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.625,
+    -0.325,
+    1.25,
+    0.65
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "spin_x",
+    "on": "Start",
+    "off": "Stop"
+   },
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass",
+     "iron"
+    ],
+    "fabric": [
+     "linen"
+    ]
+   }
+  },
+  "hollow-alchemy-bench": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.775,
+    -0.4,
+    1.55,
+    0.8
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "light",
+    "on": "Awaken",
+    "off": "Dim"
+   },
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass",
+     "copper"
+    ]
+   }
+  },
+  "hollow-bakers-oven": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.8,
+    -0.65,
+    1.6,
+    1.3
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "light",
+    "on": "Light",
+    "off": "Extinguish"
+   },
+   "finish_slots": {
+    "walls": [
+     "plaster"
+    ],
+    "roof": [
+     "roof"
+    ],
+    "timber": [
+     "wood",
+     "wood_dark"
+    ],
+    "masonry": [
+     "stone",
+     "stone_dark",
+     "stone_light"
+    ]
+   }
+  },
+  "hollow-bread-display": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.725,
+    -0.35,
+    1.45,
+    0.7
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ]
+   }
+  },
+  "hollow-cheese-stand": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.625,
+    -0.35,
+    1.25,
+    0.7
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood_dark"
+    ],
+    "fabric": [
+     "cloth_teal"
+    ]
+   }
+  },
+  "hollow-fishmongers-counter": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.775,
+    -0.4,
+    1.55,
+    0.8
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "metal": [
+     "iron"
+    ],
+    "fabric": [
+     "cloth_teal"
+    ]
+   }
+  },
+  "hollow-spice-cart": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.75,
+    -0.425,
+    1.5,
+    0.85
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass",
+     "iron"
+    ],
+    "fabric": [
+     "cloth_plum",
+     "linen"
+    ]
+   }
+  },
+  "hollow-linen-rack": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.6,
+    -0.275,
+    1.2,
+    0.55
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "fabric": [
+     "cloth_teal",
+     "linen"
+    ]
+   }
+  },
+  "hollow-pottery-shelf": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.625,
+    -0.25,
+    1.25,
+    0.5
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "fabric": [
+     "linen"
+    ]
+   }
+  },
+  "hollow-copper-wash-tub": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.55,
+    -0.375,
+    1.1,
+    0.75
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "wood_dark"
+    ],
+    "metal": [
+     "copper",
+     "iron"
+    ]
+   }
+  },
+  "hollow-straw-beehive": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.425,
+    -0.425,
+    0.85,
+    0.85
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "wood_dark"
+    ]
+   }
+  },
+  "hollow-rabbit-hutch": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.7,
+    -0.35,
+    1.4,
+    0.7
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "roof": [
+     "roof_teal"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ]
+   }
+  },
+  "hollow-seedling-tray": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.55,
+    -0.3,
+    1.1,
+    0.6
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "walls": [
+     "cream"
+    ],
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ]
+   }
+  },
+  "hollow-herb-drying-rack": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.65,
+    -0.325,
+    1.3,
+    0.65
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood",
+     "wood_dark"
+    ],
+    "fabric": [
+     "cloth_lilac",
+     "linen"
+    ]
+   }
+  },
+  "hollow-vine-trellis": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.75,
+    -0.275,
+    1.5,
+    0.55
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood_dark"
+    ],
+    "masonry": [
+     "stone"
+    ],
+    "fabric": [
+     "cloth_plum"
+    ]
+   }
+  },
+  "hollow-butter-churn": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.325,
+    -0.325,
+    0.65,
+    0.65
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "oak_light",
+     "wood_dark"
+    ],
+    "metal": [
+     "iron"
+    ],
+    "fabric": [
+     "linen"
+    ]
+   }
+  },
+  "hollow-shard-lantern": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.375,
+    -0.375,
+    0.75,
+    0.75
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "light",
+    "on": "Light",
+    "off": "Dim"
+   },
+   "finish_slots": {
+    "roof": [
+     "roof"
+    ],
+    "timber": [
+     "wood_dark"
+    ],
+    "masonry": [
+     "stone_dark"
+    ],
+    "metal": [
+     "brass"
+    ]
+   }
+  },
+  "hollow-crystal-obelisk": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.5,
+    -0.5,
+    1.0,
+    1.0
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "light",
+    "on": "Awaken",
+    "off": "Dim"
+   },
+   "finish_slots": {
+    "masonry": [
+     "stone",
+     "stone_dark",
+     "stone_light"
+    ],
+    "metal": [
+     "brass"
+    ]
+   }
+  },
+  "hollow-rune-standing-stone": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.475,
+    -0.325,
+    0.95,
+    0.65
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "light",
+    "on": "Awaken",
+    "off": "Dim"
+   },
+   "finish_slots": {
+    "masonry": [
+     "stone",
+     "stone_dark",
+     "stone_light"
+    ],
+    "metal": [
+     "brass"
+    ]
+   }
+  },
+  "hollow-village-bell": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.6,
+    -0.4,
+    1.2,
+    0.8
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "bell",
+    "on": "Ring",
+    "off": "Silence"
+   },
+   "finish_slots": {
+    "roof": [
+     "roof"
+    ],
+    "timber": [
+     "oak",
+     "wood_dark"
+    ],
+    "masonry": [
+     "stone_dark"
+    ],
+    "metal": [
+     "brass",
+     "iron"
+    ],
+    "fabric": [
+     "linen"
+    ]
+   }
+  },
+  "hollow-brass-lever": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.325,
+    -0.325,
+    0.65,
+    0.65
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "lever",
+    "on": "Pull",
+    "off": "Reset"
+   },
+   "finish_slots": {
+    "timber": [
+     "wood_dark"
+    ],
+    "masonry": [
+     "stone",
+     "stone_dark"
+    ],
+    "metal": [
+     "brass",
+     "iron"
+    ],
+    "fabric": [
+     "cloth_teal"
+    ]
+   }
+  },
+  "hollow-water-pump": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.425,
+    -0.4,
+    0.85,
+    0.8
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "pump",
+    "on": "Start",
+    "off": "Stop"
+   },
+   "finish_slots": {
+    "timber": [
+     "oak"
+    ],
+    "masonry": [
+     "stone",
+     "stone_dark"
+    ],
+    "metal": [
+     "brass",
+     "iron"
+    ],
+    "fabric": [
+     "cloth_teal"
+    ]
+   }
+  },
+  "hollow-wayfarers-chest": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.575,
+    -0.375,
+    1.15,
+    0.75
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "hinge",
+    "on": "Open",
+    "off": "Close"
+   },
+   "finish_slots": {
+    "timber": [
+     "oak",
+     "wood_dark"
+    ],
+    "metal": [
+     "brass",
+     "iron"
+    ],
+    "fabric": [
+     "cloth_plum"
+    ]
+   }
+  },
+  "hollow-little-shrine": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.55,
+    -0.4,
+    1.1,
+    0.8
+   ],
+   "behavior": "Interactive prop; boolean active state, static ground footprint",
+   "library": "village-library-v1",
+   "interaction": {
+    "kind": "light",
+    "on": "Light",
+    "off": "Dim"
+   },
+   "finish_slots": {
+    "walls": [
+     "cream",
+     "plaster"
+    ],
+    "roof": [
+     "roof_teal"
+    ],
+    "timber": [
+     "oak",
+     "wood_dark"
+    ],
+    "masonry": [
+     "stone_dark",
+     "stone_light"
+    ],
+    "metal": [
+     "brass"
+    ]
+   }
+  },
+  "hollow-weather-vane": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -0.35,
+    -0.35,
+    0.7,
+    0.7
+   ],
+   "behavior": "Static decorative prop; catalog footprint blocks movement",
+   "library": "village-library-v1",
+   "interaction": {},
+   "finish_slots": {
+    "masonry": [
+     "stone",
+     "stone_dark"
+    ],
+    "metal": [
+     "brass",
+     "copper",
+     "iron"
+    ]
+   }
+  },
+  "hollow-bakery": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre, front +Z; one metre per cell",
+   "logical_footprint": [
+    -2.5,
+    -2.0,
+    5,
+    4
+   ],
+   "behavior": "Static shop building with saved instanced room; forge/oven are decorative",
+   "finish_slots": {
+    "walls": [
+     "plaster"
+    ],
+    "roof": [
+     "roof_violet"
+    ],
+    "timber": [
+     "wood",
+     "entrance_oak"
+    ],
+    "masonry": [
+     "stone",
+     "brick",
+     "entrance_stone"
+    ],
+    "metal": [
+     "iron",
+     "gold"
+    ]
+   },
+   "building_revision": "2026-10-24-buildings-v1",
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "kind": "arched oak",
+    "threshold": "pale stone",
+    "plane": 2.15,
+    "width": 1.07,
+    "height": 2.13,
+    "bottom": 0.17,
+    "steps": [
+     [
+      2.85,
+      2.3,
+      1.7200000000000002,
+      0.09620000000000001
+     ],
+     [
+      2.42,
+      1.35,
+      1.4700000000000002,
+      0.185
+     ]
+    ],
+    "hinge": "DoorHinge"
+   }
+  },
+  "hollow-smithy": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground centre, front +Z; one metre per cell",
+   "logical_footprint": [
+    -3.0,
+    -2.5,
+    6,
+    5
+   ],
+   "behavior": "Static shop building with saved instanced room; forge/oven are decorative",
+   "finish_slots": {
+    "walls": [
+     "plaster"
+    ],
+    "roof": [
+     "roof_teal"
+    ],
+    "timber": [
+     "wood",
+     "entrance_oak"
+    ],
+    "masonry": [
+     "stone",
+     "brick",
+     "entrance_stone"
+    ],
+    "metal": [
+     "iron",
+     "gold"
+    ]
+   },
+   "building_revision": "2026-10-24-buildings-v1",
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "kind": "arched oak",
+    "threshold": "pale stone",
+    "plane": 2.65,
+    "width": 1.07,
+    "height": 2.13,
+    "bottom": 0.17,
+    "steps": [
+     [
+      3.35,
+      2.8,
+      1.7200000000000002,
+      0.09620000000000001
+     ],
+     [
+      2.92,
+      1.85,
+      1.4700000000000002,
+      0.185
+     ]
+    ],
+    "hinge": "DoorHinge"
+   }
+  },
+  "concept-cottage": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground center; front +Z; one metre per cell",
+   "logical_footprint": [
+    -1.9,
+    -1.7,
+    3.8,
+    3.4
+   ],
+   "behavior": "Hinged entry with separate saved cottage room",
+   "finish_slots": {
+    "walls": [
+     "cottage_oak",
+     "cottage_oak_light"
+    ],
+    "roof": [
+     "cottage_roof",
+     "cottage_roof_light",
+     "cottage_roof_dark"
+    ],
+    "timber": [
+     "cottage_timber",
+     "cottage_endgrain"
+    ],
+    "masonry": [
+     "cottage_stone",
+     "cottage_stone_light",
+     "cottage_stone_warm",
+     "cottage_mortar"
+    ],
+    "metal": [
+     "cottage_iron",
+     "cottage_brass"
+    ]
+   },
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "kind": "arched oak with upper pane",
+    "threshold": "pale limestone",
+    "plane": 1.855,
+    "width": 1.08,
+    "height": 2.11,
+    "bottom": 0.22,
+    "steps": [
+     [
+      2.55,
+      2.03,
+      1.66,
+      0.12
+     ],
+     [
+      2.15,
+      1.18,
+      1.46,
+      0.235
+     ]
+    ],
+    "hinge": "DoorHinge",
+    "approach_cells": 1
+   },
+   "collision_rects": [
+    [
+     -1.98,
+     -1.7,
+     3.96,
+     3.68
+    ],
+    [
+     -1.98,
+     -1.98,
+     1.44,
+     0.28
+    ],
+    [
+     0.54,
+     -1.98,
+     1.44,
+     0.28
+    ]
+   ],
+   "collision_notes": "Solid log/foundation envelope in local S-facing logical coordinates. The entrance reserves one extra exterior landing cell; parsing also closes the leaf and former threshold to walking. Placement footprint is unchanged."
+  },
+  "painted-cottage": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground center; front +Z in Godot; one metre per cell",
+   "logical_footprint": [
+    -2,
+    -1.8,
+    4,
+    3.6
+   ],
+   "collision_rects": [
+    [
+     -2.04,
+     -1.77,
+     4.08,
+     3.75
+    ],
+    [
+     -2.04,
+     -2.19,
+     1.45,
+     0.42
+    ],
+    [
+     0.59,
+     -2.19,
+     1.45,
+     0.42
+    ],
+    [
+     -2.05,
+     -2.9,
+     1.34,
+     1.03
+    ],
+    [
+     0.8,
+     -2.53,
+     1.14,
+     0.66
+    ],
+    [
+     -2.51,
+     0.64,
+     0.7,
+     0.74
+    ]
+   ],
+   "entrance": {
+    "front": "+Z",
+    "center_x": 0,
+    "plane": 1.985,
+    "width": 1.15,
+    "height": 2.135,
+    "bottom": 0.28,
+    "kind": "recessed arched oak with four blue upper panes",
+    "threshold": "dressed limestone",
+    "steps": [
+     [
+      3.15,
+      2.56,
+      1.8,
+      0.12
+     ],
+     [
+      2.72,
+      1.47,
+      1.55,
+      0.26
+     ]
+    ],
+    "hinge": "DoorHinge"
+   },
+   "behavior": "Detailed concept reconstruction with hinged entry and a separate saved room instance. Wall, garden, planter and barrel footprints block movement; roof overhang does not.",
+   "finish_slots": {
+    "walls": [
+     "study_oak",
+     "study_oak_warm",
+     "study_oak_light",
+     "Painted honey grain"
+    ],
+    "roof": [
+     "study_violet_light",
+     "Painted violet tile 0",
+     "Painted violet tile 1",
+     "Painted violet tile 2",
+     "Painted violet tile 3",
+     "Painted violet tile 4",
+     "Painted violet tile 5"
+    ],
+    "timber": [
+     "study_timber",
+     "study_door_oak",
+     "study_endgrain",
+     "study_endgrain_dark"
+    ],
+    "masonry": [
+     "study_stone",
+     "study_stone_light",
+     "study_stone_warm",
+     "study_mortar"
+    ],
+    "metal": [
+     "study_iron",
+     "study_brass"
+    ]
+   },
+   "illustrated_edges": true
+  },
+  "painted-oak": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground origin; one metre per cell",
+   "logical_footprint": {
+    "trunk_radius": 0.5
+   },
+   "illustrated_edges": true,
+   "behavior": "Static tree. Solid 0.5 m root/trunk radius; canopy is decorative."
+  },
+  "painted-garden-fence": {
+   "version": "v1",
+   "authority": "blender",
+   "pivot": "Ground center; front +Z; one metre per cell",
+   "logical_footprint": [
+    -1.3,
+    -0.16,
+    2.6,
+    0.32
+   ],
+   "illustrated_edges": true,
+   "behavior": "Static two-rail fence; full strip blocks walking."
+  }
+ }
+}

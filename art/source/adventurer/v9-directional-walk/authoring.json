@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-23",
+  "user_direction": "Approve all four sheets for runtime; mirror corrected SE cells as SW; neutral breathing idle; SE/SW blink every 6-7 idle seconds, with SW blink mirrored from SE; NE/NW only breathe.",
+  "approved_sources": {
+    "se": "art/source/adventurer/v8-se-pose-8/sheet.png",
+    "ne": "art/source/adventurer/v7-ne-approved-mirrored-nw/NE.png",
+    "nw": "art/source/adventurer/v7-ne-approved-mirrored-nw/NW.png"
+  },
+  "previous_sw": "SW-before.png",
+  "mirror_method": "Godot Image.flip_x per 418x418 source cell; no frame reordering; SW blink mirrors the complete eye-patched SE neutral frame.",
+  "blink": {
+    "tool": "built-in image_gen",
+    "prompt": "blink-prompt.json",
+    "reference": "blink-reference.png",
+    "generated": "blink-generated.png",
+    "generated_sha256": "c0e1216a84df9f760fac62a60e553570fc3d33b15ce59a445087bd2119a94a99",
+    "compositing_record": "eye-composite.gd.txt",
+    "method": "Generated head resized with Lanczos to the 250x250 reference crop. Only two eye polygons composited with a 2-pixel feather. Every other neutral pixel retained. SW frame uses exact horizontal mirroring."
+  },
+  "registration": {
+    "script": "pipeline/prepare_directional_walk.gd",
+    "method": "Integer translation only; no resampling of approved walk keys. Head silhouette centered horizontally; lowest opaque boot pixel aligned at [192,420].",
+    "provenance": "provenance.json"
+  },
+  "input_sha256": {
+    "SE.png": "0c2067d8dcfe105d42e747487c87527544db78d38bd4afc775fa493744dee6e4",
+    "SW.png": "1267ea3638750a5902fca21ab39c22697d170b8d7741508e4944dc1115ce5d38",
+    "NE.png": "0cd31a9cf3e94ad1ecec7937f51512e4a7c7c654c601df71b1ef2fa9a5492187",
+    "NW.png": "d9b9cd631f81dffaeb91b5a11dd184a1cd4eccdd2de4a3d391b81f624e0d2207",
+    "blink-se.png": "1e0f90340eae33b55147e130b6581b65a6a8f727e12e65fcabefd54944ee8e69",
+    "blink-sw.png": "f8130960f2f4c9312215a333c506d63d8731a20fee0b928c08702c2bae86b050"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "asset": "haverlund-post-office",
+  "date": "2026-10-29",
+  "reference": "docs/concept/v0.72/art/guildhall-square.png",
+  "authoring_record": "art/source/world/square-hub/v1/author_buildings.py",
+  "authoring_record_sha256": "5d3dde152f42883cec799087e0ce02eacf7ee040182ae32cd2f5ee1f0492cc4d",
+  "kit": "art/source/world/seaside-houses/v1/house_kit.py",
+  "kit_sha256": "724da2be608b59c97b706a51f99070233101483a65f9608cb24af16e5457868e",
+  "texture_library": "art/source/world/seaside-background-houses/v1/textures/library.json",
+  "authored_palette": {
+    "plaster": "seaside_plaster_cream",
+    "roof": "seaside_roof_terracotta",
+    "ridge": "seaside_roof_terracotta",
+    "stone": "seaside_stone_limestone",
+    "timber": "seaside_timber_dark",
+    "shutter": "seaside_shutter_teal"
+  },
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh."
+}

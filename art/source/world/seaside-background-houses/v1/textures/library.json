@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "version": "seaside-houses-v1",
+  "note": "High-resolution painted albedo surfaces; three colours in each of five families. Source images are untouched. scripts/art.sh builds lossless mipmapped lush/solid maps in the dedicated seaside-houses output folder.",
+  "materials": [
+    {
+      "id": "seaside_plaster_cream",
+      "title": "Cream limewash",
+      "family": "plaster",
+      "color": "warm cream",
+      "tile": 1.5,
+      "roughness": 0.94,
+      "prompt": "Use case: stylized-concept.\nAsset type: ONE production-oriented seamless tiling ALBEDO / BASE-COLOUR material texture for the painted seaside village houses. This is a MATERIAL SURFACE ONLY, not a building, sample board or rendered object.\nReference images supply only painted material style, fine warm outlines and palette. Fill an entire 1024x1024 square with the specified surface, viewed orthographically STRAIGHT ON, at 90 degrees to the surface. No perspective, isometric view, horizon, border, frame, labels, text, watermark, tile palette, isolated object or blank margins.\nMake the pattern genuinely TILEABLE left-to-right and top-to-bottom: matching motif phase, joints and average colour at opposite edges, with no edge darkening, vignette, centre spotlight, large isolated stain or unique focal feature. Light is flat diffuse and colour-balanced, no cast shadows, reflections, directional sunlight or photographic highlights baked into the tile. Keep shallow painted occlusion in joints restrained.\nStyle: detailed hand-painted game texture matching the supplied house art, warm dark-brown delicate joint lines, softly painted surfaces, clear medium-scale texture and restrained salt/weather wear. Clean readable material structure at distance, not noisy photorealistic grunge or a flat colour. Opaque full-colour square texture, no transparency.\nSURFACE:\nWarm CREAM LIMEWASH PLASTER, subtly uneven brush/trowel sweeps, a softly mottled chalky finish and a few tiny shallow hairline cracks. Continuous plaster only, no masonry showing, exposed brick, window, timber beam, ivy or large peeling patches. Very restrained warm ivory/beige tonal variation; keep it calm enough for broad upper walls.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/plaster/seaside_plaster_cream.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_plaster_rose",
+      "title": "Rose limewash",
+      "family": "plaster",
+      "color": "faded salmon-rose limewash, soft terracotta pink rather than candy pink",
+      "tile": 1.5,
+      "roughness": 0.94,
+      "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling plaster ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to faded salmon-rose limewash, soft terracotta pink rather than candy pink. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nPreserve fine surface texture and tonal shading while making the new palette clearly distinct.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/plaster/seaside_plaster_rose.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_plaster_ochre",
+      "title": "Ochre limewash",
+      "family": "plaster",
+      "color": "pale honey-ochre / sandy butter limewash, warm rather than bright yellow",
+      "tile": 1.5,
+      "roughness": 0.94,
+      "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling plaster ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to pale honey-ochre / sandy butter limewash, warm rather than bright yellow. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nPreserve fine surface texture and tonal shading while making the new palette clearly distinct.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/plaster/seaside_plaster_ochre.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_roof_terracotta",
+      "title": "Terracotta roof tile",
+      "family": "roof",
+      "color": "warm terracotta",
+      "tile": 1.2,
+      "roughness": 0.9,
+      "prompt": "Use case: stylized-concept.\nAsset type: ONE production-oriented seamless tiling ALBEDO / BASE-COLOUR material texture for the painted seaside village houses. This is a MATERIAL SURFACE ONLY, not a building, sample board or rendered object.\nReference images supply only painted material style, fine warm outlines and palette. Fill an entire 1024x1024 square with the specified surface, viewed orthographically STRAIGHT ON, at 90 degrees to the surface. No perspective, isometric view, horizon, border, frame, labels, text, watermark, tile palette, isolated object or blank margins.\nMake the pattern genuinely TILEABLE left-to-right and top-to-bottom: matching motif phase, joints and average colour at opposite edges, with no edge darkening, vignette, centre spotlight, large isolated stain or unique focal feature. Light is flat diffuse and colour-balanced, no cast shadows, reflections, directional sunlight or photographic highlights baked into the tile. Keep shallow painted occlusion in joints restrained.\nStyle: detailed hand-painted game texture matching the supplied house art, warm dark-brown delicate joint lines, softly painted surfaces, clear medium-scale texture and restrained salt/weather wear. Clean readable material structure at distance, not noisy photorealistic grunge or a flat colour. Opaque full-colour square texture, no transparency.\nSURFACE:\nWarm TERRACOTTA ROOF TILES: regular interlocking rounded clay pan tiles in about FOUR clearly readable horizontal courses and FOUR or FIVE tiles across. Coherent repeating staggered joints, softly curved clay faces and small warm brown joints. Old but maintained, subtle orange/rust differences between tiles, a few tiny repaired chips. No ridge cap, eave, roof edge, moss tuft, weeds or raised pile: an uninterrupted repeatable roof field.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/roof/seaside_roof_terracotta.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_roof_slate",
+      "title": "Slate grey roof tile",
+      "family": "roof",
+      "color": "muted blue-slate grey ceramic, preserving the same curved clay tile shape rather than redesigning it as flat slate",
+      "tile": 1.2,
+      "roughness": 0.9,
+      "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling roof ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to muted blue-slate grey ceramic, preserving the same curved clay tile shape rather than redesigning it as flat slate. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nKeep the exact curved clay pan tile form, horizontal courses and outlined joints; this is the same roof texture in a different ceramic finish. Small exposed chips remain muted clay, not a new moss or metal surface.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/roof/seaside_roof_slate.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_roof_teal",
+      "title": "Deep teal roof tile",
+      "family": "roof",
+      "color": "deep muted teal-blue glazed clay, gently weathered, no glossy specular reflections",
+      "tile": 1.2,
+      "roughness": 0.9,
+      "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling roof ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to deep muted teal-blue glazed clay, gently weathered, no glossy specular reflections. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nKeep the exact curved clay pan tile form, horizontal courses and outlined joints; this is the same roof texture in a different ceramic finish. Small exposed chips remain muted clay, not a new moss or metal surface.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/roof/seaside_roof_teal.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_stone_limestone",
+      "title": "Pale limestone",
+      "family": "stone",
+      "color": "pale warm limestone",
+      "tile": 1.5,
+      "roughness": 0.96,
+      "prompt": "Use case: stylized-concept.\nAsset type: ONE production-oriented seamless tiling ALBEDO / BASE-COLOUR material texture for the painted seaside village houses. This is a MATERIAL SURFACE ONLY, not a building, sample board or rendered object.\nReference images supply only painted material style, fine warm outlines and palette. Fill an entire 1024x1024 square with the specified surface, viewed orthographically STRAIGHT ON, at 90 degrees to the surface. No perspective, isometric view, horizon, border, frame, labels, text, watermark, tile palette, isolated object or blank margins.\nMake the pattern genuinely TILEABLE left-to-right and top-to-bottom: matching motif phase, joints and average colour at opposite edges, with no edge darkening, vignette, centre spotlight, large isolated stain or unique focal feature. Light is flat diffuse and colour-balanced, no cast shadows, reflections, directional sunlight or photographic highlights baked into the tile. Keep shallow painted occlusion in joints restrained.\nStyle: detailed hand-painted game texture matching the supplied house art, warm dark-brown delicate joint lines, softly painted surfaces, clear medium-scale texture and restrained salt/weather wear. Clean readable material structure at distance, not noisy photorealistic grunge or a flat colour. Opaque full-colour square texture, no transparency.\nSURFACE:\nPALE WARM LIMESTONE BLOCK WALL: about FOUR horizontal courses of modest rectangular dressed blocks, staggered vertical joints and thin warm-grey lime mortar. Hand-worked softened edges, restrained small pores and light salt wear. Calm light ivory/beige stone, never a cobblestone floor. No vines, large cracks, soot, carvings, window or embedded objects. Course spacing and stagger must continue across both tiling boundaries.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/stone/seaside_stone_limestone.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_stone_grey",
+      "title": "Cool grey stone",
+      "family": "stone",
+      "color": "pale cool coastal grey stone with restrained blue-grey variation and neutral mortar",
+      "tile": 1.5,
+      "roughness": 0.96,
+      "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling stone ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to pale cool coastal grey stone with restrained blue-grey variation and neutral mortar. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nRecolour the STONE faces while mortar stays a restrained neutral tone; keep the same four-course rectangular masonry pattern.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/stone/seaside_stone_grey.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_stone_honey",
+      "title": "Honey sandstone",
+      "family": "stone",
+      "color": "soft honey sandstone, warm buff-gold with slightly lighter mortar, no saturated orange",
+      "tile": 1.5,
+      "roughness": 0.96,
+      "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling stone ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to soft honey sandstone, warm buff-gold with slightly lighter mortar, no saturated orange. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nRecolour the STONE faces while mortar stays a restrained neutral tone; keep the same four-course rectangular masonry pattern.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/stone/seaside_stone_honey.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_timber_oak",
+      "title": "Honey oak",
+      "family": "timber",
+      "color": "honey oak",
+      "tile": 1,
+      "roughness": 0.94,
+      "prompt": "Use case: stylized-concept.\nAsset type: ONE production-oriented seamless tiling ALBEDO / BASE-COLOUR material texture for the painted seaside village houses. This is a MATERIAL SURFACE ONLY, not a building, sample board or rendered object.\nReference images supply only painted material style, fine warm outlines and palette. Fill an entire 1024x1024 square with the specified surface, viewed orthographically STRAIGHT ON, at 90 degrees to the surface. No perspective, isometric view, horizon, border, frame, labels, text, watermark, tile palette, isolated object or blank margins.\nMake the pattern genuinely TILEABLE left-to-right and top-to-bottom: matching motif phase, joints and average colour at opposite edges, with no edge darkening, vignette, centre spotlight, large isolated stain or unique focal feature. Light is flat diffuse and colour-balanced, no cast shadows, reflections, directional sunlight or photographic highlights baked into the tile. Keep shallow painted occlusion in joints restrained.\nStyle: detailed hand-painted game texture matching the supplied house art, warm dark-brown delicate joint lines, softly painted surfaces, clear medium-scale texture and restrained salt/weather wear. Clean readable material structure at distance, not noisy photorealistic grunge or a flat colour. Opaque full-colour square texture, no transparency.\nSURFACE:\nHONEY OAK STRUCTURAL TIMBER: a continuous close view of cared-for wood, fine grain running VERTICALLY, small shallow grain sweeps, restrained hand-planed marks and one or two subtle small knots. No planked floor perspective, cut end grain, metal nail, carving, plank frame or huge knot. Keep the full square a repeatable timber surface that can be wrapped around beams and lintels.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_oak.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_timber_dark",
+      "title": "Dark chestnut timber",
+      "family": "timber",
+      "color": "deep warm chestnut-brown oak, retaining readable grain rather than near-black wood",
+      "tile": 1,
+      "roughness": 0.94,
+      "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling timber ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to deep warm chestnut-brown oak, retaining readable grain rather than near-black wood. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nPreserve fine surface texture and tonal shading while making the new palette clearly distinct.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_dark.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_timber_driftwood",
+      "title": "Weathered driftwood",
+      "family": "timber",
+      "color": "weathered grey-brown coastal timber with a soft silvery cast, still cared for, no rotten splinters",
+      "tile": 1,
+      "roughness": 0.94,
+      "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling timber ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to weathered grey-brown coastal timber with a soft silvery cast, still cared for, no rotten splinters. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nPreserve fine surface texture and tonal shading while making the new palette clearly distinct.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_driftwood.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_shutter_teal",
+      "title": "Teal painted boards",
+      "family": "shutter",
+      "color": "muted deep teal",
+      "tile": 0.8,
+      "roughness": 0.92,
+      "prompt": "Use case: stylized-concept.\nAsset type: ONE production-oriented seamless tiling ALBEDO / BASE-COLOUR material texture for the painted seaside village houses. This is a MATERIAL SURFACE ONLY, not a building, sample board or rendered object.\nReference images supply only painted material style, fine warm outlines and palette. Fill an entire 1024x1024 square with the specified surface, viewed orthographically STRAIGHT ON, at 90 degrees to the surface. No perspective, isometric view, horizon, border, frame, labels, text, watermark, tile palette, isolated object or blank margins.\nMake the pattern genuinely TILEABLE left-to-right and top-to-bottom: matching motif phase, joints and average colour at opposite edges, with no edge darkening, vignette, centre spotlight, large isolated stain or unique focal feature. Light is flat diffuse and colour-balanced, no cast shadows, reflections, directional sunlight or photographic highlights baked into the tile. Keep shallow painted occlusion in joints restrained.\nStyle: detailed hand-painted game texture matching the supplied house art, warm dark-brown delicate joint lines, softly painted surfaces, clear medium-scale texture and restrained salt/weather wear. Clean readable material structure at distance, not noisy photorealistic grunge or a flat colour. Opaque full-colour square texture, no transparency.\nSURFACE:\nMUTED DEEP TEAL PAINTED WOOD BOARDS: four or five simple narrow VERTICAL boards, straight shallow seam gaps and fine vertical wood grain beneath mostly intact matte paint. Small edge rubs showing warm wood, no huge peeling patch. No shutter outer frame, hinges, bolts, diagonal brace, wall or window: just the repeatable painted board surface for shutters, doors and trim.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_teal.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_shutter_blue",
+      "title": "Dusty blue painted boards",
+      "family": "shutter",
+      "color": "dusty desaturated coastal blue, neither turquoise nor bright cobalt",
+      "tile": 0.8,
+      "roughness": 0.92,
+      "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling shutter ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to dusty desaturated coastal blue, neither turquoise nor bright cobalt. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nRecolour only the PAINT: exposed worn wood remains natural warm wood, seam cavities stay dark neutral and the vertical board spacing is unchanged.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_blue.png",
+      "metallic": 0.0
+    },
+    {
+      "id": "seaside_shutter_sage",
+      "title": "Sage painted boards",
+      "family": "shutter",
+      "color": "soft muted sage green, gently sun-faded",
+      "tile": 0.8,
+      "roughness": 0.92,
+      "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling shutter ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to soft muted sage green, gently sun-faded. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nRecolour only the PAINT: exposed worn wood remains natural warm wood, seam cavities stay dark neutral and the vertical board spacing is unchanged.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+      "source": "art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_sage.png",
+      "metallic": 0.0
+    }
+  ],
+  "presets": {
+    "warm_lane": {
+      "plaster": "seaside_plaster_cream",
+      "roof": "seaside_roof_terracotta",
+      "stone": "seaside_stone_limestone",
+      "timber": "seaside_timber_oak",
+      "shutter": "seaside_shutter_teal"
+    },
+    "cool_harbour": {
+      "plaster": "seaside_plaster_rose",
+      "roof": "seaside_roof_slate",
+      "stone": "seaside_stone_grey",
+      "timber": "seaside_timber_driftwood",
+      "shutter": "seaside_shutter_blue"
+    },
+    "ochre_court": {
+      "plaster": "seaside_plaster_ochre",
+      "roof": "seaside_roof_teal",
+      "stone": "seaside_stone_honey",
+      "timber": "seaside_timber_dark",
+      "shutter": "seaside_shutter_sage"
+    }
+  }
+}

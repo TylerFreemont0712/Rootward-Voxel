@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "asset": "town-railing-post",
+  "version": "v1",
+  "source": "art/source/world/town-railing-post/v1/model.blend",
+  "source_sha256": "33f507aa0a02af994039aa74e2894f93776475429a9f3157d1d86d5e21210109",
+  "runtime": "assets/world/town-railing-post/model.glb",
+  "runtime_sha256": "ec7e567eea3e9494a0446647825311bba94baaec102a180ba1896d7a2e2997e5",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.0700000002980232,
+      0.0,
+      -0.0700000002980232,
+      0.0700000002980232,
+      1.25999999046326,
+      0.0700000002980232
+    ],
+    "geometry_sha256": "1ebfbcf2ebe64fa271be5b4d1257ff1f15c5261e6d6d3788074f132e0bf5bc2f",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "8bf51a9eb0a9c4d1398077ea697d5956854d2961d070159e7f7da5fb2fc472e4"
+      }
+    },
+    "materials": [
+      "house_paint"
+    ],
+    "meshes": 1,
+    "triangles": 160
+  }
+}

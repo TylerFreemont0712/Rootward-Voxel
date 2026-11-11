@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "method": "RIFE flow applied to premultiplied RGBA; original keys inserted unchanged after integer translation",
+  "source": "art/source/adventurer/v2-isometric/sheet.png",
+  "source_sha256": "d947716e3bbb55683455f47c61057265c437107164b8748636fb90c426ca6918",
+  "backend": "ComfyUI comfy_extras/frame_interpolation_models/ifnet.py",
+  "backend_sha256": "854b808a425d01a82df2395cb925d7a5dab86669c62485f95fb790736ced11a3",
+  "weights": "rife_v4.26.safetensors",
+  "weights_sha256": "151874592c877740e5db11522f4514df569eeafb0a0fcb2696f16e9e8d317c94",
+  "authoring_script_sha256": "8d8f9038cbe3f914bc7f2b8d046b30620f577c3b3bd1964dbd0a6553457d4a62",
+  "device": "cuda",
+  "cell_size": [
+    320,
+    352
+  ],
+  "grid": [
+    4,
+    16
+  ],
+  "anchor": [
+    160,
+    328
+  ],
+  "fps": 32,
+  "cycle_seconds": 0.5,
+  "key_indices": [
+    0,
+    4,
+    8,
+    12
+  ],
+  "directions": {
+    "se": {
+      "row": 0,
+      "key_rgba_sha256": [
+        "29fd318813a97307dd713b7b0bd5682be823991777e33ca5a99a83f80df080b4",
+        "fed40acb0251765979dbe6deda031a511729baceea26afc24e97b0c155d2e001",
+        "557012aa4bb3ae3b876b4b3321a0b455225e0f53aada0969f2d3fb3a33402535",
+        "d4ff9cccfab2989731396428065cce20d622a8d3f93aeb06e528d1a50326dfa2"
+      ]
+    },
+    "sw": {
+      "row": 4,
+      "key_rgba_sha256": [
+        "a3598d555aa7afe15709d152e90b67e061fb294dedc8578c55cc31fe3fe807e7",
+        "20a5a313a55f283720b62b3e93ab6e8d5fac5eaf64f4841792385bf9eeb35044",
+        "5e05c25286ef6db3a2875f29b99b77755735203099b4fe1179c930cefa799685",
+        "04706c194804df0950b7a6be3cded3dc759748eae8a3a2d3c302206925bc5ee5"
+      ]
+    },
+    "ne": {
+      "row": 8,
+      "key_rgba_sha256": [
+        "47b3698d27eda94df22692be4964c285e3bb1c6d83e24416f6d30239f53240e3",
+        "92457d27a6266f754be1e028c47105c58ced70ec11d9095c6bfcc6dd4903dbc1",
+        "a824d2fd34d5ab49714337546e9c014ca908d0df1805e5a915b8fa3dc16d1408",
+        "790db28610ec3b21c5df31723e19fe064865d54f708bdb8bac1a0d3f2966f021"
+      ]
+    },
+    "nw": {
+      "row": 12,
+      "key_rgba_sha256": [
+        "e3f975e9a93e608c960d9d33d1d030646af2799d7b0b50036c73c8fbffafbde9",
+        "c3be638032ca94787320f0799c91bf16c7e421c1acbea204d2aea45a035c3759",
+        "2b4b647b46aa167fde6ca7ac0ae4d5b4b7a663dbaf0ba00946334abd908dfcbd",
+        "d099023fb085a55e5312f43f14125453b8749b2a8927e02a4d7e62335db6604e"
+      ]
+    }
+  },
+  "limitations": "In-betweening cannot invent missing opposite-foot poses; review gait before production acceptance. No body-part customization.",
+  "output_sha256": "8f993cc9675c89a26fcfc5f4aa135334605a7bdfae046dc0734b12870be5f576"
+}

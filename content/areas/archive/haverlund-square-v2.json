@@ -1,0 +1,1773 @@
+{
+  "schema": 1,
+  "id": "haverlund-square",
+  "title": "Haverlund",
+  "version": 2,
+  "size": [
+    36,
+    32
+  ],
+  "spawn": [
+    1,
+    23
+  ],
+  "voice_lesson": true,
+  "terrain": [
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "....................................",
+    "...................................."
+  ],
+  "levels": [
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "221111000000000000000000000000000000",
+    "221111000000000000000000000000000000",
+    "221111000000000000000000000000000000",
+    "221111000000000000000000000000000000",
+    "221111000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000",
+    "000000000000000000000000000000000000"
+  ],
+  "stairs": [
+    {
+      "at": [
+        6,
+        21
+      ],
+      "up": "W"
+    },
+    {
+      "at": [
+        6,
+        22
+      ],
+      "up": "W"
+    },
+    {
+      "at": [
+        6,
+        23
+      ],
+      "up": "W"
+    },
+    {
+      "at": [
+        6,
+        24
+      ],
+      "up": "W"
+    },
+    {
+      "at": [
+        6,
+        25
+      ],
+      "up": "W"
+    },
+    {
+      "at": [
+        2,
+        21
+      ],
+      "up": "W"
+    },
+    {
+      "at": [
+        2,
+        22
+      ],
+      "up": "W"
+    },
+    {
+      "at": [
+        2,
+        23
+      ],
+      "up": "W"
+    },
+    {
+      "at": [
+        2,
+        24
+      ],
+      "up": "W"
+    },
+    {
+      "at": [
+        2,
+        25
+      ],
+      "up": "W"
+    }
+  ],
+  "buildings": [],
+  "trees": [],
+  "zones": [
+    {
+      "id": "spindle-steps",
+      "title": "Spindle Steps",
+      "rect": [
+        0,
+        21,
+        10,
+        5
+      ]
+    },
+    {
+      "id": "market",
+      "title": "The shops on the square",
+      "rect": [
+        0,
+        0,
+        12,
+        16
+      ]
+    },
+    {
+      "id": "rootward-square",
+      "title": "Rootward Square",
+      "rect": [
+        0,
+        0,
+        36,
+        32
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "id": "well-west",
+      "at": [
+        15.5,
+        8.5
+      ],
+      "zone": "rootward-square",
+      "style": "fixture",
+      "title": "Beacon lamp, west",
+      "stand": [
+        16,
+        8
+      ],
+      "requires": "field-tablet"
+    },
+    {
+      "id": "well-east",
+      "at": [
+        24.5,
+        13.5
+      ],
+      "zone": "rootward-square",
+      "style": "fixture",
+      "title": "Beacon lamp, east",
+      "stand": [
+        24,
+        13
+      ],
+      "requires": "field-tablet"
+    },
+    {
+      "id": "hall-lamp",
+      "at": [
+        16.5,
+        23.5
+      ],
+      "zone": "rootward-square",
+      "style": "fixture",
+      "title": "Hall lamp",
+      "stand": [
+        17,
+        23
+      ],
+      "requires": "field-tablet"
+    }
+  ],
+  "props": [],
+  "terminals": [
+    {
+      "id": "square-terminal",
+      "title": "Square service screen",
+      "object": "square-screen",
+      "zone": "rootward-square",
+      "at": [
+        16,
+        13
+      ],
+      "requires": "field-tablet",
+      "prompt": "Connect the field slate",
+      "idle": "JACK IN TO CONNECT",
+      "locked": "A brass-collared socket below the glass. Nell’s slate has the matching plug."
+    }
+  ],
+  "interior": {
+    "style": "workshop-square",
+    "shell": "guildhall-square-set",
+    "exit": [
+      0,
+      23
+    ],
+    "exit_direction": "W",
+    "exit_posts": [],
+    "walk_front": 0,
+    "zoom": 16.0,
+    "outdoor": {
+      "sun": {
+        "rotation": [
+          -52.0,
+          -38.0,
+          0.0
+        ],
+        "color": "fff0d9",
+        "energy": 0.88
+      },
+      "ambient": {
+        "color": "c5d2e4",
+        "energy": 0.4
+      },
+      "haze": "c4d6da",
+      "backdrop": "res://assets/world/backdrops/haverlund-harbour.png",
+      "parallax": 0.22
+    },
+    "life": {
+      "smoke": [
+        {
+          "at": [
+            0.5,
+            2.2
+          ],
+          "height": 11.0
+        },
+        {
+          "at": [
+            0.5,
+            11.55
+          ],
+          "height": 11.4
+        },
+        {
+          "at": [
+            30.1,
+            28.7
+          ],
+          "height": 9.1
+        },
+        {
+          "at": [
+            24.3,
+            30.6
+          ],
+          "height": 10.9
+        }
+      ],
+      "sway": [
+        "well-west-model",
+        "well-east-model",
+        "hall-lamp-model",
+        "lamp-street",
+        "lamp-steps",
+        "lamp-market",
+        "lamp-yard",
+        "lamp-south",
+        "lamp-post-office",
+        "lamp-east",
+        "lamp-shops"
+      ],
+      "gulls": {
+        "at": [
+          28,
+          40
+        ],
+        "height": 9,
+        "count": 3
+      },
+      "robots": [
+        {
+          "asset": "pip",
+          "path": [
+            [
+              30.5,
+              23.2
+            ],
+            [
+              26.0,
+              19.0
+            ],
+            [
+              13.5,
+              19.0
+            ],
+            [
+              10.6,
+              14.6
+            ],
+            [
+              8.7,
+              12.0
+            ],
+            [
+              8.7,
+              4.3
+            ]
+          ],
+          "speed": 0.85,
+          "pause": 5,
+          "loop": false
+        },
+        {
+          "asset": "trowel",
+          "path": [
+            [
+              33.6,
+              17.2
+            ],
+            [
+              28.6,
+              17.2
+            ],
+            [
+              28.6,
+              9.4
+            ],
+            [
+              33.6,
+              9.6
+            ]
+          ],
+          "speed": 0.55,
+          "pause": 3,
+          "loop": true
+        },
+        {
+          "asset": "porter",
+          "path": [
+            [
+              9.2,
+              22.8
+            ],
+            [
+              12.0,
+              22.8
+            ]
+          ],
+          "speed": 0.7,
+          "pause": 3,
+          "loop": false
+        }
+      ]
+    },
+    "furniture": [
+      {
+        "kind": "counter",
+        "at": [
+          2.75,
+          8.5
+        ],
+        "size": [
+          5.5,
+          14.0
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          6.0,
+          2.65
+        ],
+        "size": [
+          1.0,
+          1.6
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          6.1,
+          7.9
+        ],
+        "size": [
+          1.2,
+          3.1
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          6.0,
+          12.15
+        ],
+        "size": [
+          1.0,
+          2.1
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          2.75,
+          0.55
+        ],
+        "size": [
+          5.5,
+          1.0
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          20.35,
+          28.25
+        ],
+        "size": [
+          15.7,
+          7.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          20.5,
+          24.0
+        ],
+        "size": [
+          5.6,
+          1.1
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          18.35,
+          23.2
+        ],
+        "size": [
+          0.6,
+          0.6
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          22.65,
+          23.2
+        ],
+        "size": [
+          0.6,
+          0.6
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          32.0,
+          28.3
+        ],
+        "size": [
+          7.6,
+          7.4
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          34.0,
+          24.35
+        ],
+        "size": [
+          1.9,
+          0.7
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          6.25,
+          28.75
+        ],
+        "size": [
+          12.5,
+          6.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          10.65,
+          25.25
+        ],
+        "size": [
+          3.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          2.3,
+          18.0
+        ],
+        "size": [
+          4.6,
+          5.0
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          20.0,
+          11.0
+        ],
+        "size": [
+          6.5,
+          2.7
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          20.0,
+          11.0
+        ],
+        "size": [
+          2.7,
+          6.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          20.0,
+          11.0
+        ],
+        "size": [
+          4.6,
+          4.6
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          24.5,
+          3.2
+        ],
+        "size": [
+          3.1,
+          1.9
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          10.0,
+          6.5
+        ],
+        "size": [
+          1.5,
+          3.4
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          15.5,
+          2.6
+        ],
+        "size": [
+          2.8,
+          1.9
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          31.2,
+          12.8
+        ],
+        "size": [
+          2.95,
+          2.95
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          31.1,
+          5.75
+        ],
+        "size": [
+          3.8,
+          2.4
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          15.5,
+          8.5
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          24.5,
+          13.5
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          16.5,
+          23.5
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          9.5,
+          20.5
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          7.5,
+          10.5
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          27.5,
+          10.5
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          19.5,
+          0.6
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          27.5,
+          23.5
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          34.6,
+          20.5
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          8.5,
+          2.5
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          14.4,
+          11.0
+        ],
+        "size": [
+          0.65,
+          1.7
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          20.0,
+          17.3
+        ],
+        "size": [
+          1.7,
+          0.65
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          11.0,
+          1.0
+        ],
+        "size": [
+          1.7,
+          0.65
+        ]
+      },
+      {
+        "kind": "bench",
+        "at": [
+          34.6,
+          13.0
+        ],
+        "size": [
+          0.65,
+          1.7
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          13.5,
+          22.6
+        ],
+        "size": [
+          1.2,
+          0.55
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          27.0,
+          21.6
+        ],
+        "size": [
+          0.55,
+          1.2
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          9.4,
+          15.2
+        ],
+        "size": [
+          0.55,
+          1.2
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          13.8,
+          15.4
+        ],
+        "size": [
+          1.2,
+          0.55
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          25.6,
+          7.4
+        ],
+        "size": [
+          1.2,
+          0.55
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          28.7,
+          23.6
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          26.4,
+          23.0
+        ],
+        "size": [
+          1.4,
+          0.4
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          34.4,
+          6.4
+        ],
+        "size": [
+          1.3,
+          2.1
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          7.2,
+          5.3
+        ],
+        "size": [
+          0.5,
+          1.6
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          34.3,
+          3.0
+        ],
+        "size": [
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          29.0,
+          7.6
+        ],
+        "size": [
+          0.6,
+          0.6
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          17.0,
+          7.65
+        ],
+        "size": [
+          0.55,
+          0.55
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          11.4,
+          5.4
+        ],
+        "size": [
+          0.55,
+          0.55
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          25.4,
+          14.4
+        ],
+        "size": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          6.6,
+          18.9
+        ],
+        "size": [
+          2.5,
+          1.25
+        ]
+      },
+      {
+        "kind": "table",
+        "at": [
+          8.4,
+          16.9
+        ],
+        "size": [
+          2.5,
+          1.25
+        ]
+      },
+      {
+        "kind": "counter",
+        "at": [
+          16.0,
+          13.65
+        ],
+        "size": [
+          0.85,
+          0.55
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "west-terrace",
+        "asset": "square-west-terrace",
+        "at": [
+          2.5,
+          8.5
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "guild-hall",
+        "asset": "square-guildhall",
+        "at": [
+          20.5,
+          28.5
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "post-office",
+        "asset": "square-post-office",
+        "at": [
+          32.0,
+          27.6
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "beacon",
+        "asset": "square-beacon",
+        "at": [
+          20,
+          11
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "flower-stall",
+        "asset": "square-flower-stall",
+        "at": [
+          24.5,
+          3.2
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "fruit-stall",
+        "asset": "square-fruit-stall",
+        "at": [
+          10.0,
+          6.5
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "produce-stall",
+        "asset": "square-market-stall",
+        "at": [
+          15.5,
+          2.6
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "shade-tree",
+        "asset": "square-tree-planter",
+        "at": [
+          31.0,
+          13.0
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "timber",
+        "asset": "square-timber-store",
+        "at": [
+          31.0,
+          6.0
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "well-west-model",
+        "asset": "square-banner-lamp",
+        "at": [
+          15.5,
+          8.5
+        ],
+        "turn": 180,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "well-east-model",
+        "asset": "square-banner-lamp",
+        "at": [
+          24.5,
+          13.5
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "hall-lamp-model",
+        "asset": "square-banner-lamp",
+        "at": [
+          16.5,
+          23.5
+        ],
+        "turn": 180,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "lamp-street",
+        "asset": "square-banner-lamp",
+        "at": [
+          9.5,
+          20.5
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "lamp-steps",
+        "asset": "square-banner-lamp",
+        "at": [
+          4.0,
+          25.1
+        ],
+        "turn": 0,
+        "height": 1.0,
+        "scale": 1.0
+      },
+      {
+        "id": "lamp-market",
+        "asset": "square-banner-lamp",
+        "at": [
+          7.5,
+          10.5
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "lamp-yard",
+        "asset": "square-banner-lamp",
+        "at": [
+          27.5,
+          10.5
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "lamp-south",
+        "asset": "square-banner-lamp",
+        "at": [
+          19.5,
+          0.6
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "lamp-post-office",
+        "asset": "square-banner-lamp",
+        "at": [
+          27.5,
+          23.5
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "lamp-east",
+        "asset": "square-banner-lamp",
+        "at": [
+          34.6,
+          20.5
+        ],
+        "turn": 270,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "lamp-shops",
+        "asset": "square-banner-lamp",
+        "at": [
+          8.5,
+          2.5
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "bench-west",
+        "asset": "lane-bench",
+        "at": [
+          14.4,
+          11.0
+        ],
+        "turn": 270,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "bench-north",
+        "asset": "lane-bench",
+        "at": [
+          20.0,
+          17.3
+        ],
+        "turn": 180,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "bench-rail",
+        "asset": "lane-bench",
+        "at": [
+          11.0,
+          1.0
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "bench-yard",
+        "asset": "lane-bench",
+        "at": [
+          34.6,
+          13.0
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "planter-0",
+        "asset": "lane-planter",
+        "at": [
+          13.5,
+          22.6
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 0.9
+      },
+      {
+        "id": "planter-1",
+        "asset": "lane-planter",
+        "at": [
+          27.0,
+          21.6
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 0.9
+      },
+      {
+        "id": "planter-2",
+        "asset": "lane-planter",
+        "at": [
+          9.4,
+          15.2
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 0.9
+      },
+      {
+        "id": "planter-3",
+        "asset": "lane-planter",
+        "at": [
+          13.8,
+          15.4
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 0.9
+      },
+      {
+        "id": "planter-4",
+        "asset": "lane-planter",
+        "at": [
+          25.6,
+          7.4
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 0.9
+      },
+      {
+        "id": "post-box",
+        "asset": "lane-post-box",
+        "at": [
+          28.7,
+          23.6
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "public-notices",
+        "asset": "lane-notice-board",
+        "at": [
+          26.4,
+          23.0
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "handcart",
+        "asset": "lane-handcart",
+        "at": [
+          34.4,
+          6.4
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 0.9
+      },
+      {
+        "id": "bicycle",
+        "asset": "lane-bicycle",
+        "at": [
+          7.2,
+          5.3
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "crates",
+        "asset": "lane-crates",
+        "at": [
+          34.3,
+          3.0
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "heron",
+        "asset": "robot-heron",
+        "at": [
+          29.0,
+          7.6
+        ],
+        "turn": 300,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "tender",
+        "asset": "robot-tender",
+        "at": [
+          17.0,
+          7.65
+        ],
+        "turn": 135,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "tally",
+        "asset": "robot-tally",
+        "at": [
+          11.4,
+          5.4
+        ],
+        "turn": 60,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "wick",
+        "asset": "robot-wick",
+        "at": [
+          25.4,
+          14.4
+        ],
+        "turn": 220,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "pip",
+        "asset": "robot-pip",
+        "at": [
+          30.5,
+          23.2
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "cafe-1",
+        "asset": "square-cafe-table",
+        "at": [
+          6.6,
+          18.9
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "cafe-2",
+        "asset": "square-cafe-table",
+        "at": [
+          8.4,
+          16.9
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "trowel",
+        "asset": "robot-trowel",
+        "at": [
+          33.6,
+          17.2
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "dormant-hotaru",
+        "asset": "loft-hotaru",
+        "at": [
+          1.0,
+          24.65
+        ],
+        "turn": 0,
+        "height": 2.95,
+        "scale": 1.0
+      },
+      {
+        "id": "square-screen",
+        "asset": "square-node",
+        "at": [
+          16.0,
+          13.65
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      },
+      {
+        "id": "porter",
+        "asset": "robot-pip",
+        "at": [
+          9.2,
+          22.8
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1.0
+      }
+    ],
+    "links": [
+      {
+        "id": "uphill",
+        "at": [
+          0,
+          23
+        ],
+        "approach": [
+          0,
+          23
+        ],
+        "direction": "W",
+        "to": "haverlund-lane",
+        "arrival": [
+          12,
+          26
+        ],
+        "facing": "S",
+        "label": "Climb Spindle Steps"
+      }
+    ],
+    "inspections": [
+      {
+        "id": "beacon-dial",
+        "at": [
+          23,
+          8
+        ],
+        "title": "The pressure dial",
+        "text": "The needle sits just past the first mark. Somebody has scratched a line in the brass where it used to rest."
+      },
+      {
+        "id": "beacon-notices",
+        "at": [
+          20,
+          7
+        ],
+        "title": "Notices on the beacon",
+        "text": "A tide table, a meeting on Thursday, and a drawing of a lost tortoise called Admiral. Last seen heading for the harbour."
+      },
+      {
+        "id": "beacon-door",
+        "at": [
+          24,
+          11
+        ],
+        "title": "A small teal door",
+        "text": "Locked. The keyhole is polished bright. Chalked on the step: BACK AT 4."
+      },
+      {
+        "id": "beacon-glass",
+        "at": [
+          17,
+          13
+        ],
+        "title": "The beacon",
+        "text": "Up close, the root moves. Not much. About as much as someone asleep."
+      },
+      {
+        "id": "hall-counter",
+        "at": [
+          20,
+          23
+        ],
+        "title": "Enquiries",
+        "text": "A brass bell, a ledger open at today and a mug gone cold. The clerk’s chair is turned to the window."
+      },
+      {
+        "id": "hall-clock",
+        "at": [
+          24,
+          23
+        ],
+        "title": "The guild hall clock",
+        "text": "Ten past nine. The bakery says five past. Nobody’s sure which to believe."
+      },
+      {
+        "id": "post-office",
+        "at": [
+          33,
+          23
+        ],
+        "title": "Post Office",
+        "text": "Parcels in brown paper, every one tied with the same knot. One is addressed in pencil to the lighthouse."
+      },
+      {
+        "id": "post-box",
+        "at": [
+          29,
+          23
+        ],
+        "title": "The post box",
+        "text": "Last collection 5.15. Someone has posted a pine cone. It’s still in the slot."
+      },
+      {
+        "id": "public-notices",
+        "at": [
+          26,
+          22
+        ],
+        "title": "Guild notices",
+        "text": "The beacon’s quarterly reading, a call for volunteers to repaint the railings, and a reward for a lost brass key."
+      },
+      {
+        "id": "bakery",
+        "at": [
+          7,
+          4
+        ],
+        "title": "Morning Loaf",
+        "text": "The racks are half empty already. A card in the window: SECOND BATCH AT ELEVEN."
+      },
+      {
+        "id": "greengrocer",
+        "at": [
+          7,
+          9
+        ],
+        "title": "The greengrocer",
+        "text": "Oranges stacked into a careful pyramid. One is missing from the very top."
+      },
+      {
+        "id": "bookshop",
+        "at": [
+          7,
+          14
+        ],
+        "title": "Finch & Sons",
+        "text": "A tray of books at a penny each. On top, a tide almanac eleven years out of date."
+      },
+      {
+        "id": "flower-stall",
+        "at": [
+          25,
+          1
+        ],
+        "title": "The flower stall",
+        "text": "Buckets of sweet peas and stocks, and a jam jar of coins nobody is minding."
+      },
+      {
+        "id": "fruit-stall",
+        "at": [
+          11,
+          7
+        ],
+        "title": "The fruit stall",
+        "text": "Apples, pears, a crate of lemons. The scale is still swinging from the last customer."
+      },
+      {
+        "id": "tally",
+        "at": [
+          12,
+          5
+        ],
+        "title": "Tally",
+        "text": "“FOUR PENCE. STOP. PLEASE COUNT IT. STOP. PLEASE COUNT IT AGAIN. STOP.”"
+      },
+      {
+        "id": "heron",
+        "at": [
+          28,
+          9
+        ],
+        "title": "Heron",
+        "text": "The crate swings an inch and stops. “I. AM. WAITING. FOR. THE. WIND. STOP.”"
+      },
+      {
+        "id": "tender",
+        "at": [
+          17,
+          7
+        ],
+        "title": "Tender",
+        "text": "It’s watching a valve wheel as if it might do something. “CHECKING. STILL CHECKING. STOP.”"
+      },
+      {
+        "id": "wick",
+        "at": [
+          26,
+          15
+        ],
+        "title": "Wick",
+        "text": "“IT IS 9.14. LAMP TWO IS NOT DUE UNTIL 19.40. I AM EARLY. STOP.”"
+      },
+      {
+        "id": "timber",
+        "at": [
+          31,
+          8
+        ],
+        "title": "Building timber",
+        "text": "Planks stacked to dry, chalked with a guild mark and a date. A tarpaulin tied over the best of it."
+      },
+      {
+        "id": "shade-tree",
+        "at": [
+          29,
+          12
+        ],
+        "title": "The plane tree",
+        "text": "Initials cut into the seat: R.W. Varnished over more than once."
+      },
+      {
+        "id": "south-view",
+        "at": [
+          18,
+          0
+        ],
+        "title": "Over the rail",
+        "text": "Roofs all the way down to the water. One chimney below is close enough to warm your hands at."
+      },
+      {
+        "id": "east-view",
+        "at": [
+          35,
+          17
+        ],
+        "title": "The yard wall",
+        "text": "Down below, a man is carrying a ladder sideways along a street too narrow for it."
+      },
+      {
+        "id": "street-steps",
+        "at": [
+          8,
+          23
+        ],
+        "title": "Spindle Steps",
+        "text": "The way back up to the lane. Chalked on the bottom step: 212. Under it, in other chalk: LIAR. 213."
+      },
+      {
+        "id": "terrace-gate",
+        "at": [
+          11,
+          24
+        ],
+        "title": "The terrace gate",
+        "text": "Shut, with a bicycle chain round it. PRIVATE GARDEN. TOMATOES COUNTED."
+      }
+    ],
+    "lamp_fixtures": [
+      {
+        "id": "well-west",
+        "asset": "well-west-model",
+        "range": 5,
+        "energy": 0.8
+      },
+      {
+        "id": "well-east",
+        "asset": "well-east-model",
+        "range": 5,
+        "energy": 0.8
+      },
+      {
+        "id": "hall-lamp",
+        "asset": "hall-lamp-model",
+        "range": 5,
+        "energy": 0.8
+      }
+    ],
+    "lighting": [
+      {
+        "at": [
+          20,
+          11
+        ],
+        "height": 4.6,
+        "range": 7,
+        "energy": 0.9,
+        "color": "ffc274"
+      },
+      {
+        "at": [
+          20.5,
+          23.7
+        ],
+        "height": 2.4,
+        "range": 3,
+        "energy": 0.35,
+        "color": "ffcc7d"
+      }
+    ]
+  }
+}

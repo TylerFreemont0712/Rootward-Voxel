@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "tool": "built-in image_gen.imagegen",
+  "mode": "precise edit of existing concept",
+  "name": "Guildhall Square — off-screen uphill approach",
+  "input": {
+    "path": "art/source/world/sparks-square/v3-guildhall-square/E-guildhall-square.png",
+    "role": "Edit target; preserve the concept except the upper-left workshop and uphill route"
+  },
+  "requested_change": "The uphill street continues out of frame; Nell's workshop and the hilltop are off-screen.",
+  "prompt": "Use case: precise-object-edit.\nEdit the supplied Guildhall Square concept. Produce ONE landscape 1536x1024 image, preserving the same painterly outlined game style, camera, warm daylight, scale and high level of detail.\n\nONLY CHANGE THE UPHILL APPROACH IN THE UPPER-LEFT BACKGROUND:\nRemove Nell's recognisable half-timbered workshop building there, including its big green double doors, gear sign, round gable window and log-storage lean-to. The top of the hill and the workshop are OFF SCREEN, outside this view. We do not need to show the destination.\nIn that area, draw a believable continuous cobbled street rising gently uphill and curving or receding out through the upper-left edge of the image, bounded by existing-style urban side walls, a modest planted retaining edge, lamps and cropped background facades. The route should clearly CONTINUE OUT OF FRAME. Do not terminate it at a new replacement workshop, put Nell's building elsewhere in the picture, or show the crest of the hill. Some ordinary background roofs may be partly cropped, but the open uphill route must be readable. Keep any slope or few shallow steps local to that side approach, outside the main flat square.\n\nPRESERVE EVERYTHING ELSE AS CLOSELY AS POSSIBLE:\nThe large central amber root-power lantern with its glass, copper cap, pillars, gauge, stepped stone base and inset ground conduits; the prominent cream guild hall with green-copper roof, clock pediment, teal banners, arched entrance and public counter at the main plaza grade; the surrounding merchant and postal frontages, harbour glimpse, shade tree, broad walking circuit, open right-side apron for future building, existing perimeter stalls, residents and wheeled robots. Keep the traveller's appearance and scale. Do not redesign or move these main landmarks, add extra objects to the open paving, increase verticality, or alter the overall composition to force the entire hillside into view.\n\nNo captions, HUD, labels, watermark or extra panels. This is the same concept with the workshop omitted and its uphill street continuing off-screen."
+}

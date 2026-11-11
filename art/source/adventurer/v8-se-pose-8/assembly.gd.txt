@@ -1,0 +1,46 @@
+extends SceneTree
+
+const ROOT := "/home/joejin/personal-project/Voxel-Rootward/"
+const CELL := 418
+
+func hem_end(img: Image, x: int) -> int:
+	var end := -1
+	for y in range(230, 266):
+		var c := img.get_pixel(x, y)
+		if c.a > 0.8 and c.r > 0.65 and c.g > 0.6 and c.b > 0.45:
+			end = y
+	return end + 2 if end >= 0 else 240
+
+func _initialize() -> void:
+	var sheet := Image.load_from_file(ROOT + "art/source/adventurer/v8-se-pose-8/before.png")
+	var original := sheet.get_region(Rect2i(CELL, 2 * CELL, CELL, CELL))
+	var generated := Image.load_from_file(ROOT + ".cache/se-pose-8/generated-418.png")
+	var legs := Image.create(CELL, CELL, false, Image.FORMAT_RGBA8)
+	for x in range(CELL):
+		var cut := hem_end(generated, x)
+		for y in range(cut + 1, CELL):
+			legs.set_pixel(x, y, generated.get_pixel(x, y))
+	# Keep horizontal proportions. Register the hips and restore the original
+	# hem-to-ground distance after the model shortened the supporting leg.
+	var lower := legs.get_region(Rect2i(0, 240, CELL, 178))
+	lower.resize(CELL, 206, Image.INTERPOLATE_LANCZOS)
+	var pose := Image.create(CELL, CELL, false, Image.FORMAT_RGBA8)
+	pose.blit_rect(lower, Rect2i(0, 0, CELL - 4, 175), Vector2i(4, 242))
+	for x in range(CELL):
+		var cut := hem_end(original, x)
+		# Extend the top trouser color a few pixels behind the preserved hem.
+		var first := -1
+		for y in range(242, 278):
+			if pose.get_pixel(x, y).a > 0.95:
+				first = y
+				break
+		if first >= 0 and first - cut < 15:
+			var fill := pose.get_pixel(x, first)
+			for y in range(cut + 1, first):
+				pose.set_pixel(x, y, fill)
+		for y in range(cut + 1):
+			pose.set_pixel(x, y, original.get_pixel(x, y))
+	pose.save_png(ROOT + ".cache/se-pose-8/corrected-pose-8.png")
+	sheet.blit_rect(pose, Rect2i(0, 0, CELL, CELL), Vector2i(CELL, 2 * CELL))
+	sheet.save_png(ROOT + "art/source/adventurer/v8-se-pose-8/sheet.png")
+	quit()

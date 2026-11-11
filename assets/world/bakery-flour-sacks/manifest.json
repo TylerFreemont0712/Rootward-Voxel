@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "bakery-flour-sacks",
+  "version": 1,
+  "source": "art/source/world/bakery-flour-sacks/v1/model.blend",
+  "source_sha256": "79a50e5689b35c8f89d7280634e46a1ab814cbd1bbdb0d345c36b19386314383",
+  "runtime": "assets/world/bakery-flour-sacks/model.glb",
+  "runtime_sha256": "f4b2cfbcc7764a92e594fe4b2d5419bc0f7d668ca25345786c18e44004a6efeb",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.754104495048523,
+      -0.0370000004768372,
+      -0.516913175582886,
+      0.755988478660583,
+      1.28999996185303,
+      0.659999966621399
+    ],
+    "geometry_sha256": "ea3ebe6049f85cdc75aa576876eb68734ad1155613bdccb7db2b027d98afdcc4",
+    "material_records": {
+      "shop_brass": {
+        "albedo": [
+          7098,
+          5412,
+          2588,
+          10000
+        ],
+        "roughness": 4500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_flour": {
+        "albedo": [
+          9451,
+          9255,
+          8784,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_ink": {
+        "albedo": [
+          1451,
+          1647,
+          1569,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_paper": {
+        "albedo": [
+          9373,
+          9020,
+          8118,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_sack": {
+        "albedo": [
+          7882,
+          7059,
+          5412,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "shop_brass",
+      "shop_flour",
+      "shop_ink",
+      "shop_paper",
+      "shop_sack"
+    ],
+    "meshes": 5,
+    "triangles": 480
+  }
+}

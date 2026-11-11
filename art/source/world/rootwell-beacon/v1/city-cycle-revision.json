@@ -1,0 +1,8 @@
+{
+  "before": "b9767cd34d288297a77fd3d143a83bc0e629b9e3fce98c51f33894c4783e6682",
+  "after": "b1963ac92821bc541438eb46d458bcf337bcebd62f6f243e2b41be74de484e53",
+  "record": "art/source/world/civic-cycle/v1/revise.py",
+  "red_band_vertices_moved": 26,
+  "bands": "green 0\u20138, amber 8\u20139, red 9\u201310; needle remains authored at 1.3 for runtime calibration",
+  "follow_up": "art/source/world/civic-cycle/v1/finish_gauge.py"
+}

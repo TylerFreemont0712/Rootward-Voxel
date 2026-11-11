@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "asset": "square-flower-stall",
+  "version": "v1",
+  "source": "art/source/world/square-flower-stall/v1/model.blend",
+  "source_sha256": "0652ccd907029876b9d70f138584385a28d84d3ee60bd3a27547a5fcc9be0549",
+  "runtime": "assets/world/square-flower-stall/model.glb",
+  "runtime_sha256": "10ef0eca267a934a4a482a5a2ce7596e28c6581e84004a1976c8a63aba00cfe7",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.68745338916779,
+      0.0,
+      -0.778699159622192,
+      1.82640135288239,
+      2.41500020027161,
+      1.02541971206665
+    ],
+    "geometry_sha256": "bbb67750ef29e61dc3a4ba0f8007a76f03ec7a08d22042758648766f5ee8da1a",
+    "material_records": {
+      "square_canvas": {
+        "albedo": [
+          9373,
+          9059,
+          8235,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_canvas_shade": {
+        "albedo": [
+          8510,
+          8039,
+          6980,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_ceramic": {
+        "albedo": [
+          7137,
+          6784,
+          5686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_chalk": {
+        "albedo": [
+          9529,
+          9373,
+          8941,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_blue": {
+        "albedo": [
+          4980,
+          6196,
+          8392,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_pink": {
+        "albedo": [
+          8980,
+          6039,
+          6588,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_red": {
+        "albedo": [
+          8118,
+          3098,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_violet": {
+        "albedo": [
+          6078,
+          5176,
+          7686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_white": {
+        "albedo": [
+          9647,
+          9412,
+          8863,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_flower_yellow": {
+        "albedo": [
+          9216,
+          7725,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_ink": {
+        "albedo": [
+          3137,
+          2392,
+          1882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf": {
+        "albedo": [
+          3569,
+          5412,
+          2706,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf_dark": {
+        "albedo": [
+          2471,
+          4157,
+          2353,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_leaf_light": {
+        "albedo": [
+          5255,
+          6784,
+          3608,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_ochre": {
+        "albedo": [
+          7608,
+          6039,
+          3333,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_soil": {
+        "albedo": [
+          4196,
+          3216,
+          2510,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_steel": {
+        "albedo": [
+          4275,
+          4667,
+          4902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_teal": {
+        "albedo": [
+          2471,
+          4824,
+          4549,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_white": {
+        "albedo": [
+          9490,
+          9176,
+          8471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_wood_light": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "square_canvas",
+      "square_canvas_shade",
+      "square_ceramic",
+      "square_chalk",
+      "square_flower_blue",
+      "square_flower_pink",
+      "square_flower_red",
+      "square_flower_violet",
+      "square_flower_white",
+      "square_flower_yellow",
+      "square_ink",
+      "square_leaf",
+      "square_leaf_dark",
+      "square_leaf_light",
+      "square_ochre",
+      "square_soil",
+      "square_steel",
+      "square_teal",
+      "square_white",
+      "square_wood",
+      "square_wood_dark",
+      "square_wood_light"
+    ],
+    "meshes": 22,
+    "triangles": 50696
+  }
+}

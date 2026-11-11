@@ -1,0 +1,1783 @@
+{
+  "schema": 1,
+  "status": "authored handoff; not selected by game materials",
+  "materials": 24,
+  "textures": [
+    {
+      "name": "grass",
+      "style": "solid",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: grass\nVariant: solid.\nPalette anchors: #638b41, #83a852, #4e763b.\nSurface: Short grass in chunky blocky clusters, no flowers.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/grass_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "748cf530de10261337b95bd1fd20804fcf076b08159e095a0c8022ab21aeadfe",
+      "master": "art/source/world/textures/v1/raw/grass_solid_1024.png",
+      "master_sha256": "639296cc9bbcd9420c127bdef6ea729cc60ce4688d1cce445c2535706e7626c3",
+      "final": "assets/world/textures/solid/grass.png",
+      "final_sha256": "274d51205c9d788464c058b949deb26bcfd05e3584d1ac0b4308f6c9f2e5e0b3",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-c73b59f9-b29a-4ffa-bad2-40df17ebb59d.png"
+    },
+    {
+      "name": "grass",
+      "style": "lush",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: grass\nVariant: lush.\nPalette anchors: #638b41, #83a852, #4e763b.\nSurface: Short grass in chunky blocky clusters, no flowers.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. More varied short blades and clover leaves, restrained pale dew-colour flecks; no glossy highlights.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/grass_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "a963d3f07d8dfe2f3ccc46728b76b5db9ca9912a41c51756e20f9958c7a1e3d7",
+      "master": "art/source/world/textures/v1/raw/grass_lush_1024.png",
+      "master_sha256": "1be19c5819e948f20775d30e07771e54b601efb14c97f5cb46b1f84eb2463ba9",
+      "final": "assets/world/textures/lush/grass.png",
+      "final_sha256": "2104ee35892b34656d8f9d6ac7a8d8a29d1b0d135a9cf35abe56378035036d17",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-fe3f87c0-bb5d-4f44-9575-8bf4cfe8a434.png"
+    },
+    {
+      "name": "dirt_path",
+      "style": "solid",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: dirt_path\nVariant: solid.\nPalette anchors: #a97b4a, #c19a62, #86603a.\nSurface: Packed warm earth, small scattered pebbles and broad soft patches; no ruts or directional tracks.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/dirt_path_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "99daaed62cfa0e707cf5502995632e62e1bab489a7c541d9fbdf2bcb6b2a5483",
+      "master": "art/source/world/textures/v1/raw/dirt_path_solid_1024.png",
+      "master_sha256": "6769e2d384e77cba89c79ec9ef1c529025fb971406c0685a797802ac02f4379f",
+      "final": "assets/world/textures/solid/dirt_path.png",
+      "final_sha256": "87f3dd6e162464dff49ca94aaeb8849145547eff547659682324e9d49407703d",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-16234c5f-fbf1-485f-a445-fd1dd165e578.png"
+    },
+    {
+      "name": "dirt_path",
+      "style": "lush",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: dirt_path\nVariant: lush.\nPalette anchors: #a97b4a, #c19a62, #86603a.\nSurface: Packed warm earth, small scattered pebbles and broad soft patches; no ruts or directional tracks.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Slight warm/cool earth drift, a few more pebbles, sparse compacted patches; calm organic variation.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/dirt_path_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "311efed09c8a945339c5d1b59b1a4f8e1c5e74cc4a1d9c6b4f3688378a9f36d5",
+      "master": "art/source/world/textures/v1/raw/dirt_path_lush_1024.png",
+      "master_sha256": "7010cd2638a02489b4a070509903521549967adc2996ec623c00e37a30ce131b",
+      "final": "assets/world/textures/lush/dirt_path.png",
+      "final_sha256": "defadf9d4a7132f3ce52d92c239055bc1578a5fc33b31cbfc64890a3d902a73e",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-0f558209-3005-48ec-8edf-873bd7e554dc.png"
+    },
+    {
+      "name": "cobble",
+      "style": "solid",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: cobble\nVariant: solid.\nPalette anchors: #d2c7a4, #b6b298, #827a61, #5e5848.\nSurface: Pale rounded chunky cobblestones, approximately four stones across by four down, with narrow dark mortar gaps.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/cobble_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "dee31f17ef3650298692a6b01bcc17371b3489e987d57cd8476ff14f68a21395",
+      "master": "art/source/world/textures/v1/raw/cobble_solid_1024.png",
+      "master_sha256": "d9d7d9d9e4c50de6246eed4ab2f1df0e75c9aafbab90da35a205a77936eb5276",
+      "final": "assets/world/textures/solid/cobble.png",
+      "final_sha256": "efcbee44df96fec65882a24bc2a331019a3329303478478b8f885384b8870bbd",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-feb866cf-9611-4ab0-97e0-6279453f6722.png"
+    },
+    {
+      "name": "cobble",
+      "style": "lush",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: cobble\nVariant: lush.\nPalette anchors: #d2c7a4, #b6b298, #827a61, #5e5848.\nSurface: Pale rounded chunky cobblestones, approximately four stones across by four down, with narrow dark mortar gaps.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Subtle muted moss only in a few gaps and worn pale stone edges; retain four-by-four scale.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/cobble_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "79a88199d928d3d32a13a481da6366f19ae99ad0ae92a93b7f3012ee99812619",
+      "master": "art/source/world/textures/v1/raw/cobble_lush_1024.png",
+      "master_sha256": "3fdb74044c639608b6765465d74d30663aa8ce92d110c7ab13a2297564cd04c9",
+      "final": "assets/world/textures/lush/cobble.png",
+      "final_sha256": "a4b1603324cb79d70aa8d9838279a283518302bd081c84f2c10382651fce64e8",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-3a80e239-bd0a-4d2f-8675-7da87fb5ef99.png"
+    },
+    {
+      "name": "soil",
+      "style": "solid",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: soil\nVariant: solid.\nPalette anchors: #755846, #96745b, #584b48.\nSurface: Dark tilled earth for banks and cut edges; broad irregular earth clods, evenly distributed.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/soil_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "c1ffe5b2c639f95bf7d5ef70f78a306b66eb54b55f81cf8173c70cd69f07f0a5",
+      "master": "art/source/world/textures/v1/raw/soil_solid_1024.png",
+      "master_sha256": "40766707f86f0b3b0442e6027180c3dfcb10becaa0317334a1292a9a7b675f52",
+      "final": "assets/world/textures/solid/soil.png",
+      "final_sha256": "dd08c0e59f95433759affff1004eab652efeac2783617a390e7134617e289dfc",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-182d7152-5346-4a15-9eeb-a2ab0883e5fd.png"
+    },
+    {
+      "name": "soil",
+      "style": "lush",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: soil\nVariant: lush.\nPalette anchors: #755846, #96745b, #584b48.\nSurface: Dark tilled earth for banks and cut edges; broad irregular earth clods, evenly distributed.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Sparse fine roots and a few small stones, softly varied warm/cool soil patches.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/soil_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "3f7f068b25481572d19b302e01faf87adeea8e688672a3d5117745e3e8ee875c",
+      "master": "art/source/world/textures/v1/raw/soil_lush_1024.png",
+      "master_sha256": "93aec6878710baca5d4e0bd1051d790259b9fc50545979b59c73689f97d8f045",
+      "final": "assets/world/textures/lush/soil.png",
+      "final_sha256": "fd7cda737b6a2cb470156fc70d36297972fa4edc8600f5ddde8bd41ccbb7f243",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-be403338-afac-47db-93ae-05625950dcde.png"
+    },
+    {
+      "name": "rock",
+      "style": "solid",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: rock\nVariant: solid.\nPalette anchors: #929a9a, #bcc2ae, #626f73.\nSurface: Craggy grey stone face, a few broad angular fracture planes and cracks; no directional lighting.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/rock_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "be11a52e427e5cf66c15b00eaac30e30a3cc8db3cfef238e484d6fdac650a873",
+      "master": "art/source/world/textures/v1/raw/rock_solid_1024.png",
+      "master_sha256": "2c3ce4b94bddb05df972d792cbbe255e04bddc991c428683d5d8755bf12cf669",
+      "final": "assets/world/textures/solid/rock.png",
+      "final_sha256": "320311dcdebfbff1c10a323860afb9ddb68a24b6400fd79cf882c731a4b827e4",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-fa647a93-d669-4319-b953-200b58e618c3.png"
+    },
+    {
+      "name": "rock",
+      "style": "lush",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: rock\nVariant: lush.\nPalette anchors: #929a9a, #bcc2ae, #626f73.\nSurface: Craggy grey stone face, a few broad angular fracture planes and cracks; no directional lighting.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Muted lichen patches and restrained moss in a few cracks; broad calm variation.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/rock_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "d08890f86aaa94473f19f3875072af70647181cc9b678481cc70e8f888ff8ddc",
+      "master": "art/source/world/textures/v1/raw/rock_lush_1024.png",
+      "master_sha256": "a3e1139cca1919e808f6211a76bb0f41cc175f83be4fb96dc1edfcc99ca17876",
+      "final": "assets/world/textures/lush/rock.png",
+      "final_sha256": "d28b0d134a715c3ba6c2726e30dd8e65371740ab211a283a39596d1caf3fb241",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-d9022daa-141a-4c64-828f-386b877d5638.png"
+    },
+    {
+      "name": "pebbles",
+      "style": "solid",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: pebbles\nVariant: solid.\nPalette anchors: #b6b298, #d2c7a4, #827a61.\nSurface: Small rounded river-shore pebbles packed together; many smaller stones than cobble, no large boulders.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/pebbles_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "722714b7aebbade2b283c6f9ca1445bc52b87a0931cc3dd1fa6c293af34cdacc",
+      "master": "art/source/world/textures/v1/raw/pebbles_solid_1024.png",
+      "master_sha256": "3c548e4ff747f8e0d848e7c106caf629e604225246f5346e821d88441dc88215",
+      "final": "assets/world/textures/solid/pebbles.png",
+      "final_sha256": "3086cd68566ebbaaa2f04d5d82aa09ae47a97e77ad29e2739509ea0cf5e044eb",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-8ec158a6-e097-4f1c-8882-34ff482f39a6.png"
+    },
+    {
+      "name": "pebbles",
+      "style": "lush",
+      "group": "ground",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: pebbles\nVariant: lush.\nPalette anchors: #b6b298, #d2c7a4, #827a61.\nSurface: Small rounded river-shore pebbles packed together; many smaller stones than cobble, no large boulders.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. More organically varied pebble sizes, restrained warm/cool drift and slightly worn matte edges.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/pebbles_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "60198fc04f2d823e102042f84328fafdc934e0a8bcc74ed4911740098d9606d9",
+      "master": "art/source/world/textures/v1/raw/pebbles_lush_1024.png",
+      "master_sha256": "096386d02f08c674d36e42e123b03f0e30f9fa24e5830e2f451d88bd90595780",
+      "final": "assets/world/textures/lush/pebbles.png",
+      "final_sha256": "c4720b0f536df5e794a0fcaeab93e651f075cfe4e40d77f1992e4e515c74e89c",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-ad52bc87-fdf3-4130-a819-e8fafe50b0a8.png"
+    },
+    {
+      "name": "water",
+      "style": "solid",
+      "group": "water",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: water\nVariant: solid.\nPalette anchors: #5baca9, #9bd1c2, #3a878c.\nSurface: Calm turquoise stream from directly above, soft chunky ripples and faint short light-colour bands. Very low contrast; animation will come from a shader.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/water_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "28cf65887f8a608b29dd69a514a7858b5d3856e6ddf965559d88dd70defa308d",
+      "master": "art/source/world/textures/v1/raw/water_solid_1024.png",
+      "master_sha256": "d08218f8465a1809eb8752a07a91b4e4ffadf5d6003ff6364fc8f9691635033e",
+      "final": "assets/world/textures/solid/water.png",
+      "final_sha256": "12ae8ff71f5a5d62262550ca6e4a0fd5f5c822b00c9f8b1b494fea499c4e03f7",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-a410c43d-574e-4aaf-8ef0-f1c9a01fe64e.png"
+    },
+    {
+      "name": "water",
+      "style": "lush",
+      "group": "water",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: water\nVariant: lush.\nPalette anchors: #5baca9, #9bd1c2, #3a878c.\nSurface: Calm turquoise stream from directly above, soft chunky ripples and faint short light-colour bands. Very low contrast; animation will come from a shader.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Richer but quiet variation in the turquoise ripples, occasional small pale matte bands. No reflected scenery or specular glints.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/water_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "f27d5a47dd36daf50f61e88ce45f000f338f77381d71a5ae87c532d6688b58e8",
+      "master": "art/source/world/textures/v1/raw/water_lush_1024.png",
+      "master_sha256": "5b7b65e351a16f0cbb844032ebbaa6ac31d075ddbbd549af81793b1c1a976d66",
+      "final": "assets/world/textures/lush/water.png",
+      "final_sha256": "c43d176f5e0fd330f9e7b94af9746d4200370121f7e6bcedc0d8db0c19b88a19",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-0b4bceed-d691-4a78-bb8d-e411ea5d34c0.png"
+    },
+    {
+      "name": "water_foam",
+      "style": "solid",
+      "group": "water",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: water_foam\nVariant: solid.\nPalette anchors: #000000, #ffffff.\nSurface: GRAYSCALE ONLY. White foam bubbles and short broken foam streaks on a solid black background, a water-edge mask. No blue or other colour.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/water_foam_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "118e6b7c39b32c6a4481b4f5c3abc652329b4437d51c8121921a0c157f3cde8e",
+      "master": "art/source/world/textures/v1/raw/water_foam_solid_1024.png",
+      "master_sha256": "f6737dd9e365ce413ba93d1f154058e64bda53d8f5cfed038ebb7e278e1fa192",
+      "final": "assets/world/textures/solid/water_foam.png",
+      "final_sha256": "54ddee041b032801622c0bc42de69e5a5e63dd3c752b0b2673c350b633c9c670",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "BOX area-average to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-35b2c384-bbba-4ee1-bbf5-1b8422021816.png"
+    },
+    {
+      "name": "water_foam",
+      "style": "lush",
+      "group": "water",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: water_foam\nVariant: lush.\nPalette anchors: #000000, #ffffff.\nSurface: GRAYSCALE ONLY. White foam bubbles and short broken foam streaks on a solid black background, a water-edge mask. No blue or other colour.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. More organic small bubble groupings and broken foam filaments, with a few intermediate grey values; plenty of calm black negative space.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/water_foam_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "f46be5ceb70e97fdc680a839cb221e0ca0c456247c37c332abe3f3d5b2640fa7",
+      "master": "art/source/world/textures/v1/raw/water_foam_lush_1024.png",
+      "master_sha256": "9ab24b8ac2a41dd60177de0b90047bb8e1d42b2b2953a2acb028dd2589229ab3",
+      "final": "assets/world/textures/lush/water_foam.png",
+      "final_sha256": "774e3e0bed41cd8569c325b34b739813538c7bd370b44e0eab6580454ca84429",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "BOX area-average to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-12f6c85a-1460-48df-90f6-62056b598bb6.png"
+    },
+    {
+      "name": "log_wood",
+      "style": "solid",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: log_wood\nVariant: solid.\nPalette anchors: #b07a45, #c59458, #765039, #49382f.\nSurface: Exactly FIVE horizontal logs filling the tile, narrow dark gaps, staggered butt joints. Long subtle horizontal grain. A pale top-colour strip and darker underside-colour strip are painted albedo bands, not cast shadows.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/log_wood_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "c5b2b496b1b9242f6847718749fa56805fe3bc7bd2eb983f0d135128b217c3c2",
+      "master": "art/source/world/textures/v1/raw/log_wood_solid_1024.png",
+      "master_sha256": "ab07b7651c51709e64df66b7e939d78c161e7d39a9bf69c7e5a11a8c91da473a",
+      "final": "assets/world/textures/solid/log_wood.png",
+      "final_sha256": "61274716f654ebdd00f848f0f6549639af68643826f2b790bf3253d4fe80d2bd",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-8f3cf4b9-6504-4899-980b-84051a169c94.png"
+    },
+    {
+      "name": "log_wood",
+      "style": "lush",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: log_wood\nVariant: lush.\nPalette anchors: #b07a45, #c59458, #765039, #49382f.\nSurface: Exactly FIVE horizontal logs filling the tile, narrow dark gaps, staggered butt joints. Long subtle horizontal grain. A pale top-colour strip and darker underside-colour strip are painted albedo bands, not cast shadows.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. A few restrained knots and a hint of muted moss near some joints; keep exactly five horizontal logs and their broad shapes.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/log_wood_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "154aa4c12b03a38cacd17b59efc4fe958fabf820709143c96d83a8fc2ce3c019",
+      "master": "art/source/world/textures/v1/raw/log_wood_lush_1024.png",
+      "master_sha256": "788f13d9998a9265b37abf77ce505b3165c9ab42d1934c1cd6536afb8cf8e3c3",
+      "final": "assets/world/textures/lush/log_wood.png",
+      "final_sha256": "cc305bf45530dcdbc58525a22c5ca628e3312c1cdd6fbaea75f6d8c625b28fbb",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-40340c3f-7dd1-476d-aed8-f08f71bdc841.png"
+    },
+    {
+      "name": "plank_wood",
+      "style": "solid",
+      "group": "housing",
+      "normalization_version": 3,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: plank_wood\nVariant: solid.\nPalette anchors: #a47b51, #765039.\nSurface: Exactly FOUR vertical wooden planks across the tile. Narrow seams, small simple nail dots and lengthwise vertical grain for doors, fences and decks.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.\nCRITICAL SMALL-SCALE CONSTRUCTION: draw FOUR equal-width VERTICAL planks. Think of a 32-by-32 logical pixel tile: each board is 8 logical pixels wide. The continuous straight dark-brown gaps at columns 0, 8, 16 and 24 must be ONE FULL LOGICAL PIXEL wide (about 32 actual pixels in a 1024 master), not hairline seams. Keep these four vertical joints obvious from top to bottom; the edge joint wraps. Boards are large calm flat brown masses; grain is only a few broad sparse vertical ribbons. Nail dots are one logical pixel, in the same dark brown palette, near the top and bottom of each board. Preserve these major seams and dots when viewed at 32x32 pixels. No micro-grain, no diagonal or cross-hatched grain, no extra boards, no perspective. Broad readable 4-board structure is more important than decorative grain.",
+      "native_output": "art/source/world/textures/v1/native/plank_wood_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "f22c6ebfafda1335ec26f755927fcfde63dbe41540bd8d671fc6fbd2ed4e2e34",
+      "master": "art/source/world/textures/v1/raw/plank_wood_solid_1024.png",
+      "master_sha256": "94c7a0b00e53001d2b77a3ca65f57478611cbebefa51ac03a54a9b411228f0c0",
+      "final": "assets/world/textures/solid/plank_wood.png",
+      "final_sha256": "ada16b4e84d5b494253fd572627c2013e16775e436931cfaaca2c87beace3aba",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Origin-aligned nearest samples on the 32x32 grid to retain the authored four plank joints and nail dots",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-977eadaa-80c8-4825-b7cd-1c3eec525ab4.png"
+    },
+    {
+      "name": "plank_wood",
+      "style": "lush",
+      "group": "housing",
+      "normalization_version": 3,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: plank_wood\nVariant: lush.\nPalette anchors: #a47b51, #765039.\nSurface: Exactly FOUR vertical wooden planks across the tile. Narrow seams, small simple nail dots and lengthwise vertical grain for doors, fences and decks.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Richer warm grain, a few subtle knots, slight matte edge weathering; retain four vertical planks.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.\nCRITICAL SMALL-SCALE CONSTRUCTION: draw FOUR equal-width VERTICAL planks. Think of a 32-by-32 logical pixel tile: each board is 8 logical pixels wide. The continuous straight dark-brown gaps at columns 0, 8, 16 and 24 must be ONE FULL LOGICAL PIXEL wide (about 32 actual pixels in a 1024 master), not hairline seams. Keep these four vertical joints obvious from top to bottom; the edge joint wraps. Boards are large calm flat brown masses; grain is only a few broad sparse vertical ribbons. Nail dots are one logical pixel, in the same dark brown palette, near the top and bottom of each board. Preserve these major seams and dots when viewed at 32x32 pixels. No micro-grain, no diagonal or cross-hatched grain, no extra boards, no perspective. Broad readable 4-board structure is more important than decorative grain.",
+      "native_output": "art/source/world/textures/v1/native/plank_wood_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "c53b6427d72862375638683b1e4cf4fa1fddbacfd7cc826faa8561bd1257e19d",
+      "master": "art/source/world/textures/v1/raw/plank_wood_lush_1024.png",
+      "master_sha256": "076bd5a8955b670280920ff03aaa0c75642b394c4f01f4fea3adaf77b35815ca",
+      "final": "assets/world/textures/lush/plank_wood.png",
+      "final_sha256": "db7a9baa7f51971cbfb8d83f4705ad47cd33994e86956d303ea597991e1a0c45",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Origin-aligned nearest samples on the 32x32 grid to retain the authored four plank joints and nail dots",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-80f7c06a-c58c-4f67-84f1-06be88294ae1.png"
+    },
+    {
+      "name": "timber_dark",
+      "style": "solid",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: timber_dark\nVariant: solid.\nPalette anchors: #765039, #49382f.\nSurface: Dark timber for posts and structural frames. Long straight VERTICAL wood grain, broad readable stripes and only sparse small knots.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/timber_dark_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "7113130b6982d6e19810ee78f67971f867027b189d69e4dcfd51e12c7f5d2807",
+      "master": "art/source/world/textures/v1/raw/timber_dark_solid_1024.png",
+      "master_sha256": "a8029cb075e929a9b40e4bff7a18a1d58ba6963d27217da7d5480e36676d445d",
+      "final": "assets/world/textures/solid/timber_dark.png",
+      "final_sha256": "3ebaeb65232ded22c4eac46dd4e80e14fc4868cec2d17d8a7c8f4959769be101",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-843bb09f-11cb-4560-8202-8957d5bcf708.png"
+    },
+    {
+      "name": "timber_dark",
+      "style": "lush",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: timber_dark\nVariant: lush.\nPalette anchors: #765039, #49382f.\nSurface: Dark timber for posts and structural frames. Long straight VERTICAL wood grain, broad readable stripes and only sparse small knots.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Subtle worn grain and a little irregular warm-brown weathering, still dark and low contrast.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/timber_dark_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "febf272c2518f9a9bbe4828f566ab95e74dcf9677f683244cf5a797e007556a3",
+      "master": "art/source/world/textures/v1/raw/timber_dark_lush_1024.png",
+      "master_sha256": "72e55fc874255d035c5466f835d10cb6546eac08061aba0fd7632e01e439b15a",
+      "final": "assets/world/textures/lush/timber_dark.png",
+      "final_sha256": "615c8712aca3402e39ac837e65857409bce53ced3a016a29f8a9df8066ca0cf0",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-af4e9972-31c0-4079-ab0e-b084a0f6d8bc.png"
+    },
+    {
+      "name": "plaster",
+      "style": "solid",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: plaster\nVariant: solid.\nPalette anchors: #e8ddbd, #d3c6a4.\nSurface: Cream lime plaster with broad very gentle flat trowel patches; no bricks, framing or objects.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/plaster_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "a0ca04a68c6b042ed30290b3ec8983dc92908cd012e9db7369d86ff36d852334",
+      "master": "art/source/world/textures/v1/raw/plaster_solid_1024.png",
+      "master_sha256": "527a3815d0f3ebeafccd70e5cf82995991390d62b0f81f766757e1788389347f",
+      "final": "assets/world/textures/solid/plaster.png",
+      "final_sha256": "d6fc7536288862e58547bb0b837fd952ae136e6343ce0b20adaebd4f43b616e1",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-a20b8a02-4248-4b67-adb6-d8f7987a6cf2.png"
+    },
+    {
+      "name": "plaster",
+      "style": "lush",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: plaster\nVariant: lush.\nPalette anchors: #e8ddbd, #d3c6a4.\nSurface: Cream lime plaster with broad very gentle flat trowel patches; no bricks, framing or objects.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Sparse hairline cracks and faint pale stains; still mostly calm cream plaster.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/plaster_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "34da09d57bee5722b5c91d57110a6cf824f94fee28a190a4aa5e4bcc6719b1e9",
+      "master": "art/source/world/textures/v1/raw/plaster_lush_1024.png",
+      "master_sha256": "40d1b9b9fe564c7bfa8c661f32d271601ab9b6740de6dcf4b01c762a87766c5a",
+      "final": "assets/world/textures/lush/plaster.png",
+      "final_sha256": "05c56477ec7daa39997955bf152b509188bdeee5819983fe9ab5cbe822595273",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-978b58af-884d-421f-b36e-e121b0e46f40.png"
+    },
+    {
+      "name": "stone_block_warm",
+      "style": "solid",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: stone_block_warm\nVariant: solid.\nPalette anchors: #c8bb99, #d4c9ad, #6b6251.\nSurface: Warm limestone wall made of SIX LARGE TALL blocks in exactly TWO horizontal courses. Each course contains exactly THREE blocks across the square. Each block is roughly ONE THIRD of the image width and ONE HALF of the image height: taller than it is wide. There are TWO ROWS TOTAL, not four or five brick courses. Stagger the second row by half a block, allowing clipped half-blocks on opposite edges to wrap seamlessly. Dark mortar lines are about 1/32 tile wide and clear at small size. Very calm pale stone faces and a thin pale albedo top edge. No other subdivisions, small stones or extra courses.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.\nCOUNT CHECK: exactly one horizontal internal mortar joint at y=50 percent, with periodic mortar at the top/bottom. THREE blocks per row, TWO rows total. Do not draw four rows. This is a repeat unit, not a photograph of an entire wall.",
+      "native_output": "art/source/world/textures/v1/native/stone_block_warm_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "098219ab735c95f7db2affb639f4709c171a1883e8c180430dc8c4bb2d8f100e",
+      "master": "art/source/world/textures/v1/raw/stone_block_warm_solid_1024.png",
+      "master_sha256": "73a1fe05a571d474f45939c8cfa2f3094af53f2d58a39f2dc317e337e7306651",
+      "final": "assets/world/textures/solid/stone_block_warm.png",
+      "final_sha256": "234871a225354087981bd18985063097b5115be6897ddd5dfacc9b6cb3b906b3",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-abc0b07a-829b-4d6d-b66c-cbec4e1489af.png"
+    },
+    {
+      "name": "stone_block_warm",
+      "style": "lush",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: stone_block_warm\nVariant: lush.\nPalette anchors: #c8bb99, #d4c9ad, #6b6251.\nSurface: Warm limestone wall made of SIX LARGE TALL blocks in exactly TWO horizontal courses. Each course contains exactly THREE blocks across the square. Each block is roughly ONE THIRD of the image width and ONE HALF of the image height: taller than it is wide. There are TWO ROWS TOTAL, not four or five brick courses. Stagger the second row by half a block, allowing clipped half-blocks on opposite edges to wrap seamlessly. Dark mortar lines are about 1/32 tile wide and clear at small size. Very calm pale stone faces and a thin pale albedo top edge. No other subdivisions, small stones or extra courses.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Quietly weathered pale stone, sparse fine chips and tiny muted moss traces in a few mortar joints; preserve three-by-two scale.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.\nCOUNT CHECK: exactly one horizontal internal mortar joint at y=50 percent, with periodic mortar at the top/bottom. THREE blocks per row, TWO rows total. Do not draw four rows. This is a repeat unit, not a photograph of an entire wall.",
+      "native_output": "art/source/world/textures/v1/native/stone_block_warm_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "3f8b2e3b69b05d2403cbd42c5bb2688d33a6131e9d0493189603c4523de08cc7",
+      "master": "art/source/world/textures/v1/raw/stone_block_warm_lush_1024.png",
+      "master_sha256": "abbe7536c3bd09a6472674e25ed8ae4d8ad694c6fd0a45a4cbb07c91a834eaeb",
+      "final": "assets/world/textures/lush/stone_block_warm.png",
+      "final_sha256": "fb38168aa7edd4906a6a1aeecddba9364b5ca0120ebd809ebb8a6136877cfb20",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-30e0310d-bb57-4a52-bb6b-be183109af85.png"
+    },
+    {
+      "name": "stone_block_grey",
+      "style": "solid",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: stone_block_grey\nVariant: solid.\nPalette anchors: #929a9a, #bcc2ae, #626f73.\nSurface: Grey field-stone blocks for walls and banks, broad chunky roughly rectangular stones in staggered courses and narrow gaps.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/stone_block_grey_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "004334eeded1cafbef2a27432c48b027d00e8f1aabd707420e9d6dc0941f4389",
+      "master": "art/source/world/textures/v1/raw/stone_block_grey_solid_1024.png",
+      "master_sha256": "066fff4f55aa10767959b68b9e5e6514729113046b7906eb12863bc7db7726d7",
+      "final": "assets/world/textures/solid/stone_block_grey.png",
+      "final_sha256": "c9efe8be7aeb4e4669a71db1462a72c87fa81a3de927c9c5306bbab445c1283c",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-c4d059fd-c164-4106-88ea-9f29b0e8889c.png"
+    },
+    {
+      "name": "stone_block_grey",
+      "style": "lush",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: stone_block_grey\nVariant: lush.\nPalette anchors: #929a9a, #bcc2ae, #626f73.\nSurface: Grey field-stone blocks for walls and banks, broad chunky roughly rectangular stones in staggered courses and narrow gaps.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Restrained grey-green lichen and weathered edges, muted colour drift between stones; no deep shadows.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/stone_block_grey_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "4d10b2688264755f4e3a4cc91ca23e5266ad7314084e00f102eba53d261c22e7",
+      "master": "art/source/world/textures/v1/raw/stone_block_grey_lush_1024.png",
+      "master_sha256": "c2108d4f1927508d7f7a25e818c263ebb463312af44d8fb6c5868280cc5318d0",
+      "final": "assets/world/textures/lush/stone_block_grey.png",
+      "final_sha256": "9b549ddee7ea0ddd416314f2cc6ac1bb72e9378d6fccafda2b5415a400fdf4a9",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-8890df0d-0a4c-487c-b2b8-551aded2862c.png"
+    },
+    {
+      "name": "roof_tile_violet",
+      "style": "solid",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: roof_tile_violet\nVariant: solid.\nPalette anchors: #66509a, #8271b1, #493c71.\nSurface: Overlapping chunky violet slate roof tiles, THREE rows by THREE tiles across the repeat. Alternate rows offset. Each tile has a thin lighter lower-colour lip. Flat orthographic surface pattern, no roof, no perspective.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/roof_tile_violet_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "1352c2dfaa1b52962b14679cb44a614bf1ea21e86ec427e120b76ac4138d0ab3",
+      "master": "art/source/world/textures/v1/raw/roof_tile_violet_solid_1024.png",
+      "master_sha256": "7eaf0131a4c06669201fe81bab9adfdaaaaa0b75fee080f06d1d750e3a6a853c",
+      "final": "assets/world/textures/solid/roof_tile_violet.png",
+      "final_sha256": "e83fc690579c29259323e50a502e5562f3b916dadaecfe7fbb8256d8e90323a5",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-0245a619-f70e-4e1f-8992-54e295ec109f.png"
+    },
+    {
+      "name": "roof_tile_violet",
+      "style": "lush",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: roof_tile_violet\nVariant: lush.\nPalette anchors: #66509a, #8271b1, #493c71.\nSurface: Overlapping chunky violet slate roof tiles, THREE rows by THREE tiles across the repeat. Alternate rows offset. Each tile has a thin lighter lower-colour lip. Flat orthographic surface pattern, no roof, no perspective.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. A few subtly faded or slightly uneven violet tiles, tiny matte weathering marks, no spectacular chips or moss blanket; retain three-by-three tile layout.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/roof_tile_violet_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "c7cdb39505db4d664093b4d3971c7b86a47bddc515379ce8181d841cde1d2344",
+      "master": "art/source/world/textures/v1/raw/roof_tile_violet_lush_1024.png",
+      "master_sha256": "c0cfb4c0c7b9ec3f69f0d11abef4683fc6f57b1406ea7822e4f8ff8eb3b6ac87",
+      "final": "assets/world/textures/lush/roof_tile_violet.png",
+      "final_sha256": "025659d37be7ce1de10629433561197204cead96bd30f0c326c20f07d36562dc",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-6a9a826d-1393-434d-828b-c8bf04dd53d8.png"
+    },
+    {
+      "name": "roof_tile_teal",
+      "style": "solid",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: roof_tile_teal\nVariant: solid.\nPalette anchors: #347b85, #4c939b, #255560.\nSurface: Overlapping chunky teal slate roof tiles, THREE rows by THREE tiles across the repeat. Alternate rows offset. Each tile has a thin lighter lower-colour lip. SAME layout and scale as the violet roof texture. Flat surface, no roof or perspective.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/roof_tile_teal_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "325aa66771e5c6e8b65a90acf13685549e2117c4073ba97781447d50ac39c24b",
+      "master": "art/source/world/textures/v1/raw/roof_tile_teal_solid_1024.png",
+      "master_sha256": "d72fd6ae1ac909e86d46e4d2a30c126088dbb0de23fcf7e04c270341995a31f4",
+      "final": "assets/world/textures/solid/roof_tile_teal.png",
+      "final_sha256": "16be7e175048bfcd28264bcb2c593bcbc6163cc8468bdd59ba385cd3f688a2ad",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-af9ec1fa-fa59-4346-8caf-b8565e19de29.png"
+    },
+    {
+      "name": "roof_tile_teal",
+      "style": "lush",
+      "group": "housing",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: roof_tile_teal\nVariant: lush.\nPalette anchors: #347b85, #4c939b, #255560.\nSurface: Overlapping chunky teal slate roof tiles, THREE rows by THREE tiles across the repeat. Alternate rows offset. Each tile has a thin lighter lower-colour lip. SAME layout and scale as the violet roof texture. Flat surface, no roof or perspective.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. A few subtly faded or slightly uneven teal tiles, tiny matte weathering marks; retain three-by-three tile layout.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/roof_tile_teal_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "14c6dec411d0429e4bc2bd3522f781f31a282299ad5bf46f4e1cd8aa9b8b93aa",
+      "master": "art/source/world/textures/v1/raw/roof_tile_teal_lush_1024.png",
+      "master_sha256": "cf47fa50c29b08dae32ce8eae27ba26a5dbf485b55f28b8c502950245d0aaf02",
+      "final": "assets/world/textures/lush/roof_tile_teal.png",
+      "final_sha256": "842c09da8a0a5feab318831e441edab2e919692af3f3979477c60572895f3f70",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-f06e44f2-61ff-4e08-a969-4af1ed981da9.png"
+    },
+    {
+      "name": "iron",
+      "style": "solid",
+      "group": "fittings",
+      "normalization_version": 2,
+      "world_tile_units": 0.5,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: iron\nVariant: solid.\nPalette anchors: #394446, #5a6a6e.\nSurface: Dark blue-grey hammered iron, broad faint matte hammer marks and one restrained repeating row of tiny rivet dots. No panel border, no metallic reflections.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 0.5 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/iron_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "040d144383e3396ecde473f1369c75dcf447b668a4fe95e69b9acfe8bd1dae0c",
+      "master": "art/source/world/textures/v1/raw/iron_solid_1024.png",
+      "master_sha256": "243f4283424a1bae7603a6da8da58ca0a86c9c0fbab6db86fcccbdeb53755675",
+      "final": "assets/world/textures/solid/iron.png",
+      "final_sha256": "d48882bb18419b73530dbc6c3f0fa7add6d40a193a528b13ba597b5d3c85ba2c",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-16376c02-0f07-464e-9c91-2517b4ab6dea.png"
+    },
+    {
+      "name": "iron",
+      "style": "lush",
+      "group": "fittings",
+      "normalization_version": 2,
+      "world_tile_units": 0.5,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: iron\nVariant: lush.\nPalette anchors: #394446, #5a6a6e.\nSurface: Dark blue-grey hammered iron, broad faint matte hammer marks and one restrained repeating row of tiny rivet dots. No panel border, no metallic reflections.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Slight muted rusty-brown discoloration by some rivets, subtle warm/cool patina, never glossy; no outer border.\nSEAMLESS REPEAT: This covers 0.5 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/iron_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "7271eb335cbacadb0dbe4028dd3d5a2cae8a14fd4d48892a494d790267b92eb6",
+      "master": "art/source/world/textures/v1/raw/iron_lush_1024.png",
+      "master_sha256": "3899a3681e1897da302f63417a4c077e04f8a0fd93f6d732af9110e0ede57682",
+      "final": "assets/world/textures/lush/iron.png",
+      "final_sha256": "bdeb24aa30209245c04c5538ba12f166b930e85e06f2d75d4f32dc3e934c6c8d",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-4d1e77ec-978f-4f22-bbe3-624dfb44ab99.png"
+    },
+    {
+      "name": "brass",
+      "style": "solid",
+      "group": "fittings",
+      "normalization_version": 2,
+      "world_tile_units": 0.5,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: brass\nVariant: solid.\nPalette anchors: #e3b16a, #a8763a.\nSurface: Warm hammered brass surface, broad quiet matte irregular hammer marks; no object, engraved symbol or shiny metallic highlight.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 0.5 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/brass_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "2a228983b648917c537b66ba6908f550a9e11ee7622430bf88dd493e1bbee2f9",
+      "master": "art/source/world/textures/v1/raw/brass_solid_1024.png",
+      "master_sha256": "7636be9b270a7bc1cc6010dcce67b4480211f99845ccf72fad3eb9e6f7caf0df",
+      "final": "assets/world/textures/solid/brass.png",
+      "final_sha256": "61167db2f7f33603c1089c9c78bcffc7b5e43e01fc5de117a4e86d96795a0ba5",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-ed1fde78-cdd9-4dfe-87bf-b3c7e7d5dceb.png"
+    },
+    {
+      "name": "brass",
+      "style": "lush",
+      "group": "fittings",
+      "normalization_version": 2,
+      "world_tile_units": 0.5,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: brass\nVariant: lush.\nPalette anchors: #e3b16a, #a8763a.\nSurface: Warm hammered brass surface, broad quiet matte irregular hammer marks; no object, engraved symbol or shiny metallic highlight.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Restrained warm-brown patina and gentle colour drift, slightly more irregular hammer marks; no gloss or bright reflection.\nSEAMLESS REPEAT: This covers 0.5 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/brass_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "40094d42ff282d5b9e578d096509e0591d6dff9b7dee00cf529b1ec3587c929a",
+      "master": "art/source/world/textures/v1/raw/brass_lush_1024.png",
+      "master_sha256": "e43fb19ce8ba6ed5631dd5122831c81dfc48c24ec213710d0eb276c69b583404",
+      "final": "assets/world/textures/lush/brass.png",
+      "final_sha256": "c2d7d631ed5da5e7d16baab216c6db0604559e5d66d44b0b637648e19d01021a",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-5e06e575-99f7-45a6-ad9e-f1bd094f924d.png"
+    },
+    {
+      "name": "leaf",
+      "style": "solid",
+      "group": "fittings",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: leaf\nVariant: solid.\nPalette anchors: #4d7e35, #7ca946, #2e5835.\nSurface: Chunky overlapping leaf clumps for voxel tree crowns, broad rounded angular clusters covering the tile, no branches, sky, fruit or flowers.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/leaf_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "87dff758eda61958dc1579594e962d8e648bc68a6dac0451c9188b8d7f8e3fdf",
+      "master": "art/source/world/textures/v1/raw/leaf_solid_1024.png",
+      "master_sha256": "cf858947e689eac637e449379b1fa12dba86b7b54eca085297a950d822a736d3",
+      "final": "assets/world/textures/solid/leaf.png",
+      "final_sha256": "1b0076fd44d63d9410b16351fdba58fdc387da8c2cc7c6a041aa5180d56b19a1",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-3ed66f11-d6ac-4fc6-9ae0-89f01f1316e6.png"
+    },
+    {
+      "name": "leaf",
+      "style": "lush",
+      "group": "fittings",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: leaf\nVariant: lush.\nPalette anchors: #4d7e35, #7ca946, #2e5835.\nSurface: Chunky overlapping leaf clumps for voxel tree crowns, broad rounded angular clusters covering the tile, no branches, sky, fruit or flowers.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. More organic small leaf clumps and a few yellow-green leaves; lighter-colour clumps are flat albedo, never lighting or shine.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/leaf_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "2eb61c6840401a36d184583bc1e1fe04a01181c8ae23507caa54b26441b4da11",
+      "master": "art/source/world/textures/v1/raw/leaf_lush_1024.png",
+      "master_sha256": "7a3c60e6f77af29a9b085f8aa81842af6afb22927fbcfc7af04df9fa9c7cf463",
+      "final": "assets/world/textures/lush/leaf.png",
+      "final_sha256": "b21a1c51b52391e15bc2ec83734dab34e6894ce24b14e8b907a9143f80a4720a",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-ac502a6c-0a7d-46ad-9508-15992f7c3126.png"
+    },
+    {
+      "name": "bark",
+      "style": "solid",
+      "group": "fittings",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: bark\nVariant: solid.\nPalette anchors: #765039, #49382f.\nSurface: Tree trunk bark with broad VERTICAL ridges and sparse broken vertical cracks, low contrast, no trunk object or silhouette.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/bark_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "c8ae98bd5bc38e06b24e7b5bea746dd39e4893d6ef6efc66b8afd057714b92cc",
+      "master": "art/source/world/textures/v1/raw/bark_solid_1024.png",
+      "master_sha256": "3e6f8df1ae277254e9be4088d51f0f3f080b9f7396cdd4f9b3bf7fb61f46d12f",
+      "final": "assets/world/textures/solid/bark.png",
+      "final_sha256": "43ef38210794b1f79a9fcc723209492d418cebb730164986c46a779768e6a115",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-bb8c7389-1a5e-4875-ab25-731c327b66bf.png"
+    },
+    {
+      "name": "bark",
+      "style": "lush",
+      "group": "fittings",
+      "normalization_version": 2,
+      "world_tile_units": 1,
+      "tiling": true,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: bark\nVariant: lush.\nPalette anchors: #765039, #49382f.\nSurface: Tree trunk bark with broad VERTICAL ridges and sparse broken vertical cracks, low contrast, no trunk object or silhouette.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Richer irregular bark ridges, sparse subtle lichen and worn brown patches; retain vertical flow.\nSEAMLESS REPEAT: This covers 1 world unit(s). It must tile perfectly on all four edges with continuous shapes crossing each edge and no visible repeat boundary. No central medallion or central lighting hotspot. Imagine a 3x3 repetition and avoid seams.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/bark_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "d9baa1c3d491f571430e59f8cc4351b9071aaedcfed705acb0362b4c286e27e8",
+      "master": "art/source/world/textures/v1/raw/bark_lush_1024.png",
+      "master_sha256": "2fd837d8c9ef2b2ca151f711cf9e7163b81131f1303ec582fcbb5fca0044a9a0",
+      "final": "assets/world/textures/lush/bark.png",
+      "final_sha256": "0ee0111de872d7453d666cb08766d7c677e8cba7c51213b6d1a25e6381198783",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "Nearest colour sampling to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-5e1d0f2d-a051-406a-8084-e1718d4734a9.png"
+    },
+    {
+      "name": "lantern_glass",
+      "style": "solid",
+      "group": "glass",
+      "normalization_version": 2,
+      "world_tile_units": null,
+      "tiling": false,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: lantern_glass\nVariant: solid.\nPalette anchors: #7a6648.\nSurface: NON-TILING UNLIT smoked-brown glass colour swatch, filling the entire square. Overall colour MUST be the DARK MUTED BROWN #7a6648, not gold or orange. No transmitted light, no emission, no bright centre and no depicted object. Only an extremely gentle variation, about #706047 to #86704d, can describe a faint inner matte colour sheen.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nThis is NON-TILING: a single flat pane, with edge-to-centre colour as specified. No outline, frame, rim or pictured object.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.\nCritical: this is the UNLIT pane. It must be dark brown, visually distinct from the separately authored bright lantern_glass_lit texture. Do not paint a light or hot spot. No image frame or bevel.",
+      "native_output": "art/source/world/textures/v1/native/lantern_glass_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "2103b665375209dbb15b478ef491bc57b3999e446812299f27ebf94d2db03931",
+      "master": "art/source/world/textures/v1/raw/lantern_glass_solid_1024.png",
+      "master_sha256": "2b84b1af90e4825e82536460ad52dd0cd3dcbd136cc77374b07d659e4d08fb77",
+      "final": "assets/world/textures/solid/lantern_glass.png",
+      "final_sha256": "8cc5aa7377f65e405aa08a5b9da79d996cf805e54d16c032369f5e8c71b67844",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "BOX area-average to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-f7466f73-a2eb-42f4-b0ff-4ff74c9627f5.png"
+    },
+    {
+      "name": "lantern_glass",
+      "style": "lush",
+      "group": "glass",
+      "normalization_version": 2,
+      "world_tile_units": null,
+      "tiling": false,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: lantern_glass\nVariant: lush.\nPalette anchors: #7a6648.\nSurface: NON-TILING UNLIT smoked-brown glass colour swatch, filling the entire square. Overall colour MUST be the DARK MUTED BROWN #7a6648, not gold or orange. No transmitted light, no emission, no bright centre and no depicted object. Only an extremely gentle variation, about #706047 to #86704d, can describe a faint inner matte colour sheen.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Slightly richer but still DARK MUTED BROWN drift around #7a6648. No light shining through it, no golden glow. Soft flat tonal variations in the narrow range #706047 to #86704d.\nThis is NON-TILING: a single flat pane, with edge-to-centre colour as specified. No outline, frame, rim or pictured object.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.\nCritical: this is the UNLIT pane. It must be dark brown, visually distinct from the separately authored bright lantern_glass_lit texture. Do not paint a light or hot spot. No image frame or bevel.",
+      "native_output": "art/source/world/textures/v1/native/lantern_glass_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "c71785f3ce2910375b95de2829f0ae0bc84eeccd88bed0193c2aa2784245ef44",
+      "master": "art/source/world/textures/v1/raw/lantern_glass_lush_1024.png",
+      "master_sha256": "d7af18524fe3b60a38e2618124b98cc086634274ec9eca7246b339d6583292fb",
+      "final": "assets/world/textures/lush/lantern_glass.png",
+      "final_sha256": "117656e2dc1d1ad812c35d29c1e3b971c126b745f7d7be7aff3b8e9e990c22e3",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "BOX area-average to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-fea66114-8648-4322-8326-882c43482d2e.png"
+    },
+    {
+      "name": "lantern_glass_lit",
+      "style": "solid",
+      "group": "glass",
+      "normalization_version": 2,
+      "world_tile_units": null,
+      "tiling": false,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: lantern_glass_lit\nVariant: solid.\nPalette anchors: #ffe6a5, #f0b45a.\nSurface: NON-TILING flat glowing lantern glass pane filling the full square. Pale warm cream centre and honey-orange outer area. In the SOLID version use EXACTLY THREE FLAT COLOUR BANDS, no continuous gradient, no visible flame, frame or lantern object.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nThis is NON-TILING: a single flat pane, with edge-to-centre colour as specified. No outline, frame, rim or pictured object.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/lantern_glass_lit_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "ade070533978f24f368814473b02005dee2e2abea0f0c7cfcf4c22e387b22ee7",
+      "master": "art/source/world/textures/v1/raw/lantern_glass_lit_solid_1024.png",
+      "master_sha256": "cb6493800ebaaaea0c2ecb7bcdbd422fd1932569877c1fed26412f751a0b0928",
+      "final": "assets/world/textures/solid/lantern_glass_lit.png",
+      "final_sha256": "f5836b25bf469e19f1cd1f24daa1ca5203e384185c2af8184be3706a53bce114",
+      "colour_count": 3,
+      "palette_limit": 3,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "BOX area-average to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 3 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-d4e8d5cd-94d6-4264-a001-fba859420d5d.png"
+    },
+    {
+      "name": "lantern_glass_lit",
+      "style": "lush",
+      "group": "glass",
+      "normalization_version": 2,
+      "world_tile_units": null,
+      "tiling": false,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: lantern_glass_lit\nVariant: lush.\nPalette anchors: #ffe6a5, #f0b45a.\nSurface: NON-TILING flat glowing lantern glass pane filling the full square. Pale warm cream centre and honey-orange outer area. In the SOLID version use EXACTLY THREE FLAT COLOUR BANDS, no continuous gradient, no visible flame, frame or lantern object.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Use a softly stepped richer warm cream-to-orange glow gradient, still pixel-art and albedo-only, no white lens flare or hard bright hotspot.\nThis is NON-TILING: a single flat pane, with edge-to-centre colour as specified. No outline, frame, rim or pictured object.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/lantern_glass_lit_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "13e2f570a20835b292bf8e4de5454d0247ecc230266ff8a591665fd0ebcaf670",
+      "master": "art/source/world/textures/v1/raw/lantern_glass_lit_lush_1024.png",
+      "master_sha256": "809ec9a4659675ed48cfbe1eb2ad5039985588a6febb70034a1e7e03d8f9db82",
+      "final": "assets/world/textures/lush/lantern_glass_lit.png",
+      "final_sha256": "9364bdee048b51223cf600195e17e64e03cb226defbd695a2c5c6d55ad6ce3b9",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "BOX area-average to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-ef216a83-45e2-45c4-b0e6-1c4840350c3f.png"
+    },
+    {
+      "name": "window_glass",
+      "style": "solid",
+      "group": "glass",
+      "normalization_version": 2,
+      "world_tile_units": null,
+      "tiling": false,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: window_glass\nVariant: solid.\nPalette anchors: #526f7a.\nSurface: NON-TILING flat dark blue-grey window glass pane filling the full square with a very gentle diagonal colour sheen. No window frame, mullions, scenery or reflection.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nThis is NON-TILING: a single flat pane, with edge-to-centre colour as specified. No outline, frame, rim or pictured object.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/window_glass_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "e2119ee72043e5f2effb799681c7dadf9d9deaf265ceccd33609bf87c4af342b",
+      "master": "art/source/world/textures/v1/raw/window_glass_solid_1024.png",
+      "master_sha256": "d55061a2f1501d1143a1b7e0ae0c762a1b7c9db8fcd1894606d82a51107a2221",
+      "final": "assets/world/textures/solid/window_glass.png",
+      "final_sha256": "19397f1d318f7b64981b6fbf2d640f609a6756e109f5e030a58ea8c692c5c4d3",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "BOX area-average to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-fba4a720-787f-42d5-90b7-98cb1a455de3.png"
+    },
+    {
+      "name": "window_glass",
+      "style": "lush",
+      "group": "glass",
+      "normalization_version": 2,
+      "world_tile_units": null,
+      "tiling": false,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: window_glass\nVariant: lush.\nPalette anchors: #526f7a.\nSurface: NON-TILING flat dark blue-grey window glass pane filling the full square with a very gentle diagonal colour sheen. No window frame, mullions, scenery or reflection.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. A richer very subtle stepped blue-grey diagonal colour drift, matte and quiet, no scratches or glints.\nThis is NON-TILING: a single flat pane, with edge-to-centre colour as specified. No outline, frame, rim or pictured object.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/window_glass_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "9b40efe24af67094f41ce0091e1241535caef0a7cf679a76c86ce94a85b5e3e2",
+      "master": "art/source/world/textures/v1/raw/window_glass_lush_1024.png",
+      "master_sha256": "4080a50f5bf9d547429b7c165a643b581624b05afbba8bcaa5ba127a18ebc272",
+      "final": "assets/world/textures/lush/window_glass.png",
+      "final_sha256": "976b17cdafc5aba3b6ddafe75c719601f3a67eae42bf7d2a4ab2cd1d2207bcc1",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "BOX area-average to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-9583b885-88a4-446c-b92f-ff18257317bb.png"
+    },
+    {
+      "name": "window_glow",
+      "style": "solid",
+      "group": "glass",
+      "normalization_version": 2,
+      "world_tile_units": null,
+      "tiling": false,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: window_glow\nVariant: solid.\nPalette anchors: #f0b45a, #b8742c.\nSurface: NON-TILING flat lit window pane filling the full square, warm amber centre and softly darker amber corners. No frame, mullions, candles, silhouettes or scene.\nSOLID treatment: clean, bold, flat, even colour masses. MAXIMUM 16 colours in the entire texture; mostly 4-8. Very little detail.\nThis is NON-TILING: a single flat pane, with edge-to-centre colour as specified. No outline, frame, rim or pictured object.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/window_glow_solid_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "c767f199d3e3749e1c667dcf6c5fce215708817309599e50e1808e946057b2bd",
+      "master": "art/source/world/textures/v1/raw/window_glow_solid_1024.png",
+      "master_sha256": "01ba9d2976558a2ee1a9acf8b6536a52f46b9628c4b5e65f7f8ab4e868fb0f49",
+      "final": "assets/world/textures/solid/window_glow.png",
+      "final_sha256": "debfb0d819db4a55ffa0625f06b3fa46efc40cb7bcc6af665a9177e3e948ae6b",
+      "colour_count": 8,
+      "palette_limit": 8,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "BOX area-average to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 8 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-1092e5a0-80be-4b49-b4d4-ad711a2348bd.png"
+    },
+    {
+      "name": "window_glow",
+      "style": "lush",
+      "group": "glass",
+      "normalization_version": 2,
+      "world_tile_units": null,
+      "tiling": false,
+      "tool": "built-in image_gen.imagegen",
+      "model": "Not exposed by the built-in tool",
+      "seed": "Not exposed by the built-in tool; no caller seed parameter",
+      "prompt": "Use case: stylized-concept\nAsset type: one production COLOUR/ALBEDO texture for Rootward Voxel, a warm saturated chunky voxel-inspired fantasy village. Flat straight-on surface, hand-painted pixel-art-inspired look. The game is isometric but THIS TEXTURE HAS NO PERSPECTIVE. Must read at 20-70 screen pixels per tile. Produce a square 1024x1024 master, opaque sRGB with no alpha.\nMaterial ID: window_glow\nVariant: lush.\nPalette anchors: #f0b45a, #b8742c.\nSurface: NON-TILING flat lit window pane filling the full square, warm amber centre and softly darker amber corners. No frame, mullions, candles, silhouettes or scene.\nLUSH treatment: same material, layout and palette, richer organic finish with 24-48 colours, restrained extra detail, no busy focal mark. Richer softly stepped warm amber colour gradient with darker copper corners, no lens flare or pinpoint highlights.\nThis is NON-TILING: a single flat pane, with edge-to-centre colour as specified. No outline, frame, rim or pictured object.\nGlobal constraints: Big crisp block-pixel shapes; smallest meaningful detail about 1/32 of the full tile. No subpixel grain, no brush noise, no blur, no gradients except the explicitly non-tiling glass panes. Even soft frontal/above light; colour only, no ambient occlusion, no baked cast shadows and no specular reflections. Relative to each local palette anchor, highlights within +12 percent and darker variations within -15 percent; the named dark mortar/seams remain material colours. Stay near the supplied palette within about 10 percent hue/lightness. Fill the whole image with the material. No photo, photorealism, 3D render, perspective, vignette, outer border, frame, text, labels, watermark, signature, people, characters, flowers, crates, barrels, sacks, props, strong shadows, specular highlights, blur or noise grain. Exactly one texture, not a contact sheet.",
+      "native_output": "art/source/world/textures/v1/native/window_glow_lush_generated.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "native_sha256": "8efd9bfa7c776e565cce644a9faf7df4a630e924912101776920e71f49ed42d6",
+      "master": "art/source/world/textures/v1/raw/window_glow_lush_1024.png",
+      "master_sha256": "c4bc0032d648e3b3b86b19a3f61c681d44d297a47deb690759735ab02a3c096f",
+      "final": "assets/world/textures/lush/window_glow.png",
+      "final_sha256": "a22ec9420ebe01ee2df8fa6d5fb44d20a2a16294301c0dd1580a0d168e5684a6",
+      "colour_count": 48,
+      "palette_limit": 48,
+      "pixel_grid": [
+        32,
+        32
+      ],
+      "processing": [
+        "BOX area-average to the specified 32x32 meaningful-detail grid",
+        "Three-texel cosine-tapered opposite-edge colour join, tiling materials only",
+        "Median-cut palette, maximum 48 colours, no dithering",
+        "Nearest enlargement to the 1024x1024 pixel-art master",
+        "BOX area-average 1024x1024 -> 128x128, no sharpening",
+        "Opaque RGB PNG with explicit sRGB intent; foam kept grayscale"
+      ],
+      "generation_output": "/home/joejin/.codex/generated_images/01a16613-453d-7172-82f4-39f5ec65d1e8/exec-485af547-5c93-4bcb-ae0d-567b5f6039da.png"
+    }
+  ]
+}

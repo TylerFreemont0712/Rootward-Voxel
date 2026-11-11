@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "id": "20261029T055711-c884db02",
+  "kind": "delete",
+  "title": "Delete Stream Reeds",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "stream-reeds",
+    "label": "Stream Reeds",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/stream-reeds/v1/model.blend",
+    "runtime": "assets/world/stream-reeds/model.glb",
+    "manifest": "assets/world/stream-reeds/manifest.json",
+    "catalog_notes": "A clump of six one-voxel reeds, 0.6 m to 1.0 m tall, with brown seed heads and teal-green blades. No footprint: reeds stand at the water's edge.",
+    "related_files": [
+      "art/source/world/stream-reeds/v1/brief.md",
+      "art/source/world/stream-reeds/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Stream Reeds",
+      "source": "art/source/world/stream-reeds/v1/model.blend",
+      "runtime": "assets/world/stream-reeds/model.glb",
+      "pivot": "ground centre of the mud bed",
+      "logical_footprint": null,
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
+      "notes": "A clump of six one-voxel reeds, 0.6 m to 1.0 m tall, with brown seed heads and teal-green blades. No footprint: reeds stand at the water's edge."
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:57:11+00:00",
+  "updated": "2026-10-29T06:28:00+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:57:11+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:00+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/stream-reeds/v1/brief.md",
+    "art/source/world/stream-reeds/v1/model.blend",
+    "art/source/world/stream-reeds/v1/provenance.json",
+    "assets/world/stream-reeds/manifest.json",
+    "assets/world/stream-reeds/model.glb",
+    "assets/world/stream-reeds/model.glb.import"
+  ]
+}

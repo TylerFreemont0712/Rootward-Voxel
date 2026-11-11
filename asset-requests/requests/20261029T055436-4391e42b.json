@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "id": "20261029T055436-4391e42b",
+  "kind": "update",
+  "title": "Update Loft half-unpacked suitcase",
+  "asset_type": "world model",
+  "status": "finished",
+  "notes": "Get rid of the shoes.",
+  "asset": {
+    "id": "loft-luggage",
+    "label": "Loft half-unpacked suitcase",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/loft-luggage/v1/model.blend",
+    "runtime": "assets/world/loft-luggage/model.glb",
+    "manifest": "assets/world/loft-luggage/manifest.json",
+    "catalog_notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority.",
+    "related_files": [
+      "art/source/world/loft-luggage/v1/brief.md",
+      "art/source/world/loft-luggage/v1/provenance.json",
+      "art/source/world/sparks-loft/v1/README.md"
+    ],
+    "usage_files": [
+      "content/areas/workshop-loft.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_loft",
+      "label": "Loft half-unpacked suitcase",
+      "source": "art/source/world/loft-luggage/v1/model.blend",
+      "runtime": "assets/world/loft-luggage/model.glb",
+      "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+      "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:54:36+00:00",
+  "updated": "2026-10-29T06:12:03+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:54:36+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:04:00+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-10-29T06:12:03+00:00",
+      "action": "finish"
+    }
+  ],
+  "result": {
+    "assets": [
+      "loft-luggage"
+    ],
+    "summary": "Removed the spare shoes from the adopted master; rebuilt and checked in Godot at gameplay scale. Full test suite passed.",
+    "review": "pipeline/reviews/2026-10-29-loft-asset-requests.md",
+    "contexts": [
+      {
+        "id": "loft-luggage",
+        "label": "Loft half-unpacked suitcase",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/loft-luggage/v1/model.blend",
+        "runtime": "assets/world/loft-luggage/model.glb",
+        "manifest": "assets/world/loft-luggage/manifest.json",
+        "catalog_notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority.",
+        "related_files": [
+          "art/source/world/loft-luggage/v1/brief.md",
+          "art/source/world/loft-luggage/v1/provenance.json",
+          "art/source/world/sparks-loft/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/workshop-loft.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_loft",
+          "label": "Loft half-unpacked suitcase",
+          "source": "art/source/world/loft-luggage/v1/model.blend",
+          "runtime": "assets/world/loft-luggage/model.glb",
+          "pivot": "Ground centre; Blender +Y is logical +y (Godot -Z); front faces logical -y; one metre per cell.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Authored room furnishing. Placement and any blocking rectangle belong to content/areas/workshop-loft.json. Static presentation; no new player command.",
+          "notes": "Bespoke outlined T7a loft asset. New painted surfaces and provenance: art/source/world/sparks-loft/v1/. Saved model.blend is the editable authority."
+        }
+      }
+    ],
+    "fingerprints": {
+      "loft-luggage": {
+        "source": "59f94f1c7695ccaaf088240cfbca5c468da9a2fe329f5c2e5c2ee7405b6dc350",
+        "runtime": "4f20901df7be3ce4c06b06608b7dfffeef5981f95f99e2fa665abf67a46245be",
+        "entry": "9f6330148b81a5e75f9d12c911414c3a4e469e81d0d0e79e3db64206d4ab2904"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "asset": "loft-travel-stacks",
+  "source": "art/source/world/loft-travel-stacks/v1/model.blend",
+  "backup": "art/source/world/loft-travel-stacks/v1/model.pre-plant-style.blend",
+  "before_sha256": "ff81caf5b01a2ae5b1d85222892062a2cd9e2d3f56e6b5cb46a59cd73cbd8788",
+  "after_sha256": "9a3f5954327711fb10aaca98b6384c7408bbb1387145121f194df6bda3d76e3b",
+  "objects": [
+    {
+      "object": "loft_leaf",
+      "replaced_components": {
+        "leaf": 4
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "loft_leaf_light",
+      "replaced_components": {
+        "leaf_light": 3
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

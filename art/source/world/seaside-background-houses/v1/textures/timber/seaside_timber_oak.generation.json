@@ -1,0 +1,36 @@
+{
+  "family": "timber",
+  "id": "seaside_timber_oak",
+  "title": "Honey oak",
+  "color": "honey oak",
+  "design": "HONEY OAK STRUCTURAL TIMBER: a continuous close view of cared-for wood, fine grain running VERTICALLY, small shallow grain sweeps, restrained hand-planed marks and one or two subtle small knots. No planked floor perspective, cut end grain, metal nail, carving, plank frame or huge knot. Keep the full square a repeatable timber surface that can be wrapped around beams and lintels.",
+  "variants": [
+    {
+      "id": "seaside_timber_dark",
+      "title": "Dark chestnut timber",
+      "color": "deep warm chestnut-brown oak, retaining readable grain rather than near-black wood"
+    },
+    {
+      "id": "seaside_timber_driftwood",
+      "title": "Weathered driftwood",
+      "color": "weathered grey-brown coastal timber with a soft silvery cast, still cared for, no rotten splinters"
+    }
+  ],
+  "tile": 1,
+  "roughness": 0.94,
+  "key": "house-texture-seaside_timber_oak",
+  "refs": [
+    "art/source/world/seaside-background-houses/v1/E-saltwind-apartment-house.png",
+    "art/source/world/seaside-background-houses/v1/F-rosewash-lane-house.png"
+  ],
+  "prompt": "Use case: stylized-concept.\nAsset type: ONE production-oriented seamless tiling ALBEDO / BASE-COLOUR material texture for the painted seaside village houses. This is a MATERIAL SURFACE ONLY, not a building, sample board or rendered object.\nReference images supply only painted material style, fine warm outlines and palette. Fill an entire 1024x1024 square with the specified surface, viewed orthographically STRAIGHT ON, at 90 degrees to the surface. No perspective, isometric view, horizon, border, frame, labels, text, watermark, tile palette, isolated object or blank margins.\nMake the pattern genuinely TILEABLE left-to-right and top-to-bottom: matching motif phase, joints and average colour at opposite edges, with no edge darkening, vignette, centre spotlight, large isolated stain or unique focal feature. Light is flat diffuse and colour-balanced, no cast shadows, reflections, directional sunlight or photographic highlights baked into the tile. Keep shallow painted occlusion in joints restrained.\nStyle: detailed hand-painted game texture matching the supplied house art, warm dark-brown delicate joint lines, softly painted surfaces, clear medium-scale texture and restrained salt/weather wear. Clean readable material structure at distance, not noisy photorealistic grunge or a flat colour. Opaque full-colour square texture, no transparency.\nSURFACE:\nHONEY OAK STRUCTURAL TIMBER: a continuous close view of cared-for wood, fine grain running VERTICALLY, small shallow grain sweeps, restrained hand-planed marks and one or two subtle small knots. No planked floor perspective, cut end grain, metal nail, carving, plank frame or huge knot. Keep the full square a repeatable timber surface that can be wrapped around beams and lintels.",
+  "dest": "art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_oak.png",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-0d871968-24ff-4de2-8487-fb7fd3017573.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "f0532292e084a669f9b4b485a4205e0b53e13f042cd7ccc655b3e7cc657fcfbe",
+  "reference_sha256": {
+    "art/source/world/seaside-background-houses/v1/E-saltwind-apartment-house.png": "61b71f4e3604c29682dda2131db01f893cda6dd99cc2b01f30cfa12ae7f93c20",
+    "art/source/world/seaside-background-houses/v1/F-rosewash-lane-house.png": "598230dcb54b83c19403ba627de19c186541c32ab1c5163240e9acd2f0fd232e"
+  }
+}

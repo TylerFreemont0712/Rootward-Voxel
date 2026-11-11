@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-29",
+  "opaque_threshold": 64,
+  "protected_art_files": 62,
+  "cast": {
+    "nell": {
+      "SE": {
+        "opaque_pixels_preserved": 493183,
+        "all_nine_figures_inside_safe_cell_margin": true
+      },
+      "NE": {
+        "opaque_pixels_preserved": 515139,
+        "all_nine_figures_inside_safe_cell_margin": true
+      }
+    },
+    "mira": {
+      "SE": {
+        "opaque_pixels_preserved": 473125,
+        "all_nine_figures_inside_safe_cell_margin": true
+      },
+      "NE": {
+        "opaque_pixels_preserved": 465408,
+        "all_nine_figures_inside_safe_cell_margin": true
+      }
+    },
+    "rowan": {
+      "SE": {
+        "opaque_pixels_preserved": 448569,
+        "all_nine_figures_inside_safe_cell_margin": true
+      },
+      "NE": {
+        "opaque_pixels_preserved": 476119,
+        "all_nine_figures_inside_safe_cell_margin": true
+      }
+    },
+    "bram": {
+      "SE": {
+        "opaque_pixels_preserved": 489091,
+        "all_nine_figures_inside_safe_cell_margin": true
+      },
+      "NE": {
+        "opaque_pixels_preserved": 480298,
+        "all_nine_figures_inside_safe_cell_margin": true
+      }
+    },
+    "tessa": {
+      "SE": {
+        "opaque_pixels_preserved": 521703,
+        "all_nine_figures_inside_safe_cell_margin": true
+      },
+      "NE": {
+        "opaque_pixels_preserved": 496519,
+        "all_nine_figures_inside_safe_cell_margin": true
+      }
+    }
+  }
+}

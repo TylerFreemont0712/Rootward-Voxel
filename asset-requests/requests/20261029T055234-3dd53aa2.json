@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "id": "20261029T055234-3dd53aa2",
+  "kind": "delete",
+  "title": "Delete Copper Brazier",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "hollow-copper-brazier",
+    "label": "Copper Brazier",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hollow-copper-brazier/v1/model.blend",
+    "runtime": "assets/world/hollow-copper-brazier/model.glb",
+    "manifest": "assets/world/hollow-copper-brazier/manifest.json",
+    "catalog_notes": "An embossed copper bowl on three iron legs with split logs and amber fire.",
+    "related_files": [
+      "art/source/world/hollow-copper-brazier/v1/brief.md",
+      "art/source/world/hollow-copper-brazier/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Copper Brazier",
+      "source": "art/source/world/hollow-copper-brazier/v1/model.blend",
+      "runtime": "assets/world/hollow-copper-brazier/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.425,
+        -0.425,
+        0.85,
+        0.85
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "An embossed copper bowl on three iron legs with split logs and amber fire.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Extinguish"
+      },
+      "finish_slots": {
+        "timber": [
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "copper",
+          "iron"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:52:34+00:00",
+  "updated": "2026-10-29T06:28:22+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:52:34+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:22+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/hollow-copper-brazier/v1/brief.md",
+    "art/source/world/hollow-copper-brazier/v1/model.blend",
+    "art/source/world/hollow-copper-brazier/v1/provenance.json",
+    "assets/world/hollow-copper-brazier/manifest.json",
+    "assets/world/hollow-copper-brazier/model.glb",
+    "assets/world/hollow-copper-brazier/model.glb.import",
+    "assets/world/hollow-copper-brazier/model_brass.png",
+    "assets/world/hollow-copper-brazier/model_brass.png.import",
+    "assets/world/hollow-copper-brazier/model_iron.png",
+    "assets/world/hollow-copper-brazier/model_iron.png.import",
+    "assets/world/hollow-copper-brazier/model_log_wood.png",
+    "assets/world/hollow-copper-brazier/model_log_wood.png.import",
+    "assets/world/hollow-copper-brazier/model_timber_dark.png",
+    "assets/world/hollow-copper-brazier/model_timber_dark.png.import"
+  ]
+}

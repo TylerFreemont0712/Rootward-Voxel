@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-28",
+  "source_before_sha256": "9921f7aa4d637826f923cb770c931a24d24f56715762bf582d5ec42d0e6570e4",
+  "preserved_source": "model.pre-flip.blend",
+  "edit_record": "art/source/world/sparks-loft/v1/flipped_loft_revision.py",
+  "size": [
+    14,
+    12
+  ],
+  "stair_opening": [
+    6.4,
+    7.6,
+    2.56,
+    5.86
+  ],
+  "street_windows_y": [
+    1.0,
+    5.5,
+    9.1
+  ],
+  "gable_windows_x": [
+    4.0,
+    10.0
+  ],
+  "note": "Deliberate source edit after the Spindle Lane review: the loft seen from the yard side, 14 by 12 over the workshop floor, three street windows and two gable windows to match the lane, and the stair opening in the middle of the floor. Walls, posts, plates, wainscot, braces, rafters, purlin, gable and windows are the adopted pieces, moved; new windows copy the tall window; floorboards, floor structure and the stair opening are rebuilt in the same materials."
+}

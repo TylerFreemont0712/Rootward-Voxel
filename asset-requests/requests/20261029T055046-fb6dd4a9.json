@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "id": "20261029T055046-fb6dd4a9",
+  "kind": "delete",
+  "title": "Delete Grain Sacks",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "grain-sacks",
+    "label": "Grain Sacks",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/grain-sacks/v1/model.blend",
+    "runtime": "assets/world/grain-sacks/model.glb",
+    "manifest": "assets/world/grain-sacks/manifest.json",
+    "catalog_notes": "Three burlap sacks piled two and one: a pair on the ground and one in the gap above, each with a belly, a twine tie and a gathered mouth. About 0.95 m wide, 0.45 m deep, 0.7 m tall. Proposed footprint is the pile; nothing overhangs it.",
+    "related_files": [
+      "art/source/world/grain-sacks/v1/brief.md",
+      "art/source/world/grain-sacks/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Grain Sacks",
+      "source": "art/source/world/grain-sacks/v1/model.blend",
+      "runtime": "assets/world/grain-sacks/model.glb",
+      "pivot": "ground origin at the centre of the pile; base on z = 0",
+      "logical_footprint": [
+        -0.475,
+        -0.225,
+        0.95,
+        0.45
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Three burlap sacks piled two and one: a pair on the ground and one in the gap above, each with a belly, a twine tie and a gathered mouth. About 0.95 m wide, 0.45 m deep, 0.7 m tall. Proposed footprint is the pile; nothing overhangs it."
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:50:46+00:00",
+  "updated": "2026-10-29T06:27:58+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:50:46+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:27:58+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/grain-sacks/v1/brief.md",
+    "art/source/world/grain-sacks/v1/model.blend",
+    "art/source/world/grain-sacks/v1/provenance.json",
+    "assets/world/grain-sacks/manifest.json",
+    "assets/world/grain-sacks/model.glb",
+    "assets/world/grain-sacks/model.glb.import"
+  ]
+}

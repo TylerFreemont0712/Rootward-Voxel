@@ -1,0 +1,23 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-23",
+  "design_reference": "art/source/adventurer/v2-isometric/sheet.png",
+  "pose_reference": "art/source/templates/supernova-isometric",
+  "license": "CC0-1.0 (Supernova Files)",
+  "status": "candidate; inspect gait and identity before selecting",
+  "directions": {
+    "se": {
+      "prompt": "Use case: identity-preserve / compositing.\nImage 1 is the STRICT ANIMATION POSE TEMPLATE: Supernova Files' CC0 isometric walk poses. Image 2 is the STRICT CHARACTER DESIGN: the approved painted chestnut-haired chibi adventurer.\nREPLACE each white/grey dummy in image 1 with that adventurer. Do NOT invent a new sequence. Match EACH cell's arm directions, which leg is supporting, which knee is bent, which boot is forward, and which foot is raised. There are nine cells, exactly 3 columns and 3 rows, read left-to-right. Cells 1–8 form a full alternating walk; cell 9 is neutral idle. The lighter/darker limbs distinguish opposite sides. Cells 2/3 and 6/7 must have OPPOSITE supporting legs and opposite arm swing.\nEverything faces SOUTHEAST/front-right three-quarter, same camera as row 1 of image 2. Both eyes readable. Keep this angle in every cell, never switch to pure profile.\nPreserve EXACT character design from image 2: huge rounded brown eyes, orange-chestnut hair clumps, large head, SHORT CHIBI LIMBS, teal tunic, rolled cream sleeves, ivory hem, yellow neckerchief, brown belt with small gold buckle, brown trousers, cuffed brown boots. Do not adopt the adult mannequin's long limbs or tiny head. Transfer the joint ANGLES and foot/hand relationship to the chibi proportions. Same painted finish and restrained dark outlines. Reuse the same head and torso design across all poses with stable registration and no stretching.\nFor cells 1 and 5, bring both feet into a low, almost grounded passing position under the hips; these are the boundaries between cell steps. Cell 9 must be a balanced neutral standing pose, both boots flat, arms relaxed. Modest small-stride WALK, no running or leaps. Hips stay above the support foot. Opposite leg phases must remain visibly different.\nOutput exact 3x3 regular sheet with consistent scale, generous padding and same ground baseline per cell. Transparent RGBA background. Remove the template's gray background and all numbers. No checkerboard, text, floor, shadows, new props or weapons. Prioritize the template's leg/arm sequence and the original character's identity, rather than repeating one attractive walking pose.",
+      "output": "se.png"
+    },
+    "sw": {
+      "output": "sw.png"
+    },
+    "ne": {
+      "output": "ne.png"
+    },
+    "nw": {
+      "output": "nw.png"
+    }
+  }
+}

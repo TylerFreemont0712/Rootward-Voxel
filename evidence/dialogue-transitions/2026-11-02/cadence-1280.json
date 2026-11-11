@@ -1,0 +1,106 @@
+{
+  "failures": [],
+  "renderer": "AMD Radeon 680M (radeonsi, rembrandt, LLVM 20.1.2, DRM 3.64, 7.0.0-38-generic)",
+  "resolution": "(1280, 720)",
+  "transitions": {
+    "lane": {
+      "phases": {
+        "": {
+          "frames": 5,
+          "max_ms": 32.451,
+          "p95_ms": 32.451
+        },
+        "covering": {
+          "frames": 36,
+          "max_ms": 22.746,
+          "p95_ms": 18.789
+        },
+        "loading": {
+          "frames": 358,
+          "max_ms": 66.23,
+          "p95_ms": 23.668
+        },
+        "revealing": {
+          "frames": 35,
+          "max_ms": 18.739,
+          "p95_ms": 18.467
+        },
+        "warming": {
+          "frames": 23,
+          "max_ms": 73.84,
+          "p95_ms": 16.74
+        }
+      },
+      "warmup": {
+        "closed_seconds": 6.578,
+        "warm_frames": 8
+      }
+    },
+    "return": {
+      "phases": {
+        "": {
+          "frames": 1,
+          "max_ms": 16.752,
+          "p95_ms": 16.752
+        },
+        "covering": {
+          "frames": 29,
+          "max_ms": 16.749,
+          "p95_ms": 16.723
+        },
+        "loading": {
+          "frames": 6,
+          "max_ms": 47.261,
+          "p95_ms": 47.261
+        },
+        "revealing": {
+          "frames": 35,
+          "max_ms": 16.926,
+          "p95_ms": 16.743
+        },
+        "warming": {
+          "frames": 44,
+          "max_ms": 79.288,
+          "p95_ms": 19.339
+        }
+      },
+      "warmup": {
+        "closed_seconds": 0.909,
+        "warm_frames": 8
+      }
+    },
+    "square": {
+      "phases": {
+        "": {
+          "frames": 4,
+          "max_ms": 20.785,
+          "p95_ms": 20.785
+        },
+        "covering": {
+          "frames": 35,
+          "max_ms": 17.79,
+          "p95_ms": 16.727
+        },
+        "loading": {
+          "frames": 286,
+          "max_ms": 55.95,
+          "p95_ms": 24.743
+        },
+        "revealing": {
+          "frames": 34,
+          "max_ms": 16.799,
+          "p95_ms": 16.775
+        },
+        "warming": {
+          "frames": 23,
+          "max_ms": 65.583,
+          "p95_ms": 16.756
+        }
+      },
+      "warmup": {
+        "closed_seconds": 5.295,
+        "warm_frames": 8
+      }
+    }
+  }
+}

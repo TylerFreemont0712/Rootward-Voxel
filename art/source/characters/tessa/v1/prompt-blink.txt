@@ -1,0 +1,4 @@
+Use case: precise-object-edit
+Edit target: the attached 250x250 head-and-shoulders crop of Tessa, the village gardener.
+Change ONLY both open eyes to gently closed eyes. Replace the whites and pupils with matching local facial skin, with thin relaxed dark curved eyelid lines at exactly the current eye positions. A neutral 120 ms blink, not smiling, squinting, laughing or sleeping.
+Preserve the exact face, hair, eyebrows, nose, mouth, beard or spectacles if present, skin tone, clothes, pose, camera, scale, pixel placement and transparent alpha. Keep brass spectacle rims unchanged for Nell. No changes outside the eyes. Transparent RGBA, one edited crop, no letters, borders, shadows or added objects.

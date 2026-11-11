@@ -1,0 +1,6 @@
+{
+  "asset": "city-hall-shell",
+  "authoring_record": "art/source/world/civic-cycle/v1/author_lobby.py",
+  "authoring_record_sha256": "c3e95831dd2d84087588b84bb6cc54514ea75938d52335ee43c7fa307dffc72f",
+  "note": "Saved master is authority. Initial save succeeded; authoring metadata path was corrected after save. Rebuild via scripts/world-art.sh."
+}

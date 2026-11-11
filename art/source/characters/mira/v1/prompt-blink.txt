@@ -1,0 +1,4 @@
+Use case: precise-object-edit
+Asset type: closed-eye blink painting for the exact female game sprite Mira in the attached reference.
+Edit target: the attached 250x250 head-and-shoulders crop. Change ONLY the two visible open eyes into gently closed eyes. Use thin relaxed dark curved eyelid lines centered at the same eye positions, filling the former whites and pupils with her same warm brown facial skin. A natural neutral blink, not a smile, laughter, squint or sleep.
+Invariants: Keep her exact facial silhouette, nose, mouth, warm skin tone, wavy espresso bob, brass hair clips, scarf, plum coat, sage cuffs, style, three-quarter front-right orientation, crop, framing, scale and pixel placement unchanged. Keep the head at exactly the same size and location in the square. Do not add or remove hair. No face expression change other than closing the eyes. Transparent RGBA background. No letters or added objects. Return just the edited image.

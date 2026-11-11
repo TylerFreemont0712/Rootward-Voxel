@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "id": "20261102T071738-826a7b45",
+  "kind": "update",
+  "title": "Update Haverlund lane set",
+  "asset_type": "world model",
+  "status": "finished",
+  "notes": "Approved Braum entrance: separate existing white garden gate into a hinged leaf, preserve adopted source and all other geometry/materials.",
+  "asset": {
+    "id": "haverlund-lane-set",
+    "label": "Haverlund lane set",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/haverlund-lane-set/v1/model.blend",
+    "runtime": "assets/world/haverlund-lane-set/model.glb",
+    "manifest": "assets/world/haverlund-lane-set/manifest.json",
+    "catalog_notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Gate/handrail repair: art/source/world/lane-believability/v1/. Two intact closed-at-rest door_leaf pivots open through the existing room-link DoorSwing; handrails follow the original descending treads.",
+    "related_files": [
+      "art/source/world/city-power-grid/v2/README.md",
+      "art/source/world/haverlund-lane-set/v1/grid-inlay-audit.json",
+      "art/source/world/haverlund-lane-set/v1/lane-believability.json",
+      "art/source/world/haverlund-lane-set/v1/plant-style.json",
+      "art/source/world/haverlund-lane-set/v1/provenance.json",
+      "art/source/world/haverlund-lane-set/v1/square-gate-revision.json",
+      "art/source/world/haverlund-lane-set/v1/welcome-gate.json",
+      "art/source/world/lane-believability/v1/README.md",
+      "art/source/world/sparks-lane/v1/README.md"
+    ],
+    "usage_files": [
+      "content/areas/archive/haverlund-lane-v3.json",
+      "content/areas/haverlund-lane.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_lane",
+      "label": "Haverlund lane set",
+      "source": "art/source/world/haverlund-lane-set/v1/model.blend",
+      "runtime": "assets/world/haverlund-lane-set/model.glb",
+      "pivot": "Area coordinates; Blender +X is logical +x, +Y logical +y, Z up. Level 0 (the tram halt) at z 0, level 1 (the lane) at z 1.",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Spindle Lane terraces, paving, tram track and halt, stairs, walls, garden and fences. Framed power inlays run through the centered stairs and door thresholds and along the tram platform. Overhead power wires and poles have been removed. Cosmetic presentation only; placements and traversal belong to the area document.",
+      "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Gate/handrail repair: art/source/world/lane-believability/v1/. Two intact closed-at-rest door_leaf pivots open through the existing room-link DoorSwing; handrails follow the original descending treads."
+    }
+  },
+  "references": [],
+  "created": "2026-11-02T07:17:38+00:00",
+  "updated": "2026-11-02T09:06:22+00:00",
+  "history": [
+    {
+      "at": "2026-11-02T07:17:38+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-02T07:20:27+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-02T09:06:22+00:00",
+      "action": "finish"
+    }
+  ],
+  "result": {
+    "assets": [
+      "haverlund-lane-set"
+    ],
+    "summary": "Braum garden hinge extracted from preserved lane source, independently scoped from town stairs, with animated garden-to-lane quest entrance; audited build, native review and full regression suite passed.",
+    "review": "pipeline/reviews/2026-11-02-welcome-quest-and-property.md",
+    "contexts": [
+      {
+        "id": "haverlund-lane-set",
+        "label": "Haverlund lane set",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-lane-set/v1/model.blend",
+        "runtime": "assets/world/haverlund-lane-set/model.glb",
+        "manifest": "assets/world/haverlund-lane-set/manifest.json",
+        "catalog_notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Gate/handrail repair: art/source/world/lane-believability/v1/. Two intact closed-at-rest door_leaf pivots open through the existing room-link DoorSwing; handrails follow the original descending treads. Chapter 03 adds an independently scoped BraumGardenGate hinge from the existing fence; edit/backup record: art/source/world/haverlund-lane-set/v1/welcome-gate.json. DoorSwing excludes nested door_group pivots from whole-shell travel.",
+        "related_files": [
+          "art/source/world/city-power-grid/v2/README.md",
+          "art/source/world/haverlund-lane-set/v1/grid-inlay-audit.json",
+          "art/source/world/haverlund-lane-set/v1/lane-believability.json",
+          "art/source/world/haverlund-lane-set/v1/plant-style.json",
+          "art/source/world/haverlund-lane-set/v1/provenance.json",
+          "art/source/world/haverlund-lane-set/v1/square-gate-revision.json",
+          "art/source/world/haverlund-lane-set/v1/welcome-gate-scope.py",
+          "art/source/world/haverlund-lane-set/v1/welcome-gate.json",
+          "art/source/world/lane-believability/v1/README.md",
+          "art/source/world/sparks-lane/v1/README.md"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-lane-v3.json",
+          "content/areas/haverlund-lane.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_lane",
+          "label": "Haverlund lane set",
+          "source": "art/source/world/haverlund-lane-set/v1/model.blend",
+          "runtime": "assets/world/haverlund-lane-set/model.glb",
+          "pivot": "Area coordinates; Blender +X is logical +x, +Y logical +y, Z up. Level 0 (the tram halt) at z 0, level 1 (the lane) at z 1.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "behavior": "Spindle Lane terraces, paving, tram track and halt, stairs, walls, garden and fences. Framed power inlays run through the centered stairs and door thresholds and along the tram platform. Overhead power wires and poles have been removed. Cosmetic presentation only; placements and traversal belong to the area document.",
+          "notes": "T7c/P1 reference; editable model.blend is authority. Source pack: art/source/world/sparks-lane/v1/. Integrated power-conduit revision: art/source/world/city-power-grid/v2/README.md. Edit this adopted master; the source-edit record is not a regenerator. Gate/handrail repair: art/source/world/lane-believability/v1/. Two intact closed-at-rest door_leaf pivots open through the existing room-link DoorSwing; handrails follow the original descending treads. Chapter 03 adds an independently scoped BraumGardenGate hinge from the existing fence; edit/backup record: art/source/world/haverlund-lane-set/v1/welcome-gate.json. DoorSwing excludes nested door_group pivots from whole-shell travel."
+        }
+      }
+    ],
+    "fingerprints": {
+      "haverlund-lane-set": {
+        "source": "0577fa201b3448e878b0885c83125e329501549778ce8c02cd2985cc91518d67",
+        "runtime": "e47cf31a92b815160aa7f956fc6e27347849a2bda2619d78304d9c7956f1fe26",
+        "entry": "3c4d3f3eb56b66ade052198a069b24086c785f6b5b35b686930145db5ead1f3b"
+      }
+    }
+  }
+}

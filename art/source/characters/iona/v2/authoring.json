@@ -1,0 +1,276 @@
+{
+  "eye_rectangles": [
+    [
+      113.0,
+      75.0,
+      36.0,
+      32.0
+    ],
+    [
+      162.0,
+      70.0,
+      28.0,
+      32.0
+    ]
+  ],
+  "inputs": {
+    "res://art/source/characters/iona/v1/NE.png": "1f1bd3f2a8c8d1be098495ce6047808150efecfb7240274703475cd7831c9d81",
+    "res://art/source/characters/iona/v1/SE.png": "fb59ed28a7c100e4864e64f197090c5ddd386b571ba4e2e150b27f4b5758fa46",
+    "res://art/source/characters/iona/v1/authoring.json": "5e53d39b5b2069edf83dff9be97e53a3ee87ac17bd9464d3c543f4a057a1b325",
+    "res://art/source/characters/iona/v1/blink-se.png": "15075986535833c7ffa6bd22f8173e80200311c40aff09090ee59740eaaebac3",
+    "res://art/source/characters/iona/v1/idle-se.png": "018fbba381be9c91b3796a27e75712ce204e2203a2957601436af2fec5f3a410"
+  },
+  "method": "Whole figures recovered from uneven generated rows; integer translations only, no resampling. Existing eye-only blink differences translated onto the recovered complete neutral. Original paintings retained in source_version.",
+  "outputs": {
+    "NE.png": "1fd46ab23ad3567ccc4b709c18cdaa25c2242416ba602e0197ebc812236aa5f3",
+    "NW.png": "e6d805b9bb29f008de9b1cab38b5a6dd380d51996201517a615f4b90edd8a345",
+    "SE.png": "8c193dd03fae4986f1a367ce0bffab0ac8000da175d5c9b30357dd5be7678133",
+    "SW.png": "518f3ae327882c81329a5d689925f96a573a193fb61fea85036f1d01f6d66fb2",
+    "blink-se.png": "bffc29a7275b7ea2d28258a08eb694a703557a7c3e5c2670b5421e0323fd1335",
+    "blink-sw.png": "a107391e84fc795b693b6b1f0cc566544fdc2bf3de3327879efffb11dbecd5b2",
+    "idle-se.png": "45557d01a04036974276737ec3eccd37c0f97b0f63f54363853e862998d18b5f"
+  },
+  "registrations": {
+    "NE": [
+      {
+        "destination": [
+          0,
+          13
+        ],
+        "source_rect": [
+          0,
+          31,
+          418,
+          395
+        ],
+        "vertical_translation": -18
+      },
+      {
+        "destination": [
+          418,
+          16
+        ],
+        "source_rect": [
+          418,
+          32,
+          418,
+          392
+        ],
+        "vertical_translation": -16
+      },
+      {
+        "destination": [
+          836,
+          13
+        ],
+        "source_rect": [
+          836,
+          32,
+          418,
+          395
+        ],
+        "vertical_translation": -19
+      },
+      {
+        "destination": [
+          0,
+          443
+        ],
+        "source_rect": [
+          0,
+          441,
+          418,
+          383
+        ],
+        "vertical_translation": 2
+      },
+      {
+        "destination": [
+          418,
+          443
+        ],
+        "source_rect": [
+          418,
+          442,
+          418,
+          383
+        ],
+        "vertical_translation": 1
+      },
+      {
+        "destination": [
+          836,
+          439
+        ],
+        "source_rect": [
+          836,
+          442,
+          418,
+          387
+        ],
+        "vertical_translation": -3
+      },
+      {
+        "destination": [
+          0,
+          866
+        ],
+        "source_rect": [
+          0,
+          836,
+          418,
+          378
+        ],
+        "vertical_translation": 30
+      },
+      {
+        "destination": [
+          418,
+          866
+        ],
+        "source_rect": [
+          418,
+          837,
+          418,
+          378
+        ],
+        "vertical_translation": 29
+      },
+      {
+        "destination": [
+          836,
+          865
+        ],
+        "source_rect": [
+          836,
+          838,
+          418,
+          379
+        ],
+        "vertical_translation": 27
+      }
+    ],
+    "SE": [
+      {
+        "destination": [
+          0,
+          19
+        ],
+        "source_rect": [
+          0,
+          28,
+          418,
+          389
+        ],
+        "vertical_translation": -9
+      },
+      {
+        "destination": [
+          418,
+          15
+        ],
+        "source_rect": [
+          418,
+          28,
+          418,
+          393
+        ],
+        "vertical_translation": -13
+      },
+      {
+        "destination": [
+          836,
+          15
+        ],
+        "source_rect": [
+          836,
+          28,
+          418,
+          393
+        ],
+        "vertical_translation": -13
+      },
+      {
+        "destination": [
+          0,
+          437
+        ],
+        "source_rect": [
+          0,
+          438,
+          418,
+          389
+        ],
+        "vertical_translation": -1
+      },
+      {
+        "destination": [
+          418,
+          438
+        ],
+        "source_rect": [
+          418,
+          439,
+          418,
+          388
+        ],
+        "vertical_translation": -1
+      },
+      {
+        "destination": [
+          836,
+          438
+        ],
+        "source_rect": [
+          836,
+          439,
+          418,
+          388
+        ],
+        "vertical_translation": -1
+      },
+      {
+        "destination": [
+          0,
+          858
+        ],
+        "source_rect": [
+          0,
+          841,
+          418,
+          386
+        ],
+        "vertical_translation": 17
+      },
+      {
+        "destination": [
+          418,
+          852
+        ],
+        "source_rect": [
+          418,
+          840,
+          418,
+          392
+        ],
+        "vertical_translation": 12
+      },
+      {
+        "destination": [
+          836,
+          854
+        ],
+        "source_rect": [
+          836,
+          837,
+          418,
+          390
+        ],
+        "vertical_translation": 17
+      }
+    ]
+  },
+  "source_adapter": "pipeline/reflow_cast_source.gd",
+  "source_adapter_sha256": "5ab55be15ec4de358a52c95d0d6379a9a6ff6e1eeb1ccef3166fdf43e707097a",
+  "source_version": "res://art/source/characters/iona/v1/"
+}

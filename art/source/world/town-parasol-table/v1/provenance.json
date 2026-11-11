@@ -1,0 +1,19 @@
+{
+  "asset": "town-parasol-table",
+  "date": "2026-10-29",
+  "reference": "docs/concept/v0.72/art/guildhall-square.png",
+  "authoring_record": "art/source/world/square-hub/v1/author_street.py",
+  "authoring_record_sha256": "d1f620e51796711061ea59d75f895d269efa1e1f00840d48f80a015e77250bb9",
+  "kit": "art/source/world/seaside-houses/v1/house_kit.py",
+  "kit_sha256": "724da2be608b59c97b706a51f99070233101483a65f9608cb24af16e5457868e",
+  "texture_library": "art/source/world/seaside-background-houses/v1/textures/library.json",
+  "authored_palette": {
+    "stone": "seaside_stone_limestone",
+    "roof": "seaside_roof_terracotta",
+    "ridge": "seaside_roof_terracotta",
+    "timber": "seaside_timber_oak",
+    "shutter": "seaside_shutter_teal",
+    "plaster": "seaside_plaster_cream"
+  },
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh."
+}

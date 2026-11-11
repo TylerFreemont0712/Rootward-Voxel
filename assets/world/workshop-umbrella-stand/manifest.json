@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "workshop-umbrella-stand",
+  "version": "v1",
+  "source": "art/source/world/workshop-umbrella-stand/v1/model.blend",
+  "source_sha256": "2b8c93835b56ae032a892c6b779d63e3b31f424a4f5861304655a35a636aabc8",
+  "runtime": "assets/world/workshop-umbrella-stand/model.glb",
+  "runtime_sha256": "8373f30be3d4e467f3f7cd1af2ec449d5b30b0a664478bf9a5f00a63d4aff82f",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.291999995708466,
+      0.0600000023841858,
+      -0.291999995708466,
+      0.291999995708466,
+      1.39097535610199,
+      0.291999995708466
+    ],
+    "geometry_sha256": "e0c4c7c2e140936e92236fe133bfb5c800f4ca0cf95aa7155a753d4f7f9ed604",
+    "material_records": {
+      "workshop_blue": {
+        "albedo": [
+          4078,
+          4902,
+          5412,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_ceramic": {
+        "albedo": [
+          7137,
+          6784,
+          5686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood_edge": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "workshop_blue",
+      "workshop_ceramic",
+      "workshop_wood_dark",
+      "workshop_wood_edge"
+    ],
+    "meshes": 4,
+    "triangles": 1118
+  }
+}

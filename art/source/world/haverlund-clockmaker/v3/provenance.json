@@ -1,0 +1,27 @@
+{
+  "asset": "haverlund-clockmaker",
+  "version": "v3",
+  "reference": "art/source/world/spindle-strip/v1/clockmaker-concept.png",
+  "reference_sha256": "8e655a870aad6531a1de680c84f75487af02b71a118f4626329461b990d82102",
+  "previous_source": "art/source/world/haverlund-clockmaker/v2/model.blend",
+  "previous_source_sha256": "bc6de77288fdf79779840390a39ba4215688c07f14ebebc902913a96fb660916",
+  "scope": "Two bounded source-edit passes plus material/export and actual-scale detail corrections; no imported building geometry. Current model.blend is authority.",
+  "records": [
+    "drain_finish.py",
+    "export_finish.py",
+    "finalize_material_roles.py",
+    "runtime_detail_finish.py",
+    "refine_frontage.py",
+    "edit_support.py",
+    "readability_finish.py",
+    "refine_structure.py",
+    "tone_finish.py"
+  ],
+  "font": "DejaVu Serif from local system; lettering converted to mesh.",
+  "material_sources": [
+    "art/source/world/textures/v2-detail/native/copper_patina.png",
+    "assets/world/textures/seaside-houses/detail/seaside_timber_oak.png"
+  ],
+  "delivery_source_sha256": "a2ae6a3d5281328e1eabe6c942f9d3fa4114c1d7abe40f241c02b53640d4aa37",
+  "previous_source_verified_against_request": "20261103T002002-e749f976"
+}

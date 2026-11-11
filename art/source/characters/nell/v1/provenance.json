@@ -1,0 +1,401 @@
+{
+  "anchor": [
+    192,
+    420
+  ],
+  "authoring_script_sha256": "da0722e4103a555fd4b6e71e63a3872e09d2ae882ad693e40de48eac38234187",
+  "blink_index": 9,
+  "cell_size": [
+    384,
+    448
+  ],
+  "directions": {
+    "ne": {
+      "key_rgba_sha256": [
+        "13af4105b815fb51a987a6df5780755dab1856d1ad46ee4a8184e019b292a2cb",
+        "6fa0b4c1ea569723b3e732a898f2a3a8ed912881955dbdd77023a7f7aa35f712",
+        "1c94cec658a9800926cc16de2e11cdca2957585ad0891970db08fddac7a43de6",
+        "b80350ac9e1a3334df0eba4550cc9fb0d1ccaa58c5a506ea9c0b656e15699802",
+        "9a40c8d2d4e999775f3e1bcf54c113318e5054b5b770075cbebfbb69df197777",
+        "b051c9064721783aa62e8a70ba46f16dfa159a3cb65b82021eb16aca0f145ce9",
+        "77be2fec1b287ebf7a66bb0b75cb7c981d951fbcb6737c1a1b2616eb240ac7ed",
+        "a8776d0f061f5e2b9f21969eba41132a6488adc03de37682d3ee93bcee25d0ea",
+        "597bd58d6d8e57d728c810bed70bf08ed501a5bab86ea62a938c73b066c6fac3"
+      ],
+      "row": 6,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/nell/v1/NE.png",
+          "source_pose": 0,
+          "translation": [
+            -29,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NE.png",
+          "source_pose": 1,
+          "translation": [
+            -19,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NE.png",
+          "source_pose": 2,
+          "translation": [
+            -29,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NE.png",
+          "source_pose": 3,
+          "translation": [
+            -29,
+            30
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NE.png",
+          "source_pose": 4,
+          "translation": [
+            -17,
+            30
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NE.png",
+          "source_pose": 5,
+          "translation": [
+            -29,
+            30
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NE.png",
+          "source_pose": 6,
+          "translation": [
+            -30,
+            50
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NE.png",
+          "source_pose": 7,
+          "translation": [
+            -18,
+            53
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NE.png",
+          "source_pose": 8,
+          "translation": [
+            -35,
+            44
+          ]
+        }
+      ]
+    },
+    "nw": {
+      "key_rgba_sha256": [
+        "d2b53f9e468e5b6af229fd199299dafab7e02de7978353826e4249194ed59ff6",
+        "35b7f566f62110b3d5d59a683878f54c38140cfe87087de7c9be1cc8878fd40d",
+        "03ed16a6dd49635df52060e41c68446907c6977b3345757818453f3fa75131b4",
+        "7833a931dd29599307c3edb289d3fd635975cf493c924d4fb9e0448d6ae3dd47",
+        "24a282c7d2de2501274447c777c0ac6d80b27d29b8671316499ec99d814333b7",
+        "ea1781abff7af06dc225c72401f1a3867b0bba191571d066b82748661c881e23",
+        "b386d946fb3efc103a7cfe65b8e78dc8292562e04e05527be238f5164a55f1b2",
+        "21c84fa870224022b53c28def4fe8873217106a842b95771482225b7a2c102e3",
+        "bf85ee28839b5526a6e28fa10743f48a990aaf6b7f79f50bbccd985c13e387c1"
+      ],
+      "row": 9,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/nell/v1/NW.png",
+          "source_pose": 0,
+          "translation": [
+            -4,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NW.png",
+          "source_pose": 1,
+          "translation": [
+            -15,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NW.png",
+          "source_pose": 2,
+          "translation": [
+            -4,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NW.png",
+          "source_pose": 3,
+          "translation": [
+            -4,
+            30
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NW.png",
+          "source_pose": 4,
+          "translation": [
+            -16,
+            30
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NW.png",
+          "source_pose": 5,
+          "translation": [
+            -4,
+            30
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NW.png",
+          "source_pose": 6,
+          "translation": [
+            -4,
+            50
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NW.png",
+          "source_pose": 7,
+          "translation": [
+            -16,
+            53
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/NW.png",
+          "source_pose": 8,
+          "translation": [
+            1,
+            44
+          ]
+        }
+      ]
+    },
+    "se": {
+      "key_rgba_sha256": [
+        "804e56dd4cd77955bab6242b8db8d0078ff8b950fa91ad0a510ecfd6f0c88060",
+        "062b44d3af44c25732434a3b784700626c335ac1722c9985ee5820634a29fc6d",
+        "f5d0b167a639cb591f64f636a8b2035089f8bb2528802094702a3d062b78dbd9",
+        "465bdad1f58b98484e4b917f6e3eb2d8b5437e5e81ae9f99b03407815bb6b5e0",
+        "6084d33a8544c6b4d017276017634e9b034da4280b3805f8e664d19adea39e28",
+        "e4bca5fca7804679f58e153e177ac225aa5e9b519dc4447bdea0b28d3456e26a",
+        "3620560d2233e3c614e33c38453e5446ff00813d317ed483f6e418c9462c4594",
+        "765cd448808f5b3e57f87bd3fd437c4b3a21d799e2c51575f7a604fa65db482a",
+        "07c737b7479a6046600b045895b505075697fb43d496b7d2c579199ba5bd3073",
+        "14ebc705d33355a97e65cd00b4c09eb85c5b3d8355ce79e1bb6dbbf8b3907f09"
+      ],
+      "row": 0,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/nell/v1/SE.png",
+          "source_pose": 0,
+          "translation": [
+            -24,
+            5
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SE.png",
+          "source_pose": 1,
+          "translation": [
+            -22,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SE.png",
+          "source_pose": 2,
+          "translation": [
+            -36,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SE.png",
+          "source_pose": 3,
+          "translation": [
+            -34,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SE.png",
+          "source_pose": 4,
+          "translation": [
+            -24,
+            17
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SE.png",
+          "source_pose": 5,
+          "translation": [
+            -39,
+            15
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SE.png",
+          "source_pose": 6,
+          "translation": [
+            -29,
+            35
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SE.png",
+          "source_pose": 7,
+          "translation": [
+            -25,
+            33
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SE.png",
+          "source_pose": 8,
+          "translation": [
+            -30,
+            37
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/blink-se.png",
+          "source_pose": 8,
+          "translation": [
+            -30,
+            37
+          ]
+        }
+      ]
+    },
+    "sw": {
+      "key_rgba_sha256": [
+        "11b77dcb698bd89d71d82cbd916c3a952c60cf524ddbfca8fea483aba6cd1712",
+        "0d2ea4deccce5b71b61e96e74278676c69d0d42a62351a59cb3ac746e2c27bd2",
+        "1b5b86526550f2ec41bcefc2e5e415ef9dad2311db19de51290f605ca72a5e20",
+        "b104f1394fb66f87954413fd8d9acc31cf2613a0343e0c8ba2151b74b8210d80",
+        "ed37333ed5847a002d1ef665a33a93d6d9d008808feb584fa5d84441c4779cd1",
+        "77721313767492fc0f87a8b0683d074acfcd5de41e544972236271465f8f9855",
+        "a798c2c908b11369dcc7c384a7a73a7675505a52c31cf1a6b473fb46fcb41979",
+        "211ef60487afc2589176ebfafeca245d5d1e8c489dffea3280ef1d4fff0e7774",
+        "c709ad6b1c937349cfecb34d1ebcd42198dbc725efab1db969f941273d1dbbde",
+        "5d9df0e4c813397d45a30bb043aa7f54f388a967e62ba3729788d0021b4d6f88"
+      ],
+      "row": 3,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/nell/v1/SW.png",
+          "source_pose": 0,
+          "translation": [
+            -9,
+            5
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SW.png",
+          "source_pose": 1,
+          "translation": [
+            -12,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SW.png",
+          "source_pose": 2,
+          "translation": [
+            3,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SW.png",
+          "source_pose": 3,
+          "translation": [
+            1,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SW.png",
+          "source_pose": 4,
+          "translation": [
+            -9,
+            17
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SW.png",
+          "source_pose": 5,
+          "translation": [
+            5,
+            15
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SW.png",
+          "source_pose": 6,
+          "translation": [
+            -4,
+            35
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SW.png",
+          "source_pose": 7,
+          "translation": [
+            -8,
+            33
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/SW.png",
+          "source_pose": 8,
+          "translation": [
+            -3,
+            37
+          ]
+        },
+        {
+          "source": "res://art/source/characters/nell/v1/blink-sw.png",
+          "source_pose": 8,
+          "translation": [
+            -3,
+            37
+          ]
+        }
+      ]
+    }
+  },
+  "grid": [
+    4,
+    12
+  ],
+  "idle_index": 8,
+  "method": "Approved eight-pose sheets plus neutral idle; integer translation only; eye-only blink patch",
+  "output_sha256": "d4bf4cc138caedb1d5e9d5f2c80302ef71a06210a9e245c60cdcdb70e3c01dc8",
+  "schema": 4,
+  "sources": {
+    "res://art/source/characters/nell/v1/NE.png": "62696657d5f233e6f659548f1a2330c175074781ce394d3d8ebc291a5ee5aa34",
+    "res://art/source/characters/nell/v1/NW.png": "bd3471a89cc1f753cec7487f6fe2a2062a9639a0679bdb5bb79d0dd62a9dc175",
+    "res://art/source/characters/nell/v1/SE.png": "54ab6fbf02cc002e1d99f4dda57e083139aa2a801885d0ef034de4e53508b0b9",
+    "res://art/source/characters/nell/v1/SW.png": "b6e9697e504f1e2339be55f2957707730bc6d35921f3cd01ae5511edc919466e",
+    "res://art/source/characters/nell/v1/blink-se.png": "89770ded734743bf54daf5110462e6534af65bb4c4e56c8823789bf515663873",
+    "res://art/source/characters/nell/v1/blink-sw.png": "ac5814f47e2144707088485a6a3e45efa5ba04270354976b3ef46d8ba7eb9bc1"
+  },
+  "walk_poses": 8
+}

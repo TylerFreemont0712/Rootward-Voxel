@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "file": "workbench-oak.png",
+      "prompt": "Use case: stylized-concept. Asset type: game material albedo painting for a cozy outlined 3D automaton workshop, landscape 1536x1024 opaque PNG. Primary request: one uninterrupted close-up flat top-down surface of aged warm honey-brown oak workbench wood, grain running horizontally, long broad quiet brush strokes, small restrained old dark oil marks and scuffs, rubbed edges implied only by grain wear, tiny muted dents, smooth painterly illustrated storybook finish. This is a flat texture for real modeled furniture, NOT an image of furniture. Balanced medium brown and ochre, no yellow saturation, very low contrast and even diffuse color across entire image. No objects, tools, joins, metal, nails, perspective, vignette, lighting, cast shadows, borders, text or watermark. Subtle crafted surface that remains calm when mapped to a small game prop.",
+      "sha256": "5f3bd820ff9612642d2d3076cc5d0c52a56454fec2683a0e4292701288d30aee",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "wool-plaid.png",
+      "prompt": "Use case: stylized-concept. Asset type: game material albedo painting for a cozy outlined 3D workshop armchair throw, landscape 1536x1024 opaque PNG. Primary request: flat top-down uninterrupted woven wool textile, warm muted moss green base with large ochre and rust orange plaid stripes, small cream cross lines, subtle hand-painted fiber texture and soft worn fabric character. Several broad plaid squares visible, balanced regular horizontal and vertical pattern that feels like an old blanket in a sunlit workshop. Not photorealistic, restrained storybook painting, low contrast, no cloth folds or shading because geometry supplies these. Fill the entire image with textile, no edges, tassels, furniture, background, objects, text, watermark, perspective, vignette or cast shadows.",
+      "sha256": "67f5c047b89025727e761b984bf4dc19142bed38965ef450c5864a4353bd8051",
+      "size": [
+        1536,
+        1024
+      ]
+    }
+  ],
+  "reference": "docs/concept/v0.7/art/4-opening/T7b-workshop-floor.png",
+  "reused_surfaces": {
+    "art/source/world/sparks-loft/v1/honey-oak-v2.png": "cb3c6636bc80daf17fa439198c6b2e8d69547fa814aad331a5f43d6f4dfe35e7",
+    "art/source/world/sparks-loft/v1/cream-plaster.png": "70d0b6ea1c8e56fb66674392ef0e5b5d6d486728a62a40b96ee72bbc78d47377",
+    "art/source/world/sparks-loft/v1/harbour-view.png": "2a1464d2f7c6aaf6bcf9e3293bd572625380107b1bbd4829d09bfeba84d35600",
+    "art/source/world/sparks-loft/v1/woven-rug.png": "803cd92f0ddffc5828451b0e1df378d8fb2822d7d834a1b7c1d12d47da0b9483"
+  }
+}

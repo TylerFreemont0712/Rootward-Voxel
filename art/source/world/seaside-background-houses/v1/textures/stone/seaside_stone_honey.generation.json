@@ -1,0 +1,21 @@
+{
+  "id": "seaside_stone_honey",
+  "title": "Honey sandstone",
+  "color": "soft honey sandstone, warm buff-gold with slightly lighter mortar, no saturated orange",
+  "family": "stone",
+  "tile": 1.5,
+  "roughness": 0.96,
+  "key": "house-texture-seaside_stone_honey",
+  "dest": "art/source/world/seaside-background-houses/v1/textures/stone/seaside_stone_honey.png",
+  "refs": [
+    "art/source/world/seaside-background-houses/v1/textures/stone/seaside_stone_limestone.png"
+  ],
+  "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling stone ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to soft honey sandstone, warm buff-gold with slightly lighter mortar, no saturated orange. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nRecolour the STONE faces while mortar stays a restrained neutral tone; keep the same four-course rectangular masonry pattern.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-b50e31b9-179d-4d78-b965-326f0fd46c25.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "b9e8bf05fd8a3b2267b7e2b910e0da8caf6f3de140dffae383197127ccfcebb5",
+  "reference_sha256": {
+    "art/source/world/seaside-background-houses/v1/textures/stone/seaside_stone_limestone.png": "cb8bd7f28ae3b0ec76285d4caacd821ca12d1998eb8d1565f9a3c0e8baaca4a4"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "asset": "workshop-shell",
+  "source": "art/source/world/workshop-shell/v1/model.blend",
+  "backup": "art/source/world/workshop-shell/v1/model.pre-plant-style.blend",
+  "before_sha256": "ec3b24237bbbb5c424e9db2ae9c3aed694facfd17b199acd73c5fc48c9aaf0f7",
+  "after_sha256": "4ac8fdecee0e7a290cd21c9d86b46296bdeb3645f48bb0ebdb6d79d8bc104fcd",
+  "objects": [
+    {
+      "object": "workshop_leaf",
+      "replaced_components": {
+        "leaf": 9
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "workshop_leaf_light",
+      "replaced_components": {
+        "leaf_light": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

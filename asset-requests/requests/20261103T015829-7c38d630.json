@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "id": "20261103T015829-7c38d630",
+  "kind": "update",
+  "title": "Update Pendulum & Pin · clockmaker",
+  "asset_type": "world model",
+  "status": "changes_requested",
+  "notes": "User requests another pass or two: current shop differs too much from the original clockmaker concept and has errors/inconsistencies. Compare art/source/world/spindle-strip/v1/clockmaker-concept.png against the actual model. Refine the saved master: curved bell roof and dormer, cornices/arch profiles, coherent glazing and display cases, readable clock/pendulum details, remove floating/clipping details. Preserve existing functional hinge, footprint, clock hands, room progress and empty interior. Preserve v2 and record two visual review passes; original authored model, no presets.",
+  "asset": {
+    "id": "haverlund-clockmaker",
+    "label": "Pendulum & Pin · clockmaker",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/haverlund-clockmaker/v2/model.blend",
+    "runtime": "assets/world/haverlund-clockmaker/model.glb",
+    "manifest": "assets/world/haverlund-clockmaker/manifest.json",
+    "catalog_notes": "Original model based on art/source/world/spindle-strip/v1/clockmaker-concept.png. Offset bell-roof clock tower, tall pendulum bay, recessed hinged entrance, curved clock display bays, standing-seam copper roof and curved dormer. No imported house/shop mesh. Retains rejected v1 source.",
+    "related_files": [
+      "art/source/world/haverlund-clockmaker/v2/README.md",
+      "art/source/world/haverlund-clockmaker/v2/author_original.py",
+      "art/source/world/haverlund-clockmaker/v2/copper-finish.json",
+      "art/source/world/haverlund-clockmaker/v2/copper_finish.py",
+      "art/source/world/haverlund-clockmaker/v2/detail-finish.json",
+      "art/source/world/haverlund-clockmaker/v2/detail_finish.py",
+      "art/source/world/haverlund-clockmaker/v2/provenance.json",
+      "art/source/world/spindle-strip/v1/clockmaker-concept.png"
+    ],
+    "usage_files": [
+      "content/areas/archive/haverlund-square-v5.json",
+      "content/areas/haverlund-square.json",
+      "content/development/layouts/haverlund-square.json",
+      "content/development/spindle-strip-plan.json"
+    ],
+    "catalog_entry": {
+      "version": "v2",
+      "authority": "blender",
+      "status": "authored",
+      "label": "Pendulum & Pin · clockmaker",
+      "source": "art/source/world/haverlund-clockmaker/v2/model.blend",
+      "runtime": "assets/world/haverlund-clockmaker/model.glb",
+      "pivot": "Footprint centre, front Blender -Y",
+      "logical_footprint": [
+        -3.8,
+        -2.85,
+        7.6,
+        5.6
+      ],
+      "illustrated_edges": true,
+      "notes": "Original model based on art/source/world/spindle-strip/v1/clockmaker-concept.png. Offset bell-roof clock tower, tall pendulum bay, recessed hinged entrance, curved clock display bays, standing-seam copper roof and curved dormer. No imported house/shop mesh. Retains rejected v1 source.",
+      "behavior": "Semantic door_leaf_clockmaker hinge and shared-time clock hands. Interior remains a separate cleared shell."
+    }
+  },
+  "references": [],
+  "created": "2026-11-03T01:58:29+00:00",
+  "updated": "2026-11-03T17:10:36+00:00",
+  "history": [
+    {
+      "at": "2026-11-03T01:58:29+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-03T01:58:29+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-03T02:54:54+00:00",
+      "action": "finish"
+    },
+    {
+      "at": "2026-11-03T17:10:36+00:00",
+      "action": "Further changes requested: 20261103T171036-83042da5"
+    }
+  ],
+  "result": {
+    "assets": [
+      "haverlund-clockmaker"
+    ],
+    "summary": "Two saved-master refinement passes toward the original concept: curved bell cap/dormer, fitted aged-copper roof, aligned front/rear openings, clear glazed displays with supported clocks, corrected pipe connections, serif cornices and source material roles. Existing hinge, footprint, shared-time hands, cleared room and saved progress retained. Normal build 31 meshes/64357 triangles; full suite, 65 final model checks, 18 native door/save checks, 969 world-view checks and 68-fixture lighting audit passed.",
+    "review": "pipeline/reviews/2026-11-03-clockmaker-refinement.md",
+    "contexts": [
+      {
+        "id": "haverlund-clockmaker",
+        "label": "Pendulum & Pin · clockmaker",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-clockmaker/v3/model.blend",
+        "runtime": "assets/world/haverlund-clockmaker/model.glb",
+        "manifest": "assets/world/haverlund-clockmaker/manifest.json",
+        "catalog_notes": "Two deliberate refinement passes on the retained v2 master toward the original concept. Curved bell cap and dormer, fitted copper roof, arched casements aligned to actual openings, bowed glazed display cases with supported mantel/pocket clocks, serif fascia, corrected rear door and anchored pipes. Lamp glass is separate from clear glazing. Footprint, working entrance and shared-time hand pivots retained.",
+        "related_files": [
+          "art/source/world/haverlund-clockmaker/v3/README.md",
+          "art/source/world/haverlund-clockmaker/v3/drain_finish.json",
+          "art/source/world/haverlund-clockmaker/v3/drain_finish.py",
+          "art/source/world/haverlund-clockmaker/v3/edit_support.py",
+          "art/source/world/haverlund-clockmaker/v3/export_finish.json",
+          "art/source/world/haverlund-clockmaker/v3/export_finish.py",
+          "art/source/world/haverlund-clockmaker/v3/finalize_material_roles.json",
+          "art/source/world/haverlund-clockmaker/v3/finalize_material_roles.py",
+          "art/source/world/haverlund-clockmaker/v3/font-copyright.txt",
+          "art/source/world/haverlund-clockmaker/v3/provenance.json",
+          "art/source/world/haverlund-clockmaker/v3/readability_finish.json",
+          "art/source/world/haverlund-clockmaker/v3/readability_finish.py",
+          "art/source/world/haverlund-clockmaker/v3/refine_frontage.json",
+          "art/source/world/haverlund-clockmaker/v3/refine_frontage.py",
+          "art/source/world/haverlund-clockmaker/v3/refine_structure.json",
+          "art/source/world/haverlund-clockmaker/v3/refine_structure.py",
+          "art/source/world/haverlund-clockmaker/v3/runtime_detail_finish.json",
+          "art/source/world/haverlund-clockmaker/v3/runtime_detail_finish.py",
+          "art/source/world/haverlund-clockmaker/v3/tone_finish.json",
+          "art/source/world/haverlund-clockmaker/v3/tone_finish.py"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-square-v5.json",
+          "content/areas/haverlund-square.json",
+          "content/development/layouts/haverlund-square.json",
+          "content/development/spindle-strip-plan.json"
+        ],
+        "catalog_entry": {
+          "version": "v3",
+          "authority": "blender",
+          "status": "authored",
+          "label": "Pendulum & Pin · clockmaker",
+          "source": "art/source/world/haverlund-clockmaker/v3/model.blend",
+          "runtime": "assets/world/haverlund-clockmaker/model.glb",
+          "pivot": "Footprint centre, front Blender -Y",
+          "logical_footprint": [
+            -3.8,
+            -2.85,
+            7.6,
+            5.6
+          ],
+          "illustrated_edges": true,
+          "notes": "Two deliberate refinement passes on the retained v2 master toward the original concept. Curved bell cap and dormer, fitted copper roof, arched casements aligned to actual openings, bowed glazed display cases with supported mantel/pocket clocks, serif fascia, corrected rear door and anchored pipes. Lamp glass is separate from clear glazing. Footprint, working entrance and shared-time hand pivots retained.",
+          "behavior": "Semantic door_leaf_clockmaker hinge and shared-time clock hands. Interior remains a separate cleared shell."
+        }
+      }
+    ],
+    "fingerprints": {
+      "haverlund-clockmaker": {
+        "source": "a2ae6a3d5281328e1eabe6c942f9d3fa4114c1d7abe40f241c02b53640d4aa37",
+        "runtime": "585569ffbf8a4e1f96442788b2112f674706ecf3f8e4f7180e4e6c81e07094bb",
+        "entry": "f0b1020081a05f2f9ef15295ad43b5d18ca9d7b024c0635d5ab330d2f63f073f"
+      }
+    }
+  }
+}

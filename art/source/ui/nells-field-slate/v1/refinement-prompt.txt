@@ -1,0 +1,10 @@
+Use case: precise-object-edit.
+Edit the provided slate image. Preserve its painterly cream enamel, teal rim, brass bead, four brass corner guards with two rivets each, top-left brass jack socket and unlit indicator lamp. Keep the same strictly straight-on front view and exact 1024x1536 canvas.
+
+Correct the frame geometry for a nine-slice UI asset. The top border in the current image is too deep and the bottom border is too deep. The left, right AND TOP border must each be approximately 72 pixels thick; the bottom ledge must be approximately 184 pixels deep. Outer casing bounds stay x16..1008 and y16..1520. Enlarge/move the black window to these exact approximate inner bounds: x88..936, y88..1336. Window corners slightly rounded; long window edges perfectly straight. Make the top-left jack and unlit indicator smaller so they fit wholly into that narrow 72px top strip; do not deepen the top strip to accommodate them. Keep corner guards appropriately compact. Keep the deeper bottom ledge blank cream enamel with one faint pressed horizontal groove. No buttons or writing.
+
+The screen interior MUST be a flat digital fill: UNIFORM PURE BLACK RGB(0,0,0) with alpha255. No painted texture, noise, variation, gradient, reflections, highlights, glossy sheen or translucent pixels inside the screen. Paint shading only onto the surrounding casing and bevel. The large black screen must read as a crisp-edged solid black UI placeholder, not a natural glass material.
+
+Keep long edges plain and even for stretching; restrict gentle wear to corners, with only one tiny chip near a corner guard. Remove scattered chips from straight edges.
+Preserve TRUE alpha transparency outside the casing and in the outer rounded corners. No halo, shadow, glow or background, no navy backdrop, no checkerboard. Only the exterior background is transparent; the screen and body are opaque.
+No text, logo, controls, keys, cameras, modern phone features, perspective or tilt.

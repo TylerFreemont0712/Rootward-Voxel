@@ -1,0 +1,21 @@
+{
+  "id": "seaside_shutter_sage",
+  "title": "Sage painted boards",
+  "color": "soft muted sage green, gently sun-faded",
+  "family": "shutter",
+  "tile": 0.8,
+  "roughness": 0.92,
+  "key": "house-texture-seaside_shutter_sage",
+  "dest": "art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_sage.png",
+  "refs": [
+    "art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_teal.png"
+  ],
+  "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling shutter ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to soft muted sage green, gently sun-faded. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nRecolour only the PAINT: exposed worn wood remains natural warm wood, seam cavities stay dark neutral and the vertical board spacing is unchanged.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-8a021e72-c972-4c1d-b064-a98ba3986cbf.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "78a7a355c00f50e6d2df9faf01acf19882cdc14c67bfecd58950c24c96e96eca",
+  "reference_sha256": {
+    "art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_teal.png": "630425765f9473b720ee5d213ac183fcd2a7908b1fac2f4fb9398b066605ea7e"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "materials": [
+    {
+      "id": "clockshop_parquet",
+      "source": "art/source/world/clockshop-interior/v1/textures/clockshop_parquet.png",
+      "roughness": 0.78,
+      "tile": 2.4
+    }
+  ]
+}

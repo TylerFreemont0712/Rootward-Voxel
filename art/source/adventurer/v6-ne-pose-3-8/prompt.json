@@ -1,0 +1,44 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-23",
+  "target": "assets/characters/DriectionCheck/NE.png",
+  "user_request": "Correct pose 3: right leg forward, left arm forward and out of view. Switch pose 8 legs and lower the advancing leg for the approaching foot plant.",
+  "passes": [
+    {
+      "image": "generated-pass-1.png",
+      "prompt": "Use case: precise-object-edit.\nEdit target: the attached NE.png transparent 3-by-3 sprite sheet. It has nine poses numbered LEFT TO RIGHT, TOP TO BOTTOM: 1,2,3 / 4,5,6 / 7,8,9.\nMake ONLY the following two local pose corrections:\nPOSE 3 = TOP RIGHT cell: the current arms and legs are reversed. Swap the leg phases so the CHARACTER'S RIGHT LEG steps FORWARD, leading in the travel direction (away from viewer toward upper right). The right knee/boot must reach ahead, while the LEFT leg is trailing behind. Swap the arm swing too: the CHARACTER'S LEFT ARM swings FORWARD on the far side of the body, OCCLUDED and OUT OF VIEW behind the torso; the RIGHT ARM swings BACK and is visible on the near side. Do not keep the currently forward/visible left arm or the currently reversed leg roles. Preserve the rear-right three-quarter torso and head; do not turn or mirror the whole sprite.\nPOSE 8 = BOTTOM MIDDLE cell: SWITCH the two legs' roles relative to the current pose. The currently lifted boot on the screen-left side must become the planted support leg, and the opposite leg must be swinging forward to take the next step. LOWER the advancing boot so it is just above the ground, about to PLANT, with less sole showing and a softer knee bend; this is the last recovery/pre-contact drawing, not a high-knee lift. Keep the arms, upper body and head in this cell unchanged.\nEverything else is locked: poses 1,2,4,5,6,7,9 remain EXACTLY unchanged. Keep the same exact hair silhouette, face/ear, short chibi proportions, teal tunic, cream cuffs/hem, yellow scarf, brown belt/trousers/cuffed boots, painted shading and restrained dark outlines. Preserve each sprite's original placement, scale, 3x3 regular cell boundaries and overall 1254 by 1254 canvas. Keep all nine sprites facing NE/rear-right. No new props, labels, numbers, grid lines, floor or shadows. Preserve the real transparent RGBA background. Do not redraw the sheet or change the unedited poses."
+    },
+    {
+      "image": "generated-pass-2.png",
+      "prompt": "Use case: precise-object-edit.\nEdit this exact 3x3 NE sprite sheet, keeping its 1254x1254 layout and real transparency. Numbering is 1,2,3 / 4,5,6 / 7,8,9.\nOnly edit TWO cells, TOP RIGHT (pose 3) and BOTTOM MIDDLE (pose 8). All other cells and every head/hair/face/torso are locked.\nPOSE 3 TOP RIGHT: SWAP THE VISIBLE LEG SILHOUETTES. In the current cell the large extended boot is on SCREEN LEFT and the bent leg/boot is on SCREEN RIGHT. Reverse that: make the large extended advancing RIGHT leg/boot on SCREEN RIGHT, low and in front; put the LEFT leg/boot on SCREEN LEFT, bent back and behind. The legs must attach to the correct hip, with the RIGHT leg leading and LEFT leg trailing. It must clearly be the opposite foot from the current pose, not a tiny change of the same boots.\nPOSE 3 arms: character's LEFT ARM (far arm, screen-left shoulder) swings forward away from viewer and is OCCLUDED behind the torso, out of view. Character's RIGHT ARM (near arm on SCREEN RIGHT) swings BACK toward the viewer and is the visible arm, beside the tunic, with cream cuff and hand visible on SCREEN RIGHT. Do not leave the far arm visible on screen left or hide the near right arm. Preserve the rear-right NE head and tunic orientation.\nPOSE 8 BOTTOM MIDDLE: keep the switched leg arrangement: LEFT boot planted and supporting on SCREEN LEFT, RIGHT leg advancing on SCREEN RIGHT. LOWER the advancing SCREEN RIGHT boot: its bottom should be only about 5 pixels above the left planted boot's ground baseline. Straighten its knee a little; toe points along the step, ready to plant. It must NOT remain bent up high behind the body. The left support boot stays flat. Arms/torso/head in pose 8 stay unchanged.\nAll other poses must remain exactly as in the input. Preserve original short chibi proportions, hair/face, teal tunic, cream cuffs and hem, yellow scarf, belt, brown trousers/boots, painted shading, outline, scale and placement. Do not mirror a head or rotate a torso. No numbers, grid, background, floor or shadows. Transparent RGBA."
+    }
+  ],
+  "assembly": {
+    "base": "before.png",
+    "edited_source": "generated-pass-2.png",
+    "copy_regions": [
+      [
+        836,
+        208,
+        418,
+        210
+      ],
+      [
+        418,
+        1084,
+        418,
+        170
+      ]
+    ],
+    "restore_from_original": [
+      [
+        656,
+        1026,
+        58,
+        72
+      ]
+    ],
+    "method": "Godot Image.blit_rect; no resampling or mirroring; retain all other original pixels"
+  },
+  "status": "User-directed NE review edit; no runtime selection change"
+}

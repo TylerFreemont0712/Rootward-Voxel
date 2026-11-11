@@ -1,0 +1,384 @@
+{
+  "schema": 1,
+  "note": "Build shelf: buildings, props and authored trees name world-catalog assets; procedural trees carry a size. Doodads are loose props with no door: a prop whose asset has a catalog footprint blocks movement, one without does not. Studio-only scenery candidates can be placed without changing the shipped area. Policies control catalog access and object allowances; appearance paint is unlimited.",
+  "categories": [
+    {
+      "id": "furniture",
+      "title": "Furniture",
+      "blurb": "Carved cottage furniture and useful household pieces"
+    },
+    {
+      "id": "workshop",
+      "title": "Workshop",
+      "blurb": "Tools, craft benches and working machines"
+    },
+    {
+      "id": "garden",
+      "title": "Garden",
+      "blurb": "Garden, farmyard and animal shelters"
+    },
+    {
+      "id": "walls",
+      "title": "Walls",
+      "blurb": "Walls, balustrades and railings drawn along the grid; piers join their corners"
+    }
+  ],
+  "policies": {
+    "studio": {
+      "title": "Studio",
+      "audience": [
+        "player",
+        "studio"
+      ],
+      "limits": {}
+    },
+    "player": {
+      "title": "Villager",
+      "audience": [
+        "player"
+      ],
+      "limits": {
+        "building": 8,
+        "tree": 40
+      }
+    }
+  },
+  "items": [
+    {
+      "id": "hollow-rain-barrel",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "hollow-rain-barrel",
+      "title": "Rain Barrel",
+      "blurb": "A banded barrel with a copper downpipe, lid and brass garden tap.",
+      "audience": "studio"
+    },
+    {
+      "id": "town-railing",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "town-railing",
+      "title": "Iron railing bay, 2 m",
+      "blurb": "Reusable town barrier. Rotate to join bays; its catalog footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "town-railing-short",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "town-railing-short",
+      "title": "Iron railing bay, 1 m",
+      "blurb": "Reusable town barrier. Rotate to join bays; its catalog footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "town-railing-post",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "town-railing-post",
+      "title": "Iron railing post",
+      "blurb": "Reusable town barrier. Rotate to join bays; its catalog footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "town-garden-wall",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "town-garden-wall",
+      "title": "Garden wall bay, 3 m",
+      "blurb": "Reusable town barrier. Rotate to join bays; its catalog footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "town-garden-wall-short",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "town-garden-wall-short",
+      "title": "Garden wall bay, 1.5 m",
+      "blurb": "Reusable town barrier. Rotate to join bays; its catalog footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "town-garden-pier",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "town-garden-pier",
+      "title": "Garden wall pier",
+      "blurb": "Reusable town barrier. Rotate to join bays; its catalog footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "town-balustrade",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "town-balustrade",
+      "title": "Stone balustrade bay, 3 m",
+      "blurb": "Reusable town barrier. Rotate to join bays; its catalog footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "town-balustrade-pier",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "town-balustrade-pier",
+      "title": "Balustrade pier",
+      "blurb": "Reusable town barrier. Rotate to join bays; its catalog footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "town-retaining-wall",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "town-retaining-wall",
+      "title": "Limestone retaining wall · 3 m",
+      "blurb": "Reusable town barrier. Rotate to join bays; its catalog footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "lane-tree",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "lane-tree",
+      "title": "Town garden tree",
+      "blurb": "Place, move or turn this park piece. Its footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "lane-cypress",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "lane-cypress",
+      "title": "Town cypress",
+      "blurb": "Place, move or turn this park piece. Its footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "lane-bench",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "lane-bench",
+      "title": "Town park bench",
+      "blurb": "Place, move or turn this park piece. Its footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "lane-planter",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "lane-planter",
+      "title": "Town planter",
+      "blurb": "Place, move or turn this park piece. Its footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "town-fountain",
+      "category": "garden",
+      "kind": "prop",
+      "asset": "town-fountain",
+      "title": "Town fountain",
+      "blurb": "Place, move or turn this park piece. Its footprint blocks passage.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-longcase",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "clockshop-longcase",
+      "title": "Walnut longcase clock",
+      "blurb": "Reusable clockmaker furnishing with an authored footprint.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-display-counter",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "clockshop-display-counter",
+      "title": "Glazed clock display counter",
+      "blurb": "Reusable clockmaker furnishing with an authored footprint.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-repair-bench",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "clockshop-repair-bench",
+      "title": "Clockmaker repair bench",
+      "blurb": "Reusable clockmaker furnishing with an authored footprint.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-parts-cabinet",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "clockshop-parts-cabinet",
+      "title": "Labelled clockwork drawers",
+      "blurb": "Reusable clockmaker furnishing with an authored footprint.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-clockwork-tray",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "clockshop-clockwork-tray",
+      "title": "Loose clockwork parts tray",
+      "blurb": "Reusable clockmaker furnishing with an authored footprint.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-mantel-clock",
+      "category": "furniture",
+      "kind": "prop",
+      "asset": "clockshop-mantel-clock",
+      "title": "Arched walnut mantel clock",
+      "blurb": "Reusable clockmaker furnishing with an authored footprint.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-display-plinth",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-display-plinth",
+      "title": "Brass-inlaid curio plinth",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-orrery",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-orrery",
+      "title": "Geared planetary orrery",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-watch-cabinet",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-watch-cabinet",
+      "title": "Pocket-watch cabinet",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-spring-winder",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-spring-winder",
+      "title": "Mainspring winding tool",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-pendulum-rack",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-pendulum-rack",
+      "title": "Pendulum regulation rack",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-blueprint-board",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-blueprint-board",
+      "title": "Escapement drawing board",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-service-shelf",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-service-shelf",
+      "title": "Clockmaker service cabinet",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-oil-and-tools",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-oil-and-tools",
+      "title": "Clock oils and cleaning brushes",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-ledger-set",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-ledger-set",
+      "title": "Open repair ledger and manuals",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-clock-crates",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-clock-crates",
+      "title": "Wrapped clock delivery crate",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-stool",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-stool",
+      "title": "Padded watchmaker stool",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-wall-shelf",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-wall-shelf",
+      "title": "Brass-bracket display shelf",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "clockshop-cuckoo-clock",
+      "category": "workshop",
+      "kind": "prop",
+      "asset": "clockshop-cuckoo-clock",
+      "title": "Carved cuckoo wall clock",
+      "blurb": "Original reusable clockmaker curio. Room documents can place it on a bench, shelf or wall.",
+      "audience": "studio"
+    },
+    {
+      "id": "wall-garden",
+      "category": "walls",
+      "kind": "wall",
+      "style": "garden",
+      "asset": "town-garden-wall",
+      "title": "Garden wall",
+      "blurb": "Limestone garden wall. Drag along the grid; piers stand at its ends, corners and joins.",
+      "audience": "studio"
+    },
+    {
+      "id": "wall-balustrade",
+      "category": "walls",
+      "kind": "wall",
+      "style": "balustrade",
+      "asset": "town-balustrade",
+      "title": "Balustrade",
+      "blurb": "Stone balustrade for terrace edges. Drag along the grid; piers join its corners.",
+      "audience": "studio"
+    },
+    {
+      "id": "wall-railing",
+      "category": "walls",
+      "kind": "wall",
+      "style": "railing",
+      "asset": "town-railing",
+      "title": "Iron railing",
+      "blurb": "Painted iron railing. Drag along the grid; posts stand at its ends and corners.",
+      "audience": "studio"
+    }
+  ]
+}

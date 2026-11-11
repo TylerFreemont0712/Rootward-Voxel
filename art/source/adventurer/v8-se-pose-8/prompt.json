@@ -1,0 +1,66 @@
+{
+  "tool": "built-in image_gen",
+  "use_case": "precise-object-edit",
+  "original": "before.png",
+  "layout": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "grid": [
+      3,
+      3
+    ],
+    "cell": [
+      418,
+      418
+    ],
+    "order": "left-to-right, top-to-bottom",
+    "changed_pose": 8
+  },
+  "attempts": [
+    {
+      "pass": 1,
+      "prompt": "Use case: precise-object-edit.\nAsset type: one transparent painted sprite animation key, pose 8 of an existing southeast walk.\nInput image 1 is the EDIT TARGET, not a style suggestion. It is an exact crop of pose 8.\nPrimary request: SWAP WHICH LEG IS IN FRONT AND WHICH LEG IS BEHIND. Keep the head, torso, arms, hair, face, scarf, tunic, belt, hands, camera angle, scale, placement and all pixels above the ivory tunic hem unchanged. ONLY REDRAW THE TROUSERS AND BOOTS BELOW THE HEM.\nThe current near leg (originating on viewer LEFT at the hip) is straight and planted in the foreground; the far leg (originating on viewer RIGHT at the hip) bends back with its raised boot behind the other leg. REVERSE THIS: bend the NEAR leg backward, with its boot lifted behind on viewer LEFT; extend the FAR leg downward and slightly forward toward viewer RIGHT, with that far boot planted on the same original ground baseline. Show two legs and two boots only, anatomically connected to the correct opposite hips. The near leg must now be the bent raised leg, and the far leg must now be the extended supporting leg. Do not simply move the same supporting boot. This is the opposite-leg passing pose needed to complete a walk cycle.\nPreserve the original short chibi limb proportions, painted brown trousers, cuffed brown boots, thick restrained outline, warm shading, face and outfit. Keep the forward-swinging arm exactly as shown, crossing in front of the torso. The whole character must keep facing southeast/front-right three-quarter. Never mirror the upper body or change the viewing angle. Keep the same head size, head position, tunic hem position and original canvas registration.\nGenuine transparent RGBA background, no background color, checkerboard, floor, cast shadow, text or watermark. This is a tiny lower-body correction to the provided drawing, not a redesign.",
+      "inputs": [
+        "before-pose-8.png"
+      ],
+      "output": "generated-pass-1.png",
+      "selected": false,
+      "review": "Retained wrong leading leg."
+    },
+    {
+      "pass": 2,
+      "prompt": "Use case: precise-object-edit.\nImage 1 is the exact painted sprite to EDIT. Image 2 is a strict LEG POSE GUIDE ONLY. Keep image 1's head, entire upper body and crossing arm. Change ONLY the two legs and boots to the pose in image 2.\nTHE CURRENT LEADING LEG IN IMAGE 1 IS WRONG. The large leg attached to the hip on image-left currently crosses in FRONT and goes to the grounded boot. Switch the leg order: the leg attached to the hip on IMAGE-RIGHT must now be the VISIBLE FRONT SUPPORT LEG, extending down to the boot at the lower right. The leg attached to the hip on IMAGE-LEFT must trail behind to the left. At the crotch, reverse which thigh overlaps: the thin leg currently hidden BEHIND on image-right must come IN FRONT. The large thigh currently in front must go BEHIND.\nCopy the exact lower-body gesture from image 2: the darker far leg on IMAGE-RIGHT is in front, almost straight, supporting the character with the toe toward SCREEN RIGHT; the lighter near leg on IMAGE-LEFT is slightly bent and trails BEHIND, with its heel lifted and boot close behind the support boot. This is a narrow passing stance, NOT a wide contact stride or a high running kick. Two boots low and close together. This is the opposite-foot pose from image 1, not a redraw of image 1's current legs.\nUse image 1's short chibi proportions, brown trousers and cuffed brown boots; do not copy the mannequin's long limbs, pixel art, colors, background or text. Original painted style, exact southeast front-right three-quarter facing, head and body placement and ground baseline. Keep image 1's face, head, hair, arms, hands, teal tunic, yellow scarf, belt and ivory hem UNCHANGED. Genuine transparent RGBA. No text, background, checkerboard, floor or shadow.",
+      "inputs": [
+        "before-pose-8.png",
+        "../../templates/supernova-isometric/se-guide.png, cell 8"
+      ],
+      "output": "generated-pass-2.png",
+      "selected": false,
+      "review": "Retained wrong leading leg."
+    },
+    {
+      "pass": 3,
+      "prompt": "Edit image 1, changing only its legs. Keep image 1's head, torso and arms exactly as they are. Replace its legs with the OPPOSITE leg arrangement shown in image 2. Image 2 shows the correct supporting leg and raised leg: its LEFT-OF-IMAGE leg bends back and raises its boot at image-left, while its RIGHT-OF-IMAGE leg supports the body with the boot low at image-right. Use image 2's hip attachments, leg overlap and boot positions as the reference for image 1's new legs. Image 1 currently has the wrong thigh crossing in front: remove that crossing thigh completely and replace the whole pair of legs. The near thigh on the left should bend BACKWARDS to the raised left boot; the far thigh on the right should go directly DOWN to the right supporting boot. Keep the two thighs separated rather than having the left thigh cross rightward over the right leg. Do not retain image 1's current big foreground thigh. Copy image 2's leg structure, with the legs brought closer together because this is the next passing pose. The right-hand supporting leg is more vertical beneath the right hip, and the left bent-back boot is lowered close behind the supporting boot. Keep image 1's painted short chibi proportions, exact costume and southeast front-right facing. No changes above the tunic hem. Same character placement and scale as image 1. Transparent RGBA background.",
+      "inputs": [
+        "before-pose-8.png",
+        "pose-7-reference.png"
+      ],
+      "output": "generated-pass-3.png",
+      "selected": false,
+      "review": "Retained wrong leading leg."
+    },
+    {
+      "pass": 4,
+      "prompt": "Edit this exact painted sprite. Keep the head, arms, body, tunic and the current LEFT/RIGHT LEG IDENTITY. This is the correct leading leg: KEEP THE LEG ON IMAGE-RIGHT AS THE STRAIGHT SUPPORTING LEG, and KEEP THE LEG ON IMAGE-LEFT BENT BACKWARDS. Make only a small walking-animation change: bring both knees and boots closer together into a narrow passing stance. Move the image-right planted boot inward underneath the right hip instead of stretched outward to the right. Keep the image-left leg bent back, but lower its raised boot closer to the floor behind and to the left of the planted boot. The original wide stride should become a narrow passing pose with the opposite knee still bent back. The left knee remains in front of the left raised boot, and the right knee above the right planted boot. NO crossing the left thigh over the right thigh. Do not swap which leg is forward. Same short chibi leg length, brown trousers and brown cuffed boots, exact character design and painted art. Same southeast/front-right camera angle. Transparent RGBA background, same scale and placement. Do not change anything above the tunic hem.",
+      "inputs": [
+        "pose-7-reference.png"
+      ],
+      "output": "generated-pass-4.png",
+      "selected": true,
+      "review": "Correct leg order; lower-body pixels selected, upper body excluded."
+    }
+  ],
+  "assembly": "assembly.gd.txt; lower body only, original head/torso/arms retained exactly"
+}

@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "asset": "town-bike-rack",
+  "version": "v1",
+  "source": "art/source/world/town-bike-rack/v1/model.blend",
+  "source_sha256": "3b38d4f53ac4d90953dbc5f8b6cf8222ad4f425660fc9920d93f760414fc3e62",
+  "runtime": "assets/world/town-bike-rack/model.glb",
+  "runtime_sha256": "de3ac56a424fc43e938e01a1e401eda298823c441bf9ae0275780e6c42a88821",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.20000004768372,
+      0.0,
+      -0.224999994039536,
+      1.20000004768372,
+      0.831729173660278,
+      0.224999994039536
+    ],
+    "geometry_sha256": "3ca05b0d5fae0ae9916fb4e5056fddcea6dbf18e6922daec63c12b74503b1ffc",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      }
+    },
+    "materials": [
+      "house_paint",
+      "seaside_stone"
+    ],
+    "meshes": 2,
+    "triangles": 1004
+  }
+}

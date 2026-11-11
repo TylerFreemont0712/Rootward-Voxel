@@ -1,0 +1,356 @@
+{
+  "schema": 1,
+  "area": "haverlund-square",
+  "quests": [
+    {
+      "id": "band-seats",
+      "title": "Seats for the band",
+      "after": [
+        "after-the-light"
+      ],
+      "unlocks": [
+        "read",
+        "turn"
+      ],
+      "concept": "Reading objects, comparing numbers, if and else",
+      "summary": "Public Works ticket: the town band plays round the Rootwell on Saturday. The benches along the promenade and the east edge face out of the square. Turn them to face the Rootwell. Work payment: 20 p.",
+      "goal": {
+        "type": "doodads_face_point",
+        "at": [
+          58,
+          24
+        ],
+        "noun": "benches facing the Rootwell",
+        "ids": [
+          "bench-promenade-1",
+          "bench-promenade-2",
+          "bench-promenade-3",
+          "bench-promenade-4",
+          "bench-east-1",
+          "bench-east-2",
+          "bench-east-3"
+        ]
+      },
+      "access": {
+        "kind": "zone",
+        "id": "rootward-square"
+      },
+      "focus": {
+        "at": [
+          51,
+          16
+        ]
+      },
+      "lesson": [
+        "Jack your slate into the square's service screen. Your code reaches what stands in the places you've walked through, and anything within twelve cells of you.",
+        "world.doodads is a list of the square's movable things. Each has an id, a kind (\"lane-bench\" for a bench) and at, its position as [x, y]. at[0] is x, at[1] is y.",
+        "The promenade benches stand along the front, where y is below 2; they need to face \"north\". The east benches stand by the east railing, where x is over 85; they need to face \"west\".",
+        "< and > compare numbers. elif adds a second condition that is checked only when the first was False. bench.face(\"north\") turns a bench on the spot.",
+        "Leave the other benches alone: the seats round the Rootwell already face it."
+      ],
+      "starter": [
+        "# band_seats.py",
+        "# Public Works: turn the promenade and east-edge benches toward the Rootwell.",
+        "",
+        "def program(world):",
+        "    for thing in world.doodads:",
+        "        if thing.kind == \"lane-bench\":",
+        "            print(thing.id, thing.at)",
+        "            # TODO: x over 85 faces west; y under 2 faces north."
+      ],
+      "hints": [
+        "Run the starter first: it lists every bench and where it stands.",
+        "Inside the if: if thing.at[0] > 85: thing.face(\"west\"), then elif thing.at[1] < 2: thing.face(\"north\")."
+      ],
+      "done": "Seven benches face the Rootwell. Public Works has booked the band for Saturday."
+    },
+    {
+      "id": "room-on-the-walk",
+      "title": "Room on the walk",
+      "requires": [
+        "band-seats"
+      ],
+      "unlocks": [
+        "move"
+      ],
+      "concept": "range and arithmetic",
+      "summary": "Spindle Walk has a gap in the middle where a bench was borrowed for the physic garden. Public Works wants the four that are left six metres apart, starting at y 21. Work payment: 16 p.",
+      "goal": {
+        "type": "doodads_at",
+        "noun": "benches spaced",
+        "targets": [
+          {
+            "id": "walk-bench-0",
+            "at": [
+              25.9,
+              21
+            ]
+          },
+          {
+            "id": "walk-bench-1",
+            "at": [
+              25.9,
+              27
+            ]
+          },
+          {
+            "id": "walk-bench-2",
+            "at": [
+              25.9,
+              33
+            ]
+          },
+          {
+            "id": "walk-bench-3",
+            "at": [
+              25.9,
+              39
+            ]
+          }
+        ]
+      },
+      "access": {
+        "kind": "zone",
+        "id": "rootward-square"
+      },
+      "focus": {
+        "at": [
+          24,
+          30
+        ]
+      },
+      "lesson": [
+        "bench.move_to(x, y) moves a bench. It is refused, with the reason, anywhere you couldn't set it down by hand.",
+        "range(4) counts 0, 1, 2, 3. A loop over it gives you a number to work with each time round.",
+        "Arithmetic works on numbers: 21 + 6 * i is 21, 27, 33 and 39 as i counts up. * is multiplication.",
+        "Keep x at 25.9 so the benches stay against the railing, facing the view."
+      ],
+      "starter": [
+        "# room_on_the_walk.py",
+        "# Four benches, six metres apart, from y 21.",
+        "",
+        "def program(world):",
+        "    benches = [world.doodad(\"walk-bench-0\"), world.doodad(\"walk-bench-1\"),",
+        "               world.doodad(\"walk-bench-2\"), world.doodad(\"walk-bench-3\")]",
+        "",
+        "    for i in range(4):",
+        "        bench = benches[i]",
+        "        # TODO: every bench lands on the same spot.",
+        "        bench.move_to(25.9, 21)"
+      ],
+      "hints": [
+        "The loop gives you i: 0, then 1, 2 and 3. Use it in the y.",
+        "bench.move_to(25.9, 21 + 6 * i)"
+      ],
+      "done": "The walk's benches stand six metres apart. Someone has already sat on the third one with a newspaper."
+    },
+    {
+      "id": "two-parks",
+      "title": "Two parks, one plan",
+      "requires": [
+        "room-on-the-walk"
+      ],
+      "concept": "Functions with parameters",
+      "summary": "Four planters were delivered by the kiosk. Both pocket parks get the same plan: a planter either side of the park's tree, a metre and a half off, at y 50. Work payment: 22 p.",
+      "goal": {
+        "type": "doodads_at",
+        "noun": "planters placed",
+        "targets": [
+          {
+            "id": "delivery-planter-1",
+            "at": [
+              45.5,
+              50
+            ]
+          },
+          {
+            "id": "delivery-planter-2",
+            "at": [
+              48.5,
+              50
+            ]
+          },
+          {
+            "id": "delivery-planter-3",
+            "at": [
+              65.5,
+              50
+            ]
+          },
+          {
+            "id": "delivery-planter-4",
+            "at": [
+              68.5,
+              50
+            ]
+          }
+        ]
+      },
+      "access": {
+        "kind": "zone",
+        "id": "rootward-square"
+      },
+      "focus": {
+        "at": [
+          57,
+          49
+        ]
+      },
+      "lesson": [
+        "def name(a, b, c): makes a function: a recipe with its own name. The indented lines under it run each time you call it, with a, b and c standing for whatever you pass in.",
+        "One recipe can dress both parks. Write it once and call it once for each park.",
+        "A park's tree is a doodad too: world.doodad(\"park-1-tree\").at is where it stands. The plan puts one planter at the tree's x minus 1.5 and one at x plus 1.5, both at y 50.",
+        "The delivered planters are delivery-planter-1 to delivery-planter-4."
+      ],
+      "starter": [
+        "# two_parks.py",
+        "# One plan, two parks.",
+        "",
+        "def dress(tree, left, right):",
+        "    x = tree.at[0]",
+        "    left.move_to(x - 1.5, 50)",
+        "    # TODO: the right-hand planter",
+        "",
+        "def program(world):",
+        "    dress(world.doodad(\"park-1-tree\"), world.doodad(\"delivery-planter-1\"), world.doodad(\"delivery-planter-2\"))",
+        "    # TODO: the second park, with the other two planters"
+      ],
+      "hints": [
+        "The right-hand planter is the same as the left one, with + instead of -.",
+        "Call dress again with park-2-tree, delivery-planter-3 and delivery-planter-4."
+      ],
+      "done": "Both parks match. A child is already timing how fast she can run from one to the other."
+    },
+    {
+      "id": "market-day",
+      "title": "Market day",
+      "requires": [
+        "two-parks"
+      ],
+      "concept": "Building a list, append and len",
+      "summary": "Market day: the three stalls on the market's west side stand unevenly. Public Works wants them 4.25 metres apart, from y 33.5, in the same row at x 41.9. Work payment: 24 p.",
+      "goal": {
+        "type": "doodads_at",
+        "noun": "stalls spaced",
+        "tolerance": 0.2,
+        "targets": [
+          {
+            "id": "flower-stall",
+            "at": [
+              41.9,
+              33.5
+            ]
+          },
+          {
+            "id": "fruit-stall",
+            "at": [
+              41.9,
+              37.75
+            ]
+          },
+          {
+            "id": "produce-stall",
+            "at": [
+              41.9,
+              42.0
+            ]
+          }
+        ]
+      },
+      "access": {
+        "kind": "zone",
+        "id": "rootward-square"
+      },
+      "focus": {
+        "at": [
+          41,
+          32
+        ]
+      },
+      "lesson": [
+        "You can make your own list. stalls = [] starts an empty one; stalls.append(thing) adds to its end.",
+        "\"stall\" in thing.kind is True when the word stall appears inside the kind. The west row stands at x 41.9, so a stall with thing.at[0] < 43 belongs to it; the two by the Rootwell stay where their customers expect them.",
+        "len(stalls) is how many you collected, and range(len(stalls)) counts once for each.",
+        "Move stall number i to x 41.9 and y 33.5 + 4.25 * i. Your code snaps to the quarter-cell grid, so 41.9 lands on 42: close enough for a market."
+      ],
+      "starter": [
+        "# market_day.py",
+        "# Three stalls, evenly spaced, at x 41.9.",
+        "",
+        "def program(world):",
+        "    stalls = []",
+        "    for thing in world.doodads:",
+        "        if \"stall\" in thing.kind and thing.at[0] < 43:",
+        "            # TODO: keep this stall in the list",
+        "            pass",
+        "",
+        "    print(len(stalls), \"stalls in the row\")",
+        "    # TODO: stall i goes to x 41.9, y 33.5 + 4.25 * i"
+      ],
+      "hints": [
+        "Replace pass with stalls.append(thing). The print should then say 3.",
+        "for i in range(len(stalls)): then stalls[i].move_to(41.9, 33.5 + 4.25 * i)"
+      ],
+      "done": "Three stalls, evenly spaced, awnings out. The flower seller wants to know who measured it."
+    },
+    {
+      "id": "own-corner",
+      "title": "A corner of your own",
+      "requires": [
+        "market-day"
+      ],
+      "concept": "Putting it together",
+      "summary": "Public Works has left the lawn by the arrival steps to you. Bring at least three garden pieces onto it (benches, planters, trees) and arrange it how you like. Work payment: 30 p.",
+      "goal": {
+        "type": "doodads_in_rect",
+        "rect": [
+          4.5,
+          0.5,
+          11.0,
+          5.0
+        ],
+        "at_least": 3,
+        "noun": "garden pieces on the lawn",
+        "assets": [
+          "lane-bench",
+          "lane-planter",
+          "lane-tree",
+          "lane-cypress",
+          "town-fountain"
+        ]
+      },
+      "access": {
+        "kind": "zone",
+        "id": "rootward-square"
+      },
+      "focus": {
+        "at": [
+          10,
+          3
+        ]
+      },
+      "lesson": [
+        "The lawn by the arrival steps runs from x 5 to 15 and from y 1 to 5. Nothing stands on it yet.",
+        "Anything you've used so far works here: a list, a loop, range and arithmetic, a function for a pattern you repeat, face() to turn things.",
+        "world.doodads lists every movable piece with its kind and where it stands. The little park next to the lawn, the walk and the physic garden all have benches and planters to borrow.",
+        "Moving a piece is refused, with the reason, if it would block a path someone needs."
+      ],
+      "starter": [
+        "# own_corner.py",
+        "# The arrival lawn: x 5 to 15, y 1 to 5.",
+        "",
+        "def program(world):",
+        "    for thing in world.doodads:",
+        "        if thing.kind == \"lane-bench\" or thing.kind == \"lane-planter\":",
+        "            print(thing.id, thing.at)",
+        "",
+        "    # Your design here."
+      ],
+      "hints": [
+        "spindle-park-bench, spindle-park-seat and spindle-park-shrub stand just east of the lawn.",
+        "Something like: for i in range(3): pieces[i].move_to(6 + 4 * i, 4)"
+      ],
+      "done": "The arrival lawn has new furniture and a better view. Mira will want to see it before she believes it."
+    }
+  ]
+}

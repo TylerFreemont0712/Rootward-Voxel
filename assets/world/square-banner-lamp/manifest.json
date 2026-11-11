@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "square-banner-lamp",
+  "version": "v1",
+  "source": "art/source/world/square-banner-lamp/v1/model.blend",
+  "source_sha256": "3cb54ea9ba7c0516ebd6325a6a6ae8d9904e200a2c6ae3303a93ce5ccf6ac9a0",
+  "runtime": "assets/world/square-banner-lamp/model.glb",
+  "runtime_sha256": "46048a2fd553fe63d3dd2aacf94a0ab79f99b45d51521fc2801f78142973cccb",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.230000004172325,
+      0.0,
+      -0.230000004172325,
+      0.665043890476227,
+      3.99500012397766,
+      0.230000004172325
+    ],
+    "geometry_sha256": "39faeabc3af49dc911f57c555eecd969a1e3762018978b1115b4266c78fb7af0",
+    "material_records": {
+      "square_banner": {
+        "albedo": [
+          1843,
+          4196,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_gold.001": {
+        "albedo": [
+          8471,
+          7059,
+          3725,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_iron": {
+        "albedo": [
+          2314,
+          2510,
+          2627,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_iron_light": {
+        "albedo": [
+          3608,
+          3922,
+          4078,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_lamp_glass": {
+        "albedo": [
+          10000,
+          8784,
+          6275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_pale": {
+        "albedo": [
+          9333,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_limestone_shade": {
+        "albedo": [
+          7686,
+          6980,
+          5569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "square_banner",
+      "square_gold.001",
+      "square_iron",
+      "square_iron_light",
+      "square_lamp_glass",
+      "square_limestone_pale",
+      "square_limestone_shade"
+    ],
+    "meshes": 7,
+    "triangles": 3072
+  }
+}

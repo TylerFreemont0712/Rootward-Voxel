@@ -1,0 +1,12 @@
+{
+  "asset": "rootwell-plaza",
+  "previous": "v2",
+  "previous_sha256": "2bd55c2df748e7279616a7b6b5fe17c40dc2bf4f7b5dd713d93f2d6c8c41d54d",
+  "record": "art/source/world/rootwell-texture-pass/v1/even_uvs.py",
+  "repeat_m": {
+    "seaside_stone": 1.9
+  },
+  "faces_reprojected": {
+    "seaside_stone": 1524
+  }
+}

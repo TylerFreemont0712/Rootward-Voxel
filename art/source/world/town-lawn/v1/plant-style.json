@@ -1,0 +1,22 @@
+{
+  "asset": "town-lawn",
+  "source": "art/source/world/town-lawn/v1/model.blend",
+  "backup": "art/source/world/town-lawn/v1/model.pre-plant-style.blend",
+  "before_sha256": "3153a9b7b10f45297c212c6ba6bec6bb6350b8b0605e3f002deedf52f543a1a2",
+  "after_sha256": "acee2f3b006b3db2720c2cc489dc8b24674e11b0feb5581d6907dac2f491cbb2",
+  "objects": [
+    {
+      "object": "house_paint",
+      "replaced_components": {
+        "leaf": 14,
+        "leaf_dark": 13,
+        "flower_pink": 10,
+        "leaf_light": 43,
+        "flower_yellow": 10
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

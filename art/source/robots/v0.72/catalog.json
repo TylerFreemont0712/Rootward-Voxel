@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "status": "sprite and motion concepts; not runtime actors",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed by tool",
+  "source_layout": {
+    "columns": 4,
+    "rows": 3,
+    "row_1": [
+      "se",
+      "sw",
+      "ne",
+      "nw"
+    ],
+    "row_2": [
+      "roll_0",
+      "roll_1",
+      "roll_2",
+      "roll_3"
+    ],
+    "row_3": [
+      "off",
+      "idle",
+      "work_start",
+      "work_end"
+    ],
+    "registration": "Generated spacing is approximate; tools/sparks_sprite_gallery.gd uses authored cuts and padding for review previews only."
+  },
+  "robots": [
+    {
+      "id": "pip",
+      "name": "Pip \u2014 postal sorter",
+      "design": "A compact red enamel POST-BOX robot, waist high to a human: softly rounded rectangular body, domed postal-red lid, one large round amber face window in a brass rim, two tiny glowing oval spark-eyes and NO mouth/nose. Below it two simple pigeonhole cubbies hold envelopes; a routine card slot sits under the lid. Two small red mitten hands on short solid arms, one plain canvas satchel attached to its side. The entire body sits DIRECTLY on a small teal rolling chassis with two large rubber wheels and one hidden little caster. No legs, boots, walking struts or floating body. Distinct post-box silhouette, small readable forms. WORK: lift an envelope from a cubby and place it into the open satchel.",
+      "sheet": "art/source/robots/v0.72/pip/sheet-generated.png",
+      "sha256": "d43881a3c5627c81ffac12929ba5710457094a9a51a971faf26a6e9af4e68a0d",
+      "generation_record": "art/source/robots/v0.72/pip/sheet-generated.generation.json"
+    },
+    {
+      "id": "trowel",
+      "name": "Trowel \u2014 gardener",
+      "design": "A low rounded watering-can robot in soft mint/cream enamel, two-thirds of a person's height. One round brass-rimmed amber face with two glowing oval eyes, no mouth or nose; a plain spout arm with a perforated rose, a tiny opposite mitten grip, a small seed hopper at the back and just a few tidy leaves near its cap. Its body attaches directly to a broad two-wheel teal chassis with a little rear caster, no legs or feet. Oversized soft rubber wheels handle cobbles. Warm, contented domestic garden tool silhouette; not a human wearing robot clothes. WORK: tilt the spout and water a small potted seedling within the same cell, then return it upright.",
+      "sheet": "art/source/robots/v0.72/trowel/sheet-generated.png",
+      "sha256": "57d30d8cb796b61535e8c197e2d049b43f8a9b916e024b4f0aa920c590ed2cba",
+      "generation_record": "art/source/robots/v0.72/trowel/sheet-generated.generation.json"
+    },
+    {
+      "id": "wick",
+      "name": "Wick \u2014 lamplighter",
+      "design": "A taller slim cream-enamel lamplighter, about adult shoulder height, with a small teal pagoda-like lantern cap, ONE brass-rimmed round amber face in the lantern head, two glowing eyes, no human face. Its narrow body mounts directly to a stable rounded cream/teal wheelbase with two FAT rubber wheels and a little caster; no long leg-like posts beneath the body. Short simple arms hold a telescoping brass lighting pole close to the body during rolling. The pole folds short enough to fit the frame. WORK: raise/extend the pole toward a small lamp fitting at the cell edge, touch it to light it, keeping all parts visible and mechanically connected.",
+      "sheet": "art/source/robots/v0.72/wick/sheet-generated.png",
+      "sha256": "f6f50fd64bb80d30de74a5b85ca30362f1045f85e547d546f42495dcef158444",
+      "generation_record": "art/source/robots/v0.72/wick/sheet-generated.generation.json"
+    },
+    {
+      "id": "heron",
+      "name": "Heron \u2014 yard crane",
+      "design": "A friendly compact teal yard crane, wider and a little taller than a person. A rounded teal/cream body with ONE large round brass-rimmed amber spark-eye window sits directly on a broad FOUR-WHEEL rubber chassis, no legs or feet. A clean hinged teal boom with brass pivot discs rises from the back, a real cable runs over its tip to a rounded brass hook. Keep the boom compact/folded for travel, visually simple and cute rather than industrial gear clutter. Body, chassis, boom, pivots, cable and hook remain coherent across every view. WORK: smoothly lift one small wooden crate a little above the ground, then settle it down, no enormous crane swinging outside its cell.",
+      "sheet": "art/source/robots/v0.72/heron/sheet-generated.png",
+      "sha256": "4a30906812d44ac2cc79d596b2964bffb58212ca82010e27aff5e754ec5a6735",
+      "generation_record": "art/source/robots/v0.72/heron/sheet-generated.generation.json"
+    },
+    {
+      "id": "tender",
+      "name": "Tender \u2014 maintenance helper",
+      "design": "A squat tortoise-shaped cream-and-teal maintenance robot, knee high, with a broad soft dome shell, one large round brass-rimmed amber spark-face with two glowing oval eyes, and two short folding mitten arms curled beside its front. Four small rubber wheels tuck into a low teal chassis attached directly under the body. A small neat moss patch grows at the rear seam; otherwise cared for and friendly. A discreet routine slot and rear service hatch. No legs, insect appendages or scary exposed machinery. WORK: open a small inspection cover on a short pipe segment and gently turn a reachable valve with one mitten, then tuck the arm away.",
+      "sheet": "art/source/robots/v0.72/tender/sheet-generated.png",
+      "sha256": "8ae8704fd092aef03d2b272d40ff6f06d4138649949368d01da7e0127d840c77",
+      "generation_record": "art/source/robots/v0.72/tender/sheet-generated.generation.json"
+    },
+    {
+      "id": "tally",
+      "name": "Tally \u2014 trading assistant",
+      "design": "A new small friendly merchant's assistant in cream enamel with muted ochre and deep teal accents, roughly waist high. Soft rounded-rectangle body like an old shop cashbox, one large circular brass-rimmed amber spark-face with two simple glowing oval eyes, no mouth/nose. A shallow securely attached counting tray at the front, a narrow receipt/routine slot, two stubby mitten arms, and a small till drawer low in the body. The body mounts DIRECTLY on two broad rubber wheels and a small rear caster. A few large simple coin discs, no written prices or currency branding. WORK: count/place one coin onto the tray, offer a short receipt, then return to the neutral travelling pose. Simple charming municipal machine, not a humanoid bank clerk.",
+      "sheet": "art/source/robots/v0.72/tally/sheet-generated.png",
+      "sha256": "9b84733c15591b892be8cbabcc88e4fee2b03b1f041d0c180879638c0e4ea031",
+      "generation_record": "art/source/robots/v0.72/tally/sheet-generated.generation.json"
+    }
+  ]
+}

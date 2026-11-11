@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-27",
+  "asset": "loft-bed",
+  "revision": "lived-in",
+  "command": "scripts/world-art.sh build loft-bed",
+  "unchanged": {
+    "source_sha256": true,
+    "runtime_sha256": true,
+    "audit": true
+  },
+  "source_sha256": "d49538ae8d40cb79766052a62b28fb7928abea35c54ee31d2b72d6131850c795",
+  "runtime_sha256": "a0a4864b36a5063118530ebfc022b05b916db8148ed6a73f636dfaccedd9fed6"
+}

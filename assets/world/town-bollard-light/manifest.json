@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "asset": "town-bollard-light",
+  "version": "v1",
+  "source": "art/source/world/town-bollard-light/v1/model.blend",
+  "source_sha256": "b6663b3d6d2f4a597d3fbaed88111de810bc59ae77971d942f7aafa6f4d3d9ca",
+  "runtime": "assets/world/town-bollard-light/model.glb",
+  "runtime_sha256": "e6c69e3de9e4583b0530beb96982fe806ab165a4cb719ca5e1b09f01dbf9d35e",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.140000000596046,
+      0.0,
+      -0.140000000596046,
+      0.140000000596046,
+      0.999000012874603,
+      0.140000000596046
+    ],
+    "geometry_sha256": "80f93f8a538cd6f63d14706fc0d597cbd0db9c6570f67a28b55120d1637265ed",
+    "material_records": {
+      "festoon_glass": {
+        "albedo": [
+          10000,
+          8353,
+          5412,
+          10000
+        ],
+        "roughness": 2500,
+        "texture_rgba_sha256": ""
+      },
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      }
+    },
+    "materials": [
+      "festoon_glass",
+      "house_paint"
+    ],
+    "meshes": 2,
+    "triangles": 288
+  }
+}

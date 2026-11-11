@@ -1,0 +1,10 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "model": "Not exposed",
+  "seed": "Not exposed",
+  "prompt": "Use case: precise-object-edit. Edit this exact transparent game character reference crop only by closing BOTH of Iona's eyes in a relaxed natural blink. Preserve the exact hair, silver forelock, skin, head shape, eyebrows, nose, smile, all clothes, apron, lighting, pixel positions, proportions and background transparency. Each closed eye is a subtle dark brown curved eyelid in the same painted style. No eye colour visible. No new pose, angle, recentering, camera movement, resizing or extra marks. Same square canvas and exact character placement. This is a supporting eye-patch authoring image, not a new portrait.",
+  "references": [
+    "art/source/characters/iona/v1/blink-reference.png"
+  ],
+  "source": "/home/joejin/.codex/generated_images/01a19a13-e572-7ac1-8ed3-988b77df56c0/exec-c83885c7-ac67-46ac-b957-d55727a9119f.png"
+}

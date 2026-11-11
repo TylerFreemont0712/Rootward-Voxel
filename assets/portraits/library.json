@@ -1,0 +1,15 @@
+{
+  "portraits": {
+    "nell": {
+      "runtime": "res://assets/portraits/nell.png",
+      "sha256": "e0effea7c32cc87d383723fe72434baf6b805b122938d51cfbddd4c22ebc411b",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "res://art/source/portraits/v1/nell.png"
+    }
+  },
+  "schema": 1,
+  "version": "v1"
+}

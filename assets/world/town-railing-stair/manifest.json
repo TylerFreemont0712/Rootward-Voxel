@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "asset": "town-railing-stair",
+  "version": "v1",
+  "source": "art/source/world/town-railing-stair/v1/model.blend",
+  "source_sha256": "3be3c17d57613300c24897b28bb02a492c3fee7790ef2cf70abb388bf35dbdd1",
+  "runtime": "assets/world/town-railing-stair/model.glb",
+  "runtime_sha256": "7fc4df3b1eaeefda1e1ad859daef63c32f5319a3b622ac229cc69639b2b583be",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      0.0223224423825741,
+      0.110000014305115,
+      -0.0274999998509884,
+      0.977677583694458,
+      2.06767749786377,
+      0.0274999998509884
+    ],
+    "geometry_sha256": "11573d00b8ab1af9719ff8f44c58a6a996e9ce18c0e998005956780c91b11b15",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "8bf51a9eb0a9c4d1398077ea697d5956854d2961d070159e7f7da5fb2fc472e4"
+      }
+    },
+    "materials": [
+      "house_paint"
+    ],
+    "meshes": 1,
+    "triangles": 932
+  }
+}

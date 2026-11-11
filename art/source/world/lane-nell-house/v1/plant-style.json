@@ -1,0 +1,66 @@
+{
+  "asset": "lane-nell-house",
+  "source": "art/source/world/lane-nell-house/v1/model.blend",
+  "backup": "art/source/world/lane-nell-house/v1/model.pre-plant-style.blend",
+  "before_sha256": "63d911711c0c9551c314d9b68fa7b7a552c2f512890288b8691088ca344c619e",
+  "after_sha256": "a5a2460d86ab831e833a87d3130f4fbd9d2cf33238a21959281f827939636f19",
+  "objects": [
+    {
+      "object": "lane_leaf_dark",
+      "replaced_components": {
+        "leaf_dark": 20
+      },
+      "protected_faces": 168,
+      "protected_sha256": "464db3c138ca66975a81d3dd778be3ba1d79821db4eb6533cd2ce819f1bd6d2f"
+    },
+    {
+      "object": "lane_leaf",
+      "replaced_components": {
+        "leaf": 45
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_leaf_light",
+      "replaced_components": {
+        "leaf_light": 40
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_white",
+      "replaced_components": {
+        "flower_white": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_violet",
+      "replaced_components": {
+        "flower_violet": 6
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_pink",
+      "replaced_components": {
+        "flower_pink": 17
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_flower_red",
+      "replaced_components": {
+        "flower_red": 7
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

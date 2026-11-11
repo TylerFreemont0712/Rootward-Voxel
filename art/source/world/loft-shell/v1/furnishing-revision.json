@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-27",
+  "source_before_sha256": "00d76cec15f386cf8ef709cf81ce11bc36eedd0de3783999ee97a1302b83096f",
+  "preserved_source": "model.pre-furnishing.blend",
+  "edit_record": "art/source/world/sparks-loft/v1/refine_shell.py",
+  "textures": "art/source/world/sparks-loft/v1/prompts.json",
+  "note": "Deliberate source edit: existing walls, windows, gable and rafters retained; bespoke painted finish, staggered floor joints and open stairwell."
+}

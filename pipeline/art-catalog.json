@@ -1,0 +1,295 @@
+{
+  "schema": 4,
+  "ground": {
+    "version": "v1",
+    "source": "res://art/source/world/ground/v1/generation.json",
+    "manifest": "res://art/source/world/ground/v1/manifest.json",
+    "prompt": "res://art/source/world/ground/v1/prompts.md",
+    "normalizer": "res://pipeline/normalize_ground.py",
+    "height_outputs": "res://assets/world/ground/height/",
+    "references_runtime": false
+  },
+  "application_icon": {
+    "id": "rootward-voxel",
+    "version": "v1-lantern-roots",
+    "source": "res://art/source/brand/v1-lantern-roots/icon.png",
+    "prompt": "res://art/source/brand/v1-lantern-roots/prompt.txt",
+    "authoring_tool": "built-in imagegen",
+    "source_sha256": "52c4663d357281ebab2b87e6ff99ae1a10712aaddb41e438a41e68092d35688d",
+    "outputs": [
+      {
+        "size": 256,
+        "path": "res://assets/brand/icon-256.png"
+      },
+      {
+        "size": 512,
+        "path": "res://assets/brand/icon-512.png"
+      }
+    ]
+  },
+  "character": {
+    "id": "adventurer",
+    "version": "v9-directional-walk",
+    "source": "res://art/source/adventurer/v9-directional-walk/sheet.png",
+    "runtime_sheet": "res://assets/characters/adventurer/sheet.png",
+    "prompt": "res://art/source/adventurer/v9-directional-walk/blink-prompt.json",
+    "frames": "res://assets/characters/adventurer/frames.tres",
+    "manifest": "res://assets/characters/adventurer/manifest.json",
+    "mode": "painted_atlas",
+    "provenance": "res://art/source/adventurer/v9-directional-walk/provenance.json",
+    "animation_method": "approved eight-pose paintings; mirrored SW/NW; neutral breathing idle and eye-only blink",
+    "template": "res://pipeline/character-template.json"
+  },
+  "world": {
+    "reference": "res://reference/voxel-isometric.png",
+    "palette": "res://art/world_palette.gd",
+    "materials": "res://art/surface_materials.gd",
+    "geometry": "res://scenes/world_view.gd",
+    "layout_and_collision": "res://core/lab_world.gd",
+    "areas": "res://content/areas/",
+    "camera_elevation_degrees": 31,
+    "world_units_per_cell": 1,
+    "exclude": [
+      "other villagers",
+      "flowers",
+      "flower boxes",
+      "crates",
+      "sacks",
+      "scattered small props"
+    ],
+    "catalog": "res://pipeline/world-catalog.json",
+    "source_packs": {
+      "sparks_loft": {
+        "source": "res://art/source/world/sparks-loft/v1/",
+        "prompts": "res://art/source/world/sparks-loft/v1/prompts.json",
+        "reference": "res://docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png",
+        "assets": [
+          "loft-bed",
+          "loft-desk",
+          "loft-chair",
+          "loft-shelf",
+          "loft-luggage",
+          "loft-cabinet",
+          "loft-wall-life",
+          "loft-rug",
+          "loft-travel-stacks",
+          "loft-window-life",
+          "loft-postcard",
+          "loft-hotaru",
+          "loft-note-slip",
+          "field-tablet"
+        ],
+        "build": "scripts/world-art.sh build <id>",
+        "note": "Bespoke painted surface images are packed into editable Blender masters and embedded in audited runtime GLBs. No image service is needed to play."
+      },
+      "sparks_workshop": {
+        "source": "res://art/source/world/sparks-workshop/v1/",
+        "prompts": "res://art/source/world/sparks-workshop/v1/prompts.json",
+        "reference": "res://docs/concept/v0.7/art/4-opening/T7b-workshop-floor.png",
+        "assets": [
+          "workshop-shell",
+          "workshop-staircase",
+          "workshop-repair-bench",
+          "workshop-tool-wall",
+          "workshop-parts-drawers",
+          "workshop-assembly-table",
+          "workshop-parts-crate",
+          "workshop-stove",
+          "workshop-armchair",
+          "workshop-tea-table",
+          "workshop-job-board",
+          "workshop-shop-doors",
+          "workshop-hanging-lamp",
+          "workshop-stool",
+          "workshop-rug",
+          "workshop-wall-shelf",
+          "workshop-umbrella-stand",
+          "workshop-bread-cupboard",
+          "workshop-service-trolley",
+          "workshop-wall-clock",
+          "workshop-stair-lamp",
+          "workshop-wall-screen"
+        ],
+        "build": "scripts/world-art.sh build <id>",
+        "note": "Twenty-one adopted workshop models; two new painted materials plus four unchanged loft paintings. The stair lantern and two pendants are connected to real lamp state. No authoring services at runtime."
+      },
+      "zone_terminal": {
+        "source": "res://art/source/world/zone-terminal/v1/",
+        "assets": [
+          "zone-terminal"
+        ],
+        "build": "scripts/world-art.sh build zone-terminal",
+        "note": "Native Blender geometry using existing loft palette; reusable screen computer with separate semantic glass and indicator."
+      },
+      "sparks_square": {
+        "source": "res://art/source/world/sparks-square/v1/",
+        "reference": "res://docs/concept/v0.7/art/5-town/T3-rootward-square-day.wheels.png",
+        "assets": [
+          "square-market-stall",
+          "square-node"
+        ],
+        "build": "scripts/world-art.sh build <id>",
+        "note": "Native Blender geometry, packed shared lane paintings. New downhill square, no new quests or tram travel."
+      },
+      "spindle_strip": {
+        "source": "res://art/source/world/spindle-strip/v1/",
+        "prompts": "res://art/source/world/spindle-strip/v1/concept-prompts.json",
+        "assets": [
+          "haverlund-square-ground"
+        ],
+        "concepts": {
+          "clockmaker": {
+            "path": "res://art/source/world/spindle-strip/v1/clockmaker-concept.png",
+            "sha256": "8e655a870aad6531a1de680c84f75487af02b71a118f4626329461b990d82102",
+            "status": "concept_for_user_review",
+            "runtime": false
+          },
+          "apothecary": {
+            "path": "res://art/source/world/spindle-strip/v1/apothecary-concept.png",
+            "sha256": "c1a1ff16ba81b150bb9458023317e57be55de1bc1fa9e7ea747b47ad4f331629",
+            "status": "concept_for_user_review",
+            "runtime": false
+          }
+        },
+        "build": "scripts/world-art.sh build haverlund-square-ground",
+        "note": "Revised landing, promenade, left-hand park and four future frontages. Concepts are new original architectural directions only; the rejected temporary shop twins are unplaced. Five shop interiors are cleared for a later rebuild."
+      }
+    }
+  },
+  "portraits": {
+    "version": "v1",
+    "provenance": "res://art/source/portraits/v1/generation.json",
+    "prompt": "res://art/source/portraits/v1/prompts.json",
+    "manifest": "res://assets/portraits/library.json",
+    "items": {
+      "nell": {
+        "source": "res://art/source/portraits/v1/nell.png",
+        "source_sha256": "e0effea7c32cc87d383723fe72434baf6b805b122938d51cfbddd4c22ebc411b",
+        "runtime": "res://assets/portraits/nell.png"
+      }
+    }
+  },
+  "detail_textures": {
+    "version": "v2-detail",
+    "library": "res://art/source/world/textures/v2-detail/library.json",
+    "provenance": "res://art/source/world/textures/v2-detail/generation.json",
+    "manifest": "res://assets/world/textures/detail-library.json"
+  },
+  "building_texture_libraries": [
+    {
+      "version": "seaside-houses-v1",
+      "library": "res://art/source/world/seaside-background-houses/v1/textures/library.json",
+      "provenance": "res://art/source/world/seaside-background-houses/v1/textures/generation.json",
+      "manifest": "res://assets/world/textures/seaside-houses/manifest.json",
+      "output_root": "res://assets/world/textures/seaside-houses",
+      "detail_size": 512
+    },
+    {
+      "version": "clockshop-v1",
+      "library": "res://art/source/world/clockshop-interior/v1/textures/library.json",
+      "provenance": "res://art/source/world/clockshop-interior/v1/textures/generation.json",
+      "manifest": "res://assets/world/textures/clockshop/manifest.json",
+      "output_root": "res://assets/world/textures/clockshop",
+      "detail_size": 512
+    },
+    {
+      "version": "town-ground-v1",
+      "library": "res://art/source/world/town-ground/v1/library.json",
+      "provenance": "res://art/source/world/town-ground/v1/generation.json",
+      "manifest": "res://assets/world/textures/town-ground-manifest.json",
+      "output_root": "res://assets/world/textures"
+    }
+  ],
+  "portrait_libraries": [
+    {
+      "version": "v1",
+      "prompt": "res://art/source/portraits/sparks/v1/prompts.json",
+      "provenance": "res://art/source/portraits/sparks/v1/provenance.json",
+      "manifest": "res://assets/portraits/sparks/library.json",
+      "items": {
+        "hotaru-robot": {
+          "source": "res://art/source/portraits/sparks/v1/hotaru-robot.png",
+          "source_sha256": "4fca154096bc72a53a38d92428636fd13de76ece28cc17e0329639260af68a95",
+          "runtime": "res://assets/portraits/sparks/hotaru-robot.png"
+        }
+      }
+    },
+    {
+      "version": "v2-traveller-full-body",
+      "prompt": "res://art/source/portraits/sparks/v2/traveller-prompt.json",
+      "provenance": "res://art/source/portraits/sparks/v2/traveller-provenance.json",
+      "manifest": "res://assets/portraits/sparks/traveller-library.json",
+      "items": {
+        "traveller": {
+          "source": "res://art/source/portraits/sparks/v2/traveller.png",
+          "source_sha256": "adc85a74c276543d3d97b38c54c94d4f503f7bb69241b05722d1f54c2b90c1a1",
+          "runtime": "res://assets/portraits/sparks/traveller.png"
+        }
+      }
+    },
+    {
+      "version": "v3-welcome-iona",
+      "prompt": "res://art/source/portraits/sparks/v3/prompt.json",
+      "provenance": "res://art/source/portraits/sparks/v3/provenance.json",
+      "manifest": "res://assets/portraits/sparks/welcome-library.json",
+      "items": {
+        "iona": {
+          "source": "res://art/source/portraits/sparks/v3/iona.png",
+          "runtime": "res://assets/portraits/sparks/iona.png",
+          "source_sha256": "ffdd29cce9383e49341b8a32da2daf348a9bf8dcde6b74e1d848faa2e518bd18"
+        },
+        "braum": {
+          "source": "res://art/source/portraits/sparks/v3/braum.png",
+          "source_sha256": "7a4487f2ea1dd176007bee2fba90a4a34946a7f9798e185b79834a1ad160ef46",
+          "runtime": "res://assets/portraits/sparks/braum.png"
+        }
+      }
+    }
+  ],
+  "interface_frames": {
+    "nells-field-slate": {
+      "version": "v1",
+      "source": "res://art/source/ui/nells-field-slate/v1/nells-field-slate-frame.png",
+      "source_sha256": "d541f3bcf782f611d80c17ed25664a5c9b1b7efda721a08645322bae44739ff5",
+      "provenance": "res://art/source/ui/nells-field-slate/v1/generation.json",
+      "crop": [
+        22,
+        23,
+        980,
+        1476
+      ],
+      "slice": [
+        220,
+        110,
+        110,
+        259
+      ],
+      "window": [
+        78,
+        92,
+        824,
+        1144
+      ],
+      "jack": [
+        136.5,
+        52,
+        15
+      ],
+      "lamp": [
+        201.5,
+        50.5,
+        12.5
+      ],
+      "scale": 0.5,
+      "runtime": "res://assets/ui/nells-field-slate/frame.png",
+      "manifest": "res://assets/ui/nells-field-slate/manifest.json"
+    }
+  },
+  "phantoms": {
+    "version": "v4",
+    "source": "res://art/source/characters/phantoms/v4/appearances.json",
+    "runtime": "res://assets/characters/phantoms",
+    "manifest": "res://assets/characters/phantoms/manifest.json",
+    "texture_compression": "vram"
+  }
+}

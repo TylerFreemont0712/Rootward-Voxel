@@ -1,0 +1,16 @@
+{
+  "key": "sparks-mira-se",
+  "dest": "art/source/characters/mira/sparks-v1/SE.png",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-68c3c04b-68ce-400a-a132-c80bce9534de.png",
+  "prompt": "Use case: precise-object-edit / production painted-frame character skin.\nInput image 1 is the STRICT nine-pose sprite sheet to repaint, defining the exact camera, frame order, gait phases, body scale and layout. Input image 2 is the SELECTED character identity and clothing reference.\nRepaint all nine figures of image 1 as this SAME person from image 2. This is a full appearance replacement in the existing animation, not nine new poses or a turnaround.\nCanvas: exactly 1254x1254 pixels, 3 columns x 3 rows, nine 418x418 cells; transparent RGBA. Exactly one full body in each cell. Frames 1–8 are the eight walk phases matching image 1 cell for cell; frame 9 at bottom right is a relaxed neutral stand, both feet planted, distinct from the walking poses. Preserve the precise supporting boot, lifted boot sole, stride, arm swing, head direction and body placement of each corresponding pose. Do not reorder or duplicate walk phases.\nAll figures face front-right / SOUTHEAST, with the same elevated three-quarter camera. Keep the approved painted roughly three-head-tall anatomy, character height, boot size and clear silhouette. Express age through the face and clothing, not different proportions. No realistic adult body or child redesign. Preserve the reference's crisp dark warm-brown outline, painterly shading and warm light. Consistent identity, clothing and accessories in all nine cells; readable large clothing shapes rather than tiny textures. These are game sprites, not a fashion sheet.\nKeep every figure entirely inside its own cell with ample transparent gaps, head and feet clear of the cell edges. Truly transparent background, no shadow, no floor, no border, no text or pose numbers. No extra poses, no alternate costumes, no scenery. It must fit the same motion family and mirror correctly without readable lettering.\nCHARACTER IDENTITY:\nMira, a surveyor/map-maker: medium warm brown skin, friendly brown eyes, short wavy espresso bob and two brass hair clips. Plum collared field jacket with pocket flaps and sage turned cuffs, cream shirt, ochre neckerchief, dark olive trousers, chestnut boots and a compact brown map satchel with two short rolled maps. Exact character identity and clothes of the supplied selected concept.",
+  "refs": [
+    "art/source/adventurer/v9-directional-walk/SE.png",
+    "docs/concept/v0.7/art/7-cast/C3b-mira-sprite.png"
+  ],
+  "tool": "built-in image_gen.imagegen",
+  "output_sha256": "6e380f17e93578c98566c9fff3fbad0b6ca2f094a23585c9291376e0cac20731",
+  "reference_sha256": {
+    "art/source/adventurer/v9-directional-walk/SE.png": "0c2067d8dcfe105d42e747487c87527544db78d38bd4afc775fa493744dee6e4",
+    "docs/concept/v0.7/art/7-cast/C3b-mira-sprite.png": "b7e7b3ca18975e61bf95d61f1def9a96e83509909e7cb67e696a7e8606e37931"
+  }
+}

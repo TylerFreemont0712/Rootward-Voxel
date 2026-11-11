@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "asset": "town-balustrade-pier",
+  "version": "v1",
+  "source": "art/source/world/town-balustrade-pier/v1/model.blend",
+  "source_sha256": "124fb9fbd0220ca05194921e3d933ca7847fb49b11d128cf9737b7a5c3837822",
+  "runtime": "assets/world/town-balustrade-pier/model.glb",
+  "runtime_sha256": "8f1893a7eb92450660b23162b184e4dad59f855100edd6d89b5c9e84ca7b9d76",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.280000001192093,
+      0.0,
+      -0.280000001192093,
+      0.280000001192093,
+      1.1599999666214,
+      0.280000001192093
+    ],
+    "geometry_sha256": "b3ea6eb89fc5494ad47ecc5444d47c8e664f7cd509a4d66a4805405a34291d19",
+    "material_records": {
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      }
+    },
+    "materials": [
+      "seaside_stone"
+    ],
+    "meshes": 1,
+    "triangles": 296
+  }
+}

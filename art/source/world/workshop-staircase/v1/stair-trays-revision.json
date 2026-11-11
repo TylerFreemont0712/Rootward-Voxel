@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-28",
+  "source_before_sha256": "36aa349166b953e5259949b3722d70934902172d5daadb450ae4f11ff8e16bee",
+  "preserved_source": "model.pre-stair-trays.blend",
+  "edit_record": "art/source/world/sparks-workshop/v1/stair_trays_revision.py",
+  "moved_faces_by_object": {
+    "workshop_wood": 108,
+    "workshop_wood_dark": 108,
+    "workshop_oak": 432,
+    "workshop_brass": 1188,
+    "workshop_steel": 80,
+    "workshop_pages": 54,
+    "workshop_teal": 162
+  },
+  "shift_model_frame": [
+    0.0,
+    -2.700000047683716,
+    0.0
+  ],
+  "note": "Deliberate source edit: the parts trays and lidded box move from under the high end of the turned staircase to under its low part, so the floor beneath the high end is clear to walk under. Everything else is retained."
+}

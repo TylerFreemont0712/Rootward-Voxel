@@ -1,0 +1,401 @@
+{
+  "anchor": [
+    192,
+    420
+  ],
+  "authoring_script_sha256": "da0722e4103a555fd4b6e71e63a3872e09d2ae882ad693e40de48eac38234187",
+  "blink_index": 9,
+  "cell_size": [
+    384,
+    448
+  ],
+  "directions": {
+    "ne": {
+      "key_rgba_sha256": [
+        "6fd4fd8d19d211954f74571625ddd4e8a764486e5aa217ffebeb31d26a6e32a5",
+        "fc7097879bbfd8dc1ee49bae7035bec0335a7be81292d228fc17fbca104a0b3f",
+        "f69799da595c88535fec3ab0401974c6e962dbc3547e85c210268b0e28098cca",
+        "a72a00518dc8129f5e5361c14a3a1eef77ae65d481743d161352617889750267",
+        "e4783816f1e81cbdaed9471dd70ae716a79bd2bf9fe8d9c6e3ecc8efced7b30f",
+        "d408ce3f4e3a9c41a6e8ad4c3566e92c3159308d07942439b2b08c59db149545",
+        "f2ad61307da51e0ca310a9ce0736f816c96dd13c09bd54b80a1649ec0931b705",
+        "ec31e3a14b00bfd784d422abe030d422e4e7414315a00ab87788d4a9feebc9ae",
+        "963524a5f00755ec21f362c46e8e213720e93db6b5b24accea78ff7bc7aaf110"
+      ],
+      "row": 6,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NE.png",
+          "source_pose": 0,
+          "translation": [
+            -32,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NE.png",
+          "source_pose": 1,
+          "translation": [
+            -26,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NE.png",
+          "source_pose": 2,
+          "translation": [
+            -28,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NE.png",
+          "source_pose": 3,
+          "translation": [
+            -30,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NE.png",
+          "source_pose": 4,
+          "translation": [
+            -24,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NE.png",
+          "source_pose": 5,
+          "translation": [
+            -29,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NE.png",
+          "source_pose": 6,
+          "translation": [
+            -34,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NE.png",
+          "source_pose": 7,
+          "translation": [
+            -26,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NE.png",
+          "source_pose": 8,
+          "translation": [
+            -35,
+            14
+          ]
+        }
+      ]
+    },
+    "nw": {
+      "key_rgba_sha256": [
+        "bf78ddda3903a20fe9a2cb910087b469fb8b832e5c86b871f731c023c1c86bac",
+        "aedaa5d68e045d385da7185be2b14b5aa0dcdb4ec58133b43b35bc8c62dd189d",
+        "a9c02895eab0a0a7e6456181ea2fcf28ee9c937a53a909d62ad781610bcdc11f",
+        "8a0b0d4371651e6570a80790af210231ddcfdd3658ab741ce74533095660535e",
+        "744f6415657cd748ca721571aba7044d517c661a8ee5253fa89c60159b689ab8",
+        "00f5dbafeecf84cee70d1aa848be0f2e9f3aa50e35d61838aafbdb0db09291da",
+        "bf84d96517ce0002cfd34beae84564763ec52733a236af22203806b8f772faf8",
+        "967b3e9e249d75df16a968f673ad34dea5056240ad07bc7a4026a6da57dc811f",
+        "7ac2a967e5f64924803c9139a80ab196686cfce5570167175c2ca7e8040262ac"
+      ],
+      "row": 9,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NW.png",
+          "source_pose": 0,
+          "translation": [
+            -1,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NW.png",
+          "source_pose": 1,
+          "translation": [
+            -7,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NW.png",
+          "source_pose": 2,
+          "translation": [
+            -6,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NW.png",
+          "source_pose": 3,
+          "translation": [
+            -4,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NW.png",
+          "source_pose": 4,
+          "translation": [
+            -10,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NW.png",
+          "source_pose": 5,
+          "translation": [
+            -5,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NW.png",
+          "source_pose": 6,
+          "translation": [
+            0,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NW.png",
+          "source_pose": 7,
+          "translation": [
+            -7,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/NW.png",
+          "source_pose": 8,
+          "translation": [
+            2,
+            14
+          ]
+        }
+      ]
+    },
+    "se": {
+      "key_rgba_sha256": [
+        "ac9c7380fb4072f0692508fc52a30ebbd57a4bd2b8450e77f99d9da4382f4228",
+        "7c944d6a33e1994ec9cca18d3430a44a0b4c03a92509c09b7e6752135326ffa7",
+        "10d2f2d9ab362606284421c41ebb7ea892478d671a0897e1c865c022f21629f5",
+        "5cef94ae63e2828f36fda269189a008d496895d8dfdefdec2b2ebb56d405b382",
+        "28fbfd19f7909c7ae20eae8f914f28c044dd7984e9d8849fed2f4f5132d19c68",
+        "b606ca7fcd00df60707c0c4857173dee23dcb4b0b15a9bf0533dc234d3912179",
+        "38805168c4d9cc02c9b7b4a10ec6db6992f66990845eee50a1d694a1f87d6226",
+        "f75bf5139e0720a2419ba3f2a054e3ceb5647ba6a4ba517abf699a669c91d00f",
+        "9d2da6329fc39bd4b4fecbd45fe961522637a7f14b469f550ed4c5a2bdf08d3b",
+        "6bf987883d11931977ad52ad8592c92c255cda293275e8f72f0362afadae5b2f"
+      ],
+      "row": 0,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SE.png",
+          "source_pose": 0,
+          "translation": [
+            -41,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SE.png",
+          "source_pose": 1,
+          "translation": [
+            -24,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SE.png",
+          "source_pose": 2,
+          "translation": [
+            -29,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SE.png",
+          "source_pose": 3,
+          "translation": [
+            -46,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SE.png",
+          "source_pose": 4,
+          "translation": [
+            -28,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SE.png",
+          "source_pose": 5,
+          "translation": [
+            -31,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SE.png",
+          "source_pose": 6,
+          "translation": [
+            -38,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SE.png",
+          "source_pose": 7,
+          "translation": [
+            -27,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SE.png",
+          "source_pose": 8,
+          "translation": [
+            -24,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/blink-se.png",
+          "source_pose": 8,
+          "translation": [
+            -24,
+            14
+          ]
+        }
+      ]
+    },
+    "sw": {
+      "key_rgba_sha256": [
+        "1fd4faf41f725f8c36f251fd3473b281594234be43f00f9509d21a7f51d92d85",
+        "c5ede9057ee7d380382ee25b52f20c462be8c77924dc43ce0db48f87c5f74947",
+        "1d47cfe36081bf9a1380636fd350d1f5f313576cd9c7505dbc85a427c2171b4f",
+        "4b6313689d76d82db4b192d87aecba5b318a5ca53cdf85612a558646c5ba36d3",
+        "0513f232abf0983c3b94073f02c57ce07153a687432899236e1076313529e6f1",
+        "3903c41a0df0a40f9af7492482ef067958ea239ff2eeaa3668f51ded41153b5b",
+        "50b29cf3a0e486e06a20d9cb4c85ebb119dbf6680c427788ce7ff4ba7dcc08b9",
+        "39bfdb89f08ecc62a57ab27eaff9a8718bebd9f61e7d8a1004a0700eb9e26b06",
+        "d9382145ece1140724729130aff53144d2f3975060db168dbcb5b2920bbc26fd",
+        "980bbdb4b4cb36795f4e0d0f8ed54298b4629b0ba2253663b09248531094380e"
+      ],
+      "row": 3,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SW.png",
+          "source_pose": 0,
+          "translation": [
+            8,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SW.png",
+          "source_pose": 1,
+          "translation": [
+            -10,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SW.png",
+          "source_pose": 2,
+          "translation": [
+            -5,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SW.png",
+          "source_pose": 3,
+          "translation": [
+            12,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SW.png",
+          "source_pose": 4,
+          "translation": [
+            -5,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SW.png",
+          "source_pose": 5,
+          "translation": [
+            -2,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SW.png",
+          "source_pose": 6,
+          "translation": [
+            4,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SW.png",
+          "source_pose": 7,
+          "translation": [
+            -6,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/SW.png",
+          "source_pose": 8,
+          "translation": [
+            -10,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/tessa/sparks-v2/blink-sw.png",
+          "source_pose": 8,
+          "translation": [
+            -10,
+            14
+          ]
+        }
+      ]
+    }
+  },
+  "grid": [
+    4,
+    12
+  ],
+  "idle_index": 8,
+  "method": "Approved eight-pose sheets plus neutral idle; integer translation only; eye-only blink patch",
+  "output_sha256": "59a0a43fb7f9a4f85901c5935b0a2ece94408adead5cd2325f4e93eaafed281e",
+  "schema": 4,
+  "sources": {
+    "res://art/source/characters/tessa/sparks-v2/NE.png": "ca6189b9d19bf3ee66fa590320a78ed86508f711f0a65a0be1fefb4ddcea2642",
+    "res://art/source/characters/tessa/sparks-v2/NW.png": "3d25e5ad0a7a3cbbe59278924c254852c047cf27e155f8b800f6f11c30ea713b",
+    "res://art/source/characters/tessa/sparks-v2/SE.png": "da759d03659da5b84b22047d6c5a7b3e8c3559690d22f75b7589ab83989c12c0",
+    "res://art/source/characters/tessa/sparks-v2/SW.png": "43cccdef54543ca7955ad4d84cec6d1023b1d4269207be3290b69a5e4e95b719",
+    "res://art/source/characters/tessa/sparks-v2/blink-se.png": "2ff5384f48b723d653f36760e76b090205e3288b0843f8d4fa280c79db62737e",
+    "res://art/source/characters/tessa/sparks-v2/blink-sw.png": "27675a419bd4f8189866c27e47b127bc03c0f2e9698373681779be7fedb4285a"
+  },
+  "walk_poses": 8
+}

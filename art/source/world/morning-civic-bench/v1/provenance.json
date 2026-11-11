@@ -1,0 +1,8 @@
+{
+  "asset": "morning-civic-bench",
+  "version": "v1",
+  "derived_from": "art/source/world/park-bench/v1/model.blend",
+  "authoring_record": "art/source/world/village-landmarks/v1/civic_bench.py",
+  "source_sha256": "f7aa3477a8b60238b22974f73bc79d3f574f72ccd409877a0e1b9eb9c86d2d3f",
+  "note": "Seat widened to 2.34m while retaining its 0.9m backrest height. Original master unchanged."
+}

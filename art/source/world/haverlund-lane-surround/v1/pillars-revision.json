@@ -1,0 +1,9 @@
+{
+  "asset": "haverlund-lane-surround",
+  "date": "2026-10-29",
+  "record": "art/source/world/square-hub/v1/pillars_revision.py",
+  "backup": "model.pre-pillars.blend",
+  "removed": 17,
+  "placements": "art/source/world/square-hub/v1/pillars-haverlund-lane-surround.json",
+  "note": "Carved pilasters removed; the area document places town-power-pillar models where they stood."
+}

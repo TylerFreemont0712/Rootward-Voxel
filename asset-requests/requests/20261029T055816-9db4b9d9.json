@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "id": "20261029T055816-9db4b9d9",
+  "kind": "delete",
+  "title": "Delete Signpost",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "signpost",
+    "label": "Signpost",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/signpost/v1/model.blend",
+    "runtime": "assets/world/signpost/model.glb",
+    "manifest": "assets/world/signpost/manifest.json",
+    "catalog_notes": "A 1.3 m timber post with a cream board pointing right and a violet board pointing left. The footprint is the iron shoe; the boards overhang it at height.",
+    "related_files": [
+      "art/source/world/signpost/v1/brief.md",
+      "art/source/world/signpost/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/areas/village-morning.json",
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Signpost",
+      "source": "art/source/world/signpost/v1/model.blend",
+      "runtime": "assets/world/signpost/model.glb",
+      "pivot": "ground origin at the post's iron shoe",
+      "logical_footprint": [
+        -0.1,
+        -0.1,
+        0.2,
+        0.2
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A 1.3 m timber post with a cream board pointing right and a violet board pointing left. The footprint is the iron shoe; the boards overhang it at height.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster_shade"
+        ],
+        "roof": [
+          "roof",
+          "roof_dark"
+        ],
+        "timber": [
+          "wood",
+          "wood_light"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:58:16+00:00",
+  "updated": "2026-10-29T06:29:21+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:58:16+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:29:21+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "content/areas/village-morning.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/signpost/v1/brief.md",
+    "art/source/world/signpost/v1/model.blend",
+    "art/source/world/signpost/v1/provenance.json",
+    "assets/world/signpost/manifest.json",
+    "assets/world/signpost/model.glb",
+    "assets/world/signpost/model.glb.import"
+  ]
+}

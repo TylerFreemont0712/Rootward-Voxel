@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "asset": "town-balustrade-short",
+  "version": "v1",
+  "source": "art/source/world/town-balustrade-short/v1/model.blend",
+  "source_sha256": "bac7f8ef53976db2a302f9d32e37aa1d682afaccfa8fb88da2723c0c0f28f94f",
+  "runtime": "assets/world/town-balustrade-short/model.glb",
+  "runtime_sha256": "de3055b29d87de697181a8c5a81aa5b61dfefa10c1a36a23a478a7b363fd22d3",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      0.189999997615814,
+      0.0,
+      -0.180000007152557,
+      1.30999994277954,
+      1.0,
+      0.180000007152557
+    ],
+    "geometry_sha256": "3d078691fcb2477b27860261b48733e115ae2a017a499674fffe0c9c527dafad",
+    "material_records": {
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      }
+    },
+    "materials": [
+      "seaside_stone"
+    ],
+    "meshes": 1,
+    "triangles": 864
+  }
+}

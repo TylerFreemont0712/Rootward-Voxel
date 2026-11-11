@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-27",
+  "sources": [
+    {
+      "asset": "workshop-repair-bench",
+      "before": "746f637f1326d378f793dec303ff6b0ed971556a841b19a7eda32b0668667c4c",
+      "backup": "art/source/world/workshop-repair-bench/v1/model.pre-user-touchups.blend",
+      "after": "313e21eb59fa40c3871c8766e8a318a1d2122489b536d375bdac9c3e270f6e05"
+    },
+    {
+      "asset": "workshop-assembly-table",
+      "before": "bfbf54a5be5f8a51c0b75a21296c8d2d5dae8cfa0005fdf02e2aa62883499ef2",
+      "backup": "art/source/world/workshop-assembly-table/v1/model.pre-user-touchups.blend",
+      "after": "3b116adaa495345440abea2a7187b254dc22f63286382487e5dcf8975db5e827"
+    },
+    {
+      "asset": "workshop-parts-crate",
+      "before": "37162fea88d89f2fad8d3936092ddd68b376595a95377fdfe441fecc1f5e0825",
+      "backup": "art/source/world/workshop-parts-crate/v1/model.pre-user-touchups.blend",
+      "after": "c74213dfca7131922e75fd379e7903b6df0b7bb9f4957db9a96aebcc96e0f8a9"
+    },
+    {
+      "asset": "workshop-shop-doors",
+      "before": "2802aacf48949016aa1a01507e2ae997676920f908870a88f29e002b0b2098a0",
+      "backup": "art/source/world/workshop-shop-doors/v1/model.pre-user-touchups.blend",
+      "after": "6c642a9eae53e8f9743f564728b0a9b250500a143f1601a640542d5ef25cdd94"
+    },
+    {
+      "asset": "workshop-umbrella-stand",
+      "before": "a36386b26c8d3079094ffdc14ae508941fab841dd8c06217d0c3b27275eb22a0",
+      "backup": "art/source/world/workshop-umbrella-stand/v1/model.pre-user-touchups.blend",
+      "after": "96a69c22fbe910fe09677d2649165d0b50bcadb66ff6e16d83fd40136bf9f95c"
+    },
+    {
+      "asset": "workshop-armchair",
+      "before": "b6ef13d9f7a67f76356fba7eb5a781c36cb69ac6ebf9f5d71fc01f0d746c1617",
+      "backup": "art/source/world/workshop-armchair/v1/model.pre-user-touchups.blend",
+      "after": "a8018fbc7969efcc578e22ae168a0dda6e338bd4b68e34e6910afd58f242bb7c"
+    },
+    {
+      "asset": "workshop-stove",
+      "before": "d9c4eab87c0c07de0646e8c0f95b784c6e05466978a9dbecabc667ab87a6a43e",
+      "backup": "art/source/world/workshop-stove/v1/model.pre-user-touchups.blend",
+      "after": "e9b777579427937fe6e801480b0fed03ac7e0fead7491a4504f9eac177139ac3"
+    }
+  ]
+}

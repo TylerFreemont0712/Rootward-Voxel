@@ -1,0 +1,10 @@
+{
+  "asset": "lane-cottage",
+  "date": "2026-10-28",
+  "reference": "docs/concept/v0.7/art/4-opening/T7c-workshop-lane.wheels.png",
+  "authoring_record": "art/source/world/sparks-lane/v1/author_buildings.py",
+  "authoring_record_sha256": "3efdc42e8ee5e7eba9aad1e010e52ea64a739a7c7d852059c9e3aa4191a99d64",
+  "kit_sha256": "26267046a1dc1a943f8d91d12e36863bdd670edc41951c7b46d51683c24d7aec",
+  "textures": "art/source/world/sparks-lane/v1/textures.py",
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh."
+}

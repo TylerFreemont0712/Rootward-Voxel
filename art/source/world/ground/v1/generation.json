@@ -1,0 +1,79 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "seed": "not exposed",
+  "items": [
+    {
+      "kind": "height",
+      "name": "grass",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-a09acd35-5763-4bf2-a74b-4d2d0ae35fee.png",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32×32 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024×1024 image. Input is the grass albedo; preserve every clump's position exactly."
+    },
+    {
+      "kind": "height",
+      "name": "dirt_path",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-7764e568-2c42-42c1-85dd-09f3a61f55ec.png",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32×32 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024×1024 image. Input is the dirt_path albedo; preserve every shape's position exactly."
+    },
+    {
+      "kind": "height",
+      "name": "cobble",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-94fbc78e-0eea-4204-8709-d37fa29b85a1.png",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32×32 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024×1024 image. Input is the cobble albedo; preserve every shape's position exactly."
+    },
+    {
+      "kind": "height",
+      "name": "soil",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-0edd550d-188e-428a-8a9b-1643b477c73d.png",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32×32 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024×1024 image. Input is the soil albedo; preserve every shape's position exactly."
+    },
+    {
+      "kind": "height",
+      "name": "pebbles",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-2dc636c4-c9b0-40f9-ae9c-bd6fe3c76125.png",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32×32 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024×1024 image. Input is the pebbles albedo; preserve every shape's position exactly."
+    },
+    {
+      "kind": "height",
+      "name": "rock",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-80d0931c-4631-4146-aff3-118445018d8c.png",
+      "prompt": "Use case: texture-edit. Convert the attached top-down pixel-art ground texture into a grayscale height map of the same surface, pixel for pixel in the same place. Raised parts are bright (stones, grass clumps, pebbles), recessed parts are dark (mortar gaps, bare earth between tufts, cracks). Keep the same 32×32 chunky pixel grid and hard pixel edges, at most 8 gray levels, no shading, no shadows, no new shapes, no outline, no border, seamless tileable on all four edges. Output exactly one 1024×1024 image. Input is the rock albedo; preserve every shape's position exactly."
+    },
+    {
+      "kind": "ref",
+      "name": "grass-dirt_path",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-fbd8986a-003f-405c-b90d-5c5005265711.png",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where grass meets dirt_path along a wandering, ragged, natural border: grass on one side, dirt_path on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32×32 grid per tile, same warm saturated palette as the attached textures. Input image 1 is grass; input image 2 is dirt_path, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512×512 image."
+    },
+    {
+      "kind": "ref",
+      "name": "grass-cobble",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-6195d2b8-2b6d-45ec-bec7-6bae3dda3872.png",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where grass meets cobble along a wandering, ragged, natural border: grass on one side, cobble on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32×32 grid per tile, same warm saturated palette as the attached textures. Input image 1 is grass; input image 2 is cobble, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512×512 image."
+    },
+    {
+      "kind": "ref",
+      "name": "dirt_path-cobble",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-3a8de10a-e0e2-4b4f-9248-a2c8f49fc095.png",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where dirt_path meets cobble along a wandering, ragged, natural border: dirt_path on one side, cobble on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32×32 grid per tile, same warm saturated palette as the attached textures. Input image 1 is dirt_path; input image 2 is cobble, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512×512 image."
+    },
+    {
+      "kind": "ref",
+      "name": "grass-soil",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-f987b2e2-8547-4307-a1d3-8d84db07db73.png",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where grass meets soil along a wandering, ragged, natural border: grass on one side, soil on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32×32 grid per tile, same warm saturated palette as the attached textures. Input image 1 is grass; input image 2 is soil, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512×512 image."
+    },
+    {
+      "kind": "ref",
+      "name": "dirt_path-pebbles",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-623761df-399b-4337-9827-da760186b652.png",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where dirt_path meets pebbles along a wandering, ragged, natural border: dirt_path on one side, pebbles on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32×32 grid per tile, same warm saturated palette as the attached textures. Input image 1 is dirt_path; input image 2 is pebbles, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512×512 image."
+    },
+    {
+      "kind": "ref",
+      "name": "cobble-pebbles",
+      "original_path": "/home/joejin/.codex/generated_images/01a166f1-fa82-77c1-a8de-538b8302d92c/exec-f085afd6-012b-42d9-b2c1-5de1c352839c.png",
+      "prompt": "Use case: stylized-concept. A top-down, hand-painted chunky pixel-art ground patch where cobble meets pebbles along a wandering, ragged, natural border: cobble on one side, pebbles on the other, a few pixels of each poking into the other, no straight lines, no soft gradient, crisp hard pixels on a 32×32 grid per tile, same warm saturated palette as the attached textures. Input image 1 is cobble; input image 2 is pebbles, both palette and surface references. No shadows, no perspective, no border, no text, no flowers, no props. Exactly one 512×512 image."
+    }
+  ]
+}

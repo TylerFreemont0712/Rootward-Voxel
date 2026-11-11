@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "workshop-wall-clock",
+  "version": "v1",
+  "source": "art/source/world/workshop-wall-clock/v1/model.blend",
+  "source_sha256": "ebd704cb4ce3a260531a35bb9be015f95ff02898b97f9fdd0875bb3d3182edd9",
+  "runtime": "assets/world/workshop-wall-clock/model.glb",
+  "runtime_sha256": "e825e0057940b30f89f00e9b918fef3652b9c526d0a6c4c65962d40080466c5d",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.340000003576279,
+      -0.340000003576279,
+      -0.0599999986588955,
+      0.340000003576279,
+      0.340000003576279,
+      0.122000001370907
+    ],
+    "geometry_sha256": "164343f9341923d75542517a9687fcc0edf6ba0c0251991f961ec7b7a526e288",
+    "material_records": {
+      "workshop_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_ink": {
+        "albedo": [
+          3137,
+          2392,
+          1882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_paper": {
+        "albedo": [
+          9569,
+          9098,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_steel_dark": {
+        "albedo": [
+          2039,
+          2431,
+          2667,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "workshop_brass",
+      "workshop_ink",
+      "workshop_paper",
+      "workshop_steel_dark",
+      "workshop_wood_dark"
+    ],
+    "meshes": 5,
+    "triangles": 1392
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "anchor": [
+    352,
+    660
+  ],
+  "cell_size": [
+    704,
+    704
+  ],
+  "directions": [
+    "SE",
+    "SW",
+    "NE",
+    "NW"
+  ],
+  "frames_per_direction": 4,
+  "horizontal_flips": false,
+  "independent_directions": true,
+  "method": "Each physical direction separately painted with imagegen; integer translation only for registration, no resampling or mirrored views.",
+  "opaque_height": 555,
+  "output": "res://art/source/robots/v0.72/wick/movement-v1/movement-atlas.png",
+  "output_sha256": "1c328281eed794d72db1f77eb708a02066fde7555dfc33c103a67a555be709d5",
+  "poses": {
+    "NE": [
+      {
+        "opaque_bounds": [
+          178,
+          63,
+          338,
+          519
+        ],
+        "source_rect": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          -37,
+          78
+        ]
+      },
+      {
+        "opaque_bounds": [
+          157,
+          63,
+          336,
+          520
+        ],
+        "source_rect": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          -13,
+          77
+        ]
+      },
+      {
+        "opaque_bounds": [
+          177,
+          37,
+          339,
+          520
+        ],
+        "source_rect": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          -37,
+          103
+        ]
+      },
+      {
+        "opaque_bounds": [
+          156,
+          36,
+          337,
+          521
+        ],
+        "source_rect": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          -14,
+          103
+        ]
+      }
+    ],
+    "NW": [
+      {
+        "opaque_bounds": [
+          188,
+          61,
+          335,
+          502
+        ],
+        "source_rect": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          -50,
+          97
+        ]
+      },
+      {
+        "opaque_bounds": [
+          144,
+          64,
+          328,
+          509
+        ],
+        "source_rect": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          0,
+          87
+        ]
+      },
+      {
+        "opaque_bounds": [
+          192,
+          41,
+          335,
+          505
+        ],
+        "source_rect": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          -52,
+          114
+        ]
+      },
+      {
+        "opaque_bounds": [
+          151,
+          41,
+          342,
+          510
+        ],
+        "source_rect": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          -17,
+          109
+        ]
+      }
+    ],
+    "SE": [
+      {
+        "opaque_bounds": [
+          198,
+          29,
+          312,
+          555
+        ],
+        "source_rect": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          38,
+          76
+        ]
+      },
+      {
+        "opaque_bounds": [
+          160,
+          40,
+          315,
+          540
+        ],
+        "source_rect": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          75,
+          80
+        ]
+      },
+      {
+        "opaque_bounds": [
+          196,
+          27,
+          318,
+          541
+        ],
+        "source_rect": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          40,
+          92
+        ]
+      },
+      {
+        "opaque_bounds": [
+          170,
+          17,
+          312,
+          553
+        ],
+        "source_rect": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          66,
+          90
+        ]
+      }
+    ],
+    "SW": [
+      {
+        "opaque_bounds": [
+          202,
+          58,
+          314,
+          514
+        ],
+        "source_rect": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          33,
+          88
+        ]
+      },
+      {
+        "opaque_bounds": [
+          172,
+          58,
+          315,
+          515
+        ],
+        "source_rect": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "translation": [
+          63,
+          87
+        ]
+      },
+      {
+        "opaque_bounds": [
+          200,
+          56,
+          316,
+          513
+        ],
+        "source_rect": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          35,
+          91
+        ]
+      },
+      {
+        "opaque_bounds": [
+          173,
+          56,
+          317,
+          513
+        ],
+        "source_rect": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "translation": [
+          61,
+          91
+        ]
+      }
+    ]
+  },
+  "preview_fps": 8,
+  "schema": 1,
+  "source_adapter": "pipeline/prepare_robot_movement.gd",
+  "source_adapter_sha256": "b8bd2aa08dc406e0e5fe55d88bc51b339915ae1e3153bc200367a5111c4f04e9",
+  "sources": {
+    "res://art/source/robots/v0.72/wick/movement-v1/NE-generated.png": "f374b886e71e0af509190f6d3f91605c10ad75f0d1ff39688a7b3e70e58e12dc",
+    "res://art/source/robots/v0.72/wick/movement-v1/NW-generated.png": "c5d294bff6b5012ce0f62b19f9abba017ca1af0117995058d8966fe27b9334d6",
+    "res://art/source/robots/v0.72/wick/movement-v1/SE-generated.png": "d9a8b9c7cdda4e63a71f728bed4c74331e7e6c84409c5740353256d985464eb4",
+    "res://art/source/robots/v0.72/wick/movement-v1/SW-generated.png": "693c78d3db0b9ad71c2323eb1bac62b328e0801a03a847fe7668013efb8083c2"
+  },
+  "status": "registered sprite movement candidate; current runtime robot models unchanged",
+  "source_adapter_snapshot": "res://art/source/robots/v0.72/wick/movement-v1/registration-adapter.gd"
+}

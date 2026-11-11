@@ -1,0 +1,26 @@
+{
+  "asset": "loft-floor-plant",
+  "source": "art/source/world/loft-floor-plant/v1/model.blend",
+  "backup": "art/source/world/loft-floor-plant/v1/model.pre-plant-style.blend",
+  "before_sha256": "3533fd0163fd11cf58e31369b69b3b17a28d2772911f24c2eb49177ee9141f4b",
+  "after_sha256": "e34d41446d562df52d5c2895128351ed4bf8e6b2372bf17d6d97376ea320320b",
+  "objects": [
+    {
+      "object": "loft_leaf",
+      "replaced_components": {
+        "leaf": 7
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "loft_leaf_light",
+      "replaced_components": {
+        "leaf_light": 4
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

@@ -1,0 +1,120 @@
+{
+  "purpose": "New painted surfaces for the authored Sparks loft assets. Runtime textures are embedded through the normal world GLB build.",
+  "images": [
+    {
+      "id": "honey-oak",
+      "prompt": "Use case: stylized-concept. Asset type: a NEW production surface illustration for real 3D furniture in a cozy outlined storybook game. Input 1 is a STYLE AND COLOUR reference only, not an edit target. Match its painterly brushwork, restrained warm-brown linework and soft broad colour areas. The illustration fills the entire canvas edge to edge. Orthographic FLAT surface view, no perspective, no 3D object, no scene, no drop shadow, no text, watermark or border. Opaque PNG, 1536x1024.\nPrimary request: one seamless honey-oak wood grain material. Calm light warm honey-brown wood, pale brushed ridges, sparse thin hand-inked grain curls and tiny worn marks. Grain runs horizontally from left to right. Broad soft tones and little contrast, as the loft floor and desk in the reference; no dark cracks, no separate planks, no repeating checkerboard or brick arrangement. Quiet painted wood rather than photographic wood.",
+      "inputs": [
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png"
+      ],
+      "file": "honey-oak.png",
+      "sha256": "a1a68167e5b3bc088eab647d9dde0733fca749a9c03f005eb00d1e24ee65bc3a",
+      "size": [
+        1536,
+        1024
+      ],
+      "tool": "Built-in image_gen.imagegen; model identifier not exposed",
+      "date": "2026-10-27",
+      "input_sha256": {
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png": "c2dcece4c70004e41961ab9ffe5773b6605181950c2aec68b2d8eec135d330e6"
+      }
+    },
+    {
+      "id": "teal-quilt",
+      "prompt": "Use case: stylized-concept. Asset type: a NEW production surface illustration for real 3D furniture in a cozy outlined storybook game. Input 1 is a STYLE AND COLOUR reference only, not an edit target. Match its painterly brushwork, restrained warm-brown linework and soft broad colour areas. The illustration fills the entire canvas edge to edge. Orthographic FLAT surface view, no perspective, no 3D object, no scene, no drop shadow, no text, watermark or border. Opaque PNG, 1536x1024.\nPrimary request: the flat fabric surface of the reference's teal-and-cream PATCHWORK QUILT. A tidy grid of broad alternating muted teal and warm cream squares, about eight columns by six rows, with a few lighter faded teal pieces. Fine warm hand-drawn seam stitches and subtle soft painted cotton weave. All squares line up and fill the full rectangle without any blank margin. No bed or folds or perspective; these will come from real 3D geometry. Keep large checks readable from far away.",
+      "inputs": [
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png"
+      ],
+      "file": "teal-quilt.png",
+      "sha256": "461b67cd6250f2ecc1b19a7438d334c0bf6c1fbb5f6b3654cfbba0689c638ccc",
+      "size": [
+        1536,
+        1024
+      ],
+      "tool": "Built-in image_gen.imagegen; model identifier not exposed",
+      "date": "2026-10-27",
+      "input_sha256": {
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png": "c2dcece4c70004e41961ab9ffe5773b6605181950c2aec68b2d8eec135d330e6"
+      }
+    },
+    {
+      "id": "woven-rug",
+      "prompt": "Use case: stylized-concept. Asset type: a NEW production surface illustration for real 3D furniture in a cozy outlined storybook game. Input 1 is a STYLE AND COLOUR reference only, not an edit target. Match its painterly brushwork, restrained warm-brown linework and soft broad colour areas. The illustration fills the entire canvas edge to edge. Orthographic FLAT surface view, no perspective, no 3D object, no scene, no drop shadow, no text, watermark or border. Opaque PNG, 1536x1024.\nPrimary request: the flat textile surface of the reference's worn teal-and-cream RAG RUG. Horizontal broad softly uneven teal stripes alternating warm cream stripes, several thin accent bands, small handwoven flecks and worn painted cotton texture. More teal than cream, pleasingly faded and cozy. Full textile edge-to-edge, no fringe, no floor, no cast shadow, no visible outside edge; fringe is modelled separately. Calm broad pattern, no tiny busy ornament.",
+      "inputs": [
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png"
+      ],
+      "file": "woven-rug.png",
+      "sha256": "803cd92f0ddffc5828451b0e1df378d8fb2822d7d834a1b7c1d12d47da0b9483",
+      "size": [
+        1536,
+        1024
+      ],
+      "tool": "Built-in image_gen.imagegen; model identifier not exposed",
+      "date": "2026-10-27",
+      "input_sha256": {
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png": "c2dcece4c70004e41961ab9ffe5773b6605181950c2aec68b2d8eec135d330e6"
+      }
+    },
+    {
+      "id": "harbour-view",
+      "prompt": "Use case: illustration-story. Asset type: a NEW painted landscape used as the view THROUGH the loft windows and on a little wall postcard in a storybook game. Input 1 supplies the town identity and painted warm outlines. A quiet morning hillside harbour: close terracotta and green-copper rooftops with cream plaster chimneys in the lower quarter, a turquoise sea cove and small sailboats in the middle, distant cream/ochre/salmon houses on a green hill and a tiny lighthouse, pale blue morning sky across the top third. Fine warm-brown drawn contours, broad painterly soft shapes and cozy mid-century invented European town. Flat landscape illustration, no window frame, no room, no UI, no people, no lettering, no watermark. Pale-gold daylight, calm sea, no orange emission or night glow. Landscape opaque PNG 1536x1024.",
+      "inputs": [
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png"
+      ],
+      "file": "harbour-view.png",
+      "sha256": "2a1464d2f7c6aaf6bcf9e3293bd572625380107b1bbd4829d09bfeba84d35600",
+      "size": [
+        1536,
+        1024
+      ],
+      "tool": "Built-in image_gen.imagegen; model identifier not exposed",
+      "date": "2026-10-27",
+      "input_sha256": {
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png": "c2dcece4c70004e41961ab9ffe5773b6605181950c2aec68b2d8eec135d330e6"
+      }
+    },
+    {
+      "id": "honey-oak-v2",
+      "file": "honey-oak-v2.png",
+      "prompt": "Use case: stylized-concept. Asset type: flat painted material for the real 3D loft in Input 1. Input 1 is a style reference only. Quiet broad painterly colour, softly brushed hand-painted storybook finish, very restrained thin warm-brown marks. Orthographic flat material filling the canvas edge to edge, seamless, opaque 1536x1024. No scene, objects, border, text, lighting gradient or cast shadow.\nA softly weathered NATURAL LIGHT OAK surface, grain flowing horizontally. Use subdued tan, oat, biscuit and light warm brown. Low saturation and low contrast; absolutely no vivid orange, golden yellow or saturated amber. The reference's softly worn table wood before morning light hits it. Thin sparse grain strokes, little broad wood curls, smooth quiet surfaces, no planks or dark cracks. Diffuse colour swatch, light neutral warm brown.",
+      "inputs": [
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png"
+      ],
+      "sha256": "cb3c6636bc80daf17fa439198c6b2e8d69547fa814aad331a5f43d6f4dfe35e7",
+      "size": [
+        1536,
+        1024
+      ],
+      "date": "2026-10-27",
+      "tool": "Built-in image_gen.imagegen; model identifier not exposed",
+      "input_sha256": {
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png": "c2dcece4c70004e41961ab9ffe5773b6605181950c2aec68b2d8eec135d330e6"
+      }
+    },
+    {
+      "id": "cream-plaster",
+      "file": "cream-plaster.png",
+      "prompt": "Use case: stylized-concept. Asset type: flat painted material for the real 3D loft in Input 1. Input 1 is a style reference only. Quiet broad painterly colour, softly brushed hand-painted storybook finish, very restrained thin warm-brown marks. Orthographic flat material filling the canvas edge to edge, seamless, opaque 1536x1024. No scene, objects, border, text, lighting gradient or cast shadow.\nSoft warm CREAM LIME PLASTER, with subtle broad brush and trowel variations, ivory, pale oat and warm off-white. Very faint paper-like painted texture, no visible masonry, no cracks, no brown flecks, no directional light, no pattern. A quiet creamy painted wall, matching the plaster between the reference's loft timbers. Use close values, never stark white or grey.",
+      "inputs": [
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png"
+      ],
+      "sha256": "70d0b6ea1c8e56fb66674392ef0e5b5d6d486728a62a40b96ee72bbc78d47377",
+      "size": [
+        1536,
+        1024
+      ],
+      "date": "2026-10-27",
+      "tool": "Built-in image_gen.imagegen; model identifier not exposed",
+      "input_sha256": {
+        "docs/concept/v0.7/art/4-opening/T7a-workshop-loft.wheels.png": "c2dcece4c70004e41961ab9ffe5773b6605181950c2aec68b2d8eec135d330e6"
+      }
+    }
+  ],
+  "selected_surfaces": {
+    "oak": "honey-oak-v2.png",
+    "quilt": "teal-quilt.png",
+    "rug": "woven-rug.png",
+    "harbour": "harbour-view.png",
+    "plaster": "cream-plaster.png"
+  }
+}

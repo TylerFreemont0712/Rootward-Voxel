@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "asset": "workshop-shell",
+  "version": "v1",
+  "source": "art/source/world/workshop-shell/v1/model.blend",
+  "source_sha256": "4ac8fdecee0e7a290cd21c9d86b46296bdeb3645f48bb0ebdb6d79d8bc104fcd",
+  "runtime": "assets/world/workshop-shell/model.glb",
+  "runtime_sha256": "7d594c9cb26fa5db8626d02d6dd746ebb153e96e483eefa1cd489d0790b77036",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.759999990463257,
+      -0.370000004768372,
+      -11.7600002288818,
+      13.6499996185303,
+      3.33999991416931,
+      -0.75
+    ],
+    "geometry_sha256": "476c0220067f7fd7334c1084a7f488908a44f7d80a5d55c18b80060e18b05d6f",
+    "material_records": {
+      "workshop_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_ceramic": {
+        "albedo": [
+          7137,
+          6784,
+          5686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_harbour": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "06163ed60c3f6ef423f116ec7ab523fa317208a63b62ae0f14a0ac28f99d95b9"
+      },
+      "workshop_leaf": {
+        "albedo": [
+          3137,
+          4824,
+          2784,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_leaf_dark": {
+        "albedo": [
+          2039,
+          3608,
+          2392,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_leaf_light": {
+        "albedo": [
+          4941,
+          6157,
+          3686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "387260e33a7f8dd8d9560073c85846567b23836b9a392245a84122a0c97b3b6d"
+      },
+      "workshop_ochre": {
+        "albedo": [
+          7020,
+          6078,
+          3804,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_plaster_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "23d3a02cd880e8d5e554bdf397a7adcc8c19c2c04dd26469ef68620edd32c6ff"
+      },
+      "workshop_soil": {
+        "albedo": [
+          3490,
+          2902,
+          2314,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_white": {
+        "albedo": [
+          9569,
+          9176,
+          8471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "workshop_wood_edge": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "workshop_brass",
+      "workshop_ceramic",
+      "workshop_harbour",
+      "workshop_leaf",
+      "workshop_leaf_dark",
+      "workshop_leaf_light",
+      "workshop_oak",
+      "workshop_ochre",
+      "workshop_plaster_paint",
+      "workshop_soil",
+      "workshop_white",
+      "workshop_wood",
+      "workshop_wood_dark",
+      "workshop_wood_edge"
+    ],
+    "meshes": 14,
+    "triangles": 99710
+  }
+}

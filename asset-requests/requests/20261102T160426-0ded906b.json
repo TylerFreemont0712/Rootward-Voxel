@@ -1,0 +1,910 @@
+{
+  "schema": 1,
+  "id": "20261102T160426-0ded906b",
+  "kind": "new",
+  "title": "Clockmaker, apothecary, shop interiors and modular retaining wall",
+  "asset_type": "world model",
+  "status": "changes_requested",
+  "notes": "Direct user request 2026-11-03, revised choice clockmaker + apothecary. Derive new shops from preserved adopted house sources; distinct display joinery, hinged doors and themed shop interiors. Reusable retaining wall with catalog footprint, use normal world build. Upper terrace becomes a simple park. No new quest requested.",
+  "asset": {},
+  "references": [],
+  "created": "2026-11-02T16:04:26+00:00",
+  "updated": "2026-11-03T00:20:02+00:00",
+  "history": [
+    {
+      "at": "2026-11-02T16:04:26+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-02T16:04:26+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-02T16:45:30+00:00",
+      "action": "finish"
+    },
+    {
+      "at": "2026-11-03T00:20:02+00:00",
+      "action": "Further changes requested: 20261103T002002-e749f976"
+    }
+  ],
+  "existing_assets": [
+    "cottage",
+    "mill-house",
+    "clearing-ground",
+    "tree",
+    "log-cabin",
+    "lamppost",
+    "log-cabin-large",
+    "log-cabin-large-teal",
+    "hearth-oak",
+    "ridge-cedar",
+    "river-willow",
+    "hearth-house",
+    "lantern-loft",
+    "brook-mill",
+    "wooden-barrel",
+    "woodpile",
+    "window-planter",
+    "tree-stump",
+    "park-bench",
+    "wooden-chair",
+    "bookshelf",
+    "hearth-stool",
+    "watering-can",
+    "wooden-bucket",
+    "wheelbarrow",
+    "hollow-highback-armchair",
+    "hollow-trestle-table",
+    "hollow-writing-desk",
+    "hollow-mapmakers-table",
+    "hollow-apothecary-cabinet",
+    "hollow-kitchen-dresser",
+    "hollow-oak-wardrobe",
+    "hollow-washstand",
+    "hollow-woven-settee",
+    "hollow-patchwork-bed",
+    "hollow-carpenters-bench",
+    "hollow-bellows-forge",
+    "hollow-grinding-wheel",
+    "hollow-tool-rack",
+    "hollow-potters-wheel",
+    "hollow-weavers-loom",
+    "hollow-spinning-wheel",
+    "hollow-alchemy-bench",
+    "hollow-bakers-oven",
+    "hollow-bread-display",
+    "hollow-cheese-stand",
+    "hollow-fishmongers-counter",
+    "hollow-spice-cart",
+    "hollow-linen-rack",
+    "hollow-pottery-shelf",
+    "hollow-copper-wash-tub",
+    "hollow-straw-beehive",
+    "hollow-rabbit-hutch",
+    "hollow-seedling-tray",
+    "hollow-herb-drying-rack",
+    "hollow-vine-trellis",
+    "hollow-rain-barrel",
+    "hollow-butter-churn",
+    "hollow-shard-lantern",
+    "hollow-crystal-obelisk",
+    "hollow-rune-standing-stone",
+    "hollow-village-bell",
+    "hollow-brass-lever",
+    "hollow-water-pump",
+    "hollow-wayfarers-chest",
+    "hollow-little-shrine",
+    "hollow-weather-vane",
+    "hollow-bakery",
+    "hollow-smithy",
+    "concept-cottage",
+    "rootward-tree",
+    "morning-town-hall",
+    "morning-civic-bench",
+    "reference-cottage",
+    "square-lamppost",
+    "painted-cottage",
+    "painted-oak",
+    "painted-garden-fence",
+    "loft-shell",
+    "loft-bed",
+    "loft-desk",
+    "loft-chair",
+    "loft-shelf",
+    "loft-luggage",
+    "loft-cabinet",
+    "loft-wall-life",
+    "loft-rug",
+    "loft-travel-stacks",
+    "loft-window-life",
+    "loft-postcard",
+    "loft-wardrobe",
+    "loft-window-seat",
+    "loft-rocking-chair",
+    "loft-floor-plant",
+    "loft-tape-machine",
+    "loft-hotaru",
+    "loft-cable",
+    "workshop-shell",
+    "workshop-staircase",
+    "workshop-repair-bench",
+    "workshop-tool-wall",
+    "workshop-parts-drawers",
+    "workshop-assembly-table",
+    "workshop-parts-crate",
+    "workshop-stove",
+    "workshop-armchair",
+    "workshop-tea-table",
+    "workshop-job-board",
+    "workshop-shop-doors",
+    "workshop-hanging-lamp",
+    "workshop-stool",
+    "workshop-rug",
+    "workshop-wall-shelf",
+    "workshop-jar-shelf",
+    "workshop-umbrella-stand",
+    "workshop-bread-cupboard",
+    "workshop-service-trolley",
+    "workshop-wall-clock",
+    "workshop-stair-lamp",
+    "loft-note-slip",
+    "loft-hand-terminal",
+    "zone-terminal",
+    "field-tablet",
+    "workshop-wall-screen",
+    "haverlund-lane-set",
+    "lane-workshop",
+    "lane-nell-house",
+    "lane-cottage",
+    "lane-lamp",
+    "lane-post-box",
+    "lane-notice-board",
+    "lane-bench",
+    "lane-telescope",
+    "lane-tree",
+    "lane-cypress",
+    "lane-bicycle",
+    "lane-crates",
+    "lane-planter",
+    "lane-handcart",
+    "lane-laundry",
+    "lane-pump",
+    "lane-shed",
+    "lane-tram-shelter",
+    "lane-tram",
+    "haverlund-square-set",
+    "square-rootwell",
+    "square-town-hall",
+    "square-bakery",
+    "square-bookshop",
+    "square-grocer",
+    "square-market-stall",
+    "square-cafe-table",
+    "square-node",
+    "guildhall-square-set",
+    "square-beacon",
+    "square-guildhall",
+    "square-post-office",
+    "square-west-terrace",
+    "square-banner-lamp",
+    "square-flower-stall",
+    "square-fruit-stall",
+    "square-tree-planter",
+    "square-timber-store",
+    "robot-pip",
+    "robot-trowel",
+    "robot-wick",
+    "robot-heron",
+    "robot-tender",
+    "robot-tally",
+    "seaside-rosewash-house",
+    "seaside-saltwind-house",
+    "seaside-lantern-row-house",
+    "seaside-shingle-court-cottage",
+    "seaside-eaveside-terrace",
+    "rootwell-beacon",
+    "haverlund-square-ground",
+    "town-balustrade",
+    "town-balustrade-short",
+    "town-balustrade-pier",
+    "town-railing",
+    "town-railing-short",
+    "town-railing-stair",
+    "town-railing-post",
+    "town-garden-wall",
+    "town-garden-wall-short",
+    "town-garden-pier",
+    "town-garden-gate",
+    "haverlund-post-office",
+    "haverlund-fruit-market",
+    "haverlund-bank",
+    "haverlund-lane-surround",
+    "town-power-pillar",
+    "rootwell-plaza",
+    "town-kiosk",
+    "town-fountain",
+    "town-bollard",
+    "town-bin",
+    "town-parasol-table",
+    "town-lawn",
+    "town-tree-grate",
+    "haverlund-bakery",
+    "haverlund-greengrocer",
+    "haverlund-tailor",
+    "haverlund-cafe",
+    "town-festoon",
+    "town-signpost",
+    "town-planter-bench",
+    "town-bollard-light",
+    "town-poster-column",
+    "town-coffee-cart",
+    "town-bike-rack",
+    "tram-welcome-sign",
+    "city-hall-shell",
+    "city-hall-help-desk",
+    "city-hall-job-desk"
+  ],
+  "result": {
+    "assets": [
+      "haverlund-clockmaker",
+      "haverlund-apothecary",
+      "town-shop-shell",
+      "town-retaining-wall",
+      "town-clock-stock",
+      "town-railing",
+      "town-railing-short",
+      "town-railing-stair",
+      "town-balustrade",
+      "town-balustrade-short",
+      "town-garden-wall",
+      "town-garden-wall-short",
+      "town-garden-gate",
+      "town-railing-post",
+      "town-balustrade-pier",
+      "town-garden-pier"
+    ],
+    "summary": "Square renewal reviewed natively at 1600×1000. Fixed lights and spatial source meshes remove camera-distance light competition; 115→66 logical fittings, five enterable saved shops, upper park and colliding reusable barriers. All normal source builds/audits, complete scripts/test.sh, 61 real doorway/Continue checks and full-square eight-light budget pass. Three measured views improve; Rootwell remains the draw-call hotspot. See review for source versions, scope and measurements.",
+    "review": "pipeline/reviews/2026-11-03-square-lighting-and-shops.md",
+    "contexts": [
+      {
+        "id": "haverlund-clockmaker",
+        "label": "Pendulum & Pin · clockmaker",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-clockmaker/v1/model.blend",
+        "runtime": "assets/world/haverlund-clockmaker/model.glb",
+        "manifest": "assets/world/haverlund-clockmaker/manifest.json",
+        "catalog_notes": "Deliberate derived shop from preserved haverlund-greengrocer/v1 master. art/source/world/square-renewal/v1/revise_shops.py",
+        "related_files": [
+          "art/source/world/haverlund-clockmaker/v1/square-renewal.json",
+          "art/source/world/square-renewal/v1/revise_shops.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Pendulum & Pin · clockmaker",
+          "source": "art/source/world/haverlund-clockmaker/v1/model.blend",
+          "runtime": "assets/world/haverlund-clockmaker/model.glb",
+          "pivot": "Footprint centre, front Blender -Y",
+          "logical_footprint": [
+            -2.3,
+            -3.2,
+            4.6,
+            6.4
+          ],
+          "illustrated_edges": true,
+          "notes": "Deliberate derived shop from preserved haverlund-greengrocer/v1 master. art/source/world/square-renewal/v1/revise_shops.py",
+          "behavior": "Hinged storefront. Area document owns entry and collision."
+        }
+      },
+      {
+        "id": "haverlund-apothecary",
+        "label": "Thyme & Tonic · apothecary",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-apothecary/v1/model.blend",
+        "runtime": "assets/world/haverlund-apothecary/model.glb",
+        "manifest": "assets/world/haverlund-apothecary/manifest.json",
+        "catalog_notes": "Deliberate derived shop from preserved haverlund-greengrocer/v1 master. art/source/world/square-renewal/v1/revise_shops.py",
+        "related_files": [
+          "art/source/world/haverlund-apothecary/v1/square-renewal.json",
+          "art/source/world/square-renewal/v1/revise_shops.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Thyme & Tonic · apothecary",
+          "source": "art/source/world/haverlund-apothecary/v1/model.blend",
+          "runtime": "assets/world/haverlund-apothecary/model.glb",
+          "pivot": "Footprint centre, front Blender -Y",
+          "logical_footprint": [
+            -2.3,
+            -3.2,
+            4.6,
+            6.4
+          ],
+          "illustrated_edges": true,
+          "notes": "Deliberate derived shop from preserved haverlund-greengrocer/v1 master. art/source/world/square-renewal/v1/revise_shops.py",
+          "behavior": "Hinged storefront. Area document owns entry and collision."
+        }
+      },
+      {
+        "id": "town-shop-shell",
+        "label": "Reusable town shop interior",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-shop-shell/v1/model.blend",
+        "runtime": "assets/world/town-shop-shell/model.glb",
+        "manifest": "assets/world/town-shop-shell/manifest.json",
+        "catalog_notes": "art/source/world/square-renewal/v1/author_modules.py. Editable adopted source; export through normal world build.",
+        "related_files": [
+          "art/source/world/square-renewal/v1/author_modules.py",
+          "art/source/world/town-shop-shell/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-apothecary.json",
+          "content/areas/shop-bakery.json",
+          "content/areas/shop-bookshop.json",
+          "content/areas/shop-clockmaker.json",
+          "content/areas/shop-greengrocer.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Reusable town shop interior",
+          "source": "art/source/world/town-shop-shell/v1/model.blend",
+          "runtime": "assets/world/town-shop-shell/model.glb",
+          "pivot": "Ground centre; Blender +Y logical north",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "art/source/world/square-renewal/v1/author_modules.py. Editable adopted source; export through normal world build.",
+          "behavior": "Area owns placement and traversal."
+        }
+      },
+      {
+        "id": "town-retaining-wall",
+        "label": "Limestone retaining wall · 3 m",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-retaining-wall/v1/model.blend",
+        "runtime": "assets/world/town-retaining-wall/model.glb",
+        "manifest": "assets/world/town-retaining-wall/manifest.json",
+        "catalog_notes": "art/source/world/square-renewal/v1/author_modules.py. Editable adopted source; export through normal world build.",
+        "related_files": [
+          "art/source/world/square-renewal/v1/author_modules.py",
+          "art/source/world/town-retaining-wall/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Limestone retaining wall · 3 m",
+          "source": "art/source/world/town-retaining-wall/v1/model.blend",
+          "runtime": "assets/world/town-retaining-wall/model.glb",
+          "pivot": "Ground centre; Blender +Y logical north",
+          "logical_footprint": [
+            -1.5,
+            -0.24,
+            3,
+            0.48
+          ],
+          "illustrated_edges": true,
+          "notes": "art/source/world/square-renewal/v1/author_modules.py. Editable adopted source; export through normal world build.",
+          "behavior": "Area owns placement and traversal."
+        }
+      },
+      {
+        "id": "town-clock-stock",
+        "label": "Clockmaker display cabinet",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-clock-stock/v1/model.blend",
+        "runtime": "assets/world/town-clock-stock/model.glb",
+        "manifest": "assets/world/town-clock-stock/manifest.json",
+        "catalog_notes": "art/source/world/square-renewal/v1/author_clock_stock.py. Edit adopted source and use normal world build.",
+        "related_files": [
+          "art/source/world/square-renewal/v1/author_clock_stock.py",
+          "art/source/world/town-clock-stock/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Clockmaker display cabinet",
+          "source": "art/source/world/town-clock-stock/v1/model.blend",
+          "runtime": "assets/world/town-clock-stock/model.glb",
+          "logical_footprint": [
+            -1.23,
+            -0.38,
+            2.46,
+            0.76
+          ],
+          "pivot": "Ground centre; front Blender -Y",
+          "illustrated_edges": true,
+          "notes": "art/source/world/square-renewal/v1/author_clock_stock.py. Edit adopted source and use normal world build.",
+          "behavior": "Static clock stock; future calibration challenge remains proposed."
+        }
+      },
+      {
+        "id": "town-railing",
+        "label": "Iron railing bay, 2 m",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-railing/v1/model.blend",
+        "runtime": "assets/world/town-railing/model.glb",
+        "manifest": "assets/world/town-railing/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-railing/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Iron railing bay, 2 m",
+          "source": "art/source/world/town-railing/v1/model.blend",
+          "runtime": "assets/world/town-railing/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": [
+            0,
+            -0.06,
+            2,
+            0.12
+          ],
+          "illustrated_edges": true,
+          "behavior": "Reusable barrier with authored footprint; placed solid flag enables pure movement collision. Pivot at run start.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-railing-short",
+        "label": "Iron railing bay, 1 m",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-railing-short/v1/model.blend",
+        "runtime": "assets/world/town-railing-short/model.glb",
+        "manifest": "assets/world/town-railing-short/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-railing-short/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Iron railing bay, 1 m",
+          "source": "art/source/world/town-railing-short/v1/model.blend",
+          "runtime": "assets/world/town-railing-short/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": [
+            0,
+            -0.06,
+            1,
+            0.12
+          ],
+          "illustrated_edges": true,
+          "behavior": "Reusable barrier with authored footprint; placed solid flag enables pure movement collision. Pivot at run start.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-railing-stair",
+        "label": "Raked iron railing for one stair cell",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-railing-stair/v1/model.blend",
+        "runtime": "assets/world/town-railing-stair/model.glb",
+        "manifest": "assets/world/town-railing-stair/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-railing-stair/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Raked iron railing for one stair cell",
+          "source": "art/source/world/town-railing-stair/v1/model.blend",
+          "runtime": "assets/world/town-railing-stair/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": [
+            0,
+            -0.06,
+            1,
+            0.12
+          ],
+          "illustrated_edges": true,
+          "behavior": "Reusable barrier with authored footprint; placed solid flag enables pure movement collision. Pivot at run start.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-balustrade",
+        "label": "Stone balustrade bay, 3 m",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-balustrade/v1/model.blend",
+        "runtime": "assets/world/town-balustrade/model.glb",
+        "manifest": "assets/world/town-balustrade/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-balustrade/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-lane.json",
+          "content/areas/haverlund-square.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Stone balustrade bay, 3 m",
+          "source": "art/source/world/town-balustrade/v1/model.blend",
+          "runtime": "assets/world/town-balustrade/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": [
+            0,
+            -0.19,
+            3,
+            0.38
+          ],
+          "illustrated_edges": true,
+          "behavior": "Reusable barrier with authored footprint; placed solid flag enables pure movement collision. Pivot at run start.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-balustrade-short",
+        "label": "Stone balustrade bay, 1.5 m",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-balustrade-short/v1/model.blend",
+        "runtime": "assets/world/town-balustrade-short/model.glb",
+        "manifest": "assets/world/town-balustrade-short/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-balustrade-short/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Stone balustrade bay, 1.5 m",
+          "source": "art/source/world/town-balustrade-short/v1/model.blend",
+          "runtime": "assets/world/town-balustrade-short/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": [
+            0,
+            -0.19,
+            1.5,
+            0.38
+          ],
+          "illustrated_edges": true,
+          "behavior": "Reusable barrier with authored footprint; placed solid flag enables pure movement collision. Pivot at run start.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-garden-wall",
+        "label": "Garden wall bay, 3 m",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-garden-wall/v1/model.blend",
+        "runtime": "assets/world/town-garden-wall/model.glb",
+        "manifest": "assets/world/town-garden-wall/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-garden-wall/v1/plant-style.json",
+          "art/source/world/town-garden-wall/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Garden wall bay, 3 m",
+          "source": "art/source/world/town-garden-wall/v1/model.blend",
+          "runtime": "assets/world/town-garden-wall/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": [
+            0,
+            -0.22,
+            3,
+            0.44
+          ],
+          "illustrated_edges": true,
+          "behavior": "Reusable barrier with authored footprint; placed solid flag enables pure movement collision. Pivot at run start.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-garden-wall-short",
+        "label": "Garden wall bay, 1.5 m",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-garden-wall-short/v1/model.blend",
+        "runtime": "assets/world/town-garden-wall-short/model.glb",
+        "manifest": "assets/world/town-garden-wall-short/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-garden-wall-short/v1/plant-style.json",
+          "art/source/world/town-garden-wall-short/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Garden wall bay, 1.5 m",
+          "source": "art/source/world/town-garden-wall-short/v1/model.blend",
+          "runtime": "assets/world/town-garden-wall-short/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": [
+            0,
+            -0.22,
+            1.5,
+            0.44
+          ],
+          "illustrated_edges": true,
+          "behavior": "Reusable barrier with authored footprint; placed solid flag enables pure movement collision. Pivot at run start.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-garden-gate",
+        "label": "Garden gate between two piers, 2 m",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-garden-gate/v1/model.blend",
+        "runtime": "assets/world/town-garden-gate/model.glb",
+        "manifest": "assets/world/town-garden-gate/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-garden-gate/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Garden gate between two piers, 2 m",
+          "source": "art/source/world/town-garden-gate/v1/model.blend",
+          "runtime": "assets/world/town-garden-gate/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": [
+            0,
+            -0.06,
+            2,
+            0.12
+          ],
+          "illustrated_edges": true,
+          "behavior": "Reusable barrier with authored footprint; placed solid flag enables pure movement collision. Pivot at run start.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-railing-post",
+        "label": "Iron railing post",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-railing-post/v1/model.blend",
+        "runtime": "assets/world/town-railing-post/model.glb",
+        "manifest": "assets/world/town-railing-post/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-railing-post/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Iron railing post",
+          "source": "art/source/world/town-railing-post/v1/model.blend",
+          "runtime": "assets/world/town-railing-post/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": [
+            -0.07,
+            -0.07,
+            0.14,
+            0.14
+          ],
+          "illustrated_edges": true,
+          "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-balustrade-pier",
+        "label": "Balustrade pier",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-balustrade-pier/v1/model.blend",
+        "runtime": "assets/world/town-balustrade-pier/model.glb",
+        "manifest": "assets/world/town-balustrade-pier/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-balustrade-pier/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-lane.json",
+          "content/areas/haverlund-square.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Balustrade pier",
+          "source": "art/source/world/town-balustrade-pier/v1/model.blend",
+          "runtime": "assets/world/town-balustrade-pier/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": [
+            -0.33,
+            -0.33,
+            0.66,
+            0.66
+          ],
+          "illustrated_edges": true,
+          "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      },
+      {
+        "id": "town-garden-pier",
+        "label": "Garden wall pier",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/town-garden-pier/v1/model.blend",
+        "runtime": "assets/world/town-garden-pier/model.glb",
+        "manifest": "assets/world/town-garden-pier/manifest.json",
+        "catalog_notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend.",
+        "related_files": [
+          "art/source/world/square-hub/v1/author_pieces.py",
+          "art/source/world/town-garden-pier/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": "v1",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Garden wall pier",
+          "source": "art/source/world/town-garden-pier/v1/model.blend",
+          "runtime": "assets/world/town-garden-pier/model.glb",
+          "pivot": "A bay runs along +X from 0 to its length on its base line, centred on Y 0; a pier, post or gate stands on its origin.",
+          "logical_footprint": [
+            -0.33,
+            -0.33,
+            0.66,
+            0.66
+          ],
+          "illustrated_edges": true,
+          "behavior": "Modular edge piece laid end to end by an area document. Presentation only: the area's cells and blocks decide where anyone may walk.",
+          "notes": "art/source/world/square-hub/v1/author_pieces.py is initial authoring only; edit the adopted model.blend."
+        }
+      }
+    ],
+    "fingerprints": {
+      "haverlund-clockmaker": {
+        "source": "7b886a3eec40cde2db20a0ed1ca6964e7f5903fdd2beedb64dfdec5506428e29",
+        "runtime": "cd72ba346f5f4d285848cc3a46ac2af7c37fd122cc48d1a04fa38347439a29b8",
+        "entry": "af0107d941af48f7f270638c92052130ace3d58b24cfaec4b29b6060eec2e98b"
+      },
+      "haverlund-apothecary": {
+        "source": "e9835f5cd39c3db60082e0fbded1311b0a881f600bc1c57337e35c47ff3c7441",
+        "runtime": "6d5b44dc4a5978a7c9b10f1c6729e191d5e38f93429adfc139c1b34ee675bad6",
+        "entry": "0849c86906d87196120c4908ad51bfea93758bd3cb8a3e2d837c73814cc3ea05"
+      },
+      "town-shop-shell": {
+        "source": "df5b74c3b4f1598024a3f7d365703eaf98a0ef0186bc49f24e311b0dcf098ee4",
+        "runtime": "4d35e1ce17caaa1257ae7e86708055c5ac1d4a5a49621ad8ef8fc7c6087ea712",
+        "entry": "d2d7efc09df3416bb8368dbb8471bb807025e6d84e40d380b19b039bb1bab35c"
+      },
+      "town-retaining-wall": {
+        "source": "8826a5b34465921053d97e4aafb416eb90df6b919255baeedbac039ff376c88d",
+        "runtime": "cbe193871c0b79d782f7ed7f0155bf26e5f3ee9376933b288e0684123d0e8f27",
+        "entry": "7b58ca2546b0fedbaf834169de21c0095559de0215bb5f613f986ba6b314b4ab"
+      },
+      "town-clock-stock": {
+        "source": "f5abafad162f262e761116a80925d4cf8cc27220bb79607b5c8d83c3283c41c1",
+        "runtime": "aa6aaa80ed01afbb766e58be18eb482b3589167908857dd31d7ea779866f1b7d",
+        "entry": "272e26314544a1ffa7a3bfa3f0a98b546a4bfcd393002360015b33ef7cf113b6"
+      },
+      "town-railing": {
+        "source": "92489e2468a8996d5b0a385bf6380fb9612b3d5ed94d929800321e6e5d3880ec",
+        "runtime": "90c39c98ddd15759e9c427781710234cb7cccf3cac32e631fa85650e48ddc494",
+        "entry": "a027b6b71ec842831a7a213ebd94c2ab1cbf16b2dbb42e8433962f9178fe0405"
+      },
+      "town-railing-short": {
+        "source": "dabe2529355e5e986388f153d34551e626b82e7b63b4443890f13455665c14fd",
+        "runtime": "7571dd80e8ab7b918c38a21f90f53a3853207efab860de35f460d45acb5ec0ec",
+        "entry": "a4472cdf9f15f341363ca81fbbff51ceae39c6b66e16b3af540ce86878169669"
+      },
+      "town-railing-stair": {
+        "source": "3be3c17d57613300c24897b28bb02a492c3fee7790ef2cf70abb388bf35dbdd1",
+        "runtime": "7fc4df3b1eaeefda1e1ad859daef63c32f5319a3b622ac229cc69639b2b583be",
+        "entry": "77f3177375151e136cfe8b2acdb122e36da2d1331818376335fdf9fd8291d506"
+      },
+      "town-balustrade": {
+        "source": "ada147bbe6b31945b61d0bd691500dc7c4d0595e1631619e94e28941e88ab8e9",
+        "runtime": "737950239ab97dff765ffdc7418e32fcde19cf2dd87aa3e522e67313928076ab",
+        "entry": "c16ca4d7f2c9c81b8b2adb554377482261979d5598352b28b9b511547ddcc262"
+      },
+      "town-balustrade-short": {
+        "source": "bac7f8ef53976db2a302f9d32e37aa1d682afaccfa8fb88da2723c0c0f28f94f",
+        "runtime": "de3055b29d87de697181a8c5a81aa5b61dfefa10c1a36a23a478a7b363fd22d3",
+        "entry": "a16227f246943093086988ac7368b36e6e1e6d3ebb7d970a0953b0f675133d80"
+      },
+      "town-garden-wall": {
+        "source": "c8f8cbf6138651f4683938f6e721eb65b9a93db482e82996eabcee2b29df5557",
+        "runtime": "0e4b265dea88fe010dc53f4c9ee32a7de323cdf2f3c5b4e74bc0d6d78d783d85",
+        "entry": "7d878cef7cfef7b5218f6f959690d037d3e3447fe49a6690e7062c2fe7669a78"
+      },
+      "town-garden-wall-short": {
+        "source": "da91b2e4db32aaa6cb7744bc1fa87c83466af94590c5a95ba4172b0c110a1987",
+        "runtime": "fe51a9eec99874c2fa2c2ba2b4b686be3493949a6fcc135af3b562dab9a9c400",
+        "entry": "cff50f760bea52bd44cbf7028c8be7cc02ef9af0ba6245b44cb2c12c1cf2370c"
+      },
+      "town-garden-gate": {
+        "source": "32fcbf173d0ef5eeaea314e48395ad4eabd69494a104c2afc816bdeba455417d",
+        "runtime": "30a59db9d767a6a337090ae1b1c52a234648a16de25830e058da8dfbd1e933e7",
+        "entry": "286f5e7ad017eaa7403ed46b21acfb82a9573a59dd8a60fffc91d2a0bb0e2ae3"
+      },
+      "town-railing-post": {
+        "source": "33f507aa0a02af994039aa74e2894f93776475429a9f3157d1d86d5e21210109",
+        "runtime": "ec7e567eea3e9494a0446647825311bba94baaec102a180ba1896d7a2e2997e5",
+        "entry": "6a36565df3b1079ed71c3174e46aa11177daaeb2161922e59d43a679c5a30540"
+      },
+      "town-balustrade-pier": {
+        "source": "124fb9fbd0220ca05194921e3d933ca7847fb49b11d128cf9737b7a5c3837822",
+        "runtime": "8f1893a7eb92450660b23162b184e4dad59f855100edd6d89b5c9e84ca7b9d76",
+        "entry": "56efb7975959b56a11465dc9d6259866a25efac2db5d78dbae7d98de5fef2169"
+      },
+      "town-garden-pier": {
+        "source": "466b25b34fdc7030a9ae9e8b152b5122f582cf9dd5c539c58bb6600a9e942226",
+        "runtime": "516e089e8527137cd11f05c2d8bc1fca21cd150ca412db5134932b9c589ec1f8",
+        "entry": "ab12e836868201cf8e83c3a56d33f7ef0ddf31156e0f0017da2610233fe5efd7"
+      }
+    }
+  }
+}

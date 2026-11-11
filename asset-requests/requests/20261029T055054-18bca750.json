@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "id": "20261029T055054-18bca750",
+  "kind": "delete",
+  "title": "Delete Hanging Sign",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "hanging-sign",
+    "label": "Hanging Sign",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hanging-sign/v1/model.blend",
+    "runtime": "assets/world/hanging-sign/model.glb",
+    "manifest": "assets/world/hanging-sign/manifest.json",
+    "catalog_notes": "A timber post with an iron arm and a violet-rimmed board hung in front. The proposed footprint is the post only, since the arm and board overhang it; set it to null if the post should not block.",
+    "related_files": [
+      "art/source/world/hanging-sign/v1/brief.md",
+      "art/source/world/hanging-sign/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Hanging Sign",
+      "source": "art/source/world/hanging-sign/v1/model.blend",
+      "runtime": "assets/world/hanging-sign/model.glb",
+      "pivot": "foot of the post",
+      "logical_footprint": [
+        -0.075,
+        -0.075,
+        0.15,
+        0.15
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "A timber post with an iron arm and a violet-rimmed board hung in front. The proposed footprint is the post only, since the arm and board overhang it; set it to null if the post should not block.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster_shade"
+        ],
+        "roof": [
+          "roof"
+        ],
+        "timber": [
+          "wood",
+          "wood_dark",
+          "wood_light"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:50:54+00:00",
+  "updated": "2026-10-29T06:29:00+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:50:54+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:29:00+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/hanging-sign/v1/brief.md",
+    "art/source/world/hanging-sign/v1/model.blend",
+    "art/source/world/hanging-sign/v1/provenance.json",
+    "assets/world/hanging-sign/manifest.json",
+    "assets/world/hanging-sign/model.glb",
+    "assets/world/hanging-sign/model.glb.import"
+  ]
+}

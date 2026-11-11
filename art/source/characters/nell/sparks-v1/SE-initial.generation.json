@@ -1,0 +1,17 @@
+{
+  "key": "sparks-nell-se",
+  "dest": "art/source/characters/nell/sparks-v1/SE-initial.png",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-0c19d14a-b732-4fb5-88bc-1b9726bb5760.png",
+  "prompt": "Use case: precise-object-edit / production painted-frame character skin.\nInput image 1 is the STRICT nine-pose sprite sheet to repaint, defining the exact camera, frame order, gait phases, body scale and layout. Input image 2 is the SELECTED character identity and clothing reference.\nRepaint all nine figures of image 1 as this SAME person from image 2. This is a full appearance replacement in the existing animation, not nine new poses or a turnaround.\nCanvas: exactly 1254x1254 pixels, 3 columns x 3 rows, nine 418x418 cells; transparent RGBA. Exactly one full body in each cell. Frames 1\u20138 are the eight walk phases matching image 1 cell for cell; frame 9 at bottom right is a relaxed neutral stand, both feet planted, distinct from the walking poses. Preserve the precise supporting boot, lifted boot sole, stride, arm swing, head direction and body placement of each corresponding pose. Do not reorder or duplicate walk phases.\nAll figures face front-right / SOUTHEAST, with the same elevated three-quarter camera. Keep the approved painted roughly three-head-tall anatomy, character height, boot size and clear silhouette. Express age through the face and clothing, not different proportions. No realistic adult body or child redesign. Preserve the reference's crisp dark warm-brown outline, painterly shading and warm light. Consistent identity, clothing and accessories in all nine cells; readable large clothing shapes rather than tiny textures. These are game sprites, not a fashion sheet.\nKeep every figure entirely inside its own cell with ample transparent gaps, head and feet clear of the cell edges. Truly transparent background, no shadow, no floor, no border, no text or pose numbers. No extra poses, no alternate costumes, no scenery. It must fit the same motion family and mirror correctly without readable lettering.\nCHARACTER IDENTITY:\nNell, the older automaton-maker and landlady: warm medium-brown skin, kind older face, silver-blue hair braided into a bun, round brass spectacles with a fine chain. Teal-green cardigan over a cream collared blouse, canvas BIB work apron with only a small brass screwdriver and open-ended spanner in its pocket, plum work skirt, plum-brown sturdy boots. Match the supplied selected concept. Her short wooden walking stick can be carried in the same near hand in each painted phase, staying inside the cell and with its ferrule no lower than the planted boot. Keep the opposite arm's walk swing and both boot gestures readable.",
+  "refs": [
+    "art/source/adventurer/v9-directional-walk/SE.png",
+    "docs/concept/v0.7/art/3-cast/C2b-nell-sprite.png"
+  ],
+  "tool": "built-in image_gen.imagegen",
+  "output_sha256": "fc334590696e5015c13f839ee70b2049f12fa4dd39969b704783c5c622f16aae",
+  "reference_sha256": {
+    "art/source/adventurer/v9-directional-walk/SE.png": "0c2067d8dcfe105d42e747487c87527544db78d38bd4afc775fa493744dee6e4",
+    "docs/concept/v0.7/art/3-cast/C2b-nell-sprite.png": "6d475ddcf12521712f7ea822717cd595d0ab5ead528b4272a0fc0601a0c7c137"
+  },
+  "original_destination_at_generation": "art/source/characters/nell/sparks-v1/SE.png"
+}

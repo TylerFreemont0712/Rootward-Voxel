@@ -1,0 +1,11 @@
+{
+  "asset": "haverlund-lane-surround",
+  "date": "2026-10-29",
+  "authoring_record": "art/source/world/square-hub/v1/author_lane_ground.py",
+  "authoring_record_sha256": "58d83408bb076de15681f26679f22c0b926a7e06ea4ce4987435d2432ce3b61c",
+  "plan": "art/source/world/square-hub/v1/lane_plan.py",
+  "plan_sha256": "ad389cff35b9d688be8f52342c2914270329a6e448bcefe812212d5cc287328c",
+  "drawing": "art/source/world/square-hub/v1/author_ground.py",
+  "drawing_sha256": "8bd6fb1a090cf81a6dabdc5e5875657144497f2417d75e41d9533a3d2b59b0b0",
+  "note": "Land only round the lane set; houses are separate placed models. Build through scripts/world-art.sh."
+}

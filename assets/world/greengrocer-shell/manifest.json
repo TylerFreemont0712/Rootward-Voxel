@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "asset": "greengrocer-shell",
+  "version": 1,
+  "source": "art/source/world/greengrocer-shell/v1/model.blend",
+  "source_sha256": "af1124f9abb4be076d25bc55f4d748964c9540a6ba5be09c1464f0420b07e10d",
+  "runtime": "assets/world/greengrocer-shell/model.glb",
+  "runtime_sha256": "b760b44066313f59e660da6fa01a51ffb324546d842abd20319a3eada7f80c31",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.740000009536743,
+      -0.25,
+      -11.7399997711182,
+      11.6000003814697,
+      4.16000032424927,
+      0.599999904632568
+    ],
+    "geometry_sha256": "0c990cb3ba8c24b0a4a495b71f20256358918bba084e2d08b848fa9202090f25",
+    "material_records": {
+      "shop_brass": {
+        "albedo": [
+          7098,
+          5412,
+          2588,
+          10000
+        ],
+        "roughness": 4500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_clear_glass": {
+        "albedo": [
+          9020,
+          9333,
+          8980,
+          1200
+        ],
+        "roughness": 1500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shop_pantry_door": {
+        "albedo": [
+          2431,
+          4667,
+          4000,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_pantry_floor": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": "f941b1f207c57ee7845ac7de975562f91530049fe0260ace5fc64051b83a6d58"
+      },
+      "shop_pantry_trim": {
+        "albedo": [
+          8471,
+          7804,
+          6039,
+          10000
+        ],
+        "roughness": 6000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_pantry_wainscot": {
+        "albedo": [
+          2431,
+          4667,
+          4000,
+          10000
+        ],
+        "roughness": 7400,
+        "texture_rgba_sha256": ""
+      },
+      "shop_pantry_wall": {
+        "albedo": [
+          9059,
+          8941,
+          8118,
+          10000
+        ],
+        "roughness": 9300,
+        "texture_rgba_sha256": ""
+      },
+      "shop_wood_dark": {
+        "albedo": [
+          2902,
+          2000,
+          1412,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "shop_brass",
+      "shop_clear_glass",
+      "shop_oak",
+      "shop_pantry_door",
+      "shop_pantry_floor",
+      "shop_pantry_trim",
+      "shop_pantry_wainscot",
+      "shop_pantry_wall",
+      "shop_wood_dark"
+    ],
+    "meshes": 10,
+    "triangles": 3164
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "source_sha256": "e7604100e78a23bc28d1b538f150fdea4b9a1460aa028117f41314b6a4f9ad32",
+  "chunks": [
+    [
+      "ground_brass",
+      216,
+      16
+    ],
+    [
+      "ground_cobbles",
+      1651,
+      239
+    ],
+    [
+      "ground_flags",
+      3394,
+      285
+    ],
+    [
+      "ground_grass",
+      1132,
+      137
+    ],
+    [
+      "house_paint",
+      572,
+      42
+    ],
+    [
+      "seaside_stone",
+      84699,
+      146
+    ],
+    [
+      "grid_bed",
+      441,
+      98
+    ],
+    [
+      "grid_bronze",
+      732,
+      98
+    ],
+    [
+      "grid_glass",
+      1269,
+      98
+    ]
+  ],
+  "near_metres": 4,
+  "far_metres": 16
+}

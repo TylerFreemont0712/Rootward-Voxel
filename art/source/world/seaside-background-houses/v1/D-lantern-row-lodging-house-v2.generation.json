@@ -1,0 +1,17 @@
+{
+  "id": "D-lantern-row-lodging-house",
+  "letter": "D",
+  "key": "background-house-d-v2",
+  "dest": "art/source/world/seaside-background-houses/v1/D-lantern-row-lodging-house-v2.png",
+  "refs": [
+    "art/source/world/seaside-background-houses/v1/D-lantern-row-lodging-house.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Refine this two-view house concept plate, retaining its same house identity, warm painted outline style, palette, doors, domestic details, roof shapes, chimney placement, camera elevation and true opposite front-right / rear-left viewpoints. Keep both entire buildings and every roof, chimney and foundation inside the sheet with generous ivory margins; slightly reduce the overall plate scale to make room if necessary. No labels or text. The current tall lodging house has only THREE full floors. Add EXACTLY ONE additional complete upper residential floor to BOTH views, with a consistent pair of windows and structural floor band, so it has FOUR FULL STOREYS (ground floor + THREE upper floors) plus the same small attic under the steep clay gable. Keep the narrow footprint, modest domestic style and attached low rear pantry. The result must be visibly tall and slender, not simply the same three-floor house with a taller roof.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-38c31e1d-c5f6-4ee1-9ed5-c6bcc576c43b.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "34e581c8c0ea3b7bc7ca23aa6836de069242fa4aedacf927ac60d6e8b703b655",
+  "reference_sha256": {
+    "art/source/world/seaside-background-houses/v1/D-lantern-row-lodging-house.png": "2627febc227c899bba4378994c10bbaa45aaf9c420090db39652eb3841e2171b"
+  }
+}

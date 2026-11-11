@@ -1,0 +1,624 @@
+{
+  "schema": 1,
+  "id": "20261103T171036-1361696e",
+  "kind": "new",
+  "title": "Pendulum & Pin interior collection",
+  "asset_type": "world model",
+  "status": "changes_requested",
+  "notes": "Original high quality clockshop shell and reusable clockmaking furniture: unique imagegen floor, regulator and longcase clocks, cabinet, glazed display, repair bench and clockwork trays. Do not reuse rejected room fittings. New Blender masters through normal world-art pipeline.",
+  "asset": {},
+  "references": [],
+  "created": "2026-11-03T17:10:36+00:00",
+  "updated": "2026-11-03T18:09:03+00:00",
+  "history": [
+    {
+      "at": "2026-11-03T17:10:36+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-03T17:10:36+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-03T17:45:57+00:00",
+      "action": "finish"
+    },
+    {
+      "at": "2026-11-03T18:09:03+00:00",
+      "action": "Further changes requested: 20261103T180903-c0a772d2"
+    }
+  ],
+  "existing_assets": [
+    "cottage",
+    "mill-house",
+    "clearing-ground",
+    "tree",
+    "log-cabin",
+    "lamppost",
+    "log-cabin-large",
+    "log-cabin-large-teal",
+    "hearth-oak",
+    "ridge-cedar",
+    "river-willow",
+    "hearth-house",
+    "lantern-loft",
+    "brook-mill",
+    "wooden-barrel",
+    "woodpile",
+    "window-planter",
+    "tree-stump",
+    "park-bench",
+    "wooden-chair",
+    "bookshelf",
+    "hearth-stool",
+    "watering-can",
+    "wooden-bucket",
+    "wheelbarrow",
+    "hollow-highback-armchair",
+    "hollow-trestle-table",
+    "hollow-writing-desk",
+    "hollow-mapmakers-table",
+    "hollow-apothecary-cabinet",
+    "hollow-kitchen-dresser",
+    "hollow-oak-wardrobe",
+    "hollow-washstand",
+    "hollow-woven-settee",
+    "hollow-patchwork-bed",
+    "hollow-carpenters-bench",
+    "hollow-bellows-forge",
+    "hollow-grinding-wheel",
+    "hollow-tool-rack",
+    "hollow-potters-wheel",
+    "hollow-weavers-loom",
+    "hollow-spinning-wheel",
+    "hollow-alchemy-bench",
+    "hollow-bakers-oven",
+    "hollow-bread-display",
+    "hollow-cheese-stand",
+    "hollow-fishmongers-counter",
+    "hollow-spice-cart",
+    "hollow-linen-rack",
+    "hollow-pottery-shelf",
+    "hollow-copper-wash-tub",
+    "hollow-straw-beehive",
+    "hollow-rabbit-hutch",
+    "hollow-seedling-tray",
+    "hollow-herb-drying-rack",
+    "hollow-vine-trellis",
+    "hollow-rain-barrel",
+    "hollow-butter-churn",
+    "hollow-shard-lantern",
+    "hollow-crystal-obelisk",
+    "hollow-rune-standing-stone",
+    "hollow-village-bell",
+    "hollow-brass-lever",
+    "hollow-water-pump",
+    "hollow-wayfarers-chest",
+    "hollow-little-shrine",
+    "hollow-weather-vane",
+    "hollow-bakery",
+    "hollow-smithy",
+    "concept-cottage",
+    "rootward-tree",
+    "morning-town-hall",
+    "morning-civic-bench",
+    "reference-cottage",
+    "square-lamppost",
+    "painted-cottage",
+    "painted-oak",
+    "painted-garden-fence",
+    "loft-shell",
+    "loft-bed",
+    "loft-desk",
+    "loft-chair",
+    "loft-shelf",
+    "loft-luggage",
+    "loft-cabinet",
+    "loft-wall-life",
+    "loft-rug",
+    "loft-travel-stacks",
+    "loft-window-life",
+    "loft-postcard",
+    "loft-wardrobe",
+    "loft-window-seat",
+    "loft-rocking-chair",
+    "loft-floor-plant",
+    "loft-tape-machine",
+    "loft-hotaru",
+    "loft-cable",
+    "workshop-shell",
+    "workshop-staircase",
+    "workshop-repair-bench",
+    "workshop-tool-wall",
+    "workshop-parts-drawers",
+    "workshop-assembly-table",
+    "workshop-parts-crate",
+    "workshop-stove",
+    "workshop-armchair",
+    "workshop-tea-table",
+    "workshop-job-board",
+    "workshop-shop-doors",
+    "workshop-hanging-lamp",
+    "workshop-stool",
+    "workshop-rug",
+    "workshop-wall-shelf",
+    "workshop-jar-shelf",
+    "workshop-umbrella-stand",
+    "workshop-bread-cupboard",
+    "workshop-service-trolley",
+    "workshop-wall-clock",
+    "workshop-stair-lamp",
+    "loft-note-slip",
+    "loft-hand-terminal",
+    "zone-terminal",
+    "field-tablet",
+    "workshop-wall-screen",
+    "haverlund-lane-set",
+    "lane-workshop",
+    "lane-nell-house",
+    "lane-cottage",
+    "lane-lamp",
+    "lane-post-box",
+    "lane-notice-board",
+    "lane-bench",
+    "lane-telescope",
+    "lane-tree",
+    "lane-cypress",
+    "lane-bicycle",
+    "lane-crates",
+    "lane-planter",
+    "lane-handcart",
+    "lane-laundry",
+    "lane-pump",
+    "lane-shed",
+    "lane-tram-shelter",
+    "lane-tram",
+    "haverlund-square-set",
+    "square-rootwell",
+    "square-town-hall",
+    "square-bakery",
+    "square-bookshop",
+    "square-grocer",
+    "square-market-stall",
+    "square-cafe-table",
+    "square-node",
+    "guildhall-square-set",
+    "square-beacon",
+    "square-guildhall",
+    "square-post-office",
+    "square-west-terrace",
+    "square-banner-lamp",
+    "square-flower-stall",
+    "square-fruit-stall",
+    "square-tree-planter",
+    "square-timber-store",
+    "robot-pip",
+    "robot-trowel",
+    "robot-wick",
+    "robot-heron",
+    "robot-tender",
+    "robot-tally",
+    "seaside-rosewash-house",
+    "seaside-saltwind-house",
+    "seaside-lantern-row-house",
+    "seaside-shingle-court-cottage",
+    "seaside-eaveside-terrace",
+    "rootwell-beacon",
+    "haverlund-square-ground",
+    "town-balustrade",
+    "town-balustrade-short",
+    "town-balustrade-pier",
+    "town-railing",
+    "town-railing-short",
+    "town-railing-stair",
+    "town-railing-post",
+    "town-garden-wall",
+    "town-garden-wall-short",
+    "town-garden-pier",
+    "town-garden-gate",
+    "haverlund-post-office",
+    "haverlund-fruit-market",
+    "haverlund-bank",
+    "haverlund-lane-surround",
+    "town-power-pillar",
+    "rootwell-plaza",
+    "town-kiosk",
+    "town-fountain",
+    "town-bollard",
+    "town-bin",
+    "town-parasol-table",
+    "town-lawn",
+    "town-tree-grate",
+    "haverlund-bakery",
+    "haverlund-greengrocer",
+    "haverlund-tailor",
+    "haverlund-cafe",
+    "town-festoon",
+    "town-signpost",
+    "town-planter-bench",
+    "town-bollard-light",
+    "town-poster-column",
+    "town-coffee-cart",
+    "town-bike-rack",
+    "tram-welcome-sign",
+    "city-hall-shell",
+    "city-hall-help-desk",
+    "city-hall-job-desk",
+    "haverlund-clockmaker",
+    "haverlund-apothecary",
+    "town-shop-shell",
+    "town-retaining-wall",
+    "town-clock-stock"
+  ],
+  "result": {
+    "assets": [
+      "clockshop-shell",
+      "clockshop-longcase",
+      "clockshop-regulator",
+      "clockshop-display-counter",
+      "clockshop-repair-bench",
+      "clockshop-parts-cabinet",
+      "clockshop-clockwork-tray",
+      "clockshop-brass-pendant",
+      "clockshop-mantel-clock"
+    ],
+    "summary": "Nine original reusable clockshop model types and a unique built-in-imagegen parquet library; no rejected room meshes reused. Detailed clocks, glass counter, bench, drawers, trays, lighting and a new hinged room shell. Meaningful collision, inspections and saved progress. Normal builds, full suite, 1005 world-art checks and native walkthrough passed.",
+    "review": "pipeline/reviews/2026-11-04-square-restoration-and-clockshop.md",
+    "contexts": [
+      {
+        "id": "clockshop-shell",
+        "label": "Pendulum & Pin · cutaway room",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-shell/v1/model.blend",
+        "runtime": "assets/world/clockshop-shell/model.glb",
+        "manifest": "assets/world/clockshop-shell/manifest.json",
+        "catalog_notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v1/author.py",
+          "art/source/world/clockshop-shell/v1/finish.json",
+          "art/source/world/clockshop-shell/v1/floor-support.json",
+          "art/source/world/clockshop-shell/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Pendulum & Pin · cutaway room",
+          "source": "art/source/world/clockshop-shell/v1/model.blend",
+          "runtime": "assets/world/clockshop-shell/model.glb",
+          "pivot": "Ground centre; Blender -Y front, +Y logical north. Shell uses room origin; pendant suspension pivot.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+          "behavior": "Reusable visual; area document owns placements, collision and inspection. Clock dials are display stock, not timed quest mechanisms."
+        }
+      },
+      {
+        "id": "clockshop-longcase",
+        "label": "Walnut longcase clock",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-longcase/v1/model.blend",
+        "runtime": "assets/world/clockshop-longcase/model.glb",
+        "manifest": "assets/world/clockshop-longcase/manifest.json",
+        "catalog_notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v1/author.py",
+          "art/source/world/clockshop-longcase/v1/finish.json",
+          "art/source/world/clockshop-longcase/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Walnut longcase clock",
+          "source": "art/source/world/clockshop-longcase/v1/model.blend",
+          "runtime": "assets/world/clockshop-longcase/model.glb",
+          "pivot": "Ground centre; Blender -Y front, +Y logical north. Shell uses room origin; pendant suspension pivot.",
+          "logical_footprint": [
+            -0.52,
+            -0.34,
+            1.04,
+            0.68
+          ],
+          "illustrated_edges": true,
+          "notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+          "behavior": "Reusable visual; area document owns placements, collision and inspection. Clock dials are display stock, not timed quest mechanisms."
+        }
+      },
+      {
+        "id": "clockshop-regulator",
+        "label": "Wall regulator clock",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-regulator/v1/model.blend",
+        "runtime": "assets/world/clockshop-regulator/model.glb",
+        "manifest": "assets/world/clockshop-regulator/manifest.json",
+        "catalog_notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v1/author.py",
+          "art/source/world/clockshop-regulator/v1/finish.json",
+          "art/source/world/clockshop-regulator/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Wall regulator clock",
+          "source": "art/source/world/clockshop-regulator/v1/model.blend",
+          "runtime": "assets/world/clockshop-regulator/model.glb",
+          "pivot": "Ground centre; Blender -Y front, +Y logical north. Shell uses room origin; pendant suspension pivot.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+          "behavior": "Reusable visual; area document owns placements, collision and inspection. Clock dials are display stock, not timed quest mechanisms."
+        }
+      },
+      {
+        "id": "clockshop-display-counter",
+        "label": "Glazed clock display counter",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-display-counter/v1/model.blend",
+        "runtime": "assets/world/clockshop-display-counter/model.glb",
+        "manifest": "assets/world/clockshop-display-counter/manifest.json",
+        "catalog_notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-display-counter/v1/finish.json",
+          "art/source/world/clockshop-display-counter/v1/provenance.json",
+          "art/source/world/clockshop-interior/v1/author.py"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Glazed clock display counter",
+          "source": "art/source/world/clockshop-display-counter/v1/model.blend",
+          "runtime": "assets/world/clockshop-display-counter/model.glb",
+          "pivot": "Ground centre; Blender -Y front, +Y logical north. Shell uses room origin; pendant suspension pivot.",
+          "logical_footprint": [
+            -1.55,
+            -0.55,
+            3.1,
+            1.1
+          ],
+          "illustrated_edges": true,
+          "notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+          "behavior": "Reusable visual; area document owns placements, collision and inspection. Clock dials are display stock, not timed quest mechanisms."
+        }
+      },
+      {
+        "id": "clockshop-repair-bench",
+        "label": "Clockmaker repair bench",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-repair-bench/v1/model.blend",
+        "runtime": "assets/world/clockshop-repair-bench/model.glb",
+        "manifest": "assets/world/clockshop-repair-bench/manifest.json",
+        "catalog_notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v1/author.py",
+          "art/source/world/clockshop-repair-bench/v1/finish.json",
+          "art/source/world/clockshop-repair-bench/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Clockmaker repair bench",
+          "source": "art/source/world/clockshop-repair-bench/v1/model.blend",
+          "runtime": "assets/world/clockshop-repair-bench/model.glb",
+          "pivot": "Ground centre; Blender -Y front, +Y logical north. Shell uses room origin; pendant suspension pivot.",
+          "logical_footprint": [
+            -1.55,
+            -0.6,
+            3.1,
+            1.2
+          ],
+          "illustrated_edges": true,
+          "notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+          "behavior": "Reusable visual; area document owns placements, collision and inspection. Clock dials are display stock, not timed quest mechanisms."
+        }
+      },
+      {
+        "id": "clockshop-parts-cabinet",
+        "label": "Labelled clockwork drawers",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-parts-cabinet/v1/model.blend",
+        "runtime": "assets/world/clockshop-parts-cabinet/model.glb",
+        "manifest": "assets/world/clockshop-parts-cabinet/manifest.json",
+        "catalog_notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v1/author.py",
+          "art/source/world/clockshop-parts-cabinet/v1/finish.json",
+          "art/source/world/clockshop-parts-cabinet/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Labelled clockwork drawers",
+          "source": "art/source/world/clockshop-parts-cabinet/v1/model.blend",
+          "runtime": "assets/world/clockshop-parts-cabinet/model.glb",
+          "pivot": "Ground centre; Blender -Y front, +Y logical north. Shell uses room origin; pendant suspension pivot.",
+          "logical_footprint": [
+            -1.08,
+            -0.4,
+            2.16,
+            0.8
+          ],
+          "illustrated_edges": true,
+          "notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+          "behavior": "Reusable visual; area document owns placements, collision and inspection. Clock dials are display stock, not timed quest mechanisms."
+        }
+      },
+      {
+        "id": "clockshop-clockwork-tray",
+        "label": "Loose clockwork parts tray",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-clockwork-tray/v1/model.blend",
+        "runtime": "assets/world/clockshop-clockwork-tray/model.glb",
+        "manifest": "assets/world/clockshop-clockwork-tray/manifest.json",
+        "catalog_notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-clockwork-tray/v1/finish.json",
+          "art/source/world/clockshop-clockwork-tray/v1/provenance.json",
+          "art/source/world/clockshop-interior/v1/author.py"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Loose clockwork parts tray",
+          "source": "art/source/world/clockshop-clockwork-tray/v1/model.blend",
+          "runtime": "assets/world/clockshop-clockwork-tray/model.glb",
+          "pivot": "Ground centre; Blender -Y front, +Y logical north. Shell uses room origin; pendant suspension pivot.",
+          "logical_footprint": [
+            -0.46,
+            -0.32,
+            0.92,
+            0.64
+          ],
+          "illustrated_edges": true,
+          "notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+          "behavior": "Reusable visual; area document owns placements, collision and inspection. Clock dials are display stock, not timed quest mechanisms."
+        }
+      },
+      {
+        "id": "clockshop-brass-pendant",
+        "label": "Brass clockshop pendant",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-brass-pendant/v1/model.blend",
+        "runtime": "assets/world/clockshop-brass-pendant/model.glb",
+        "manifest": "assets/world/clockshop-brass-pendant/manifest.json",
+        "catalog_notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-brass-pendant/v1/finish.json",
+          "art/source/world/clockshop-brass-pendant/v1/provenance.json",
+          "art/source/world/clockshop-interior/v1/author.py"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Brass clockshop pendant",
+          "source": "art/source/world/clockshop-brass-pendant/v1/model.blend",
+          "runtime": "assets/world/clockshop-brass-pendant/model.glb",
+          "pivot": "Ground centre; Blender -Y front, +Y logical north. Shell uses room origin; pendant suspension pivot.",
+          "logical_footprint": null,
+          "illustrated_edges": true,
+          "notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+          "behavior": "Reusable visual; area document owns placements, collision and inspection. Clock dials are display stock, not timed quest mechanisms."
+        }
+      },
+      {
+        "id": "clockshop-mantel-clock",
+        "label": "Arched walnut mantel clock",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/clockshop-mantel-clock/v1/model.blend",
+        "runtime": "assets/world/clockshop-mantel-clock/model.glb",
+        "manifest": "assets/world/clockshop-mantel-clock/manifest.json",
+        "catalog_notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+        "related_files": [
+          "art/source/world/clockshop-interior/v1/author.py",
+          "art/source/world/clockshop-mantel-clock/v1/finish.json",
+          "art/source/world/clockshop-mantel-clock/v1/provenance.json"
+        ],
+        "usage_files": [
+          "content/areas/shop-clockmaker.json",
+          "content/build/catalog.json"
+        ],
+        "catalog_entry": {
+          "version": 1,
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "Arched walnut mantel clock",
+          "source": "art/source/world/clockshop-mantel-clock/v1/model.blend",
+          "runtime": "assets/world/clockshop-mantel-clock/model.glb",
+          "pivot": "Ground centre; Blender -Y front, +Y logical north. Shell uses room origin; pendant suspension pivot.",
+          "logical_footprint": [
+            -0.38,
+            -0.15,
+            0.76,
+            0.4
+          ],
+          "illustrated_edges": true,
+          "notes": "Original clockshop collection. art/source/world/clockshop-interior/v1/author.py is the protected initial authoring record; saved model.blend is editable authority.",
+          "behavior": "Reusable visual; area document owns placements, collision and inspection. Clock dials are display stock, not timed quest mechanisms."
+        }
+      }
+    ],
+    "fingerprints": {
+      "clockshop-shell": {
+        "source": "2df6dd81c609cb6df4149f6dd4f0d49216631ba753501fdcd1b3ca09d5ffc1ea",
+        "runtime": "c405e2248aa0ab74db1a164e7907462e507735298412bfbfb30c23cd7d7fad05",
+        "entry": "d5558ca404e9bfa2613c59e9636b1a8f9c7111b05e707d85c374dff52fa4fd14"
+      },
+      "clockshop-longcase": {
+        "source": "2eaab9027405c6ea77091c56acc755d3a3aa386928a85494ee18db5d12d5efb5",
+        "runtime": "bd0652ff9eb7bc5163ade456f8ea16e457e2e61a231a43b461d9e7dd9591a140",
+        "entry": "35a5e33cd1ec183ca1194b622eb0c711522ae858d5e6c079d2c52188fc770f43"
+      },
+      "clockshop-regulator": {
+        "source": "f4f44b0206931a7cd092ae7cd188a3053b4db2e04794fd8d3e0879323426a52a",
+        "runtime": "5d69388b87db508510f692d717d0838e3edf927cb318674923a3b7874b3dc3ad",
+        "entry": "3202f6339ad303129b71da6b3b8e9c2d80ec1521c0e2b45a59c866eda3b38516"
+      },
+      "clockshop-display-counter": {
+        "source": "2ee1d234fc2c389489239eb9b55b0e3fcdf5f9929c509907a917531f94398ce8",
+        "runtime": "3d78781c378388dc42de104ff577aff7316be433dd4b5de0399c230a5056d5cb",
+        "entry": "c664bc8d4a7158b1f38e72ff05e599b486ab60f2db10c051f6e28631de69e6e8"
+      },
+      "clockshop-repair-bench": {
+        "source": "bacc25241c2cca2140206b3f604c63a1b1e07a3faf675fc0989aa94545a60a23",
+        "runtime": "8cca13b85abe91e9bbfd2ce2955068492599de5c2bdd567a85f3294a712b9ca3",
+        "entry": "0c5261a822b0e269b1ec52018526d3750eba74f4ccfa94f03b27b673b589d49f"
+      },
+      "clockshop-parts-cabinet": {
+        "source": "bc7d39062769e1626f914e79c1d5ee8b7a8255211a9a6e707c1ace9f229e137d",
+        "runtime": "37e4696b8fa237952293ee3a629fcfa61c18ec51dcb6942c73d51962216add7a",
+        "entry": "c2e2d04b2d827e91f189b003139fd877f9c0e14ec779bb60c9352317aa55554a"
+      },
+      "clockshop-clockwork-tray": {
+        "source": "42b257b2f0e2dfc09a86c99a2d0a2942746faaa29e42f7090def62482b04d9a1",
+        "runtime": "ebd27cc61e2e829afdd5d1d587533726c5f2db50d06e447d3163da6bc502299b",
+        "entry": "143e0f43a22032cf40f211744ed284d287556064b587e995f1c0c9103a212cf4"
+      },
+      "clockshop-brass-pendant": {
+        "source": "ead89fcdf25af8d92869deb31b94585655102bd3513b5f6cc99e929ecde5f8b9",
+        "runtime": "af6b01d770d940a83e0e65979fd27034d0ac7274769fa699b29390d73630315d",
+        "entry": "db3b63222015194e131cc437a438ce08d8587fdf849c2f0e6a7f5a3a43f6e18c"
+      },
+      "clockshop-mantel-clock": {
+        "source": "5f53efd7b201a4ecec962292f1034582a5e0e0cc5fde6b56bd48433a0964721a",
+        "runtime": "b4a35f8cb5408e591e55c3225a24705eaa73ffd74fb17cebe2f823fd6dfbf5d9",
+        "entry": "d644735e3eba9d74c63dd88eb7888bc1cc92bc19735db4bdf511297ea02251cb"
+      }
+    }
+  }
+}

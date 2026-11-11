@@ -1,0 +1,401 @@
+{
+  "anchor": [
+    192,
+    420
+  ],
+  "authoring_script_sha256": "da0722e4103a555fd4b6e71e63a3872e09d2ae882ad693e40de48eac38234187",
+  "blink_index": 9,
+  "cell_size": [
+    384,
+    448
+  ],
+  "directions": {
+    "ne": {
+      "key_rgba_sha256": [
+        "45044eb51974ac16831af54027dc701a352fd2ed00426d8da3fbaf51ff5ce9a9",
+        "81f98fbefe7a00b0301a27ee297189260d70cdf325364c8f9a78c9c01e0a4707",
+        "799f039396f29f68e3c0a7eea379a631449f369f2d803782bbd10b4ea50319a2",
+        "e1c4b6afe4d26720a48b2698db0511e46504bf76581982eef59da315c6eaae9f",
+        "290f9bf7ccf626172f8ad64d6983e7aedf132cb713c1fbc6542956a2a34b61c4",
+        "67a6c020413831c5d11577e0bad0abd0cd7fc428a3329f65ca6c486967d9bc58",
+        "5867ee40a0da5205c02a406dbb815246ae50d47fe05c572b0b83cb466a9fa405",
+        "a57162d2101ffc70d8678e4541262733cbbd29ab7ee78f84e2c9d16ec92e0727",
+        "2c7c4fc7258b765e87548d6ee1ba9c67d2939e1d6ccff9c5c98e9614dc38e06e"
+      ],
+      "row": 6,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NE.png",
+          "source_pose": 0,
+          "translation": [
+            -27,
+            8
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NE.png",
+          "source_pose": 1,
+          "translation": [
+            -26,
+            10
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NE.png",
+          "source_pose": 2,
+          "translation": [
+            -27,
+            8
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NE.png",
+          "source_pose": 3,
+          "translation": [
+            -27,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NE.png",
+          "source_pose": 4,
+          "translation": [
+            -26,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NE.png",
+          "source_pose": 5,
+          "translation": [
+            -32,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NE.png",
+          "source_pose": 6,
+          "translation": [
+            -27,
+            46
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NE.png",
+          "source_pose": 7,
+          "translation": [
+            -26,
+            48
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NE.png",
+          "source_pose": 8,
+          "translation": [
+            -32,
+            44
+          ]
+        }
+      ]
+    },
+    "nw": {
+      "key_rgba_sha256": [
+        "ca538319ac94c107f934b9ceadf4477c547167bb23b6b0c77655855da47ea573",
+        "ae6d916e09ef49089eead5497bedc99396a87975dc26f0276bc4f431f9b73feb",
+        "4521d780a0b1615c041cea34d01fed8c5b19ecdc83f1f1aa7ebdbc7bf64bdfde",
+        "558b5581432e54932152183c468e90ac5b554304cc379de5f0602a4fc637fef1",
+        "fe63b6e62b9160a954a3aef761367011f815f1e5c57e9d96209348f87b530e1b",
+        "3ac1a079197c3b6d7161c4f0401c4d4146346720c834b313b8d1d7cdddac0593",
+        "98d14e89116f2c5621decb7303daac5ce308d1ae01e3c6fc4cc1d63efe097f3b",
+        "e9adb923a8dd7ea1eaf45521a6d0f3d1b7bfbaf88032e08b662734045e695ed4",
+        "15a6789830aff1ff45e220d109abd7132da00a3e68d570e64e2a85efb422ef33"
+      ],
+      "row": 9,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NW.png",
+          "source_pose": 0,
+          "translation": [
+            -6,
+            8
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NW.png",
+          "source_pose": 1,
+          "translation": [
+            -7,
+            10
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NW.png",
+          "source_pose": 2,
+          "translation": [
+            -6,
+            8
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NW.png",
+          "source_pose": 3,
+          "translation": [
+            -7,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NW.png",
+          "source_pose": 4,
+          "translation": [
+            -7,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NW.png",
+          "source_pose": 5,
+          "translation": [
+            -1,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NW.png",
+          "source_pose": 6,
+          "translation": [
+            -7,
+            46
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NW.png",
+          "source_pose": 7,
+          "translation": [
+            -8,
+            48
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/NW.png",
+          "source_pose": 8,
+          "translation": [
+            -1,
+            44
+          ]
+        }
+      ]
+    },
+    "se": {
+      "key_rgba_sha256": [
+        "8df846467b27c849502f0c38143c49d15007cd98735a224107075e26125c21a8",
+        "fb4191c6e21a429974f4b3a6e908fccaf07d1603216384943fd07fcda2a3c533",
+        "b06f24c9a8a2604fb9a4a2e8a2bdfe552307537692d3631478bbecf6f926acd0",
+        "65e149e1f4769fc5a7aef9604050d93517d14c58efe51287d39c2e1209a8eda1",
+        "2e25683eff523beb2a27ac6b62e6ee4fe0297f9866f8b874a160dd22c5253b98",
+        "429cd61861554cee68758d982f63567156421d13a358ea1e2dfbb0482a185828",
+        "7c7b06a94c99483ee60e68a2ba0ec07296e511f68ce3ab2ff10ed3b285dbc382",
+        "a1b6d38511c65d6a75c5a47d6d0ffd3211537785bac20c2548b0dc63831e2c47",
+        "6f5806aed1f3c9dec66ae9bfb3d3ade49c26e802e42ef02904a712b2f5f69b76",
+        "271094c879d522fc2e2c86c5d22232d98178da653be708d67b5b96f9eefa7967"
+      ],
+      "row": 0,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SE.png",
+          "source_pose": 0,
+          "translation": [
+            -34,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SE.png",
+          "source_pose": 1,
+          "translation": [
+            -30,
+            8
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SE.png",
+          "source_pose": 2,
+          "translation": [
+            -31,
+            10
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SE.png",
+          "source_pose": 3,
+          "translation": [
+            -36,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SE.png",
+          "source_pose": 4,
+          "translation": [
+            -26,
+            21
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SE.png",
+          "source_pose": 5,
+          "translation": [
+            -33,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SE.png",
+          "source_pose": 6,
+          "translation": [
+            -30,
+            40
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SE.png",
+          "source_pose": 7,
+          "translation": [
+            -24,
+            35
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SE.png",
+          "source_pose": 8,
+          "translation": [
+            -34,
+            46
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/blink-se.png",
+          "source_pose": 8,
+          "translation": [
+            -34,
+            46
+          ]
+        }
+      ]
+    },
+    "sw": {
+      "key_rgba_sha256": [
+        "0b0d74fbb4076fbbb50d44492247f4d8da03805e62ffdf51b77ad4ee4aefcabf",
+        "54796e985d8d859ec143418fb2bb7d07db464829f4fba78a8986a086bcff87b0",
+        "6ec57cbde18ef137589e788aead83533b03998fddc7574006d9563776d47f831",
+        "cc997e27a2181997c16ec6dc943e1669adf0e3653538c9a6caae51518da67048",
+        "57b026d16140062340ed39a66c17f8a466f51a75435a9b61ef409d5bbcccc6ac",
+        "df8a060fb77a63d3a8645f64b89a5f82b1f0b093194e709f8ef864bba0cdc56b",
+        "a1ccb4849c0ce906be8168993905f13a374422f780bbc85ce229cd9f2b14d986",
+        "a0bd234eecba9d0fc6c480a2dea476351ce2e6f80e5450b8c9b819844c2eeeaa",
+        "3f2235c3a00d66fadbc6da93a97558afbb9113bb4a92eb9f4157a7cae6441958",
+        "d2f35e1e9c761c019e39ac19d1873e16d88a175ec99d34c9fbbb3b09478c603f"
+      ],
+      "row": 3,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SW.png",
+          "source_pose": 0,
+          "translation": [
+            0,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SW.png",
+          "source_pose": 1,
+          "translation": [
+            -3,
+            8
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SW.png",
+          "source_pose": 2,
+          "translation": [
+            -2,
+            10
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SW.png",
+          "source_pose": 3,
+          "translation": [
+            2,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SW.png",
+          "source_pose": 4,
+          "translation": [
+            -8,
+            21
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SW.png",
+          "source_pose": 5,
+          "translation": [
+            -1,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SW.png",
+          "source_pose": 6,
+          "translation": [
+            -4,
+            40
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SW.png",
+          "source_pose": 7,
+          "translation": [
+            -9,
+            35
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/SW.png",
+          "source_pose": 8,
+          "translation": [
+            1,
+            46
+          ]
+        },
+        {
+          "source": "res://art/source/characters/mira/sparks-v1/blink-sw.png",
+          "source_pose": 8,
+          "translation": [
+            1,
+            46
+          ]
+        }
+      ]
+    }
+  },
+  "grid": [
+    4,
+    12
+  ],
+  "idle_index": 8,
+  "method": "Approved eight-pose sheets plus neutral idle; integer translation only; eye-only blink patch",
+  "output_sha256": "defbd49a1c8896c0e4948e0ad6cf28bac8bb276fda9a657807f2c70ed9bfd49f",
+  "schema": 4,
+  "sources": {
+    "res://art/source/characters/mira/sparks-v1/NE.png": "dd643fc42eb69c099c53853121d5eb461514cc2f8e84c96966658fc9ad2bc859",
+    "res://art/source/characters/mira/sparks-v1/NW.png": "0a7566bcdd31a3ce913698ef4374d65823d7374e5f9929aafb396f60cffe25f1",
+    "res://art/source/characters/mira/sparks-v1/SE.png": "6e380f17e93578c98566c9fff3fbad0b6ca2f094a23585c9291376e0cac20731",
+    "res://art/source/characters/mira/sparks-v1/SW.png": "97f563238988772673ab5d5b709674958b28926b77cc5d95e309aa42bc076318",
+    "res://art/source/characters/mira/sparks-v1/blink-se.png": "064da30fe028462001b358a70442bdc9894b747a7917f068c0b5fb07cbe905eb",
+    "res://art/source/characters/mira/sparks-v1/blink-sw.png": "aeb2b6aa19fa0dea7577a9d0adc610e388324270af80f22bfbfbc70fda7f0482"
+  },
+  "walk_poses": 8
+}

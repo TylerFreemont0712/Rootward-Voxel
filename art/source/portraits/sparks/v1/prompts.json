@@ -1,0 +1,51 @@
+{
+  "adoption": "Unmodified approved second Hotaru portrait. No new image generation or pixel edits.",
+  "origin_prompt_record": [
+    {
+      "id": "H3",
+      "file": "2-hotaru/H3-portrait.png",
+      "inputs": [
+        "docs/concept/v0.7/art/2-hotaru/H1-turnaround.png",
+        "assets/portraits/mira.png",
+        "evidence/village-dialogue/nell-greeting.png"
+      ],
+      "prompt": "Hotaru is a palm-sized, very cute lantern-shaped robot, about the size of a child's head. She is squat and round, about as wide as she is tall, like a plump teakettle or an egg, in warm cream enamel #EFE3C6 with two teal bands #2F8C8C. Her big teal dome cap with a soft rounded brim takes about 40% of her height, like an oversized hat. Her face is one big round glass \"spark window\", about 60% of her body's width, in a thick soft brass rim #C99A3E, set a little below the middle. Inside the glass glows a warm amber light #FFC861, and the light forms two large glowing oval eyes, set slightly wide apart, each with a tiny bright highlight. There is no mouth, nose or human face. Two small rosy enamel dots #E8A487 sit beside the window like painted blush. On top of the cap: a small folding rotor with two rounded, slightly curled brass paddle blades and a big red bobble knob #C8453A. A narrow tape slot under the window has a short curl of cream paper tape peeking out. She has tiny stubby arms with round teal mitten hands, and on her back a small brass name plate with two rivets. When floating, her legs are folded away. When working on the ground, two tiny round brass legs with cream button boots show. Soft enamel, not glossy plastic; every edge rounded; no sharp corners, exposed gears, rust or grime. Friendly, curious and gentle.\n\nAvoid: fairies, wings, pointed ears, runes, sigils, crystals, magic circles, purple or neon glows, swirling sparkles; steampunk goggles, decorative gears, brown-and-brass-everything; rust and grime; screens, computers, phones, plastic, neon signs, modern cars (a rare small round delivery van is fine); weapons or menacing machines; human faces, mouths or noses on machines; photorealism; watermarks, signatures and lettering unless asked for.\n\nUse case: illustration-story. Asset type: production 2D companion portrait PNG for a cozy anime visual novel, with a genuinely transparent alpha background. Paint Hotaru from Input 1 as a newly illustrated high-definition painting in the same rendering style as the portrait in Input 2: confident linework, soft warm daylight, painterly enamel and brass with gentle reflections, cozy hand-painted anime finish. Input 3 shows where the portrait sits in the game's dialogue scene, at the lower left above a wide dialogue box. Framing: her whole small body, floating, three-quarter view turned slightly toward the viewer's right, filling the lower two-thirds of the canvas, with about 8% clear margin at the top and sides. NEUTRAL eyes with tiny highlights, one mitten hand raised in a small hello, rotor slightly blurred as if spinning, the warm window glow lighting her cheeks. The background must be truly transparent, including the corners: no backdrop, gradient, shadow or checkerboard. No text.\n\nCanvas: 1024x1536 pixels; genuinely transparent alpha background. No labels, lettering or watermark.\n\nCritical corrections for this portrait: use ONLY the FLOATING MODE in the TOP ROW of Input 1, with legs completely tucked INSIDE the body. Absolutely no feet, boots, legs or pegs are visible. Keep the approved squat rounded proportions and original part placement. Input 2 is a reference for brushwork and linework ONLY: do not copy its background or any halo. The entire area outside Hotaru's precisely defined silhouette is clean transparent alpha, including the space beneath her body and around the raised hand. NO external glow cloud, aura, painted colour haze, dark vignette, gradient, drop shadow, backdrop, light pool or checkerboard. Confine warm spark light to the glass and a gentle warm reflection ON her cheeks, brass and enamel. The rotor has a small restrained blur confined to the blades, no luminous trails. Compose the whole robot in the LOWER TWO-THIRDS of the canvas, with ample clear transparent space above and at least 8% clear side margins around every part. Whole body and rotor entirely in frame; one mitten raised in hello; neutral large oval spark-eyes with tiny highlights. Warm dark-brown linework and softly painted enamel, matching the residents' illustrated portrait treatment.",
+      "variant": "Variant 2 selected for review: approved floating silhouette with legs retracted, a small wave, painted portrait finish and more space above the rotor.",
+      "notes": "Second portrait approved by the user on 2026-10-26; based on approved H1 variant 2. Original generated RGBA pixels preserved. Actual alpha is transparent outside the figure even though the generator preview displays RGB colour there. Peak alpha is 254; a few very low-alpha pixels extend beyond the main silhouette, so final edge/margin cleanup needs review if adopted.",
+      "date": "2026-10-26",
+      "tool": "Built-in image_gen.imagegen; model identifier not exposed by the tool",
+      "status": "approved",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "4fca154096bc72a53a38d92428636fd13de76ece28cc17e0329639260af68a95",
+      "input_sha256": {
+        "docs/concept/v0.7/art/2-hotaru/H1-turnaround.png": "c9d0673030c64f8cbabc8396be7f154da0335f4c6496f24856b1510480e2181a",
+        "assets/portraits/mira.png": "3361513f4644ed933ed49cdc04fd3adbd385aa21577a041f525d05519f71f512",
+        "evidence/village-dialogue/nell-greeting.png": "0dd2d9e716f0e330459da2c39e7138f1c00256f0f4698f0b7be70d77c692cf54"
+      },
+      "alpha": {
+        "extrema": [
+          0,
+          254
+        ],
+        "bbox": [
+          0,
+          17,
+          992,
+          1496
+        ],
+        "transparent_corners": true
+      },
+      "approval": {
+        "date": "2026-10-26",
+        "user_statement": "Love the second version of all of the hotaru sheets as well",
+        "interpretation": "Literal second generated version, including the legged expression sheet and the wider world study."
+      },
+      "generation_variant": 2,
+      "selected": true
+    }
+  ]
+}

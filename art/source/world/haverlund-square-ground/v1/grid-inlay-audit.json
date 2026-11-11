@@ -1,0 +1,187 @@
+{
+  "asset": "haverlund-square-ground",
+  "routes": [
+    {
+      "route": "root-west",
+      "start": [
+        35.3,
+        24
+      ],
+      "end": [
+        21.7,
+        24
+      ],
+      "length": 13.6,
+      "risers": 0,
+      "surface_start": 0.0,
+      "surface_end": 0.0
+    },
+    {
+      "route": "market-spine",
+      "start": [
+        21.7,
+        2.5
+      ],
+      "end": [
+        21.7,
+        46
+      ],
+      "length": 43.5,
+      "risers": 0,
+      "surface_start": 0.0,
+      "surface_end": -1.9073486328125e-06
+    },
+    {
+      "route": "spindle-street",
+      "start": [
+        21.7,
+        8
+      ],
+      "end": [
+        -32.4,
+        8
+      ],
+      "length": 60.172,
+      "risers": 36,
+      "surface_start": 0.0,
+      "surface_end": 5.999999046325684
+    },
+    {
+      "route": "hill-street",
+      "start": [
+        21.7,
+        46
+      ],
+      "end": [
+        14.5,
+        96.4
+      ],
+      "length": 61.6,
+      "risers": 24,
+      "surface_start": -1.9073486328125e-06,
+      "surface_end": 4.0
+    },
+    {
+      "route": "root-north",
+      "start": [
+        42,
+        30.7
+      ],
+      "end": [
+        42,
+        47
+      ],
+      "length": 16.3,
+      "risers": 0,
+      "surface_start": 0.0,
+      "surface_end": -1.9073486328125e-06
+    },
+    {
+      "route": "civic-spine",
+      "start": [
+        23,
+        51
+      ],
+      "end": [
+        58.5,
+        51.4
+      ],
+      "length": 44.38,
+      "risers": 8,
+      "surface_start": 0.0,
+      "surface_end": 0.0
+    },
+    {
+      "route": "guild-feed",
+      "start": [
+        41,
+        47
+      ],
+      "end": [
+        41,
+        52
+      ],
+      "length": 5.24,
+      "risers": 4,
+      "surface_start": -1.9073486328125e-06,
+      "surface_end": 0.0
+    },
+    {
+      "route": "root-east",
+      "start": [
+        48.7,
+        24
+      ],
+      "end": [
+        69.5,
+        24
+      ],
+      "length": 20.8,
+      "risers": 0,
+      "surface_start": 0.0,
+      "surface_end": 0.0
+    },
+    {
+      "route": "lantern-street",
+      "start": [
+        69.5,
+        24
+      ],
+      "end": [
+        106.4,
+        45.5
+      ],
+      "length": 58.4,
+      "risers": 0,
+      "surface_start": 0.0,
+      "surface_end": 0.0
+    },
+    {
+      "route": "root-south",
+      "start": [
+        42,
+        17.3
+      ],
+      "end": [
+        42,
+        2.5
+      ],
+      "length": 14.8,
+      "risers": 0,
+      "surface_start": 0.0,
+      "surface_end": 0.0
+    },
+    {
+      "route": "promenade",
+      "start": [
+        21.7,
+        2.5
+      ],
+      "end": [
+        60.5,
+        2.5
+      ],
+      "length": 38.8,
+      "risers": 0,
+      "surface_start": 0.0,
+      "surface_end": 0.0
+    },
+    {
+      "route": "harbour-steps",
+      "start": [
+        60.5,
+        2.5
+      ],
+      "end": [
+        60.5,
+        -40.4
+      ],
+      "length": 52.9,
+      "risers": 43,
+      "surface_start": 0.0,
+      "surface_end": -10.0
+    }
+  ],
+  "paving_cuts": 224,
+  "existing_pillars": 38
+}

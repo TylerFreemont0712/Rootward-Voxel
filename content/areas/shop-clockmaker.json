@@ -1,0 +1,850 @@
+{
+  "schema": 1,
+  "id": "shop-clockmaker",
+  "title": "Pendulum & Pin",
+  "version": 4,
+  "size": [
+    14,
+    14
+  ],
+  "spawn": [
+    6,
+    3
+  ],
+  "voice_lesson": true,
+  "terrain": [
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    "..............",
+    ".............."
+  ],
+  "buildings": [],
+  "trees": [],
+  "zones": [
+    {
+      "id": "shop-floor",
+      "title": "Pendulum & Pin",
+      "rect": [
+        0,
+        0,
+        14,
+        14
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "id": "shop-pendant-1",
+      "zone": "shop-floor",
+      "at": [
+        4,
+        4
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    },
+    {
+      "id": "shop-pendant-2",
+      "zone": "shop-floor",
+      "at": [
+        10.3,
+        10.0
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    },
+    {
+      "id": "shop-pendant-3",
+      "zone": "shop-floor",
+      "at": [
+        3.3,
+        10.3
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    }
+  ],
+  "props": [],
+  "interior": {
+    "style": "workshop-square",
+    "shell": "clockshop-shell",
+    "zoom": 12,
+    "exit": [
+      6,
+      0
+    ],
+    "exit_direction": "S",
+    "walk_front": 0,
+    "furniture": [],
+    "assets": [
+      {
+        "id": "longcase-a",
+        "asset": "clockshop-longcase",
+        "at": [
+          0.6,
+          6.4
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "longcase-b",
+        "asset": "clockshop-longcase",
+        "at": [
+          0.6,
+          8.5
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "longcase-c",
+        "asset": "clockshop-longcase",
+        "at": [
+          0.6,
+          11.2
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "display",
+        "asset": "clockshop-display-counter",
+        "at": [
+          9.5,
+          5.0
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "repair-bench",
+        "asset": "clockshop-repair-bench",
+        "at": [
+          9.3,
+          12.4
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "side-repair-bench",
+        "asset": "clockshop-repair-bench",
+        "at": [
+          2.0,
+          8.0
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "parts-cabinet",
+        "asset": "clockshop-parts-cabinet",
+        "at": [
+          2.9,
+          12.7
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "spares-cabinet",
+        "asset": "clockshop-parts-cabinet",
+        "at": [
+          0.7,
+          1.6
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "watch-cabinet",
+        "asset": "clockshop-watch-cabinet",
+        "at": [
+          0.6,
+          4.0
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "service-cabinet",
+        "asset": "clockshop-service-shelf",
+        "at": [
+          12.8,
+          5.3
+        ],
+        "turn": 270,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "intake-cabinet",
+        "asset": "clockshop-service-shelf",
+        "at": [
+          9.2,
+          1.2
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "pendulum-rack",
+        "asset": "clockshop-pendulum-rack",
+        "at": [
+          12.3,
+          10.0
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "delivery-0",
+        "asset": "clockshop-clock-crates",
+        "at": [
+          12.5,
+          8.0
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "delivery-1",
+        "asset": "clockshop-clock-crates",
+        "at": [
+          12.6,
+          12.6
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "delivery-2",
+        "asset": "clockshop-clock-crates",
+        "at": [
+          1.0,
+          12.5
+        ],
+        "turn": 90,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "curio-plinth-0",
+        "asset": "clockshop-display-plinth",
+        "at": [
+          3.4,
+          3.0
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "curio-plinth-1",
+        "asset": "clockshop-display-plinth",
+        "at": [
+          11.8,
+          2.0
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "curio-plinth-2",
+        "asset": "clockshop-display-plinth",
+        "at": [
+          3.3,
+          6.0
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "orrery",
+        "asset": "clockshop-orrery",
+        "at": [
+          3.4,
+          3.0
+        ],
+        "turn": 0,
+        "height": 0.97,
+        "scale": 1
+      },
+      {
+        "id": "small-orrery",
+        "asset": "clockshop-orrery",
+        "at": [
+          11.8,
+          2.0
+        ],
+        "turn": 0,
+        "height": 0.97,
+        "scale": 0.8
+      },
+      {
+        "id": "spring-winder",
+        "asset": "clockshop-spring-winder",
+        "at": [
+          3.3,
+          6.0
+        ],
+        "turn": 0,
+        "height": 0.97,
+        "scale": 1
+      },
+      {
+        "id": "work-stool-0",
+        "asset": "clockshop-stool",
+        "at": [
+          3.7,
+          8.7
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "work-stool-1",
+        "asset": "clockshop-stool",
+        "at": [
+          9.3,
+          10.8
+        ],
+        "turn": 0,
+        "height": 0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "parts-tray",
+        "asset": "clockshop-clockwork-tray",
+        "at": [
+          2.2,
+          8.35
+        ],
+        "turn": 90,
+        "height": 1.08,
+        "scale": 0.65
+      },
+      {
+        "id": "intake-ledger",
+        "asset": "clockshop-ledger-set",
+        "at": [
+          8.6,
+          1.2
+        ],
+        "turn": 0,
+        "height": 1.49,
+        "scale": 1
+      },
+      {
+        "id": "display-ledger",
+        "asset": "clockshop-ledger-set",
+        "at": [
+          10.4,
+          4.9
+        ],
+        "turn": 0,
+        "height": 1.69,
+        "scale": 0.75
+      },
+      {
+        "id": "archive-ledger",
+        "asset": "clockshop-ledger-set",
+        "at": [
+          2.0,
+          12.7
+        ],
+        "turn": 0,
+        "height": 2.4,
+        "scale": 0.65
+      },
+      {
+        "id": "intake-oils",
+        "asset": "clockshop-oil-and-tools",
+        "at": [
+          9.6,
+          1.2
+        ],
+        "turn": 0,
+        "height": 1.49,
+        "scale": 1
+      },
+      {
+        "id": "service-oils",
+        "asset": "clockshop-oil-and-tools",
+        "at": [
+          12.8,
+          6.28
+        ],
+        "turn": 270,
+        "height": 1.49,
+        "scale": 0.65
+      },
+      {
+        "id": "rear-oils",
+        "asset": "clockshop-oil-and-tools",
+        "at": [
+          3.8,
+          12.7
+        ],
+        "turn": 0,
+        "height": 2.39,
+        "scale": 0.7
+      },
+      {
+        "id": "rear-shelf",
+        "asset": "clockshop-wall-shelf",
+        "at": [
+          4.8,
+          13.1
+        ],
+        "turn": 0,
+        "height": 1.6,
+        "scale": 1
+      },
+      {
+        "id": "side-shelf",
+        "asset": "clockshop-wall-shelf",
+        "at": [
+          -0.19,
+          10.7
+        ],
+        "turn": 90,
+        "height": 1.45,
+        "scale": 0.85
+      },
+      {
+        "id": "timing-diagram",
+        "asset": "clockshop-blueprint-board",
+        "at": [
+          4.8,
+          13.15
+        ],
+        "turn": 0,
+        "height": 2.7,
+        "scale": 1
+      },
+      {
+        "id": "repair-diagram",
+        "asset": "clockshop-blueprint-board",
+        "at": [
+          -0.2,
+          10.7
+        ],
+        "turn": 90,
+        "height": 2.2,
+        "scale": 0.85
+      },
+      {
+        "id": "wall-clock-0",
+        "asset": "clockshop-regulator",
+        "at": [
+          -0.2,
+          7.5
+        ],
+        "turn": 90,
+        "height": 1.6,
+        "scale": 1
+      },
+      {
+        "id": "wall-clock-1",
+        "asset": "clockshop-regulator",
+        "at": [
+          -0.2,
+          9.3
+        ],
+        "turn": 90,
+        "height": 1.65,
+        "scale": 0.8
+      },
+      {
+        "id": "wall-clock-2",
+        "asset": "clockshop-regulator",
+        "at": [
+          12.0,
+          13.16
+        ],
+        "turn": 0,
+        "height": 1.65,
+        "scale": 1
+      },
+      {
+        "id": "wall-clock-3",
+        "asset": "clockshop-regulator",
+        "at": [
+          6.1,
+          13.16
+        ],
+        "turn": 0,
+        "height": 1.7,
+        "scale": 0.65
+      },
+      {
+        "id": "mantel-0",
+        "asset": "clockshop-mantel-clock",
+        "at": [
+          4.15,
+          13.1
+        ],
+        "turn": 0,
+        "height": 1.72,
+        "scale": 0.7
+      },
+      {
+        "id": "mantel-1",
+        "asset": "clockshop-mantel-clock",
+        "at": [
+          4.8,
+          13.1
+        ],
+        "turn": 0,
+        "height": 1.72,
+        "scale": 0.85
+      },
+      {
+        "id": "mantel-2",
+        "asset": "clockshop-mantel-clock",
+        "at": [
+          5.45,
+          13.1
+        ],
+        "turn": 0,
+        "height": 1.72,
+        "scale": 0.65
+      },
+      {
+        "id": "mantel-3",
+        "asset": "clockshop-mantel-clock",
+        "at": [
+          12.8,
+          5.0
+        ],
+        "turn": 270,
+        "height": 1.49,
+        "scale": 0.65
+      },
+      {
+        "id": "mantel-4",
+        "asset": "clockshop-mantel-clock",
+        "at": [
+          12.8,
+          5.8
+        ],
+        "turn": 270,
+        "height": 1.49,
+        "scale": 0.6
+      },
+      {
+        "id": "mantel-5",
+        "asset": "clockshop-mantel-clock",
+        "at": [
+          10.2,
+          1.2
+        ],
+        "turn": 0,
+        "height": 1.49,
+        "scale": 0.6
+      },
+      {
+        "id": "mantel-6",
+        "asset": "clockshop-mantel-clock",
+        "at": [
+          2.8,
+          12.7
+        ],
+        "turn": 0,
+        "height": 2.39,
+        "scale": 0.7
+      },
+      {
+        "id": "cuckoo-a",
+        "asset": "clockshop-cuckoo-clock",
+        "at": [
+          -0.2,
+          5.8
+        ],
+        "turn": 90,
+        "height": 1.6,
+        "scale": 1
+      },
+      {
+        "id": "cuckoo-b",
+        "asset": "clockshop-cuckoo-clock",
+        "at": [
+          0.6,
+          13.16
+        ],
+        "turn": 0,
+        "height": 2.05,
+        "scale": 0.9
+      },
+      {
+        "id": "shop-pendant-1-model",
+        "asset": "clockshop-brass-pendant",
+        "at": [
+          4,
+          4
+        ],
+        "turn": 0,
+        "height": 3.5,
+        "scale": 1
+      },
+      {
+        "id": "shop-pendant-2-model",
+        "asset": "clockshop-brass-pendant",
+        "at": [
+          10.3,
+          10.0
+        ],
+        "turn": 0,
+        "height": 3.5,
+        "scale": 1
+      },
+      {
+        "id": "shop-pendant-3-model",
+        "asset": "clockshop-brass-pendant",
+        "at": [
+          3.3,
+          10.3
+        ],
+        "turn": 0,
+        "height": 3.5,
+        "scale": 1
+      }
+    ],
+    "lamp_fixtures": [
+      {
+        "id": "shop-pendant-1",
+        "asset": "shop-pendant-1-model",
+        "range": 7.5,
+        "energy": 1.2
+      },
+      {
+        "id": "shop-pendant-2",
+        "asset": "shop-pendant-2-model",
+        "range": 7.5,
+        "energy": 1.2
+      },
+      {
+        "id": "shop-pendant-3",
+        "asset": "shop-pendant-3-model",
+        "range": 7,
+        "energy": 0.95
+      }
+    ],
+    "links": [
+      {
+        "id": "square",
+        "at": [
+          6,
+          0
+        ],
+        "approach": [
+          6,
+          1
+        ],
+        "direction": "S",
+        "to": "haverlund-square",
+        "arrival": [
+          16,
+          21
+        ],
+        "facing": "E",
+        "label": "Return to Spindle Walk",
+        "walk_through": true,
+        "enter": 1,
+        "doors": "shell"
+      }
+    ],
+    "inspections": [
+      {
+        "id": "clock-display",
+        "at": [
+          9,
+          4
+        ],
+        "title": "The display case",
+        "text": "Mantel clocks and pocket watches wait on green felt. Each ivory tag records the maker, the fault found and the date the movement was serviced."
+      },
+      {
+        "id": "clock-repairs",
+        "at": [
+          8,
+          11
+        ],
+        "title": "The repair bench",
+        "text": "A half-built escapement is held upright in its stand. Drivers, a bench vise and a shaded task lamp leave room for a larger calibration job."
+      },
+      {
+        "id": "clock-parts",
+        "at": [
+          3,
+          11
+        ],
+        "title": "Drawers of time",
+        "text": "Brass labels divide pinions, springs, jewels and winding keys by size. The open repair manuals on top are full of small corrections."
+      },
+      {
+        "id": "watch-collection",
+        "at": [
+          2,
+          4
+        ],
+        "title": "Nine pocket watches",
+        "text": "Chains hang from individual brass hooks. Open faces and closed cases share the cabinet, each with its own little stand and repair ticket."
+      },
+      {
+        "id": "planetary-orrery",
+        "at": [
+          4,
+          2
+        ],
+        "title": "A little clockwork sky",
+        "text": "Three tilted brass orbits carry small planets around a golden sun. The exposed reduction wheels explain how one turn can become several slower ones."
+      },
+      {
+        "id": "mainspring-winder",
+        "at": [
+          4,
+          5
+        ],
+        "title": "The spring winder",
+        "text": "Two iron jaws hold a coiled mainspring on its arbor. A wooden crank winds it under control; a handwritten note warns against releasing the jaws first."
+      },
+      {
+        "id": "repair-intake",
+        "at": [
+          9,
+          2
+        ],
+        "title": "The repair ledger",
+        "text": "A ribbon marks the current page. The entries list owners, symptoms, promised collection dates and which parts are still missing."
+      },
+      {
+        "id": "clock-oils",
+        "at": [
+          12,
+          6
+        ],
+        "title": "Oils and cleaning tools",
+        "text": "Fine applicators stand beside labelled bottles and a soft brush. The clockmaker uses different oils for pivots, springs and larger gear trains."
+      },
+      {
+        "id": "clock-deliveries",
+        "at": [
+          11,
+          8
+        ],
+        "title": "Clocks in transit",
+        "text": "Slatted crates hold rolled felt and wrapped clock cases. Their brass straps and FRAGILE labels suggest careful deliveries rather than anonymous storage."
+      },
+      {
+        "id": "pendulum-selection",
+        "at": [
+          11,
+          9
+        ],
+        "title": "Pendulums awaiting regulation",
+        "text": "Five rods hang from a numbered rack. The bobs have different masses and the lengths are deliberately unequal; each belongs to a particular movement."
+      },
+      {
+        "id": "escapement-drawing",
+        "at": [
+          5,
+          12
+        ],
+        "title": "The escapement drawing",
+        "text": "A pinned diagram separates the escape wheel, pallet and pendulum. Dimension lines and small timing notes connect the drawing to the tools on the benches."
+      },
+      {
+        "id": "bench-cleaning",
+        "at": [
+          3,
+          8
+        ],
+        "title": "The watchmaker work station",
+        "text": "A second workbench is arranged for smaller movements. Loose gears rest in a removable felt-lined tray, leaving the middle of the shop free for a larger task."
+      },
+      {
+        "id": "cuckoo-stock",
+        "at": [
+          2,
+          6
+        ],
+        "title": "The cuckoo clocks",
+        "text": "A tiny carved bird waits under a steep roof. Two pinecone weights and a separate pendulum hang below the clock case."
+      },
+      {
+        "id": "orrery-stock",
+        "at": [
+          12,
+          3
+        ],
+        "title": "The demonstration model",
+        "text": "A smaller planetary mechanism is mounted on a matching plinth. Its open rings can be examined without taking the larger display apart."
+      }
+    ],
+    "city_network": true
+  }
+}

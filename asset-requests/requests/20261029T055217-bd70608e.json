@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "id": "20261029T055217-bd70608e",
+  "kind": "delete",
+  "title": "Delete Candle Stand",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "hollow-candle-stand",
+    "label": "Candle Stand",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hollow-candle-stand/v1/model.blend",
+    "runtime": "assets/world/hollow-candle-stand/model.glb",
+    "manifest": "assets/world/hollow-candle-stand/manifest.json",
+    "catalog_notes": "A brass three-branch candle stand with wax drips and warm flames.",
+    "related_files": [
+      "art/source/world/hollow-candle-stand/v1/brief.md",
+      "art/source/world/hollow-candle-stand/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Candle Stand",
+      "source": "art/source/world/hollow-candle-stand/v1/model.blend",
+      "runtime": "assets/world/hollow-candle-stand/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.325,
+        -0.325,
+        0.65,
+        0.65
+      ],
+      "behavior": "Interactive prop; boolean active state, static ground footprint",
+      "notes": "A brass three-branch candle stand with wax drips and warm flames.",
+      "library": "village-library-v1",
+      "interaction": {
+        "kind": "light",
+        "on": "Light",
+        "off": "Extinguish"
+      },
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "metal": [
+          "brass",
+          "copper"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:52:17+00:00",
+  "updated": "2026-10-29T06:28:21+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:52:17+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:21+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/hollow-candle-stand/v1/brief.md",
+    "art/source/world/hollow-candle-stand/v1/model.blend",
+    "art/source/world/hollow-candle-stand/v1/provenance.json",
+    "assets/world/hollow-candle-stand/manifest.json",
+    "assets/world/hollow-candle-stand/model.glb",
+    "assets/world/hollow-candle-stand/model.glb.import",
+    "assets/world/hollow-candle-stand/model_brass.png",
+    "assets/world/hollow-candle-stand/model_brass.png.import"
+  ]
+}

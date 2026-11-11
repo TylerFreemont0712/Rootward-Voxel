@@ -1,0 +1,433 @@
+{
+  "schema": 1,
+  "family": "chibi_v1",
+  "canvas": [
+    384,
+    384
+  ],
+  "foot_anchor": [
+    192,
+    336
+  ],
+  "visible_height_pixels": 272,
+  "bones": {
+    "hips": {
+      "parent": "",
+      "position": [
+        192,
+        251
+      ],
+      "length": 10
+    },
+    "spine": {
+      "parent": "hips",
+      "position": [
+        0,
+        -65
+      ],
+      "length": 60
+    },
+    "head": {
+      "parent": "spine",
+      "position": [
+        4,
+        -43
+      ],
+      "length": 30
+    },
+    "upper_arm_l": {
+      "parent": "spine",
+      "position": [
+        -31,
+        10
+      ],
+      "length": 28
+    },
+    "forearm_l": {
+      "parent": "upper_arm_l",
+      "position": [
+        0,
+        28
+      ],
+      "length": 26
+    },
+    "hand_l": {
+      "parent": "forearm_l",
+      "position": [
+        0,
+        26
+      ],
+      "length": 14
+    },
+    "upper_arm_r": {
+      "parent": "spine",
+      "position": [
+        31,
+        14
+      ],
+      "length": 28
+    },
+    "forearm_r": {
+      "parent": "upper_arm_r",
+      "position": [
+        0,
+        28
+      ],
+      "length": 26
+    },
+    "hand_r": {
+      "parent": "forearm_r",
+      "position": [
+        0,
+        26
+      ],
+      "length": 14
+    },
+    "thigh_l": {
+      "parent": "hips",
+      "position": [
+        -12,
+        8
+      ],
+      "length": 34
+    },
+    "shin_l": {
+      "parent": "thigh_l",
+      "position": [
+        0,
+        34
+      ],
+      "length": 32
+    },
+    "boot_l": {
+      "parent": "shin_l",
+      "position": [
+        0,
+        32
+      ],
+      "length": 12
+    },
+    "thigh_r": {
+      "parent": "hips",
+      "position": [
+        12,
+        8
+      ],
+      "length": 34
+    },
+    "shin_r": {
+      "parent": "thigh_r",
+      "position": [
+        0,
+        34
+      ],
+      "length": 32
+    },
+    "boot_r": {
+      "parent": "shin_r",
+      "position": [
+        0,
+        32
+      ],
+      "length": 12
+    }
+  },
+  "slots": {
+    "hair": {
+      "bone": "Skeleton2D/hips/spine/head",
+      "path": "Skeleton2D/hips/spine/head/slot_hair",
+      "size": [
+        114,
+        104
+      ],
+      "offset": [
+        -57,
+        -78
+      ],
+      "z": 40
+    },
+    "head": {
+      "bone": "Skeleton2D/hips/spine/head",
+      "path": "Skeleton2D/hips/spine/head/slot_head",
+      "size": [
+        90,
+        94
+      ],
+      "offset": [
+        -45,
+        -47
+      ],
+      "z": 30
+    },
+    "torso": {
+      "bone": "Skeleton2D/hips/spine",
+      "path": "Skeleton2D/hips/spine/slot_torso",
+      "size": [
+        80,
+        80
+      ],
+      "offset": [
+        -40,
+        -7
+      ],
+      "z": 0
+    },
+    "pelvis": {
+      "bone": "Skeleton2D/hips",
+      "path": "Skeleton2D/hips/slot_pelvis",
+      "size": [
+        50,
+        32
+      ],
+      "offset": [
+        -25,
+        -8
+      ],
+      "z": -1
+    },
+    "upper_arm_l": {
+      "bone": "Skeleton2D/hips/spine/upper_arm_l",
+      "path": "Skeleton2D/hips/spine/upper_arm_l/slot_upper_arm_l",
+      "size": [
+        28,
+        36
+      ],
+      "offset": [
+        -14,
+        -4
+      ],
+      "z": -12,
+      "joints": [
+        [
+          0.62,
+          0.18
+        ],
+        [
+          0.32,
+          0.83
+        ]
+      ],
+      "length": 28
+    },
+    "forearm_l": {
+      "bone": "Skeleton2D/hips/spine/upper_arm_l/forearm_l",
+      "path": "Skeleton2D/hips/spine/upper_arm_l/forearm_l/slot_forearm_l",
+      "size": [
+        25,
+        32
+      ],
+      "offset": [
+        -12,
+        -4
+      ],
+      "z": -12,
+      "joints": [
+        [
+          0.36,
+          0.18
+        ],
+        [
+          0.7,
+          0.88
+        ]
+      ],
+      "length": 26
+    },
+    "hand_l": {
+      "bone": "Skeleton2D/hips/spine/upper_arm_l/forearm_l/hand_l",
+      "path": "Skeleton2D/hips/spine/upper_arm_l/forearm_l/hand_l/slot_hand_l",
+      "size": [
+        22,
+        20
+      ],
+      "offset": [
+        -6,
+        -3
+      ],
+      "z": -12
+    },
+    "upper_arm_r": {
+      "bone": "Skeleton2D/hips/spine/upper_arm_r",
+      "path": "Skeleton2D/hips/spine/upper_arm_r/slot_upper_arm_r",
+      "size": [
+        28,
+        36
+      ],
+      "offset": [
+        -14,
+        -4
+      ],
+      "z": 12,
+      "joints": [
+        [
+          0.35,
+          0.17
+        ],
+        [
+          0.62,
+          0.85
+        ]
+      ],
+      "length": 28
+    },
+    "forearm_r": {
+      "bone": "Skeleton2D/hips/spine/upper_arm_r/forearm_r",
+      "path": "Skeleton2D/hips/spine/upper_arm_r/forearm_r/slot_forearm_r",
+      "size": [
+        25,
+        32
+      ],
+      "offset": [
+        -12,
+        -4
+      ],
+      "z": 12,
+      "joints": [
+        [
+          0.75,
+          0.16
+        ],
+        [
+          0.28,
+          0.87
+        ]
+      ],
+      "length": 26
+    },
+    "hand_r": {
+      "bone": "Skeleton2D/hips/spine/upper_arm_r/forearm_r/hand_r",
+      "path": "Skeleton2D/hips/spine/upper_arm_r/forearm_r/hand_r/slot_hand_r",
+      "size": [
+        22,
+        20
+      ],
+      "offset": [
+        -6,
+        -3
+      ],
+      "z": 12
+    },
+    "thigh_l": {
+      "bone": "Skeleton2D/hips/thigh_l",
+      "path": "Skeleton2D/hips/thigh_l/slot_thigh_l",
+      "size": [
+        28,
+        42
+      ],
+      "offset": [
+        -14,
+        -4
+      ],
+      "z": -8,
+      "joints": [
+        [
+          0.42,
+          0.11
+        ],
+        [
+          0.6,
+          0.86
+        ]
+      ],
+      "length": 34
+    },
+    "shin_l": {
+      "bone": "Skeleton2D/hips/thigh_l/shin_l",
+      "path": "Skeleton2D/hips/thigh_l/shin_l/slot_shin_l",
+      "size": [
+        24,
+        38
+      ],
+      "offset": [
+        -12,
+        -4
+      ],
+      "z": -8,
+      "joints": [
+        [
+          0.5,
+          0.11
+        ],
+        [
+          0.54,
+          0.9
+        ]
+      ],
+      "length": 32
+    },
+    "boot_l": {
+      "bone": "Skeleton2D/hips/thigh_l/shin_l/boot_l",
+      "path": "Skeleton2D/hips/thigh_l/shin_l/boot_l/slot_boot_l",
+      "size": [
+        29,
+        26
+      ],
+      "offset": [
+        -12,
+        -3
+      ],
+      "z": -8
+    },
+    "thigh_r": {
+      "bone": "Skeleton2D/hips/thigh_r",
+      "path": "Skeleton2D/hips/thigh_r/slot_thigh_r",
+      "size": [
+        28,
+        42
+      ],
+      "offset": [
+        -14,
+        -4
+      ],
+      "z": -2,
+      "joints": [
+        [
+          0.62,
+          0.12
+        ],
+        [
+          0.38,
+          0.86
+        ]
+      ],
+      "length": 34
+    },
+    "shin_r": {
+      "bone": "Skeleton2D/hips/thigh_r/shin_r",
+      "path": "Skeleton2D/hips/thigh_r/shin_r/slot_shin_r",
+      "size": [
+        24,
+        38
+      ],
+      "offset": [
+        -12,
+        -4
+      ],
+      "z": -2,
+      "joints": [
+        [
+          0.5,
+          0.11
+        ],
+        [
+          0.54,
+          0.9
+        ]
+      ],
+      "length": 32
+    },
+    "boot_r": {
+      "bone": "Skeleton2D/hips/thigh_r/shin_r/boot_r",
+      "path": "Skeleton2D/hips/thigh_r/shin_r/boot_r/slot_boot_r",
+      "size": [
+        29,
+        26
+      ],
+      "offset": [
+        -12,
+        -3
+      ],
+      "z": -2
+    }
+  }
+}

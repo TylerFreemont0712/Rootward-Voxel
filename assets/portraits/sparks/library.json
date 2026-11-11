@@ -1,0 +1,15 @@
+{
+  "portraits": {
+    "hotaru-robot": {
+      "runtime": "res://assets/portraits/sparks/hotaru-robot.png",
+      "sha256": "4fca154096bc72a53a38d92428636fd13de76ece28cc17e0329639260af68a95",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "res://art/source/portraits/sparks/v1/hotaru-robot.png"
+    }
+  },
+  "schema": 1,
+  "version": "v1"
+}

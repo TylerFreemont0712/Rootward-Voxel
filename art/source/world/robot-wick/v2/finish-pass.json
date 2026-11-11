@@ -1,0 +1,10 @@
+{
+  "asset": "robot-wick",
+  "date": "2026-10-29",
+  "source_sha256": "f439b407116c4e6e41d9b0580c8278047a0b6945c45e06fe671d8af432d4eb8b",
+  "backup": "model.pre-finish.blend",
+  "backup_sha256": "c8d2adb128ebf291717daaf36a046ebb1f74ed7f253347ffe24af10ad3e89c88",
+  "edit_record": "art/source/world/sparks-robot-refinement/v1/finish_pip_wick.py",
+  "edit_record_sha256": "f6e57882f0317f8bbbece8ed07d250a3e5f0ef827b98e8feb3d149f88744fec4",
+  "note": "User removed Pip satchel and requested compartment parcels; tagged eye-only geometry for cosmetic blink. Previous v2 source preserved."
+}

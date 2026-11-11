@@ -1,0 +1,7 @@
+{
+  "asset": "workshop-armchair",
+  "before": "a8018fbc7969efcc578e22ae168a0dda6e338bd4b68e34e6910afd58f242bb7c",
+  "after": "e93e8981f3d8e4b6c06ca228cf83d45b7cd5b121e15e75dd521646a1651e9482",
+  "backup": "art/source/world/workshop-armchair/v1/model.pre-cushion-clearance.blend",
+  "change": "Loose cushion rests forward on the seat, clear of the plaid rear fold."
+}

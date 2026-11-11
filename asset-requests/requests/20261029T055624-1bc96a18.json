@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "20261029T055624-1bc96a18",
+  "kind": "delete",
+  "title": "Delete Milk Churn",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "milk-churn",
+    "label": "Milk Churn",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/milk-churn/v1/model.blend",
+    "runtime": "assets/world/milk-churn/model.glb",
+    "manifest": "assets/world/milk-churn/manifest.json",
+    "catalog_notes": "Tall galvanised churn on a dark iron foot, with two iron bands, a flared lid and a small arched iron handle on the lid. 0.4 m across the body, 0.8 m tall. The footprint is the body; the bands and lid rim overhang it by 0.03 to 0.05 m.",
+    "related_files": [
+      "art/source/world/milk-churn/v1/brief.md",
+      "art/source/world/milk-churn/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Milk Churn",
+      "source": "art/source/world/milk-churn/v1/model.blend",
+      "runtime": "assets/world/milk-churn/model.glb",
+      "pivot": "ground origin on the body axis",
+      "logical_footprint": [
+        -0.2,
+        -0.2,
+        0.4,
+        0.4
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "Tall galvanised churn on a dark iron foot, with two iron bands, a flared lid and a small arched iron handle on the lid. 0.4 m across the body, 0.8 m tall. The footprint is the body; the bands and lid rim overhang it by 0.03 to 0.05 m.",
+      "finish_slots": {
+        "metal": [
+          "iron"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:56:24+00:00",
+  "updated": "2026-10-29T06:29:00+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:56:24+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:29:00+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    },
+    {
+      "path": "tools/doodad_tour.gd",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/milk-churn/v1/brief.md",
+    "art/source/world/milk-churn/v1/model.blend",
+    "art/source/world/milk-churn/v1/provenance.json",
+    "assets/world/milk-churn/manifest.json",
+    "assets/world/milk-churn/model.glb",
+    "assets/world/milk-churn/model.glb.import"
+  ]
+}

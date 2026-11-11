@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-28",
+  "record": "art/source/world/sparks-square/v1/open_lane_gate.py",
+  "before_sha256": "6ccfae2770109365cac2fec71f2553c1b8d98a1e45b926d9150c22af7eeb944e",
+  "after_sha256": "096d0f48ef93a06ae52c11e46a8e4de40711b65ff8d2a09fdc7cc733c207a117",
+  "vertices_swung": 736,
+  "note": "Town steps opened for the square; backup retained."
+}

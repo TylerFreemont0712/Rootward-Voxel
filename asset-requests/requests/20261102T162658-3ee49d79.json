@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "id": "20261102T162658-3ee49d79",
+  "kind": "update",
+  "title": "Update The Rootwell, the town's power beacon",
+  "asset_type": "world model",
+  "status": "finished",
+  "notes": "Same 2026-11-03 square-lighting task: preserve the current adopted artwork and all civic-cycle gauge/clock/plant edits. Copy the current master into v2 and spatially subdivide only large static surfaces so the Compatibility renderer can keep every local lamp on while the camera moves. Keep moving parts/pivots and UVs/normals unchanged.",
+  "asset": {
+    "id": "rootwell-beacon",
+    "label": "The Rootwell, the town's power beacon",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/rootwell-beacon/v1/model.blend",
+    "runtime": "assets/world/rootwell-beacon/model.glb",
+    "manifest": "assets/world/rootwell-beacon/manifest.json",
+    "catalog_notes": "After the approved v0.72 paintings docs/concept/v0.72/art/rootwell/. art/source/world/rootwell/v1/author_rootwell.py (with the seaside house kit) is initial authoring only; edit the adopted model.blend. Replaces square-beacon in a later square layout pass.",
+    "related_files": [
+      "art/source/world/rootwell-beacon/v1/city-cycle-revision.json",
+      "art/source/world/rootwell-beacon/v1/conduits-revision.json",
+      "art/source/world/rootwell-beacon/v1/plant-style.json",
+      "art/source/world/rootwell-beacon/v1/provenance.json",
+      "art/source/world/rootwell/v1/author_rootwell.py"
+    ],
+    "usage_files": [
+      "content/areas/haverlund-square.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "The Rootwell, the town's power beacon",
+      "source": "art/source/world/rootwell-beacon/v1/model.blend",
+      "runtime": "assets/world/rootwell-beacon/model.glb",
+      "pivot": "Ground centre. The octagon has a face toward each compass point and diagonal; the pressure gauge faces south-east, toward the game camera (notice board south, maintenance door east, service panel north-west). Steps 7.5 across the flats, 8.1 across the corners; the finial stands 9.5 high.",
+      "logical_footprint": [
+        -3.75,
+        -3.75,
+        7.5,
+        7.5
+      ],
+      "illustrated_edges": true,
+      "story_parts": [
+        "gauge_needle",
+        "maintenance_door",
+        "valve_wheel_e",
+        "valve_wheel_n",
+        "valve_wheel_w",
+        "valve_wheel_s",
+        "valve_wheel_service_w",
+        "valve_wheel_service_n",
+        "root",
+        "root_light"
+      ],
+      "behavior": "Saved city-pressure instrument. Original needle pivots around local Z, authored at 1.3. Core city state drives 0–10 with a pegged flutter above 10; 15 trips the shared supply. Separate door, valves, root and light remain story parts. Geometry grants no programming capability; area data owns access.",
+      "notes": "After the approved v0.72 paintings docs/concept/v0.72/art/rootwell/. art/source/world/rootwell/v1/author_rootwell.py (with the seaside house kit) is initial authoring only; edit the adopted model.blend. Replaces square-beacon in a later square layout pass."
+    }
+  },
+  "references": [],
+  "created": "2026-11-02T16:26:58+00:00",
+  "updated": "2026-11-02T16:45:30+00:00",
+  "history": [
+    {
+      "at": "2026-11-02T16:26:58+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-02T16:26:58+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-02T16:45:30+00:00",
+      "action": "finish"
+    }
+  ],
+  "result": {
+    "assets": [
+      "rootwell-beacon"
+    ],
+    "summary": "Square renewal reviewed natively at 1600×1000. Fixed lights and spatial source meshes remove camera-distance light competition; 115→66 logical fittings, five enterable saved shops, upper park and colliding reusable barriers. All normal source builds/audits, complete scripts/test.sh, 61 real doorway/Continue checks and full-square eight-light budget pass. Three measured views improve; Rootwell remains the draw-call hotspot. See review for source versions, scope and measurements.",
+    "review": "pipeline/reviews/2026-11-03-square-lighting-and-shops.md",
+    "contexts": [
+      {
+        "id": "rootwell-beacon",
+        "label": "The Rootwell, the town's power beacon",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/rootwell-beacon/v2/model.blend",
+        "runtime": "assets/world/rootwell-beacon/model.glb",
+        "manifest": "assets/world/rootwell-beacon/manifest.json",
+        "catalog_notes": "After the approved v0.72 paintings docs/concept/v0.72/art/rootwell/. art/source/world/rootwell/v1/author_rootwell.py (with the seaside house kit) is initial authoring only; edit the adopted model.blend. Replaces square-beacon in a later square layout pass. Spatially sectioned large static meshes from preserved current v1 source: art/source/world/square-renewal/v1/chunk_landmarks.py.",
+        "related_files": [
+          "art/source/world/rootwell-beacon/v2/spatial-sections.json",
+          "art/source/world/rootwell/v1/author_rootwell.py",
+          "art/source/world/square-renewal/v1/chunk_landmarks.py"
+        ],
+        "usage_files": [
+          "content/areas/haverlund-square.json"
+        ],
+        "catalog_entry": {
+          "version": "v2",
+          "authority": "blender",
+          "status": "integrated_sparks_square",
+          "label": "The Rootwell, the town's power beacon",
+          "source": "art/source/world/rootwell-beacon/v2/model.blend",
+          "runtime": "assets/world/rootwell-beacon/model.glb",
+          "pivot": "Ground centre. The octagon has a face toward each compass point and diagonal; the pressure gauge faces south-east, toward the game camera (notice board south, maintenance door east, service panel north-west). Steps 7.5 across the flats, 8.1 across the corners; the finial stands 9.5 high.",
+          "logical_footprint": [
+            -3.75,
+            -3.75,
+            7.5,
+            7.5
+          ],
+          "illustrated_edges": true,
+          "story_parts": [
+            "gauge_needle",
+            "maintenance_door",
+            "valve_wheel_e",
+            "valve_wheel_n",
+            "valve_wheel_w",
+            "valve_wheel_s",
+            "valve_wheel_service_w",
+            "valve_wheel_service_n",
+            "root",
+            "root_light"
+          ],
+          "behavior": "Saved city-pressure instrument. Original needle pivots around local Z, authored at 1.3. Core city state drives 0–10 with a pegged flutter above 10; 15 trips the shared supply. Separate door, valves, root and light remain story parts. Geometry grants no programming capability; area data owns access.",
+          "notes": "After the approved v0.72 paintings docs/concept/v0.72/art/rootwell/. art/source/world/rootwell/v1/author_rootwell.py (with the seaside house kit) is initial authoring only; edit the adopted model.blend. Replaces square-beacon in a later square layout pass. Spatially sectioned large static meshes from preserved current v1 source: art/source/world/square-renewal/v1/chunk_landmarks.py."
+        }
+      }
+    ],
+    "fingerprints": {
+      "rootwell-beacon": {
+        "source": "5c50546d1909468eccb0e103c44126742f5575825ac784d983af5198199032db",
+        "runtime": "b5b7a23a7b0b7b7d64c6834dc953fe22007e9a8ab40c04c37530cd62cac9cb2a",
+        "entry": "74037a60535a3076c3a4e2251d46743e09947998732d4e86c1c08f1fcdd07a66"
+      }
+    }
+  }
+}

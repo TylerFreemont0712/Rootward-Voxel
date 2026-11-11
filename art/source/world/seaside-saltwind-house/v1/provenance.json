@@ -1,0 +1,19 @@
+{
+  "asset": "seaside-saltwind-house",
+  "date": "2026-10-29",
+  "reference": "docs/concept/v0.72/art/background-houses/E-saltwind-apartment-house.png",
+  "authoring_record": "art/source/world/seaside-houses/v1/author_houses.py",
+  "authoring_record_sha256": "65da30c8b72f5c8efdcb2429dc8ed41a93f0ff68ac7ffe858ae8fb1a4647b6e7",
+  "kit": "art/source/world/seaside-houses/v1/house_kit.py",
+  "kit_sha256": "0331ab51c93a02b676dcec46a1ab6d0add7e62977cb8b3b8796e6959caaf94b3",
+  "texture_library": "art/source/world/seaside-background-houses/v1/textures/library.json",
+  "authored_palette": {
+    "plaster": "seaside_plaster_ochre",
+    "roof": "seaside_roof_teal",
+    "ridge": "seaside_roof_terracotta",
+    "stone": "seaside_stone_limestone",
+    "timber": "seaside_timber_oak",
+    "shutter": "seaside_shutter_teal"
+  },
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh."
+}

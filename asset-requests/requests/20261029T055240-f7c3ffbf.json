@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "id": "20261029T055240-f7c3ffbf",
+  "kind": "delete",
+  "title": "Delete Covered Handcart",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "hollow-covered-handcart",
+    "label": "Covered Handcart",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hollow-covered-handcart/v1/model.blend",
+    "runtime": "assets/world/hollow-covered-handcart/model.glb",
+    "manifest": "assets/world/hollow-covered-handcart/manifest.json",
+    "catalog_notes": "A little timber wagon with curved cream cover, iron-rimmed wheels and a tow bar.",
+    "related_files": [
+      "art/source/world/hollow-covered-handcart/v1/brief.md",
+      "art/source/world/hollow-covered-handcart/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Covered Handcart",
+      "source": "art/source/world/hollow-covered-handcart/v1/model.blend",
+      "runtime": "assets/world/hollow-covered-handcart/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.625,
+        -1.0,
+        1.25,
+        2.0
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A little timber wagon with curved cream cover, iron-rimmed wheels and a tow bar.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "walls": [
+          "cream"
+        ],
+        "timber": [
+          "oak",
+          "oak_light",
+          "wood",
+          "wood_dark"
+        ],
+        "metal": [
+          "brass",
+          "iron"
+        ],
+        "fabric": [
+          "linen"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:52:40+00:00",
+  "updated": "2026-10-29T06:28:22+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:52:40+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:22+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/hollow-covered-handcart/v1/brief.md",
+    "art/source/world/hollow-covered-handcart/v1/model.blend",
+    "art/source/world/hollow-covered-handcart/v1/provenance.json",
+    "assets/world/hollow-covered-handcart/manifest.json",
+    "assets/world/hollow-covered-handcart/model.glb",
+    "assets/world/hollow-covered-handcart/model.glb.import",
+    "assets/world/hollow-covered-handcart/model_brass.png",
+    "assets/world/hollow-covered-handcart/model_brass.png.import",
+    "assets/world/hollow-covered-handcart/model_iron.png",
+    "assets/world/hollow-covered-handcart/model_iron.png.import",
+    "assets/world/hollow-covered-handcart/model_log_wood.png",
+    "assets/world/hollow-covered-handcart/model_log_wood.png.import",
+    "assets/world/hollow-covered-handcart/model_plank_wood.png",
+    "assets/world/hollow-covered-handcart/model_plank_wood.png.import",
+    "assets/world/hollow-covered-handcart/model_timber_dark.png",
+    "assets/world/hollow-covered-handcart/model_timber_dark.png.import"
+  ]
+}

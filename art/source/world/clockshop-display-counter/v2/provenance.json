@@ -1,0 +1,8 @@
+{
+  "record": "art/source/world/clockshop-interior/v3/refine_curios.py",
+  "units": "metres",
+  "front": "Blender -Y",
+  "previous": "v1/model.blend",
+  "previous_sha256": "2ee1d234fc2c389489239eb9b55b0e3fcdf5f9929c509907a917531f94398ce8",
+  "source_sha256": "8a105342fba19c3d5e46080713448e8bd4bb2048b4ddcc2198fa2881280b76b8"
+}

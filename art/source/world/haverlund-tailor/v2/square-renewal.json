@@ -1,0 +1,10 @@
+{
+  "derived_from_sha256": "ff2db86eea588c0bfbd1e272300a2546fc00bf0018c07d743e236ca0c842113a",
+  "removed_front_faces": 8275,
+  "label": "FINCH & THREAD",
+  "door_center": [
+    -0.3,
+    -3.17
+  ],
+  "record": "art/source/world/square-renewal/v1/revise_shops.py"
+}

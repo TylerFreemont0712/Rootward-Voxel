@@ -1,0 +1,34 @@
+{
+  "asset": "lane-tram-shelter",
+  "source": "art/source/world/lane-tram-shelter/v1/model.blend",
+  "backup": "art/source/world/lane-tram-shelter/v1/model.pre-plant-style.blend",
+  "before_sha256": "8103bfbb3c4e006657928bfa260b132bb43798528c04a455ec6cf492427ce0d0",
+  "after_sha256": "44d5d8900de6fe88dcdcfa1153c2005652e4211d64ae2c014d012ef573a7dfc2",
+  "objects": [
+    {
+      "object": "lane_leaf_dark",
+      "replaced_components": {
+        "leaf_dark": 4
+      },
+      "protected_faces": 324,
+      "protected_sha256": "926ff8b7e2b378c6aa63db943a6a0094f07c0ef09e896f9309d322607e329865"
+    },
+    {
+      "object": "lane_leaf",
+      "replaced_components": {
+        "leaf": 10
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "object": "lane_leaf_light",
+      "replaced_components": {
+        "leaf_light": 9
+      },
+      "protected_faces": 0,
+      "protected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

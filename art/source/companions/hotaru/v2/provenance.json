@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "source": "art/source/companions/hotaru/v2/sprite.png",
+  "sha256": "a935fd264631158495a1aa4030413355e042da0a3ffc85e3d73d88978a0a0a22",
+  "prompt_sha256": "3b9288e283809df3a4e92c492ed14936ca84d0d1911e9dcf8c6cf4160367a589",
+  "edit_reference": "art/source/companions/hotaru/v1/sprite.png",
+  "role": "Black-haired, composed fairy dialogue avatar; world follower is a separate tiny winged orb."
+}

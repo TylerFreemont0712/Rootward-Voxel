@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-23",
+  "status": "new authored character for user review; original remains default",
+  "identity": "Mira, lantern cartographer; warm brown skin, espresso wavy bob, brass clips, plum coat, ochre scarf, sage cuffs, moss trousers, chestnut boots",
+  "tool": "built-in imagegen",
+  "prompts": [
+    "prompt-se.txt",
+    "prompt-ne.txt",
+    "prompt-blink.txt"
+  ],
+  "pose_references": {
+    "art/source/adventurer/v9-directional-walk/SE.png": "0c2067d8dcfe105d42e747487c87527544db78d38bd4afc775fa493744dee6e4",
+    "art/source/adventurer/v9-directional-walk/NE.png": "0cd31a9cf3e94ad1ecec7937f51512e4a7c7c654c601df71b1ef2fa9a5492187"
+  },
+  "mirror_method": "Godot Image.flip_x per 418x418 cell; preserve pose order; SE to SW and NE to NW",
+  "blink": {
+    "reference_crop": [
+      90,
+      0,
+      250,
+      250
+    ],
+    "method": "Generated closed eyes resized to the reference crop and composited only inside two feathered eye polygons. All other neutral pixels retained. Mirrored exactly for SW.",
+    "assembly": "assemble.gd.txt"
+  },
+  "packing": {
+    "script": "pipeline/prepare_directional_walk.gd",
+    "method": "existing shared-template packer; integer translation only, no pose resampling",
+    "template": "pipeline/character-template.json"
+  },
+  "inputs": {
+    "prompt-blink.txt": "7de72e5fe5abe7c9da57625b3ed8357dce2ee9863a5471c5d9cde469c8b5388c",
+    "NE.png": "b8d3b12b5951f3b04ec4f54bbb7e529bdb212acc6222d50030fae52a5571feb3",
+    "NW.png": "d38de5f00c2f21c8630aab3a5b92c4d758516ab45c24da3bad857343420000f8",
+    "SE.png": "b92e4d18504185720b03a588aef2a849f11e40f9c65a3dd3c745a0137ff775a6",
+    "blink-se.png": "ce8fea16b0e7e20f39c50570b3b3c56a30d14797a6adaa02ab1e04662c7138de",
+    "blink-reference.png": "97db1c9cf5a4f3e0c297e404cb43ccaca393b0b4676b8d800842810d2242794c",
+    "SW.png": "4c1b057d62de48ddf23d5119e2896904b1981e894cae906a7ec00434926faee3",
+    "blink-sw.png": "6dc6c755b54859927dc077302be0ad83bbcdcfd46626fce658ffb108b0c3b41a",
+    "blink-generated.png": "2c70842e44da1a340c69ff2da0ffb13b40386ef1448ec4ec8a7f9cdb0d6cca2f",
+    "assemble.gd.txt": "646e5adc10a72385d77055941d679212ca27d0d750f550e1490bed6f42371692",
+    "prompt-se.txt": "7d61fdbd4d344754072adcb17453b47d8ba340d5838300139911ba6b7b82c7d1",
+    "prompt-ne.txt": "f685bf7c088907dd11b0aa4a784e3e582d02d225876a5bd97168dbe728651d42",
+    "idle-se.png": "420541c4b06ee597f99424905d27c1c9c57523df7006f484956baeeb979aaebf",
+    "prompts.json": "a2adf0ce89e173a37f77efba1bae63c5278290d7f7369c8d8c25ca37ea71817d"
+  },
+  "prompt_set": "prompts.json"
+}

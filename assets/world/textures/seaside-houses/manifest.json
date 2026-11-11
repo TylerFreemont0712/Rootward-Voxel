@@ -1,0 +1,480 @@
+{
+  "materials": {
+    "seaside_plaster_cream": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_plaster_cream.png",
+          "sha256": "0da91dba1e8b3951439027e455c66fece19655f74d40bd6bea94c1b5b421f956",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_plaster_cream.png",
+          "sha256": "35780271142b6a9dbcccc2e087489c5a7550fe057b387c0b717255fc0cd0e870",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_plaster_cream.png",
+          "sha256": "fb17d20af8f1c8f11e0b5032c0206f75b9c20411a6507f0b7184245ced810e7e",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/plaster/seaside_plaster_cream.png",
+      "source_sha256": "551565f3761c309d428b39b510248c4bbe0038bd3c0aeac1920474dd1baed627"
+    },
+    "seaside_plaster_ochre": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_plaster_ochre.png",
+          "sha256": "fe700355825cfb0595bc5999936d6a5e77043843980199b7771db5316e903350",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_plaster_ochre.png",
+          "sha256": "2bf7fa899fe877fe8517c8e18daf49f4ccf51d7bb05339239932ca6374b7c63d",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_plaster_ochre.png",
+          "sha256": "c7ae94fe19f82afe4251252d9d9c6244553ac607dc04048e874031eb1f16bc18",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/plaster/seaside_plaster_ochre.png",
+      "source_sha256": "c57a301ab5ef60d951666bea42c74655a48d5705327ee662351ba9d08de9da2b"
+    },
+    "seaside_plaster_rose": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_plaster_rose.png",
+          "sha256": "e26b44486547527f0dd191efeea271dc64ef4204933e13436f2fe5d72a18814b",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_plaster_rose.png",
+          "sha256": "bf21f1b09ec13ae1d9b860d30295eb5ccd742003d54b556771d0dca0198154e8",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_plaster_rose.png",
+          "sha256": "9b8e4e499126a66ed58011881018ffb2bd6789bb5fe65cb0c7e0049ebce7f18d",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/plaster/seaside_plaster_rose.png",
+      "source_sha256": "2a8979611457d1f8250007bc7b43cbf196204f724a9e17137b53e40606874c51"
+    },
+    "seaside_roof_slate": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_roof_slate.png",
+          "sha256": "0cc35891d343dbd46f5199c950397055c3b62d147d057d58308b53381bf94d49",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_roof_slate.png",
+          "sha256": "2c4eed854514cd668a0c404947b2b3d569aedde28824e6cf9734f34e47d3f964",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_roof_slate.png",
+          "sha256": "9c1484cc4805c52a488f10e725cdf83ec77d057442e31403b40c0bc81a080f02",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/roof/seaside_roof_slate.png",
+      "source_sha256": "0996e3e497947d3252f6ef774008e905dbcaa85a854d40cdd91a086c0288d028"
+    },
+    "seaside_roof_teal": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_roof_teal.png",
+          "sha256": "44f1cd5bc6c8cb558d213a613cf98e0069fb0c4e5e4653387c0d034015750501",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_roof_teal.png",
+          "sha256": "f60a111752123c5e27e0df48b61bdaae34ce3fe89a04882cd288285b31a626ef",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_roof_teal.png",
+          "sha256": "34c2be30577352f455b3569c5bf0788cc3297d1a0261d1692bacd701320da898",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/roof/seaside_roof_teal.png",
+      "source_sha256": "4ca1ea620aac6f208cf3a0249f07539342c5c472a3f9466903504e3577f80aaf"
+    },
+    "seaside_roof_terracotta": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_roof_terracotta.png",
+          "sha256": "49dd2c76eefc99c00122891209cebfdae2e274c2758366680c3b514fc63d719d",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_roof_terracotta.png",
+          "sha256": "1c2504b988eea2038f2d706b28e6b6f608ba53c8b74064021a1260210e2f9818",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_roof_terracotta.png",
+          "sha256": "7e45fbe460c79cab37257797c853d6bb77d0500a60c0f3b7fdd0bce5912b626b",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/roof/seaside_roof_terracotta.png",
+      "source_sha256": "076914819930861c0e9f77ea17a42ddb72eb78b59f6d6439cf359eb0d2817f36"
+    },
+    "seaside_shutter_blue": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_shutter_blue.png",
+          "sha256": "5edf7aa9733043299582071f60685bce9bd6ee7ea93e6e43383817071d649efa",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_shutter_blue.png",
+          "sha256": "20dc72caab899acba4052994438f6824c9321bd8b5f144e188ffdd68e0f50cbd",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_shutter_blue.png",
+          "sha256": "20e39c6972e82772201293beb6889a3c4048ba30fbb740553cd475c2ba22a0b2",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_blue.png",
+      "source_sha256": "7c3c9fdaacf8a46c297233127cf5c80eb27eebc436d043555c9d1f2f821e108e"
+    },
+    "seaside_shutter_sage": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_shutter_sage.png",
+          "sha256": "194bf5850a0b78817c052fd6097d5953b967cc90c53b59f1c504b01e7feb3839",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_shutter_sage.png",
+          "sha256": "07bd8c376e98fdb2c51f4c06dd0b6759cfe460d8868635ea96cc4a2922638730",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_shutter_sage.png",
+          "sha256": "4631a3c790b9a1c98bea4075ee4d66bdc0c1efe8290aea33297d3b496ed9afaf",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_sage.png",
+      "source_sha256": "78a7a355c00f50e6d2df9faf01acf19882cdc14c67bfecd58950c24c96e96eca"
+    },
+    "seaside_shutter_teal": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_shutter_teal.png",
+          "sha256": "69b42c6e8c43567a648a2ddcdb70cf9e9f91d37ff068f7164c9091149a603c25",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_shutter_teal.png",
+          "sha256": "e6e861a6ef3b8265b6a925635f5db129793d84becd4bcb0583ba20797a95e626",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_shutter_teal.png",
+          "sha256": "1806275ab361cb4376fb71030c59d8c55d2f2adbff9a4bd088b6561d8a075208",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_teal.png",
+      "source_sha256": "630425765f9473b720ee5d213ac183fcd2a7908b1fac2f4fb9398b066605ea7e"
+    },
+    "seaside_stone_grey": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_stone_grey.png",
+          "sha256": "1553383202e1a9b8dbe1be26f260df49dc92fb4508f4e77334939e13edf57a07",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_stone_grey.png",
+          "sha256": "d880b6b7a11c33b6595a94f1570a59f08e3e43185ad308714ae512afd07b2b04",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_stone_grey.png",
+          "sha256": "f768023dc66dbb6799485a2b5565342de170b8032edf76f15f30ce67ec40a14b",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/stone/seaside_stone_grey.png",
+      "source_sha256": "357d416a62fdf8a0deb7cfdc10d09484c84c6f5d0d92adf75f6b8cfa35ecf6c6"
+    },
+    "seaside_stone_honey": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_stone_honey.png",
+          "sha256": "e363717d46f44ce9d7e8bf32ea84c32e079a18f3b2596ff4381477aa92b302b0",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_stone_honey.png",
+          "sha256": "4108c2d455bbb1398be750ce25db9764df3bcdb41a273cab4cf8aec93b4ff701",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_stone_honey.png",
+          "sha256": "6ecc075b5ea58d1d44a242f9d6a01b6d3f5f0923dd97d0dd4005baa5ab86e999",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/stone/seaside_stone_honey.png",
+      "source_sha256": "b9e8bf05fd8a3b2267b7e2b910e0da8caf6f3de140dffae383197127ccfcebb5"
+    },
+    "seaside_stone_limestone": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_stone_limestone.png",
+          "sha256": "6b03a28db4e925db912694b464849b98882751f9874696cbcc78f5bfd28f9042",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_stone_limestone.png",
+          "sha256": "dd145d86e5de4978d645e823132dda902ab30e13fb21317344783acbd2e94558",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_stone_limestone.png",
+          "sha256": "c84902d53dbece9e4111e62b07a6ab434d0d48ea05848254f2a10eb5ae7200c9",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/stone/seaside_stone_limestone.png",
+      "source_sha256": "cb8bd7f28ae3b0ec76285d4caacd821ca12d1998eb8d1565f9a3c0e8baaca4a4"
+    },
+    "seaside_timber_dark": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_timber_dark.png",
+          "sha256": "b5f5877d3f3be3ad97e7ad21d27d4186bc386cd1a40c3249a611bc5705e7cb26",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_timber_dark.png",
+          "sha256": "69424e31fb3b16588bf55cd2db2b3282dc4bd663204fe7daff72e60505a48d95",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_timber_dark.png",
+          "sha256": "8d2f8e710f2b85feeb3ead756c687bd47f6a1885ee54995cec86fb10ef9422e5",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_dark.png",
+      "source_sha256": "433ef5ac141a7cdbf3470a14383f2504c3ca911aa61bddcc9722528658cb0455"
+    },
+    "seaside_timber_driftwood": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_timber_driftwood.png",
+          "sha256": "92eb35d09836c4f66d0e72ba6c78a3ce85bbdfbee51dd45909b300c1b9025630",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_timber_driftwood.png",
+          "sha256": "c9527506d8ab0560a7a9403f495fbd2e3afa302c35a619c202e73f8b51a8b1b8",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_timber_driftwood.png",
+          "sha256": "26b8c4e463c5417dae2673edd5f61c61b65024f65ebb89697fda61771a8ba1af",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_driftwood.png",
+      "source_sha256": "3592f0879212f22fa281086ef8682c31e120cff585d45ae8b39107226483c7c4"
+    },
+    "seaside_timber_oak": {
+      "outputs": {
+        "detail": {
+          "path": "res://assets/world/textures/seaside-houses/detail/seaside_timber_oak.png",
+          "sha256": "b66dda69ffedd69c3a9d4ebdee30b880342501c3c21f20b99fe76008bcb5f39f",
+          "size": [
+            512,
+            512
+          ]
+        },
+        "lush": {
+          "path": "res://assets/world/textures/seaside-houses/lush/seaside_timber_oak.png",
+          "sha256": "4569e139f26bcab838e031039b81fc8db2bafb2e9b1a92f61833114cbd18791a",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/seaside-houses/solid/seaside_timber_oak.png",
+          "sha256": "f3aa7a7fbfcfd3d5f0e592a412df517d7e30783a7e8709875235ad2be39496de",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/seaside-background-houses/v1/textures/timber/seaside_timber_oak.png",
+      "source_sha256": "f0532292e084a669f9b4b485a4205e0b53e13f042cd7ccc655b3e7cc657fcfbe"
+    }
+  },
+  "normalization": "Lush: Lanczos to 128; solid: Lanczos to 64 then nearest to 128. Detail: Lanczos to 512. Opposite edge pixels paired to make a periodic boundary. Native paintings preserved.",
+  "presets": {
+    "cool_harbour": {
+      "plaster": "seaside_plaster_rose",
+      "roof": "seaside_roof_slate",
+      "shutter": "seaside_shutter_blue",
+      "stone": "seaside_stone_grey",
+      "timber": "seaside_timber_driftwood"
+    },
+    "ochre_court": {
+      "plaster": "seaside_plaster_ochre",
+      "roof": "seaside_roof_teal",
+      "shutter": "seaside_shutter_sage",
+      "stone": "seaside_stone_honey",
+      "timber": "seaside_timber_dark"
+    },
+    "warm_lane": {
+      "plaster": "seaside_plaster_cream",
+      "roof": "seaside_roof_terracotta",
+      "shutter": "seaside_shutter_teal",
+      "stone": "seaside_stone_limestone",
+      "timber": "seaside_timber_oak"
+    }
+  },
+  "schema": 1,
+  "version": "seaside-houses-v1"
+}

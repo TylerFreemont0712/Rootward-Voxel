@@ -1,0 +1,12 @@
+[
+  {
+    "asset": "loft-wall-life",
+    "before": "5e32c72d651c07dcd265a893d44afd87f346c5c6c867a50811693fe80c79c45d",
+    "after": "4ed6bac05b245e1aabf19b10f1726662cd4fe4c91367bd3fabaf056756278a2c"
+  },
+  {
+    "asset": "loft-travel-stacks",
+    "before": "0be4e0a06158b8a9f5bc3d48094d4de694b1287f2f7cd382c2b5f3613d165550",
+    "after": "ff81caf5b01a2ae5b1d85222892062a2cd9e2d3f56e6b5cb46a59cd73cbd8788"
+  }
+]

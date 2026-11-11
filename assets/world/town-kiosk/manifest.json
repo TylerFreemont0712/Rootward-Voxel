@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "town-kiosk",
+  "version": "v1",
+  "source": "art/source/world/town-kiosk/v1/model.blend",
+  "source_sha256": "4480bf855d1b98041ad7d3f1d198a6203a5acd76be57760f104bbe4693ab3731",
+  "runtime": "assets/world/town-kiosk/model.glb",
+  "runtime_sha256": "641204050b38c67c79226ac1416ee34469e206239c3ec67c5eb72c04c7e067e6",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.20000004768372,
+      0.0,
+      -1.20000004768372,
+      1.20000004768372,
+      3.26999998092651,
+      1.25768566131592
+    ],
+    "geometry_sha256": "54b8c4b33982459f7531ec7c8e10f7c2ebb4e8b07871cfa4bf9c628f697c0307",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      },
+      "seaside_shutter": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9200,
+        "texture_rgba_sha256": "10b2bf7b785b437a8bde5ee2533b912c3d998c74964b0627fab8fda9dee65cb7"
+      },
+      "seaside_stone": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9600,
+        "texture_rgba_sha256": "14e05aa6ca84fc51cafdd80319ac0112b206dc3763e4532b5c87ab9d750d7852"
+      },
+      "seaside_timber": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9400,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "house_paint",
+      "seaside_shutter",
+      "seaside_stone",
+      "seaside_timber"
+    ],
+    "meshes": 4,
+    "triangles": 1669
+  }
+}

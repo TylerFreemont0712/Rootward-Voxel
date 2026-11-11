@@ -1,0 +1,15 @@
+{
+  "asset": "haverlund-post-office",
+  "date": "2026-10-30",
+  "record": "art/source/world/square-hub/v1/coplanar_revision.py",
+  "backup": "model.pre-coplanar.blend",
+  "step_metres": 0.004,
+  "water_lift_metres": 0.006,
+  "passes": 1,
+  "triangle_lifts_by_material": {
+    "house_paint": 8,
+    "seaside_stone": 168,
+    "seaside_timber": 2
+  },
+  "left_over": 0
+}

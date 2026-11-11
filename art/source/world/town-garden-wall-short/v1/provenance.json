@@ -1,0 +1,18 @@
+{
+  "asset": "town-garden-wall-short",
+  "date": "2026-10-29",
+  "reference": "docs/concept/v0.72/art/guildhall-square.png",
+  "authoring_record": "art/source/world/square-hub/v1/author_pieces.py",
+  "authoring_record_sha256": "172ebe909343ff5bcc031067e17abfa85dec635b15fa71bfd47bb8aa80992f43",
+  "kit": "art/source/world/seaside-houses/v1/house_kit.py",
+  "kit_sha256": "d6441f38754a14395800908c0f4841a2a475f6bb6f6edde6589e4eb58233b1c9",
+  "texture_library": "art/source/world/seaside-background-houses/v1/textures/library.json",
+  "authored_palette": {
+    "stone": "seaside_stone_limestone",
+    "roof": "seaside_roof_terracotta",
+    "ridge": "seaside_roof_terracotta",
+    "timber": "seaside_timber_oak",
+    "shutter": "seaside_shutter_teal"
+  },
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh."
+}

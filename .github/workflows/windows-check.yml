@@ -1,0 +1,79 @@
+# Installs a published release on a clean Windows machine with the real installer, proves the game's sandbox runs
+# there, and uninstalls it (docs/RELEASES.md). Run by hand: gh workflow run windows-check.yml -f tag=v0.1.0
+# Online (the default) it downloads only the installer, which fetches the rest from the release, as a player's would;
+# offline it puts the release files beside the installer.
+name: Windows install check
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to check
+        default: v0.1.0
+      online:
+        description: Let the installer download the game itself (false puts the files beside it)
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - name: Download the Windows release files
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force release | Out-Null
+          if ("${{ inputs.online }}" -eq "true") {
+            gh release download "${{ inputs.tag }}" -R "${{ github.repository }}" -D release -p "Rootward-Voxel-Setup-*.exe"
+          } else {
+            gh release download "${{ inputs.tag }}" -R "${{ github.repository }}" -D release `
+              -p "Rootward-Voxel-Setup-*.exe" -p "rootward-voxel-*-windows-*.zip" -p "rootward-voxel-*.pck" -p "rootward-voxel-manifest.json"
+          }
+          Get-ChildItem release | Format-Table Name, Length
+
+      - name: Install silently
+        shell: pwsh
+        run: |
+          $setup = (Get-ChildItem release -Filter "Rootward-Voxel-Setup-*.exe").FullName
+          $log = "$env:RUNNER_TEMP\setup.log"
+          $p = Start-Process -FilePath $setup -ArgumentList "--headless --silent --dir $env:RUNNER_TEMP\Games --log $log" -Wait -PassThru
+          Get-Content $log
+          if ($p.ExitCode -ne 0) { throw "setup exited with $($p.ExitCode)" }
+
+      - name: Check what was installed
+        shell: pwsh
+        run: |
+          $game = "$env:RUNNER_TEMP\Games\Rootward Voxel"
+          Get-ChildItem $game | Format-Table Name, Length
+          foreach ($f in "RootwardVoxel.exe", "RootwardVoxel.console.exe", "RootwardVoxel.pck", "Rootward Voxel Setup.exe", "sandbox\bin\wasmtime.exe", "rootward-voxel-install.json") {
+            if (-not (Test-Path "$game\$f")) { throw "missing $f" }
+          }
+          Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\RootwardVoxel" | Format-List DisplayName, DisplayVersion, InstallLocation, UninstallString
+          if (-not (Test-Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Rootward Voxel.lnk")) { throw "no Start menu shortcut" }
+          "standard library read-only: $((Get-Item "$game\sandbox\python\lib\python3.14\os.py").IsReadOnly)"
+          $p = Start-Process -FilePath "$game\RootwardVoxel.console.exe" -ArgumentList "--headless -- --self-test" -Wait -PassThru -NoNewWindow `
+            -RedirectStandardOutput "$env:RUNNER_TEMP\selftest.txt"
+          Get-Content "$env:RUNNER_TEMP\selftest.txt"
+          if ($p.ExitCode -ne 0) { throw "the self-test failed ($($p.ExitCode))" }
+
+      - name: Uninstall silently
+        shell: pwsh
+        run: |
+          $game = "$env:RUNNER_TEMP\Games\Rootward Voxel"
+          $log = "$env:RUNNER_TEMP\uninstall.log"
+          $p = Start-Process -FilePath "$game\Rootward Voxel Setup.exe" -ArgumentList "--headless --silent --uninstall --log $log" -Wait -PassThru
+          Get-Content $log
+          if ($p.ExitCode -ne 0) { throw "uninstall exited with $($p.ExitCode)" }
+          # The uninstaller cannot delete its own .exe while it runs; a script it leaves behind finishes the job.
+          for ($i = 0; $i -lt 30 -and (Test-Path $game); $i++) { Start-Sleep -Seconds 1 }
+          "cleanup scripts left in TEMP: $((Get-ChildItem $env:TEMP -Filter 'rootward-voxel-uninstall-*.cmd' -ErrorAction SilentlyContinue | Measure-Object).Count)"
+          if (Test-Path $game) { cmd /c "dir /a /s `"$game`""; throw "the game's folder is still there" }
+          if (Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\RootwardVoxel") { throw "the Apps entry is still there" }
+          if (Test-Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Rootward Voxel.lnk") { throw "the Start menu shortcut is still there" }
+          "uninstalled cleanly"

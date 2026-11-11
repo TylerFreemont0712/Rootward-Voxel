@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "id": "20261029T055647-09104bfc",
+  "kind": "delete",
+  "title": "Delete Mushroom Cluster",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "mushroom-cluster",
+    "label": "Mushroom Cluster",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/mushroom-cluster/v1/model.blend",
+    "runtime": "assets/world/mushroom-cluster/model.glb",
+    "manifest": "assets/world/mushroom-cluster/manifest.json",
+    "catalog_notes": "Six cream and violet mushrooms on a short cut stump, 0.3 m tall. The clump is small and walkable around, so no footprint is proposed.",
+    "related_files": [
+      "art/source/world/mushroom-cluster/v1/brief.md",
+      "art/source/world/mushroom-cluster/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Mushroom Cluster",
+      "source": "art/source/world/mushroom-cluster/v1/model.blend",
+      "runtime": "assets/world/mushroom-cluster/model.glb",
+      "pivot": "ground origin at the centre of the stump",
+      "logical_footprint": null,
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab) with no footprint: it never blocks movement.",
+      "notes": "Six cream and violet mushrooms on a short cut stump, 0.3 m tall. The clump is small and walkable around, so no footprint is proposed.",
+      "finish_slots": {
+        "walls": [
+          "cream",
+          "plaster",
+          "plaster_shade"
+        ],
+        "roof": [
+          "roof",
+          "roof_light"
+        ],
+        "timber": [
+          "oak",
+          "wood",
+          "wood_dark"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:56:47+00:00",
+  "updated": "2026-10-29T06:27:59+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:56:47+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:27:59+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/mushroom-cluster/v1/brief.md",
+    "art/source/world/mushroom-cluster/v1/model.blend",
+    "art/source/world/mushroom-cluster/v1/provenance.json",
+    "assets/world/mushroom-cluster/manifest.json",
+    "assets/world/mushroom-cluster/model.glb",
+    "assets/world/mushroom-cluster/model.glb.import"
+  ]
+}

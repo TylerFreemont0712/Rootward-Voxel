@@ -1,0 +1,12 @@
+{
+  "tool": "built-in image_gen",
+  "input": "blink-reference.png",
+  "original_idle": "idle-se.png",
+  "reference_crop": [
+    100,
+    0,
+    250,
+    250
+  ],
+  "prompt": "Use case: precise-object-edit.\nAsset type: closed-eye blink key for the exact painted game sprite in the input.\nEdit target: image 1. Change ONLY the two visible eyes from open to gently closed. Both eyes must be fully closed in a natural brief blink: use thin curved dark eyelid lines, with matching warm face skin filling the former eye whites and pupils. Relaxed neutral expression, not laughing, grinning or sleeping. Preserve the exact eye centers, three-quarter face perspective, face outline, nose, mouth, hair, head angle, scarf, outfit, scale and pixel placement from image 1. Keep every other area unchanged. Do not change character proportions or redraw the hairstyle. The original head and body must stay at exactly the same position and size. Same painted style and outline. Transparent RGBA background; no text, marks or extra elements."
+}

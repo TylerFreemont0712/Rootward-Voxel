@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "clockshop-watch-cabinet",
+  "version": 2,
+  "source": "art/source/world/clockshop-watch-cabinet/v2/model.blend",
+  "source_sha256": "2045112328cd94b5383a5e2460dac8d09c334ca5d7aaf292b8c0854cff192b6a",
+  "runtime": "assets/world/clockshop-watch-cabinet/model.glb",
+  "runtime_sha256": "f3ddebc4b259ed8be0736935092ba2fcb6ffa88ba30cbe9e32964c1d84b4cd6c",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.00999999046326,
+      -0.0020000021904707,
+      -0.330000013113022,
+      1.00999999046326,
+      2.61999988555908,
+      0.389999985694885
+    ],
+    "geometry_sha256": "1cf9fb807125d988564bbf9cfc730317adf720151722552008c33dba9813deaf",
+    "material_records": {
+      "clockshop_brass": {
+        "albedo": [
+          7098,
+          5412,
+          2588,
+          10000
+        ],
+        "roughness": 4300,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_clear_glass": {
+        "albedo": [
+          9020,
+          9333,
+          8980,
+          1000
+        ],
+        "roughness": 1800,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_darkwood": {
+        "albedo": [
+          2196,
+          1529,
+          1176,
+          10000
+        ],
+        "roughness": 6800,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_felt": {
+        "albedo": [
+          2863,
+          3922,
+          3529,
+          10000
+        ],
+        "roughness": 9800,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_ink": {
+        "albedo": [
+          1529,
+          1686,
+          1647,
+          10000
+        ],
+        "roughness": 8500,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_ivory": {
+        "albedo": [
+          8863,
+          8392,
+          7137,
+          10000
+        ],
+        "roughness": 7800,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_teal": {
+        "albedo": [
+          1608,
+          3020,
+          2980,
+          10000
+        ],
+        "roughness": 7400,
+        "texture_rgba_sha256": ""
+      },
+      "clockshop_walnut": {
+        "albedo": [
+          6872,
+          6012,
+          5064,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      }
+    },
+    "materials": [
+      "clockshop_brass",
+      "clockshop_clear_glass",
+      "clockshop_darkwood",
+      "clockshop_felt",
+      "clockshop_ink",
+      "clockshop_ivory",
+      "clockshop_teal",
+      "clockshop_walnut"
+    ],
+    "meshes": 11,
+    "triangles": 15433
+  }
+}

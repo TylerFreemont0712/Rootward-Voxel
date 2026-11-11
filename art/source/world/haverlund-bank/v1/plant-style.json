@@ -1,0 +1,23 @@
+{
+  "asset": "haverlund-bank",
+  "source": "art/source/world/haverlund-bank/v1/model.blend",
+  "backup": "art/source/world/haverlund-bank/v1/model.pre-plant-style.blend",
+  "before_sha256": "08e69c866fe701ea41ad92a2283e373f18f411308e3b2326f46dedb59e74b8ab",
+  "after_sha256": "2415bed4c0b98df1513e9567199db9c79ea073814a59846914d105316362da6c",
+  "objects": [
+    {
+      "object": "detail_planters",
+      "replaced_components": {
+        "cypress_light": 26,
+        "cypress": 54,
+        "leaf": 6,
+        "flower_red": 6,
+        "leaf_dark": 6,
+        "flower_white": 6
+      },
+      "protected_faces": 132,
+      "protected_sha256": "f35a0dd8ffe7f29b1940d212aaf4e94aae46f7ce107462e6d72c70e0010c89a7"
+    }
+  ],
+  "authoring_record": "art/source/world/plant-style/v1/revise.py"
+}

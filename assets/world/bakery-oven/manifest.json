@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "bakery-oven",
+  "version": 1,
+  "source": "art/source/world/bakery-oven/v1/model.blend",
+  "source_sha256": "7ee552dc72e32eef0caefb396ab77eb3c192c57846e140f5e6a6f58e8da2f709",
+  "runtime": "assets/world/bakery-oven/model.glb",
+  "runtime_sha256": "bbd1e5c81bf90e65d7cf402d5ba975dd21044e64d2c705db7ba034f0057b9cc8",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.35000002384186,
+      0.0,
+      -0.899999976158142,
+      1.37000000476837,
+      3.90000009536743,
+      1.04999995231628
+    ],
+    "geometry_sha256": "0095ee2cefea2ecb347e8cd16d4361e8d23f6a33037ef53ecb7a1fa0f936a6bc",
+    "material_records": {
+      "shop_brass": {
+        "albedo": [
+          7098,
+          5412,
+          2588,
+          10000
+        ],
+        "roughness": 4500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_brick": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "a1cc1afc886ca6ee1007ecd2dc472e8f7e38b52588dbced45c60df50660caa38"
+      },
+      "shop_iron": {
+        "albedo": [
+          2275,
+          2471,
+          2510,
+          10000
+        ],
+        "roughness": 4500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_lamp_glass": {
+        "albedo": [
+          10000,
+          8118,
+          5412,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shop_wood_mid": {
+        "albedo": [
+          4784,
+          3216,
+          2118,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "shop_brass",
+      "shop_brick",
+      "shop_iron",
+      "shop_lamp_glass",
+      "shop_oak",
+      "shop_wood_mid"
+    ],
+    "meshes": 6,
+    "triangles": 772
+  }
+}

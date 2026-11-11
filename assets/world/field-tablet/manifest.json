@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "asset": "field-tablet",
+  "version": "v1",
+  "source": "art/source/world/field-tablet/v1/model.blend",
+  "source_sha256": "b5ea33da4457facc8791b0e59c814c98139e9204b4ba274e6ec0e0501cbda279",
+  "runtime": "assets/world/field-tablet/model.glb",
+  "runtime_sha256": "53ad806586aefa992dc4179067920024ffe950a4f1d1f680e84dda0d2ebed8d2",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.163000002503395,
+      -0.00200000032782555,
+      -0.113000005483627,
+      0.36724179983139,
+      0.0350000001490116,
+      0.209999993443489
+    ],
+    "geometry_sha256": "b56cfdde8a30b15f247b5eafedc8545198b1bcb19e9e264e83dc6c04c03ea2a6",
+    "material_records": {
+      "loft_brass": {
+        "albedo": [
+          7686,
+          6039,
+          3255,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_cable": {
+        "albedo": [
+          2039,
+          2314,
+          2314,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_cream": {
+        "albedo": [
+          9373,
+          8941,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_ochre": {
+        "albedo": [
+          7725,
+          6118,
+          3451,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_screen_glass": {
+        "albedo": [
+          902,
+          2392,
+          2353,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_screen_ink": {
+        "albedo": [
+          6157,
+          8784,
+          7569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_steel": {
+        "albedo": [
+          4275,
+          4667,
+          4902,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "loft_teal_dark": {
+        "albedo": [
+          1922,
+          3608,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "loft_brass",
+      "loft_cable",
+      "loft_cream",
+      "loft_ochre",
+      "loft_screen_glass",
+      "loft_screen_ink",
+      "loft_steel",
+      "loft_teal_dark"
+    ],
+    "meshes": 17,
+    "triangles": 3852
+  }
+}

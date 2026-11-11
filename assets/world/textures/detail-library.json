@@ -1,0 +1,337 @@
+{
+  "materials": {
+    "cedar_shingles": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/cedar_shingles.png",
+          "sha256": "dd1381b4c180437fdce5133fdaeca31023f6b809179649626b229f908fe642b9",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/cedar_shingles.png",
+          "sha256": "7180ad2ad1978bbf8b74ff751592e6aa6777c2f93f873d4b80cd4ee84f95e6b4",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/cedar_shingles.png",
+      "source_sha256": "1a46458a5fa8681fe310e491a980ea4b97a4627c4aae74267117d274a4d3b1db"
+    },
+    "copper_patina": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/copper_patina.png",
+          "sha256": "ec0f8f1abff3c348d3e61017c45f42c1cf2af7eb878f62424d1b5cddbc4de62a",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/copper_patina.png",
+          "sha256": "a97fa51d8253376103c79790a4446883abc9aea65f9b544a9f9a807adde234af",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/copper_patina.png",
+      "source_sha256": "8e9cf0f04af8c5baafcea610225e4c49642a944a1cd4c7316de30420dfec41b4"
+    },
+    "encaustic_tile": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/encaustic_tile.png",
+          "sha256": "70d33f79104dfff0f485b5144566b152167849449be150ebffdcec21b3168e28",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/encaustic_tile.png",
+          "sha256": "4fc1c867cad2104efbf4ed5bf7710a963191c85be0316fe65d813c4d9b07c99c",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/encaustic_tile.png",
+      "source_sha256": "d7f39654ed173749a5703555b791939d2a06f16f8d7d7e9415d76df8dc897540"
+    },
+    "herringbone_oak": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/herringbone_oak.png",
+          "sha256": "1cc4b895467df6d01a9a697b0051b6be67b30c4430d4693263d26e2873118701",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/herringbone_oak.png",
+          "sha256": "b8b0b1d1262fd0e9d7b7b4b75ee06402ba1ef134efbdc51e51e553831287c927",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/herringbone_oak.png",
+      "source_sha256": "abf20d79bf0a70e9788e0721747fa3e3101e8d878e6e2ee988de6e45f03dc530"
+    },
+    "limestone_flags": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/limestone_flags.png",
+          "sha256": "35d09c388ab157338e65801d72bd37b1f07952d8d2a9aed32ecfdf5ef3bda8d5",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/limestone_flags.png",
+          "sha256": "4f48c83fe34f3fb12e9d6d0b5adfc8c4eaf953d46b792de10ab852a39bed3c60",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/limestone_flags.png",
+      "source_sha256": "e0384a990c005e6f5683782ce38c25ec8e93aaf7cd2f10d28090a6c38ef489ed"
+    },
+    "limewash": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/limewash.png",
+          "sha256": "0a14c1ddc3b3ccab531281f1bc9569cb168a5c4a60285c6ebf0ff656378db952",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/limewash.png",
+          "sha256": "e4ed9f6a51bad5344c43fc900d51083a8aa640f8cbc8ba21fcd6f15f8fc1dea5",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/limewash.png",
+      "source_sha256": "e3b12767c847096c73a8bf642acee3880eb1f32b683eeb5b44682c7693116a0f"
+    },
+    "red_brick": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/red_brick.png",
+          "sha256": "203dd4994a6fae6edbf1af2de32d74513557a9c48a5644391590b636d35130cd",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/red_brick.png",
+          "sha256": "deca3b65d84087b7222ade9603c4cc012e83b40e447f705e2270e54aaadaadb9",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/red_brick.png",
+      "source_sha256": "e9bf6002d2c2cd1f14da58938a91c61eb8d291c2326e7733a00494a1fe1e51e4"
+    },
+    "riverstone": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/riverstone.png",
+          "sha256": "88ffff4e4788f3e359e1212458cfdfb0ad7967517f23a7e4f1e780ac7ef17295",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/riverstone.png",
+          "sha256": "34d4850d7945632b42d022616aa61790091f178ea07357b7bd4d6a80b4ce6705",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/riverstone.png",
+      "source_sha256": "8711bd168cfaf01aeb64592f91bb5fa77919c803e03ac2652671dbd5e7fda3da"
+    },
+    "sage_wallpaper": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/sage_wallpaper.png",
+          "sha256": "5381e9abe513e51bcda5d1d85bdf50f1d9723b072ed0333d7840f8f8016be4e0",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/sage_wallpaper.png",
+          "sha256": "bbeff2573c51d31d166201ee59df4574a1ef90d0ee82bd80ada14eb290c093bd",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/sage_wallpaper.png",
+      "source_sha256": "046e412b11250ded8cb3b73cd80b114f5880702ac8b14baa3e2db5cbbf122a3f"
+    },
+    "slate_shingles": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/slate_shingles.png",
+          "sha256": "9885632414181bc858b5646af7ef959a9279dd973fa81b4eed35052ac680ec82",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/slate_shingles.png",
+          "sha256": "e277aacb0fb2967c73ba75c5485ec5c154839b6f145321732ab3bc8cf8fa0ea1",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/slate_shingles.png",
+      "source_sha256": "dd68f76dc6c9ce18065b60d41b22ec20e658c7b480daab983cbb9632633b7be1"
+    },
+    "terracotta_tile": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/terracotta_tile.png",
+          "sha256": "d9479b4f52a058f8a18676c4e91347dff9319caf3f810a8ec15c58e6b59a73a0",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/terracotta_tile.png",
+          "sha256": "021643ab4f13f877cfdc29066ecb0cb7b1ff6996e47e48d873482302bf8eca93",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/terracotta_tile.png",
+      "source_sha256": "cccf37948033160ef961753e90bcff6d83012c8b32057e04aa8a6bfb12646732"
+    },
+    "timber_panels": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/timber_panels.png",
+          "sha256": "eb3c3b8ae56c46ba5ae0d5a6b3bd8401446dad173f52975e6b6a3835b4c10100",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/timber_panels.png",
+          "sha256": "2ced52ba5143f61defec06a651314359d9429dbce3432ba08372a6670e81f518",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/timber_panels.png",
+      "source_sha256": "781adacdae6db7dfb5812c901e4779bb8546b933730de7ef98a1eb9eec8e58d3"
+    },
+    "tooled_leather": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/tooled_leather.png",
+          "sha256": "2b5836a7fb8a8aca24ca580289bd6ae5216d60ccebf0dfd1f1511a4a1c0e7983",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/tooled_leather.png",
+          "sha256": "e9d4c540c151f34ba90b232e44a6c60370d02219e5859ee9d17ca3096ec99601",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/tooled_leather.png",
+      "source_sha256": "68ff712b4e038530d6c1ccf58b55573b4063e4c9f696452e7e9f52bf7dbd7d15"
+    },
+    "violet_quilt": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/violet_quilt.png",
+          "sha256": "9745b7348387e53ab62b4ed60ba6f6cf45852d2a01646bac12f7ed97bd8aa09e",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/violet_quilt.png",
+          "sha256": "7c74b9674170b1e0db546b11fd1100f3a6faa121e97747599d3a280d997303e9",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/violet_quilt.png",
+      "source_sha256": "972a8dbf30a1e6ddf6017215c4891e477dfe8175e8b83a6c6430b14b9bf468e3"
+    },
+    "woven_linen": {
+      "outputs": {
+        "lush": {
+          "path": "res://assets/world/textures/lush/woven_linen.png",
+          "sha256": "2fc803a5430e514a6460bffa75ffaf10e009bd9a6e14636810e1dbb35b34fe3b",
+          "size": [
+            128,
+            128
+          ]
+        },
+        "solid": {
+          "path": "res://assets/world/textures/solid/woven_linen.png",
+          "sha256": "cc525f7c458cfe0a556ad45f1af381d829fdd5a0bbe84440fe78ce4d15ea0635",
+          "size": [
+            128,
+            128
+          ]
+        }
+      },
+      "source": "res://art/source/world/textures/v2-detail/native/woven_linen.png",
+      "source_sha256": "657d949ee9107938b8f3305b611bc7c21246876fa4d45f5cbc435ba8985662c9"
+    }
+  },
+  "normalization": "Lush: Lanczos to 128; solid: Lanczos to 64 then nearest to 128. Opposite edge pixels paired to make a periodic boundary. Native paintings preserved.",
+  "schema": 1,
+  "version": "v2-detail"
+}

@@ -1,0 +1,11 @@
+{
+  "asset": "robot-tender",
+  "date": "2026-10-29",
+  "reference": "docs/concept/v0.72/art/guildhall-square.png",
+  "authoring_record": "art/source/world/sparks-square/v2/author_props.py",
+  "authoring_record_sha256": "fc4622b65d074e4bde76957c43c5f243bdc0a63e3f471646461f929c165a1336",
+  "kit_sha256": "958e680bff7b099c9536afd61899b4f66702568fc89f2a71eb3a9879918d756d",
+  "shared_kit": "art/source/world/sparks-lane/v1/lane_kit.py",
+  "shared_kit_sha256": "26267046a1dc1a943f8d91d12e36863bdd670edc41951c7b46d51683c24d7aec",
+  "note": "New bespoke authored asset; model.blend is now authority. Build through scripts/world-art.sh."
+}

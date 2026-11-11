@@ -1,0 +1,11 @@
+{
+  "asset": "workshop-staircase",
+  "command": "scripts/world-art.sh build workshop-staircase",
+  "unchanged": {
+    "source_sha256": true,
+    "runtime_sha256": true,
+    "audit": true
+  },
+  "source_sha256": "36aa349166b953e5259949b3722d70934902172d5daadb450ae4f11ff8e16bee",
+  "runtime_sha256": "4be1937659f4cf79668358c5350f688cf29486ff5325472120d9bc1eb79bcd89"
+}

@@ -1,0 +1,204 @@
+{
+  "schema": 1,
+  "asset": "square-fruit-stall",
+  "version": "v1",
+  "source": "art/source/world/square-fruit-stall/v1/model.blend",
+  "source_sha256": "7155df4ca1ac2739cabc1ec4b54f68436c242cca29d3768175f2be8c8ec1fde7",
+  "runtime": "assets/world/square-fruit-stall/model.glb",
+  "runtime_sha256": "dcabf9ebee1d6cbfa0dbe5f4532ad35eab8926f8aeb46a591a48f0975a077470",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.64677357673645,
+      -0.0139999985694885,
+      -0.728622794151306,
+      1.57677352428436,
+      2.32500004768372,
+      0.748714089393616
+    ],
+    "geometry_sha256": "1f53e34518677d0fbcd0a93121b0dcd731bbfe665e438f54af18749618d69051",
+    "material_records": {
+      "square_apple": {
+        "albedo": [
+          7686,
+          2784,
+          2314,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_brass": {
+        "albedo": [
+          7608,
+          6078,
+          3490,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_chalk": {
+        "albedo": [
+          9529,
+          9373,
+          8941,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_enamel_cream": {
+        "albedo": [
+          9255,
+          8863,
+          7843,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_ink": {
+        "albedo": [
+          3137,
+          2392,
+          1882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_lemon": {
+        "albedo": [
+          9255,
+          8157,
+          3529,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_linen": {
+        "albedo": [
+          8980,
+          8667,
+          7843,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_ochre": {
+        "albedo": [
+          7608,
+          6039,
+          3333,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_orange": {
+        "albedo": [
+          8902,
+          5647,
+          1843,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_pear": {
+        "albedo": [
+          7255,
+          7647,
+          3569,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_plum_fruit": {
+        "albedo": [
+          4314,
+          2902,
+          4157,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_red": {
+        "albedo": [
+          7098,
+          2745,
+          2275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_stripe_cream": {
+        "albedo": [
+          9373,
+          8902,
+          7686,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_wood": {
+        "albedo": [
+          6275,
+          4745,
+          3137,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "square_wood_light": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "square_apple",
+      "square_brass",
+      "square_chalk",
+      "square_enamel_cream",
+      "square_ink",
+      "square_lemon",
+      "square_linen",
+      "square_ochre",
+      "square_orange",
+      "square_pear",
+      "square_plum_fruit",
+      "square_red",
+      "square_stripe_cream",
+      "square_wood",
+      "square_wood_dark",
+      "square_wood_light"
+    ],
+    "meshes": 16,
+    "triangles": 3860
+  }
+}

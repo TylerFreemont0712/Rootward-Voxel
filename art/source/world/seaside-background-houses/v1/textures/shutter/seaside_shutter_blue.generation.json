@@ -1,0 +1,21 @@
+{
+  "id": "seaside_shutter_blue",
+  "title": "Dusty blue painted boards",
+  "color": "dusty desaturated coastal blue, neither turquoise nor bright cobalt",
+  "family": "shutter",
+  "tile": 0.8,
+  "roughness": 0.92,
+  "key": "house-texture-seaside_shutter_blue",
+  "dest": "art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_blue.png",
+  "refs": [
+    "art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_teal.png"
+  ],
+  "prompt": "Use case: identity-preserve / material-colour variant.\nInput image is the selected painted tiling shutter ALBEDO map. Preserve its exact square canvas, flat straight-on projection, joint/grain/crack pattern, motif scale, surface wear and edge motif phase. Change ONLY its material colour to dusty desaturated coastal blue, neither turquoise nor bright cobalt. Do not redesign, rotate, crop, introduce a border or light gradient, add new objects or change surface type. Keep the same level of subtle hand-painted detail and warm fine outlining, opaque and truly tileable across both axes. No text or watermark.\nRecolour only the PAINT: exposed worn wood remains natural warm wood, seam cavities stay dark neutral and the vertical board spacing is unchanged.\nDeliver one full square high-resolution texture, same dimensions and composition as the input, without any surrounding paper or sample frame.",
+  "source": "/home/joejin/.codex/generated_images/01a177b7-de61-7c60-bce6-07b7a1f0b639/exec-a0f3ca20-2fb6-4b17-9fd0-a59a204f1343.png",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not exposed",
+  "output_sha256": "7c3c9fdaacf8a46c297233127cf5c80eb27eebc436d043555c9d1f2f821e108e",
+  "reference_sha256": {
+    "art/source/world/seaside-background-houses/v1/textures/shutter/seaside_shutter_teal.png": "630425765f9473b720ee5d213ac183fcd2a7908b1fac2f4fb9398b066605ea7e"
+  }
+}

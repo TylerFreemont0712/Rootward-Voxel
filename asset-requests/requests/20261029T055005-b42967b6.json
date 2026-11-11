@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "20261029T055005-b42967b6",
+  "kind": "delete",
+  "title": "Delete Cart Wheel",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "cart-wheel",
+    "label": "Cart Wheel",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/cart-wheel/v1/model.blend",
+    "runtime": "assets/world/cart-wheel/model.glb",
+    "manifest": "assets/world/cart-wheel/manifest.json",
+    "catalog_notes": "An upright iron-rimmed wagon wheel, 1.0 m across and 0.1 m thick, with six timber spokes. The footprint is a strip the wheel's width; the hub caps overhang it by 0.05 m.",
+    "related_files": [
+      "art/source/world/cart-wheel/v1/brief.md",
+      "art/source/world/cart-wheel/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "candidate_unplaced",
+      "label": "Cart Wheel",
+      "source": "art/source/world/cart-wheel/v1/model.blend",
+      "runtime": "assets/world/cart-wheel/model.glb",
+      "pivot": "ground contact at the bottom of the rim",
+      "logical_footprint": [
+        -0.5,
+        -0.05,
+        1.0,
+        0.1
+      ],
+      "behavior": "visual_only decoration; studio build-shelf prop (Doodads tab). Its footprint blocks movement where it is placed; nothing else changes in the rules.",
+      "notes": "An upright iron-rimmed wagon wheel, 1.0 m across and 0.1 m thick, with six timber spokes. The footprint is a strip the wheel's width; the hub caps overhang it by 0.05 m.",
+      "finish_slots": {
+        "timber": [
+          "oak",
+          "wood"
+        ],
+        "metal": [
+          "iron"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:50:05+00:00",
+  "updated": "2026-10-29T06:27:57+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:50:05+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:27:57+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/cart-wheel/v1/brief.md",
+    "art/source/world/cart-wheel/v1/model.blend",
+    "art/source/world/cart-wheel/v1/provenance.json",
+    "assets/world/cart-wheel/manifest.json",
+    "assets/world/cart-wheel/model.glb",
+    "assets/world/cart-wheel/model.glb.import"
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "_about": "Where the installer downloads Rootward Voxel from: a folder of release files (rootward-voxel-manifest.json and the packages it names). GitHub's releases/latest/download/ always points at the newest release; the repository is public, so no sign-in is needed (docs/RELEASES.md).",
+  "downloads": "https://github.com/TylerFreemont0712/Rootward-Voxel/releases/latest/download/"
+}

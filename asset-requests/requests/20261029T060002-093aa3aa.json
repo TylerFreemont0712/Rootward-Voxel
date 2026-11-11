@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "id": "20261029T060002-093aa3aa",
+  "kind": "update",
+  "title": "Update Heron, the crane robot",
+  "asset_type": "world model",
+  "status": "requested",
+  "notes": "Fix center of gravity to be center of main body.",
+  "asset": {
+    "id": "robot-heron",
+    "label": "Heron, the crane robot",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/robot-heron/v2/model.blend",
+    "runtime": "assets/world/robot-heron/model.glb",
+    "manifest": "assets/world/robot-heron/manifest.json",
+    "catalog_notes": "Concept-matched native source refinement after docs/concept/v0.72/art/robots/heron-sheet.png. Existing v1 source preserved. Refinement records and packed Blender-painted surfaces: art/source/world/sparks-robot-refinement/v1/. Edit the adopted v2 model.blend; use scripts/world-art.sh build robot-heron.",
+    "related_files": [
+      "art/source/world/robot-heron/v2/payload-pose.json",
+      "art/source/world/robot-heron/v2/provenance.json",
+      "art/source/world/robot-heron/v2/work-tool-pass.json",
+      "art/source/world/sparks-robot-refinement/v1/README.md",
+      "docs/concept/v0.72/art/robots/heron-sheet.png"
+    ],
+    "usage_files": [
+      "content/areas/haverlund-square.json"
+    ],
+    "catalog_entry": {
+      "version": "v2",
+      "authority": "blender",
+      "status": "integrated_sparks_square",
+      "label": "Heron, the crane robot",
+      "source": "art/source/world/robot-heron/v2/model.blend",
+      "runtime": "assets/world/robot-heron/model.glb",
+      "pivot": "Ground centre; front toward Blender -Y; wheels are separate nodes wheel_* turning about X",
+      "logical_footprint": null,
+      "illustrated_edges": true,
+      "behavior": "Square scenery. A working robot stands where the area document places it; robots on their rounds move along interior.life.robots, presentation only, never blocking. Separate wheel pivots carry wheel_radius metadata for correct rolling distance.",
+      "notes": "Concept-matched native source refinement after docs/concept/v0.72/art/robots/heron-sheet.png. Existing v1 source preserved. Refinement records and packed Blender-painted surfaces: art/source/world/sparks-robot-refinement/v1/. Edit the adopted v2 model.blend; use scripts/world-art.sh build robot-heron.",
+      "spark_blink": true
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T06:00:02+00:00",
+  "updated": "2026-10-29T06:00:02+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T06:00:02+00:00",
+      "action": "Requested in development showcase"
+    }
+  ]
+}

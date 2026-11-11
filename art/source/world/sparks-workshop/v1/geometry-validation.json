@@ -1,0 +1,21 @@
+{
+  "throw_upholstery_intersections": 0,
+  "cushion_upholstery_intersections": 0,
+  "throw_cushion_intersections": 0,
+  "porch_pot_bases": [
+    0.17000001668930054,
+    0.17000001668930054
+  ],
+  "stone_step_top": 0.16,
+  "crock_recessed_floor": [
+    0.10000000149011612,
+    0.11999999731779099,
+    0.12000000476837158
+  ],
+  "crock_floor_normal": [
+    -2.457984704662408e-09,
+    0.0,
+    0.9999999403953552
+  ],
+  "white_coverings_removed": 3
+}

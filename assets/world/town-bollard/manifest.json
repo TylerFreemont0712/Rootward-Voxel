@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "asset": "town-bollard",
+  "version": "v1",
+  "source": "art/source/world/town-bollard/v1/model.blend",
+  "source_sha256": "13f82ce6e743133bd6ed507d1a7290033b5de4768d0b91e887d6799395483dfe",
+  "runtime": "assets/world/town-bollard/model.glb",
+  "runtime_sha256": "1ca692ecb22fa4929e7c3e6ee27cc6a8e617eeaa486c7146f7b0065006bc1d4c",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.129999995231628,
+      0.0,
+      -0.129999995231628,
+      0.129999995231628,
+      0.909999966621399,
+      0.129999995231628
+    ],
+    "geometry_sha256": "61b4e594a7133638d769b4d94f81009765c207407f1b96631bea59625103552f",
+    "material_records": {
+      "house_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": "224c7552d2f1a36211e2edd0e1d091d369d83d476c76893d88d6d2c2127cc17e"
+      }
+    },
+    "materials": [
+      "house_paint"
+    ],
+    "meshes": 1,
+    "triangles": 268
+  }
+}

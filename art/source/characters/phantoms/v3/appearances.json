@@ -1,0 +1,134 @@
+{
+  "schema": 3,
+  "family": "painted_crowd_v3",
+  "opacity": 0.98,
+  "gray": 0.2,
+  "description": "Random anonymous silhouettes of the existing cast. Exact source alpha and shared motion; adults use both village and Sparks wardrobes. Children use three smaller profiles. No source paintings are altered.",
+  "groups": {
+    "man": [
+      "man",
+      "bram",
+      "rowan",
+      "sparks_rowan"
+    ],
+    "woman": [
+      "woman",
+      "mira",
+      "tessa",
+      "nell",
+      "sparks_tessa",
+      "sparks_nell"
+    ],
+    "child": [
+      "child",
+      "child_tessa",
+      "child_mira"
+    ]
+  },
+  "profiles": {
+    "man": {
+      "skin": "sparks_bram",
+      "source": "res://art/source/characters/bram/sparks-v2/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "woman": {
+      "skin": "sparks_mira",
+      "source": "res://art/source/characters/mira/sparks-v2/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "child": {
+      "skin": "adventurer",
+      "source": "res://art/source/adventurer/v9-directional-walk/sheet.png",
+      "scale": [
+        0.96,
+        0.88
+      ]
+    },
+    "mira": {
+      "skin": "mira",
+      "source": "res://art/source/characters/mira/v1/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "rowan": {
+      "skin": "rowan",
+      "source": "res://art/source/characters/rowan/v1/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "bram": {
+      "skin": "bram",
+      "source": "res://art/source/characters/bram/v1/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "tessa": {
+      "skin": "tessa",
+      "source": "res://art/source/characters/tessa/v1/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "nell": {
+      "skin": "nell",
+      "source": "res://art/source/characters/nell/v1/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_rowan": {
+      "skin": "sparks_rowan",
+      "source": "res://art/source/characters/rowan/sparks-v2/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_tessa": {
+      "skin": "sparks_tessa",
+      "source": "res://art/source/characters/tessa/sparks-v2/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "sparks_nell": {
+      "skin": "sparks_nell",
+      "source": "res://art/source/characters/nell/sparks-v2/sheet.png",
+      "scale": [
+        1.0,
+        1.0
+      ]
+    },
+    "child_tessa": {
+      "skin": "tessa",
+      "source": "res://art/source/characters/tessa/v1/sheet.png",
+      "scale": [
+        0.9,
+        0.8
+      ]
+    },
+    "child_mira": {
+      "skin": "mira",
+      "source": "res://art/source/characters/mira/v1/sheet.png",
+      "scale": [
+        0.9,
+        0.8
+      ]
+    }
+  }
+}

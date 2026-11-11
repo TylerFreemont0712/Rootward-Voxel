@@ -1,0 +1,308 @@
+{
+  "schema": 1,
+  "id": "shop-greengrocer",
+  "title": "The Pantry",
+  "version": 3,
+  "size": [
+    12,
+    12
+  ],
+  "spawn": [
+    6,
+    3
+  ],
+  "voice_lesson": true,
+  "terrain": [
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............"
+  ],
+  "buildings": [],
+  "trees": [],
+  "zones": [
+    {
+      "id": "shop-floor",
+      "title": "The Pantry",
+      "rect": [
+        0,
+        0,
+        12,
+        12
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "id": "shop-pendant-1",
+      "zone": "shop-floor",
+      "at": [
+        3.5,
+        4.2
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    },
+    {
+      "id": "shop-pendant-2",
+      "zone": "shop-floor",
+      "at": [
+        8.5,
+        8.6
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    }
+  ],
+  "props": [],
+  "interior": {
+    "style": "workshop-square",
+    "shell": "greengrocer-shell",
+    "zoom": 12,
+    "exit": [
+      6,
+      0
+    ],
+    "exit_direction": "S",
+    "walk_front": 0,
+    "furniture": [],
+    "assets": [
+      {
+        "id": "jar-shelves",
+        "asset": "greengrocer-jar-shelves",
+        "at": [
+          -0.22,
+          4.4
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "sack-row",
+        "asset": "greengrocer-sack-row",
+        "at": [
+          -0.1,
+          9.8
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "produce-stand",
+        "asset": "greengrocer-produce-stand",
+        "at": [
+          4.5,
+          7.4
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "grocer-counter",
+        "asset": "greengrocer-counter",
+        "at": [
+          8.5,
+          5.8
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "back-crates",
+        "asset": "bakery-flour-sacks",
+        "at": [
+          10.5,
+          10.3
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "price-board-model",
+        "asset": "shop-chalk-board",
+        "at": [
+          8.6,
+          11.36
+        ],
+        "turn": 0,
+        "height": 2.35,
+        "scale": 1
+      },
+      {
+        "id": "shop-pendant-1-model",
+        "asset": "clockshop-brass-pendant",
+        "at": [
+          3.5,
+          4.2
+        ],
+        "turn": 0,
+        "height": 3.7,
+        "scale": 1
+      },
+      {
+        "id": "shop-pendant-2-model",
+        "asset": "clockshop-brass-pendant",
+        "at": [
+          8.5,
+          8.6
+        ],
+        "turn": 0,
+        "height": 3.7,
+        "scale": 1
+      }
+    ],
+    "lamp_fixtures": [
+      {
+        "id": "shop-pendant-1",
+        "asset": "shop-pendant-1-model",
+        "range": 7,
+        "energy": 1.2
+      },
+      {
+        "id": "shop-pendant-2",
+        "asset": "shop-pendant-2-model",
+        "range": 7,
+        "energy": 1.2
+      }
+    ],
+    "links": [
+      {
+        "id": "square",
+        "at": [
+          6,
+          0
+        ],
+        "approach": [
+          6,
+          1
+        ],
+        "direction": "S",
+        "to": "haverlund-square",
+        "arrival": [
+          36,
+          22
+        ],
+        "facing": "E",
+        "label": "Return to the square",
+        "walk_through": true,
+        "enter": 1,
+        "doors": "shell"
+      }
+    ],
+    "inspections": [
+      {
+        "id": "price-order",
+        "at": [
+          8,
+          10
+        ],
+        "title": "The price board",
+        "text": "APPLES 4P in chalk, three days old. A slate underneath lists today’s prices in pencil, crossed out and rewritten twice. A note: TESSA — CAN YOUR LODGER’S SLATE DO THIS? I NEVER KNOW WHAT CHANGED. — T. VASKO"
+      },
+      {
+        "id": "produce",
+        "at": [
+          4,
+          6
+        ],
+        "title": "The produce stand",
+        "text": "Apples, oranges, lemons, cabbages, carrots, plums. Each crate has a tag that says which hill farm it came from, and one that just says ORCHARD in a different hand."
+      },
+      {
+        "id": "jars",
+        "at": [
+          1,
+          4
+        ],
+        "title": "Jars and tins",
+        "text": "Preserves, honey, tea and spices, labelled in neat capitals. Someone has turned every label to face the front."
+      },
+      {
+        "id": "scale",
+        "at": [
+          8,
+          4
+        ],
+        "title": "The beam scale",
+        "text": "Brass, polished where hands rest on it. A single apple sits in the pan as if waiting to be weighed."
+      }
+    ],
+    "city_network": true
+  },
+  "displays": [
+    {
+      "id": "price-board",
+      "title": "price board",
+      "object": "price-board-model",
+      "at": [
+        8,
+        10
+      ],
+      "commission": "price-order",
+      "default": [
+        "APPLES 4P"
+      ],
+      "zone": "shop-floor"
+    }
+  ],
+  "villagers": [
+    {
+      "id": "pantry-tessa",
+      "skin": "sparks_tessa",
+      "at": [
+        8,
+        7
+      ],
+      "route": [
+        [
+          8,
+          7
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "errands": [
+        {
+          "target": "grocer-counter",
+          "activity": "trade",
+          "seconds": 8.0
+        },
+        {
+          "target": "produce-stand",
+          "activity": "inspect",
+          "seconds": 7.0
+        }
+      ]
+    }
+  ]
+}

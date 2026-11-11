@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "asset": "lane-notice-board",
+  "version": "v1",
+  "source": "art/source/world/lane-notice-board/v1/model.blend",
+  "source_sha256": "6b70dbcd19934afbde0a5e4d654b5c2f436ddd5c37f578e88436fc864806775a",
+  "runtime": "assets/world/lane-notice-board/model.glb",
+  "runtime_sha256": "dde902c787c0878900ff9ca21dfde9022a81485663964ad713e7152fa6973753",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.849999845027924,
+      0.0,
+      -0.347825199365616,
+      0.849999845027924,
+      1.96500015258789,
+      0.307825207710266
+    ],
+    "geometry_sha256": "e7f58f306530ea77629399ecf19799aed2af4d9bd3ffea89e702f5573f189976",
+    "material_records": {
+      "lane_blue": {
+        "albedo": [
+          4078,
+          4902,
+          5412,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_cream": {
+        "albedo": [
+          9098,
+          8745,
+          7922,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_ink": {
+        "albedo": [
+          3137,
+          2392,
+          1882,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_limestone": {
+        "albedo": [
+          8902,
+          8314,
+          7059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_paper": {
+        "albedo": [
+          9569,
+          9098,
+          8000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_red": {
+        "albedo": [
+          7098,
+          2745,
+          2275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_terracotta": {
+        "albedo": [
+          7843,
+          3922,
+          2471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_terracotta_dark": {
+        "albedo": [
+          6627,
+          3176,
+          2275,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_terracotta_light": {
+        "albedo": [
+          8510,
+          4784,
+          3059,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_timber": {
+        "albedo": [
+          4196,
+          2902,
+          2000,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_white": {
+        "albedo": [
+          9490,
+          9176,
+          8471,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_dark": {
+        "albedo": [
+          4431,
+          3137,
+          2196,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      },
+      "lane_wood_light": {
+        "albedo": [
+          7412,
+          5843,
+          4039,
+          10000
+        ],
+        "roughness": 8600,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "lane_blue",
+      "lane_cream",
+      "lane_ink",
+      "lane_limestone",
+      "lane_paper",
+      "lane_red",
+      "lane_terracotta",
+      "lane_terracotta_dark",
+      "lane_terracotta_light",
+      "lane_timber",
+      "lane_white",
+      "lane_wood_dark",
+      "lane_wood_light"
+    ],
+    "meshes": 13,
+    "triangles": 1444
+  }
+}

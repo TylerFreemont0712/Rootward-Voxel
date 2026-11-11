@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "bakery-proving-table",
+  "version": 1,
+  "source": "art/source/world/bakery-proving-table/v1/model.blend",
+  "source_sha256": "d965fa2252c3c031e2fa6dbee2ce1b61e959fe1d6c772d32f041358d08e718d7",
+  "runtime": "assets/world/bakery-proving-table/model.glb",
+  "runtime_sha256": "cfeb7ce6077e5b812bc6bfee8c49d52a8e3ec69857ee6efe477517a5b0301083",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.14999997615814,
+      0.0,
+      -0.5,
+      1.14999997615814,
+      1.1949999332428,
+      0.5
+    ],
+    "geometry_sha256": "c40904b0add295cf3f6d6ac20b1d546b1fa54f93ce913c21beadcb36bc27ea0e",
+    "material_records": {
+      "shop_brass": {
+        "albedo": [
+          7098,
+          5412,
+          2588,
+          10000
+        ],
+        "roughness": 4500,
+        "texture_rgba_sha256": ""
+      },
+      "shop_cream": {
+        "albedo": [
+          9569,
+          9176,
+          8235,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_dough": {
+        "albedo": [
+          9333,
+          8627,
+          7137,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_flour": {
+        "albedo": [
+          9451,
+          9255,
+          8784,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shop_sack": {
+        "albedo": [
+          7882,
+          7059,
+          5412,
+          10000
+        ],
+        "roughness": 8000,
+        "texture_rgba_sha256": ""
+      },
+      "shop_steel": {
+        "albedo": [
+          4157,
+          4627,
+          4706,
+          10000
+        ],
+        "roughness": 4500,
+        "texture_rgba_sha256": ""
+      }
+    },
+    "materials": [
+      "shop_brass",
+      "shop_cream",
+      "shop_dough",
+      "shop_flour",
+      "shop_oak",
+      "shop_sack",
+      "shop_steel"
+    ],
+    "meshes": 7,
+    "triangles": 924
+  }
+}

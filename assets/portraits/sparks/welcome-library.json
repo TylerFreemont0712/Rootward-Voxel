@@ -1,0 +1,24 @@
+{
+  "portraits": {
+    "braum": {
+      "runtime": "res://assets/portraits/sparks/braum.png",
+      "sha256": "7a4487f2ea1dd176007bee2fba90a4a34946a7f9798e185b79834a1ad160ef46",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "res://art/source/portraits/sparks/v3/braum.png"
+    },
+    "iona": {
+      "runtime": "res://assets/portraits/sparks/iona.png",
+      "sha256": "ffdd29cce9383e49341b8a32da2daf348a9bf8dcde6b74e1d848faa2e518bd18",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "res://art/source/portraits/sparks/v3/iona.png"
+    }
+  },
+  "schema": 1,
+  "version": "v3-welcome-iona"
+}

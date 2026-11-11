@@ -1,0 +1,346 @@
+{
+  "schema": 1,
+  "compatible_bake_catalog": "art/source/world/ground/v1/texture-catalog-before.json",
+  "note": "Shared painted texture recipes for procedural surfaces and saved instance finishes. `scripts/world-art.sh retexture <id>` deliberately bakes recipes into an adopted Blender source. Runtime pictures: assets/world/textures/<set>/<name>.png. Sources, prompts and hashes: art/source/world/textures/v1/ and v2-detail/. Existing recipes remain bake-compatible; v2-detail adds fifteen materials through scripts/art.sh. See pipeline/MATERIALS.md.",
+  "set": "lush",
+  "sets": {
+    "solid": "res://assets/world/textures/solid/",
+    "lush": "res://assets/world/textures/lush/"
+  },
+  "tile_modes": {
+    "world": "The picture repeats every `tile` world units (triplanar in the game, planar per face in Blender). One tile = one grid cell at tile 1.",
+    "face": "The picture is one whole pane per face (glass, glow): no repeat.",
+    "cells": "Each face shows one painted cell of an `n` by `n` picture, chosen by a hash of the face, so every roof tile is its own painted tile."
+  },
+  "materials": {
+    "grass": {
+      "texture": "grass",
+      "tile": 1.0,
+      "ground": true
+    },
+    "grass_light": {
+      "texture": "grass",
+      "tile": 1.0,
+      "tint": 1.14,
+      "ground": true
+    },
+    "grass_dark": {
+      "texture": "grass",
+      "tile": 1.0,
+      "tint": 0.84,
+      "ground": true
+    },
+    "dirt": {
+      "texture": "dirt_path",
+      "tile": 1.0,
+      "ground": true
+    },
+    "dirt_light": {
+      "texture": "dirt_path",
+      "tile": 1.0,
+      "tint": 1.12,
+      "ground": true
+    },
+    "dirt_dark": {
+      "texture": "dirt_path",
+      "tile": 1.0,
+      "tint": 0.84,
+      "ground": true
+    },
+    "soil": {
+      "texture": "soil",
+      "tile": 1.0,
+      "ground": true
+    },
+    "soil_light": {
+      "texture": "soil",
+      "tile": 1.0,
+      "tint": 1.15,
+      "ground": true
+    },
+    "soil_dark": {
+      "texture": "soil",
+      "tile": 1.0,
+      "tint": 0.72,
+      "ground": true
+    },
+    "path": {
+      "texture": "cobble",
+      "tile": 1.0,
+      "ground": true
+    },
+    "path_light": {
+      "texture": "cobble",
+      "tile": 1.0,
+      "tint": 1.06,
+      "ground": true
+    },
+    "path_dark": {
+      "texture": "cobble",
+      "tile": 1.0,
+      "tint": 0.88,
+      "ground": true
+    },
+    "pebbles": {
+      "texture": "pebbles",
+      "tile": 1.0,
+      "ground": true
+    },
+    "rock_face": {
+      "texture": "rock",
+      "tile": 1.0,
+      "ground": true
+    },
+    "stone": {
+      "texture": "stone_block_grey",
+      "tile": 1.0
+    },
+    "stone_light": {
+      "texture": "stone_block_grey",
+      "tile": 1.0,
+      "tint": 1.14
+    },
+    "stone_dark": {
+      "texture": "stone_block_grey",
+      "tile": 1.0,
+      "tint": 0.7
+    },
+    "stone_warm": {
+      "texture": "stone_block_warm",
+      "tile": 1.0
+    },
+    "plaster": {
+      "texture": "plaster",
+      "tile": 1.0
+    },
+    "plaster_shade": {
+      "texture": "plaster",
+      "tile": 1.0,
+      "tint": 0.93
+    },
+    "wood": {
+      "texture": "bark",
+      "tile": 1.0
+    },
+    "wood_light": {
+      "texture": "plank_wood",
+      "tile": 1.0
+    },
+    "wood_dark": {
+      "texture": "timber_dark",
+      "tile": 1.0
+    },
+    "oak": {
+      "texture": "log_wood",
+      "tile": 1.0
+    },
+    "oak_light": {
+      "texture": "log_wood",
+      "tile": 1.0,
+      "tint": 1.12
+    },
+    "roof": {
+      "texture": "roof_tile_violet",
+      "mode": "cells",
+      "cells": 3
+    },
+    "roof_light": {
+      "texture": "roof_tile_violet",
+      "mode": "cells",
+      "cells": 3,
+      "tint": 1.2
+    },
+    "roof_dark": {
+      "texture": "roof_tile_violet",
+      "mode": "cells",
+      "cells": 3,
+      "tint": 0.72
+    },
+    "teal": {
+      "texture": "roof_tile_teal",
+      "mode": "cells",
+      "cells": 3
+    },
+    "teal_light": {
+      "texture": "roof_tile_teal",
+      "mode": "cells",
+      "cells": 3,
+      "tint": 1.2
+    },
+    "teal_dark": {
+      "texture": "roof_tile_teal",
+      "mode": "cells",
+      "cells": 3,
+      "tint": 0.72
+    },
+    "leaf": {
+      "texture": "leaf",
+      "tile": 1.0
+    },
+    "leaf_light": {
+      "texture": "leaf",
+      "tile": 1.0,
+      "tint": 1.2
+    },
+    "leaf_dark": {
+      "texture": "leaf",
+      "tile": 1.0,
+      "tint": 0.7
+    },
+    "iron": {
+      "texture": "iron",
+      "tile": 0.5
+    },
+    "gold": {
+      "texture": "brass",
+      "tile": 0.5
+    },
+    "window": {
+      "texture": "window_glass",
+      "mode": "face"
+    },
+    "window_warm": {
+      "texture": "window_glow",
+      "mode": "face",
+      "emission": 0.35
+    },
+    "window_glow": {
+      "texture": "window_glow",
+      "mode": "face",
+      "emission": 0.9
+    },
+    "lamp_glass": {
+      "texture": "lantern_glass",
+      "mode": "face"
+    },
+    "lit": {
+      "texture": "lantern_glass_lit",
+      "mode": "face",
+      "emission": 1.25
+    },
+    "herringbone_oak": {
+      "texture": "herringbone_oak",
+      "title": "Herringbone Oak",
+      "tile": 1.5,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail",
+      "ground": true
+    },
+    "terracotta_tile": {
+      "texture": "terracotta_tile",
+      "title": "Terracotta Quarry Tile",
+      "tile": 1.5,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail",
+      "ground": true
+    },
+    "encaustic_tile": {
+      "texture": "encaustic_tile",
+      "title": "Teal Encaustic Tile",
+      "tile": 1.5,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail",
+      "ground": true
+    },
+    "limestone_flags": {
+      "texture": "limestone_flags",
+      "title": "Limestone Flags",
+      "tile": 1.5,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail",
+      "ground": true
+    },
+    "limewash": {
+      "texture": "limewash",
+      "title": "Warm Limewash",
+      "tile": 1.5,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail"
+    },
+    "sage_wallpaper": {
+      "texture": "sage_wallpaper",
+      "title": "Sage Vine Wallpaper",
+      "tile": 1.5,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail"
+    },
+    "timber_panels": {
+      "texture": "timber_panels",
+      "title": "Oak Wainscot Panels",
+      "tile": 1.5,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail"
+    },
+    "red_brick": {
+      "texture": "red_brick",
+      "title": "Handmade Red Brick",
+      "tile": 1,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail"
+    },
+    "riverstone": {
+      "texture": "riverstone",
+      "title": "Riverstone Masonry",
+      "tile": 1,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail"
+    },
+    "slate_shingles": {
+      "texture": "slate_shingles",
+      "title": "Blue Slate Shingles",
+      "tile": 1.2,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail"
+    },
+    "cedar_shingles": {
+      "texture": "cedar_shingles",
+      "title": "Cedar Shingles",
+      "tile": 1.2,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail"
+    },
+    "copper_patina": {
+      "texture": "copper_patina",
+      "title": "Patinated Copper",
+      "tile": 1,
+      "roughness": 0.68,
+      "metallic": 0.5,
+      "library": "v2-detail"
+    },
+    "woven_linen": {
+      "texture": "woven_linen",
+      "title": "Woven Linen",
+      "tile": 0.75,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail"
+    },
+    "violet_quilt": {
+      "texture": "violet_quilt",
+      "title": "Violet Patchwork",
+      "tile": 1,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail"
+    },
+    "tooled_leather": {
+      "texture": "tooled_leather",
+      "title": "Tooled Chestnut Leather",
+      "tile": 0.75,
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "library": "v2-detail"
+    }
+  }
+}

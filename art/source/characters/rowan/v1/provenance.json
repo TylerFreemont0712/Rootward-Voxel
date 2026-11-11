@@ -1,0 +1,401 @@
+{
+  "anchor": [
+    192,
+    420
+  ],
+  "authoring_script_sha256": "da0722e4103a555fd4b6e71e63a3872e09d2ae882ad693e40de48eac38234187",
+  "blink_index": 9,
+  "cell_size": [
+    384,
+    448
+  ],
+  "directions": {
+    "ne": {
+      "key_rgba_sha256": [
+        "3cd6d1b993d7c86292dd885b93f5405a9a3020b3cc8019f76379cef2002f7f45",
+        "1222116457cfac91789650f1d9bdbb499d58e907632c55e1ba3b4d5778c620f7",
+        "ac99baa19c2e2d5b17ea7a8f003f415a8592993258f3ad7f12854555fad31548",
+        "b30a679f0beffad186dd6acd68a9dac0bbea4e04827621f442c93e87d1f876e5",
+        "fcd5059b37a8d9a125a768d863a1e1fe5f6e1ecc2222722959ed34a9c9e34693",
+        "fb36cc6ed7ab812705617b783d93432593f551e9ae4eda7987b867a63fb540f5",
+        "47feb4efa58e29a55daa1fec16a68404ddb67f00a33ebba1a8315abaa2bda607",
+        "8d636e0eca9b8430f3a6ec46d2b511539dfb829be34b4d8fea2ed3c9b655991e",
+        "967b75a98fdc93f7a030b90e7228bb82c803dd32d5e6718175f844d5d23b5951"
+      ],
+      "row": 6,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/rowan/v1/NE.png",
+          "source_pose": 0,
+          "translation": [
+            -23,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NE.png",
+          "source_pose": 1,
+          "translation": [
+            -17,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NE.png",
+          "source_pose": 2,
+          "translation": [
+            -38,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NE.png",
+          "source_pose": 3,
+          "translation": [
+            -26,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NE.png",
+          "source_pose": 4,
+          "translation": [
+            -20,
+            29
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NE.png",
+          "source_pose": 5,
+          "translation": [
+            -43,
+            25
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NE.png",
+          "source_pose": 6,
+          "translation": [
+            -23,
+            48
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NE.png",
+          "source_pose": 7,
+          "translation": [
+            -22,
+            54
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NE.png",
+          "source_pose": 8,
+          "translation": [
+            -43,
+            47
+          ]
+        }
+      ]
+    },
+    "nw": {
+      "key_rgba_sha256": [
+        "353abb858034fc428611b53430717404ff642af3ef46749920905719d5b287f7",
+        "54a5cc186ee3cb983a44449991686b55598d8b8c3227d3262f8e01ba6c839db4",
+        "3889196d163affd71b8142f2bf44b4c647e2344251d3a20a81b1992053ac2ab4",
+        "90c89214126660dbe5e20999cf0aa2bbc0e2824b3f8de7a97761dcd09db4156b",
+        "db6b2793a1bce2ca3c43faed9cf3f90cc8ddc8494f391609b5d2babad1a49a31",
+        "8e2077c451ee4cfc6bb2c65812fc775110e117c4b652b323aaf57ee86b60435f",
+        "3b43d972714193e6751a79f40d4cae62e476c10bf26d22cb3df0a97e2395d5b8",
+        "df58557301ddf7607432ffb66d3c9f5f3e31c9fd79455a25fbcf7884d0d285d7",
+        "d0a7dfc95b11c1a9e0280a6b16c5c83a88d79e1e75e9cb12733b8d8bc7372471"
+      ],
+      "row": 9,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/rowan/v1/NW.png",
+          "source_pose": 0,
+          "translation": [
+            -11,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NW.png",
+          "source_pose": 1,
+          "translation": [
+            -16,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NW.png",
+          "source_pose": 2,
+          "translation": [
+            5,
+            13
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NW.png",
+          "source_pose": 3,
+          "translation": [
+            -8,
+            31
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NW.png",
+          "source_pose": 4,
+          "translation": [
+            -14,
+            29
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NW.png",
+          "source_pose": 5,
+          "translation": [
+            10,
+            25
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NW.png",
+          "source_pose": 6,
+          "translation": [
+            -11,
+            48
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NW.png",
+          "source_pose": 7,
+          "translation": [
+            -11,
+            54
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/NW.png",
+          "source_pose": 8,
+          "translation": [
+            10,
+            47
+          ]
+        }
+      ]
+    },
+    "se": {
+      "key_rgba_sha256": [
+        "e4702387eb31132ae45c8dc19cdc74c92edd586fd0eda969832e2632736264d1",
+        "0671bd6686e5289c6e0ad79dde8953b4c9b8286e59e9fac644fbdf555bc6e6cc",
+        "e827084efd02e7ae755942da6be7c363787a2fccf23f6214fb39e2299abf32f3",
+        "ab90385118d5cbdd15b654136c7b055d3178393ca2f744b50bdb1109c595929d",
+        "0af5fa3ffbaf0e8874528571f090409d94f5bbee3bece57b0dad9db18137b0f5",
+        "1e3abd2d3b7a765bd49d47e1323bddb69371499fdd2957597b5b0a90def95a19",
+        "53d995baa5857bfef77be7806f852fbe4c1ff45839c8496aa54e9bd61b59490a",
+        "d11d41c0d842a13d3fb9729001bb347782e4602802a0ac8e466640c8dbe3600e",
+        "17b041774c35349f00357287dd1ba3bd96c7d254e84a9e2cc11ce1f330e38bcc",
+        "2aecf134d8a6aca4b6f289ce211b44c15d35fc01cdbe9220ab65e74ab4aad48a"
+      ],
+      "row": 0,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/rowan/v1/SE.png",
+          "source_pose": 0,
+          "translation": [
+            -27,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SE.png",
+          "source_pose": 1,
+          "translation": [
+            -26,
+            10
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SE.png",
+          "source_pose": 2,
+          "translation": [
+            -34,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SE.png",
+          "source_pose": 3,
+          "translation": [
+            -32,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SE.png",
+          "source_pose": 4,
+          "translation": [
+            -25,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SE.png",
+          "source_pose": 5,
+          "translation": [
+            -32,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SE.png",
+          "source_pose": 6,
+          "translation": [
+            -32,
+            39
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SE.png",
+          "source_pose": 7,
+          "translation": [
+            -27,
+            36
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SE.png",
+          "source_pose": 8,
+          "translation": [
+            -30,
+            42
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/blink-se.png",
+          "source_pose": 8,
+          "translation": [
+            -30,
+            42
+          ]
+        }
+      ]
+    },
+    "sw": {
+      "key_rgba_sha256": [
+        "ea91b4650004639628352e88280a3f945d305f57fa345e53d850219514bcbe4d",
+        "d9dfb74bb140b5fbe46b02ecc5c33dea7c5dc0340d6e5ac4fde50670caafb641",
+        "5c31e55f0ed336d6d6c4944f33f573e6188e3742690c24c39b8313dcb6f86551",
+        "b3d974deb96df60a21f9fc1232947170969bcc571e55d4d2aebd0fbf85eec3f0",
+        "61a8aff442f4e940d243b19b2390eab3326574693fab0cd0792aef81216630c3",
+        "ee77da9f73a0ccb09fbdeef4b2e047b3ab244810db8c60f7546775d8b6548727",
+        "ea3b35d34c6991ed10ccc58f57a09e08917ade2f8b2cb8fefe4e286e1b9b0d0f",
+        "f549198e32567f7a40a6ff27c231e68b295db8c6e2aedaa82316e0fb0dd035c3",
+        "056d77686e2f95e1c529c92963b5e1b40574e668bd6304c370595a160000b288",
+        "61fdb5fb3db04bd7a8e3230ca3086f1947cc1c314ca0a6ce5cc054ee534dd20f"
+      ],
+      "row": 3,
+      "transforms": [
+        {
+          "source": "res://art/source/characters/rowan/v1/SW.png",
+          "source_pose": 0,
+          "translation": [
+            -6,
+            14
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SW.png",
+          "source_pose": 1,
+          "translation": [
+            -7,
+            10
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SW.png",
+          "source_pose": 2,
+          "translation": [
+            1,
+            12
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SW.png",
+          "source_pose": 3,
+          "translation": [
+            -1,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SW.png",
+          "source_pose": 4,
+          "translation": [
+            -8,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SW.png",
+          "source_pose": 5,
+          "translation": [
+            -1,
+            2
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SW.png",
+          "source_pose": 6,
+          "translation": [
+            -2,
+            39
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SW.png",
+          "source_pose": 7,
+          "translation": [
+            -7,
+            36
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/SW.png",
+          "source_pose": 8,
+          "translation": [
+            -4,
+            42
+          ]
+        },
+        {
+          "source": "res://art/source/characters/rowan/v1/blink-sw.png",
+          "source_pose": 8,
+          "translation": [
+            -4,
+            42
+          ]
+        }
+      ]
+    }
+  },
+  "grid": [
+    4,
+    12
+  ],
+  "idle_index": 8,
+  "method": "Approved eight-pose sheets plus neutral idle; integer translation only; eye-only blink patch",
+  "output_sha256": "bb2e6b1e05020a216c9351f09454c81ee8ad102f477e100bd2afb12f13f82e3f",
+  "schema": 4,
+  "sources": {
+    "res://art/source/characters/rowan/v1/NE.png": "b7a6b7494246f4bd48e4736c7a56debe1663ac15735cbdf7300acd9f66cc2228",
+    "res://art/source/characters/rowan/v1/NW.png": "1c77255cf7c9f8f00c00f59980f2dfc95c5b41e7905ecd5d10f0e3e9fc0a9193",
+    "res://art/source/characters/rowan/v1/SE.png": "b63b846e1800f81932b360836c92ad9a57e6e52170f4fecd55af1d9b939fb44a",
+    "res://art/source/characters/rowan/v1/SW.png": "03a80271ad0b47d04efc439d4fc2ea5c7340c7ce1e992627b7ba6cb33967d744",
+    "res://art/source/characters/rowan/v1/blink-se.png": "1046ba74549f6391c7524c234b61cbccd6e25af0327c5cb3667d592675a32642",
+    "res://art/source/characters/rowan/v1/blink-sw.png": "ea9d71aa664a73f649092e85b19a117fab734d84a5b0bfe3b8a9e9151372cfcb"
+  },
+  "walk_poses": 8
+}

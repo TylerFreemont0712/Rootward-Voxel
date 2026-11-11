@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "id": "20261029T055228-3439d896",
+  "kind": "delete",
+  "title": "Delete Chicken Coop",
+  "asset_type": "world model",
+  "status": "deleted",
+  "notes": "",
+  "asset": {
+    "id": "hollow-chicken-coop",
+    "label": "Chicken Coop",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/hollow-chicken-coop/v1/model.blend",
+    "runtime": "assets/world/hollow-chicken-coop/model.glb",
+    "manifest": "assets/world/hollow-chicken-coop/manifest.json",
+    "catalog_notes": "A violet-roofed coop with a ladder, nesting boxes and small shuttered windows.",
+    "related_files": [
+      "art/source/world/hollow-chicken-coop/v1/brief.md",
+      "art/source/world/hollow-chicken-coop/v1/provenance.json"
+    ],
+    "usage_files": [
+      "content/build/catalog.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "builder_library",
+      "label": "Chicken Coop",
+      "source": "art/source/world/hollow-chicken-coop/v1/model.blend",
+      "runtime": "assets/world/hollow-chicken-coop/model.glb",
+      "pivot": "Ground centre; front +Z in Godot; one metre per cell",
+      "logical_footprint": [
+        -0.8,
+        -0.65,
+        1.6,
+        1.3
+      ],
+      "behavior": "Static decorative prop; catalog footprint blocks movement",
+      "notes": "A violet-roofed coop with a ladder, nesting boxes and small shuttered windows.",
+      "library": "village-library-v1",
+      "interaction": {},
+      "finish_slots": {
+        "roof": [
+          "roof",
+          "roof_teal"
+        ],
+        "timber": [
+          "oak",
+          "wood",
+          "wood_dark"
+        ],
+        "fabric": [
+          "cloth_teal"
+        ]
+      }
+    }
+  },
+  "references": [],
+  "created": "2026-10-29T05:52:28+00:00",
+  "updated": "2026-10-29T06:28:21+00:00",
+  "history": [
+    {
+      "at": "2026-10-29T05:52:28+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-10-29T06:28:21+00:00",
+      "action": "Deleted owned source/runtime folders and world-catalog entry"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "content/build/catalog.json",
+      "reason": "Asset ID or owned file is referenced here."
+    }
+  ],
+  "deleted_files": [
+    "art/source/world/hollow-chicken-coop/v1/brief.md",
+    "art/source/world/hollow-chicken-coop/v1/model.blend",
+    "art/source/world/hollow-chicken-coop/v1/provenance.json",
+    "assets/world/hollow-chicken-coop/manifest.json",
+    "assets/world/hollow-chicken-coop/model.glb",
+    "assets/world/hollow-chicken-coop/model.glb.import",
+    "assets/world/hollow-chicken-coop/model_log_wood.png",
+    "assets/world/hollow-chicken-coop/model_log_wood.png.import",
+    "assets/world/hollow-chicken-coop/model_plank_wood.png",
+    "assets/world/hollow-chicken-coop/model_plank_wood.png.import",
+    "assets/world/hollow-chicken-coop/model_roof_tile_teal.png",
+    "assets/world/hollow-chicken-coop/model_roof_tile_teal.png.import",
+    "assets/world/hollow-chicken-coop/model_roof_tile_violet.png",
+    "assets/world/hollow-chicken-coop/model_roof_tile_violet.png.import",
+    "assets/world/hollow-chicken-coop/model_timber_dark.png",
+    "assets/world/hollow-chicken-coop/model_timber_dark.png.import"
+  ]
+}

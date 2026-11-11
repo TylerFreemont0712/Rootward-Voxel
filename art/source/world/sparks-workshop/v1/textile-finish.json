@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-27",
+  "sources": [
+    {
+      "asset": "workshop-armchair",
+      "before": "c5fe32a2bebca3ce159747ba4f193d5adde10f6dd2ee2b57d7ff1c00ce30e253",
+      "backup": "art/source/world/workshop-armchair/v1/model.pre-textile-finish.blend",
+      "after": "b6ef13d9f7a67f76356fba7eb5a781c36cb69ac6ebf9f5d71fc01f0d746c1617"
+    },
+    {
+      "asset": "workshop-rug",
+      "before": "06b97567789e4e2182f7b22234c8f80697b8c77ff0c93c9306677d9d547c453e",
+      "backup": "art/source/world/workshop-rug/v1/model.pre-textile-finish.blend",
+      "after": "427b5a08ef48dea7b832c40a7f342f152c1edc3939c464a1e2afca12f8519975"
+    }
+  ]
+}

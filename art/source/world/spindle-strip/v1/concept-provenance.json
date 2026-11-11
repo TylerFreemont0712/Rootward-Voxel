@@ -1,0 +1,23 @@
+{
+  "tool": "built-in image_gen",
+  "requested": "2026-11-03",
+  "status": "proposed_for_user_review",
+  "prompt_set": "concept-prompts.json",
+  "images": {
+    "clockmaker": {
+      "path": "res://art/source/world/spindle-strip/v1/clockmaker-concept.png",
+      "sha256": "8e655a870aad6531a1de680c84f75487af02b71a118f4626329461b990d82102",
+      "status": "concept_for_user_review",
+      "runtime": false
+    },
+    "apothecary": {
+      "path": "res://art/source/world/spindle-strip/v1/apothecary-concept.png",
+      "sha256": "c1a1ff16ba81b150bb9458023317e57be55de1bc1fa9e7ea747b47ad4f331629",
+      "status": "concept_for_user_review",
+      "runtime": false
+    }
+  },
+  "input_images": [],
+  "style": "Haverlund material and camera language described in the prompts; prior temporary reskins expressly excluded.",
+  "note": "Concept references only. No replacement model or runtime art is selected by these images."
+}

@@ -1,0 +1,38 @@
+{
+	"adapter": "AMD Radeon 680M (radeonsi, rembrandt, LLVM 20.1.2, DRM 3.64, 7.0.0-38-generic)",
+	"build_ms": 8989,
+	"lights": 124,
+	"meshes": 4954,
+	"nodes": 6114,
+	"renderer": "gl_compatibility",
+	"samples": [
+		{
+			"draw_calls": 477,
+			"id": "steps",
+			"median_ms": 8.765,
+			"objects": 477,
+			"p95_ms": 12.571
+		},
+		{
+			"draw_calls": 458,
+			"id": "shops",
+			"median_ms": 9.389,
+			"objects": 458,
+			"p95_ms": 20.088
+		},
+		{
+			"draw_calls": 625,
+			"id": "hall",
+			"median_ms": 10.886,
+			"objects": 625,
+			"p95_ms": 12.695
+		},
+		{
+			"draw_calls": 597,
+			"id": "well",
+			"median_ms": 8.691,
+			"objects": 599,
+			"p95_ms": 11.324
+		}
+	]
+}

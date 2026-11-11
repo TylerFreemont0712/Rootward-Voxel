@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "id": "20261103T002002-e749f976",
+  "kind": "update",
+  "title": "Update Pendulum & Pin · clockmaker",
+  "asset_type": "world model",
+  "status": "changes_requested",
+  "notes": "User rejected the reused shop-house shell in annotated follow-up 2026-11-03. Temporary exterior is now unplaced; original clockmaker concept is at art/source/world/spindle-strip/v1/clockmaker-concept.png, exact prompts and provenance alongside. Current request delivered layout + concepts only. FUTURE MODELING IS DEFERRED by the user: do not copy another shop shell, do not build replacement/interior assets until the next authorized modeling pass. The new original building should fit the west-side frontage plan in content/development/spindle-strip-plan.json and face east toward the promenade/square. Preserve current source as rejected historical work.",
+  "asset": {
+    "id": "haverlund-clockmaker",
+    "label": "Pendulum & Pin · clockmaker",
+    "catalog": "pipeline/world-catalog.json",
+    "source": "art/source/world/haverlund-clockmaker/v1/model.blend",
+    "runtime": "assets/world/haverlund-clockmaker/model.glb",
+    "manifest": "assets/world/haverlund-clockmaker/manifest.json",
+    "catalog_notes": "Deliberate derived shop from preserved haverlund-greengrocer/v1 master. art/source/world/square-renewal/v1/revise_shops.py User rejected the temporary reused shell on 2026-11-03. Unplaced; unique concept at art/source/world/spindle-strip/v1/ pending future modeling.",
+    "related_files": [
+      "art/source/world/haverlund-clockmaker/v1/square-renewal.json",
+      "art/source/world/spindle-strip/v1/README.md",
+      "art/source/world/square-renewal/v1/revise_shops.py"
+    ],
+    "usage_files": [
+      "content/areas/archive/haverlund-square-v5.json"
+    ],
+    "catalog_entry": {
+      "version": "v1",
+      "authority": "blender",
+      "status": "retained_previous_concept",
+      "label": "Pendulum & Pin · clockmaker",
+      "source": "art/source/world/haverlund-clockmaker/v1/model.blend",
+      "runtime": "assets/world/haverlund-clockmaker/model.glb",
+      "pivot": "Footprint centre, front Blender -Y",
+      "logical_footprint": [
+        -2.3,
+        -3.2,
+        4.6,
+        6.4
+      ],
+      "illustrated_edges": true,
+      "notes": "Deliberate derived shop from preserved haverlund-greengrocer/v1 master. art/source/world/square-renewal/v1/revise_shops.py User rejected the temporary reused shell on 2026-11-03. Unplaced; unique concept at art/source/world/spindle-strip/v1/ pending future modeling.",
+      "behavior": "Hinged storefront. Area document owns entry and collision."
+    }
+  },
+  "references": [],
+  "created": "2026-11-03T00:20:02+00:00",
+  "updated": "2026-11-03T01:58:29+00:00",
+  "history": [
+    {
+      "at": "2026-11-03T00:20:02+00:00",
+      "action": "Requested in development showcase"
+    },
+    {
+      "at": "2026-11-03T01:16:21+00:00",
+      "action": "start"
+    },
+    {
+      "at": "2026-11-03T01:37:24+00:00",
+      "action": "finish"
+    },
+    {
+      "at": "2026-11-03T01:58:29+00:00",
+      "action": "Further changes requested: 20261103T015829-7c38d630"
+    }
+  ],
+  "result": {
+    "assets": [
+      "haverlund-clockmaker"
+    ],
+    "summary": "Original concept-based v2 clockmaker: offset clock tower, tall pendulum bay, sheet copper roof, curved clock displays and working recessed entrance to retained empty room. Town-time clock hands and actual frontage lighting. Normal build 25 meshes/32684 triangles, full suite, 20 model checks, 18 native door/Continue checks and 68-fixture lighting audit passed. Apothecary and interior furnishing remain deferred.",
+    "review": "pipeline/reviews/2026-11-03-original-clockmaker.md",
+    "contexts": [
+      {
+        "id": "haverlund-clockmaker",
+        "label": "Pendulum & Pin · clockmaker",
+        "catalog": "pipeline/world-catalog.json",
+        "source": "art/source/world/haverlund-clockmaker/v2/model.blend",
+        "runtime": "assets/world/haverlund-clockmaker/model.glb",
+        "manifest": "assets/world/haverlund-clockmaker/manifest.json",
+        "catalog_notes": "Original model based on art/source/world/spindle-strip/v1/clockmaker-concept.png. Offset bell-roof clock tower, tall pendulum bay, recessed hinged entrance, curved clock display bays, standing-seam copper roof and curved dormer. No imported house/shop mesh. Retains rejected v1 source.",
+        "related_files": [
+          "art/source/world/haverlund-clockmaker/v2/README.md",
+          "art/source/world/haverlund-clockmaker/v2/author_original.py",
+          "art/source/world/haverlund-clockmaker/v2/copper-finish.json",
+          "art/source/world/haverlund-clockmaker/v2/copper_finish.py",
+          "art/source/world/haverlund-clockmaker/v2/detail-finish.json",
+          "art/source/world/haverlund-clockmaker/v2/detail_finish.py",
+          "art/source/world/haverlund-clockmaker/v2/provenance.json",
+          "art/source/world/spindle-strip/v1/clockmaker-concept.png"
+        ],
+        "usage_files": [
+          "content/areas/archive/haverlund-square-v5.json",
+          "content/areas/haverlund-square.json",
+          "content/development/spindle-strip-plan.json"
+        ],
+        "catalog_entry": {
+          "version": "v2",
+          "authority": "blender",
+          "status": "authored",
+          "label": "Pendulum & Pin · clockmaker",
+          "source": "art/source/world/haverlund-clockmaker/v2/model.blend",
+          "runtime": "assets/world/haverlund-clockmaker/model.glb",
+          "pivot": "Footprint centre, front Blender -Y",
+          "logical_footprint": [
+            -3.8,
+            -2.85,
+            7.6,
+            5.6
+          ],
+          "illustrated_edges": true,
+          "notes": "Original model based on art/source/world/spindle-strip/v1/clockmaker-concept.png. Offset bell-roof clock tower, tall pendulum bay, recessed hinged entrance, curved clock display bays, standing-seam copper roof and curved dormer. No imported house/shop mesh. Retains rejected v1 source.",
+          "behavior": "Semantic door_leaf_clockmaker hinge and shared-time clock hands. Interior remains a separate cleared shell."
+        }
+      }
+    ],
+    "fingerprints": {
+      "haverlund-clockmaker": {
+        "source": "bc6de77288fdf79779840390a39ba4215688c07f14ebebc902913a96fb660916",
+        "runtime": "fcba4997dc6652646bad66a92576a74b4b62fde0992d969a4e31614db6e87e07",
+        "entry": "3a95fa48931f52e4be0cbac5971214e358ac90eccdf5aa7d32168abbe3ad8603"
+      }
+    }
+  }
+}

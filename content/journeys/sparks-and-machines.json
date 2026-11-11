@@ -1,0 +1,1255 @@
+{
+  "schema": 1,
+  "opening": {
+    "pages": [
+      "You arrived after dark with a bag and Nell's address. The key was under the third flowerpot, just as she'd said.",
+      "You remember carrying your things upstairs. After that, mostly the bed. Now there's daylight across the floor and someone moving about below.",
+      "A corner of paper peeks out from under the mug on the desk."
+    ],
+    "note": {
+      "salutation": "Lodger —",
+      "lines": [
+        "There's bread in the tin. I'll be back around lunchtime.",
+        "The little one on the shelf is Hotaru. I've been out on calls all week, so she's mostly been asleep.",
+        "The terminal on the desk is linked to Hotaru. Send her a hello if you need a hand."
+      ],
+      "signature": "— N."
+    },
+    "button": "Open Field Notes"
+  },
+  "tickets": {
+    "say-hello": "No. 0",
+    "waiting-ticket": "No. 1",
+    "landing-light": "No. 2",
+    "morning-round": "No. 3",
+    "proper-welcome": "No. 4",
+    "after-the-light": "No. 5",
+    "band-seats": "No. 6",
+    "room-on-the-walk": "No. 7",
+    "two-parks": "No. 8",
+    "market-day": "No. 9",
+    "own-corner": "No. 10",
+    "next-batch": "No. 11",
+    "todays-prices": "No. 12",
+    "ready-for-collection": "No. 13"
+  },
+  "stairs": {
+    "dormant": "The stairs lead down to Nell's workshop. Hotaru is still dozing on the shelf.",
+    "awake": "The stairs lead down to Nell's workshop.",
+    "tablet": "Nell’s slate is still on the bed."
+  },
+  "after_greeting": {
+    "title": "Your first page is saved",
+    "hint": "Hotaru is up. Nell's workshop is downstairs; the job board and repair benches are worth a look."
+  },
+  "street_doors": "Nell has left the street doors latched while she's out. The stairs lead back to your room.",
+  "workshop_after_greeting": {
+    "title": "The morning round is ready",
+    "hint": "Your routines are saved. Nell is still out on calls; the workshop lights are yours to try."
+  },
+  "scenes": {
+    "workshop-arrival": {
+      "title": "A place at the bench",
+      "requires": "say-hello",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "The workshop is warmer than the loft. A knot of shavings has collected beneath the vice; beside it, someone has set a stool out from the bench."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Nell made room for you last night."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "She was down here after you’d gone to bed.",
+          "choices": [
+            {
+              "text": "Where does she usually work?",
+              "reply": "At the long bench. Keep the narrow drawer clear; she opens it with her knee."
+            },
+            {
+              "text": "Is there anything I can do?",
+              "reply": "There’s a ticket on the board. She pinned it before she went out."
+            },
+            {
+              "text": "I didn’t hear a thing.",
+              "reply": "You were asleep before she’d found the spare key."
+            }
+          ]
+        },
+        {
+          "speaker": "narration",
+          "text": "Hotaru looks past you towards the stairs."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Nell left a ticket for the stair light. It was my job to put it on."
+        }
+      ]
+    },
+    "waiting-ticket": {
+      "title": "Nell's work ticket",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "The ticket is soft along one edge. It has spent some time in a coat pocket."
+        },
+        {
+          "speaker": "ticket",
+          "text": "STAIR LIGHT\nRelay replaced. Fitting checked.\nReturn to service before evening.\n— N."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "The glass cracked on Tuesday. Nell put it right yesterday.",
+          "choices": [
+            {
+              "text": "Then what’s left?",
+              "reply": "The new relay has a different address. The saved routine still calls the old one."
+            },
+            {
+              "text": "It was dark when I arrived.",
+              "reply": "She meant to have it done before then."
+            },
+            {
+              "text": "Will you show me?",
+              "reply": "Yes. The slate only listens at arm’s length, so we’ll have to stand beside it."
+            }
+          ]
+        },
+        {
+          "speaker": "narration",
+          "text": "In smaller writing: landing-lamp. Two more names follow it: repair-light, assembly-light."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Leave the stair light on. She’ll be carrying things when she comes back."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "The lantern is on the wall at the foot of the stairs. Hold the slate up to it and ask."
+        }
+      ],
+      "finish_label": "Open Field Notes"
+    },
+    "landing-lit": {
+      "title": "The stair light",
+      "requires": "landing-light",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "The lantern warms from the centre out. Light catches the underside of the handrail."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "There."
+        },
+        {
+          "speaker": "narration",
+          "text": "For a moment she says nothing else. There is a pencilled card beside the vice."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "She left the tables off while she was changing it. We used to bring them on together.",
+          "choices": [
+            {
+              "text": "Which ones?",
+              "reply": "The long bench and the assembly table. The card has all three addresses."
+            },
+            {
+              "text": "Did you write the old card?",
+              "reply": "Nell wrote it. I used to read out the names while she checked them."
+            },
+            {
+              "text": "Let me try the rest.",
+              "reply": "I’ll stay here."
+            }
+          ]
+        },
+        {
+          "speaker": "narration",
+          "text": "The rest of the card is a short list. The last name has a check beside it; the first two have none."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "The screen on the wall reaches all three at once. You’ll have to stand at it, though."
+        }
+      ],
+      "finish_label": "Open Field Notes",
+      "lamps_on": [
+        "landing-lamp"
+      ]
+    },
+    "round-ready": {
+      "title": "The opening round",
+      "requires": "morning-round",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "Under the work lights, the rubbed edges of Nell’s tools show silver. The little labels on the drawers can be read from the bench."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "That’s the morning round."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Nell will want that routine kept.",
+          "choices": [
+            {
+              "text": "In the drawer, then.",
+              "reply": "Top one. She’ll look there first."
+            },
+            {
+              "text": "What else is waiting?",
+              "reply": "The gate light. Nell’s ticket is behind this one."
+            },
+            {
+              "text": "Will she be back soon?",
+              "reply": "She said lunchtime. There’s another cup by the stove."
+            }
+          ]
+        },
+        {
+          "speaker": "narration",
+          "text": "Behind the workshop card is a complaint from the north gate. Nell has crossed out ‘lamp replaced’ and written only: ‘Again?’"
+        },
+        {
+          "speaker": "hotaru",
+          "text": "That one came back yesterday."
+        }
+      ],
+      "lamps_on": [
+        "landing-lamp",
+        "repair-light",
+        "assembly-light"
+      ]
+    },
+    "loft-waking": {
+      "title": "A sleepy greeting",
+      "area": "workshop-loft",
+      "pages": [
+        {
+          "speaker": "hotaru",
+          "text": "Oh. Morning."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "You’re the one in the loft, then? I’m Hotaru.",
+          "choices": [
+            {
+              "text": "I got in last night.",
+              "reply": "I heard your bag on the stairs. I thought Nell was moving things again."
+            },
+            {
+              "text": "Nell said you could show me around.",
+              "reply": "Of course. She’s left a few things here for you. Have you found the paper drawer?"
+            },
+            {
+              "text": "Have you been asleep all week?",
+              "reply": "Most of it. Nell’s been taking the calls herself. Is it still morning?"
+            }
+          ]
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Nell left you the desk. The drawers stick a little; lift them as you pull."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "There’s a work ticket downstairs. Nell should be back for lunch."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "She came up again after you’d gone to sleep. The board by the bed always gives her away."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "She left something on the quilt. Twelve inches by eight, set down very square.",
+          "choices": [
+            {
+              "text": "What is it?",
+              "reply": "I couldn’t say from here. It’s mostly one flat edge."
+            },
+            {
+              "text": "Did she say anything?",
+              "reply": "Only ‘there’. She says that when a thing is sitting right."
+            },
+            {
+              "text": "Is it going to bite?",
+              "reply": "It hasn’t moved all night. I’d have heard."
+            }
+          ]
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Pick it up before you go down. She didn’t leave it there for the bed’s benefit."
+        }
+      ]
+    },
+    "tablet-taken": {
+      "title": "Nell’s field slate",
+      "area": "workshop-loft",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "It is lighter than it looks, and warm from the window. A grey cord trails from one edge and ends in a brass plug no thicker than a pencil."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "That’s the field slate. She used to carry it everywhere."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "She’d hold it against whatever was misbehaving and ask what the matter was.",
+          "choices": [
+            {
+              "text": "Did it ever answer?",
+              "reply": "Mostly it said ‘fault’, in capitals. Nell found that helpful."
+            },
+            {
+              "text": "Where does the plug go?",
+              "reply": "The screen downstairs. There’s a socket under the glass, with a brass collar."
+            },
+            {
+              "text": "So it’s hers.",
+              "reply": "Was. She put it where you’d trip over it. That’s how she hands things over."
+            }
+          ]
+        },
+        {
+          "speaker": "hotaru",
+          "text": "It’s on the wall by the long bench. The only thing along there that isn’t wood."
+        }
+      ]
+    },
+    "lane-arrival": {
+      "title": "Out on the lane",
+      "area": "haverlund-lane",
+      "requires": "say-hello",
+      "narrator": "Spindle Lane",
+      "finish_label": "Back to the lane",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "The street doors swing out onto warm cobbles. Somewhere below the wall, a tram bell rings once and stops."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Four days since I was last out here. Someone’s chalked squares on the cobbles since then."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "And Braum’s painted his fence again. That makes three coats this month.",
+          "choices": [
+            {
+              "text": "Who’s Braum?",
+              "reply": "Next door. He builds things. Mostly that fence."
+            },
+            {
+              "text": "Is it always this quiet?",
+              "reply": "Until the twenty-to-eight comes up. Then it’s quiet with a tram in it."
+            },
+            {
+              "text": "Where do the steps go?",
+              "reply": "Down to the square. Sixty-three of them. I counted on the way down once, and on the way up to check."
+            }
+          ]
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Nell comes back up that way with the bread. You hear the gate before you see her."
+        }
+      ]
+    },
+    "square-arrival": {
+      "title": "Into the square",
+      "area": "haverlund-square",
+      "requires": "say-hello",
+      "narrator": "Rootward Square",
+      "finish_label": "Back to the square",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "Beyond the gate, the lane opens onto Spindle Walk. A little garden sits beside the steps down to the square."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "That’s the Rootwell in the middle. Nell stops there on the way back. Every time. I’ve counted."
+        },
+        {
+          "speaker": "narration",
+          "text": "Under the glass a root glows the colour of strong tea. The needle on its dial sits low."
+        }
+      ]
+    },
+    "braum-welcome": {
+      "title": "From Nell's, are you?",
+      "area": "haverlund-lane",
+      "manual": true,
+      "finish_label": "Back to the lane",
+      "pages": [
+        {
+          "speaker": "braum",
+          "text": "You there. From Nell's, are you?",
+          "choices": [
+            {
+              "text": "I'm staying upstairs.",
+              "reply": "Thought so. Saw your bag go past last night."
+            },
+            {
+              "text": "Depends what needs fixing.",
+              "reply": "Nothing I've built. The new sign. Well, the talking part of it."
+            },
+            {
+              "text": "Is something wrong?",
+              "reply": "Not wrong. Waiting. There's a difference, though Iona's stopped agreeing with me."
+            }
+          ]
+        },
+        {
+          "speaker": "braum",
+          "text": "Braum. Next door. I've put a frame up by the tram steps. Iona's doing the sign."
+        },
+        {
+          "speaker": "braum",
+          "text": "She wanted Nell for the message card. You've got her slate. Would you have a look?",
+          "choices": [
+            {
+              "text": "I'll take a look.",
+              "reply": "Good. Beside the tram steps. Mind the fresh edge on the step."
+            },
+            {
+              "text": "What does it need to do?",
+              "reply": "Say where we are. Then a couple of useful things. It currently says where we are very firmly."
+            },
+            {
+              "text": "Later. I have something to finish.",
+              "reply": "Right. I'll be up there. The frame won't wander."
+            }
+          ]
+        },
+        {
+          "speaker": "braum",
+          "text": "I'll let her know you're about. She's by the new glass board."
+        }
+      ],
+      "narrator": "Spindle Lane"
+    },
+    "iona-commission": {
+      "title": "The signmaker",
+      "area": "haverlund-lane",
+      "manual": true,
+      "finish_label": "Back to the sign",
+      "pages": [
+        {
+          "speaker": "iona",
+          "text": "Braum said you had Nell's slate. Did she send you?",
+          "choices": [
+            {
+              "text": "Braum asked me to look.",
+              "reply": "Fair enough. Come round this side. You can see it better from here."
+            },
+            {
+              "text": "I've only done the workshop lights.",
+              "reply": "Then we'll try it before leaving anything running."
+            },
+            {
+              "text": "I've got her slate.",
+              "reply": "That's the plug I was waiting for."
+            }
+          ]
+        },
+        {
+          "speaker": "iona",
+          "text": "Iona Venn. I painted the old board. This one's got a message card instead of a second coat."
+        },
+        {
+          "speaker": "narration",
+          "text": "The glass reads WELCOME TO SPINDLE LANE. A moment later, it reads WELCOME TO SPINDLE LANE again."
+        },
+        {
+          "speaker": "iona",
+          "text": "Braum says it is welcoming. He has a point."
+        },
+        {
+          "speaker": "iona",
+          "text": "It's meant to change. Two or three messages. You can choose the last one."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Where does the next one go?"
+        },
+        {
+          "speaker": "iona",
+          "text": "On the card, I hope. That's the part I asked Nell about."
+        },
+        {
+          "speaker": "ticket",
+          "text": "TRAM LANDING\nTwo or three messages.\nKeep the lettering readable.\nPayment: 25 p.\n— Iona Venn"
+        },
+        {
+          "speaker": "iona",
+          "text": "The socket's below the glass. Bring the slate over and we'll see what you've written."
+        }
+      ],
+      "narrator": "Spindle Lane"
+    },
+    "welcome-finished": {
+      "title": "A proper welcome",
+      "area": "haverlund-lane",
+      "manual": true,
+      "finish_label": "Back to the lane",
+      "pages": [
+        {
+          "speaker": "iona",
+          "text": "There. I can read it before it changes."
+        },
+        {
+          "speaker": "braum",
+          "text": "Even I know which stop it is now."
+        },
+        {
+          "speaker": "iona",
+          "text": "You're standing under the nameplate."
+        },
+        {
+          "speaker": "braum",
+          "text": "Helps."
+        },
+        {
+          "speaker": "iona",
+          "text": "The last page is yours. What did you think?",
+          "choices": [
+            {
+              "text": "Is it slow enough?",
+              "reply": "I can read it from the steps. That's what I needed."
+            },
+            {
+              "text": "I put my own words in.",
+              "reply": "Good. Anyone waiting here will have time to read them."
+            },
+            {
+              "text": "It runs with the slate put away?",
+              "reply": "That's the idea. Come past tomorrow; I don't want to be here pressing anything."
+            }
+          ]
+        },
+        {
+          "speaker": "braum",
+          "text": "What was your name, then?"
+        },
+        {
+          "speaker": "player",
+          "text": "{player_name}."
+        },
+        {
+          "speaker": "braum",
+          "text": "Right, {player_name}. I'll tell Nell. Can't keep calling you the one with the bag."
+        },
+        {
+          "speaker": "iona",
+          "text": "Twenty-five pence. That's the message work settled. Haverlund Savings is down in the square, if you'd rather bank it."
+        }
+      ],
+      "narrator": "Spindle Lane"
+    },
+    "nell-evening": {
+      "title": "The lamps that passed the test",
+      "area": "haverlund-lane",
+      "manual": true,
+      "narrator": "Spindle Lane · Evening",
+      "finish_label": "Check the shop lamps",
+      "pages": [
+        {
+          "speaker": "nell",
+          "text": "Good. You found the slate. I had a whole speech ready if you’d tried to repair the kettle with a fork."
+        },
+        {
+          "speaker": "nell",
+          "text": "I saw the new sign from the tram. Iona paid you, I hope. She once tried to settle an invoice with a very fine drawing of the money."
+        },
+        {
+          "speaker": "player",
+          "text": "Did the lamps go as well?"
+        },
+        {
+          "speaker": "nell",
+          "text": "They worked on my bench. Both of them. Out here they wait all day for the dark, then decide they’ve earned the night off. Look at their closing card."
+        },
+        {
+          "speaker": "nell",
+          "text": "Read the card the way the lamp does. It’s dark: what does it ask for? Now it’s daylight. Ask again.",
+          "choices": [
+            {
+              "text": "So the bulbs are all right?",
+              "reply": "I checked them twice. Don’t let a clever fault talk you into buying a new bulb."
+            },
+            {
+              "text": "Could I just leave them on?",
+              "reply": "You could. Then we’d be paying for daylight. Try your card in the sun as well as the dark."
+            }
+          ]
+        },
+        {
+          "speaker": "hotaru",
+          "text": "I can try it in daylight and in the dark while we stand here. No waiting until breakfast."
+        },
+        {
+          "speaker": "nell",
+          "text": "Two lamps, same rule. Finish that and we’ll call it a day. Eighteen pence. I’m paying for the checking too."
+        }
+      ]
+    },
+    "evening-finished": {
+      "title": "A good closing round",
+      "area": "haverlund-lane",
+      "requires": "after-the-light",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "The two lamps stay dark in the last of the daylight. Then the clock turns over, and they come on together, as if they’d agreed it between them."
+        },
+        {
+          "speaker": "nell",
+          "text": "There."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "And the same clock, wherever we go."
+        },
+        {
+          "speaker": "nell",
+          "text": "The hall’s Public Works desk has more of this sort of thing. Mira will find you. She finds everyone."
+        },
+        {
+          "speaker": "nell",
+          "text": "Tonight, put the slate down before your tea goes cold."
+        }
+      ],
+      "finish_label": "Back to the lane",
+      "narrator": "Spindle Lane · Evening"
+    },
+    "works-start": {
+      "title": "Public Works",
+      "requires": "after-the-light",
+      "area": "haverlund-square",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "A woman in a plum field jacket is standing at the service screen with a folder pressed flat against the glass, writing on it with the pencil she isn’t holding in her teeth."
+        },
+        {
+          "speaker": "mira",
+          "text": "You’re Nell’s lodger. The one with the slate.",
+          "choices": [
+            {
+              "text": "That’s me.",
+              "reply": "Good. Nell said to look for the cord. I’ve been looking at people’s collars all morning."
+            },
+            {
+              "text": "Who’s asking?",
+              "reply": "Mira. Public Works. Maps, mostly, and whatever the maps say is wrong."
+            },
+            {
+              "text": "Is it that obvious?",
+              "reply": "The cord. Nobody else in town walks about with a plug."
+            }
+          ]
+        },
+        {
+          "speaker": "mira",
+          "text": "The hall gave me five jobs and one pair of hands. Mine. They’re all in the square, and none of them need a ladder."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Which of them need a slate?"
+        },
+        {
+          "speaker": "mira",
+          "text": "All of them. Since the conduits went in, the benches and stalls here take instructions. Where to face. Where to stand. The screen passes your routine along if you’re standing at it."
+        },
+        {
+          "speaker": "mira",
+          "text": "Start with the band. Saturday, round the Rootwell. Half the benches are looking at the harbour.",
+          "choices": [
+            {
+              "text": "What’s wrong with the harbour?",
+              "reply": "Nothing. It isn’t playing on Saturday."
+            },
+            {
+              "text": "How many benches?",
+              "reply": "Seven. I counted twice. The first time I’d counted one I was sitting on."
+            },
+            {
+              "text": "Why not carry them?",
+              "reply": "Iron frames. Also, I’d like it done once properly, so it can be done again."
+            }
+          ]
+        },
+        {
+          "speaker": "narration",
+          "text": "She tears the top ticket off the folder and holds it out without looking up. Her other hand is already marking something on a map of the square."
+        },
+        {
+          "speaker": "mira",
+          "text": "The Rootwell is at y twenty-four. My map says so, and for once the square agrees."
+        }
+      ],
+      "narrator": "Rootward Square"
+    },
+    "works-band": {
+      "title": "Facing the right way",
+      "requires": "band-seats",
+      "area": "haverlund-square",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "Seven benches turn their backs on the sea. A pigeon on the end of one disapproves, and leaves."
+        },
+        {
+          "speaker": "mira",
+          "text": "Good. They can see the Rootwell now. Whether they want to is the band’s problem."
+        },
+        {
+          "speaker": "mira",
+          "text": "Next one’s on Spindle Walk. There’s a gap in the middle where a bench used to be, before somebody borrowed it for the physic garden.",
+          "choices": [
+            {
+              "text": "How far apart should they be?",
+              "reply": "Six metres. I walked it. It’s the distance where two people on two benches don’t have to listen to each other."
+            },
+            {
+              "text": "Who borrowed it?",
+              "reply": "Nobody admits it. The garden is very pleased with it."
+            }
+          ]
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Six metres is a long way for me. I’ll count it from the railing."
+        }
+      ],
+      "narrator": "Spindle Walk"
+    },
+    "works-end": {
+      "title": "Lodger’s corner",
+      "requires": "own-corner",
+      "area": "haverlund-square",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "Mira unfolds the square map against the screen and writes something small across the arrival lawn, in pencil."
+        },
+        {
+          "speaker": "mira",
+          "text": "Lodger’s corner. Pencil, because the hall will want a meeting before it’s ink."
+        },
+        {
+          "speaker": "mira",
+          "text": "That’s all five. In order, too. The hall will find that suspicious.",
+          "choices": [
+            {
+              "text": "Is there more work?",
+              "reply": "Not from me. But Tessa’s been at my elbow all week about The Pantry’s board, and Ada Kettering left a note at the hall entirely in capitals."
+            },
+            {
+              "text": "What happens to the map?",
+              "reply": "It goes in the drawer with the others. Then somebody moves a bench and I start a new one."
+            },
+            {
+              "text": "Thanks for the work.",
+              "reply": "Thank the band. They’re the ones who’ll have somewhere to look."
+            }
+          ]
+        },
+        {
+          "speaker": "narration",
+          "text": "She folds the map, then stops, and looks past you at the dial on the Rootwell."
+        },
+        {
+          "speaker": "mira",
+          "text": "Four, last month. Three and a half now. I write it down every Thursday."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Is it meant to go down?"
+        },
+        {
+          "speaker": "mira",
+          "text": "I don’t know. That’s why I write it down."
+        },
+        {
+          "speaker": "mira",
+          "text": "The shops by the market have jobs for your slate. They pay better than I do. Everyone does."
+        }
+      ],
+      "narrator": "Rootward Square"
+    },
+    "bakery-intro": {
+      "title": "Morning Loaf",
+      "requires": "own-corner",
+      "area": "shop-bakery",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "The bell over the door hasn’t finished before a voice comes from behind the oven."
+        },
+        {
+          "speaker": "ada",
+          "text": "If it’s the second batch, it’s at eleven. If it’s the first, you’re too late. If it’s me, I’m busy.",
+          "choices": [
+            {
+              "text": "Mira sent me about the board.",
+              "reply": "Did she. Then you’re the slate."
+            },
+            {
+              "text": "I’m Nell’s lodger.",
+              "reply": "The one with the slate. Nell said you’d be round eventually."
+            },
+            {
+              "text": "Something smells good.",
+              "reply": "Everything smells good at seven. Come back at four and tell me that."
+            }
+          ]
+        },
+        {
+          "speaker": "narration",
+          "text": "She comes round the oven, wiping her hands on a cloth that has been floury for longer than you’ve been alive."
+        },
+        {
+          "speaker": "ada",
+          "text": "Ada Kettering. Morning Loaf. Forty-one years, same oven, same back door."
+        },
+        {
+          "speaker": "ada",
+          "text": "And every morning somebody knocks on that back door to ask when the next batch is. Seven, nine and eleven. Every two hours. It isn’t a secret. I just don’t want to say it forty times."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "You’ve said it twice since we came in."
+        },
+        {
+          "speaker": "ada",
+          "text": "Then put it on the board. All three. The board’s by the window, and it takes the slate.",
+          "choices": [
+            {
+              "text": "Why not write it in chalk?",
+              "reply": "I did. Somebody rubbed it out to write MIND THE STEP. There is no step."
+            },
+            {
+              "text": "What about the afternoon?",
+              "reply": "There is no afternoon. There’s me, sitting down."
+            },
+            {
+              "text": "I’ll sort it.",
+              "reply": "Good. Don’t touch the oven. It doesn’t know you."
+            }
+          ]
+        }
+      ],
+      "narrator": "Morning Loaf"
+    },
+    "bakery-done": {
+      "title": "Three fewer knocks",
+      "requires": "next-batch",
+      "area": "shop-bakery",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "BATCH AT 7. BATCH AT 9. BATCH AT 11. The board works through them while Ada watches with her arms folded."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Nobody has knocked since the board came on."
+        },
+        {
+          "speaker": "ada",
+          "text": "It’s been four minutes."
+        },
+        {
+          "speaker": "ada",
+          "text": "Still. That’s a record."
+        },
+        {
+          "speaker": "narration",
+          "text": "She puts a paper bag on the counter. It’s warm, and folded over twice so you can’t see in."
+        },
+        {
+          "speaker": "ada",
+          "text": "For Nell. She’ll say she doesn’t want it. Fifteen pence for you; it’s in the corner of the bag, so don’t eat that bit."
+        }
+      ],
+      "narrator": "Morning Loaf"
+    },
+    "pantry-intro": {
+      "title": "The Pantry",
+      "requires": "own-corner",
+      "area": "shop-greengrocer",
+      "pages": [
+        {
+          "speaker": "tessa",
+          "text": "Oh good, it’s you. Mira said you’d come by, and I said you wouldn’t have time, and she bet me a lemon."
+        },
+        {
+          "speaker": "tessa",
+          "text": "I owe her a lemon.",
+          "choices": [
+            {
+              "text": "Is this your shop?",
+              "reply": "My cousin Teo’s. I bring the orchard down on market days and mind the counter while he’s up at the farms buying everything else. He leaves before it’s light."
+            },
+            {
+              "text": "Who’s T. Vasko?",
+              "reply": "Teo. My cousin. He signs his name like a man settling a debt."
+            },
+            {
+              "text": "What’s the job?",
+              "reply": "The board. Come and look at it."
+            }
+          ]
+        },
+        {
+          "speaker": "tessa",
+          "text": "Teo writes the prices on that slate every morning, then changes them twice, then I rub out the board and copy them, and by the time I’ve finished he’s changed one again."
+        },
+        {
+          "speaker": "tessa",
+          "text": "Apples are four. Lemons are three. Plums were six until the Kerrigans’ cart came up full, so now they’re five. That’s the one that always gets missed."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "The board only says APPLES 4P."
+        },
+        {
+          "speaker": "tessa",
+          "text": "It’s said that since Tuesday. People think we’ve stopped selling everything else.",
+          "choices": [
+            {
+              "text": "Can the slate hold a price list?",
+              "reply": "Teo says yes. Teo also says the cart will be here by six."
+            },
+            {
+              "text": "Why do the plums change?",
+              "reply": "The Kerrigans grow too many, then feel guilty about it. Five, anyway."
+            },
+            {
+              "text": "I’ll fix it.",
+              "reply": "Thank you. I’ll weigh you an apple. On the house. Well, on Teo."
+            }
+          ]
+        }
+      ],
+      "narrator": "The Pantry"
+    },
+    "pantry-done": {
+      "title": "Nobody asks about plums",
+      "requires": "todays-prices",
+      "area": "shop-greengrocer",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "APPLES 4P. LEMONS 3P. PLUMS 5P. A woman comes in, reads the board twice, and buys a bag of plums without asking a single question."
+        },
+        {
+          "speaker": "tessa",
+          "text": "Did you see that? Nobody buys plums without asking."
+        },
+        {
+          "speaker": "tessa",
+          "text": "Teo will want to change everything tomorrow. Leave him the list where he can find it. One number each, that’s all he has to touch."
+        },
+        {
+          "speaker": "tessa",
+          "text": "Eighteen pence. And the apple. Don’t argue about the apple."
+        }
+      ],
+      "narrator": "The Pantry"
+    },
+    "tailor-intro": {
+      "title": "Finch & Thread",
+      "requires": "own-corner",
+      "area": "shop-tailor",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "A woman at the cutting table looks up, takes three pins out of her mouth and puts them in a cushion before she says anything."
+        },
+        {
+          "speaker": "gret",
+          "text": "You’ll be the one with Nell’s slate. Your left shoulder sits lower than your right. That’s the satchel.",
+          "choices": [
+            {
+              "text": "Is that bad?",
+              "reply": "It’s common. I only mention it so you know I’m looking."
+            },
+            {
+              "text": "Mira sent me.",
+              "reply": "Mira sends everyone. Half my orders are pockets for that jacket of hers."
+            },
+            {
+              "text": "Are you Finch, or Thread?",
+              "reply": "Finch. Thread was my father’s joke. He thought it sounded like a firm of solicitors."
+            }
+          ]
+        },
+        {
+          "speaker": "gret",
+          "text": "Gret Finch. I make coats, I take them in, I let them out. Mostly out, after the winter."
+        },
+        {
+          "speaker": "gret",
+          "text": "Fourteen orders finished on that rail. Two collected. The rest of the town thinks I’m slow."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "The tag on the navy coat says NOT BY LUNCH."
+        },
+        {
+          "speaker": "gret",
+          "text": "That one’s Braum’s. He tells everybody his things will be done by lunch. It seemed only fair."
+        },
+        {
+          "speaker": "gret",
+          "text": "I don’t chase people. I’d like the board to do it for me. The name, then READY, in capitals, so they notice. Braum, Iona and Mira first; theirs have waited longest.",
+          "choices": [
+            {
+              "text": "Why capitals?",
+              "reply": "Braum reads the board from the tram, and the tram doesn’t stop for long."
+            },
+            {
+              "text": "Why not tell them yourself?",
+              "reply": "I’ve measured all three of them. That’s quite personal enough for one year."
+            },
+            {
+              "text": "I’ll do it.",
+              "reply": "Thank you. Write the ticket once and use it three times. I’d do the same with a pattern."
+            }
+          ]
+        }
+      ],
+      "narrator": "Finch & Thread"
+    },
+    "tailor-done": {
+      "title": "Two bells in an hour",
+      "requires": "ready-for-collection",
+      "area": "shop-tailor",
+      "pages": [
+        {
+          "speaker": "narration",
+          "text": "BRAUM READY. IONA READY. MIRA READY. Within the hour, the bell over the door goes twice."
+        },
+        {
+          "speaker": "gret",
+          "text": "Iona came for her apron. She read the board from across the square and said the letters were well spaced. From her, that’s a medal."
+        },
+        {
+          "speaker": "hotaru",
+          "text": "Braum hasn’t come."
+        },
+        {
+          "speaker": "gret",
+          "text": "He will. He’ll say he was on his way anyway."
+        },
+        {
+          "speaker": "gret",
+          "text": "Twenty pence. And when that satchel strap goes, bring it here before you tie a knot in it."
+        }
+      ],
+      "narrator": "Finch & Thread"
+    }
+  },
+  "banter": {
+    "haverlund-lane": [
+      "Mind the chalk squares. Somebody’s halfway through a game.",
+      "That’s Pepper on the wall. The notice says she doesn’t come when called. The notice is right.",
+      "The lamp by the gate has a wire all the way from the square. Nobody’s told it what to do yet.",
+      "The twenty-to-eight was late again. I could hear the bell from the shelf."
+    ],
+    "waiting-ticket": [
+      "Nell pinned the ticket by the window.",
+      "The little drawer under the vice sticks. Mind your fingers."
+    ],
+    "landing-light": [
+      "I’ll keep out of the way while you try it.",
+      "Nell left the fitting checked. The address is on her ticket."
+    ],
+    "morning-round": [
+      "The two work lights belong on that card as well.",
+      "She usually starts at the long bench."
+    ],
+    "finished": [
+      "I’ll stay by the table.",
+      "There’s still warmth in the kettle."
+    ],
+    "haverlund-square": [
+      "The clock’s been five minutes fast since spring. Nell still sets her watch by it.",
+      "That little one takes the parcels round. It waits for the handles to stop swinging before it goes.",
+      "You can smell the first batch from the top of the steps. Getting back up is harder."
+    ],
+    "shop-bakery": [
+      "It’s warmer by the oven than at the stove at home. Don’t tell Nell.",
+      "The tins on the bottom shelf are the oldest. Ada sells them first."
+    ],
+    "shop-greengrocer": [
+      "Every crate has two tags. One of them is Tessa’s handwriting.",
+      "The scale has an apple in it. I think it lives there."
+    ],
+    "shop-tailor": [
+      "One row of thread is out of order. Two blues have swapped.",
+      "The mirror makes the room twice as long. I checked the other side."
+    ],
+    "band-seats": [
+      "Seven benches. Some of them look at the sea on purpose, I think.",
+      "Mira’s map says the Rootwell is at twenty-four. So does the Rootwell."
+    ],
+    "next-batch": [
+      "Seven, nine, eleven. Two apart each time.",
+      "Ada didn’t say anything about the oven. I don’t think it’s on the ticket."
+    ]
+  },
+  "pinned": {
+    "haverlund-lane": {
+      "title": "A welcome of your own",
+      "hint": "Your messages are running at the tram landing. You can rewrite the card whenever you like. Press I to check your pay, or visit Haverlund Savings in the square."
+    },
+    "haverlund-square": {
+      "title": "Rootward Square",
+      "hint": "The square is open to explore. Nell’s work tickets are still on the board back at the workshop."
+    },
+    "city-hall": {
+      "title": "The public lobby",
+      "hint": "Enquiries can help you find your way. The Public Works desk keeps the current job book; the civic screen connects the hall’s lamps."
+    },
+    "shop-bakery": {
+      "title": "Morning Loaf",
+      "hint": "Ada’s board is by the north window. Read her note on the frame, then jack the slate in below it."
+    },
+    "shop-greengrocer": {
+      "title": "The Pantry",
+      "hint": "The price board is on the back wall. Teo’s note is underneath it."
+    },
+    "shop-tailor": {
+      "title": "Finch & Thread",
+      "hint": "Gret’s order board is on the back wall, with the order book on its ledge."
+    }
+  },
+  "tablet_waiting": {
+    "title": "Something on the quilt",
+    "hint": "Nell left it on your bed. Hotaru thinks it is meant for you."
+  },
+  "items": {
+    "field-tablet": {
+      "scene": "tablet-taken"
+    }
+  },
+  "chapters": [
+    {
+      "id": "00",
+      "title": "A first hello",
+      "quests": [
+        "say-hello"
+      ],
+      "areas": [
+        "workshop-loft"
+      ],
+      "start": "hello-start",
+      "end": "hello-end"
+    },
+    {
+      "id": "01",
+      "title": "A place at the bench",
+      "quests": [
+        "waiting-ticket",
+        "landing-light"
+      ],
+      "start": "workshop-start",
+      "end": "workshop-end"
+    },
+    {
+      "id": "02",
+      "title": "The morning round",
+      "quests": [
+        "morning-round"
+      ],
+      "areas": [
+        "workshop-floor",
+        "haverlund-lane",
+        "haverlund-square"
+      ],
+      "start": "round-start",
+      "end": "round-end"
+    },
+    {
+      "id": "03",
+      "title": "A proper welcome",
+      "quests": [
+        "proper-welcome"
+      ],
+      "areas": [
+        "haverlund-lane"
+      ],
+      "start": "welcome-start",
+      "end": "welcome-end"
+    },
+    {
+      "id": "04",
+      "title": "After the light",
+      "quests": [
+        "after-the-light"
+      ],
+      "areas": [
+        "haverlund-lane",
+        "city-hall"
+      ],
+      "start": "evening-start",
+      "end": "evening-end"
+    },
+    {
+      "id": "05",
+      "title": "Public Works",
+      "quests": [
+        "band-seats",
+        "room-on-the-walk",
+        "two-parks",
+        "market-day",
+        "own-corner"
+      ],
+      "areas": [
+        "haverlund-square"
+      ],
+      "start": "works-start",
+      "end": "works-end"
+    },
+    {
+      "id": "06",
+      "title": "Market Street",
+      "quests": [
+        "next-batch",
+        "todays-prices",
+        "ready-for-collection"
+      ],
+      "areas": [
+        "shop-bakery",
+        "shop-greengrocer",
+        "shop-tailor"
+      ],
+      "start": "market-start",
+      "end": "market-end"
+    }
+  ],
+  "payments": {
+    "landing-light": 6,
+    "morning-round": 12,
+    "proper-welcome": 25,
+    "after-the-light": 18,
+    "band-seats": 20,
+    "room-on-the-walk": 16,
+    "two-parks": 22,
+    "market-day": 24,
+    "own-corner": 30,
+    "next-batch": 15,
+    "todays-prices": 18,
+    "ready-for-collection": 20
+  }
+}
