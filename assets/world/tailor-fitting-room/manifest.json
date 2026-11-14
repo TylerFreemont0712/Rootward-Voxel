@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "tailor-fitting-room",
+  "version": 1,
+  "source": "art/source/world/tailor-fitting-room/v1/model.blend",
+  "source_sha256": "ac38470ad0e263e35f0dee39313ccab2b35bdcf891f4f3ea34c79ca21468d161",
+  "runtime": "assets/world/tailor-fitting-room/model.glb",
+  "runtime_sha256": "6f62b537245d793e9b4a66b1a71958f98e4143dd4cc902d687afc3ceaae9d4d8",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.725000023841858,
+      0.0,
+      -0.699999988079071,
+      0.730000078678131,
+      2.5699999332428,
+      0.763999998569489
+    ],
+    "geometry_sha256": "119f4c8fb9645c93c876e6c3f03166aeca8db6edcaf6e6fe67dfcf75dc9e1478",
+    "material_records": {
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_gloss_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_mirror": {
+        "albedo": [
+          7098,
+          7686,
+          7843,
+          10000
+        ],
+        "roughness": 600,
+        "texture_rgba_sha256": ""
+      },
+      "shops_oak_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "4ea052a28fbfc329afb70b626b4eae760d9d02be8e556080ec0e87f88b7bf81b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_navy": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "a280b37d03be882dcc27c2292ebd82b3d17ca5c8021af0749a9bc9600096a63c"
+      }
+    },
+    "materials": [
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_metal",
+      "shops_mirror",
+      "shops_oak_dark",
+      "shops_paint",
+      "shops_paint_navy"
+    ],
+    "meshes": 7,
+    "triangles": 2046
+  }
+}

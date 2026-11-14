@@ -1,65 +1,55 @@
 {
   "schema": 1,
   "asset": "bakery-proving-table",
-  "version": 1,
-  "source": "art/source/world/bakery-proving-table/v1/model.blend",
-  "source_sha256": "d965fa2252c3c031e2fa6dbee2ce1b61e959fe1d6c772d32f041358d08e718d7",
+  "version": 2,
+  "source": "art/source/world/bakery-proving-table/v2/model.blend",
+  "source_sha256": "4ade179560ab4dc1872e57b9f2afc64ffc00dfc02813217e1d55e719f1c84cd7",
   "runtime": "assets/world/bakery-proving-table/model.glb",
-  "runtime_sha256": "cfeb7ce6077e5b812bc6bfee8c49d52a8e3ec69857ee6efe477517a5b0301083",
+  "runtime_sha256": "ac6350aabe1eb5cfa42e9c925be3b04c1aa7e4912c3b8278ccf713363ffaa49d",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
     "bounds": [
-      -1.14999997615814,
+      -1.23450005054474,
       0.0,
       -0.5,
-      1.14999997615814,
-      1.1949999332428,
-      0.5
+      1.25280225276947,
+      1.35500001907349,
+      0.532802224159241
     ],
-    "geometry_sha256": "c40904b0add295cf3f6d6ac20b1d546b1fa54f93ce913c21beadcb36bc27ea0e",
+    "geometry_sha256": "486ab864e854ba01c824ba606ecc31888ca016f6c63fc533c71acace3b4442f4",
     "material_records": {
-      "shop_brass": {
+      "shops_gingham_red": {
         "albedo": [
-          7098,
-          5412,
-          2588,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 4500,
-        "texture_rgba_sha256": ""
+        "roughness": 9000,
+        "texture_rgba_sha256": "bbc14bcf03bcf3b41b8a1caa320700516261f8c8f5c644c49a6c55129f758d85"
       },
-      "shop_cream": {
+      "shops_gloss": {
         "albedo": [
-          9569,
-          9176,
-          8235,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_dough": {
+      "shops_metal": {
         "albedo": [
-          9333,
-          8627,
-          7137,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_flour": {
-        "albedo": [
-          9451,
-          9255,
-          8784,
-          10000
-        ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
-      },
-      "shop_oak": {
+      "shops_oak": {
         "albedo": [
           10000,
           10000,
@@ -69,37 +59,36 @@
         "roughness": 6600,
         "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
       },
-      "shop_sack": {
+      "shops_paint": {
         "albedo": [
-          7882,
-          7059,
-          5412,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_steel": {
+      "shops_paint_fine": {
         "albedo": [
-          4157,
-          4627,
-          4706,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 4500,
-        "texture_rgba_sha256": ""
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       }
     },
     "materials": [
-      "shop_brass",
-      "shop_cream",
-      "shop_dough",
-      "shop_flour",
-      "shop_oak",
-      "shop_sack",
-      "shop_steel"
+      "shops_gingham_red",
+      "shops_gloss",
+      "shops_metal",
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_fine"
     ],
-    "meshes": 7,
-    "triangles": 924
+    "meshes": 6,
+    "triangles": 8710
   }
 }

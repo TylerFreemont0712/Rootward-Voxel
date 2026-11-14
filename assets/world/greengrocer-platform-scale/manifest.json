@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "greengrocer-platform-scale",
+  "version": 1,
+  "source": "art/source/world/greengrocer-platform-scale/v1/model.blend",
+  "source_sha256": "adc23aa265994b3c085f14d9ac733b7456213c837ddf82bee431470304e792fe",
+  "runtime": "assets/world/greengrocer-platform-scale/model.glb",
+  "runtime_sha256": "dc6ca92b234260a4f807c03b3032d44d65a02c66178185cf693ec640f2240873",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.349999994039536,
+      0.0,
+      -0.368244975805283,
+      0.519999980926514,
+      1.1599999666214,
+      0.330000013113022
+    ],
+    "geometry_sha256": "8e3139490c58844e79317dc75fb6d1e144444eb7385f3b5329e88364af510014",
+    "material_records": {
+      "shops_burlap": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9700,
+        "texture_rgba_sha256": "12da2a6af22927a7e5bd04a8f8c4827d24314c3b6d1ac19597893cab33bf3002"
+      },
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_gloss_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_burlap",
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_metal",
+      "shops_paint",
+      "shops_paint_fine"
+    ],
+    "meshes": 6,
+    "triangles": 2823
+  }
+}

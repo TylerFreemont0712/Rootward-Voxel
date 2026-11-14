@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "tailor-chandelier",
+  "version": 1,
+  "source": "art/source/world/tailor-chandelier/v1/model.blend",
+  "source_sha256": "fc621c40676c3530097c6dfe70c56411fc5c91e8df25721b0a31469af23be451",
+  "runtime": "assets/world/tailor-chandelier/model.glb",
+  "runtime_sha256": "53d504606149f9093eee021c3afabf5d492703e591b9344945731341cd86a18e",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.356065779924393,
+      -1.35099995136261,
+      -0.393507272005081,
+      0.421000003814697,
+      0.0,
+      0.393507272005081
+    ],
+    "geometry_sha256": "2745e28fc3d4b41854fbae71ff07c1efd85af7f9393c2983d3883c8e77d92af2",
+    "material_records": {
+      "shops_clear_glass": {
+        "albedo": [
+          8902,
+          9333,
+          9176,
+          1600
+        ],
+        "roughness": 800,
+        "texture_rgba_sha256": ""
+      },
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_lamp_glass": {
+        "albedo": [
+          10000,
+          8392,
+          5922,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_clear_glass",
+      "shops_gloss",
+      "shops_lamp_glass",
+      "shops_metal",
+      "shops_paint"
+    ],
+    "meshes": 5,
+    "triangles": 2316
+  }
+}

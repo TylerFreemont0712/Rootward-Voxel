@@ -1,105 +1,105 @@
 {
   "schema": 1,
   "asset": "greengrocer-sack-row",
-  "version": 1,
-  "source": "art/source/world/greengrocer-sack-row/v1/model.blend",
-  "source_sha256": "61c6ae8c191ee2acf649c32672195be5d1a19f304bbf1ee315476d69d6dd7324",
+  "version": 2,
+  "source": "art/source/world/greengrocer-sack-row/v2/model.blend",
+  "source_sha256": "9fc151d5c6c7fc499742ebecd51d6864e7ebc8ed0cdd4f4aeab920fa25a04514",
   "runtime": "assets/world/greengrocer-sack-row/model.glb",
-  "runtime_sha256": "e48f154975f788af3039804ea594c3160d99c7cbcdaf219a852d1d532d3ea79c",
+  "runtime_sha256": "4d62ec7a74d8281965411e1ea40617c6b4e4297e43c85ffb01d31170ef9d1f83",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
     "bounds": [
-      -1.5217262506485,
+      -1.375,
       0.0,
-      -0.330000013113022,
-      1.5217262506485,
-      0.808406174182892,
-      0.330000013113022
+      -0.290518283843994,
+      1.375,
+      0.708485245704651,
+      0.689999997615814
     ],
-    "geometry_sha256": "08ab01ce4b9cfffb3751ba43c727ccd646892cfc2dca27dcbc464067b7536c58",
+    "geometry_sha256": "44c4058c2ada6d5cdec4f548396c1323cbd74dfbdfa44e703631dc4ebfc20133",
     "material_records": {
-      "shop_crumb": {
+      "shops_burlap": {
         "albedo": [
-          9137,
-          8118,
-          6039,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 9700,
+        "texture_rgba_sha256": "12da2a6af22927a7e5bd04a8f8c4827d24314c3b6d1ac19597893cab33bf3002"
       },
-      "shop_flour": {
+      "shops_gloss": {
         "albedo": [
-          9451,
-          9255,
-          8784,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_onion": {
+      "shops_gloss_fine": {
         "albedo": [
-          7725,
-          5412,
-          3059,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_paper": {
+      "shops_metal": {
         "albedo": [
-          9373,
-          9020,
-          8118,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_potato": {
+      "shops_oak": {
         "albedo": [
-          7216,
-          5882,
-          4078,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
       },
-      "shop_sack": {
+      "shops_paint": {
         "albedo": [
-          7882,
-          7059,
-          5412,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_steel": {
+      "shops_paint_fine": {
         "albedo": [
-          4157,
-          4627,
-          4706,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 4500,
-        "texture_rgba_sha256": ""
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       }
     },
     "materials": [
-      "shop_crumb",
-      "shop_flour",
-      "shop_onion",
-      "shop_paper",
-      "shop_potato",
-      "shop_sack",
-      "shop_steel"
+      "shops_burlap",
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_metal",
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_fine"
     ],
     "meshes": 7,
-    "triangles": 920
+    "triangles": 20060
   }
 }

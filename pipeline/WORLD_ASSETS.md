@@ -180,3 +180,20 @@ The user rejected the temporary clockmaker/apothecary reskins. They are now unpl
 `haverlund-square-ground/v3/model.blend` deliberately revises the landing, park and promenade from preserved v2, with local 4 m sections and the existing packed materials. Its normal audited build remains authoritative. Source records in the same pack describe the terrain cut, masonry finish and frontage alignment. Existing market buildings, Rootwell and the fixed real-light system retain their preceding asset versions.
 
 For tightly nested authored details, a mesh may set Blender custom property **`illustrated_edges = false`**. The imported extras suppress the expanded ink hull on that mesh only; modeled rims and the rest of the asset retain their appearance. Use this for fine clockwork or roof plates where an extra silhouette would overlap adjacent surfaces. Lamp glass, ordinary glazing and opaque backing panes must remain separate meshes when a fixture uses a material override.
+
+## Market shops, second pass — 2026-11-12
+
+Morning Loaf, The Pantry and Finch & Thread are furnished again, at the clockmaker's level of detail or above, from the [shop-interiors v2 source pack](../art/source/world/shop-interiors/v2/README.md).
+
+- **Masters:** 48 masters (31 new ids, 17 new versions) and three storefronts at v3. The storefronts have:
+  - deepened, dressed windows behind real glass, with gilt lettering;
+  - each shop's own joinery colour;
+  - an awning or valance, window boxes or crates, hanging baskets and bracket signs.
+- **Shared kit:** the pieces share `interior_kit.py`. Plain colours are cells of one palette atlas, with `_fine` materials for small parts that must not grow an ink outline. Painted surfaces are either reductions of the detail library or deterministic paintings (metro tile, marble, regency stripe, rug, gingham).
+- **Kit helpers:**
+  - turned, swept and draped forms;
+  - an `attach()` for deliberate edits of saved masters;
+  - `--redo`, which is refused unless the master is byte-identical to the record's own output.
+- **Fixtures:** keep one lamp-glass mesh each. Pendants, chandeliers and the rug set `casts_shadow: false`.
+
+Room documents are version 4 (v3 archived). See the [review](reviews/2026-11-12-market-shops.md).

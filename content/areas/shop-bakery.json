@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "shop-bakery",
   "title": "Morning Loaf",
-  "version": 3,
+  "version": 4,
   "size": [
     12,
     12
@@ -45,8 +45,8 @@
       "id": "shop-pendant-1",
       "zone": "shop-floor",
       "at": [
-        4.0,
-        4.2
+        3.4,
+        4.3
       ],
       "style": "fixture",
       "stand": [
@@ -60,8 +60,38 @@
       "id": "shop-pendant-2",
       "zone": "shop-floor",
       "at": [
-        8.4,
-        8.2
+        7.75,
+        7.55
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    },
+    {
+      "id": "shop-pendant-3",
+      "zone": "shop-floor",
+      "at": [
+        10.3,
+        2.9
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    },
+    {
+      "id": "shop-pendant-4",
+      "zone": "shop-floor",
+      "at": [
+        3.2,
+        7.45
       ],
       "style": "fixture",
       "stand": [
@@ -75,13 +105,13 @@
       "id": "oven-fire",
       "zone": "shop-floor",
       "at": [
-        2.6,
-        9.5
+        2.75,
+        9.4
       ],
       "style": "fixture",
       "stand": [
-        3,
-        8
+        4,
+        9
       ],
       "automatic": true,
       "requires": "field-tablet",
@@ -105,8 +135,8 @@
         "id": "oven",
         "asset": "bakery-oven",
         "at": [
-          2.6,
-          10.5
+          2.75,
+          10.45
         ],
         "turn": 0,
         "height": 0.0,
@@ -114,11 +144,11 @@
         "solid": true
       },
       {
-        "id": "bread-rack-north",
-        "asset": "bakery-bread-rack",
+        "id": "proving-cabinet",
+        "asset": "bakery-proving-cabinet",
         "at": [
-          -0.25,
-          8.9
+          -0.2,
+          9.95
         ],
         "turn": 90,
         "height": 0.0,
@@ -126,11 +156,11 @@
         "solid": true
       },
       {
-        "id": "bread-rack-south",
-        "asset": "bakery-bread-rack",
+        "id": "flour-sacks",
+        "asset": "bakery-flour-sacks",
         "at": [
-          -0.25,
-          6.0
+          0.06,
+          8.15
         ],
         "turn": 90,
         "height": 0.0,
@@ -138,11 +168,35 @@
         "solid": true
       },
       {
-        "id": "serving-counter",
-        "asset": "bakery-counter",
+        "id": "dresser",
+        "asset": "bakery-dresser",
         "at": [
-          8.0,
-          5.5
+          -0.22,
+          5.6
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "cafe-window",
+        "asset": "bakery-cafe-table",
+        "at": [
+          0.5,
+          3.0
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "cake-table",
+        "asset": "bakery-cake-table",
+        "at": [
+          3.4,
+          4.3
         ],
         "turn": 0,
         "height": 0.0,
@@ -153,8 +207,8 @@
         "id": "proving-table",
         "asset": "bakery-proving-table",
         "at": [
-          3.9,
-          6.6
+          3.2,
+          7.45
         ],
         "turn": 0,
         "height": 0.0,
@@ -162,11 +216,95 @@
         "solid": true
       },
       {
-        "id": "flour-sacks",
-        "asset": "bakery-flour-sacks",
+        "id": "mixer",
+        "asset": "bakery-mixer",
         "at": [
-          10.5,
-          10.4
+          5.2,
+          10.3
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "serving-counter",
+        "asset": "bakery-counter",
+        "at": [
+          7.75,
+          7.9
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "bread-wall",
+        "asset": "bakery-bread-wall",
+        "at": [
+          8.05,
+          11.19
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "cooling-rack",
+        "asset": "bakery-cooling-rack",
+        "at": [
+          10.8,
+          9.95
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "cafe-front",
+        "asset": "bakery-cafe-table",
+        "at": [
+          10.3,
+          1.7
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "cafe-middle",
+        "asset": "bakery-cafe-table",
+        "at": [
+          10.3,
+          4.15
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "pretzel-stand",
+        "asset": "bakery-pretzel-stand",
+        "at": [
+          7.6,
+          2.3
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "gift-stand",
+        "asset": "bakery-gift-stand",
+        "at": [
+          8.85,
+          4.75
         ],
         "turn": 0,
         "height": 0.0,
@@ -177,33 +315,55 @@
         "id": "bake-board-model",
         "asset": "shop-chalk-board",
         "at": [
-          7.6,
+          8.05,
           11.36
         ],
         "turn": 0,
-        "height": 2.35,
+        "height": 2.85,
         "scale": 1
       },
       {
         "id": "shop-pendant-1-model",
-        "asset": "clockshop-brass-pendant",
+        "asset": "bakery-pendant",
         "at": [
-          4.0,
-          4.2
+          3.4,
+          4.3
         ],
         "turn": 0,
-        "height": 3.7,
+        "height": 4.1,
         "scale": 1
       },
       {
         "id": "shop-pendant-2-model",
-        "asset": "clockshop-brass-pendant",
+        "asset": "bakery-pendant",
         "at": [
-          8.4,
-          8.2
+          7.75,
+          7.55
         ],
         "turn": 0,
-        "height": 3.7,
+        "height": 4.1,
+        "scale": 1
+      },
+      {
+        "id": "shop-pendant-3-model",
+        "asset": "bakery-pendant",
+        "at": [
+          10.3,
+          2.9
+        ],
+        "turn": 0,
+        "height": 4.1,
+        "scale": 1
+      },
+      {
+        "id": "shop-pendant-4-model",
+        "asset": "bakery-pendant",
+        "at": [
+          3.2,
+          7.45
+        ],
+        "turn": 0,
+        "height": 4.1,
         "scale": 1
       }
     ],
@@ -211,20 +371,32 @@
       {
         "id": "shop-pendant-1",
         "asset": "shop-pendant-1-model",
-        "range": 7,
-        "energy": 1.2
+        "range": 6.5,
+        "energy": 1.1
       },
       {
         "id": "shop-pendant-2",
         "asset": "shop-pendant-2-model",
-        "range": 7,
-        "energy": 1.2
+        "range": 6.5,
+        "energy": 1.1
+      },
+      {
+        "id": "shop-pendant-3",
+        "asset": "shop-pendant-3-model",
+        "range": 6.5,
+        "energy": 1.1
+      },
+      {
+        "id": "shop-pendant-4",
+        "asset": "shop-pendant-4-model",
+        "range": 6.5,
+        "energy": 1.1
       },
       {
         "id": "oven-fire",
         "asset": "oven",
-        "range": 4.5,
-        "energy": 1.1
+        "range": 5.0,
+        "energy": 1.2
       }
     ],
     "links": [
@@ -264,29 +436,56 @@
       {
         "id": "bread-oven",
         "at": [
-          3,
-          8
+          1,
+          9
         ],
         "title": "The oven",
-        "text": "Warm right through the brick. Somebody has chalked a row of ticks on the flue, then rubbed half of them out."
+        "text": "Warm right through the brick. KETTERING 1885 on the brass plate, polished where a sleeve rubs it. Somebody has chalked a row of ticks on the chimney, then rubbed half of them out."
       },
       {
         "id": "bread-racks",
         "at": [
-          1,
-          7
+          8,
+          10
         ],
-        "title": "The racks",
-        "text": "Tin loaves on the bottom, rounds above, baguettes standing in the top like umbrellas in a stand. A paper tag on the end of each shelf says what time it came out."
+        "title": "The bread wall",
+        "text": "Rounds on the left, tins on the right, plaits in the middle where people can see them. Each basket has a price tag, and a time pencilled on the back of the tag."
       },
       {
         "id": "proving-bowls",
         "at": [
-          4,
-          5
+          3,
+          6
         ],
-        "title": "Proving bowls",
-        "text": "Dough rising under a damp cloth. One bowl has a pencil mark on the rim, a finger’s width above the dough."
+        "title": "Proving baskets",
+        "text": "Dough rising in cane baskets. One basket has a pencil line inside the rim, a finger’s width above the dough."
+      },
+      {
+        "id": "cake-table",
+        "at": [
+          2,
+          3
+        ],
+        "title": "The cake table",
+        "text": "Three tiers. On the top, a wedding cake with sugar roses and a card: FOR THE HALL — SATURDAY. DO NOT TOUCH. That has been underlined twice."
+      },
+      {
+        "id": "station-clock",
+        "at": [
+          1,
+          1
+        ],
+        "title": "The clock",
+        "text": "Four minutes fast. On the frame, in pencil: so the bread is never late."
+      },
+      {
+        "id": "mixer",
+        "at": [
+          5,
+          9
+        ],
+        "title": "The mixer",
+        "text": "Green enamel, a brass badge that says No 2, and a hand wheel for when the power drops. There is no No 1 anywhere in the shop."
       }
     ],
     "city_network": true
@@ -313,16 +512,20 @@
       "phantom": "woman",
       "at": [
         8,
-        7
+        9
       ],
       "route": [
         [
           8,
-          7
+          9
         ],
         [
           3,
-          8
+          9
+        ],
+        [
+          10,
+          9
         ]
       ],
       "speed": 0.8,
@@ -336,6 +539,11 @@
           "target": "oven",
           "activity": "inspect",
           "seconds": 10.0
+        },
+        {
+          "target": "cooling-rack",
+          "activity": "inspect",
+          "seconds": 6.0
         }
       ]
     }

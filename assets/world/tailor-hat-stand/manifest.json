@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "asset": "tailor-hat-stand",
+  "version": 1,
+  "source": "art/source/world/tailor-hat-stand/v1/model.blend",
+  "source_sha256": "d430b3262f0b8f9a29ac0a323e424f9c90afc7680a552d3f24a69d98532ca80d",
+  "runtime": "assets/world/tailor-hat-stand/model.glb",
+  "runtime_sha256": "283489320fc4e9907f3b082d7497240764f886a24e0f815f93af53da62b2c043",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.316857129335403,
+      -0.0107627725228667,
+      -0.336961567401886,
+      0.71043998003006,
+      1.8400000333786,
+      0.330000013113022
+    ],
+    "geometry_sha256": "5f2a60a7ca1979f6a42459fc99362cd5409364e18a935ad16f81311c710f8873",
+    "material_records": {
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_paint",
+      "shops_paint_fine"
+    ],
+    "meshes": 2,
+    "triangles": 2012
+  }
+}

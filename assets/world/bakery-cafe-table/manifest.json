@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "bakery-cafe-table",
+  "version": 1,
+  "source": "art/source/world/bakery-cafe-table/v1/model.blend",
+  "source_sha256": "8533e19af39d4ac4d44463568c1c6a96c8550a17fd2ee5fc7b20a372643354fd",
+  "runtime": "assets/world/bakery-cafe-table/model.glb",
+  "runtime_sha256": "ae353ba2198de2c02677effec517cf9c9e43c9dc554460050ce21fac644ab633",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.846939325332642,
+      -0.0129328770563006,
+      -0.349999994039536,
+      0.846939265727997,
+      0.967713713645935,
+      0.349999994039536
+    ],
+    "geometry_sha256": "1df04e464105b63488dd595ad209ffe74defcc6d78219a1e327095ca3e706dc9",
+    "material_records": {
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_gloss_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_marble": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 2500,
+        "texture_rgba_sha256": "3a318a8a653c1a28ec4a75043adbaf405b7145c51420ded086d8c7823debabd8"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_marble",
+      "shops_paint",
+      "shops_paint_fine"
+    ],
+    "meshes": 5,
+    "triangles": 5852
+  }
+}

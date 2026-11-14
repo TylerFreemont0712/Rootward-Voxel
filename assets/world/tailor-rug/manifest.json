@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "asset": "tailor-rug",
+  "version": 1,
+  "source": "art/source/world/tailor-rug/v1/model.blend",
+  "source_sha256": "0cd3145aa226fcc52371fcc758ca9c9d83a0181e0adf0d918279913c1362672a",
+  "runtime": "assets/world/tailor-rug/model.glb",
+  "runtime_sha256": "c56b89f8a6d12476b187b6b75ba23bbb485ea7b201ca4014fb7d62d6d10289b6",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.45999991893768,
+      0.0020000000949949,
+      -1.0,
+      1.45999991893768,
+      0.0140000004321337,
+      1.0
+    ],
+    "geometry_sha256": "c48d2d01ea88a0f09134ac9c6ca885c2652c5cbcb30f965b40a97c890e65a6dd",
+    "material_records": {
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_rug_wine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9500,
+        "texture_rgba_sha256": "f281979225b9e9dc0ecc75654cc611fe05c1faa4a673e78448ddf38207921447"
+      }
+    },
+    "materials": [
+      "shops_paint_fine",
+      "shops_rug_wine"
+    ],
+    "meshes": 2,
+    "triangles": 972
+  }
+}

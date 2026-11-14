@@ -1,83 +1,83 @@
 {
   "schema": 1,
   "asset": "bakery-flour-sacks",
-  "version": 1,
-  "source": "art/source/world/bakery-flour-sacks/v1/model.blend",
-  "source_sha256": "79a50e5689b35c8f89d7280634e46a1ab814cbd1bbdb0d345c36b19386314383",
+  "version": 2,
+  "source": "art/source/world/bakery-flour-sacks/v2/model.blend",
+  "source_sha256": "45babf235fd4ed07deea5a9fec3b5918b929348164cc15de14834a51bdd47911",
   "runtime": "assets/world/bakery-flour-sacks/model.glb",
-  "runtime_sha256": "f4b2cfbcc7764a92e594fe4b2d5419bc0f7d668ca25345786c18e44004a6efeb",
+  "runtime_sha256": "6bc9ecfac32f85dd656f660843924cd6edf7b0329a7c931dbee0b6d42fc4caf1",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
     "bounds": [
-      -0.754104495048523,
-      -0.0370000004768372,
-      -0.516913175582886,
-      0.755988478660583,
-      1.28999996185303,
-      0.659999966621399
+      -0.850000023841858,
+      0.0,
+      -0.5676589012146,
+      0.896284103393555,
+      0.865000009536743,
+      0.5
     ],
-    "geometry_sha256": "ea3ebe6049f85cdc75aa576876eb68734ad1155613bdccb7db2b027d98afdcc4",
+    "geometry_sha256": "633ea960b1ea71d7005692dbaa33c5b256929e934a60fe6edcbb3e87219c622a",
     "material_records": {
-      "shop_brass": {
+      "shops_burlap": {
         "albedo": [
-          7098,
-          5412,
-          2588,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 4500,
-        "texture_rgba_sha256": ""
+        "roughness": 9700,
+        "texture_rgba_sha256": "12da2a6af22927a7e5bd04a8f8c4827d24314c3b6d1ac19597893cab33bf3002"
       },
-      "shop_flour": {
+      "shops_metal": {
         "albedo": [
-          9451,
-          9255,
-          8784,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_ink": {
+      "shops_oak": {
         "albedo": [
-          1451,
-          1647,
-          1569,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
       },
-      "shop_paper": {
+      "shops_paint": {
         "albedo": [
-          9373,
-          9020,
-          8118,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_sack": {
+      "shops_paint_fine": {
         "albedo": [
-          7882,
-          7059,
-          5412,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       }
     },
     "materials": [
-      "shop_brass",
-      "shop_flour",
-      "shop_ink",
-      "shop_paper",
-      "shop_sack"
+      "shops_burlap",
+      "shops_metal",
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_fine"
     ],
     "meshes": 5,
-    "triangles": 480
+    "triangles": 25361
   }
 }

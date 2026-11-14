@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "shop-tailor",
   "title": "Finch & Thread",
-  "version": 3,
+  "version": 4,
   "size": [
     12,
     12
@@ -45,8 +45,8 @@
       "id": "shop-pendant-1",
       "zone": "shop-floor",
       "at": [
-        4.5,
-        4.0
+        5.6,
+        7.0
       ],
       "style": "fixture",
       "stand": [
@@ -60,8 +60,23 @@
       "id": "shop-pendant-2",
       "zone": "shop-floor",
       "at": [
-        7.0,
-        8.4
+        2.0,
+        5.8
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    },
+    {
+      "id": "shop-pendant-3",
+      "zone": "shop-floor",
+      "at": [
+        9.3,
+        5.2
       ],
       "style": "fixture",
       "stand": [
@@ -75,13 +90,13 @@
       "id": "sewing-lamp",
       "zone": "shop-floor",
       "at": [
-        9.05,
-        8.65
+        4.95,
+        10.77
       ],
       "style": "fixture",
       "stand": [
-        9,
-        7
+        5,
+        9
       ],
       "automatic": true,
       "requires": "field-tablet",
@@ -102,25 +117,13 @@
     "furniture": [],
     "assets": [
       {
-        "id": "cloth-shelves",
-        "asset": "tailor-cloth-shelves",
+        "id": "fitting-room",
+        "asset": "tailor-fitting-room",
         "at": [
-          -0.22,
-          3.0
+          0.22,
+          10.78
         ],
-        "turn": 90,
-        "height": 0.0,
-        "scale": 1,
-        "solid": true
-      },
-      {
-        "id": "cheval-mirror",
-        "asset": "tailor-mirror",
-        "at": [
-          -0.22,
-          9.4
-        ],
-        "turn": 90,
+        "turn": 0,
         "height": 0.0,
         "scale": 1,
         "solid": true
@@ -129,10 +132,93 @@
         "id": "spool-wall",
         "asset": "tailor-spool-wall",
         "at": [
-          2.8,
-          11.38
+          2.75,
+          11.22
         ],
         "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "sewing-table",
+        "asset": "tailor-sewing-table",
+        "at": [
+          5.25,
+          10.75
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "order-rail",
+        "asset": "tailor-order-rail",
+        "at": [
+          8.25,
+          11.2
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "hat-stand",
+        "asset": "tailor-hat-stand",
+        "at": [
+          10.85,
+          10.9
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "cheval-mirror",
+        "asset": "tailor-mirror",
+        "at": [
+          0.55,
+          8.6
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "settee",
+        "asset": "tailor-settee",
+        "at": [
+          -0.05,
+          5.8
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "rug",
+        "asset": "tailor-rug",
+        "at": [
+          2.0,
+          5.8
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1
+      },
+      {
+        "id": "cloth-shelves",
+        "asset": "tailor-cloth-shelves",
+        "at": [
+          -0.2,
+          2.2
+        ],
+        "turn": 90,
         "height": 0.0,
         "scale": 1,
         "solid": true
@@ -142,19 +228,7 @@
         "asset": "tailor-cutting-table",
         "at": [
           5.6,
-          6.6
-        ],
-        "turn": 0,
-        "height": 0.0,
-        "scale": 1,
-        "solid": true
-      },
-      {
-        "id": "dress-form-window",
-        "asset": "tailor-dress-form",
-        "at": [
-          9.8,
-          2.6
+          7.0
         ],
         "turn": 0,
         "height": 0.0,
@@ -165,20 +239,56 @@
         "id": "dress-form-coat",
         "asset": "tailor-dress-form",
         "at": [
-          2.2,
-          7.4
+          3.3,
+          8.4
         ],
-        "turn": 90,
+        "turn": 0,
         "height": 0.0,
         "scale": 1,
         "solid": true
       },
       {
-        "id": "sewing-table",
-        "asset": "tailor-sewing-table",
+        "id": "dress-form-window",
+        "asset": "tailor-dress-form-gown",
         "at": [
-          9.4,
-          8.6
+          9.9,
+          2.3
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "dress-form-suit",
+        "asset": "tailor-dress-form-suit",
+        "at": [
+          4.1,
+          3.6
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "haberdashery",
+        "asset": "tailor-counter",
+        "at": [
+          9.3,
+          5.3
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "pressing",
+        "asset": "tailor-pressing",
+        "at": [
+          10.2,
+          8.5
         ],
         "turn": 0,
         "height": 0.0,
@@ -189,33 +299,44 @@
         "id": "order-board-model",
         "asset": "shop-chalk-board",
         "at": [
-          8.4,
+          8.25,
           11.36
         ],
         "turn": 0,
-        "height": 2.35,
+        "height": 2.95,
         "scale": 1
       },
       {
         "id": "shop-pendant-1-model",
-        "asset": "clockshop-brass-pendant",
+        "asset": "tailor-chandelier",
         "at": [
-          4.5,
-          4.0
+          5.6,
+          7.0
         ],
         "turn": 0,
-        "height": 3.7,
+        "height": 4.1,
         "scale": 1
       },
       {
         "id": "shop-pendant-2-model",
-        "asset": "clockshop-brass-pendant",
+        "asset": "tailor-chandelier",
         "at": [
-          7.0,
-          8.4
+          2.0,
+          5.8
         ],
         "turn": 0,
-        "height": 3.7,
+        "height": 4.1,
+        "scale": 1
+      },
+      {
+        "id": "shop-pendant-3-model",
+        "asset": "tailor-chandelier",
+        "at": [
+          9.3,
+          5.2
+        ],
+        "turn": 0,
+        "height": 4.1,
         "scale": 1
       }
     ],
@@ -223,14 +344,20 @@
       {
         "id": "shop-pendant-1",
         "asset": "shop-pendant-1-model",
-        "range": 7,
-        "energy": 1.2
+        "range": 6.5,
+        "energy": 1.1
       },
       {
         "id": "shop-pendant-2",
         "asset": "shop-pendant-2-model",
-        "range": 7,
-        "energy": 1.2
+        "range": 6.5,
+        "energy": 1.1
+      },
+      {
+        "id": "shop-pendant-3",
+        "asset": "shop-pendant-3-model",
+        "range": 6.5,
+        "energy": 1.1
       },
       {
         "id": "sewing-lamp",
@@ -286,7 +413,7 @@
         "id": "coat-in-progress",
         "at": [
           3,
-          6
+          8
         ],
         "title": "A coat on the stand",
         "text": "Navy, tacked together with white thread. The sleeves are pinned to the form’s shoulders, waiting. A paper tag: BRAUM — NOT BY LUNCH."
@@ -299,6 +426,33 @@
         ],
         "title": "The thread wall",
         "text": "A hundred and twenty-eight spools in rows of sixteen. Every row runs light to dark, except one, where two blues have swapped."
+      },
+      {
+        "id": "gown",
+        "at": [
+          9,
+          2
+        ],
+        "title": "The gown in the window",
+        "text": "Wine velvet, with a blush sash. A card pinned to the hem: FOR THE BAND’S SINGER — SATURDAY. HEM NOT DONE."
+      },
+      {
+        "id": "fitting-room",
+        "at": [
+          1,
+          9
+        ],
+        "title": "The fitting booth",
+        "text": "A curtain, a stool and a looking glass. Pinned inside the curtain, a list of measurements in a small hand, with one figure crossed out three times."
+      },
+      {
+        "id": "buttons",
+        "at": [
+          9,
+          4
+        ],
+        "title": "Buttons",
+        "text": "Hundreds of them under the glass, sorted by colour and then by size. The fullest tray is labelled ODDS."
       }
     ],
     "city_network": true
@@ -333,8 +487,12 @@
           8
         ],
         [
+          5,
+          9
+        ],
+        [
           9,
-          7
+          6
         ]
       ],
       "speed": 0.7,
@@ -348,6 +506,11 @@
           "target": "sewing-table",
           "activity": "inspect",
           "seconds": 9.0
+        },
+        {
+          "target": "haberdashery",
+          "activity": "trade",
+          "seconds": 7.0
         }
       ]
     }

@@ -1,0 +1,19 @@
+{
+  "record": "art/source/world/shop-interiors/v2/revise_fronts.py",
+  "kit": "art/source/world/shop-interiors/v2/interior_kit.py",
+  "derived_from": "art/source/world/haverlund-bakery/v2/model.blend",
+  "derived_from_sha256": "3d8e4548eeec57a9a1dd35f6e7227143b2d4bb352035e62aea28b37e3dcfd63e",
+  "removed_faces": 786,
+  "joinery": "7a2e2a",
+  "windows": [
+    [
+      -2.14,
+      -0.445
+    ],
+    [
+      1.045,
+      2.14
+    ]
+  ],
+  "source_sha256": "844cafea54ca5e49af0e286241a12de6f99dbbcb11039f73dcd35b95c74f6047"
+}

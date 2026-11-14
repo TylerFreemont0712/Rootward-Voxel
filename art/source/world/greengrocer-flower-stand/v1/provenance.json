@@ -1,0 +1,9 @@
+{
+  "record": "art/source/world/shop-interiors/v2/author_greengrocer.py",
+  "kit": "art/source/world/shop-interiors/v2/interior_kit.py",
+  "date": "2026-11-12",
+  "units": "metres",
+  "front": "Blender -Y",
+  "palette": "textures/shops-palette.png",
+  "source_sha256": "844a4bc712da14c175b1291ed3b6ea056a4c416ac9f813d00d03e5bf84ae1d49"
+}

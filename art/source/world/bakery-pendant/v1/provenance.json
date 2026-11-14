@@ -1,0 +1,9 @@
+{
+  "record": "art/source/world/shop-interiors/v2/author_bakery.py",
+  "kit": "art/source/world/shop-interiors/v2/interior_kit.py",
+  "date": "2026-11-12",
+  "units": "metres",
+  "front": "Blender -Y",
+  "palette": "textures/shops-palette.png",
+  "source_sha256": "5c80b6779b9658a17cb10bb3d2d82508f50880f06e3d587cdee796d2d5747bf8"
+}

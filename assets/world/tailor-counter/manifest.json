@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "asset": "tailor-counter",
+  "version": 1,
+  "source": "art/source/world/tailor-counter/v1/model.blend",
+  "source_sha256": "bf35e2a3ab2164342a4efb87d1afec58f433fdc9a33fcabe9fdce436f8638b8e",
+  "runtime": "assets/world/tailor-counter/model.glb",
+  "runtime_sha256": "38fb3f68da12f88cb1d1e36c7d1bcf37ed1c4d9ce068efd0665ec7ee64a02938",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.41999995708466,
+      0.0,
+      -0.419999986886978,
+      1.41999995708466,
+      1.5,
+      0.419999986886978
+    ],
+    "geometry_sha256": "dfc5627569663803766a0eb67074193d263dde15c9d9b3e488cd56591b105e83",
+    "material_records": {
+      "shops_clear_glass": {
+        "albedo": [
+          8902,
+          9333,
+          9176,
+          1600
+        ],
+        "roughness": 800,
+        "texture_rgba_sha256": ""
+      },
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_gloss_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shops_oak_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "4ea052a28fbfc329afb70b626b4eae760d9d02be8e556080ec0e87f88b7bf81b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_navy": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "a280b37d03be882dcc27c2292ebd82b3d17ca5c8021af0749a9bc9600096a63c"
+      }
+    },
+    "materials": [
+      "shops_clear_glass",
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_metal",
+      "shops_oak",
+      "shops_oak_dark",
+      "shops_paint",
+      "shops_paint_fine",
+      "shops_paint_navy"
+    ],
+    "meshes": 9,
+    "triangles": 9932
+  }
+}

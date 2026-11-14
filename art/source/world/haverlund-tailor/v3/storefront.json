@@ -1,0 +1,19 @@
+{
+  "record": "art/source/world/shop-interiors/v2/revise_fronts.py",
+  "kit": "art/source/world/shop-interiors/v2/interior_kit.py",
+  "derived_from": "art/source/world/haverlund-tailor/v2/model.blend",
+  "derived_from_sha256": "7f0049bdf55eb36a76317926db3434626501647ab1385c917e7813e285a5856e",
+  "removed_faces": 978,
+  "joinery": "3d5579",
+  "windows": [
+    [
+      -2.14,
+      -1.045
+    ],
+    [
+      0.445,
+      2.14
+    ]
+  ],
+  "source_sha256": "caa04a9355ffe5cd3d2bd0796d3eca7b3213c8b1d8bc2e7a64cb33ed68f3c53b"
+}

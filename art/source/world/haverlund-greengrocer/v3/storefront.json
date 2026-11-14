@@ -1,0 +1,19 @@
+{
+  "record": "art/source/world/shop-interiors/v2/revise_fronts.py",
+  "kit": "art/source/world/shop-interiors/v2/interior_kit.py",
+  "derived_from": "art/source/world/haverlund-greengrocer/v2/model.blend",
+  "derived_from_sha256": "506f7563ee2bf6e2352db9642d64b20e9918399b17dc02e7e2b4c970e4881da5",
+  "removed_faces": 1044,
+  "joinery": "2e5a43",
+  "windows": [
+    [
+      -1.94,
+      -0.245
+    ],
+    [
+      1.245,
+      1.94
+    ]
+  ],
+  "source_sha256": "d3941d75c77814a334f5ce3a98359ed85121c0fb548827ea29308ffcb1faf023"
+}

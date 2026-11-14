@@ -1,0 +1,9 @@
+{
+  "record": "art/source/world/shop-interiors/v2/author_tailor.py",
+  "kit": "art/source/world/shop-interiors/v2/interior_kit.py",
+  "date": "2026-11-12",
+  "units": "metres",
+  "front": "Blender -Y",
+  "palette": "textures/shops-palette.png",
+  "source_sha256": "e08c5f83a7c325f22263c345ca4a6c39d320505f295244a7f6062fb1cffd3674"
+}

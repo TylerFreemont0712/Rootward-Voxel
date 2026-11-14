@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "greengrocer-basket-table",
+  "version": 1,
+  "source": "art/source/world/greengrocer-basket-table/v1/model.blend",
+  "source_sha256": "f9e966b99a559bb5341e22c1e54e6206596a2f3349af4611c655ef82324ee990",
+  "runtime": "assets/world/greengrocer-basket-table/model.glb",
+  "runtime_sha256": "ff97218151be8e85ab2178b04f05e80406c6c00572bf5d7dbb7a8772c7df6e3f",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.870000004768372,
+      -0.0119864167645574,
+      -0.471821576356888,
+      0.870000004768372,
+      0.915000021457672,
+      0.471821576356888
+    ],
+    "geometry_sha256": "9b64650c0c3ec7183d418366753d836e7d4959fd586da2b1419bcfb3c90ebba5",
+    "material_records": {
+      "shops_gingham_green": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9000,
+        "texture_rgba_sha256": "d86f3194de76b358688d1d52fb4240980f8404885fcf1c7c476893faf10609f4"
+      },
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_gloss_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_gingham_green",
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_fine"
+    ],
+    "meshes": 6,
+    "triangles": 21001
+  }
+}

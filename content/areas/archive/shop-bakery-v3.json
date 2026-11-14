@@ -1,0 +1,343 @@
+{
+  "schema": 1,
+  "id": "shop-bakery",
+  "title": "Morning Loaf",
+  "version": 3,
+  "size": [
+    12,
+    12
+  ],
+  "spawn": [
+    6,
+    3
+  ],
+  "voice_lesson": true,
+  "terrain": [
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............",
+    "............"
+  ],
+  "buildings": [],
+  "trees": [],
+  "zones": [
+    {
+      "id": "shop-floor",
+      "title": "Morning Loaf",
+      "rect": [
+        0,
+        0,
+        12,
+        12
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "id": "shop-pendant-1",
+      "zone": "shop-floor",
+      "at": [
+        4.0,
+        4.2
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    },
+    {
+      "id": "shop-pendant-2",
+      "zone": "shop-floor",
+      "at": [
+        8.4,
+        8.2
+      ],
+      "style": "fixture",
+      "stand": [
+        6,
+        3
+      ],
+      "automatic": true,
+      "requires": "field-tablet"
+    },
+    {
+      "id": "oven-fire",
+      "zone": "shop-floor",
+      "at": [
+        2.6,
+        9.5
+      ],
+      "style": "fixture",
+      "stand": [
+        3,
+        8
+      ],
+      "automatic": true,
+      "requires": "field-tablet",
+      "title": "Oven fire"
+    }
+  ],
+  "props": [],
+  "interior": {
+    "style": "workshop-square",
+    "shell": "bakery-shell",
+    "zoom": 12,
+    "exit": [
+      6,
+      0
+    ],
+    "exit_direction": "S",
+    "walk_front": 0,
+    "furniture": [],
+    "assets": [
+      {
+        "id": "oven",
+        "asset": "bakery-oven",
+        "at": [
+          2.6,
+          10.5
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "bread-rack-north",
+        "asset": "bakery-bread-rack",
+        "at": [
+          -0.25,
+          8.9
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "bread-rack-south",
+        "asset": "bakery-bread-rack",
+        "at": [
+          -0.25,
+          6.0
+        ],
+        "turn": 90,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "serving-counter",
+        "asset": "bakery-counter",
+        "at": [
+          8.0,
+          5.5
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "proving-table",
+        "asset": "bakery-proving-table",
+        "at": [
+          3.9,
+          6.6
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "flour-sacks",
+        "asset": "bakery-flour-sacks",
+        "at": [
+          10.5,
+          10.4
+        ],
+        "turn": 0,
+        "height": 0.0,
+        "scale": 1,
+        "solid": true
+      },
+      {
+        "id": "bake-board-model",
+        "asset": "shop-chalk-board",
+        "at": [
+          7.6,
+          11.36
+        ],
+        "turn": 0,
+        "height": 2.35,
+        "scale": 1
+      },
+      {
+        "id": "shop-pendant-1-model",
+        "asset": "clockshop-brass-pendant",
+        "at": [
+          4.0,
+          4.2
+        ],
+        "turn": 0,
+        "height": 3.7,
+        "scale": 1
+      },
+      {
+        "id": "shop-pendant-2-model",
+        "asset": "clockshop-brass-pendant",
+        "at": [
+          8.4,
+          8.2
+        ],
+        "turn": 0,
+        "height": 3.7,
+        "scale": 1
+      }
+    ],
+    "lamp_fixtures": [
+      {
+        "id": "shop-pendant-1",
+        "asset": "shop-pendant-1-model",
+        "range": 7,
+        "energy": 1.2
+      },
+      {
+        "id": "shop-pendant-2",
+        "asset": "shop-pendant-2-model",
+        "range": 7,
+        "energy": 1.2
+      },
+      {
+        "id": "oven-fire",
+        "asset": "oven",
+        "range": 4.5,
+        "energy": 1.1
+      }
+    ],
+    "links": [
+      {
+        "id": "square",
+        "at": [
+          6,
+          0
+        ],
+        "approach": [
+          6,
+          1
+        ],
+        "direction": "S",
+        "to": "haverlund-square",
+        "arrival": [
+          36,
+          17
+        ],
+        "facing": "E",
+        "label": "Return to the square",
+        "walk_through": true,
+        "enter": 1,
+        "doors": "shell"
+      }
+    ],
+    "inspections": [
+      {
+        "id": "bake-order",
+        "at": [
+          7,
+          10
+        ],
+        "title": "A note on the bake board",
+        "text": "Pinned to the frame, in pencil, in a hand that presses hard: BOARD. PLEASE. PEOPLE KEEP KNOCKING ON THE BACK DOOR TO ASK WHEN. — A. KETTERING"
+      },
+      {
+        "id": "bread-oven",
+        "at": [
+          3,
+          8
+        ],
+        "title": "The oven",
+        "text": "Warm right through the brick. Somebody has chalked a row of ticks on the flue, then rubbed half of them out."
+      },
+      {
+        "id": "bread-racks",
+        "at": [
+          1,
+          7
+        ],
+        "title": "The racks",
+        "text": "Tin loaves on the bottom, rounds above, baguettes standing in the top like umbrellas in a stand. A paper tag on the end of each shelf says what time it came out."
+      },
+      {
+        "id": "proving-bowls",
+        "at": [
+          4,
+          5
+        ],
+        "title": "Proving bowls",
+        "text": "Dough rising under a damp cloth. One bowl has a pencil mark on the rim, a finger’s width above the dough."
+      }
+    ],
+    "city_network": true
+  },
+  "displays": [
+    {
+      "id": "bake-board",
+      "title": "bake board",
+      "object": "bake-board-model",
+      "at": [
+        7,
+        10
+      ],
+      "commission": "bake-order",
+      "default": [
+        "SECOND BATCH AT 11"
+      ],
+      "zone": "shop-floor"
+    }
+  ],
+  "villagers": [
+    {
+      "id": "ada",
+      "phantom": "woman",
+      "at": [
+        8,
+        7
+      ],
+      "route": [
+        [
+          8,
+          7
+        ],
+        [
+          3,
+          8
+        ]
+      ],
+      "speed": 0.8,
+      "errands": [
+        {
+          "target": "serving-counter",
+          "activity": "trade",
+          "seconds": 8.0
+        },
+        {
+          "target": "oven",
+          "activity": "inspect",
+          "seconds": 10.0
+        }
+      ]
+    }
+  ]
+}

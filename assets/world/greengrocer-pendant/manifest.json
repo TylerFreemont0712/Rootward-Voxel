@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "greengrocer-pendant",
+  "version": 1,
+  "source": "art/source/world/greengrocer-pendant/v1/model.blend",
+  "source_sha256": "aeac1c01ac1152547cb819fe11f42d7cd40767a57a0965ebe746733768f5c3bd",
+  "runtime": "assets/world/greengrocer-pendant/model.glb",
+  "runtime_sha256": "7dc0893e6c39715bd7ed345175cd4d22a8edc3654d420178af73113cb8dff78c",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.314999997615814,
+      -1.21000003814697,
+      -0.314999997615814,
+      0.314999997615814,
+      0.0,
+      0.314999997615814
+    ],
+    "geometry_sha256": "aa938011b5bb609d3266907965b33bb155f20679827ea5a96feb5bcef400299b",
+    "material_records": {
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_lamp_glass": {
+        "albedo": [
+          10000,
+          8392,
+          5922,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_gloss",
+      "shops_lamp_glass",
+      "shops_metal",
+      "shops_paint"
+    ],
+    "meshes": 4,
+    "triangles": 1476
+  }
+}

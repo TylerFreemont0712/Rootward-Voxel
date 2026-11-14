@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "asset": "greengrocer-basket-stack",
+  "version": 1,
+  "source": "art/source/world/greengrocer-basket-stack/v1/model.blend",
+  "source_sha256": "d263f19b83f86133a11955a57421554f8a235ee78e26d3e29cf8172735d30d10",
+  "runtime": "assets/world/greengrocer-basket-stack/model.glb",
+  "runtime_sha256": "9c16a63b35bc1f435b2e4031cc79f52e5bc538abf18e33407c96dd639832baaf",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.300000011920929,
+      0.0,
+      -0.224999994039536,
+      0.356000006198883,
+      1.04999995231628,
+      0.350000023841858
+    ],
+    "geometry_sha256": "e2faa92f53f484ad903af2baa11f977b19198ef27df2e84ce5938f4ce0ed8cd0",
+    "material_records": {
+      "shops_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_fine"
+    ],
+    "meshes": 3,
+    "triangles": 7508
+  }
+}

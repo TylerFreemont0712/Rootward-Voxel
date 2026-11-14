@@ -1,11 +1,11 @@
 {
   "schema": 1,
   "asset": "greengrocer-shell",
-  "version": 1,
-  "source": "art/source/world/greengrocer-shell/v1/model.blend",
-  "source_sha256": "af1124f9abb4be076d25bc55f4d748964c9540a6ba5be09c1464f0420b07e10d",
+  "version": 2,
+  "source": "art/source/world/greengrocer-shell/v2/model.blend",
+  "source_sha256": "e0e4463910a52a43c2594cf2691f9cb9a0718166627b8dfa5699c714b803b347",
   "runtime": "assets/world/greengrocer-shell/model.glb",
-  "runtime_sha256": "b760b44066313f59e660da6fa01a51ffb324546d842abd20319a3eada7f80c31",
+  "runtime_sha256": "ac4d7d647bbac827d7287b042cedad5a4e63499b6e0bbed76f6cf119c68c0423",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
@@ -13,33 +13,73 @@
       -0.740000009536743,
       -0.25,
       -11.7399997711182,
-      11.6000003814697,
-      4.16000032424927,
-      0.599999904632568
+      11.6499996185303,
+      4.19999980926514,
+      0.650000095367432
     ],
-    "geometry_sha256": "0c990cb3ba8c24b0a4a495b71f20256358918bba084e2d08b848fa9202090f25",
+    "geometry_sha256": "8786378f8fa8a192ae31c2d368e9e4fa40a0e61e279212f58ce0637d4b867388",
     "material_records": {
-      "shop_brass": {
+      "shops_clear_glass": {
         "albedo": [
-          7098,
-          5412,
-          2588,
+          8902,
+          9333,
+          9176,
+          1600
+        ],
+        "roughness": 800,
+        "texture_rgba_sha256": ""
+      },
+      "shops_floor_flags": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 4500,
-        "texture_rgba_sha256": ""
+        "roughness": 8200,
+        "texture_rgba_sha256": "f941b1f207c57ee7845ac7de975562f91530049fe0260ace5fc64051b83a6d58"
       },
-      "shop_clear_glass": {
+      "shops_gloss": {
         "albedo": [
-          9020,
-          9333,
-          8980,
-          1200
+          10000,
+          10000,
+          10000,
+          10000
         ],
-        "roughness": 1500,
-        "texture_rgba_sha256": ""
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_oak": {
+      "shops_gloss_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_green_boards": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": "21dcb93ea341fcf646f033df755ad83d383802c6e6e132560c33b9cfe2ab6e58"
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_oak": {
         "albedo": [
           10000,
           10000,
@@ -49,79 +89,72 @@
         "roughness": 6600,
         "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
       },
-      "shop_pantry_door": {
-        "albedo": [
-          2431,
-          4667,
-          4000,
-          10000
-        ],
-        "roughness": 7000,
-        "texture_rgba_sha256": ""
-      },
-      "shop_pantry_floor": {
+      "shops_paint": {
         "albedo": [
           10000,
           10000,
           10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": "f941b1f207c57ee7845ac7de975562f91530049fe0260ace5fc64051b83a6d58"
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_pantry_trim": {
+      "shops_paint_bottle": {
         "albedo": [
-          8471,
-          7804,
-          6039,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 6000,
-        "texture_rgba_sha256": ""
+        "roughness": 6200,
+        "texture_rgba_sha256": "c865709586fb0d1525dce25fb6587d976a9b57f198a1dd317988770521079df9"
       },
-      "shop_pantry_wainscot": {
+      "shops_paint_cream_paint": {
         "albedo": [
-          2431,
-          4667,
-          4000,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 7400,
-        "texture_rgba_sha256": ""
+        "roughness": 6200,
+        "texture_rgba_sha256": "cd58f5404bf97764fb18abf4d51d3efd9589b777057893b7213c25d033391b6f"
       },
-      "shop_pantry_wall": {
+      "shops_paint_fine": {
         "albedo": [
-          9059,
-          8941,
-          8118,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 9300,
-        "texture_rgba_sha256": ""
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_wood_dark": {
+      "shops_sage_paper": {
         "albedo": [
-          2902,
-          2000,
-          1412,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 9000,
+        "texture_rgba_sha256": "55c3f8577036d8e6d68bbf3e951c8d401883203e8865f91d86a0b0f76339b554"
       }
     },
     "materials": [
-      "shop_brass",
-      "shop_clear_glass",
-      "shop_oak",
-      "shop_pantry_door",
-      "shop_pantry_floor",
-      "shop_pantry_trim",
-      "shop_pantry_wainscot",
-      "shop_pantry_wall",
-      "shop_wood_dark"
+      "shops_clear_glass",
+      "shops_floor_flags",
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_green_boards",
+      "shops_metal",
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_bottle",
+      "shops_paint_cream_paint",
+      "shops_paint_fine",
+      "shops_sage_paper"
     ],
-    "meshes": 10,
-    "triangles": 3164
+    "meshes": 14,
+    "triangles": 56172
   }
 }

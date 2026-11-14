@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "asset": "greengrocer-barrels",
+  "version": 1,
+  "source": "art/source/world/greengrocer-barrels/v1/model.blend",
+  "source_sha256": "c538d1406d21adb8a3c0d36442b1566a7d3b68e46446e33a62d6aea2a038ab0f",
+  "runtime": "assets/world/greengrocer-barrels/model.glb",
+  "runtime_sha256": "2b1990f2e10c7e176d7d6a0c9af5c73e75ce5a1a13669132d563a24fcee4664c",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.15441262722015,
+      -0.000786727294325829,
+      -0.508442401885986,
+      1.15441262722015,
+      0.819999992847443,
+      0.35441267490387
+    ],
+    "geometry_sha256": "46c5ef2f111757a68f24ac077631a88a3dabd5b4a3db3106fc5e60ff39118599",
+    "material_records": {
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_oak_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "4ea052a28fbfc329afb70b626b4eae760d9d02be8e556080ec0e87f88b7bf81b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_gloss",
+      "shops_metal",
+      "shops_oak_dark",
+      "shops_paint",
+      "shops_paint_fine"
+    ],
+    "meshes": 5,
+    "triangles": 16482
+  }
+}

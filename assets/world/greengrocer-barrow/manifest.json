@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "greengrocer-barrow",
+  "version": 1,
+  "source": "art/source/world/greengrocer-barrow/v1/model.blend",
+  "source_sha256": "4ca0d11a0de66574123e0b3fb51fb8ad63b16751e0e4e1bfe2aacb61efe9e195",
+  "runtime": "assets/world/greengrocer-barrow/model.glb",
+  "runtime_sha256": "b6c70f954e150c0a9bc6be150851dfa741ae53eca987dc2fe242de48b4065956",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -1.95502209663391,
+      -0.0120000001043081,
+      -0.639999985694885,
+      0.949999988079071,
+      1.05400002002716,
+      0.639999985694885
+    ],
+    "geometry_sha256": "a6fcc6d8c7949122b835175f92c6940589c35dc9c29f9f19ca4b2704e3046acd",
+    "material_records": {
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_gloss_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_bottle": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "c865709586fb0d1525dce25fb6587d976a9b57f198a1dd317988770521079df9"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_metal",
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_bottle",
+      "shops_paint_fine"
+    ],
+    "meshes": 7,
+    "triangles": 20595
+  }
+}

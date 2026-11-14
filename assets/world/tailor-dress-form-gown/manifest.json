@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "tailor-dress-form-gown",
+  "version": 1,
+  "source": "art/source/world/tailor-dress-form-gown/v1/model.blend",
+  "source_sha256": "37f82fb53ddf18df4859d465093ca7544f910f38b9bfcb7eda86561c3df14517",
+  "runtime": "assets/world/tailor-dress-form-gown/model.glb",
+  "runtime_sha256": "cc1f4b68309f0b178e9c207fd9326ae997b4808c60b266aab32ef088093a5346",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.523292422294617,
+      0.0,
+      -0.673412680625916,
+      0.523292422294617,
+      1.84499990940094,
+      0.460835069417953
+    ],
+    "geometry_sha256": "611b239eda48198856d11a2d5dfbe0a39b304d405a411bef76a71478e25c8e2f",
+    "material_records": {
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_gloss_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_oak_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "4ea052a28fbfc329afb70b626b4eae760d9d02be8e556080ec0e87f88b7bf81b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_metal",
+      "shops_oak_dark",
+      "shops_paint",
+      "shops_paint_fine"
+    ],
+    "meshes": 6,
+    "triangles": 3704
+  }
+}

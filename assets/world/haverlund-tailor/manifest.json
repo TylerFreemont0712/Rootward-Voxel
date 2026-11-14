@@ -1,11 +1,11 @@
 {
   "schema": 1,
   "asset": "haverlund-tailor",
-  "version": "v2",
-  "source": "art/source/world/haverlund-tailor/v2/model.blend",
-  "source_sha256": "7f0049bdf55eb36a76317926db3434626501647ab1385c917e7813e285a5856e",
+  "version": "v3",
+  "source": "art/source/world/haverlund-tailor/v3/model.blend",
+  "source_sha256": "caa04a9355ffe5cd3d2bd0796d3eca7b3213c8b1d8bc2e7a64cb33ed68f3c53b",
   "runtime": "assets/world/haverlund-tailor/model.glb",
-  "runtime_sha256": "2ca90531a750d9c0dc1e4abe34949bcdc7cd454e39dbed64743e70e7035978eb",
+  "runtime_sha256": "c64e5b02beaa81f13b72b8b4cdda7cadfe0838143673b555bbe3d72e43dbe63c",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
@@ -15,9 +15,9 @@
       -3.35190010070801,
       2.93844318389893,
       13.6159534454346,
-      3.60999989509583
+      4.15000009536743
     ],
-    "geometry_sha256": "c12ac40d477833c90d850a2279c39ecee554cfdbdde363ba37526a2057718ef1",
+    "geometry_sha256": "639d6e548b1fa34275332cd4f112c1a0e5872b6fd76b758e9f8ba85214a23cd0",
     "material_records": {
       "house_brick": {
         "albedo": [
@@ -151,9 +151,9 @@
       },
       "shop_joinery": {
         "albedo": [
-          3961,
-          4941,
-          6196,
+          2392,
+          3333,
+          4745,
           10000
         ],
         "roughness": 7800,
@@ -168,6 +168,66 @@
         ],
         "roughness": 9300,
         "texture_rgba_sha256": ""
+      },
+      "shops_clear_glass": {
+        "albedo": [
+          8902,
+          9333,
+          9176,
+          1600
+        ],
+        "roughness": 800,
+        "texture_rgba_sha256": ""
+      },
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_oak_dark": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "4ea052a28fbfc329afb70b626b4eae760d9d02be8e556080ec0e87f88b7bf81b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_navy": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "a280b37d03be882dcc27c2292ebd82b3d17ca5c8021af0749a9bc9600096a63c"
       }
     },
     "materials": [
@@ -185,9 +245,15 @@
       "shop_cream",
       "shop_glazing",
       "shop_joinery",
-      "shop_recess"
+      "shop_recess",
+      "shops_clear_glass",
+      "shops_gloss",
+      "shops_metal",
+      "shops_oak_dark",
+      "shops_paint",
+      "shops_paint_navy"
     ],
-    "meshes": 23,
-    "triangles": 42142
+    "meshes": 28,
+    "triangles": 67180
   }
 }

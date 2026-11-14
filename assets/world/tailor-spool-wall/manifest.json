@@ -1,125 +1,55 @@
 {
   "schema": 1,
   "asset": "tailor-spool-wall",
-  "version": 1,
-  "source": "art/source/world/tailor-spool-wall/v1/model.blend",
-  "source_sha256": "8392e1ae25c5716874e3d6769b71536dc714423e984edc98e1cabb4d1055ab69",
+  "version": 2,
+  "source": "art/source/world/tailor-spool-wall/v2/model.blend",
+  "source_sha256": "fae21b33984f509666ffee4a8d5a1a6c66927153a2f4deb566b56944de802c76",
   "runtime": "assets/world/tailor-spool-wall/model.glb",
-  "runtime_sha256": "15b293bc78f486125ee1b49a3398b9c2cc56173c64f0f00f92af2f2536f63085",
+  "runtime_sha256": "907080d30ab082bd7e1c806ab4edf4162d60fd1763a8ab2d9a98e668fc6f94b0",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
     "bounds": [
-      -1.20000004768372,
-      0.199999988079071,
-      -0.0799999982118607,
-      1.20000004768372,
-      2.30000019073486,
-      0.25
+      -1.33000004291534,
+      0.0,
+      -0.300000011920929,
+      1.33000004291534,
+      2.9300000667572,
+      0.259999990463257
     ],
-    "geometry_sha256": "a6983611782f9dd1f5e37c7a1ebfbb74a23d0e595bdd72c6df83afd1f5079df2",
+    "geometry_sha256": "5cf240e7aaed3e62a6c7c0820de089cea79e87b9ceff9b0a9f6138a1a139d8a0",
     "material_records": {
-      "shop_cloth_0": {
+      "shops_gloss": {
         "albedo": [
-          5412,
-          2314,
-          2745,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 9500,
-        "texture_rgba_sha256": ""
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_cloth_1": {
+      "shops_gloss_fine": {
         "albedo": [
-          2353,
-          3686,
-          4941,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 9500,
-        "texture_rgba_sha256": ""
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_cloth_2": {
+      "shops_metal": {
         "albedo": [
-          7882,
-          6314,
-          2902,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 9500,
-        "texture_rgba_sha256": ""
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       },
-      "shop_cloth_3": {
-        "albedo": [
-          3647,
-          4784,
-          3216,
-          10000
-        ],
-        "roughness": 9500,
-        "texture_rgba_sha256": ""
-      },
-      "shop_cloth_4": {
-        "albedo": [
-          7255,
-          4706,
-          4157,
-          10000
-        ],
-        "roughness": 9500,
-        "texture_rgba_sha256": ""
-      },
-      "shop_cloth_5": {
-        "albedo": [
-          1843,
-          2275,
-          3098,
-          10000
-        ],
-        "roughness": 9500,
-        "texture_rgba_sha256": ""
-      },
-      "shop_cloth_6": {
-        "albedo": [
-          8471,
-          7804,
-          6275,
-          10000
-        ],
-        "roughness": 9500,
-        "texture_rgba_sha256": ""
-      },
-      "shop_cloth_7": {
-        "albedo": [
-          4824,
-          3569,
-          5608,
-          10000
-        ],
-        "roughness": 9500,
-        "texture_rgba_sha256": ""
-      },
-      "shop_cloth_8": {
-        "albedo": [
-          6431,
-          3294,
-          1843,
-          10000
-        ],
-        "roughness": 9500,
-        "texture_rgba_sha256": ""
-      },
-      "shop_cloth_9": {
-        "albedo": [
-          4275,
-          5608,
-          5490,
-          10000
-        ],
-        "roughness": 9500,
-        "texture_rgba_sha256": ""
-      },
-      "shop_oak": {
+      "shops_oak": {
         "albedo": [
           10000,
           10000,
@@ -129,43 +59,58 @@
         "roughness": 6600,
         "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
       },
-      "shop_pin": {
+      "shops_oak_dark": {
         "albedo": [
-          7882,
-          3098,
-          3098,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
+        "roughness": 6200,
+        "texture_rgba_sha256": "4ea052a28fbfc329afb70b626b4eae760d9d02be8e556080ec0e87f88b7bf81b"
       },
-      "shop_steel": {
+      "shops_paint": {
         "albedo": [
-          4157,
-          4627,
-          4706,
+          10000,
+          10000,
+          10000,
           10000
         ],
-        "roughness": 4500,
-        "texture_rgba_sha256": ""
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_navy": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "a280b37d03be882dcc27c2292ebd82b3d17ca5c8021af0749a9bc9600096a63c"
       }
     },
     "materials": [
-      "shop_cloth_0",
-      "shop_cloth_1",
-      "shop_cloth_2",
-      "shop_cloth_3",
-      "shop_cloth_4",
-      "shop_cloth_5",
-      "shop_cloth_6",
-      "shop_cloth_7",
-      "shop_cloth_8",
-      "shop_cloth_9",
-      "shop_oak",
-      "shop_pin",
-      "shop_steel"
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_metal",
+      "shops_oak",
+      "shops_oak_dark",
+      "shops_paint",
+      "shops_paint_fine",
+      "shops_paint_navy"
     ],
-    "meshes": 13,
-    "triangles": 8776
+    "meshes": 8,
+    "triangles": 26224
   }
 }

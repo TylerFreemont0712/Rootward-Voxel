@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "asset": "bakery-proving-cabinet",
+  "version": 1,
+  "source": "art/source/world/bakery-proving-cabinet/v1/model.blend",
+  "source_sha256": "163ec078399b5634d0ac71672b15815260e401e7416fe1e457916e8e036f5906",
+  "runtime": "assets/world/bakery-proving-cabinet/model.glb",
+  "runtime_sha256": "375c7ec63c3e4dabdeb69c310e40e4fa2cc703b5a58e95817913e3ba230ed1b1",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.649999976158142,
+      0.0,
+      -0.300000011920929,
+      0.790325105190277,
+      2.44400000572205,
+      0.843068301677704
+    ],
+    "geometry_sha256": "aad45b3b3d115ee3502795391bedbd7a41d766b1667c7edd20fb207ff505466b",
+    "material_records": {
+      "shops_clear_glass": {
+        "albedo": [
+          8902,
+          9333,
+          9176,
+          1600
+        ],
+        "roughness": 800,
+        "texture_rgba_sha256": ""
+      },
+      "shops_gloss_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_linen": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 9500,
+        "texture_rgba_sha256": "64ef1409f095ceed25ff7a29678c844f2a9340b715f9e9996b8f1d236c724be1"
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_clear_glass",
+      "shops_gloss_fine",
+      "shops_linen",
+      "shops_metal",
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_fine"
+    ],
+    "meshes": 7,
+    "triangles": 8348
+  }
+}

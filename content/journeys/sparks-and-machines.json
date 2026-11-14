@@ -831,7 +831,7 @@
         },
         {
           "speaker": "ada",
-          "text": "Then put it on the board. All three. The board’s by the window, and it takes the slate.",
+          "text": "Then put it on the board. All three. The board’s up over the bread, and it takes the slate.",
           "choices": [
             {
               "text": "Why not write it in chalk?",
@@ -1123,7 +1123,7 @@
     },
     "shop-bakery": {
       "title": "Morning Loaf",
-      "hint": "Ada’s board is by the north window. Read her note on the frame, then jack the slate in below it."
+      "hint": "Ada’s board hangs over the bread wall. Read her note on the frame, then jack the slate in below it."
     },
     "shop-greengrocer": {
       "title": "The Pantry",

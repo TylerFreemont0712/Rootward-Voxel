@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "asset": "bakery-cake-table",
+  "version": 1,
+  "source": "art/source/world/bakery-cake-table/v1/model.blend",
+  "source_sha256": "08dfac3358722607c83779815ce5785fe5c47fae20ba2c135d78ee348de83e25",
+  "runtime": "assets/world/bakery-cake-table/model.glb",
+  "runtime_sha256": "80df629a87a106ccf3888917bcb44c50ee0c89f8e4f1e1a438f8973ed5df82c5",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.790000021457672,
+      0.0,
+      -0.790000021457672,
+      0.790000021457672,
+      1.73192000389099,
+      0.790000021457672
+    ],
+    "geometry_sha256": "e7db7fb53c6495e7574b774e1a6a32022dcaafb1a971a07122f9b720ad1208ec",
+    "material_records": {
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_gloss_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_oxblood": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "c43523f3b78cb98bc98ba015813dd2fda460504882c4b6c20068ad0e2b94329a"
+      }
+    },
+    "materials": [
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_fine",
+      "shops_paint_oxblood"
+    ],
+    "meshes": 6,
+    "triangles": 17284
+  }
+}

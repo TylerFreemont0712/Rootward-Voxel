@@ -1,72 +1,83 @@
 {
   "schema": 1,
   "asset": "tailor-mirror",
-  "version": 1,
-  "source": "art/source/world/tailor-mirror/v1/model.blend",
-  "source_sha256": "deb70a68cf8232084e71d0c45c7f8b7aaa912052c153d82381b5d4c056469371",
+  "version": 2,
+  "source": "art/source/world/tailor-mirror/v2/model.blend",
+  "source_sha256": "e08c5f83a7c325f22263c345ca4a6c39d320505f295244a7f6062fb1cffd3674",
   "runtime": "assets/world/tailor-mirror/model.glb",
-  "runtime_sha256": "04eb6fd1f5870b4393b87774cf9d9d325136f4b970a25ec1e62ad0c15563fa0d",
+  "runtime_sha256": "cbb28c00a7f06ad02c0b5682f3f09f26e7883b7adaeb167be8756e9fa9cb9504",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
     "bounds": [
-      -0.489999979734421,
-      0.0,
-      -0.25,
-      0.975487053394318,
-      1.8480806350708,
-      0.480000019073486
+      -0.569864511489868,
+      -0.00500000081956387,
+      -0.509376525878906,
+      1.02999997138977,
+      2.07999992370605,
+      0.662000060081482
     ],
-    "geometry_sha256": "b8143a74c6da4bcf733f977495d86654e026edabbf59dc53c9bc84dab41d475f",
+    "geometry_sha256": "a81a7394b769fd9482b0c414e23625c2c583af3dc0bc47df32197bae271ef481",
     "material_records": {
-      "shop_brass": {
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_mirror": {
         "albedo": [
           7098,
-          5412,
-          2588,
+          7686,
+          7843,
           10000
         ],
-        "roughness": 4500,
+        "roughness": 600,
         "texture_rgba_sha256": ""
       },
-      "shop_cloth_0": {
-        "albedo": [
-          5412,
-          2314,
-          2745,
-          10000
-        ],
-        "roughness": 9500,
-        "texture_rgba_sha256": ""
-      },
-      "shop_mirror": {
-        "albedo": [
-          7255,
-          7882,
-          8000,
-          10000
-        ],
-        "roughness": 8000,
-        "texture_rgba_sha256": ""
-      },
-      "shop_oak": {
+      "shops_oak_dark": {
         "albedo": [
           10000,
           10000,
           10000,
           10000
         ],
-        "roughness": 6600,
-        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+        "roughness": 6200,
+        "texture_rgba_sha256": "4ea052a28fbfc329afb70b626b4eae760d9d02be8e556080ec0e87f88b7bf81b"
+      },
+      "shops_paint_navy": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6200,
+        "texture_rgba_sha256": "a280b37d03be882dcc27c2292ebd82b3d17ca5c8021af0749a9bc9600096a63c"
       }
     },
     "materials": [
-      "shop_brass",
-      "shop_cloth_0",
-      "shop_mirror",
-      "shop_oak"
+      "shops_gloss",
+      "shops_metal",
+      "shops_mirror",
+      "shops_oak_dark",
+      "shops_paint_navy"
     ],
-    "meshes": 4,
-    "triangles": 258
+    "meshes": 5,
+    "triangles": 1000
   }
 }

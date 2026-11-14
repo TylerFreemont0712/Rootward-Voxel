@@ -1,11 +1,11 @@
 {
   "schema": 1,
   "asset": "haverlund-greengrocer",
-  "version": "v2",
-  "source": "art/source/world/haverlund-greengrocer/v2/model.blend",
-  "source_sha256": "506f7563ee2bf6e2352db9642d64b20e9918399b17dc02e7e2b4c970e4881da5",
+  "version": "v3",
+  "source": "art/source/world/haverlund-greengrocer/v3/model.blend",
+  "source_sha256": "d3941d75c77814a334f5ce3a98359ed85121c0fb548827ea29308ffcb1faf023",
   "runtime": "assets/world/haverlund-greengrocer/model.glb",
-  "runtime_sha256": "5e2f34e3f7dd8d5917a88a23d70e97b209552ab510f6178cad04284dafafefcf",
+  "runtime_sha256": "c40acaed39dae7ee4c93870861ff1fff956fcdc2781de6721b4b82adae0918dd",
   "exporter": "pipeline/blender_handoff.py",
   "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
   "audit": {
@@ -15,9 +15,9 @@
       -3.67585754394531,
       2.42189979553223,
       10.5652027130127,
-      3.67585754394531
+      3.89460778236389
     ],
-    "geometry_sha256": "4d90accf3513eca309d138dd6bc654ef00827a2dfbe0328ec8308d2d4745bd02",
+    "geometry_sha256": "afde6d723395d301c37f91b0f2ed7a6a4b87a65eee03248fd5ec698feab33d7e",
     "material_records": {
       "house_brick": {
         "albedo": [
@@ -151,9 +151,9 @@
       },
       "shop_joinery": {
         "albedo": [
-          4196,
-          5608,
-          5176,
+          1804,
+          3529,
+          2627,
           10000
         ],
         "roughness": 7800,
@@ -168,6 +168,86 @@
         ],
         "roughness": 9300,
         "texture_rgba_sha256": ""
+      },
+      "shops_clear_glass": {
+        "albedo": [
+          8902,
+          9333,
+          9176,
+          1600
+        ],
+        "roughness": 800,
+        "texture_rgba_sha256": ""
+      },
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_gloss_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_green_boards": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 7000,
+        "texture_rgba_sha256": "21dcb93ea341fcf646f033df755ad83d383802c6e6e132560c33b9cfe2ab6e58"
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
       }
     },
     "materials": [
@@ -185,9 +265,17 @@
       "shop_cream",
       "shop_glazing",
       "shop_joinery",
-      "shop_recess"
+      "shop_recess",
+      "shops_clear_glass",
+      "shops_gloss",
+      "shops_gloss_fine",
+      "shops_green_boards",
+      "shops_metal",
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_fine"
     ],
-    "meshes": 23,
-    "triangles": 24671
+    "meshes": 30,
+    "triangles": 54456
   }
 }

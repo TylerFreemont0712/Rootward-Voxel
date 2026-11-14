@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "asset": "greengrocer-squash-pallet",
+  "version": 1,
+  "source": "art/source/world/greengrocer-squash-pallet/v1/model.blend",
+  "source_sha256": "1c5296e46928eff6327950849afbafa92152c4730f23f5934026683cb7be6186",
+  "runtime": "assets/world/greengrocer-squash-pallet/model.glb",
+  "runtime_sha256": "ddd63137fd2eacded2c0671dc488347f7bbf14d1673183d9ce51c4bda5752896",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.699999988079071,
+      0.0100000016391277,
+      -0.525961875915527,
+      0.725588500499725,
+      0.448948532342911,
+      0.52966570854187
+    ],
+    "geometry_sha256": "d9b392655f0034bd1dcce167620bd54fcef19dd9ed7f21e4818ff99aa220f272",
+    "material_records": {
+      "shops_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_fine"
+    ],
+    "meshes": 3,
+    "triangles": 8081
+  }
+}

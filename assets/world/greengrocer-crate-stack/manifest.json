@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "greengrocer-crate-stack",
+  "version": 1,
+  "source": "art/source/world/greengrocer-crate-stack/v1/model.blend",
+  "source_sha256": "8decd66603e7b026f16a1350398f55a8d6e6c6b12870b33b83c38e49a3434319",
+  "runtime": "assets/world/greengrocer-crate-stack/model.glb",
+  "runtime_sha256": "ad64728771c1e939867286f3684931fc5c4d46ec95622a54a15a2ebc7259b821",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.480000019073486,
+      0.0,
+      -0.25,
+      0.700000047683716,
+      1.20949101448059,
+      0.569999992847443
+    ],
+    "geometry_sha256": "1642ccdc80bdff26a6b15c72b8b931259f352ada5626c5512ee7102e65fb9b1d",
+    "material_records": {
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_oak": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 6600,
+        "texture_rgba_sha256": "f6986ce98a9716b1895fc13c61ff069bbcc21e9a96c383ff75c24a0fb1f78a6b"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint_fine": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_gloss",
+      "shops_oak",
+      "shops_paint",
+      "shops_paint_fine"
+    ],
+    "meshes": 4,
+    "triangles": 15200
+  }
+}

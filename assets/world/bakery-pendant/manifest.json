@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "asset": "bakery-pendant",
+  "version": 1,
+  "source": "art/source/world/bakery-pendant/v1/model.blend",
+  "source_sha256": "5c80b6779b9658a17cb10bb3d2d82508f50880f06e3d587cdee796d2d5747bf8",
+  "runtime": "assets/world/bakery-pendant/model.glb",
+  "runtime_sha256": "44512d7b33e403cbe3860a0359a9ff02c51f60de25862f514aa7dffddda64b54",
+  "exporter": "pipeline/blender_handoff.py",
+  "exporter_sha256": "c04619c2dc415bb8bc6f4b34bdde21682819be32731e90419533ceda4a2f5933",
+  "audit": {
+    "bounds": [
+      -0.332999974489212,
+      -1.26300001144409,
+      -0.332999974489212,
+      0.332999974489212,
+      0.0,
+      0.332999974489212
+    ],
+    "geometry_sha256": "f4e8539c8dd4ed1cd6471a7590ebd902a24d81cfe920595c946489063efd01b9",
+    "material_records": {
+      "shops_gloss": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 3200,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_lamp_glass": {
+        "albedo": [
+          10000,
+          8392,
+          5922,
+          10000
+        ],
+        "roughness": 3000,
+        "texture_rgba_sha256": ""
+      },
+      "shops_metal": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 4000,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      },
+      "shops_paint": {
+        "albedo": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "roughness": 8400,
+        "texture_rgba_sha256": "d416d2605551a56933c65f374054ce9f037038b1c689dd2a7fbaa6bf7232fa8d"
+      }
+    },
+    "materials": [
+      "shops_gloss",
+      "shops_lamp_glass",
+      "shops_metal",
+      "shops_paint"
+    ],
+    "meshes": 4,
+    "triangles": 948
+  }
+}
