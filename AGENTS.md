@@ -6,7 +6,7 @@ These instructions are tool- and model-neutral. Use them when working anywhere i
 
 This is the approved Godot foundation for a game in which the player substantially controls a slightly fantastical world by writing real programs. The user has accepted the current clearing's size, camera scale, style and painted character as the main-project baseline. Preserve the approved camera, boy artwork and style while developing its systems. Read `docs/PROJECT_HANDOFF.md` for setup, ownership and remaining feature work (the only journey is Sparks & Machines, starting in `content/areas/workshop-loft.json`; Kindle Hollow and Village Morning were removed on 2026-11-05, see `docs/PURGE_2026-11-05.md`). Where things live and how files, classes, content ids and sprites are named is in `docs/NAMING.md`; follow it for anything new, and add a `app/save_migration.gd` entry when renaming any id a save stores. The [concept image](reference/voxel-isometric.png) remains an art reference.
 
-The main Rootward game is a separate project. Do not make it depend on this project, add a main-menu link, or edit a sibling repository as part of work here. Keep changes, saves, runtime configuration, content and tests in `Voxel-Rootward/` unless the user explicitly asks otherwise. Do not add a second engine or AI provider dependency without a clear reason.
+The main Rootward game is a separate project. Do not make it depend on this project, add a main-menu link, or edit a sibling repository as part of work here. Keep changes, saves, runtime configuration, content and tests in this repository unless the user explicitly asks otherwise. Do not add a second engine or AI provider dependency without a clear reason.
 
 ## Media packs, builds and releases
 
