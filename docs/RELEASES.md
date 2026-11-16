@@ -135,6 +135,12 @@ time: *More info → Run anyway*. Signing needs a certificate the project does n
 
 - Linux: export, self-test of the exported game, silent and windowed offline installs into a scratch home, menu and
   desktop entries, uninstall (saves kept). The windowed installer was reviewed at its real size.
-- Windows: the `.exe` builds and the Windows sandbox compiles from Linux. **Running it on Windows has not been checked
-  yet**: that is what the Windows check workflow is for, once a release is published.
-- Online installs need the release published; until then use an offline folder.
+- v0.1.0 (published 2026-11-16): an online install on Linux with the installer downloaded from the public
+  `releases/latest/download/` address, no sign-in (all three packages checked, menu entry made, self-test OK). The
+  Windows check workflow passed against the real release: silent online install with the `.exe` on a clean Windows
+  machine, files, Start-menu shortcut and Apps entry present, standard library read-only, self-test OK, uninstall.
+- Not yet checked: the windowed installer and the game's window on real Windows hardware (the workflow is headless),
+  and SmartScreen's warning as a player sees it.
+- The installer always reads the release GitHub marks **Latest**, so that must be a game release (`v<version>`).
+  Media pack releases are created with `--latest=false` so they never take that place; before v0.1.0 existed,
+  GitHub showed the newest media pack as Latest anyway, and the installer would have found nothing.
