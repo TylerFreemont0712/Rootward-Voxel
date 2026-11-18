@@ -11,8 +11,7 @@ func _run() -> void:
 		root.content_scale_size=root.size
 		DisplayServer.window_set_size(root.size)
 	DirAccess.make_dir_recursive_absolute(output)
-	SaveStore.save_path="user://city_cycle_review_%d.json" % OS.get_process_id()
-	SaveStore.profile_path="user://city_cycle_profile_%d.json" % OS.get_process_id()
+	SaveRepo.root = "user://city_cycle_review_%d" % OS.get_process_id()
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame

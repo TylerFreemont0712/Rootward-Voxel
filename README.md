@@ -37,8 +37,8 @@ Apply installs it and pays 25 p.*
 
 **Updating, repairing, uninstalling:** run the setup again (it is also in the game's folder). It finds the installed
 game and offers **Update** (only what changed is downloaded), **Repair** and **Uninstall**; on Windows uninstalling
-also works from *Settings → Apps*. Saves are never touched: they live in `%APPDATA%\RootwardVoxelLab` on Windows and
-`~/.local/share/RootwardVoxelLab` on Linux.
+also works from *Settings → Apps*. Saves are never touched: they live in `%APPDATA%\RootwardVoxelLab\profiles` on
+Windows and `~/.local/share/RootwardVoxelLab/profiles` on Linux.
 
 **Without an internet connection:** put the installer and the release's other files for your system
 (`rootward-voxel-manifest.json`, `rootward-voxel-<v>.pck` and the two `…-<system>-….zip` files) in one folder, and run
@@ -78,7 +78,17 @@ wakes. From there:
 | **I** | Bag: carried tools, stock, purse, bank balance and recent receipts. |
 | **M** / **J** | Map / the job book. |
 | **B** | Layout studio, where the square allows it: paint paths, place park pieces, move and turn them, undo and redo. |
-| **Esc** | Leave a text field, close the notes, then open the pause menu. |
+| **Esc** | Leave a text field, close the notes, then take out the field tablet: terminal, journal, map, saves, settings. Click beside it to put it away. |
+
+**Saving is git.** Nothing is saved until you commit it. Open the tablet (Esc), choose **Terminal**, and work the way
+a developer does: `git status` shows what changed since your last save, `git add .` stages it, and
+`git commit -m "lit the landing"` records it. `git log --oneline --graph` lists your saves, `git branch
+<name>` and `git switch <name>` keep separate save lines, `git checkout <id>` revisits an older one, and `git diff`
+shows exactly what changed, including the Python you wrote. `reset` darkens the room, `logout` and `quit` leave.
+The main menu has no Continue: **Load game** lists your profiles as repositories, draws each one's commits as a
+clickable graph, and fills a command line with the command that loads the selected commit for you to run. There is no
+autosave: quitting with uncommitted changes loses them (the game says so once), and the vocabulary, grammar and error
+messages are real git's, so the habit transfers.
 
 The story, chapters and the Python API: [docs/concept/v0.7](docs/concept/v0.7/README.md),
 [v0.8](docs/concept/v0.8/README.md), [docs/PROGRAMMING.md](docs/PROGRAMMING.md) and the

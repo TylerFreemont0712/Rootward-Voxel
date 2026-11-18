@@ -169,9 +169,8 @@ func _rules() -> void:
 		if model!=null:model.free()
 
 func _play() -> void:
-	SaveStore.save_path = "user://test_square_" + str(OS.get_process_id()) + ".json"
-	SaveStore.profile_path = "user://test_square_profile_" + str(OS.get_process_id()) + ".json"
-	SaveStore.force_enabled = true
+	SaveRepo.root = "user://test_square_" + str(OS.get_process_id()) + ""
+	SaveRepo.force_enabled = true
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
@@ -285,9 +284,9 @@ func _play() -> void:
 		page.apply_routine()
 		_check(game.session.state.lamps["well-west"] and game.session.state.memory.get("square_only")==29 and game.session.completed.is_empty(),"Apply changes this area without inventing a completed quest")
 	game.close_notebook(true)
-	game.save_now()
+	game.commit_progress("test save")
 	await game._return_to_title()
-	await game.continue_game("sparks-and-machines")
+	await game.continue_game()
 	game._pop_all_modals()
 	_check(game.area.id=="haverlund-square" and game.session.state.memory.get("square_only")==29 and game.session.state.terminal_links.has("square-terminal"), "Continue keeps the square, its link, its program and its lights")
 	_check(str(game.session.workshop_pages.get("scratch-rootward-square", "")).contains("square_only"), "The connected scratch page survives Continue independently of lesson drafts")
@@ -300,7 +299,7 @@ func _play() -> void:
 	while game._flow_busy:await process_frame
 	await settle()
 	_check(game.area.id=="haverlund-lane" and game.session.player_cell()==Vector2i(12,24) and game.session.state.memory.get("lane_only")==17 and not game.session.state.memory.has("square_only"), "The return reaches the same gate and restores lane memory")
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.wipe()
 	game.queue_free()
 	await process_frame
 	await process_frame

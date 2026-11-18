@@ -3,20 +3,19 @@ extends Control
 ## The main menu, laid over the live 3D world. Everything on it is built from the shared UI kit: no
 ## painted backdrop is needed, because the world itself is the title art.
 
-signal continue_requested
+signal load_requested
 signal new_game_requested
-signal character_requested
 signal settings_requested
 signal showcase_requested
 signal quit_requested
 
 var _column: VBoxContainer
-var _continue: FButton
 var _summary: Label
 var _first_button: FButton
 
 
-func setup(has_save: bool, summary: String) -> void:
+## `summary` describes the most recent profile ("Wren · main · 4 commits"), or "" when none exists.
+func setup(summary: String, has_profiles: bool) -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var shade := TextureRect.new()
@@ -56,19 +55,18 @@ func setup(has_save: bool, summary: String) -> void:
 	tagline.add_theme_color_override("font_color", Pal.PARCHMENT)
 	_column.add_child(tagline)
 	_column.add_child(UI.spacer(26))
-	if has_save:
-		_continue = UI.button("Continue", &"play", &"ButtonPrimary", func() -> void: continue_requested.emit())
-		_continue.custom_minimum_size = Vector2(340, 56)
-		_column.add_child(_continue)
-		_first_button = _continue
-		_summary = UI.dim(summary, 17)
-		_column.add_child(_summary)
-	var new_game := UI.button("New game", &"star", &"ButtonPrimary" if not has_save else &"", func() -> void: new_game_requested.emit())
+	var new_game := UI.button("New game", &"star", &"ButtonPrimary" if not has_profiles else &"", func() -> void: new_game_requested.emit())
 	new_game.custom_minimum_size = Vector2(340, 56)
 	_column.add_child(new_game)
-	if _first_button == null:
-		_first_button = new_game
-	var choices: Array=[["Character", &"person", character_requested], ["Settings", &"gear", settings_requested]]
+	_first_button = new_game
+	if has_profiles:
+		var load := UI.button("Load game", &"book", &"ButtonPrimary", func() -> void: load_requested.emit())
+		load.custom_minimum_size = Vector2(340, 56)
+		_column.add_child(load)
+		_first_button = load
+		_summary = UI.dim(summary, 17)
+		_column.add_child(_summary)
+	var choices: Array=[["Settings", &"gear", settings_requested]]
 	if AssetShowcase.enabled():choices.append(["Asset Showcase (Dev)",&"hammer",showcase_requested])
 	choices.append(["Quit",&"door",quit_requested])
 	for spec: Array in choices:

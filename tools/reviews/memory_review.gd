@@ -6,8 +6,7 @@ func _initialize()->void:_run.call_deferred()
 func _run()->void:
  OS.set_environment("VOXEL_LAB_FRESH","1")
  root.mode=Window.MODE_WINDOWED;root.size=Vector2i(1600,1000);root.content_scale_size=root.size
- SaveStore.save_path="user://memory_review_%d.json"%OS.get_process_id()
- SaveStore.profile_path="user://memory_profile_%d.json"%OS.get_process_id();SaveStore.force_enabled=true
+ SaveRepo.root = "user://memory_review_%d"%OS.get_process_id()
  game=(load("res://scenes/game.tscn") as PackedScene).instantiate();root.add_child(game)
  game.layout_export_override="res://.cache/memory-gpu/layout.json"
  await _sample("title")
@@ -24,7 +23,7 @@ func _run()->void:
  var args:=OS.get_cmdline_user_args()
  var output:String=args[0] if not args.is_empty() else "res://.cache/memory-gpu/memory.json"
  var f:=FileAccess.open(output,FileAccess.WRITE);f.store_string(JSON.stringify({"adapter":RenderingServer.get_video_adapter_name(),"vendor":RenderingServer.get_video_adapter_vendor(),"renderer":RenderingServer.get_current_rendering_method(),"os":OS.get_name(),"samples":records},"  "))
- SaveStore.delete("sparks-and-machines");quit()
+ SaveRepo.wipe();quit()
 func _sample(label:String)->void:
  for i:int in range(20):await process_frame
  var rss:int=-1

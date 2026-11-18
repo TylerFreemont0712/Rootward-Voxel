@@ -290,7 +290,7 @@ func _update_camera(delta: float) -> void:
 			_cinematic_time += delta
 			var t: float = _cinematic_time
 			# A slow loop from the green, over the mill race and back, so the title screen never sits still.
-			var centre := Vector3(33.0, 0.0, -19.5) if area==null or area.id=="kindle-hollow" else Vector3(float(area.width)*.5,0,-float(area.height)*.5)
+			var centre := Vector3(float(area.width)*.5,0,-float(area.height)*.5) if area!=null else Vector3.ZERO
 			_focus_target = _clamped_focus(centre + Vector3(sin(t * 0.045) * 11.0, 0.0, cos(t * 0.031) * 3.5 - sin(t * 0.045) * 1.5))
 	var blend: float = 1.0 - exp(-delta * follow_rate)
 	_focus = _focus.lerp(_focus_target, blend)

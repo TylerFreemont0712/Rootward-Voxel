@@ -1,6 +1,6 @@
 extends SceneTree
 ## A tour of the real game at 1600x1000 for human review: title, naming, the opening, each room at its checkpoint,
-## the pause menu, map, job book and the layout studio. Saves are scratch files. Usage:
+## the field tablet, map, job book and the layout studio. Saves are scratch files. Usage:
 ##   scripts/screenshot.sh [dir]          (default .cache/tour)
 var game: Game
 var output: String = ""
@@ -18,9 +18,8 @@ func _run() -> void:
 	root.mode = Window.MODE_WINDOWED
 	root.size = Vector2i(1600, 1000)
 	root.content_scale_size = root.size
-	SaveStore.save_path = "user://tour_%d.json" % OS.get_process_id()
-	SaveStore.profile_path = "user://tour_profile_%d.json" % OS.get_process_id()
-	SaveStore.force_enabled = true
+	SaveRepo.root = "user://tour_%d" % OS.get_process_id()
+	SaveRepo.force_enabled = true
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await _frames(40)
@@ -37,7 +36,7 @@ func _run() -> void:
 	await shot("loft")
 	for checkpoint: String in ["workshop-start", "lane", "square", "city-hall"]:
 		DevelopmentMode.jump(game, checkpoint)
-		SaveStore.development = false
+		SaveRepo.development = false
 		game._dialogue_read["workshop-scenes"] = game._story.scenes.keys()
 		game._dismissed_scenes = game._story.scenes.keys()
 		game._pop_all_modals()
@@ -45,12 +44,12 @@ func _run() -> void:
 		await _frames(40)
 		await shot(checkpoint)
 	DevelopmentMode.jump(game, "square")
-	SaveStore.development = false
+	SaveRepo.development = false
 	game._pop_all_modals()
 	await _frames(30)
-	game.open_pause()
+	game.open_tablet()
 	await _frames(15)
-	await shot("pause")
+	await shot("tablet")
 	game._pop_all_modals()
 	game.open_map()
 	await _frames(15)
@@ -65,7 +64,7 @@ func _run() -> void:
 	await shot("layout-studio")
 	game.close_build()
 	await _frames(10)
-	SaveStore.delete(LevelStore.default_id())
+	SaveRepo.wipe()
 	print("Tour: %d screens in %s" % [count, output])
 	quit(0)
 

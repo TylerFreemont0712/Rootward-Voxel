@@ -91,8 +91,7 @@ func _dialogue() -> void:
 		await process_frame
 
 func _travel() -> void:
-	SaveStore.save_path = "user://transition_test_%d.json" % OS.get_process_id()
-	SaveStore.profile_path = "user://transition_profile_test_%d.json" % OS.get_process_id()
+	SaveRepo.root = "user://transition_test_%d" % OS.get_process_id()
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame

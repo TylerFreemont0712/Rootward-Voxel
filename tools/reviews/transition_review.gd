@@ -16,9 +16,8 @@ func _initialize() -> void:
 func _run() -> void:
 	out = OS.get_cmdline_user_args()[0] if not OS.get_cmdline_user_args().is_empty() else ProjectSettings.globalize_path("res://.cache/transitions")
 	DirAccess.make_dir_recursive_absolute(out)
-	SaveStore.save_path = "user://transition_review_%d.json" % OS.get_process_id()
-	SaveStore.profile_path = "user://transition_review_profile_%d.json" % OS.get_process_id()
-	SaveStore.force_enabled = true
+	SaveRepo.root = "user://transition_review_%d" % OS.get_process_id()
+	SaveRepo.force_enabled = true
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
@@ -41,7 +40,7 @@ func _run() -> void:
 	await _through(Vector2i(0, 1), "b-lane-to-square")
 	await _walk(Vector2i(0, 9))
 	await _through(Vector2i(-1, 0), "c-square-to-lane")
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.wipe()
 	quit()
 
 

@@ -12,7 +12,7 @@ scripts/play.sh
 scripts/test.sh              # quick tier, ~20 s; `flow`, `full` and `smoke` add more (see [../test/README.md](../test/README.md))
 ```
 
-Playing uses supplied runtime art; no Blender, AI service or network is needed once the media is fetched. Pictures and models live in release packs pinned by `media.lock`, not in git ([RELEASES](RELEASES.md)): after an art build, `scripts/pack-media.sh --write` and commit the lock. Builds for players and the installer are also in [RELEASES](RELEASES.md). After changing character sources run `scripts/art.sh`; after changing an adopted model edit its `model.blend` and run `scripts/world-art.sh build <id>`, then `godot --headless --editor --import --quit` before any capture. The project keeps the name and the `RootwardVoxelLab` save directory so existing saves load; a future rename needs an explicit saved-source migration.
+Playing uses supplied runtime art; no Blender, AI service or network is needed once the media is fetched. Pictures and models live in release packs pinned by `media.lock`, not in git ([RELEASES](RELEASES.md)): after an art build, `scripts/pack-media.sh --write` and commit the lock. Builds for players and the installer are also in [RELEASES](RELEASES.md). After changing character sources run `scripts/art.sh`; after changing an adopted model edit its `model.blend` and run `scripts/world-art.sh build <id>`, then `godot --headless --editor --import --quit` before any capture. Saves are per-profile repositories under `RootwardVoxelLab/profiles/` ([save-vcs plan](concept/save-vcs/PLAN.md)); the pre-2026-11-18 single-slot JSON saves are not read.
 
 ## What the game is
 
@@ -22,7 +22,7 @@ Playing uses supplied runtime art; no Blender, AI service or network is needed o
 | Movement | Four-direction grid steps at 60 Hz (13/60 s each), smooth presentation, one buffered tap, held repeat and click routing. |
 | Characters | Shared `painted_chibi_v1` frame template: eight-pose walk in four views, breathing idle, front blinks. Skins ([CHARACTERS](../pipeline/CHARACTERS.md)) are shared-frame paintings; the boy is the only player appearance. Hotaru and the robots are Blender models. |
 | Programming | Python runs only in the pinned Wasmtime/CPython WASI runner on a worker thread; every returned command passes `core/` validation. A preview is a proposal until Apply commits that same proposal. Code sees only places the player has visited and stood beside ([PROGRAMMING](PROGRAMMING.md)). |
-| Persistence | One save slot for the journey: every room's state, quests, program memory, source, name, pay and the shared clock, plus the player's layout edits in the square. The edit layer never rewrites an area document. |
+| Persistence | Saving is version control the player drives from the tablet terminal ([plan](concept/save-vcs/PLAN.md)): `app/vcs.gd` is the game's own git-shaped repository (blobs, index, commits, branches, tags, stash, unified diff; git's vocabulary and errors), `app/save_repo.gd` keeps one repository per profile and splits the snapshot into small tracked files (per-room state and quests, accounts, clock, layout edits, and the player's programs as `.py`), `app/git_shell.gd` is the terminal's command grammar. The working tree is the uncommitted state; only commits are durable, Continue checks out HEAD, and the load modal is a clickable commit graph. The edit layer never rewrites an area document. |
 | Source authority | Versioned painted art and adopted Blender masters; runtime output is rebuilt from the catalogs. |
 
 ## The places
@@ -44,6 +44,7 @@ Playing uses supplied runtime art; no Blender, AI service or network is needed o
 | Layout studio (build tools) | [BUILD](../pipeline/BUILD.md), [GROUND](../pipeline/GROUND.md); `core/area_build.gd`, `core/build_ledger.gd`, `app/build_mode.gd`, `content/build/`. | `test_build`, `test_ground`, `test_terrain`, `test_layout_flow`. |
 | Programming API | [PROGRAMMING](PROGRAMMING.md); rules in `core/`, adapter in `sandbox/`. | `test_lab`, `test_ui`, flow tests. |
 | Interface | [UI](../pipeline/UI.md); `ui/`, `app/game.gd`. | `test_app`, `test_ui`, flow tests. |
+| Saving (version control) | [save-vcs plan](concept/save-vcs/PLAN.md); `app/vcs.gd`, `app/vcs_diff.gd`, `app/save_repo.gd`, `app/git_shell.gd`, `app/history_lanes.gd`; `ui/tablet/`, `ui/screens/load_modal.gd`, `ui/screens/history_graph.gd`. | `test_vcs` (engine, split/join, shell grammar), `test_app` (tablet, terminal, load graph, dirty warning), `tools/reviews/save_vcs_review.gd`. |
 | Asset requests | [asset-requests/README](../asset-requests/README.md); `scripts/asset-requests.sh`. | `test_asset_workflow.py`, `test_asset_request_ui`. |
 | Visual acceptance | [REVIEW](../pipeline/REVIEW.md); `tools/area_shot.gd`, `tools/reviews/`; selected `evidence/` (the `dev-evidence` pack). | Captures at the real camera scale. |
 | Builds, installer, media packs | [RELEASES](RELEASES.md); `scripts/build.sh`, `installer/`, `scripts/media.py`. | `--self-test` of the exported game; the Windows check workflow. |
@@ -59,5 +60,6 @@ One active character pipeline: `scripts/art.sh` (`scripts/character-art.sh` dele
 - The v0.8 [storyboard](concept/v0.8/storyboard.md) scripts Chapters 00 and 01 in full; it is an editorial draft for later passes.
 - Shop interiors beyond the clockmaker (the apothecary's room is an empty shell); no trading or clock-setting challenge exists yet.
 - The layout studio is deliberately small (fourteen park and barrier pieces, half-cell paint). Build engine features without current content (houses, procedural trees, terrain and water tools, room finishes) remain in code with fixture-based tests; strip them when the studio's future is decided.
-- Save migration policy when an area document changes version.
+- Save migration policy when an area document changes version. `SaveMigration` still renames retired ids on load.
+- Saving as version control, phase 5 ([plan](concept/save-vcs/PLAN.md)): the first tablet lesson is in ([v0.9 curriculum](concept/v0.9/README.md)); still open are the later lessons (looking back, diff, branches, stash), plain-words explanations under git's errors, and `merge` once the split format has proven itself.
 - Audio, platform packaging, export presets, credits review and release testing. Nothing here creates a release or publishes.

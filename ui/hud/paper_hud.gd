@@ -161,7 +161,7 @@ func _refresh() -> void:
 		return
 	_build_button.visible = not (session.area.interior.get("layout", {}) as Dictionary).is_empty()
 	_refresh_purse()
-	if _dev_button != null: _dev_button.text = "Dev mode · F8" if SaveStore.development else "Dev · F8"
+	if _dev_button != null: _dev_button.text = "Dev mode · F8" if SaveRepo.development else "Dev · F8"
 	var zone: Dictionary = session.area.zone(session.current_zone) if session.current_zone != "" else {}
 	_location.text = "%s  ·  %s" % [session.area.title, zone.title] if not zone.is_empty() else session.area.title
 	if _holding_completed:

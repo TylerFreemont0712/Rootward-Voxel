@@ -101,10 +101,9 @@ func _top_hit(node: Node, origin: Vector3) -> float:
 	return nearest
 
 func _play() -> void:
-	SaveStore.save_path="user://test_workshop_"+str(OS.get_process_id())+".json"
-	SaveStore.profile_path="user://test_workshop_profile_"+str(OS.get_process_id())+".json"
-	SaveStore.force_enabled=true
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.root = "user://test_workshop_"+str(OS.get_process_id())+""
+	SaveRepo.force_enabled=true
+	SaveRepo.wipe()
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
@@ -182,11 +181,11 @@ func _play() -> void:
 		if child.get_meta("feedback_text", "")==game._story.street_doors:copies+=1
 	_check(copies==1 and game.area.id=="workshop-floor", "Forty closed-street-door requests keep one message and the current room")
 	await shot("05-street-door-cutaway")
-	game.save_now()
-	var saved: Dictionary=SaveStore.read("sparks-and-machines")
+	game.commit_progress("test save")
+	var saved: Dictionary=SaveRepo.tree_data()
 	_check(saved.area=="workshop-loft" and saved.journey_rooms.active=="workshop-floor", "The journey keeps its canonical save while recording the active lower floor")
 	await game._return_to_title()
-	await game.continue_game("sparks-and-machines")
+	await game.continue_game()
 	_check(game.area.id=="workshop-floor" and game.session.state.memory.get("floor_only")=="kept" and game.session.state.hotaru_greeted, "Continue restores the lower room, local memory and shared greeting")
 	_check(game.session.source.contains('world.memory["floor_only"]'), "The Python page persists between floors and Continue")
 	game.session.state.player=[6,5,0]
@@ -204,7 +203,7 @@ func _play() -> void:
 	while game._flow_busy:await process_frame
 	_check(game.area.id=="workshop-loft" and game.session.player_cell()==Vector2i(7,5), "The return arrives on the matching loft stair tread, mid-loft")
 	_check(game.session.state.memory.get("loft_only")=="kept" and not game.session.state.memory.has("floor_only") and game.session.state.hotaru_greeted, "The loft retains its own memory and receives shared voice progress")
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.wipe()
 	game.queue_free()
 	await process_frame
 	await process_frame

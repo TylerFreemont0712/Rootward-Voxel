@@ -1251,5 +1251,140 @@
     "next-batch": 15,
     "todays-prices": 18,
     "ready-for-collection": 20
+  },
+  "lessons": {
+    "tablet-tutorial": {
+      "title": "Nell's slate",
+      "speaker": "hotaru",
+      "speaker_name": "Hotaru",
+      "offer": "Nell's slate has a mind of its own. Want me to walk you through it, or do you know your way around one?",
+      "accept": "Please show me.",
+      "decline": "I already know how to use the tablet.",
+      "skip_line": "Then I'll stay out of your way. It's `help` in the Terminal if that changes.",
+      "steps": [
+        {
+          "say": "Press Escape, or the menu button in the corner. Go on.",
+          "wait": "tablet_open"
+        },
+        {
+          "say": "Home screen. Five things it can do, for now. The round key under the glass always brings you back here, whatever is on it.",
+          "point": "home_key",
+          "wait": "continue"
+        },
+        {
+          "say": "Open Saves first. I want to show you how the slate remembers things before you make it remember anything.",
+          "point": "app:saves",
+          "wait": "app:saves"
+        },
+        {
+          "say": "This one is an example, not yours. Every dot is a commit: a moment you told the slate to keep. Newest at the top.",
+          "point": "saves:graph",
+          "phantom": true,
+          "wait": "continue"
+        },
+        {
+          "say": "The line is time. Where it forks, someone tried something without spoiling the main line. That's a branch. The green edge is where you are standing.",
+          "point": "saves:graph",
+          "phantom": true,
+          "wait": "continue"
+        },
+        {
+          "say": "The branches are named up here. The filled one is the line you're on.",
+          "point": "saves:branches",
+          "phantom": true,
+          "wait": "continue"
+        },
+        {
+          "say": "Tap any dot.",
+          "point": "saves:graph",
+          "phantom": true,
+          "wait": "graph_tap"
+        },
+        {
+          "say": "See the command fill itself in? That's how you'd go there: `git switch` for a line, `git checkout` for a single dot. Run it and the world becomes that moment. Not now.",
+          "point": "saves:command",
+          "phantom": true,
+          "wait": "continue"
+        },
+        {
+          "say": "Now yours. One dot: the slate made it when you arrived. Let's give it a second.",
+          "point": "saves:graph",
+          "phantom": false,
+          "wait": "continue"
+        },
+        {
+          "say": "Home, then the Terminal.",
+          "point": "home_key",
+          "wait": "home"
+        },
+        {
+          "say": "The Terminal. That's where you tell the slate what to keep.",
+          "point": "app:terminal",
+          "wait": "app:terminal"
+        },
+        {
+          "say": "Ask it what has changed since that first dot.",
+          "command": "git status",
+          "point": "terminal_input",
+          "wait": "ran:git status",
+          "if_wrong": "Not that one yet. Ask it:  git status"
+        },
+        {
+          "say": "Red is changed and not kept. Two steps keep it. First you choose what to keep. The dot means here, all of it.",
+          "command": "git add .",
+          "point": "terminal_input",
+          "wait": "ran:git add",
+          "if_wrong": "First choose what to keep:  git add ."
+        },
+        {
+          "say": "Then write down what you did, and commit to it. The words in quotes are for you, later, when you have forgotten.",
+          "command": "git commit -m \"Picked up Nell's slate\"",
+          "point": "terminal_input",
+          "wait": "committed",
+          "if_wrong": "Now keep it:  git commit -m \"what you did\""
+        },
+        {
+          "say": "Every commit is a line here, newest first. That short code is its name.",
+          "command": "git log --oneline",
+          "point": "terminal_input",
+          "wait": "ran:git log",
+          "if_wrong": "Have a look at them:  git log --oneline"
+        },
+        {
+          "say": "That's saving. If you leave without committing, the slate asks once, and then it's gone. Nell lost a week that way.",
+          "wait": "continue"
+        },
+        {
+          "say": "Home, and look at Saves again.",
+          "point": "home_key",
+          "wait": "home"
+        },
+        {
+          "say": "Saves.",
+          "point": "app:saves",
+          "wait": "app:saves"
+        },
+        {
+          "say": "Two dots. Yours is the top one, and the green edge moved up with it. That's the whole trick: commit often, and the tree grows.",
+          "point": "saves:graph",
+          "wait": "continue"
+        },
+        {
+          "say": "Last thing: Settings.",
+          "point": "home_key",
+          "wait": "home"
+        },
+        {
+          "say": "Settings.",
+          "point": "app:settings",
+          "wait": "app:settings"
+        },
+        {
+          "say": "If the writing is small, this one. Done takes you home. That's the slate. `help` in the Terminal says the rest, and I'm not going anywhere.",
+          "point": "settings:ui_scale",
+          "wait": "continue"
+        }
+      ]
+    }
   }
 }

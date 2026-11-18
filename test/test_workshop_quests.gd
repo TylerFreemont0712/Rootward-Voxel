@@ -36,12 +36,6 @@ func _rules() -> void:
 	state.memory={"inspections_read":["job-board"]}
 	_check(not Quests.goal_met(area,state,area.quest("waiting-ticket").goal),"Program memory cannot forge a real inspection")
 	var old: Dictionary=state.duplicate(true)
-	var legacy: Dictionary = {"area_version":5, "journey_rooms":{"active":"workshop-floor"}, "state":{"hotaru_greeted":true}, "completed":["say-hello"]}
-	_check(Game._legacy_workshop_handoff(legacy), "An old save already working downstairs keeps access to the terminal")
-	legacy.area_version = 6
-	_check(not Game._legacy_workshop_handoff(legacy), "A new save cannot skip the terminal handoff")
-	legacy.area_version = "invalid"
-	_check(not Game._legacy_workshop_handoff(legacy), "Malformed version data cannot grant the terminal")
 	old.erase("inspections_read")
 	old.lamps={}
 	_check(rules.normalize_state(old).memory==state.memory and rules.normalize_state(old).lamps.size()==3,"An old downstairs save gains the fixtures without losing its memory")
@@ -78,9 +72,8 @@ func _rules() -> void:
 	_check(Quests.newly_completed(area,ahead,[])==["say-hello","waiting-ticket","landing-light","morning-round"],"A player who already did the work does not have to repeat it for the quest chain")
 
 func _play() -> void:
-	SaveStore.save_path="user://test_workshop_story_"+str(OS.get_process_id())+".json"
-	SaveStore.profile_path="user://test_workshop_story_profile_"+str(OS.get_process_id())+".json"
-	SaveStore.force_enabled=true
+	SaveRepo.root = "user://test_workshop_story_"+str(OS.get_process_id())+""
+	SaveRepo.force_enabled=true
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
@@ -261,9 +254,9 @@ func _play() -> void:
 	await shot("09-story-log")
 	(game._modals[0] as DialogueLog).close()
 	var saved_log: Array=game._dialogue_log.duplicate(true)
-	game.save_now()
+	game.commit_progress("test save")
 	await game._return_to_title()
-	await game.continue_game("sparks-and-machines")
+	await game.continue_game()
 	game._refresh_interaction()
 	_check(game.area.id=="workshop-floor" and game.session.completed.has("morning-round") and game.session.state.inspections_read.has("job-board"),"Continue restores the completed chapter and actual ticket discovery")
 	_check(game._modals.is_empty() and game._dialogue_read["workshop-scenes"].has("round-ready"),"Read scenes do not replay on Continue")
@@ -296,7 +289,7 @@ func _play() -> void:
 	game.session.request_step(Vector2i(0,-1))
 	while game._flow_busy:await process_frame
 	_check(game.area.id=="workshop-floor" and game.session.completed.has("morning-round") and game.session.state.lamps.values().all(func(value: bool) -> bool:return value),"Returning downstairs preserves the finished work and its lights")
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.wipe()
 	game.queue_free()
 	await process_frame
 	await process_frame

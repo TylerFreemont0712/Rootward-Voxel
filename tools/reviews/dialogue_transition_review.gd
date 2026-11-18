@@ -13,8 +13,7 @@ func _initialize() -> void:
 func _run() -> void:
 	output = OS.get_cmdline_user_args()[0] if not OS.get_cmdline_user_args().is_empty() else ProjectSettings.globalize_path("res://.cache/dialogue-transitions/native")
 	DirAccess.make_dir_recursive_absolute(output)
-	SaveStore.save_path="user://dialogue_transition_review_%d.json" % OS.get_process_id()
-	SaveStore.profile_path="user://dialogue_transition_profile_%d.json" % OS.get_process_id()
+	SaveRepo.root = "user://dialogue_transition_review_%d" % OS.get_process_id()
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame

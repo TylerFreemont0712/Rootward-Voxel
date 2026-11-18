@@ -13,20 +13,17 @@ func _initialize()->void:
 func _run()->void:
 	var args:=OS.get_cmdline_user_args()
 	if not args.is_empty():output=args[0]
-	SaveStore.save_path="user://test_showcase_%d.json"%OS.get_process_id()
-	SaveStore.profile_path="user://test_showcase_profile_%d.json"%OS.get_process_id()
-	SaveStore.force_enabled=true
-	SaveStore.delete(LevelStore.MAIN_LEVEL)
-	_check(LevelStore.default_id()=="sparks-and-machines" and LevelStore.available_entries().map(func(item: Dictionary)->String:return item.id)==["sparks-and-machines"],"Sparks is the sole main journey")
-	SaveStore.set_last_level("a-journey-that-no-longer-ships")
-	_check(LevelStore.resumable()=="sparks-and-machines","A last journey that no longer exists cannot become the Continue target")
+	SaveRepo.root = "user://test_showcase_%d"%OS.get_process_id()
+	SaveRepo.force_enabled=true
+	SaveRepo.wipe()
+	_check(LevelStore.default_id()=="sparks-and-machines" and LevelStore.entries().map(func(item: Dictionary)->String:return item.id)==["sparks-and-machines"],"Sparks is the sole main journey")
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	if args.size()>1:game.settings.values.ui_scale=float(args[1])
 	root.add_child(game)
 	await _frames(5)
 	await create_timer(.85).timeout
 	_check(game.area.id=="workshop-loft" and not game.playing,"Startup presents Sparks without entering play or another journey")
-	_check(_button(game.title,"New game")!=null and _button(game.title,"Continue")==null,"Without a save the title offers no Continue")
+	_check(_button(game.title,"New game")!=null and _button(game.title,"Load game")==null and _button(game.title,"Character")==null,"Without a repository the title offers no Load game, and no Character screen")
 	_check(_button(game.title,"Asset Showcase (Dev)")!=null,"The developer display is written directly into the title")
 	await _shot("01-title")
 	var setting: bool=AssetShowcase.enabled()
@@ -38,7 +35,7 @@ func _run()->void:
 	ProjectSettings.set_setting(AssetShowcase.SETTING,setting)
 	game.show_title()
 	await _frames(3)
-	var profile:=FileAccess.get_file_as_bytes(SaveStore.profile_path)
+	var profile:=JSON.stringify(SaveRepo.profiles())
 	var state:=game.session.state.duplicate(true)
 	await _click(_button(game.title,"Asset Showcase (Dev)"))
 	await _frames(5)
@@ -106,7 +103,7 @@ func _run()->void:
 	Input.parse_input_event(escape)
 	await _frames(3)
 	_check(game._modals.is_empty() and game.surface.visible and game.title.visible,"Escape returns to the same title")
-	_check(game.session.state==state and FileAccess.get_file_as_bytes(SaveStore.profile_path)==profile,"Displaying, turning and reloading assets cannot change progress or the profile")
+	_check(game.session.state==state and JSON.stringify(SaveRepo.profiles())==profile,"Displaying, turning and reloading assets cannot change progress or the profile")
 	await _click(_button(game.title,"New game"))
 	_check(game._modals[-1] is CharacterScreen,"New game enters Sparks naming directly, with no legacy journey selector")
 	(game._modals[-1] as CharacterScreen).begin_requested.emit()
@@ -115,20 +112,22 @@ func _run()->void:
 	_check(game.playing and game._level_id=="sparks-and-machines" and game.area.id=="workshop-loft" and game.hud is PaperHud,"The main New game route starts the Sparks loft")
 	game._pop_all_modals()
 	game.session.state.memory["showcase-test"]="preserved"
-	game.save_now()
-	SaveStore.set_last_level("a-journey-that-no-longer-ships")
+	game.commit_progress("test save")
 	await game._return_to_title()
 	await _frames(3)
-	_check(_button(game.title,"Continue")!=null and LevelStore.resumable()=="sparks-and-machines","Continue selects the Sparks save despite a stale last-level preference")
+	_check(_button(game.title,"Load game")!=null and _button(game.title,"Continue")==null and SaveRepo.has_journey(),"A committed journey offers Load game; there is no Continue")
 	await create_timer(.85).timeout
-	await _click(_button(game.title,"Continue"))
+	await _click(_button(game.title,"Load game"))
+	await _frames(3)
+	var loader:=game._modals[-1] as LoadModal
+	_check(loader!=null and loader._command.text=="git switch main","The load screen fills the command for HEAD's branch")
+	loader.run_command()
 	while game._flow_busy:await process_frame
 	await _frames(2)
-	_check(game._level_id=="sparks-and-machines" and game.session.state.memory.get("showcase-test")=="preserved","Continue restores the main journey’s progress")
+	_check(game.playing and game._level_id=="sparks-and-machines" and game.session.state.memory.get("showcase-test")=="preserved","Running the command loads the main journey’s progress")
 	game.queue_free()
 	await process_frame
-	SaveStore.delete(LevelStore.MAIN_LEVEL)
-	DirAccess.remove_absolute(ProjectSettings.globalize_path(SaveStore.profile_path))
+	SaveRepo.wipe()
 	if failures.is_empty():
 		print("Main title and asset showcase: %d checks passed."%checks)
 		quit()

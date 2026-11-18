@@ -265,7 +265,7 @@ func _refresh() -> void:
 			_objective_hint.text=""
 			return
 		_objective_title.text = "No job on the board"
-		_objective_progress.text = "%d %s burning · free exploration" % [session.lamps_lit(), "lamp" if session.lamps_lit() == 1 else "lamps"]
+		_objective_progress.text = "Free exploration"
 		return
 	var progress: Dictionary = session.quest_progress()
 	_objective_title.text = str(quest.title)

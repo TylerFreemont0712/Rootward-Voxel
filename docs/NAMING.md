@@ -43,6 +43,8 @@ these rules, with every old name and its new one, is in [RENAMES_2026-11-07.md](
 
 ## Saves
 
-The journey saves to `user://rootward.save.sparks-and-machines.json` in the `RootwardVoxelLab` user folder. A
-save written under the old name (`kindle_hollow.save.*.json`) is read once and then written under the new name.
-`app/save_migration.gd` renames any retired area or skin id inside a save as it loads.
+Each profile is a repository under `user://profiles/<slug>/` in the `RootwardVoxelLab` user folder: `tree/` is the
+working tree of small tracked files (`journey.json`, `rooms/<area>/state.json`, `programs/<job>.py`, ...; the layout
+is in `app/save_repo.gd`), `.vcs/` holds objects, commits, refs, HEAD and the index, and `profile.json` the profile's
+name. The hidden `_dev` profile belongs to development mode. `app/save_migration.gd` renames any retired area or skin
+id inside a snapshot as it loads.

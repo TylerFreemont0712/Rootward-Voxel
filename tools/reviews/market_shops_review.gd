@@ -11,13 +11,12 @@ func go() -> void:
 	var args := OS.get_cmdline_user_args()
 	output = args[0] if not args.is_empty() else "res://evidence/2026-11-12-market-shops"
 	root.mode = Window.MODE_WINDOWED; root.size = Vector2i(1600, 900); root.content_scale_size = root.size
-	SaveStore.save_path = "user://market_shops_review_%d.json" % OS.get_process_id()
-	SaveStore.profile_path = "user://market_shops_profile_%d.json" % OS.get_process_id(); SaveStore.force_enabled = true
+	SaveRepo.root = "user://market_shops_review_%d" % OS.get_process_id()
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate(); root.add_child(game)
 	game.layout_export_override = "res://.cache/market-shops/review-layout.json"
 	await process_frame; await game.start_new_game("sparks-and-machines")
 	_check(DevelopmentMode.jump(game, "square"), "The square loads in the campaign")
-	SaveStore.development = false
+	SaveRepo.development = false
 	game._dialogue_read["workshop-scenes"] = game._story.scenes.keys(); game._dismissed_scenes = game._story.scenes.keys()
 	game._pop_all_modals(); game.close_notebook(true)
 	# The street: day, evening, night.
@@ -71,7 +70,7 @@ func go() -> void:
 			"Leaving %s returns to the square" % shop[1])
 	for issue: String in failures: printerr("FAIL: ", issue)
 	print("Market shops review: %d checks, %d failures." % [checks, failures.size()])
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.wipe()
 	quit(0 if failures.is_empty() else 1)
 
 

@@ -7,9 +7,8 @@ func go() -> void:
 	root.mode = Window.MODE_WINDOWED
 	root.size = Vector2i(1600, 1000)
 	root.content_scale_size = root.size
-	SaveStore.save_path = "user://graphics_review_%d.json" % OS.get_process_id()
-	SaveStore.profile_path = "user://graphics_profile_%d.json" % OS.get_process_id()
-	SaveStore.force_enabled = true
+	SaveRepo.root = "user://graphics_review_%d" % OS.get_process_id()
+	SaveRepo.force_enabled = true
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	game.layout_export_override = "res://.cache/memory-gpu/layout.json"
@@ -36,5 +35,5 @@ func go() -> void:
 	print("Desktop graphics native review: %d checks, %d failures." % [checks, failures.size()])
 	for failure: String in failures:
 		printerr("FAIL: ", failure)
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.wipe()
 	quit(0 if failures.is_empty() else 1)

@@ -5,13 +5,12 @@ func go() -> void:
  var args:=OS.get_cmdline_user_args()
  output=args[0] if not args.is_empty() else "res://evidence/clockmaker"
  root.mode=Window.MODE_WINDOWED;root.size=Vector2i(1600,1000);root.content_scale_size=root.size
- SaveStore.save_path="user://clockmaker_review_%d.json" % OS.get_process_id()
- SaveStore.profile_path="user://clockmaker_profile_%d.json" % OS.get_process_id();SaveStore.force_enabled=true
+ SaveRepo.root = "user://clockmaker_review_%d" % OS.get_process_id()
  game=(load("res://scenes/game.tscn") as PackedScene).instantiate();root.add_child(game)
  game.layout_export_override="res://.cache/clockmaker/review-layout.json"
  await process_frame;await game.start_new_game("sparks-and-machines")
  _check(DevelopmentMode.jump(game,"square"),"The original clockmaker loads in the campaign")
- SaveStore.development=false
+ SaveRepo.development=false
  game._dialogue_read["workshop-scenes"]=game._story.scenes.keys();game._dismissed_scenes=game._story.scenes.keys()
  game._pop_all_modals();game.close_notebook(true)
  await walk(Vector2i(19,3))
@@ -45,7 +44,7 @@ func go() -> void:
  _check(seen_open,"The door actually swings while entering")
  _check(game.area.id=="shop-clockmaker","The working door opens the separate clockmaker room")
  _check(game.area.interior.shell=="clockshop-shell" and game.area.interior.inspections.size()>=14,"The new collection furnishes the room")
- game.session.state.memory={"clockmaker_kept":99};game.save_now()
+ game.session.state.memory={"clockmaker_kept":99};game.sync_working_tree()
  await shot("03-furnished-room")
  var old_zoom:float=game.view.zoom()
  game.view.set_camera_mode(WorldView.CameraMode.FREE)
@@ -60,8 +59,8 @@ func go() -> void:
   _check(game.session.state.inspections_read.has(item.id),"F reads the custom object: "+str(item.id))
   if item.id=="planetary-orrery":await shot("10-orrery-inspection")
   if item.id=="clock-repairs":await shot("11-repair-corner")
- game.save_now()
- await game._return_to_title();await game.continue_game("sparks-and-machines");game._pop_all_modals()
+ game.commit_progress("test save")
+ await game._return_to_title();await game.continue_game();game._pop_all_modals()
  _check(game.area.id=="shop-clockmaker" and game.session.state.memory.get("clockmaker_kept")==99,"Continue inside the shop retains its own program memory")
  _check(game.session.state.inspections_read.size()>=14,"Continue keeps the inspected collection")
  await walk(Vector2i(6,0))
@@ -80,5 +79,5 @@ func go() -> void:
  await shot("05-evening-frontage")
  for issue: String in failures:printerr("FAIL: ",issue)
  print("Clockmaker native review: %d checks, %d failures." % [checks,failures.size()])
- SaveStore.delete("sparks-and-machines")
+ SaveRepo.wipe()
  quit(0 if failures.is_empty() else 1)

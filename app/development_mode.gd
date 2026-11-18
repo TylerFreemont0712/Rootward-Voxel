@@ -19,10 +19,12 @@ static func chapter(story: Dictionary, quest: String, area: String) -> Dictionar
 		if area in entry.get("areas", []): return entry
 	return {}
 
+## Development checkpoints live in a hidden profile (SaveRepo.DEV_PROFILE), so the player's own
+## repository is never touched by a jump.
 static func enter(game: Game) -> void:
-	game._save_timer.stop()
-	game.save_now()
-	SaveStore.development = true
+	game._sync_timer.stop()
+	game.sync_working_tree()
+	SaveRepo.development = true
 
 static func jump(game: Game, id: String) -> bool:
 	if not available() or not game.playing or game._level_id != LevelStore.MAIN_LEVEL or game._flow_busy or game.session.busy: return false
@@ -79,7 +81,7 @@ static func jump(game: Game, id: String) -> bool:
 	if game.hud is PaperHud: (game.hud as PaperHud).reset_pin()
 	game.hud.clear_feedback()
 	game.hud.show_toast("Dev mode · " + str(point.title))
-	game.save_now()
+	game.sync_working_tree()
 	return true
 
 ## The jobs a checkpoint counts as done in one room: what its state already meets, plus the ones it names (build jobs

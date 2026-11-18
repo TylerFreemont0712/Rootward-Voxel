@@ -20,9 +20,8 @@ func _run() -> void:
 		quit(2)
 		return
 	output = args[0]
-	SaveStore.save_path = "user://tablet_review_" + str(OS.get_process_id()) + ".json"
-	SaveStore.profile_path = "user://tablet_review_profile_" + str(OS.get_process_id()) + ".json"
-	SaveStore.force_enabled = true
+	SaveRepo.root = "user://tablet_review_" + str(OS.get_process_id()) + ""
+	SaveRepo.force_enabled = true
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
@@ -140,7 +139,7 @@ func _run() -> void:
 	await _frames(30)
 	await _shot("17-notes-put-away")
 	jobs._tuck(false)
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.wipe()
 	quit(0)
 
 

@@ -15,9 +15,8 @@ func _initialize() -> void:
 func _run() -> void:
 	out = OS.get_cmdline_user_args()[0] if not OS.get_cmdline_user_args().is_empty() else ProjectSettings.globalize_path("res://.cache/gear-veil")
 	DirAccess.make_dir_recursive_absolute(out)
-	SaveStore.save_path = "user://gear_veil_review_%d.json" % OS.get_process_id()
-	SaveStore.profile_path = "user://gear_veil_review_profile_%d.json" % OS.get_process_id()
-	SaveStore.force_enabled = true
+	SaveRepo.root = "user://gear_veil_review_%d" % OS.get_process_id()
+	SaveRepo.force_enabled = true
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
@@ -51,5 +50,5 @@ func _run() -> void:
 		await process_frame
 	print("closed veil: ", snappedf(120.0 / maxf(0.001, float(Time.get_ticks_msec() - started) / 1000.0), 0.1), " frames per second")
 	veil.visible = false
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.wipe()
 	quit()

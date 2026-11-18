@@ -91,15 +91,14 @@ func _rules() -> void:
 
 
 func _journey() -> void:
-	SaveStore.save_path="user://test_sparks_"+str(OS.get_process_id())+".json"
-	SaveStore.profile_path="user://test_sparks_profile_"+str(OS.get_process_id())+".json"
-	SaveStore.force_enabled=true
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.root = "user://test_sparks_"+str(OS.get_process_id())+""
+	SaveRepo.force_enabled=true
+	SaveRepo.wipe()
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
 	game._new_game_flow()
-	_check(game._modals[-1] is CharacterScreen and LevelStore.available_entries().size()==1,"New game enters the Sparks character flow directly")
+	_check(game._modals[-1] is CharacterScreen and LevelStore.entries().size()==1,"New game enters the Sparks character flow directly")
 	await shot("01-levels")
 	var screen:=game._modals[-1] as CharacterScreen
 	_check(screen!=null and _text(screen,"LODGER IN NELL'S LOFT"),"The character screen speaks of Nell's loft")
@@ -206,20 +205,13 @@ func _journey() -> void:
 		if child.get_meta("feedback_text","")==stairs_text:copies+=1
 	_check(copies==1,"Forty repeated refusals keep exactly one stairs message")
 	await shot("04-loft")
-	game.save_now()
-	_check(SaveStore.has_save("sparks-and-machines"),"The journey saves to its own file")
+	game.commit_progress("test save")
+	_check(SaveRepo.has_journey(),"The journey saves to its own file")
 	await game._return_to_title()
 	_check(game.hud is PaperHud and not game.hud.visible,"The title retains Sparks presentation with the play HUD hidden")
-	await game.continue_game("sparks-and-machines")
+	await game.continue_game()
 	_check(game.area.id=="workshop-loft" and game.hud is PaperHud and game._modals.is_empty(),"Continue resumes in the loft without replaying the opening")
 	_check((game.view.stage as LoftStage).awake,"Continue restores Hotaru's committed awake state")
-	var legacy_save: Dictionary = game.session.to_save()
-	legacy_save.state.erase("terminal_links")
-	legacy_save.state.erase("items")
-	legacy_save.area_version = 6
-	game.session.begin(game.area, game.view, legacy_save)
-	_check(game.session.state.terminal_links.has("desk-terminal"), "A pre-terminal loft save keeps its earned code access and greeting")
-	_check(game.session.state.items == ["field-tablet"], "A save from before items, already past the greeting, is handed the tablet")
 	var reset_world_state: Dictionary = game.session.state.duplicate(true)
 	game.session.reset_world()
 	_check(game.session.state.items == reset_world_state.items, "Resetting the room keeps what the traveller carries")
@@ -238,7 +230,7 @@ func _journey() -> void:
 	_check(game.journal is GreetingJournal and game.journal.editor.text.contains("Hello, Hotaru!") and not (game.journal as GreetingJournal)._in_conversation,"After the waking introduction, Field Notes anywhere opens the plain open page with the saved Python, without replaying the introduction")
 	game.close_notebook(true)
 	await game._return_to_title()
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.wipe()
 	game.queue_free()
 	await process_frame
 	await process_frame
@@ -375,6 +367,11 @@ func _window_steady() -> void:
 				seen[str([scene.card.position, scene.card.size])] = true
 		if not scene.is_queued_for_deletion(): scene.close()
 		await process_frame
+		if id == "tablet-taken" and not game._modals.is_empty() and _text(game._modals[0], "Please show me."):
+			# Replaying the slate's scene offers the lesson again when it was never answered; decline for the tour.
+			var decline: FButton = _button_named(game._modals[0], "I already know how to use the tablet.")
+			if decline != null: decline.pressed.emit()
+			await process_frame
 		_check(game._modals.is_empty(), "The scene closes cleanly: " + id)
 	_check(total > 30 and seen.size() == 1, "All %d story pages are drawn in one window of one size and place (%d found)" % [total, seen.size()])
 	_check(game.hud._controls == null, "The Sparks HUD keeps the lower right clear: no controls hint under the story window")
@@ -479,6 +476,12 @@ func _tablet() -> void:
 		told_where = told_where or str(scene._text.text).contains("isn’t wood")
 	_check(game._dialogue_read["workshop-scenes"].has("tablet-taken") and told_where, "Hotaru tells the traveller where the socket is, and the scene is remembered")
 	await create_timer(.45).timeout
+	# The slate in hand, Hotaru offers to show how it works; this tour declines, which is remembered.
+	_check(game._modals.size() == 1 and _text(game._modals[0], "Please show me."), "Taking the slate brings Hotaru's lesson offer")
+	var decline: FButton = _button_named(game._modals[0], "I already know how to use the tablet.")
+	if decline != null: decline.pressed.emit()
+	await process_frame
+	_check(game._modals.is_empty() and game._dialogue_read.get("tablet-tutorial", []) == ["skipped"], "Declining the lesson closes the offer and is remembered")
 	_check(not tablet.visible and tablet.position == Vector3(6.75, 1.0, -9.24), "The slate leaves the bed once lifted, and its place in the room is kept")
 	game._refresh_interaction()
 	_check(game._interaction.get("kind", "") != "pickup", "A tablet already carried is not offered again")
@@ -540,3 +543,11 @@ func shot(name: String,frames: int=20) -> void:
 	await RenderingServer.frame_post_draw
 	DirAccess.make_dir_recursive_absolute(output)
 	root.get_texture().get_image().save_png(output.path_join(name+".png"))
+
+
+func _button_named(node: Node, label: String) -> FButton:
+	if node is FButton and (node as FButton).text == label: return node
+	for child: Node in node.get_children():
+		var found: FButton = _button_named(child, label)
+		if found != null: return found
+	return null

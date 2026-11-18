@@ -41,7 +41,9 @@ var _overlay: Control
 var _veil: GearVeil
 var _veil_open_origin: Variant = null
 var _modals: Array[Modal] = []
-var _save_timer: Timer
+## Coalesces working-tree writes (docs/concept/save-vcs/PLAN.md). This is not an autosave: the
+## working tree is the player's uncommitted state, and only a commit makes progress durable.
+var _sync_timer: Timer
 var _flow_busy: bool = false
 var _hint_timer: Timer
 var _opened_once: bool = false
@@ -67,6 +69,10 @@ var _slate_link: SlateLink
 var _level_id: String = LevelStore.MAIN_LEVEL
 var _root_area_id: String = "workshop-loft"
 var _pending_level_id: String = LevelStore.MAIN_LEVEL
+## The name typed on the character screen before a new journey's profile exists.
+var _pending_name: String = ""
+## The hand-held tablet lesson in progress, if any (docs/concept/v0.9/tablet-tutorial.md).
+var _lesson: TabletLesson
 ## The playing journey's catalog entry and story file. Optional entry fields (look, companion, journal, story,
 ## build, character) default to the original behaviour when absent.
 var _level_spec: Dictionary = {}
@@ -133,7 +139,7 @@ func _ready() -> void:
 	session = GameSession.new()
 	session.name = "Session"
 	add_child(session)
-	session.player_name = SaveStore.player_name()
+	session.player_name = SaveRepo.player_name()
 	session.begin(area, view)
 	session.door_catalog = _interior_catalog
 	session.doorway_requested.connect(_on_doorway_requested)
@@ -145,8 +151,8 @@ func _ready() -> void:
 	session.extra_abilities = _granted_abilities()
 	session.journey_source = _journey_completed
 	session.build_changed.connect(_on_build_edited)
-	session.progress_saved.connect(_queue_save.bind(0.4))
-	session.source_changed.connect(_queue_save.bind(1.6))
+	session.progress_changed.connect(_queue_sync.bind(0.4))
+	session.source_changed.connect(_queue_sync.bind(1.6))
 	_wire_hud(Hud.new())
 	prompts = WorldPrompts.new()
 	prompts.setup(view, surface, world_viewport)
@@ -171,10 +177,10 @@ func _ready() -> void:
 	_veil = GearVeil.new()
 	UI.full_rect(_veil)
 	add_child(_veil)
-	_save_timer = Timer.new()
-	_save_timer.one_shot = true
-	_save_timer.timeout.connect(save_now)
-	add_child(_save_timer)
+	_sync_timer = Timer.new()
+	_sync_timer.one_shot = true
+	_sync_timer.timeout.connect(sync_working_tree)
+	add_child(_sync_timer)
 	_hint_timer = Timer.new()
 	_hint_timer.one_shot = true
 	_hint_timer.timeout.connect(_first_run_hint)
@@ -194,7 +200,7 @@ func _wire_hud(next: Hud) -> void:
 	hud.notebook_requested.connect(toggle_notebook)
 	hud.journal_requested.connect(open_journal)
 	hud.map_requested.connect(open_map)
-	hud.menu_requested.connect(open_pause)
+	hud.menu_requested.connect(open_menu)
 	hud.build_requested.connect(open_build)
 	hud.development_requested.connect(open_development)
 	hud.inventory_requested.connect(open_inventory)
@@ -236,7 +242,7 @@ func _indoors() -> bool:
 
 # -------------------------------------------------------------------- flow
 func show_title() -> void:
-	SaveStore.development = false
+	SaveRepo.development = false
 	close_build()
 	playing = false
 	close_notebook(true)
@@ -250,19 +256,15 @@ func show_title() -> void:
 	_hint_timer.stop()
 	_apply_level_spec(LevelStore.entry(LevelStore.default_id()))
 	view.apply_state(_celebration_state())
-	var resume_level: String = LevelStore.resumable()
-	var save: Dictionary = SaveStore.read(resume_level)
+	var profiles: Array[Dictionary] = SaveRepo.profiles()
 	var summary: String = ""
-	if not save.is_empty():
-		var burning: int = _saved_lamps(save)
-		var main_quests: Array[Dictionary] = Quests.main(area)
-		var main_done: int = main_quests.filter(func(entry: Dictionary) -> bool: return (save.get("completed", []) as Array).has(entry.id)).size()
-		summary = "%s · %d of %d quests · %d %s burning" % [str(save.get("name", SaveStore.DEFAULT_NAME)), main_done, main_quests.size(), burning, "lamp" if burning == 1 else "lamps"]
+	if not profiles.is_empty():
+		var latest: Dictionary = profiles[0]
+		summary = "%s · %s · %d commit%s" % [str(latest.name), str(latest.get("head", "")) if str(latest.get("head", "")) != "" else "detached", int(latest.commits), "" if int(latest.commits) == 1 else "s"]
 	title = TitleScreen.new()
-	title.setup(not save.is_empty(), summary)
-	title.continue_requested.connect(continue_game)
+	title.setup(summary, not profiles.is_empty())
+	title.load_requested.connect(open_load)
 	title.new_game_requested.connect(_new_game_flow)
-	title.character_requested.connect(func() -> void: _open_character("view", save))
 	title.settings_requested.connect(open_settings)
 	title.showcase_requested.connect(open_asset_showcase)
 	title.quit_requested.connect(quit_game)
@@ -272,39 +274,93 @@ func show_title() -> void:
 	_update_input_gate()
 
 
-func continue_game(level: String = "") -> void:
-	if level=="":level=LevelStore.resumable()
-	var spec: Dictionary = LevelStore.entry(level)
-	var save: Dictionary = SaveStore.read(level)
+## "Name · 3 of 9 quests · 5 places found" for a snapshot, or "" when there is none.
+func head_summary(save: Dictionary) -> String:
+	if save.is_empty():
+		return ""
+	var spec_area: AreaDef = AreaStore.load_area(str(LevelStore.entry(str(save.get("level", LevelStore.default_id()))).get("area", area.id)))
+	var main_quests: Array[Dictionary] = Quests.main(spec_area if spec_area != null else area)
+	var done: Array = save.get("completed", [])
+	for id: String in (save.get("journey_rooms", {}) as Dictionary).get("rooms", {}):
+		for quest: Variant in ((save.journey_rooms.rooms[id] as Dictionary).get("completed", []) as Array):
+			if not done.has(quest): done.append(quest)
+	var main_done: int = main_quests.filter(func(entry: Dictionary) -> bool: return done.has(entry.id)).size()
+	return "%s · %d of %d quests · %d places found" % [str(save.get("name", SaveRepo.DEFAULT_NAME)), main_done, main_quests.size(), ((save.get("state", {}) as Dictionary).get("zones_seen", []) as Array).size()]
+
+
+## Resumes the active profile at HEAD. Anything never committed is discarded first: saving is
+## committing (docs/concept/save-vcs/PLAN.md).
+func continue_game() -> void:
+	var save: Dictionary = SaveRepo.checkout_head()
+	await load_snapshot(save)
+
+
+## Enters play on a snapshot (Continue, the load modal and the terminal's checkout all end here).
+func load_snapshot(save: Dictionary) -> void:
+	var spec: Dictionary = LevelStore.entry(str(save.get("level", LevelStore.default_id())))
 	if spec.is_empty() or save.is_empty() or str(save.get("area",""))!=str(spec.area):
 		return
 	_pending_room_target = ""
 	await _fade(func() -> void:
-		_level_id=level
+		_pop_all_modals()
+		close_notebook(true)
+		if inside_house(): _activate_exterior()
+		_level_id=str(spec.id)
 		_root_area_id=str(spec.area)
 		_journey_rooms.clear()
 		_apply_level_spec(spec)
-		SaveStore.set_last_level(level)
-		session.player_name = str(save.get("name", SaveStore.player_name()))
+		session.player_name = str(save.get("name", SaveRepo.player_name()))
 		_load_edits(save.get("edits", []))
 		session.begin(area, view, save)
 		_restore_places(save)
 		_enter_play())
 
 
-func start_new_game(level: String = "") -> void:
+## Plays a profile's working tree as it stands: the saves browser (title or tablet) already ran the
+## player's command against that repository.
+func load_profile_tree(slug: String) -> void:
+	_pop_all_modals()
+	SaveRepo.development = false
+	if not SaveRepo.select(slug): return
+	await load_snapshot(SaveRepo.tree_data())
+
+
+## Reloads the game from the working tree after the terminal moved it (switch, checkout, restore,
+## stash, reset). Nothing is synced first: the tree is now the truth.
+func reload_from_tree() -> void:
+	var save: Dictionary = SaveRepo.tree_data()
+	if save.is_empty():
+		return
+	_sync_timer.stop()
+	await load_snapshot(save)
+
+
+## `git add -A && git commit -m <message>` over the live state: the one way progress becomes durable.
+func commit_progress(message: String) -> Dictionary:
+	sync_working_tree()
+	var vcs: Vcs = SaveRepo.repo()
+	if vcs == null:
+		return {"ok": false, "error": "fatal: not a git repository"}
+	vcs.add(PackedStringArray(["-A"]))
+	return vcs.commit(message)
+
+
+## A new profile for `player`, with the journey's first commit, then play from the beginning.
+func start_new_game(level: String = "", player: String = "") -> void:
 	if level=="":level=LevelStore.default_id()
 	var spec: Dictionary = LevelStore.entry(level)
 	if spec.is_empty():return
 	_pending_room_target = ""
-	SaveStore.delete(level)
+	if player == "": player = _pending_name if _pending_name != "" else SaveRepo.player_name()
+	SaveRepo.development = false
+	SaveRepo.create_profile(player)
+	_pending_name = ""
 	await _fade(func() -> void:
 		_level_id=level
 		_root_area_id=str(spec.area)
 		_journey_rooms.clear()
 		_apply_level_spec(spec)
-		SaveStore.set_last_level(level)
-		session.player_name = SaveStore.player_name()
+		session.player_name = SaveRepo.player_name()
 		_load_edits([])
 		session.begin(area, view)
 		_rooms.clear()
@@ -313,7 +369,8 @@ func start_new_game(level: String = "") -> void:
 		_dialogue_log.clear()
 		_banter_index = 0
 		_room_zoom_scale = 1.0
-		_enter_play())
+		_enter_play()
+		commit_progress("Initial commit"))
 	if not (_story.get("opening", {}) as Dictionary).is_empty():
 		_play_opening()
 
@@ -326,7 +383,20 @@ func _play_opening() -> void:
 	_push_modal(card)
 
 func _new_game_flow() -> void:
-	_choose_level(LevelStore.default_id(),false)
+	_pending_level_id = LevelStore.default_id()
+	_pending_name = ""
+	_open_character("new", {})
+
+
+## The load screen: every profile's commit graph, clickable. From the title or the tablet.
+func open_load() -> void:
+	if _flow_busy or SaveRepo.profiles().is_empty(): return
+	var modal := LoadModal.new()
+	modal.setup(self)
+	modal.load_requested.connect(load_profile_tree)
+	modal.deleted.connect(func() -> void:
+		if title != null and not playing: show_title())
+	_push_modal(modal)
 
 
 func open_asset_showcase()->void:
@@ -347,20 +417,6 @@ func open_asset_showcase()->void:
 	_push_modal(display)
 
 
-func _choose_level(level: String, resume: bool) -> void:
-	if resume:
-		continue_game(level)
-		return
-	_pending_level_id=level
-	if SaveStore.has_save(level):
-		var confirm := ConfirmDialog.new()
-		confirm.ask("Begin a new journey?", "Only your saved journey in %s will be replaced. Your other levels, name and settings stay." % str(LevelStore.entry(level).title), "Replace it", true)
-		confirm.confirmed.connect(func() -> void: _open_character("new", {}))
-		_push_modal(confirm)
-	else:
-		_open_character("new", {})
-
-
 func _enter_play() -> void:
 	playing = true
 	if title != null:
@@ -376,19 +432,38 @@ func _enter_play() -> void:
 	_sync_pickups()
 	close_notebook(true)
 	_update_input_gate()
-	save_now()
+	sync_working_tree()
 	_opened_once = false
 	if session.completed.is_empty() and int(session.stats.runs) == 0:
 		_hint_timer.start(22.0)
 
 
+## Quits. With uncommitted progress the player is told what git would tell them and asked once;
+## there is no autosave to fall back on (docs/concept/save-vcs/PLAN.md).
 func quit_game() -> void:
-	if playing:
-		save_now()
+	if playing and _warn_uncommitted("Quit anyway", func() -> void: get_tree().quit()):
+		return
 	get_tree().quit()
 
 
-func save_now() -> void:
+## Shows the uncommitted-changes warning and returns true when it did (the action waits on it).
+func _warn_uncommitted(confirm_label: String, action: Callable) -> bool:
+	sync_working_tree()
+	var changed: PackedStringArray = SaveRepo.uncommitted_changes()
+	if changed.is_empty():
+		return false
+	var listed: PackedStringArray = changed.slice(0, 6)
+	var more: String = "\n…and %d more" % (changed.size() - listed.size()) if changed.size() > listed.size() else ""
+	var confirm := ConfirmDialog.new()
+	confirm.ask("You have uncommitted changes", "%d file%s changed since your last commit:\n\n%s%s\n\nThey will be lost. Open the tablet and run  git add .  then  git commit -m \"...\"  to keep them." % [changed.size(), "" if changed.size() == 1 else "s", "\n".join(listed), more], confirm_label, true)
+	confirm.confirmed.connect(action)
+	_push_modal(confirm)
+	return true
+
+
+## Writes the session snapshot to the working tree (the uncommitted save state). Durable saving
+## is the player's job through the version-control terminal: docs/concept/save-vcs/PLAN.md.
+func sync_working_tree() -> void:
 	if playing and session != null:
 		var data: Dictionary
 		if _inside_id != "":
@@ -408,7 +483,7 @@ func save_now() -> void:
 		data["dialogue_read"] = _dialogue_read.duplicate(true)
 		if _journal_kind() == "workshop": data["workshop_log"] = _dialogue_log.duplicate(true)
 		data["level"]=_level_id
-		SaveStore.write(data,_level_id)
+		SaveRepo.write_tree(data)
 
 
 ## VOXEL_CODE_ABILITIES=all (or a comma list such as read,turn) lets the player's code use the building API before
@@ -459,7 +534,7 @@ func _process(delta: float) -> void:
 			CityCycle.advance(session.cycle,delta)
 			if int(session.cycle.minute)!=_last_clock_minute:
 				_last_clock_minute=int(session.cycle.minute)
-				_queue_save(2.0)
+				_queue_sync(2.0)
 		session.sync_cycle()
 		_try_evening_return()
 	if _pending_room_target != "" and not session.is_walking() and session._route.is_empty() and not session.busy:
@@ -606,7 +681,7 @@ func interact() -> void:
 					return
 		"prop":
 			if session.use_prop(str(_interaction.id)):
-				save_now()
+				sync_working_tree()
 				_refresh_interaction()
 		"talk":
 			if str(_interaction.id)=="hotaru":
@@ -622,7 +697,7 @@ func _activate_loft_desk(id: String) -> void:
 		note.read.connect(func() -> void:
 			if session.read_inspection("nell-note"):
 				_dialogue_read["nell-note"] = ["read"]
-				save_now()
+				sync_working_tree()
 				hud.show_toast("The desk terminal is ready to use."))
 		_push_modal(note)
 	elif id == "desk-terminal": _activate_terminal(id)
@@ -642,7 +717,7 @@ func _activate_terminal(id: String) -> void:
 		return
 	if not session.connect_terminal(id): return
 	if id == "desk-terminal": session.read_inspection(id)
-	save_now()
+	sync_working_tree()
 	_open_jobs_journal(area.id == "workshop-loft", {"kind":"zone", "id":str(terminal.zone), "title":str(terminal.title), "terminal":id})
 
 
@@ -657,7 +732,7 @@ func _activate_pickup(id: String) -> void:
 	if pickup.is_empty() or not _pickup_offered(pickup): return
 	if not session.take_item(id): return
 	_animate_pickup(pickup)
-	save_now()
+	sync_working_tree()
 	var scene: String = str(((_story.get("items", {}) as Dictionary).get(str(pickup.item), {}) as Dictionary).get("scene", ""))
 	if scene != "": _show_story_scene(scene)
 
@@ -848,7 +923,7 @@ func enter_house(id: String) -> bool:
 	# travel. Merely approaching the landing is an ordinary walking step.
 	view.open_door(id)
 	await _fade(func() -> void: _activate_room(entry,source))
-	save_now()
+	sync_working_tree()
 	return true
 
 
@@ -901,7 +976,7 @@ func leave_house() -> bool:
 	_outer_save.source = session.source
 	_outer_save.stats = session.stats.duplicate()
 	await _fade(_activate_exterior)
-	save_now()
+	sync_working_tree()
 	return true
 
 
@@ -932,10 +1007,11 @@ func _restore_places(save: Dictionary) -> void:
 			_dialogue_read["loft-waking"] = ["introduced"]
 	if _journal_kind() == "workshop" and read is Dictionary and read.get("nell-note") is Array and "read" in read["nell-note"]:
 		_dialogue_read["nell-note"] = ["read"]
-	if _journal_kind() == "workshop" and not _dialogue_read.get("loft-waking", []).has("introduced") and _legacy_workshop_handoff(save):
-		_dialogue_read["loft-waking"] = ["introduced"]
+	if read is Dictionary and read.get("tablet-tutorial") is Array and not (read["tablet-tutorial"] as Array).is_empty():
+		_dialogue_read["tablet-tutorial"] = [str(read["tablet-tutorial"][0])]
 	if _journal_kind() == "workshop" and read is Dictionary:
-		_dialogue_read["workshop-scenes"] = StoryScenes.restore_read(read.get("workshop-scenes", []), _story.get("scenes", {}))
+		var scenes_read: Array = StoryScenes.restore_read(read.get("workshop-scenes", []), _story.get("scenes", {}))
+		if not scenes_read.is_empty(): _dialogue_read["workshop-scenes"] = scenes_read
 	if not (_level_spec.get("room_areas", []) as Array).is_empty():
 		_restore_journey_rooms(save)
 		return
@@ -953,16 +1029,6 @@ func _restore_places(save: Dictionary) -> void:
 	_outer_source = _source
 	_outer_save = save.duplicate(true)
 	_activate_room(entry, source)
-
-
-## Earlier loft saves could already be working downstairs before the hand terminal existed.
-static func _legacy_workshop_handoff(save: Dictionary) -> bool:
-	var rooms: Variant = save.get("journey_rooms", {})
-	var version: Variant = save.get("area_version", 0)
-	var state: Variant = save.get("state", {})
-	var completed: Variant = save.get("completed", [])
-	if not AreaDef._whole(version) or not rooms is Dictionary or not state is Dictionary or not completed is Array: return false
-	return int(version) < 6 and rooms.get("active", "") == "workshop-floor" and CompanionLesson.has_voice(state, completed)
 
 
 ## Jobs finished anywhere on this journey. A room with no jobs of its own (the lane) still follows the story that
@@ -1063,7 +1129,7 @@ func travel_room_link(id: String) -> bool:
 		await _fade(func() -> void:
 			await _activate_journey_room_async(source, saved)
 			session.turn_toward(facing))
-		save_now()
+		sync_working_tree()
 		return true
 	# Walking through: the doors swing open, the traveller walks into the doorway and the clockwork veil grows out of
 	# it. In the next scene the veil opens on the arrival while they walk out of its open doors (or up its steps),
@@ -1107,7 +1173,7 @@ func travel_room_link(id: String) -> bool:
 	view.end_travel_walk()
 	if back.has("doors"):
 		DoorSwing.set_open(view.link_doors(str(back.doors)), false)
-	save_now()
+	sync_working_tree()
 	return true
 
 
@@ -1124,9 +1190,9 @@ func _restore_journey_rooms(save: Dictionary) -> void:
 	if source.get("ok", false): _activate_journey_room(source, _journey_rooms[active])
 
 
-func _queue_save(delay: float) -> void:
-	if playing and _save_timer != null:
-		_save_timer.start(delay)
+func _queue_sync(delay: float) -> void:
+	if playing and _sync_timer != null:
+		_sync_timer.start(delay)
 
 
 func _notification(what: int) -> void:
@@ -1179,7 +1245,7 @@ func _open_jobs_journal(greeting_page: bool = false, context: Dictionary = {}) -
 	journal = JobsJournal.new() if jobs else GreetingJournal.new()
 	if jobs: (journal as JobsJournal).context = context
 	journal.setup(session, settings)
-	journal.applied.connect(save_now)
+	journal.applied.connect(sync_working_tree)
 	if jobs:
 		(journal as JobsJournal).story_log_requested.connect(open_dialogue_log)
 		(journal as JobsJournal).greeting_requested.connect(func() -> void:
@@ -1190,7 +1256,7 @@ func _open_jobs_journal(greeting_page: bool = false, context: Dictionary = {}) -
 		(journal as GreetingJournal).waking_requested.connect(func() -> void: _hotaru_waking.call_deferred())
 		(journal as GreetingJournal).introduction_finished.connect(func() -> void:
 			_dialogue_read["loft-waking"] = ["introduced"]
-			save_now())
+			sync_working_tree())
 	journal.closed.connect(close_notebook)
 	journal.extent_changed.connect(_drawer_extent_changed)
 	add_child(journal)
@@ -1254,7 +1320,7 @@ func _show_story_scene(id: String, inspection: String = "") -> void:
 		if _dialogue_log.is_empty() or _dialogue_log[-1] != entry:
 			_dialogue_log.append(entry)
 			if _dialogue_log.size() > 128: _dialogue_log.pop_front()
-		_queue_save(.4))
+		_queue_sync(.4))
 	scene.log_requested.connect(open_dialogue_log)
 	var authored: Dictionary=_story.scenes[id].duplicate(true)
 	authored["player_name"]=session.player_name
@@ -1269,8 +1335,9 @@ func _show_story_scene(id: String, inspection: String = "") -> void:
 		if id == "loft-waking": _dialogue_read["loft-waking"] = ["introduced"]
 		if inspection != "": session.read_inspection(inspection)
 		if id=="iona-commission": _issue_message_card()
-		save_now()
-		if id in ["waiting-ticket", "landing-lit"]: _offer_job_place.call_deferred())
+		sync_working_tree()
+		if id in ["waiting-ticket", "landing-lit"]: _offer_job_place.call_deferred()
+		if id == "tablet-taken" and not _dialogue_read.has("tablet-tutorial"): offer_lesson.call_deferred("tablet-tutorial"))
 	_push_modal(scene)
 
 
@@ -1380,7 +1447,7 @@ func _commit_room_finish(panel: RoomFinishes, result: Dictionary) -> void:
 		view.set_warmth(0.75)
 		view.focus_on(Vector2(session.player_cell()), true)
 		_update_input_gate()
-		save_now()
+		sync_working_tree()
 	panel.refresh(area, ledger, "Saved this home's materials." if result.ok else str(result.reason))
 
 
@@ -1393,7 +1460,7 @@ func close_build() -> void:
 		view.set_camera_mode(WorldView.CameraMode.FOLLOW)
 		view.set_zoom(float(settings.get_value("zoom")))
 		view.focus_on(Vector2(session.player_cell()))
-		save_now()
+		sync_working_tree()
 		_export_layout()
 	_update_input_gate()
 
@@ -1415,7 +1482,7 @@ func _export_layout() -> void:
 
 func _on_build_edited(_label: String) -> void:
 	area = ledger.area
-	_queue_save(0.4)
+	_queue_sync(0.4)
 
 
 # ------------------------------------------------------------------- modals
@@ -1433,29 +1500,28 @@ func open_development() -> void:
 	panel.normal_requested.connect(func() -> void:
 		_pop_all_modals()
 		close_notebook(true)
-		save_now()
-		SaveStore.development = false
-		if SaveStore.has_save(_level_id): continue_game(_level_id)
+		SaveRepo.development = false
+		if SaveRepo.has_journey(): continue_game()
 		else: show_title())
 	panel.hour_requested.connect(func(hour: float)->void:
 		DevelopmentMode.enter(self)
 		_pop_all_modals()
 		CityCycle.at_hour(session.cycle,hour)
 		session.sync_cycle()
-		save_now())
+		sync_working_tree())
 	panel.pressure_requested.connect(func(pressure: float)->void:
 		DevelopmentMode.enter(self)
 		_pop_all_modals()
 		CityCycle.set_pressure(session.cycle,pressure)
 		session.sync_cycle()
-		save_now())
+		sync_working_tree())
 	panel.breaker_reset_requested.connect(func()->void:
 		DevelopmentMode.enter(self)
 		_pop_all_modals()
 		session.cycle.tripped=false
 		CityCycle.set_pressure(session.cycle,5.6)
 		session.sync_cycle()
-		save_now())
+		sync_working_tree())
 	panel.power_preview_requested.connect(preview_loading_power)
 	_push_modal(panel)
 
@@ -1478,24 +1544,150 @@ func preview_loading_power(power: Dictionary) -> void:
 	_update_input_gate()
 
 
-func open_pause() -> void:
+## Escape: the field tablet once the lodger has it; before that (the first morning, before Nell's
+## tablet is picked up) only a plain question of whether to leave.
+func open_menu() -> void:
 	if not playing or not _modals.is_empty():
 		return
-	save_now()
-	var pause := PauseMenu.new()
+	if PlayerItems.has(session.state, "field-tablet"):
+		open_tablet()
+	else:
+		_open_exit_prompt()
+
+
+## Keep playing, return to the title, or quit: for when there is no tablet to open yet.
+func _open_exit_prompt() -> void:
+	var prompt := Modal.new()
+	prompt.card.custom_minimum_size = Vector2(440, 0)
+	prompt.body.add_child(UI.heading("Leave the loft?", 28))
+	prompt.body.add_child(UI.dim("You have no tablet yet, so there is nothing to save. The journey picks up again from its first commit.", 17))
+	prompt.body.add_child(UI.rule())
+	var stay := UI.button("Keep playing", &"play", &"ButtonPrimary", prompt.close)
+	stay.custom_minimum_size.y = 48
+	prompt.body.add_child(stay)
+	prompt.body.add_child(UI.button("Return to title", &"door", &"", func() -> void:
+		prompt.close()
+		_return_to_title()))
+	prompt.body.add_child(UI.button("Quit game", &"cross", &"ButtonDanger", func() -> void: get_tree().quit()))
+	_push_modal(prompt)
+	stay.grab_focus.call_deferred()
+
+
+## The field tablet: its home screen holds the terminal (saving and loading through git), the
+## journal, map, saves and settings; log out and shut down sit in its status bar.
+func open_tablet() -> void:
+	if not playing or not _modals.is_empty():
+		return
+	sync_working_tree()
+	var tablet := TabletShell.new()
 	var zone: Dictionary = area.zone(session.current_zone) if session.current_zone != "" else {}
-	pause.setup(session.player_name, area.title if inside_house() else str(zone.get("title", area.title)), inside_house(), str(LevelStore.entry(_level_id).title))
-	pause.resume_requested.connect(pause.close)
-	pause.journal_requested.connect(open_journal)
-	pause.map_requested.connect(open_map)
-	pause.character_requested.connect(func() -> void: _open_character("view", {}))
-	pause.settings_requested.connect(open_settings)
-	pause.reset_requested.connect(_confirm_reset)
-	pause.title_requested.connect(func() -> void:
-		pause.close()
-		_return_to_title())
-	pause.quit_requested.connect(quit_game)
-	_push_modal(pause)
+	tablet.setup(self, session.player_name, area.title if inside_house() else str(zone.get("title", area.title)), inside_house())
+	tablet.journal_requested.connect(open_journal)
+	tablet.map_requested.connect(open_map)
+	tablet.load_requested.connect(load_profile_tree)
+	tablet.title_requested.connect(leave_to_title)
+	tablet.quit_requested.connect(quit_game)
+	_push_modal(tablet)
+	if _lesson != null and _lesson.active:
+		_lesson.attach(tablet)
+
+
+# --- Lessons ----------------------------------------------------------------------------------
+
+## A lesson from the journey's `lessons` block, by id.
+func lesson_data(id: String) -> Dictionary:
+	return (_story.get("lessons", {}) as Dictionary).get(id, {})
+
+
+## Hotaru's one question: show me, or I know this already. Skipping marks the lesson and moves on.
+func offer_lesson(id: String) -> void:
+	var lesson: Dictionary = lesson_data(id)
+	if lesson.is_empty() or not playing or not _modals.is_empty():
+		return
+	var prompt := Modal.new()
+	prompt.card.custom_minimum_size = Vector2(520, 0)
+	prompt.body.add_child(UI.caps(str(lesson.get("speaker_name", "Hotaru")), Pal.TEAL))
+	var words := UI.dim(str(lesson.get("offer", "Want me to walk you through it?")), 19)
+	words.add_theme_color_override("font_color", Pal.PARCHMENT)
+	prompt.body.add_child(words)
+	prompt.body.add_child(UI.rule())
+	var yes := UI.button(str(lesson.get("accept", "Please show me.")), &"play", &"ButtonPrimary", func() -> void:
+		prompt.close()
+		start_lesson(id))
+	yes.custom_minimum_size.y = 48
+	prompt.body.add_child(yes)
+	prompt.body.add_child(UI.button(str(lesson.get("decline", "I already know how to use the tablet.")), &"check", &"", func() -> void:
+		prompt.close()
+		lesson_finished(id, "skipped")
+		if hud != null and str(lesson.get("skip_line", "")) != "": hud.show_toast(str(lesson.get("speaker_name", "Hotaru")) + " · " + str(lesson.skip_line))))
+	_push_modal(prompt)
+	yes.grab_focus.call_deferred()
+
+
+## Starts (or restarts) a lesson; if the slate is already out, it joins it there.
+func start_lesson(id: String, from_step: int = 0) -> bool:
+	var lesson: Dictionary = lesson_data(id)
+	if lesson.is_empty():
+		return false
+	if _lesson != null and _lesson.active:
+		_lesson.active = false
+		if _lesson.tablet != null: _lesson.tablet.clear_lesson()
+	_lesson = TabletLesson.new()
+	_lesson.start(self, id, lesson, from_step)
+	if not _modals.is_empty() and _modals[-1] is TabletShell:
+		_lesson.attach(_modals[-1] as TabletShell)
+	return true
+
+
+func lesson_finished(id: String, status: String) -> void:
+	if not str(_dialogue_read.get(id, [""])[0]) == "done":
+		_dialogue_read[id] = [status]
+	if _lesson != null and _lesson.id == id:
+		_lesson = null
+	sync_working_tree()
+
+
+## Back to the title, after the uncommitted-changes warning when there is anything to lose.
+func leave_to_title() -> void:
+	if not _warn_uncommitted("Leave anyway", func() -> void: _return_to_title()):
+		_return_to_title()
+
+
+## The terminal's shell over the active repository, wired to this game: the tree is synced before
+## each git command and the game reloads after one that moved the tree.
+func make_shell() -> GitShell:
+	var shell := GitShell.new(SaveRepo.repo())
+	shell.config = SaveRepo.config()
+	shell.user = SaveRepo.author_name().to_lower().replace(" ", "")
+	shell.before = sync_working_tree
+	shell.changed = func() -> void: reload_from_tree.call_deferred()
+	shell.set_config = func(key: String, value: String) -> void: SaveRepo.set_config(key, value)
+	shell.commands = {
+		"reset": func(_args: PackedStringArray) -> String:
+			session.reset_world()
+			sync_working_tree()
+			return "Room reset: lamps dark, program memory cleared. Your code, finished jobs and pay are kept.\nhint: that is a change too; see  git status",
+		"logout": func(_args: PackedStringArray) -> String:
+			leave_to_title.call_deferred()
+			return "",
+		"quit": func(_args: PackedStringArray) -> String:
+			quit_game.call_deferred()
+			return "",
+		"tutorial": func(args: PackedStringArray) -> String:
+			var lessons: Dictionary = _story.get("lessons", {})
+			if args.is_empty():
+				var lines: Array[String] = ["Lessons on this slate (tutorial <name> starts one):"]
+				for key: String in lessons:
+					var mark: String = str(_dialogue_read.get(key, [""])[0])
+					lines.append("  %-18s %s%s" % [str(key).trim_suffix("-tutorial"), str(lessons[key].get("title", key)), "  · " + mark if mark != "" else ""])
+				return "\n".join(lines)
+			var wanted: String = args[0] if lessons.has(args[0]) else args[0] + "-tutorial"
+			if not lessons.has(wanted):
+				return "tutorial: no lesson called '%s'. Plain  tutorial  lists them." % args[0]
+			start_lesson.call_deferred(wanted, 1)
+			return "",
+	}
+	return shell
 
 
 func open_journal() -> void:
@@ -1566,47 +1758,39 @@ func _open_character(mode: String, save: Dictionary) -> void:
 	var choice: Dictionary=LevelStore.entry(_pending_level_id if mode=="new" else (_level_id if playing else str(save.get("level",LevelStore.default_id()))))
 	if not choice.is_empty() and (mode=="new" or not playing):
 		journey_area=AreaStore.load_area(str(choice.area))
-	var options: Dictionary = {"mode": mode, "area": journey_area, "name": SaveStore.player_name(), "completed": [], "stats": {}, "lamps_lit": 0, "zones_found": 0}
+	var options: Dictionary = {"mode": mode, "area": journey_area, "name": SaveRepo.DEFAULT_NAME if mode == "new" else SaveRepo.player_name(), "completed": [], "stats": {}, "zones_found": 0}
 	options.skin = settings.get_value("character_skin")
 	var character: Variant = choice.get("character", {})
 	if character is Dictionary:
 		options.merge(character, true)
 	if playing and mode == "view":
-		options.merge({"name": session.player_name, "completed": session.completed, "stats": session.stats, "lamps_lit": session.lamps_lit(), "zones_found": (session.state.zones_seen as Array).size()}, true)
+		options.merge({"name": session.player_name, "completed": session.completed, "stats": session.stats, "zones_found": (session.state.zones_seen as Array).size()}, true)
 		if inside_house():
 			options.completed = _outer_save.completed
-			options.lamps_lit = _saved_lamps(_outer_save)
 			options.zones_found = (_outer_save.state.zones_seen as Array).size()
 	elif not save.is_empty():
-		options.merge({"name": str(save.get("name", SaveStore.player_name())), "completed": save.get("completed", []), "stats": save.get("stats", {}),
-			"lamps_lit": _saved_lamps(save), "zones_found": ((save.get("state", {}) as Dictionary).get("zones_seen", []) as Array).size()}, true)
+		options.merge({"name": str(save.get("name", SaveRepo.player_name())), "completed": save.get("completed", []), "stats": save.get("stats", {}),
+			"zones_found": ((save.get("state", {}) as Dictionary).get("zones_seen", []) as Array).size()}, true)
 	screen.setup(options)
 	screen.skin_changed.connect(func(id: String) -> void: settings.set_value("character_skin", id))
 	screen.name_changed.connect(func(new_name: String) -> void:
-		if session != null:
-			session.player_name = new_name)
+		if mode == "new":
+			_pending_name = new_name
+		else:
+			SaveRepo.set_player_name(new_name)
+			if session != null:
+				session.player_name = new_name)
 	screen.begin_requested.connect(func() -> void:
+		_pending_name = screen.current_name()
 		_pop_all_modals()
 		start_new_game(_pending_level_id))
 	_push_modal(screen)
 
 
-func _confirm_reset() -> void:
-	var confirm := ConfirmDialog.new()
-	if inside_house():
-		confirm.ask("Reset this room?", "This home's lamp goes dark and its program memory clears. Your notebook, discoveries and the rest of the town stay as they are.", "Reset room", true)
-	else:
-		confirm.ask("Reset this room?", "Every lamp here goes dark and this room's program memory clears. Your notes, jobs and pay are kept.", "Reset room", true)
-	confirm.confirmed.connect(func() -> void:
-		_pop_all_modals()
-		session.reset_world())
-	_push_modal(confirm)
-
-
 func _return_to_title() -> void:
 	await _fade(func() -> void:
 		_pop_all_modals()
-		save_now()
+		_sync_timer.stop()
 		if inside_house():
 			_activate_exterior()
 		show_title())
@@ -1627,8 +1811,8 @@ func _on_modal_closed(modal: Modal) -> void:
 	_modals.erase(modal)
 	if not _modals.is_empty():
 		_modals[-1].visible = true
-		if _modals[-1] is PauseMenu:
-			(_modals[-1] as PauseMenu).open()
+		if _modals[-1] is TabletShell:
+			(_modals[-1] as TabletShell).open()
 	elif title != null:
 		title.focus_first.call_deferred()
 	_update_input_gate()
@@ -1680,7 +1864,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 			elif notebook_open:
 				close_notebook()
 			else:
-				open_pause()
+				open_menu()
 		KEY_E:
 			if not typing:
 				get_viewport().set_input_as_handled()
@@ -1858,14 +2042,6 @@ func _celebration_state() -> Dictionary:
 	return state
 
 
-func _saved_lamps(save: Dictionary) -> int:
-	var count: int = 0
-	for lit: Variant in ((save.get("state", {}) as Dictionary).get("lamps", {}) as Dictionary).values():
-		if lit == true:
-			count += 1
-	return count
-
-
 ## Covers the screen with the clockwork veil, runs `action` while nothing shows, and opens the veil on what it made.
 ## The veil grows out of the traveller (or `origin`, a point in 0..1 of the screen) and opens out of where `action`
 ## leaves them (or `_veil_open_origin`). `during_down` and `during_up` receive 0..1 as each half plays, so a walk can
@@ -1976,7 +2152,7 @@ func _settle_wages() -> void:
 			paid_any=true
 			session.accounts=paid.accounts
 			if hud!=null: hud.show_toast("Work payment · %d p added to your purse" % payments[id])
-			_queue_save(.2)
+			_queue_sync(.2)
 
 	if paid_any: session.state_changed.emit()
 
@@ -2003,7 +2179,7 @@ func open_inventory(bank: bool=false) -> void:
 			session.accounts=result.accounts
 			session.discard_preview()
 			session.state_changed.emit()
-			save_now()
+			sync_working_tree()
 		book.refresh("Transfer recorded." if result.ok else str(result.reason)))
 	_push_modal(book)
 
@@ -2023,4 +2199,4 @@ func _try_evening_return() -> void:
 		CityCycle.at_hour(session.cycle,19.25)
 		session.sync_cycle())
 	hud.show_toast("Evening · Nell is coming back down the lane.")
-	save_now()
+	sync_working_tree()

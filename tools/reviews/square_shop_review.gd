@@ -7,9 +7,8 @@ func go() -> void:
 	root.size=Vector2i(1600,1000)
 	root.content_scale_size=root.size
 	Engine.max_fps=60
-	SaveStore.save_path="user://square_shop_review_%d.json" % OS.get_process_id()
-	SaveStore.profile_path="user://square_shop_profile_%d.json" % OS.get_process_id()
-	SaveStore.force_enabled=true
+	SaveRepo.root = "user://square_shop_review_%d" % OS.get_process_id()
+	SaveRepo.force_enabled=true
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
@@ -17,7 +16,7 @@ func go() -> void:
 	_check(DevelopmentMode.jump(game,"square"),"Reach square through the isolated development checkpoint")
 	game._pop_all_modals()
 	# Save/reload this fixture through its isolated normal test save.
-	SaveStore.development=false
+	SaveRepo.development=false
 	game.close_notebook(true)
 	for id: String in ["bakery","greengrocer","tailor"]:
 		var link := RoomLinks.find(game.area,id)
@@ -40,9 +39,9 @@ func go() -> void:
 		await settle()
 		_check(game.area.id=="haverlund-square",id+" returns to the square")
 		_check(not game.session.state.memory.has("shop"),id+" keeps its memory inside")
-	game.save_now()
+	game.commit_progress("test save")
 	await game._return_to_title()
-	await game.continue_game("sparks-and-machines")
+	await game.continue_game()
 	game._pop_all_modals()
 	for id: String in ["bakery","greengrocer","tailor"]:
 		_check(game._journey_rooms.get("shop-"+id,{}).get("state",{}).get("memory",{}).get("shop")==id,id+" retains independent room state after Continue")

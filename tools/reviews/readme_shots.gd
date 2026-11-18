@@ -19,9 +19,8 @@ func _run() -> void:
 	root.size = Vector2i(1600, 1000)
 	root.content_scale_size = root.size
 	ProjectSettings.set_setting(AssetShowcase.SETTING, false)
-	SaveStore.save_path = "user://readme_%d.json" % OS.get_process_id()
-	SaveStore.profile_path = "user://readme_profile_%d.json" % OS.get_process_id()
-	SaveStore.force_enabled = true
+	SaveRepo.root = "user://readme_%d" % OS.get_process_id()
+	SaveRepo.force_enabled = true
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await _frames(60)
@@ -35,7 +34,7 @@ func _run() -> void:
 		if checkpoint == "square":
 			await _backdrop()
 		DevelopmentMode.jump(game, checkpoint)
-		SaveStore.development = false
+		SaveRepo.development = false
 		game._dialogue_read["workshop-scenes"] = game._story.scenes.keys()
 		game._dismissed_scenes = game._story.scenes.keys()
 		game._pop_all_modals()
@@ -44,7 +43,7 @@ func _run() -> void:
 		await shot(checkpoint)
 	await _sign_code()
 	DevelopmentMode.jump(game, "square")
-	SaveStore.development = false
+	SaveRepo.development = false
 	game._pop_all_modals()
 	game.close_notebook(true)
 	await _frames(30)
@@ -52,7 +51,7 @@ func _run() -> void:
 	await _frames(40)
 	await shot("layout-studio")
 	game.close_build()
-	SaveStore.delete(LevelStore.default_id())
+	SaveRepo.wipe()
 	print("README shots in %s" % output)
 	quit(0)
 
@@ -70,7 +69,7 @@ func _backdrop() -> void:
 ## Chapter 03's tram sign: a list of messages and a for loop, previewed with the line debugger on the real slate.
 func _sign_code() -> void:
 	DevelopmentMode.jump(game, "welcome-start")
-	SaveStore.development = false
+	SaveRepo.development = false
 	for frame: int in range(4):
 		await process_frame
 	game.session.accounts.inventory["message-card"] = 1

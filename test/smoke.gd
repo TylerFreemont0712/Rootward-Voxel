@@ -44,9 +44,8 @@ func _run() -> void:
 		view.queue_free()
 		await process_frame
 	# The real game boots, starts, saves and continues.
-	SaveStore.save_path = "user://smoke_%d.json" % OS.get_process_id()
-	SaveStore.profile_path = "user://smoke_profile_%d.json" % OS.get_process_id()
-	SaveStore.force_enabled = true
+	SaveRepo.root = "user://smoke_%d" % OS.get_process_id()
+	SaveRepo.force_enabled = true
 	var game: Game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	for _i: int in range(6):
@@ -56,14 +55,14 @@ func _run() -> void:
 	for _i: int in range(4):
 		await process_frame
 	_check(game.playing and game.area.id == str(spec.area), "A new game starts in the first room")
-	game.save_now()
-	_check(SaveStore.has_save(LevelStore.default_id()), "Starting a journey writes its save")
+	game.commit_progress("test save")
+	_check(SaveRepo.has_journey(), "Starting a journey writes its save")
 	await game._return_to_title()
 	await game.continue_game()
 	for _i: int in range(4):
 		await process_frame
 	_check(game.playing and game.area.id == str(spec.area), "Continue returns to the saved room")
-	SaveStore.delete(LevelStore.default_id())
+	SaveRepo.wipe()
 	game.queue_free()
 	await process_frame
 	print("Smoke: %d checks in %.1f s." % [checks, float(Time.get_ticks_msec() - started) / 1000.0], "" if failures.is_empty() else " Failures: %d" % failures.size())

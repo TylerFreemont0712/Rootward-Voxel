@@ -86,29 +86,33 @@ func _open_step(session: GameSession) -> Vector2i:
 
 
 func _game_tests() -> void:
-	SaveStore.save_path = SCRATCH_SAVE
-	SaveStore.profile_path = SCRATCH_PROFILE
-	SaveStore.force_enabled = true
-	SaveStore.delete()
+	SaveRepo.root = SCRATCH_SAVE
+	SaveRepo.force_enabled = true
+	SaveRepo.wipe()
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(SCRATCH_PROFILE))
 	var game: Game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await _frames(6)
 	_check(game.title != null and not game.playing and not game.hud.visible, "The game opens on the title screen")
 	_check(game.area.id == "workshop-loft" and game.view.camera_mode == WorldView.CameraMode.FIXED, "The title opens over the Sparks loft")
-	_check(_find_button(game.title, "Continue") == null and _find_button(game.title, "New game") != null, "The main title offers a new Sparks game")
+	_check(_find_button(game.title, "Load game") == null and _find_button(game.title, "Continue") == null and _find_button(game.title, "New game") != null, "The main title offers a new Sparks game and nothing to load")
 	_check(LevelStore.entries().size() == 1 and LevelStore.entries()[0].id == LevelStore.MAIN_LEVEL, "Sparks & Machines is the only journey")
 	await game.start_new_game(LevelStore.MAIN_LEVEL)
 	await _frames(4)
 	_check(game.playing and game.hud.visible and game.title == null, "A new journey enters play")
 	_check(game.view.camera_mode == WorldView.CameraMode.FOLLOW, "Play uses the following camera")
-	_check(SaveStore.has_save(LevelStore.MAIN_LEVEL), "Starting a journey writes a save")
+	_check(SaveRepo.has_journey(), "Starting a journey writes a save")
 	var session: GameSession = game.session
 	game._pop_all_modals()
 	game.close_notebook(true)
+	# Before the tablet is picked up, Escape only asks whether to leave.
+	game._unhandled_key_input(_key(KEY_ESCAPE))
+	_check(game._modals.size() == 1 and not (game._modals[0] is TabletShell) and _find_button(game._modals[0], "Keep playing") != null, "Without the tablet, Escape offers only to keep playing, return or quit")
+	game._pop_all_modals()
+	session.state.items = ["field-tablet"]
 	# Escape peels back one layer at a time and walking freezes while a menu is up.
 	game._unhandled_key_input(_key(KEY_ESCAPE))
-	_check(game._modals.size() == 1 and game._modals[0] is PauseMenu and not session.input_enabled, "Escape opens the pause menu and freezes walking")
+	_check(game._modals.size() == 1 and game._modals[0] is TabletShell and not session.input_enabled, "Escape opens the pause menu and freezes walking")
 	game._modals[0]._unhandled_key_input(_key(KEY_ESCAPE))
 	await process_frame
 	_check(game._modals.is_empty() and session.input_enabled, "Escape closes the menu and walking resumes")
@@ -119,10 +123,10 @@ func _game_tests() -> void:
 		_check(game._modals.size() == 1, "A modal screen opens")
 		game._modals[-1].close()
 		await process_frame
-	game.open_pause()
+	game.open_tablet()
 	game.open_settings()
 	await _frames(3)
-	_check(game._modals.size() == 2 and not game._modals[0].visible and game._modals[1].visible, "Settings opens above the pause menu and hides it")
+	_check(game._modals.size() == 2 and not game._modals[0].visible and game._modals[1].visible, "A modal above the tablet hides it")
 	game._modals[1].close()
 	await process_frame
 	_check(game._modals.size() == 1 and game._modals[0].visible, "Closing settings returns to the pause menu")
@@ -134,7 +138,7 @@ func _game_tests() -> void:
 	var screen := game._modals[-1] as CharacterScreen
 	screen._name_edit.text = "Ash"
 	screen._commit_name()
-	_check(SaveStore.player_name() == "Ash" and session.player_name == "Ash", "A new name is saved and used")
+	_check(SaveRepo.player_name() == "Ash" and session.player_name == "Ash", "A new name is saved and used")
 	_check(screen._actor != null and screen._actor.sprite != null, "The character screen shows the painted adventurer")
 	screen._turn(1)
 	_check(str(screen._actor.animation_name) == "idle_sw", "Turning the character shows another painted view")
@@ -161,14 +165,15 @@ func _game_tests() -> void:
 		guard += 1
 	_check(session.player_cell() == target, "Following the route reaches the target")
 	session.state.memory = {"kept": 7}
-	game.save_now()
+	game.commit_progress("test save")
 	await game._return_to_title()
 	await _frames(4)
-	_check(not game.playing and game.title != null and _find_button(game.title, "Continue") != null, "A saved journey offers Continue")
+	_check(not game.playing and game.title != null and _find_button(game.title, "Load game") != null and _find_button(game.title, "Continue") == null, "A committed journey offers Load game, never Continue")
 	await game.continue_game()
 	await _frames(4)
 	_check(game.playing and game.session.player_cell() == target and game.session.state.memory.get("kept") == 7, "Continue restores the position and program memory")
 	_check((game.view._body as SpriteActor).skin_id == "adventurer", "Continue keeps the boy as the player")
+	await _terminal_tests(game)
 	# Starting over replaces the save.
 	await game.start_new_game(LevelStore.MAIN_LEVEL)
 	await _frames(4)
@@ -177,12 +182,215 @@ func _game_tests() -> void:
 	await process_frame
 
 
+## Saving is git: the tablet's terminal commits, branches and switches, the load screen graphs it,
+## and leaving with uncommitted work asks first (docs/concept/save-vcs/PLAN.md).
+func _terminal_tests(game: Game) -> void:
+	game.open_tablet()
+	await _frames(2)
+	var tablet := game._modals[-1] as TabletShell
+	_check(tablet != null, "The menu is the field tablet")
+	tablet.open_terminal()
+	await _frames(2)
+	var terminal := tablet._app as TerminalApp
+	_check(terminal != null, "The tablet opens its terminal")
+	tablet.open_settings()
+	await _frames(2)
+	_check(tablet._app is SettingsSheet, "Settings is an app on the tablet")
+	tablet.show_home()
+	tablet.open_saves()
+	await _frames(2)
+	var saves := tablet._app as SavesBrowser
+	_check(saves != null and saves.portrait and saves._command.text == "git switch main" and saves._repo_title.text.contains("current"), "Saves is an app on the tablet, showing the current repository and HEAD's branch")
+	var window: Window = game.get_window()
+	var before: Vector2 = tablet.card.custom_minimum_size * window.content_scale_factor
+	game.settings.set_value("ui_scale", 1.4)
+	await _frames(2)
+	var after: Vector2 = tablet.card.custom_minimum_size * window.content_scale_factor
+	_check(absf(before.x - after.x) < 1.0 and absf(before.x - TabletShell.slate_size(game.get_viewport_rect().size * window.content_scale_factor).x) < 1.0, "The slate keeps its width on screen across an interface scale change")
+	var journal := JobsJournal.new()
+	game.add_child(journal)
+	_check(absf(journal._wanted_width() - tablet.card.custom_minimum_size.x) < 1.0, "The code slate and the menu slate share one width rule")
+	journal.queue_free()
+	game.settings.set_value("ui_scale", 1.0)
+	tablet.show_home()
+	tablet.open_terminal()
+	await _frames(2)
+	terminal = tablet._app as TerminalApp
+	var status: String = GitShell.plain(terminal.run_line("git status").output)
+	_check(status.contains("On branch main") and not status.contains("state.json") and not status.contains("Untracked"), "A freshly continued journey has nothing changed but the clock: " + status)
+	game.session.state.lamps[game.session.state.lamps.keys()[0]] = true
+	_check(GitShell.plain(terminal.run_line("reset").output).begins_with("Room reset") and not game.session.state.lamps.values().has(true), "reset is a terminal command that darkens the room")
+	game.session.state.memory = {"kept": 8}
+	status = GitShell.plain(terminal.run_line("git status").output)
+	_check(status.contains("modified:") and status.contains("rooms/workshop-loft/state.json"), "A world change shows as a modified room file: " + status)
+	_check(GitShell.plain(terminal.run_line("git diff").output).contains("\"kept\": 8"), "git diff shows the changed memory")
+	_check(terminal.run_line("git add .").ok and GitShell.plain(terminal.run_line("git commit -m \"remember eight\"").output).contains("remember eight"), "add and commit save the change")
+	_check(SaveRepo.uncommitted_changes().is_empty(), "After the commit nothing is uncommitted")
+	_check(terminal.run_line("git switch -c experiment").ok, "A branch is made for an experiment")
+	await _frames(4)
+	while game._flow_busy: await process_frame
+	_check(game._modals.is_empty() and game.playing and SaveRepo.repo().status().branch == "experiment", "Moving the tree reloads the game and puts the tablet away")
+	game.session.state.memory = {"kept": 99}
+	_check(game.commit_progress("ninety-nine").ok, "The game can commit directly")
+	game.open_tablet()
+	await _frames(2)
+	(game._modals[-1] as TabletShell).open_terminal()
+	await _frames(2)
+	_check(((game._modals[-1] as TabletShell)._app as TerminalApp).run_line("git switch main").ok, "Switching back to main")
+	await _frames(4)
+	while game._flow_busy: await process_frame
+	_check(game.session.state.memory.get("kept") == 8, "The world reloads from main's commit")
+	game.session.state.memory = {"kept": 7}
+	_check(game.commit_progress("seven").ok, "Main moves on: the histories fork")
+	# Uncommitted work: leaving asks first; the load screen can still take you elsewhere (and loses it).
+	game.session.state.memory = {"kept": 5}
+	game.open_tablet()
+	await _frames(2)
+	(game._modals[-1] as TabletShell).title_requested.emit()
+	await _frames(2)
+	_check(game._modals[-1] is ConfirmDialog and game.playing, "Leaving with uncommitted changes asks first")
+	game._pop_all_modals()
+	game.open_load()
+	await _frames(3)
+	var modal := game._modals[-1] as LoadModal
+	_check(modal != null and modal._graph.rows.size() == 5 and HistoryLanes.width(modal._graph.rows) == 2, "The load screen graphs every commit on both branches: %d rows, %d lanes" % [modal._graph.rows.size() if modal != null else -1, HistoryLanes.width(modal._graph.rows) if modal != null else -1])
+	_check(modal._command.text == "git switch main", "The command line is filled for the selected commit")
+	modal._command.text = "git switch experiment"
+	modal.run_command()
+	await _frames(2)
+	_check(game.playing and game._modals[-1] == modal and GitShell.plain(modal._output.text).contains("would be overwritten"), "A dirty tree refuses the switch with git's words, in the load screen too")
+	modal._command.text = "git reset --hard"
+	modal.run_command()
+	await _frames(6)
+	while game._flow_busy: await process_frame
+	_check(game.playing and game.session.state.memory.get("kept") == 7 and game._modals.is_empty(), "reset --hard in the load screen loads HEAD again: the uncommitted change is gone")
+	game.open_load()
+	await _frames(3)
+	modal = game._modals[-1] as LoadModal
+	modal._command.text = "git switch experiment"
+	modal.run_command()
+	await _frames(6)
+	while game._flow_busy: await process_frame
+	_check(game.playing and game.session.state.memory.get("kept") == 99 and SaveRepo.repo().status().branch == "experiment", "Now the switch loads the branch")
+	# The same browser as the tablet's Saves app.
+	game.open_tablet()
+	await _frames(2)
+	(game._modals[-1] as TabletShell).open_saves()
+	await _frames(2)
+	var app := (game._modals[-1] as TabletShell)._app as SavesBrowser
+	_check(app._graph.rows.size() == 5 and app._command.text == "git switch experiment", "The tablet's Saves app shows the same five commits and fills the command for the current branch")
+	app._command.text = "git switch main"
+	app.run_command()
+	await _frames(6)
+	while game._flow_busy: await process_frame
+	_check(game.playing and game.session.state.memory.get("kept") == 7 and SaveRepo.repo().status().branch == "main" and game._modals.is_empty(), "Switching from the tablet's Saves app loads main and puts the tablet away")
+	await _lesson_tests(game)
+
+
+## Hotaru's hand-held lesson (docs/concept/v0.9/tablet-tutorial.md): the offer's two answers, every
+## step advancing only on its own condition, a wrong command waiting, and resuming after the slate is
+## put away and taken out again.
+func _lesson_tests(game: Game) -> void:
+	game._dialogue_read.erase("tablet-tutorial")
+	game.offer_lesson("tablet-tutorial")
+	await _frames(2)
+	var decline: FButton = _find_button(game._modals[-1], "I already know how to use the tablet.")
+	_check(decline != null and _find_button(game._modals[-1], "Please show me.") != null, "Hotaru offers the lesson with two answers")
+	decline.pressed.emit()
+	await _frames(2)
+	_check(game._dialogue_read.get("tablet-tutorial", []) == ["skipped"] and game._lesson == null and game._modals.is_empty(), "Declining marks the lesson skipped and gets out of the way")
+	game._dialogue_read.erase("tablet-tutorial")
+	game.offer_lesson("tablet-tutorial")
+	await _frames(2)
+	_find_button(game._modals[-1], "Please show me.").pressed.emit()
+	await _frames(2)
+	var lesson: TabletLesson = game._lesson
+	_check(lesson != null and lesson.active and lesson.step == 0 and game._modals.is_empty(), "Accepting starts the lesson, waiting for the slate to be taken out")
+	game.open_tablet()
+	await _frames(2)
+	var tablet := game._modals[-1] as TabletShell
+	_check(lesson.step == 1 and tablet._strip.visible and tablet._overlay.target == tablet._home_key, "Taking the slate out advances to the home key, ringed, with Hotaru's line on the strip")
+	tablet.lesson_next_pressed.emit()
+	_check(lesson.step == 2 and tablet._overlay.target == tablet._icons["saves"], "Next moves on and rings the Saves app")
+	tablet.open_terminal()
+	await _frames(2)
+	_check(lesson.step == 2, "Opening the wrong app does not advance the lesson")
+	tablet.show_home()
+	tablet.open_saves()
+	await _frames(2)
+	var saves := tablet._app as SavesBrowser
+	_check(lesson.step == 3 and saves._phantom and saves._graph.rows.size() == 4 and saves._run.disabled, "Saves opens on the example tree: four invented commits, Run disabled")
+	tablet.lesson_next_pressed.emit()
+	tablet.lesson_next_pressed.emit()
+	tablet.lesson_next_pressed.emit()
+	_check(lesson.step == 6 and tablet._overlay.target == saves._graph, "Three explanations later the lesson waits for a tap on the graph")
+	tablet.lesson_next_pressed.emit()
+	_check(lesson.step == 6, "Next does nothing while a tap is awaited")
+	saves._graph.select(SavesBrowser.PHANTOM_IDS[1])
+	_check(lesson.step == 7 and saves._command.text == "git switch try-something", "Tapping the side branch advances and fills its switch command")
+	tablet.lesson_next_pressed.emit()
+	_check(lesson.step == 8 and not saves._phantom and saves._graph.rows.size() == 5, "The example gives way to the player's own tree")
+	# Put the slate away and take it out again: the same step waits.
+	tablet.close()
+	await _frames(2)
+	_check(lesson.active and lesson.tablet == null and lesson.step == 8, "Putting the slate away keeps the lesson at its step")
+	game.open_tablet()
+	await _frames(2)
+	tablet = game._modals[-1] as TabletShell
+	_check(lesson.step == 8 and tablet._strip.visible, "Taking it out again resumes the same step")
+	tablet.lesson_next_pressed.emit()
+	_check(lesson.step == 10, "Next after the resume; the home step is already met because the slate opened on home")
+	tablet.open_saves()
+	await _frames(2)
+	_check(lesson.step == 10, "The Terminal is awaited, not Saves")
+	tablet.show_home()
+	_check(lesson.step == 10, "Going home again changes nothing")
+	tablet.open_terminal()
+	await _frames(2)
+	var terminal := tablet._app as TerminalApp
+	_check(lesson.step == 11 and terminal.ghost == "git status", "The Terminal opens with the suggested command as ghost text")
+	game.session.state.memory = {"lesson": 1}
+	terminal.run_line("git log")
+	_check(lesson.step == 11 and tablet._strip_note.visible and tablet._strip_note.text.contains("git status"), "A different command does not advance; Hotaru nudges")
+	terminal.run_line("git status")
+	_check(lesson.step == 12 and terminal.ghost == "git add .", "git status advances to add")
+	terminal.run_line("git add .")
+	terminal.run_line("git commit")
+	_check(lesson.step == 13, "A failed commit (no message) does not count")
+	terminal.run_line("git commit -m \"Picked up Nell's slate\"")
+	_check(lesson.step == 14, "A real commit advances")
+	terminal.run_line("git log --oneline")
+	_check(lesson.step == 15, "log advances to the lesson's rule")
+	tablet.lesson_next_pressed.emit()
+	tablet.show_home()
+	tablet.open_saves()
+	await _frames(2)
+	_check(lesson.step == 18 and (tablet._app as SavesBrowser)._graph.rows.size() == 6, "Back in Saves the new commit is on the real tree")
+	tablet.lesson_next_pressed.emit()
+	tablet.show_home()
+	tablet.open_settings()
+	await _frames(2)
+	_check(lesson.step == 21 and tablet._overlay.target == (tablet._app as SettingsSheet).rows["ui_scale"], "Settings rings the interface size")
+	tablet.lesson_next_pressed.emit()
+	_check(not lesson.active and game._lesson == null and game._dialogue_read.get("tablet-tutorial", []) == ["done"] and not tablet._strip.visible, "The last Next finishes the lesson and marks it done")
+	# Replaying from the terminal, and skipping the rest.
+	tablet.show_home()
+	tablet.open_terminal()
+	await _frames(2)
+	(tablet._app as TerminalApp).run_line("tutorial tablet")
+	await _frames(2)
+	_check(game._lesson != null and game._lesson.active and game._lesson.step >= 1, "tutorial tablet replays the lesson on the open slate")
+	tablet.lesson_skip_pressed.emit()
+	_check(game._lesson == null and game._dialogue_read.get("tablet-tutorial", []) == ["done"], "Skip the rest ends it; done stays done")
+	game._pop_all_modals()
+
+
 ## The same shortcuts, but through Godot's real input routing: key events go to the focused control first
 ## and only reach the game's handlers if nothing consumed them.
 func _real_key_tests(game: Game) -> void:
 	game._pop_all_modals()
 	await _tap(KEY_ESCAPE)
-	_check(game._modals.size() == 1 and game._modals[0] is PauseMenu, "Escape opens the pause menu")
+	_check(game._modals.size() == 1 and game._modals[0] is TabletShell, "Escape opens the pause menu")
 	await _tap(KEY_ESCAPE)
 	_check(game._modals.is_empty(), "Escape closes the pause menu")
 	await _tap(KEY_M)
@@ -222,9 +430,9 @@ func _key(keycode: Key, ctrl: bool = false) -> InputEventKey:
 
 
 func _cleanup() -> void:
-	SaveStore.delete(LevelStore.MAIN_LEVEL)
+	SaveRepo.wipe()
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(SCRATCH_PROFILE))
-	SaveStore.force_enabled = false
+	SaveRepo.force_enabled = false
 
 
 func _check(value: bool, message: String) -> void:

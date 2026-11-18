@@ -63,7 +63,7 @@ func setup(game: Game) -> void:
 	body.add_child(power_row)
 	body.add_child(UI.dim("Clock and pressure buttons change the isolated development save. At 15, the supply trips. Reset breaker explicitly restores it. Loading studies below only preview the artwork.", 15))
 	var footer := UI.hbox(12)
-	if SaveStore.development:
+	if SaveRepo.development:
 		footer.add_child(UI.button("Return to regular game", &"", &"", func() -> void: normal_requested.emit()))
 	footer.add_child(UI.button("Back", &"", &"ButtonQuiet", close))
 	body.add_child(footer)

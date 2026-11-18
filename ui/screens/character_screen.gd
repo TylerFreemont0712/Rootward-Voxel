@@ -18,7 +18,7 @@ var _skin_id: String = "adventurer"
 var _skin_buttons: Dictionary = {}
 
 
-## options: mode "new" | "view", name, area, completed, stats, lamps_lit, zones_found
+## options: mode "new" | "view", name, area, completed, stats, zones_found
 func setup(options: Dictionary) -> void:
 	_skin_id = "adventurer"
 	card.custom_minimum_size = Vector2(1080, 640)
@@ -170,7 +170,7 @@ func _stats(options: Dictionary) -> Control:
 	grid.add_theme_constant_override("h_separation", 22)
 	var stats: Dictionary = options.stats
 	for entry: Array in [["Programs run", str(int(stats.get("runs", 0)))], ["Changes applied", str(int(stats.get("applies", 0)))],
-			["Lamps burning", "%d / %d" % [int(options.lamps_lit), (options.area as AreaDef).lamps.size()]], ["Places found", "%d / %d" % [int(options.zones_found), (options.area as AreaDef).zones.size()]]]:
+			["Places found", "%d / %d" % [int(options.zones_found), (options.area as AreaDef).zones.size()]]]:
 		var cell := UI.vbox(0)
 		cell.add_child(UI.label(entry[1], &"LabelHeading", 30))
 		cell.add_child(UI.label(String(entry[0]), &"LabelDim", 15))
@@ -211,9 +211,17 @@ func _apply_facing() -> void:
 
 
 func _commit_name() -> void:
-	var clean: String = SaveStore.set_player_name(_name_edit.text)
+	var clean: String = _name_edit.text.strip_edges().left(16)
+	if clean == "":
+		clean = SaveRepo.DEFAULT_NAME
 	_name_edit.text = clean
 	name_changed.emit(clean)
+
+
+## The name as typed (committed or not), for starting a new journey.
+func current_name() -> String:
+	var clean: String = _name_edit.text.strip_edges().left(16)
+	return clean if clean != "" else SaveRepo.DEFAULT_NAME
 
 
 func _unhandled_key_input(event: InputEvent) -> void:

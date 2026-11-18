@@ -6,15 +6,14 @@ func go() -> void:
  var args:=OS.get_cmdline_user_args()
  output=args[0] if not args.is_empty() else "res://evidence/square-restoration/layout"
  root.mode=Window.MODE_WINDOWED;root.size=Vector2i(1600,1000);root.content_scale_size=root.size
- SaveStore.save_path="user://layout_review_%d.json" % OS.get_process_id()
- SaveStore.profile_path="user://layout_profile_%d.json" % OS.get_process_id()
- SaveStore.force_enabled=true
+ SaveRepo.root = "user://layout_review_%d" % OS.get_process_id()
+ SaveRepo.force_enabled=true
  game=(load("res://scenes/game.tscn") as PackedScene).instantiate();root.add_child(game)
  game.layout_export_override="res://.cache/layout-studio/review-layout.json"
  await process_frame
  await game.start_new_game("sparks-and-machines")
  _check(DevelopmentMode.jump(game,"square"),"Development jump reaches the revised square")
- SaveStore.development=false
+ SaveRepo.development=false
  game._dialogue_read["workshop-scenes"]=game._story.scenes.keys();game._dismissed_scenes=game._story.scenes.keys()
  game._pop_all_modals();game.close_notebook(true)
  game.session.set_physics_process(false)
@@ -65,8 +64,8 @@ func go() -> void:
  _check(not builder.active and game.session.input_enabled,"Done returns control to the traveller")
  var exported: Variant=JSON.parse_string(FileAccess.get_file_as_string(game.layout_export_override))
  _check(exported is Dictionary and exported.area=="haverlund-square" and exported.edits.size()==game.ledger.edits.size(),"Done exports a readable layout snapshot")
- game.session.state.memory={"layout_kept":53};game.save_now()
- await game._return_to_title();await game.continue_game("sparks-and-machines");game._pop_all_modals()
+ game.session.state.memory={"layout_kept":53};game.commit_progress("test save")
+ await game._return_to_title();await game.continue_game();game._pop_all_modals()
  _check(game.area.id=="haverlund-square" and game.session.state.memory.get("layout_kept")==53,"Continue preserves the campaign and program memory")
  _check(not game.area.prop(id).is_empty() and game.area.prop(id).facing=="E" and game.view.building_node(id)!=null and game.view.ground_skin.get_child_count()>0,"Continue reconstructs props and paint through the asynchronous loader")
  game.view.focus_on(Vector2(10,6),true);await shot("06-layout-continued")
@@ -76,7 +75,7 @@ func go() -> void:
  await shot("07-stairs-preserved")
  for issue: String in failures:printerr("FAIL: ",issue)
  print("Square layout native review: %d checks, %d failures." % [checks,failures.size()])
- SaveStore.delete("sparks-and-machines")
+ SaveRepo.wipe()
  quit(0 if failures.is_empty() else 1)
 func _tap(key: Key, ctrl: bool=false) -> void:
  var e:=InputEventKey.new();e.keycode=key;e.physical_keycode=key;e.pressed=true;e.ctrl_pressed=ctrl

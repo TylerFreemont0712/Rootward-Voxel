@@ -4,14 +4,13 @@ func go() -> void:
 	var args:=OS.get_cmdline_user_args()
 	output=args[0] if not args.is_empty() else "res://evidence/spindle-strip/game"
 	root.mode=Window.MODE_WINDOWED;root.size=Vector2i(1600,1000);root.content_scale_size=root.size
-	SaveStore.save_path="user://spindle_strip_review_%d.json" % OS.get_process_id()
-	SaveStore.profile_path="user://spindle_strip_profile_%d.json" % OS.get_process_id()
-	SaveStore.force_enabled=true
+	SaveRepo.root = "user://spindle_strip_review_%d" % OS.get_process_id()
+	SaveRepo.force_enabled=true
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate();root.add_child(game)
 	await process_frame
 	await game.start_new_game("sparks-and-machines")
 	_check(DevelopmentMode.jump(game,"square"),"The existing development fixture reaches the revised square")
-	SaveStore.development=false
+	SaveRepo.development=false
 	game._dialogue_read["workshop-scenes"]=game._story.scenes.keys()
 	game._dismissed_scenes=game._story.scenes.keys()
 	game._pop_all_modals();game.close_notebook(true)
@@ -72,7 +71,7 @@ func go() -> void:
 		await settle()
 		_check(game.area.id=="haverlund-square","An old "+id+" save exits safely without its removed exterior")
 		game._pop_all_modals()
-	game.save_now();await game._return_to_title();await game.continue_game("sparks-and-machines");game._pop_all_modals()
+	game.commit_progress("test save");await game._return_to_title();await game.continue_game();game._pop_all_modals()
 	_check(game.area.id=="haverlund-square","Continue restores the revised strip")
 	for id: String in ["bakery","greengrocer","tailor"]:
 		_check(game._journey_rooms.get("shop-"+id,{}).get("state",{}).get("memory",{}).get("retained")==id,"Clearing "+id+" preserves separate room memory")

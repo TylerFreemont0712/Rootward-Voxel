@@ -13,7 +13,7 @@ signal quest_changed
 signal zone_changed(zone: Dictionary)
 signal toast(text: String)
 signal source_changed
-signal progress_saved
+signal progress_changed
 signal busy_changed(is_busy: bool)
 ## A program (or its undo) changed the houses, trees or doodads. The game saves, and keeps its own area in step.
 signal build_changed(label: String)
@@ -121,15 +121,6 @@ func begin(definition: AreaDef, scene_view: WorldView, save: Dictionary = {}) ->
 		var restored: Dictionary = rules.normalize_state(save.get("state"))
 		if not restored.is_empty():
 			state = restored
-			# Old visited-room saves predate fixed terminal links. Preserve their access.
-			var raw_state: Dictionary = save.get("state", {})
-			var saved_area_version: Variant = save.get("area_version", 0)
-			if not raw_state.has("terminal_links") and AreaDef._whole(saved_area_version) and int(saved_area_version) < area.version and (bool(state.hotaru_greeted) or (state.inspections_read as Array).has("desk-terminal")):
-				for terminal: Dictionary in area.terminals:
-					if (state.zones_seen as Array).has(terminal.zone): state.terminal_links.append(terminal.id)
-			# Saves from before items existed were already handed the little console; they keep its successor.
-			if not raw_state.has("items") and area.voice_lesson and bool(state.hotaru_greeted):
-				state.items = PlayerItems.AFTER_GREETING.duplicate()
 		for id: Variant in save.get("completed", []):
 			if id is String and not area.quest(id).is_empty() and not completed.has(id):
 				completed.append(id)
@@ -826,7 +817,7 @@ func _after_change(sync_view: bool = true) -> void:
 		_refresh_quest_marker()
 	quest_changed.emit()
 	if sync_view or not finished.is_empty():
-		progress_saved.emit()
+		progress_changed.emit()
 
 
 func _refresh_quest_marker() -> void:

@@ -211,10 +211,9 @@ func _art() -> void:
 
 
 func _play() -> void:
-	SaveStore.save_path = "user://test_lane_" + str(OS.get_process_id()) + ".json"
-	SaveStore.profile_path = "user://test_lane_profile_" + str(OS.get_process_id()) + ".json"
-	SaveStore.force_enabled = true
-	SaveStore.delete("sparks-and-machines")
+	SaveRepo.root = "user://test_lane_" + str(OS.get_process_id()) + ""
+	SaveRepo.force_enabled = true
+	SaveRepo.wipe()
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
@@ -342,11 +341,11 @@ func _play() -> void:
 	_check(game.session.player_cell() == Vector2i(13, 4) and game.view.player_node().position.y < .3 and (game.session.state.zones_seen as Array).has("tram-halt"), "The traveller reaches the platform and finds the tram halt")
 	stage._place_tram(20.0 - 14.0)
 	await shot("03-halt")
-	game.save_now()
-	var saved: Dictionary = SaveStore.read("sparks-and-machines")
+	game.commit_progress("test save")
+	var saved: Dictionary = SaveRepo.tree_data()
 	_check(saved.area == "workshop-loft" and saved.journey_rooms.active == "haverlund-lane", "The journey's save records the lane as where the traveller is")
 	await game._return_to_title()
-	await game.continue_game("sparks-and-machines")
+	await game.continue_game()
 	_check(game.area.id == "haverlund-lane" and game.session.player_cell() == Vector2i(13, 4) and PlayerItems.has(game.session.state, "field-tablet"), "Continue puts the traveller back on the lane, slate in hand")
 	var painted: Array = game.view.camera.get_children().filter(func(node: Node) -> bool: return node is OutdoorBackdrop)
 	_check(painted.size() == 1 and painted[0].name == &"PaintedDistance", "Setting the lane up again leaves exactly one painted distance")

@@ -7,24 +7,23 @@ func _initialize() -> void:
 	OS.set_environment("VOXEL_LAB_FRESH", "1")
 	_run.call_deferred()
 func _run() -> void:
-	SaveStore.save_path = "user://development_test_%d.json" % OS.get_process_id()
-	SaveStore.profile_path = "user://development_profile_test_%d.json" % OS.get_process_id()
-	SaveStore.force_enabled = true
+	SaveRepo.root = "user://development_test_%d" % OS.get_process_id()
+	SaveRepo.force_enabled = true
 	game = (load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
 	await game.start_new_game()
 	game._pop_all_modals()
 	game.close_notebook(true)
-	game.save_now()
-	var ordinary: String = FileAccess.get_file_as_string(SaveStore.level_path(LevelStore.MAIN_LEVEL))
-	var normal_path: String = SaveStore.level_path(LevelStore.MAIN_LEVEL)
+	game.sync_working_tree()
+	var ordinary: Dictionary = SaveRepo.tree_data()
+	var normal_root: String = SaveRepo.repo().root
 	var fixtures: Dictionary = DevelopmentMode.catalog().checkpoints
 	for id: String in fixtures:
 		_check(DevelopmentMode.jump(game,id), id + " checkpoint loads")
-		_check(SaveStore.development and SaveStore.level_path(LevelStore.MAIN_LEVEL) != normal_path, "Checkpoint saves are separate from ordinary Continue")
+		_check(SaveRepo.development and SaveRepo.repo().root != normal_root, "Checkpoint saves are separate from ordinary Continue")
 		_check(game.area.id == fixtures[id].area and game.session.rules.is_walkable(game.session.state, game.session.player_cell()), "Checkpoint has legal support in its intended area")
-		_check(FileAccess.get_file_as_string(normal_path) == ordinary, "Chapter jumps preserve ordinary progress byte for byte")
+		_check(_tree(normal_root) == ordinary, "Chapter jumps preserve ordinary progress byte for byte")
 	# Chapter 05: every Public Works job finishes through real Python, the builder's rules, preview and Apply.
 	_check(DevelopmentMode.jump(game,"works-start") and game.session.current_quest().get("id") == "band-seats", "Public Works opens with the band's benches")
 	for job: String in ["band-seats", "room-on-the-walk", "two-parks", "market-day", "own-corner"]:
@@ -93,28 +92,34 @@ func _run() -> void:
 			node.pressed.emit()
 			break
 	while game._flow_busy: await process_frame
-	var expected: Dictionary = game.session.rules.normalize_state(JSON.parse_string(ordinary).state)
+	var expected: Dictionary = game.session.rules.normalize_state(ordinary.state)
 	# Derived clock/power mirrors advance during exploration; the saved journey clock is checked separately.
 	var actual: Dictionary=game.session.state.duplicate(true)
 	for key: String in ["time","city_power"]:
 		expected.erase(key)
 		actual.erase(key)
-	var ordinary_clock: Dictionary=CityCycle.restore(JSON.parse_string(ordinary).get("city_cycle",{}))
-	_check(not SaveStore.development and game.area.id == "workshop-loft" and actual == expected and game.session.cycle.day==ordinary_clock.day and absf(float(game.session.cycle.minute)-float(ordinary_clock.minute))<1.0, "Return restores ordinary device state and resumes its own clock, without inheriting dev time")
+	var ordinary_clock: Dictionary=CityCycle.restore(ordinary.get("city_cycle",{}))
+	_check(not SaveRepo.development and game.area.id == "workshop-loft" and actual == expected and game.session.cycle.day==ordinary_clock.day and absf(float(game.session.cycle.minute)-float(ordinary_clock.minute))<1.0, "Return restores ordinary device state and resumes its own clock, without inheriting dev time")
 	ProjectSettings.set_setting("rootward/development/tools_enabled", false)
 	before = game.session.to_save()
 	_check(not DevelopmentMode.jump(game,"square") and not DevelopmentMode.fill_solution(game) and game.session.to_save() == before, "Disabling dev tools rejects actions without mutation")
 	ProjectSettings.set_setting("rootward/development/tools_enabled", true)
 	game.show_title()
-	_check(not SaveStore.development and SaveStore.read(LevelStore.MAIN_LEVEL).state.player == JSON.parse_string(ordinary).state.player, "Title restores the regular Continue slot")
-	SaveStore.delete(LevelStore.MAIN_LEVEL)
-	SaveStore.development = true
-	SaveStore.delete(LevelStore.MAIN_LEVEL)
-	SaveStore.development = false
-	DirAccess.remove_absolute(ProjectSettings.globalize_path(SaveStore.profile_path))
+	_check(not SaveRepo.development and SaveRepo.tree_data().state.player == ordinary.state.player, "Title restores the regular Continue slot")
+	SaveRepo.wipe()
+	SaveRepo.development = true
+	SaveRepo.wipe()
+	SaveRepo.development = false
 	for failure: String in failures: printerr("FAIL: ",failure)
 	print("Development tools: %d checks, %d failures." % [checks,failures.size()])
 	quit(0 if failures.is_empty() else 1)
+## The working tree of a profile directory, as the game would read it.
+func _tree(repo_root: String) -> Dictionary:
+	var vcs := Vcs.new(repo_root)
+	var files: Dictionary = {}
+	for path: String in vcs.files(): files[path] = vcs.read_file(path)
+	return SaveRepo.join(files)
+
 func _check(ok: bool, message: String) -> void:
 	checks += 1
 	if not ok: failures.append(message)

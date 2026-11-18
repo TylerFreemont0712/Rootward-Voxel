@@ -12,8 +12,7 @@ func _initialize()->void:
 func _run()->void:
 	if not OS.get_cmdline_user_args().is_empty():output=OS.get_cmdline_user_args()[0]
 	if output!="":DirAccess.make_dir_recursive_absolute(output)
-	SaveStore.save_path="user://welcome_review_%d.json" % OS.get_process_id()
-	SaveStore.profile_path="user://welcome_profile_%d.json" % OS.get_process_id()
+	SaveRepo.root = "user://welcome_review_%d" % OS.get_process_id()
 	game=(load("res://scenes/game.tscn") as PackedScene).instantiate()
 	root.add_child(game)
 	await process_frame
@@ -180,18 +179,17 @@ func _run()->void:
 	_check(game.session.accounts.wallet==28 and game.session.accounts.bank==15 and game.session.accounts.inventory["message-card"]==1,"Continue-style restore preserves property and receipts")
 	game._settle_wages()
 	_check(game.session.accounts.wallet==28,"Loading completed quests does not pay again")
-	SaveStore.force_enabled=true
-	game.save_now()
-	var disk:Dictionary=SaveStore.read(LevelStore.MAIN_LEVEL)
+	SaveRepo.force_enabled=true
+	game.sync_working_tree()
+	var disk:Dictionary=SaveRepo.tree_data()
 	_check(PlayerAccounts.restore(disk.get("accounts",{}))==game.session.accounts and disk.get("journey_rooms",{}).get("active")=="haverlund-lane","The actual save file carries the latest shared account and active room")
 	var property:Dictionary=game.session.accounts.duplicate(true)
 	game.session.reset_world()
 	game._settle_wages()
 	_check(game.session.accounts==property and game.session.completed.has("proper-welcome"),"Reset cannot erase property or farm a completed work payment")
-	SaveStore.delete(LevelStore.MAIN_LEVEL)
-	SaveStore.development=false
-	SaveStore.delete(LevelStore.MAIN_LEVEL)
-	DirAccess.remove_absolute(ProjectSettings.globalize_path(SaveStore.profile_path))
+	SaveRepo.wipe()
+	SaveRepo.development=false
+	SaveRepo.wipe()
 	game.queue_free()
 	await process_frame
 	_finish()

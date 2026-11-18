@@ -57,6 +57,6 @@ Keep a small current set of selected captures in `evidence/`; they are media, so
 | World art | Every shipped model is a protected Blender source with an audited runtime export; the beacon, gates and the wheel stay procedural mechanisms. | Adopt further assets as their visual/source edits are reviewed. |
 | Area | Versioned area documents loaded by rules and view: the ten rooms of the journey, with reachability, lock and quest-solution tests. | Further rooms and chapters. |
 | Programming | Bounded real WASI execution, atomic commands, preview/apply/undo/reset and stale-result guards. | Add capabilities for concrete gameplay needs. |
-| Persistence | One save slot (world, quests, discoveries, memory, source, name) and a settings file; Continue restores them. | A migration policy when area versions change; more than one slot. |
+| Persistence | Saving is player-driven version control: per-profile repositories, commits from the tablet terminal, branches, a clickable commit graph to load from; Continue checks out HEAD. | A migration policy when area versions change; the in-story chapter that teaches the workflow; `merge`. |
 
 These remaining features are recorded in the handoff; they do not reopen the user's acceptance of the present size/style. Release packaging and platform verification remain distinct from starting main-project development.

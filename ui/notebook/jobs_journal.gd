@@ -157,9 +157,11 @@ func setup(value: GameSession, settings: GameSettings) -> void:
 	_show_page()
 
 
-## The slate takes a larger share of the screen than the paper drawer did.
+## The slate takes a larger share of the screen than the paper drawer did, and exactly the width the
+## menu slate has (TabletShell.slate_size), fixed in screen pixels across interface-scale changes.
 func _wanted_width() -> float:
-	return clampf(get_viewport_rect().size.x * .47, 740.0, 980.0)
+	var scale: float = get_window().content_scale_factor if is_inside_tree() else 1.0
+	return TabletShell.slate_size(get_viewport_rect().size * scale).x / maxf(scale, 0.01)
 
 
 func _sidebar_section(parent: VBoxContainer, id: String, title: String) -> VBoxContainer:
